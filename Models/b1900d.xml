@@ -14,41 +14,6 @@
   </condition>
 </animation>
 
-<animation>
- <type>select</type>
-  <object-name>Llamp3</object-name>
-<condition>
- <and>    
-     <equals>
-    <property>/gear/gear[0]/position-norm</property>
-      <value>1.000</value>
-     </equals>
-    <property>/controls/lighting/landing-lights</property>
- </and> 
-  </condition>
-</animation>
-
-<animation>
-    <type>select</type>
-    <object-name>Llamp1</object-name>
-    <object-name>Llamp2</object-name>
-    <condition>
-    <property>/controls/lighting/landing-lights</property>
-    </condition>
-</animation>
-
-<animation>
-    <type>select</type>
-    <object-name>strobe</object-name>
-    <object-name>strobe1</object-name>
-    <object-name>redstrobe</object-name>
-    <object-name>greenstrobe</object-name>
-    <object-name>strobeoff</object-name>
-    <object-name>strobeoff.001</object-name>
-    <condition>
-    <property>/controls/lighting/strobe</property>
-    </condition>
-</animation>
 
 
 <animation>
@@ -86,16 +51,7 @@
       </less-than>
     </condition>
   </animation>
-  <animation>
-    <type>select</type>
-    <object-name>Gearlamp</object-name>
-    <condition>
-      <equals>
-        <property>/gear/gear[0]/position-norm</property>
-        <value>1.0</value>
-      </equals>
-    </condition>
-  </animation>
+  
   <animation>
     <type>spin</type>
     <object-name>LHSlowprop</object-name>
@@ -160,6 +116,7 @@
       </less-than>
     </condition>
   </animation>
+  
   <animation>
     <type>spin</type>
     <object-name>RHprop</object-name>
@@ -170,7 +127,7 @@
       <z-m>-0.327</z-m>
     </center>
     <axis>
-      <x>-1.0</x>
+      <x>1.0</x>
       <y>0.0</y>
       <z>0.0</z>
     </axis>
@@ -185,7 +142,7 @@
       <z-m>-0.327</z-m>
     </center>
     <axis>
-      <x>-1.0</x>
+      <x>1.0</x>
       <y>0.0</y>
       <z>0.0</z>
     </axis>
@@ -414,163 +371,18 @@
     </axis>
   </animation>
  <!--         ________________      Lights ____________________________  --> 
- <animation>
-  <name>strobes</name>
-  <type>timed</type>
-  <object-name>strobe</object-name>
-  <object-name>strobe1</object-name>
-   <duration>0.5</duration>
- </animation>
  
-  <animation>
-    <type>translate</type>
-    <object-name>strobe</object-name>
-     <offset-m>9.509</offset-m>      
-<axis>
-<x>0.963</x>
-<z>0.269</z>
-</axis>
-  </animation>
-   
-  <animation>
-    <type>billboard</type>
-    <object-name>strobe</object-name>
-  <spherical>true</spherical>
-  </animation>
-  
-  <animation>
-    <type>translate</type>
-    <object-name>strobe1</object-name>
-     <offset-m>2.247</offset-m>      
-<axis>
-<x>0.880</x>
-<z>-0.474</z>
-</axis>
-  </animation>
-
-  <animation>
-    <type>billboard</type>
-    <object-name>strobe1</object-name>
-  <spherical>true</spherical>
-  </animation>
-  
- <animation>
-  <name>strobes</name>
-  <type>timed</type>
-  <object-name>strobeoff</object-name>
-  <object-name>redstrobe</object-name>
-   <branch-duration-sec>1</branch-duration-sec>
-   <branch-duration-sec>0.10</branch-duration-sec>  
- </animation>
-
-<animation>
-    <type>translate</type>
-    <object-name>redstrobe</object-name>
-     <offset-m>8.594</offset-m>      
-<axis>
-<x>-0.006</x>
-<y>-1.0</y>
-<z>-0.021</z>
-</axis>
-  </animation>
-
-  <animation>
-    <type>billboard</type>
-    <object-name>redstrobe</object-name>
-  <spherical>true</spherical>
-  </animation>
-    
-
- <animation>
-  <name>strobes</name>
-  <type>timed</type>
-  <object-name>strobeoff.001</object-name>
-  <object-name>greenstrobe</object-name>
-   <branch-duration-sec>1</branch-duration-sec>
-   <branch-duration-sec>0.10</branch-duration-sec>  
- </animation>
-
-<animation>
-    <type>translate</type>
-    <object-name>greenstrobe</object-name>
-     <offset-m>8.594</offset-m>      
-<axis>
-<x>-0.006</x>
-<y>1.0</y>
-<z>-0.021</z>
-</axis>
-  </animation>
- 
-  <animation>
-    <type>billboard</type>
-    <object-name>greenstrobe</object-name>
-  <spherical>true</spherical>
-  </animation>
-  
-  
-<animation>
-    <type>translate</type>
-    <object-name>Llamp1</object-name>
-     <offset-m>3.3</offset-m>      
-<axis>
-<x>-0.270</x>
-<y>-0.919</y>
-<z>-0.200</z>
-</axis>
-  </animation>
- 
-  <animation>
-    <type>billboard</type>
-    <object-name>Llamp1</object-name>
-  <spherical>true</spherical>
-  </animation>
-  
-<animation>
-    <type>translate</type>
-    <object-name>Llamp2</object-name>
-     <offset-m>3.3</offset-m>      
-<axis>
-<x>-0.270</x>
-<y>0.919</y>
-<z>-0.200</z>
-</axis>
-  </animation>
- 
-  <animation>
-    <type>billboard</type>
-    <object-name>Llamp2</object-name>
-  <spherical>true</spherical>
-  </animation>
-  
-<animation>
-    <type>translate</type>
-    <object-name>Llamp3</object-name>
-     <offset-m>6.92</offset-m>      
-<axis>
-<x>-0.990</x>
-<y>0.0</y>
-<z>-0.157</z>
-</axis>
-  </animation>
- 
-  <animation>
-    <type>billboard</type>
-    <object-name>Llamp3</object-name>
-  <spherical>true</spherical>
-  </animation>
-   
-  
 <!--      _____________Gear Animation_____________________            -->
   <animation>
     <type>rotate</type>
     <object-name>Struts</object-name>
-<!--  
   <object-name>RWheel</object-name>
   <object-name>RUdamper</object-name>
   <object-name>RLdamper</object-name>
   <object-name>LWheel</object-name>
   <object-name>LUdamper</object-name>
-  <object-name>LLdamper</object-name>-->    <property>/gear/gear[1]/position-norm</property>
+  <object-name>LLdamper</object-name>
+  <property>/gear/gear[1]/position-norm</property>
     <interpolation>
       <entry>
         <ind>0</ind>
@@ -596,6 +408,7 @@
       <z>0</z>
     </axis>
   </animation>
+  
   <animation>
     <type>rotate</type>
     <object-name>RHgeardoor1</object-name>
@@ -625,6 +438,7 @@
       <z>0</z>
     </axis>
   </animation>
+  
   <animation>
     <type>rotate</type>
     <object-name>RHgeardoor2</object-name>
@@ -712,10 +526,13 @@
       <z>0</z>
     </axis>
   </animation>
+  
   <animation>
     <type>rotate</type>
     <object-name>NoseGear</object-name>
     <object-name>FWheel</object-name>
+    <object-name>FLdamper</object-name>
+    <object-name>FUdamper</object-name>
 <property>/gear/gear[0]/position-norm</property>
     <offset-deg>90</offset-deg>
     <factor>-90</factor>
@@ -730,6 +547,7 @@
       <z>0</z>
     </axis>
   </animation>
+  
   <animation>
     <type>rotate</type>
     <object-name>FUdamper</object-name>
