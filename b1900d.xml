@@ -1,6 +1,6 @@
 <airplane mass="10500">
 
- <approach speed="105" aoa="13" fuel="0.2">
+ <approach speed="105" aoa="5" fuel="0.2">
   <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
@@ -136,7 +136,7 @@
  </propeller>
 
  <propeller x="0.7" y="2.65" z="0.0"
-            mass="1200" moment="80" radius="1.3"
+            mass="1200" moment="-80" radius="1.3"
             cruise-speed="270" cruise-rpm="1700"
             cruise-power="1200" cruise-alt="25000"
             min-rpm="1000" max-rpm="1700">
