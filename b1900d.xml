@@ -103,7 +103,7 @@ Flight Model improvements by Dave Martin.
  </gear>
 
  <gear x="-0.6" y="-2.65" z="-2.3" compression=".25" retract-time="5" spring="0.3" damp="1.0">
-  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="6.2"/>
@@ -111,7 +111,7 @@ Flight Model improvements by Dave Martin.
  </gear>
 
  <gear x="-0.6" y="2.65" z="-2.3" compression=".25" retract-time="5" spring="0.3" damp="1.0">
-  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="6"/>
