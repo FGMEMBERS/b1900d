@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Beechcraft B1900D
+
+July 2004 Syd Adams
+
+An awful lot of guess work here :)
+
+
+************************************************************************
+-->
+
+<PropertyList>
+ <sim>
+
+  <description>B1900D</description>
+
+  <flight-model>yasim</flight-model>
+  <aero>b1900d</aero>
+  <fuel-fraction>0.7</fuel-fraction>
+  <aircraft type="string">/b1900d/b1900d</aircraft>
+
+ <startup>
+   <splash-texture>Aircraft/b1900d/b1900dsplash.rgb</splash-texture>
+  </startup>
+
+  <model>
+   <path>Aircraft/b1900d/Models/b1900d.xml</path>
+  </model> 
+  
+   
+   <view n="0">
+    <name>Cockpit</name>
+    <type>lookfrom</type>
+    <internal type="bool">true</internal>
+    <config>
+     <x-offset-m type="double">-0.27</x-offset-m>
+     <y-offset-m type="double">0.28</y-offset-m>
+     <z-offset-m type="double">-4.20</z-offset-m>
+     <pitch-offset-deg>-12</pitch-offset-deg>
+     <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+    </config>
+  </view>
+
+  
+   <systems>
+    <electrical>
+      <path>Aircraft/beech99/beech99-electrical.xml</path>
+    </electrical>
+  </systems>
+  
+  <sound>
+   <path>Aircraft/b1900d/b1900d-sound.xml</path>
+  </sound>
+
+<autopilot>
+   <path>Aircraft/b1900d/autopilot.xml</path>
+</autopilot>
+
+  
+  <hud>
+   <enable3d>false</enable3d>
+  </hud>
+
+  <virtual-cockpit>true</virtual-cockpit>
+  <allow-toggle-cockpit>true</allow-toggle-cockpit>
+ </sim>
+
+ <!-- aircraft specific loading -->
+ <yasim>
+  <pilot-lbs>180</pilot-lbs>
+  <copilot-lbs>185</copilot-lbs>
+
+  <pass01>0</pass01>
+  <pass02>160</pass02>
+  <pass03>140</pass03>
+  <pass04>190</pass04>
+  <pass05>210</pass05>
+  <pass06>60</pass06>
+  <pass07>0</pass07>
+  <pass08>180</pass08>
+  <pass09>160</pass09>
+  <pass10>220</pass10>
+  <pass11>110</pass11>
+  <pass12>130</pass12>
+  <pass13>190</pass13>
+  <pass14>0</pass14>
+  <pass15>170</pass15>
+  <pass16>80</pass16>
+  <pass17>150</pass17>
+  <pass18>180</pass18>
+  <pass19>0</pass19>
+  
+  
+ </yasim>
+
+  
+ <controls>
+ <gear>
+ <brake-parking>1</brake-parking>
+ </gear>
+ </controls>
+
+<input>
+ <joysticks>
+  
+ <button n="4">
+  <repeatable>true</repeatable>
+  <binding>
+   <command>property-adjust</command>
+   <property>/controls/engines/engine[0]/condition</property>
+   <step>0.02</step>
+  </binding>
+  <binding>
+   <command>property-adjust</command>
+   <property>/controls/engines/engine[1]/condition</property>
+   <step>0.02</step>
+  </binding>
+ </button>
+
+ <button n="5">
+  <repeatable>true</repeatable>
+  <binding>
+   <command>property-adjust</command>
+   <property>/controls/engines/engine[0]/condition</property>
+   <step>-0.02</step>
+  </binding>
+  <binding>
+   <command>property-adjust</command>
+   <property>/controls/engines/engine[1]/condition</property>
+   <step>-0.02</step>
+  </binding>
+ </button>
+</joysticks>
+</input>
+
+</PropertyList>
+
+
