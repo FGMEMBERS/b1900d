@@ -14,6 +14,16 @@
   </condition>
 </animation>
 
+<animation>
+ <type>select</type>
+  <object-name>Gearlamp</object-name>
+<condition>
+     <equals>
+<property>/gear/gear[0]/position-norm</property>
+     <value>1.0</value>
+     </equals>
+  </condition>
+</animation>
 
 
 <animation>
@@ -22,7 +32,7 @@
     <condition>
       <greater-than>
         <property>/engines/engine[0]/rpm</property>
-        <value>800</value>
+        <value>999</value>
       </greater-than>
     </condition>
   </animation>
@@ -33,11 +43,11 @@
     <condition>
       <greater-than>
         <property>/engines/engine[0]/rpm</property>
-        <value>300</value>
+        <value>499</value>
       </greater-than>
       <less-than>
         <property>/engines/engine[0]/rpm</property>
-        <value>800</value>
+        <value>1000</value>
       </less-than>
     </condition>
   </animation>
@@ -47,7 +57,7 @@
     <condition>
       <less-than>
         <property>/engines/engine[0]/rpm</property>
-        <value>300</value>
+        <value>500</value>
       </less-than>
     </condition>
   </animation>
@@ -82,37 +92,40 @@
       <z>0.0</z>
     </axis>
   </animation>
+  
   <animation>
     <type>select</type>
     <object-name>RHFastprop</object-name>
     <condition>
       <greater-than>
         <property>/engines/engine[1]/rpm</property>
-        <value>800</value>
+        <value>999</value>
       </greater-than>
     </condition>
   </animation>
+  
   <animation>
     <type>select</type>
     <object-name>RHSlowprop</object-name>
     <condition>
       <greater-than>
         <property>/engines/engine[1]/rpm</property>
-        <value>300</value>
+        <value>499</value>
       </greater-than>
       <less-than>
         <property>/engines/engine[1]/rpm</property>
-        <value>800</value>
+        <value>1000</value>
       </less-than>
     </condition>
   </animation>
+  
   <animation>
     <type>select</type>
     <object-name>RHprop</object-name>
     <condition>
       <less-than>
         <property>/engines/engine[1]/rpm</property>
-        <value>300</value>
+        <value>500</value>
       </less-than>
     </condition>
   </animation>
@@ -127,7 +140,7 @@
       <z-m>-0.327</z-m>
     </center>
     <axis>
-      <x>1.0</x>
+      <x>-1.0</x>
       <y>0.0</y>
       <z>0.0</z>
     </axis>
@@ -142,7 +155,7 @@
       <z-m>-0.327</z-m>
     </center>
     <axis>
-      <x>1.0</x>
+      <x>-1.0</x>
       <y>0.0</y>
       <z>0.0</z>
     </axis>
@@ -377,11 +390,7 @@
     <type>rotate</type>
     <object-name>Struts</object-name>
   <object-name>RWheel</object-name>
-  <object-name>RUdamper</object-name>
-  <object-name>RLdamper</object-name>
   <object-name>LWheel</object-name>
-  <object-name>LUdamper</object-name>
-  <object-name>LLdamper</object-name>
   <property>/gear/gear[1]/position-norm</property>
     <interpolation>
       <entry>
@@ -531,8 +540,6 @@
     <type>rotate</type>
     <object-name>NoseGear</object-name>
     <object-name>FWheel</object-name>
-    <object-name>FLdamper</object-name>
-    <object-name>FUdamper</object-name>
 <property>/gear/gear[0]/position-norm</property>
     <offset-deg>90</offset-deg>
     <factor>-90</factor>
@@ -548,20 +555,32 @@
     </axis>
   </animation>
   
+    <animation>
+    <type>translate</type>
+    <object-name>FWheel</object-name>
+    <property>gear/gear[0]/compression-norm</property>
+    <factor>0.5</factor>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
   <animation>
     <type>rotate</type>
     <object-name>FUdamper</object-name>
     <property>gear/gear[0]/compression-norm</property>
-    <factor>90</factor>
+    <factor>180</factor>
     <axis>
       <x>0</x>
       <y>1</y>
       <z>0</z>
     </axis>
     <center>
-      <x-m>-6.614</x-m>
+      <x-m>-6.740</x-m>
       <y-m>0.0</y-m>
-      <z-m>-1.419</z-m>
+      <z-m>-1.566</z-m>
     </center>
   </animation>
   <animation>
@@ -580,43 +599,32 @@
       <z-m>-1.714</z-m>
     </center>
   </animation>
+  
   <animation>
     <type>translate</type>
-    <object-name>FWheel</object-name>
-    <property>gear/gear[0]/compression-norm</property>
+    <object-name>RWheel</object-name>
+    <property>gear/gear[2]/compression-norm</property>
     <factor>0.5</factor>
     <axis>
-      <x>0</x>
+      <x>0.1</x>
       <y>0</y>
-      <z>1</z>
+      <z>0.9</z>
     </axis>
   </animation>
-<!--  
-<animation>
-  <type>translate</type>
-  <object-name>FLdamper</object-name>
-  <property>gear/gear[0]/compression-norm</property>
-  <factor>0.5</factor>
-   <axis>
-   <x>0</x>
-   <y>0</y>
-   <z>1</z>
-  </axis>
- </animation>
--->  <animation>
+  <animation>
     <type>rotate</type>
     <object-name>RUdamper</object-name>
     <property>gear/gear[2]/compression-norm</property>
-    <factor>50</factor>
+    <factor>100</factor>
     <axis>
       <x>0</x>
       <y>-1</y>
       <z>0</z>
     </axis>
     <center>
-      <x-m>0.662</x-m>
-      <y-m>2.638</y-m>
-      <z-m>-1.356</z-m>
+      <x-m>0.842</x-m>
+      <y-m>2.636</y-m>
+      <z-m>-1.660</z-m>
     </center>
   </animation>
   <animation>
@@ -635,9 +643,10 @@
       <z-m>-1.917</z-m>
     </center>
   </animation>
+
   <animation>
     <type>translate</type>
-    <object-name>RWheel</object-name>
+    <object-name>LWheel</object-name>
     <property>gear/gear[2]/compression-norm</property>
     <factor>0.5</factor>
     <axis>
@@ -646,32 +655,20 @@
       <z>0.9</z>
     </axis>
   </animation>
-<!--
- <animation>
-  <type>translate</type>
-  <object-name>RLdamper</object-name>
-  <property>gear/gear[2]/compression-norm</property>
-  <factor>0.5</factor>
-   <axis>
-   <x>0.1</x>
-   <y>0</y>
-   <z>0.9</z>
-  </axis>
- </animation>
--->  <animation>
+  <animation>
     <type>rotate</type>
     <object-name>LUdamper</object-name>
     <property>gear/gear[1]/compression-norm</property>
-    <factor>50</factor>
+    <factor>100</factor>
     <axis>
       <x>0</x>
       <y>-1</y>
       <z>0</z>
     </axis>
     <center>
-      <x-m>0.662</x-m>
-      <y-m>-2.638</y-m>
-      <z-m>-1.356</z-m>
+      <x-m>0.842</x-m>
+      <y-m>-2.636</y-m>
+      <z-m>-1.660</z-m>
     </center>
   </animation>
   <animation>
@@ -690,17 +687,8 @@
       <z-m>-1.917</z-m>
     </center>
   </animation>
-  <animation>
-    <type>translate</type>
-    <object-name>LWheel</object-name>
-    <property>gear/gear[2]/compression-norm</property>
-    <factor>0.5</factor>
-    <axis>
-      <x>0.1</x>
-      <y>0</y>
-      <z>0.9</z>
-    </axis>
-  </animation>
+
+<!--  Steer Animation -->  
   <animation>
     <type>rotate</type>
     <object-name>FWheel</object-name>
@@ -877,6 +865,21 @@
     </axis>
   </animation>
 <!--____________________________Instrument Animations__________________________    -->  
+  <animation>
+  <type>rotate</type>
+  <object-name>cmpsrose</object-name>
+  <property>/instrumentation/magnetic-compass/indicated-heading-deg</property>
+  <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+  </axis>
+  <center>
+   <x-m>-4.748</x-m>
+   <y-m>-0.005</y-m>
+   <z-m>0.325</z-m>
+  </center>
+ </animation>
 
 <!--__________________________________ airspeed ________________________________-->
 
@@ -891,23 +894,35 @@
       </entry>
       <entry>
         <ind> 40.0</ind>
-        <dep>22.0</dep>
+        <dep>18.0</dep>
       </entry>
       <entry>
-        <ind> 100.0</ind>
-        <dep>92.0</dep>
+        <ind> 80.0</ind>
+        <dep>67.0</dep>
       </entry>
       <entry>
-        <ind> 150.0</ind>
-        <dep>174.0</dep>
+        <ind> 120.0</ind>
+        <dep>114.0</dep>
+      </entry>
+      <entry>
+        <ind> 160.0</ind>
+        <dep>163.0</dep>
+      </entry>
+      <entry>
+        <ind> 200.0</ind>
+        <dep>211.0</dep>
       </entry>
       <entry>
         <ind> 240.0</ind>
-        <dep>260.0</dep>
+        <dep>259.0</dep>
       </entry>
       <entry>
+        <ind> 280.0</ind>
+        <dep>306.0</dep>
+      </entry> 
+     <entry>
         <ind> 300.0</ind>
-        <dep>334.0</dep>
+        <dep>332.0</dep>
       </entry>
     </interpolation>
     <axis>
@@ -1099,7 +1114,7 @@
   
   <animation>
   <type>texmultiple</type>
-    <object-name>ATIback</object-name>
+    <object-name>AIback</object-name>
   <transform>
     <property>/orientation/pitch-deg</property>
     <subtype>textranslate</subtype>
@@ -1124,6 +1139,22 @@
    </axis>
   </transform>
  </animation>              
+ 
+   <animation>
+  <type>rotate</type>
+    <object-name>ROLLneedle</object-name>
+    <property>/orientation/roll-deg</property>
+    <axis>
+      <x>0.995</x>
+      <y>0</y>
+      <z>0.096</z>
+    </axis>
+    <center>
+      <x-m>-4.768</x-m>
+      <y-m>-0.293</y-m>
+      <z-m>0.023</z-m>
+    </center>
+  </animation>
   
  <animation>
     <type>texmultiple</type>
@@ -1142,7 +1173,83 @@
    </axis>
   </transform>
   </animation>
+
+
+  <animation>
+  <type>rotate</type>
+   <object-name>CRSneedle</object-name>
+   <object-name>CRSneedle.001</object-name>
+    <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+    <axis>
+      <x>0.995</x>
+      <y>0</y>
+      <z>0.096</z>
+    </axis>
+    <center>
+      <x-m>-4.756</x-m>
+      <y-m>-0.293</y-m>
+      <z-m>-0.091</z-m>
+    </center>
+  </animation>
+
+  <animation>
+  <type>rotate</type>
+   <object-name>CRSneedle</object-name>
+   <object-name>CRSneedle.001</object-name>
+<property>/instrumentation/nav/radials/selected-deg</property>  
+    <axis>
+      <x>-0.995</x>
+      <y>0</y>
+      <z>-0.096</z>
+    </axis>
+    <center>
+      <x-m>-4.756</x-m>
+      <y-m>-0.293</y-m>
+      <z-m>-0.091</z-m>
+    </center>
+  </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>CRS01</object-name>
+<property>/instrumentation/nav/radials/selected-deg</property>  
+  <factor>0.001</factor>
+  <step>100.0</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>CRS02</object-name>
+<property>/instrumentation/nav/radials/selected-deg</property>  
+  <factor>0.01</factor>
+  <step>10.0</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>CRS03</object-name>
+<property>/instrumentation/nav/radials/selected-deg</property>  
+  <factor>0.1</factor>
+  <step>1.0</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
   
+    
   <animation>
     <type>texmultiple</type>
     <object-name>ADFback</object-name>
@@ -1161,6 +1268,41 @@
   </transform>
   </animation>
  
+
+  <animation>
+  <type>rotate</type>
+    <object-name>VORneedle</object-name>
+   <property>/radios/nav/heading-deg</property>
+    <axis>
+      <x>-0.995</x>
+      <y>0</y>
+      <z>-0.096</z>
+    </axis>
+    <center>
+      <x-m>-4.759</x-m>
+      <y-m>-0.372</y-m>
+      <z-m>-0.041</z-m>
+    </center>
+  </animation>
+
+  <animation>
+  <type>rotate</type>
+    <object-name>ADFneedle</object-name>
+  <property>/instrumentation/adf/indicated-bearing-deg</property>
+    <axis>
+      <x>-0.995</x>
+      <y>0</y>
+      <z>-0.096</z>
+    </axis>
+    <center>
+      <x-m>-4.759</x-m>
+      <y-m>-0.372</y-m>
+      <z-m>-0.041</z-m>
+    </center>
+  </animation>
+
+
+
   <animation>
     <type>rotate</type>
     <object-name>Torqneedle0</object-name>
@@ -1407,6 +1549,84 @@
       <z-m>-0.022</z-m>
     </center>
   </animation>
+  
+ <animation>
+  <type>textranslate</type>
+  <object-name>TRB101</object-name>
+  <property>/engines/engine[0]/n2</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>  
+ <animation>
+  <type>textranslate</type>
+  <object-name>TRB102</object-name>
+  <property>/engines/engine[0]/n2</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>  
+ <animation>
+  <type>textranslate</type>
+  <object-name>TRB103</object-name>
+  <property>/engines/engine[0]/n2</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>  
+  
+ <animation>
+  <type>textranslate</type>
+  <object-name>TRB201</object-name>
+  <property>/engines/engine[1]/n2</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>  
+ <animation>
+  <type>textranslate</type>
+  <object-name>TRB202</object-name>
+  <property>/engines/engine[1]/n2</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>  
+ <animation>
+  <type>textranslate</type>
+  <object-name>TRB203</object-name>
+  <property>/engines/engine[1]/n2</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>  
+  
+  
+  
+  
   <animation>
     <type>rotate</type>
     <object-name>Fuelflow0</object-name>
@@ -1513,6 +1733,58 @@
       <z-m>-0.063</z-m>
     </center>
   </animation>
+  
+    <animation>
+  <type>rotate</type>
+  <object-name>ScHand</object-name>
+  <property>/sim/time/utc/day-seconds</property>
+  <factor>6</factor>
+    <axis>
+      <x>-0.995</x>
+      <y>0</y>
+      <z>-0.096</z>
+    </axis>
+  <center>
+   <x-m>-4.765</x-m>
+   <y-m>-0.430</y-m>
+   <z-m>0.008</z-m>
+  </center>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>MnHand</object-name>
+  <property>/sim/time/utc/day-seconds</property>
+  <factor>0.1</factor>
+    <axis>
+      <x>-0.995</x>
+      <y>0</y>
+      <z>-0.096</z>
+    </axis>
+  <center>
+   <x-m>-4.765</x-m>
+   <y-m>-0.430</y-m>
+   <z-m>0.008</z-m>
+  </center>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>HrHand</object-name>
+  <property>/sim/time/utc/day-seconds</property>
+  <factor>0.008333</factor>
+    <axis>
+      <x>-0.995</x>
+      <y>0</y>
+      <z>-0.096</z>
+    </axis>
+  <center>
+   <x-m>-4.765</x-m>
+   <y-m>-0.430</y-m>
+   <z-m>0.008</z-m>
+  </center>
+ </animation>
+
 <!-- __________________________________Radio______________________________________________ -->
 
 <!--  ______________________________________ Com  _________________________________________-->  

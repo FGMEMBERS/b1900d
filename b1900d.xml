@@ -1,6 +1,12 @@
+<!--
+YASIM flight model for the Beechcraft B1900D.
+Jan 2005 by Syd Adams.
+
+Flight Model improvements by Dave Martin.
+-->
 <airplane mass="10500">
 
- <approach speed="105" aoa="5" fuel="0.2">
+ <approach speed="120" aoa="3" fuel="0.2">
   <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
@@ -51,10 +57,10 @@
 	   
 	   
  <wing x="0.0" y="0.80" z="-0.9" length ="8.0" chord ="2.8"
-      sweep="0" dihedral="7" taper="0.4"  camber ="0.1"><!-- incidence="4.0" twist="-4.0"  -->
-  <stall aoa="14" width="4" peak="1.5"/>
+      sweep="0" dihedral="7" taper="0.4"  camber ="0.02" incidence ="3.0" twist ="-4.0"><!-- incidence="4.0" twist="-4.0"  -->
+  <stall aoa="7.5" width="6" peak="1.5"/>
   <flap0 start="0" end=".57" lift="1.2" drag="1.3"/>
-  <flap1 start=".57" end=".95" lift="1.1" drag="1.2"/>
+  <flap1 start=".57" end=".95" lift="1.7" drag="1.2"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
   <control-speed control="FLAP0" transition-time="5"/>
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
@@ -67,9 +73,9 @@
 		  prop="/surface-positions/right-aileron-pos-norm"/>
  </wing>
 
- <hstab x="-9.25" y="0.0" z="2.5" length ="2.8" chord ="1.8"
-        sweep="12" dihedral="0" taper="0.55" incidence="0.0" effectiveness="3.0">
-  <stall aoa="16" width="4" peak="1.5"/>
+ <hstab x="-9.25" y="0.0" z="2.5" length ="2.8" chord ="1.8" 
+        sweep="12" dihedral="0" taper="0.55" incidence="0" effectiveness="3.0">
+  <stall aoa="18" width="4" peak="1.5"/>
   <flap0 start="0" end="1" lift="1.5" drag="1.2"/>
   <control-input axis="/controls/flight/elevator" control="FLAP0"/>
   <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
@@ -112,14 +118,14 @@
   <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
  </gear>
 
- <propeller x="0.7" y="-2.65" z="0.0"
-            mass="1200" moment="80" radius="1.3"
+ <propeller x="1.9" y="-2.65" z="0.0"
+            mass="400" moment="80" radius="1.3"
             cruise-speed="270" cruise-rpm="1700"
-            cruise-power="1200" cruise-alt="25000"
+            cruise-power="1000" cruise-alt="20000"
             min-rpm="1000" max-rpm="1700">
   <turbine-engine
             eng-power="1270" eng-rpm="1700" alt="9000"
-            flat-rating="1270"
+            flat-rating="1000"
             min-n2="70" max-n2="100"
             bsfc="0.40"/>
   <actionpt x="2.23" y="-2.65" z="0.0"/>
@@ -135,14 +141,14 @@
             control="PROPFEATHER"/>
  </propeller>
 
- <propeller x="0.7" y="2.65" z="0.0"
-            mass="1200" moment="-80" radius="1.3"
+ <propeller x="1.9" y="2.65" z="0.0"
+            mass="400" moment="80" radius="1.3"
             cruise-speed="270" cruise-rpm="1700"
-            cruise-power="1200" cruise-alt="25000"
+            cruise-power="1000" cruise-alt="20000"
             min-rpm="1000" max-rpm="1700">
   <turbine-engine
             eng-power="1270" eng-rpm="1700" alt="9000"
-            flat-rating="1270"
+            flat-rating="1000"
             min-n2="70" max-n2="100"
             bsfc="0.40"/>
   <actionpt x="2.23" y="2.65" z="0.0"/>
@@ -157,8 +163,20 @@
   <control-input axis="/controls/engines/engine[1]/propeller-feather"
             control="PROPFEATHER"/>
  </propeller>
-  
-  <ballast x="-8.00" y="0.0" z="0.0" mass="-2400"/>
+
+<!-- Engine&Gearbox mass locations -->  
+<ballast x="1.4" y="-2.65" z="-0.5" mass="1200"/>
+<ballast x="1.4" y="2.65" z="-0.5" mass="1200"/>
+
+<!-- Cockpit mass and Avionics -->
+<ballast x="4.5" y="0.0" z="0.0" mass="900"/>
+
+<!-- NoseGear assembly -->
+<ballast x="4.7" y="0.0" z="-1.0" mass="500"/>
+
+<!-- MainGear assembly -->
+<ballast x="0.0" y="-2.65" z="-1.0" mass="600"/>
+<ballast x="0.0" y="2.65" z="-1.0" mass="600"/>
 
 <!--  
     <ballast x="1.0" y="0.0" z="0.0" mass="1500"/> 
@@ -186,6 +204,5 @@
 <weight x="-3.5" y="-0.3" z="0" mass-prop="/yasim/pass17"/>
 <weight x="-3.5" y="0.3" z="0" mass-prop="/yasim/pass18"/>
 <weight x="-3.5" y="0.0" z="0" mass-prop="/yasim/pass19"/> 
-
  
 </airplane>
