@@ -15,6 +15,7 @@ An awful lot of guess work here :)
  <sim>
 
   <description>B1900D</description>
+  <author>Syd Adams</author>
 
   <flight-model>yasim</flight-model>
   <aero>b1900d</aero>
