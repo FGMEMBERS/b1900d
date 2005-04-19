@@ -66,6 +66,11 @@ An awful lot of guess work here :)
 
   <virtual-cockpit>true</virtual-cockpit>
   <allow-toggle-cockpit>true</allow-toggle-cockpit>
+
+  <help>
+   <title>Beechcraft B1900D</title>
+  </help>
+
  </sim>
 
  <!-- aircraft specific loading -->
