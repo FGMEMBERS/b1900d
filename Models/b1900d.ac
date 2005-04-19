@@ -3,6 +3,7 @@ MATERIAL "illum" rgb 1 1 1 amb 0 0 0 emis 0.6 0.6 0.6 spec 0 0 0 shi 72 trans 0
 MATERIAL "Propblur" rgb 0.5 0.5 0.5 amb 0 0 0 emis 0 0 0 spec 0.516129 0.509677 0.509677 shi 72 trans 0.75
 MATERIAL "glosspaint" rgb 0.8 0.8 0.8 amb 0 0 0 emis 0 0 0 spec 1 1 1 shi 72 trans 0
 MATERIAL "dark" rgb 0.5 0.5 0.5 amb 0 0 0 emis 0 0 0 spec 0 0 0 shi 72 trans 0
+MATERIAL "debug" rgb 0 1 0 amb 0 0 0 emis 0 1 0 spec 1 1 1 shi 72 trans 0
 OBJECT world
 kids 163
 OBJECT poly
