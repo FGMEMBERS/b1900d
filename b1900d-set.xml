@@ -108,38 +108,13 @@ An awful lot of guess work here :)
  </gear>
  </controls>
 
-<input>
- <joysticks>
-  
- <button n="4">
-  <repeatable>true</repeatable>
-  <binding>
-   <command>property-adjust</command>
-   <property>/controls/engines/engine[0]/condition</property>
-   <step>0.02</step>
-  </binding>
-  <binding>
-   <command>property-adjust</command>
-   <property>/controls/engines/engine[1]/condition</property>
-   <step>0.02</step>
-  </binding>
- </button>
-
- <button n="5">
-  <repeatable>true</repeatable>
-  <binding>
-   <command>property-adjust</command>
-   <property>/controls/engines/engine[0]/condition</property>
-   <step>-0.02</step>
-  </binding>
-  <binding>
-   <command>property-adjust</command>
-   <property>/controls/engines/engine[1]/condition</property>
-   <step>-0.02</step>
-  </binding>
- </button>
-</joysticks>
-</input>
+ <nasal>
+  <b1900d>
+   <script>
+    settimer(func { controls.adjMixture = controls.adjCondition }, 2);
+   </script>
+  </b1900d>
+ </nasal>
 
 </PropertyList>
 
