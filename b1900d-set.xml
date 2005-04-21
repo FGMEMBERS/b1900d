@@ -55,9 +55,9 @@ An awful lot of guess work here :)
    <path>Aircraft/b1900d/b1900d-sound.xml</path>
   </sound>
 
-<autopilot>
+  <autopilot>
    <path>Aircraft/b1900d/autopilot.xml</path>
-</autopilot>
+  </autopilot>
 
   
   <hud>
@@ -69,6 +69,10 @@ An awful lot of guess work here :)
 
   <help>
    <title>Beechcraft B1900D</title>
+   <key>
+    <name>m/M</name>
+    <desc>increase/decrease condition lever</desc>
+   </key>
   </help>
 
  </sim>
@@ -103,9 +107,9 @@ An awful lot of guess work here :)
 
   
  <controls>
- <gear>
- <brake-parking>1</brake-parking>
- </gear>
+  <gear>
+   <brake-parking>1</brake-parking>
+  </gear>
  </controls>
 
  <nasal>
