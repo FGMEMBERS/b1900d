@@ -22,7 +22,7 @@ An awful lot of guess work here :)
   <fuel-fraction>0.7</fuel-fraction>
   <aircraft type="string">/b1900d/b1900d</aircraft>
 
- <startup>
+  <startup>
    <splash-texture>Aircraft/b1900d/b1900dsplash.rgb</splash-texture>
   </startup>
 
