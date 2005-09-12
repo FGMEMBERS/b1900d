@@ -7,103 +7,174 @@
 <!-- Engine 1 -->
   <crank>
    <name>engstart1</name>
+   <mode>once</mode>
    <path>Sounds/turbine_start.wav</path>
-   <property>/engines/engine[0]/cranking</property>
+   <condition>
+     <greater-than>
+       <property>/controls/engines/engine[0]/condition</property>
+       <value>0</value>
+     </greater-than>
+   </condition>
    <volume>
-    <offset>0.5</offset>
+     <offset>0.25</offset>
    </volume>
+   <position>
+     <x>-3</x>
+     <y>0</y>
+     <z>3</z>
+   </position>
   </crank>
 
-  <engine>
-   <name>engine1</name>
-   <mode>looped</mode>
-   <path>Sounds/turbine_loop.wav</path>
-   <property>/engines/engine[0]/running</property>
-   <volume>
-    <property>/engines/engine[0]/n2</property>
-    <offset>0.0</offset>
-    <factor>0.01</factor>
-    <min>0.0</min>
-    <max>0.3</max>
-   </volume>
-   <pitch>
-    <property>/engines/engine[0]/n2</property>
-    <factor>0.01</factor>
-    <min>0.0</min>
-    <max>1.1</max>
-   </pitch>
-  </engine>
-
   <prop>
-   <name>prop1</name>
-   <mode>looped</mode>
-   <path>Sounds/turboprop1.wav</path>
-   <property>/engines/engine[0]/running</property>
-   <volume>
-    <property>/engines/engine[0]/rpm</property>
-    <factor>0.01</factor>
-    <min>0.0</min>
-    <max>1.0</max>
-   </volume>
-   <pitch>
-    <property>/engines/engine[0]/rpm</property>
-    <factor>0.0004</factor>
-    <min>0.1</min>
-    <max>2.0</max>
-    <offset>0.4</offset>
-   </pitch>
+    <name>prop1</name>
+    <mode>looped</mode>
+    <path>Sounds/turboprop1.wav</path>
+    <condition>
+      <greater-than>
+        <property>/engines/engine[0]/rpm</property>
+        <value>500</value>
+      </greater-than>
+    </condition>
+    <volume>
+      <property>/engines/engine[0]/rpm</property>
+      <factor>0.1</factor>
+      <min>0.0</min>
+      <max>1.5</max>
+    </volume>
+    <position>
+      <x>-3</x>
+      <y>0</y>
+      <z>3</z>
+    </position>
   </prop>
+  
+  <turbine0>
+    <name>turbine0</name>
+    <mode>looped</mode>
+    <path>Sounds/turbine_loop.wav</path>
+    <condition>
+      <greater-than>
+        <property>/engines/engine[0]/n2</property>
+        <value>50.995</value>
+      </greater-than>
+    </condition>
+        <volume>
+          <offset>0.25</offset>
+        </volume>
+        <position>
+          <x>-3</x>
+          <y>0</y>
+          <z>3</z>
+        </position>
+      </turbine0>
+  
+  <shutdown>
+    <name>engine0 off</name>
+    <mode>once</mode>
+    <path>Sounds/turbine_shutdown.wav</path>
+    <condition>
+      <equals>
+        <property>/controls/engines/engine[0]/condition</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <volume>
+      <offset>0.25</offset>
+    </volume>
+    <position>
+      <x>-3</x>
+      <y>0</y>
+      <z>3</z>
+    </position>
+  </shutdown>
 
 <!-- Engine 2 -->
 
   <crank>
    <name>engstart2</name>
+   <mode>once</mode>
    <path>Sounds/turbine_start.wav</path>
-   <property>/engines/engine[1]/cranking</property>
+   <condition>
+     <greater-than>
+       <property>/controls/engines/engine[1]/condition</property>
+       <value>0</value>
+     </greater-than>
+   </condition>
    <volume>
-    <offset>0.5</offset>
+     <offset>0.25</offset>
    </volume>
-  </crank>
+   <position>
+     <x>3</x>
+     <y>0</y>
+     <z>3</z>
+   </position>
+ </crank>
+ 
+  
 
-  <engine>
-   <name>engine2</name>
-   <mode>looped</mode>
-   <path>Sounds/turbine_loop.wav</path>
-   <property>/engines/engine[1]/running</property>
-   <volume>
-    <property>/engines/engine[1]/n2</property>
-    <factor>0.01</factor>
-    <offset>0.0</offset>
-    <min>0.0</min>
-    <max>0.3</max>
-   </volume>
-   <pitch>
-    <property>/engines/engine[1]/n2</property>
-    <factor>0.01</factor>
-    <min>0.0</min>
-    <max>1.1</max>
-   </pitch>
-  </engine>
-
-  <prop>
+ <turbine>
    <name>prop2</name>
    <mode>looped</mode>
    <path>Sounds/turboprop1.wav</path>
-   <property>/engines/engine[1]/running</property>
+   <condition>
+     <greater-than>
+       <property>/engines/engine[1]/rpm</property>
+       <value>500</value>
+     </greater-than>
+   </condition>
    <volume>
-    <property>/engines/engine[1]/rpm</property>
-    <factor>0.01</factor>
-    <min>0.0</min>
-    <max>1.0</max>
+     <property>/engines/engine[1]/rpm</property>
+     <factor>0.01</factor>
+     <min>0.1</min>
+     <max>1.0</max>
    </volume>
-   <pitch>
-    <property>/engines/engine[1]/rpm</property>
-    <factor>0.0004</factor>
-    <min>0.1</min>
-    <max>2.0</max>
-    <offset>0.3</offset>
-   </pitch>
-  </prop>
+   <position>
+     <x>3</x>
+     <y>0</y>
+     <z>3</z>
+   </position>
+ </turbine>
+ 
+ <turbine1>
+   <name>turbine1</name>
+   <mode>looped</mode>
+   <path>Sounds/turbine_loop.wav</path>
+   <condition>
+     <greater-than>
+       <property>/engines/engine[1]/n2</property>
+       <value>50.995</value>
+     </greater-than>
+   </condition>
+       <volume>
+         <offset>0.25</offset>
+       </volume>
+       <position>
+         <x>3</x>
+         <y>0</y>
+         <z>3</z>
+       </position>
+     </turbine1>
+  
+  <shutdown>
+    <name>engine1 off</name>
+    <mode>once</mode>
+    <path>Sounds/turbine_shutdown.wav</path>
+    <condition>
+      <equals>
+        <property>/controls/engines/engine[1]/condition</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <volume>
+      <offset>0.25</offset>
+    </volume>
+    <position>
+      <x>3</x>
+      <y>0</y>
+      <z>3</z>
+    </position>
+  </shutdown>
+  
   
   <rumble>
    <name>rumble</name>
@@ -129,7 +200,7 @@
    <path>Sounds/gear.wav</path>
    <property>/gear/gear[0]/position-norm</property>
    <pitch>
-    <offset>1.0</offset>
+    <offset>0.5</offset>
    </pitch>
   </gear>
  
@@ -180,7 +251,7 @@
    <path>Sounds/flaps.wav</path>
    <property>/surface-positions/flap-pos-norm</property>
    <volume>
-    <factor>0.15</factor>
+    <factor>0.25</factor>
    </volume>
    <reference-dist>10.0</reference-dist>
    <max-dist>20.0</max-dist>

@@ -1,0 +1,417 @@
+<?xml version="1.0"?>
+
+<!--
+GPS display
+-->
+
+<PropertyList>
+
+  <name>GPS Display</name>
+  <w-base>110</w-base>
+  <h-base>40</h-base>
+  <w>110</w>
+  <h>40</h>
+
+
+ <layers>
+
+   <layer>
+     <name>waypoint 0 display</name>
+     <condition>
+       <equals>
+         <property>/instrumentation/gps/display-mode</property>
+         <value type="int">0</value>
+       </equals>
+     </condition>
+     <type>text</type>
+     <font>default</font>
+     <point-size>5</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>WP: 0</text>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-25</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>10</offset>
+       </transformation>
+     </transformations>
+   </layer>     
+     
+
+   <layer>
+     <name>waypoint 0 display</name>
+     <condition>
+       <equals>
+         <property>/instrumentation/gps/display-mode</property>
+         <value type="int">0</value>
+       </equals>
+     </condition>
+     <type>text</type>
+     <font>default</font>
+     <point-size>5</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+   <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>ID:  </text>
+       </chunk>
+       <chunk>
+         <type>text-value</type>
+         <property>/instrumentation/gps/wp/wp[0]/ID</property>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-25</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>5</offset>
+       </transformation>
+     </transformations>
+   </layer>
+   
+   <layer>
+     <name>waypoint 0 display</name>
+     <condition>
+       <equals>
+         <property>/instrumentation/gps/display-mode</property>
+         <value type="int">0</value>
+       </equals>
+     </condition>
+     <type>text</type>
+     <font>default</font>
+     <point-size>5</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>TTW:  </text>
+       </chunk>
+       <chunk>
+         <type>text-value</type>
+         <property>/instrumentation/gps/wp/wp[0]/TTW</property>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-25</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>0</offset>
+       </transformation>
+     </transformations>
+   </layer>
+   
+   <layer>
+     <name>waypoint 0 display</name>
+     <condition>
+       <equals>
+         <property>/instrumentation/gps/display-mode</property>
+         <value type="int">0</value>
+       </equals>
+     </condition>
+     <type>text</type>
+     <font>default</font>
+     <point-size>5</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>NM:  </text>
+       </chunk>
+       <chunk>
+         <type>number-value</type>
+         <property>/instrumentation/gps/wp/wp[0]/distance-nm</property>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-25</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>-5</offset>
+       </transformation>
+     </transformations>
+   </layer>
+   
+   <layer>
+     <name>waypoint 0 display</name>
+     <condition>
+       <equals>
+         <property>/instrumentation/gps/display-mode</property>
+         <value type="int">0</value>
+       </equals>
+     </condition>
+     <type>text</type>
+     <font>default</font>
+     <point-size>5</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>Brg:  </text>
+       </chunk>
+       <chunk>
+         <type>number-value</type>
+         <property>/instrumentation/gps/wp/wp[0]/bearing-mag-deg</property>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-25</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>-10</offset>
+       </transformation>
+     </transformations>
+   </layer>
+
+ 
+   <layer>
+     <name>waypoint 1 display</name>
+     <condition>
+       <equals>
+         <property>/instrumentation/gps/display-mode</property>
+         <value type="int">1</value>
+       </equals>
+     </condition>
+     <type>text</type>
+     <font>default</font>
+     <point-size>5</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>WP: 1</text>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-25</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>10</offset>
+       </transformation>
+     </transformations>
+   </layer>
+   
+   
+   <layer>
+     <name>waypoint 1 display</name>
+     <condition>
+       <equals>
+         <property>/instrumentation/gps/display-mode</property>
+         <value type="int">1</value>
+       </equals>
+     </condition>
+     <type>text</type>
+     <font>default</font>
+     <point-size>5</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>ID:  </text>
+       </chunk>
+       <chunk>
+         <type>text-value</type>
+         <property>/instrumentation/gps/wp/wp[1]/ID</property>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-25</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>5</offset>
+       </transformation>
+     </transformations>
+   </layer>
+   
+   <layer>
+     <name>waypoint 1 display</name>
+     <condition>
+       <equals>
+         <property>/instrumentation/gps/display-mode</property>
+         <value type="int">1</value>
+       </equals>
+     </condition>
+     <type>text</type>
+     <font>default</font>
+     <point-size>5</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>TTW:  </text>
+       </chunk>
+       <chunk>
+         <type>text-value</type>
+         <property>/instrumentation/gps/wp/wp[1]/TTW</property>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-25</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>0</offset>
+       </transformation>
+     </transformations>
+   </layer>
+   
+   <layer>
+     <name>waypoint 1 display</name>
+     <condition>
+       <equals>
+         <property>/instrumentation/gps/display-mode</property>
+         <value type="int">1</value>
+       </equals>
+     </condition>
+     <type>text</type>
+     <font>default</font>
+     <point-size>5</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>NM:  </text>
+       </chunk>
+       <chunk>
+         <type>number-value</type>
+         <property>/instrumentation/gps/wp/wp[1]/distance-nm</property>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-25</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>-5</offset>
+       </transformation>
+     </transformations>
+   </layer>
+   
+   <layer>
+     <name>waypoint 1 display</name>
+     <condition>
+       <equals>
+         <property>/instrumentation/gps/display-mode</property>
+         <value type="int">1</value>
+       </equals>
+     </condition>
+     <type>text</type>
+     <font>default</font>
+     <point-size>5</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>Brg:  </text>
+       </chunk>
+       <chunk>
+         <type>number-value</type>
+         <property>/instrumentation/gps/wp/wp[1]/bearing-mag-deg</property>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-25</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>-10</offset>
+       </transformation>
+     </transformations>
+   </layer>
+</layers>
+
+
+ <actions>
+  <action>
+   <name>select mode</name>
+   <button>0</button>
+   <x>-42</x>
+   <y>-6</y>
+   <w>8</w>
+   <h>6</h>
+   <binding>
+    <command>property-toggle</command>
+    <property>/instrumentation/gps/display-mode</property>
+    <step>1</step>
+    <min>0</min>
+    <max>1</max>
+    <resolution>1</resolution>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+
+
+ </actions>
+
+</PropertyList>

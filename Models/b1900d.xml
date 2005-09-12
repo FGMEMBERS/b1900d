@@ -3,29 +3,67 @@
   
   <path>b1900d.ac</path>
 
-<animation>
- <type>select</type>
-  <object-name>Cabin</object-name>
-<condition>
-     <equals>
-    <property>/sim/current-view/view-number</property>
-      <value>0</value>
-     </equals>
-  </condition>
-</animation>
 
-<animation>
- <type>select</type>
-  <object-name>Gearlamp</object-name>
-<condition>
-     <equals>
-<property>/gear/gear[0]/position-norm</property>
-     <value>1.0</value>
-     </equals>
-  </condition>
-</animation>
+  <panel>
+    <path>Aircraft/b1900d/Panel/b1900d-panel.xml</path>
+    <bottom-left>
+      <x-m>-4.663</x-m>
+      <y-m>-0.615</y-m>
+      <z-m>-0.317</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>-4.663</x-m>
+      <y-m>0.597</y-m>
+      <z-m>-0.317</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>-4.898</x-m>
+      <y-m>-0.615</y-m>
+      <z-m>0.561</z-m>
+    </top-left>
+  </panel>
 
 
+  
+
+  <panel>
+    <path>Aircraft/b1900d/Panel/b1900d-throttles.xml</path>
+    <bottom-left>
+      <x-m>-3.964</x-m>
+      <y-m>-0.147</y-m>
+      <z-m>-0.555</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>-3.964</x-m>
+      <y-m>0.861</y-m>
+      <z-m>-0.555</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>-4.677</x-m>
+      <y-m>-0.147</y-m>
+      <z-m>-0.305</z-m>
+    </top-left>
+  </panel>
+
+
+  
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>RHFastprop</object-name>
+    <object-name>RHSlowprop</object-name>
+    <object-name>LHFastprop</object-name>
+    <object-name>LHSlowprop</object-name>
+    <object-name>Cabin</object-name>
+
+  </animation>
+
+
+
+
+
+
+<!--                LH ENGINE          -->
 <animation>
     <type>select</type>
     <object-name>LHFastprop</object-name>
@@ -51,9 +89,13 @@
       </less-than>
     </condition>
   </animation>
+  
   <animation>
     <type>select</type>
-    <object-name>LHprop</object-name>
+    <object-name>Lblade</object-name>
+    <object-name>Lblade.001</object-name>
+    <object-name>Lblade.002</object-name>
+    <object-name>Lblade.003</object-name>
     <condition>
       <less-than>
         <property>/engines/engine[0]/rpm</property>
@@ -61,7 +103,22 @@
       </less-than>
     </condition>
   </animation>
-  
+
+  <animation>
+    <type>spin</type>
+    <object-name>LHspinner</object-name>
+    <property>/engines/engine[0]/rpm</property>
+    <center>
+      <x-m>-2.226</x-m>
+      <y-m>-2.634</y-m>
+      <z-m>-0.327</z-m>
+    </center>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
   <animation>
     <type>spin</type>
     <object-name>LHSlowprop</object-name>
@@ -77,22 +134,130 @@
       <z>0.0</z>
     </axis>
   </animation>
-  <animation>
-    <type>spin</type>
-    <object-name>LHprop</object-name>
-    <property>/engines/engine[0]/rpm</property>
-    <center>
+
+  
+<!--          Prop pitch  -->
+<animation>
+  <type>rotate</type>
+  <object-name>Lblade</object-name>
+  <property>/controls/engines/engine[0]/propeller-pitch</property>
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>0.2</ind>
+      <dep>90.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>45.0</dep>
+    </entry>
+  </interpolation>
+      <center>
       <x-m>-2.226</x-m>
       <y-m>-2.634</y-m>
       <z-m>-0.327</z-m>
     </center>
     <axis>
-      <x>-1.0</x>
+      <x>0.0</x>
       <y>0.0</y>
-      <z>0.0</z>
+      <z>-1.0</z>
     </axis>
   </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>Lblade.002</object-name>
+    <property>/controls/engines/engine[0]/propeller-pitch</property>
+    <interpolation>
+      <entry>
+        <ind>0.0</ind>
+        <dep>0.0</dep>
+      </entry>
+      <entry>
+        <ind>0.2</ind>
+        <dep>90.0</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>45.0</dep>
+      </entry>
+    </interpolation>
+      <center>
+        <x-m>-2.226</x-m>
+        <y-m>-2.634</y-m>
+        <z-m>-0.327</z-m>
+      </center>
+      <axis>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1.0</z>
+      </axis>
+    </animation>
+    <animation>
+          <type>rotate</type>
+      <object-name>Lblade.001</object-name>
+      <property>/controls/engines/engine[0]/propeller-pitch</property>
+      <interpolation>
+        <entry>
+          <ind>0.0</ind>
+          <dep>0.0</dep>
+        </entry>
+        <entry>
+          <ind>0.2</ind>
+          <dep>90.0</dep>
+        </entry>
+        <entry>
+          <ind>1.0</ind>
+          <dep>45.0</dep>
+        </entry>
+      </interpolation>
+        <center>
+          <x-m>-2.226</x-m>
+          <y-m>-2.634</y-m>
+          <z-m>-0.327</z-m>
+        </center>
+        <axis>
+          <x>0.0</x>
+          <y>1.0</y>
+          <z>0.0</z>
+        </axis>
+      </animation>
+      <animation>
+        <type>rotate</type>
+        <object-name>Lblade.003</object-name>
+        <property>/controls/engines/engine[0]/propeller-pitch</property>
+        <interpolation>
+          <entry>
+            <ind>0.0</ind>
+            <dep>0.0</dep>
+          </entry>
+          <entry>
+            <ind>0.2</ind>
+            <dep>90.0</dep>
+          </entry>
+          <entry>
+            <ind>1.0</ind>
+            <dep>45.0</dep>
+          </entry>
+        </interpolation>
+            <center>
+            <x-m>-2.226</x-m>
+            <y-m>-2.634</y-m>
+            <z-m>-0.327</z-m>
+          </center>
+          <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+          </axis>
+        </animation>
+
+
+
   
+<!--                        RH ENGINE                 -->
   <animation>
     <type>select</type>
     <object-name>RHFastprop</object-name>
@@ -121,7 +286,10 @@
   
   <animation>
     <type>select</type>
-    <object-name>RHprop</object-name>
+    <object-name>Rblade</object-name>
+    <object-name>Rblade.001</object-name>
+    <object-name>Rblade.002</object-name>
+    <object-name>Rblade.003</object-name>
     <condition>
       <less-than>
         <property>/engines/engine[1]/rpm</property>
@@ -129,10 +297,10 @@
       </less-than>
     </condition>
   </animation>
-  
+
   <animation>
     <type>spin</type>
-    <object-name>RHprop</object-name>
+    <object-name>RHspinner</object-name>
     <property>/engines/engine[1]/rpm</property>
     <center>
       <x-m>-2.226</x-m>
@@ -160,7 +328,128 @@
       <z>0.0</z>
     </axis>
   </animation>
-<!--                Controls                     -->
+
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rblade</object-name>
+    <property>controls/engines/engine[1]/propeller-pitch</property>
+    <interpolation>
+      <entry>
+        <ind>0.0</ind>
+        <dep>0.0</dep>
+      </entry>
+      <entry>
+        <ind>0.2</ind>
+        <dep>90.0</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>45.0</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>-2.226</x-m>
+      <y-m>2.634</y-m>
+      <z-m>-0.327</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>-1.0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>Rblade.002</object-name>
+    <property>controls/engines/engine[1]/propeller-pitch</property>
+    <interpolation>
+      <entry>
+        <ind>0.0</ind>
+        <dep>0.0</dep>
+      </entry>
+      <entry>
+        <ind>0.2</ind>
+        <dep>90.0</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>45.0</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>-2.226</x-m>
+      <y-m>2.634</y-m>
+      <z-m>-0.327</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>Rblade.001</object-name>
+    <property>controls/engines/engine[1]/propeller-pitch</property>
+    <interpolation>
+      <entry>
+        <ind>0.0</ind>
+        <dep>0.0</dep>
+      </entry>
+      <entry>
+        <ind>0.2</ind>
+        <dep>90.0</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>45.0</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>-2.226</x-m>
+      <y-m>2.634</y-m>
+      <z-m>-0.327</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>Rblade.003</object-name>
+    <property>controls/engines/engine[1]/propeller-pitch</property>
+    <interpolation>
+      <entry>
+        <ind>0.0</ind>
+        <dep>0.0</dep>
+      </entry>
+      <entry>
+        <ind>0.2</ind>
+        <dep>90.0</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>45.0</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>-2.226</x-m>
+      <y-m>2.634</y-m>
+      <z-m>-0.327</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>-1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+
+
+  <!--                Controls                     -->
   <animation>
     <type>translate</type>
     <object-name>Yoke</object-name>
@@ -168,9 +457,9 @@
     <property>controls/flight/elevator</property>
     <factor>-0.1</factor>
     <axis>
-      <x>1.0</x>
+      <x>0.973</x>
       <y>0.0</y>
-      <z>0.25</z>
+      <z>0.231</z>
     </axis>
   </animation>
   <animation>
@@ -179,14 +468,14 @@
     <property>controls/flight/aileron</property>
     <factor>-45.0</factor>
     <center>
-      <x-m>-4.731</x-m>
-      <y-m>-0.281</y-m>
-      <z-m>-0.151</z-m>
+      <x-m>-4.903</x-m>
+      <y-m>-0.379</y-m>
+      <z-m>-0.248</z-m>
     </center>
     <axis>
-      <x>1.0</x>
+      <x>0.973</x>
       <y>0.0</y>
-      <z>0.25</z>
+      <z>0.231</z>
     </axis>
   </animation>
   <animation>
@@ -195,25 +484,25 @@
     <property>controls/flight/aileron</property>
     <factor>-45.0</factor>
     <center>
-      <x-m>-4.731</x-m>
-      <y-m>0.282</y-m>
-      <z-m>-0.151</z-m>
+      <x-m>-4.903</x-m>
+      <y-m>0.355</y-m>
+      <z-m>-0.247</z-m>
     </center>
     <axis>
-      <x>1.0</x>
+      <x>0.973</x>
       <y>0.0</y>
-      <z>0.25</z>
+      <z>0.231</z>
     </axis>
   </animation>
   <animation>
     <type>rotate</type>
     <object-name>PropP0</object-name>
     <property>controls/engines/engine[0]/propeller-pitch</property>
-    <factor>-26.0</factor>
+    <factor>-28.0</factor>
     <center>
-      <x-m>-4.627</x-m>
+      <x-m>-4.626</x-m>
       <y-m>0.0</y-m>
-      <z-m>-0.403</z-m>
+      <z-m>-0.501</z-m>
     </center>
     <axis>
       <x>0.0</x>
@@ -225,11 +514,11 @@
     <type>rotate</type>
     <object-name>PropP1</object-name>
     <property>controls/engines/engine[1]/propeller-pitch</property>
-    <factor>-26.0</factor>
+    <factor>-28.0</factor>
     <center>
-      <x-m>-4.627</x-m>
+      <x-m>-4.626</x-m>
       <y-m>0.0</y-m>
-      <z-m>-0.403</z-m>
+      <z-m>-0.501</z-m>
     </center>
     <axis>
       <x>0.0</x>
@@ -241,11 +530,11 @@
     <type>rotate</type>
     <object-name>Cond0</object-name>
     <property>controls/engines/engine[0]/condition</property>
-    <factor>-26.0</factor>
+    <factor>-27.0</factor>
     <center>
-      <x-m>-4.627</x-m>
+      <x-m>-4.626</x-m>
       <y-m>0.0</y-m>
-      <z-m>-0.403</z-m>
+      <z-m>-0.501</z-m>
     </center>
     <axis>
       <x>0.0</x>
@@ -257,11 +546,11 @@
     <type>rotate</type>
     <object-name>Cond1</object-name>
     <property>controls/engines/engine[1]/condition</property>
-    <factor>-26.0</factor>
+    <factor>-27.0</factor>
     <center>
-      <x-m>-4.627</x-m>
+      <x-m>-4.626</x-m>
       <y-m>0.0</y-m>
-      <z-m>-0.403</z-m>
+      <z-m>-0.501</z-m>
     </center>
     <axis>
       <x>0.0</x>
@@ -275,9 +564,9 @@
     <property>controls/flight/flaps</property>
     <factor>12.0</factor>
     <center>
-      <x-m>-4.627</x-m>
+      <x-m>-4.626</x-m>
       <y-m>0.0</y-m>
-      <z-m>-0.403</z-m>
+      <z-m>-0.501</z-m>
     </center>
     <axis>
       <x>0.0</x>
@@ -289,11 +578,11 @@
     <type>rotate</type>
     <object-name>Throttle0</object-name>
     <property>controls/engines/engine[0]/throttle</property>
-    <factor>-45.0</factor>
+    <factor>-42.0</factor>
     <center>
-      <x-m>-4.627</x-m>
+      <x-m>-4.626</x-m>
       <y-m>0.0</y-m>
-      <z-m>-0.403</z-m>
+      <z-m>-0.501</z-m>
     </center>
     <axis>
       <x>0.0</x>
@@ -305,11 +594,11 @@
     <type>rotate</type>
     <object-name>Throttle1</object-name>
     <property>controls/engines/engine[1]/throttle</property>
-    <factor>-45.0</factor>
+    <factor>-42.0</factor>
     <center>
-      <x-m>-4.627</x-m>
+      <x-m>-4.626</x-m>
       <y-m>0.0</y-m>
-      <z-m>-0.403</z-m>
+      <z-m>-0.501</z-m>
     </center>
     <axis>
       <x>0.0</x>
@@ -321,11 +610,11 @@
     <type>rotate</type>
     <object-name>Etrim</object-name>
     <property>controls/flight/elevator-trim</property>
-    <factor>60.0</factor>
+    <factor>160.0</factor>
     <center>
-      <x-m>-4.600</x-m>
+      <x-m>-4.567</x-m>
       <y-m>0.0</y-m>
-      <z-m>-0.338</z-m>
+      <z-m>-0.435</z-m>
     </center>
     <axis>
       <x>0.0</x>
@@ -371,11 +660,11 @@
     <type>rotate</type>
     <object-name>Gearlever</object-name>
     <property>controls/gear/gear-down</property>
-    <factor>50.0</factor>
+    <factor>20.0</factor>
     <center>
-      <x-m>-4.736</x-m>
-      <y-m>-0.126</y-m>
-      <z-m>-0.179</z-m>
+      <x-m>-4.805</x-m>
+      <y-m>-0.0</y-m>
+      <z-m>-0.278</z-m>
     </center>
     <axis>
       <x>0.0</x>
@@ -875,9 +1164,9 @@
       <z>1.0</z>
   </axis>
   <center>
-   <x-m>-4.748</x-m>
-   <y-m>-0.005</y-m>
-   <z-m>0.325</z-m>
+   <x-m>-4.737</x-m>
+   <y-m>-0.002</y-m>
+   <z-m>0.285</z-m>
   </center>
  </animation>
 
@@ -926,14 +1215,14 @@
       </entry>
     </interpolation>
     <axis>
-      <x>-0.993</x>
+      <x>-0.985</x>
       <y>0.0</y>
-      <z>-0.122</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.767</x-m>
-      <y-m>-0.372</y-m>
-      <z-m>0.029</z-m>
+      <x-m>-4.774</x-m>
+      <y-m>-0.475</y-m>
+      <z-m>0.002</z-m>
     </center>
   </animation>
 <!--__________________________________ vertical speed________________________________-->
@@ -989,47 +1278,21 @@
       </entry>
     </interpolation>
     <axis>
-      <x>-90</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-6.2</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.760</x-m>
-      <y-m>-0.215</y-m>
-      <z-m>-0.039</z-m>
+      <x-m>-4.761</x-m>
+      <y-m>-0.280</y-m>
+      <z-m>-0.082</z-m>
     </center>
   </animation>
-<!--__________________________________ odometer  ______________________________________-->
+<!--__________________________________ inhg  ______________________________________-->
 <animation>
   <type>textranslate</type>
-  <object-name>odo1000</object-name>
-  <property>/instrumentation/gps/odometer</property>
-  <factor>0.0001</factor>
-  <step>1000</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-<animation>
-  <type>textranslate</type>
-  <object-name>odo100</object-name>
-  <property>/instrumentation/gps/odometer</property>
-  <factor>0.001</factor>
-  <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-<animation>
-  <type>textranslate</type>
-  <object-name>odo10</object-name>
-  <property>/instrumentation/gps/odometer</property>
+  <object-name>inhg01</object-name>
+  <property>/instrumentation/altimeter/setting-inhg</property>
   <factor>0.01</factor>
   <step>10</step>
   <axis>
@@ -1041,10 +1304,36 @@
 
 <animation>
   <type>textranslate</type>
-  <object-name>odo01</object-name>
-  <property>/instrumentation/gps/odometer</property>
+  <object-name>inhg02</object-name>
+  <property>/instrumentation/altimeter/setting-inhg</property>
   <factor>0.1</factor>
   <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>inhg03</object-name>
+  <property>/instrumentation/altimeter/setting-inhg</property>
+  <factor>1.0</factor>
+  <step>0.1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>inhg04</object-name>
+  <property>/instrumentation/altimeter/setting-inhg</property>
+  <factor>10.0</factor>
+  <step>0.01</step>
   <axis>
    <x>0</x>
    <y>1</y>
@@ -1101,14 +1390,14 @@
     <property>/instrumentation/altimeter/indicated-altitude-ft</property>
     <factor>0.36</factor>
     <axis>
-      <x>-0.993</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-0.122</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.767</x-m>
-      <y-m>-0.216</y-m>
-      <z-m>0.028</z-m>
+      <x-m>-4.776</x-m>
+      <y-m>-0.281</y-m>
+      <z-m>0.003</z-m>
     </center>
   </animation>
   
@@ -1145,14 +1434,14 @@
     <object-name>ROLLneedle</object-name>
     <property>/orientation/roll-deg</property>
     <axis>
-      <x>0.995</x>
+      <x>0.985</x>
       <y>0</y>
-      <z>0.096</z>
+      <z>0.174</z>
     </axis>
     <center>
-      <x-m>-4.768</x-m>
-      <y-m>-0.293</y-m>
-      <z-m>0.023</z-m>
+      <x-m>-4.771</x-m>
+      <y-m>-0.377</y-m>
+      <z-m>-0.003</z-m>
     </center>
   </animation>
   
@@ -1181,14 +1470,14 @@
    <object-name>CRSneedle.001</object-name>
     <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
     <axis>
-      <x>0.995</x>
+      <x>0.985</x>
       <y>0</y>
-      <z>0.096</z>
+      <z>0.174</z>
     </axis>
     <center>
-      <x-m>-4.756</x-m>
-      <y-m>-0.293</y-m>
-      <z-m>-0.091</z-m>
+      <x-m>-4.749</x-m>
+      <y-m>-0.377</y-m>
+      <z-m>-0.142</z-m>
     </center>
   </animation>
 
@@ -1198,14 +1487,14 @@
    <object-name>CRSneedle.001</object-name>
 <property>/instrumentation/nav/radials/selected-deg</property>  
     <axis>
-      <x>-0.995</x>
+      <x>0.985</x>
       <y>0</y>
-      <z>-0.096</z>
+      <z>0.174</z>
     </axis>
     <center>
-      <x-m>-4.756</x-m>
-      <y-m>-0.293</y-m>
-      <z-m>-0.091</z-m>
+      <x-m>-4.749</x-m>
+      <y-m>-0.377</y-m>
+      <z-m>-0.142</z-m>
     </center>
   </animation>
 
@@ -1274,14 +1563,14 @@
     <object-name>VORneedle</object-name>
    <property>/radios/nav/heading-deg</property>
     <axis>
-      <x>-0.995</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-0.096</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.759</x-m>
-      <y-m>-0.372</y-m>
-      <z-m>-0.041</z-m>
+      <x-m>-4.758</x-m>
+      <y-m>-0.475</y-m>
+      <z-m>-0.081</z-m>
     </center>
   </animation>
 
@@ -1290,14 +1579,14 @@
     <object-name>ADFneedle</object-name>
   <property>/instrumentation/adf/indicated-bearing-deg</property>
     <axis>
-      <x>-0.995</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-0.096</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.759</x-m>
-      <y-m>-0.372</y-m>
-      <z-m>-0.041</z-m>
+      <x-m>-4.758</x-m>
+      <y-m>-0.475</y-m>
+      <z-m>-0.081</z-m>
     </center>
   </animation>
 
@@ -1334,14 +1623,14 @@
       </entry>
     </interpolation>
     <axis>
-      <x>-80</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-10</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.771</x-m>
-      <y-m>-0.155</y-m>
-      <z-m>0.061</z-m>
+      <x-m>-4.783</x-m>
+      <y-m>-0.205</y-m>
+      <z-m>0.045</z-m>
     </center>
   </animation>
   <animation>
@@ -1375,14 +1664,14 @@
       </entry>
     </interpolation>
     <axis>
-      <x>-80</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-10</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.771</x-m>
-      <y-m>-0.107</y-m>
-      <z-m>0.061</z-m>
+      <x-m>-4.783</x-m>
+      <y-m>-0.146</y-m>
+      <z-m>0.045</z-m>
     </center>
   </animation>
   <animation>
@@ -1412,14 +1701,14 @@
       </entry>
     </interpolation>
     <axis>
-      <x>-80</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-10</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.767</x-m>
-      <y-m>-0.154</y-m>
-      <z-m>0.020</z-m>
+      <x-m>-4.774</x-m>
+      <y-m>-0.205</y-m>
+      <z-m>-0.006</z-m>
     </center>
   </animation>
   <animation>
@@ -1449,14 +1738,14 @@
       </entry>
     </interpolation>
     <axis>
-      <x>-80</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-10</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.767</x-m>
-      <y-m>-0.107</y-m>
-      <z-m>0.020</z-m>
+      <x-m>-4.774</x-m>
+      <y-m>-0.146</y-m>
+      <z-m>-0.006</z-m>
     </center>
   </animation>
   <animation>
@@ -1494,14 +1783,14 @@
       </entry>
     </interpolation>
     <axis>
-      <x>-80</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-10</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.762</x-m>
-      <y-m>-0.154</y-m>
-      <z-m>-0.022</z-m>
+      <x-m>-4.765</x-m>
+      <y-m>-0.205</y-m>
+      <z-m>-0.059</z-m>
     </center>
   </animation>
   <animation>
@@ -1539,14 +1828,14 @@
       </entry>
     </interpolation>
     <axis>
-      <x>-80</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-10</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.762</x-m>
-      <y-m>-0.107</y-m>
-      <z-m>-0.022</z-m>
+      <x-m>-4.765</x-m>
+      <y-m>-0.146</y-m>
+      <z-m>-0.059</z-m>
     </center>
   </animation>
   
@@ -1670,14 +1959,14 @@
       </entry>
     </interpolation>
     <axis>
-      <x>-80</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-10</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.758</x-m>
-      <y-m>-0.154</y-m>
-      <z-m>-0.063</z-m>
+      <x-m>-4.756</x-m>
+      <y-m>-0.205</y-m>
+      <z-m>-0.109</z-m>
     </center>
   </animation>
   <animation>
@@ -1723,14 +2012,14 @@
       </entry>
     </interpolation>
     <axis>
-      <x>-80</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-10</z>
+      <z>-0.174</z>
     </axis>
     <center>
-      <x-m>-4.758</x-m>
-      <y-m>-0.107</y-m>
-      <z-m>-0.063</z-m>
+      <x-m>-4.756</x-m>
+      <y-m>-0.146</y-m>
+      <z-m>-0.109</z-m>
     </center>
   </animation>
   
@@ -1740,14 +2029,14 @@
   <property>/sim/time/utc/day-seconds</property>
   <factor>6</factor>
     <axis>
-      <x>-0.995</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-0.096</z>
+      <z>-0.174</z>
     </axis>
   <center>
-   <x-m>-4.765</x-m>
-   <y-m>-0.430</y-m>
-   <z-m>0.008</z-m>
+   <x-m>-4.772</x-m>
+   <y-m>-0.547</y-m>
+   <z-m>-0.022</z-m>
   </center>
  </animation>
 
@@ -1757,14 +2046,14 @@
   <property>/sim/time/utc/day-seconds</property>
   <factor>0.1</factor>
     <axis>
-      <x>-0.995</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-0.096</z>
+      <z>-0.174</z>
     </axis>
   <center>
-   <x-m>-4.765</x-m>
-   <y-m>-0.430</y-m>
-   <z-m>0.008</z-m>
+   <x-m>-4.772</x-m>
+   <y-m>-0.547</y-m>
+   <z-m>-0.022</z-m>
   </center>
  </animation>
 
@@ -1774,573 +2063,23 @@
   <property>/sim/time/utc/day-seconds</property>
   <factor>0.008333</factor>
     <axis>
-      <x>-0.995</x>
+      <x>-0.985</x>
       <y>0</y>
-      <z>-0.096</z>
+      <z>-0.174</z>
     </axis>
   <center>
-   <x-m>-4.765</x-m>
-   <y-m>-0.430</y-m>
-   <z-m>0.008</z-m>
+   <x-m>-4.772</x-m>
+   <y-m>-0.547</y-m>
+   <z-m>-0.022</z-m>
   </center>
  </animation>
 
 <!-- __________________________________Radio______________________________________________ -->
 
-<!--  ______________________________________ Com  _________________________________________-->  
-   <animation>
-  <type>textranslate</type>
-    <object-name>Com1led1</object-name>
-    <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
-  <factor>0.001</factor>
-   <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>textranslate</type>
-    <object-name>Com1led2</object-name>
-    <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
-  <factor>0.01</factor>
-   <step>10</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>textranslate</type>
-    <object-name>Com1led3</object-name>
-    <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
-  <factor>0.1</factor>
-   <step>1</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-  <animation>
-  <type>textranslate</type>
-    <object-name>Com1led4</object-name>
-    <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
-  <factor>1.0</factor>
-   <step>0.100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-  <animation>
-  <type>textranslate</type>
-    <object-name>Com1led5</object-name>
-    <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
-  <factor>10.0</factor>
-   <step>0.01</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-<!--         Comm1 StdBy              -->  
-   <animation>
-  <type>textranslate</type>
-    <object-name>StdBy1led1</object-name>
-    <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
-  <factor>0.001</factor>
-   <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>textranslate</type>
-    <object-name>StdBy1led2</object-name>
-    <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
-  <factor>0.01</factor>
-   <step>10</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>textranslate</type>
-    <object-name>StdBy1led3</object-name>
-    <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
-  <factor>0.1</factor>
-   <step>1</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-  <animation>
-  <type>textranslate</type>
-    <object-name>StdBy1led4</object-name>
-    <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
-  <factor>1.000</factor>
-   <step>0.1000</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-  
-  <animation>
-  <type>textranslate</type>
-    <object-name>StdBy1led5</object-name>
-    <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
-  <factor>10.000</factor>
-   <step>0.0100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-   
-   
-   <animation>
-  <type>textranslate</type>
-    <object-name>Com2led1</object-name>
-    <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
-  <factor>0.001</factor>
-   <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>textranslate</type>
-    <object-name>Com2led2</object-name>
-    <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
-  <factor>0.01</factor>
-   <step>10</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>textranslate</type>
-    <object-name>Com2led3</object-name>
-    <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
-  <factor>0.1</factor>
-   <step>1</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-  <animation>
-  <type>textranslate</type>
-    <object-name>Com2led4</object-name>
-    <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
-  <factor>1.00</factor>
-   <step>0.100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-  
-  <animation>
-  <type>textranslate</type>
-    <object-name>Com2led5</object-name>
-    <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
-  <factor>10.00</factor>
-   <step>0.010</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-<!--         Comm2 StdBy              -->  
-   <animation>
-  <type>textranslate</type>
-    <object-name>StdBy2led1</object-name>
-    <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
-  <factor>0.001</factor>
-   <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>textranslate</type>
-    <object-name>StdBy2led2</object-name>
-    <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
-  <factor>0.01</factor>
-   <step>10</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>textranslate</type>
-    <object-name>StdBy2led3</object-name>
-    <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
-  <factor>0.1</factor>
-   <step>1</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-  <animation>
-  <type>textranslate</type>
-    <object-name>StdBy2led4</object-name>
-    <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
-  <factor>1.000</factor>
-   <step>0.1000</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
-  <animation>
-  <type>textranslate</type>
-    <object-name>StdBy2led5</object-name>
-    <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
-  <factor>10.000</factor>
-   <step>0.0100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-<!--  _______________________   Nav    _______________________________________-->  
-   
-   <!--   NAV1   -->
-   
-<animation>
-  <type>textranslate</type>
-    <object-name>Nav1led1</object-name>
-    <property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
-  <factor>0.001</factor>
-   <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>textranslate</type>
-    <object-name>Nav1led2</object-name>
-    <property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
-  <factor>0.01</factor>
-   <step>10</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>textranslate</type>
-    <object-name>Nav1led3</object-name>
-    <property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
-  <factor>0.1</factor>
-   <step>1</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-  <animation>
-  <type>textranslate</type>
-    <object-name>Nav1led4</object-name>
-    <property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
-  <factor>1.0</factor>
-   <step>0.100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-<!--         Nav1 StdBy              -->  
-   <animation>
-  <type>textranslate</type>
-    <object-name>StdByN1led1</object-name>
-    <property>/instrumentation/nav[0]/frequencies/standby-mhz</property>
-  <factor>0.001</factor>
-   <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>textranslate</type>
-    <object-name>StdByN1led2</object-name>
-    <property>/instrumentation/nav[0]/frequencies/standby-mhz</property>
-  <factor>0.01</factor>
-   <step>10</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>textranslate</type>
-    <object-name>StdByN1led3</object-name>
-    <property>/instrumentation/nav[0]/frequencies/standby-mhz</property>
-  <factor>0.1</factor>
-   <step>1</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-  <animation>
-  <type>textranslate</type>
-    <object-name>StdByN1led4</object-name>
-    <property>/instrumentation/nav[0]/frequencies/standby-mhz</property>
-  <factor>1.0</factor>
-   <step>0.100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-<!--      NAV2       -->
-<animation>
-  <type>textranslate</type>
-    <object-name>Nav2led1</object-name>
-    <property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
-  <factor>0.001</factor>
-   <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>textranslate</type>
-    <object-name>Nav2led2</object-name>
-    <property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
-  <factor>0.01</factor>
-   <step>10</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>textranslate</type>
-    <object-name>Nav2led3</object-name>
-    <property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
-  <factor>0.1</factor>
-   <step>1</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-  <animation>
-  <type>textranslate</type>
-    <object-name>Nav2led4</object-name>
-    <property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
-  <factor>1.0</factor>
-   <step>0.100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-<!--         Nav2 StdBy              -->  
-   <animation>
-  <type>textranslate</type>
-    <object-name>StdByN2led1</object-name>
-    <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
-  <factor>0.001</factor>
-   <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>textranslate</type>
-    <object-name>StdByN2led2</object-name>
-    <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
-  <factor>0.01</factor>
-   <step>10</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>textranslate</type>
-    <object-name>StdByN2led3</object-name>
-    <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
-  <factor>0.1</factor>
-   <step>1</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-  <animation>
-  <type>textranslate</type>
-    <object-name>StdByN2led4</object-name>
-    <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
-  <factor>1.0</factor>
-   <step>0.100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
+<!--  _______________________   Nav    _______________________________________-->
 <!--      ADF       -->
-<animation>
-  <type>textranslate</type>
-    <object-name>ADFled1</object-name>
-    <property>/instrumentation/adf/frequencies/selected-khz</property>
-  <factor>0.001</factor>
-   <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
 
- <animation>
-  <type>textranslate</type>
-    <object-name>ADFled2</object-name>
-    <property>/instrumentation/adf/frequencies/selected-khz</property>
-  <factor>0.01</factor>
-   <step>10</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>textranslate</type>
-    <object-name>ADFled3</object-name>
-    <property>/instrumentation/adf/frequencies/selected-khz</property>
-  <factor>0.10</factor>
-   <step>1</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
 
-<!--         ADF StdBy              -->  
-<animation>
-  <type>textranslate</type>
-    <object-name>ADFStdByled1</object-name>
-    <property>/instrumentation/adf/frequencies/standby-khz</property>
-  <factor>0.001</factor>
-   <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>textranslate</type>
-    <object-name>ADFStdByled2</object-name>
-    <property>/instrumentation/adf/frequencies/standby-khz</property>
-  <factor>0.01</factor>
-   <step>10</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>textranslate</type>
-    <object-name>ADFStdByled3</object-name>
-    <property>/instrumentation/adf/frequencies/standby-khz</property>
-  <factor>0.10</factor>
-   <step>1</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
- 
- 
 
 <!--                Altitude Setting                              -->
  <animation>
@@ -2515,56 +2254,4 @@
  </condition>
 </animation>
 
-
-
-
-
-<!-- _______________________Shadow Map___________________________--><!-- pitch -->  <animation>
-    <type>rotate</type>
-    <object-name>Shadowmap</object-name>
-    <property>/orientation/pitch-deg</property>
-    <factor>-1.0</factor>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
-    </axis>
-  </animation>
-<!-- roll -->  <animation>
-    <type>rotate</type>
-    <object-name>Shadowmap</object-name>
-    <property>/orientation/roll-deg</property>
-    <factor>1.0</factor>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
-    <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
-  </animation>
-<!-- Translate to ground level -->  <animation>
-    <type>translate</type>
-    <object-name>Shadowmap</object-name>
-    <property>/position/altitude-agl-ft</property>
-    <factor>-0.3</factor>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
 </PropertyList>

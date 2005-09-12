@@ -14,13 +14,14 @@ An awful lot of guess work here :)
 <PropertyList>
  <sim>
 
-  <description>B1900D</description>
+  <description>Beechcraft B1900D</description>
+  <status>developement</status>
+  
   <author>Syd Adams</author>
 
   <flight-model>yasim</flight-model>
   <aero>b1900d</aero>
   <fuel-fraction>0.7</fuel-fraction>
-  <aircraft type="string">/b1900d/b1900d</aircraft>
 
   <startup>
    <splash-texture>Aircraft/b1900d/b1900dsplash.rgb</splash-texture>
@@ -36,11 +37,11 @@ An awful lot of guess work here :)
     <type>lookfrom</type>
     <internal type="bool">true</internal>
     <config>
-     <x-offset-m type="double">-0.27</x-offset-m>
-     <y-offset-m type="double">0.28</y-offset-m>
-     <z-offset-m type="double">-4.20</z-offset-m>
+     <x-offset-m type="double">-0.25</x-offset-m>
+     <y-offset-m type="double">0.26</y-offset-m>
+     <z-offset-m type="double">-4.15</z-offset-m>
      <pitch-offset-deg>-12</pitch-offset-deg>
-     <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+     <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
     </config>
   </view>
 
@@ -110,7 +111,23 @@ An awful lot of guess work here :)
   <gear>
    <brake-parking>1</brake-parking>
   </gear>
- </controls>
+<engines>
+  <engine n="0">
+    <condition>0</condition>
+    <propeller-pitch>0</propeller-pitch>
+  </engine>
+  <engine n="1">
+    <condition>0</condition>
+    <propeller-pitch>0</propeller-pitch>
+  </engine>
+</engines>
+</controls>
+
+<instrumentation>
+<gps>
+  <display-mode type="int">0</display-mode>
+</gps>
+</instrumentation>
 
  <nasal>
   <b1900d>

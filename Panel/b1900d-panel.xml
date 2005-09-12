@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>B1900D Panel</name>
+ <background>Aircraft/b1900d/Panel/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>768</h>
+
+<instruments>
+   
+  <!-- radio stack -->  
+  <instrument include="comradio.xml">
+    <params>
+      <selected-mhz>/instrumentation/comm[0]/frequencies/selected-mhz</selected-mhz>
+      <standby-mhz>/instrumentation/comm[0]/frequencies/standby-mhz</standby-mhz>
+    </params>
+    <name>Com1</name>
+    <x>445</x>
+    <y>272</y>
+    <w>48</w>
+    <h>54</h>
+  </instrument>
+  
+  <instrument include="navradio.xml">
+    <params>
+      <selected-mhz>/instrumentation/nav[0]/frequencies/selected-mhz</selected-mhz>
+      <standby-mhz>/instrumentation/nav[0]/frequencies/standby-mhz</standby-mhz>
+    </params>
+    <name>Nav1</name>
+    <x>500</x>
+    <y>272</y>
+    <w>48</w>
+    <h>54</h>
+  </instrument>
+  
+
+  <instrument include="navradio.xml">
+    <params>
+      <selected-mhz>/instrumentation/nav[1]/frequencies/selected-mhz</selected-mhz>
+      <standby-mhz>/instrumentation/nav[1]/frequencies/standby-mhz</standby-mhz>
+    </params>
+    <name>Nav2</name>
+    <x>606</x>
+    <y>272</y>
+    <w>48</w>
+    <h>54</h>
+  </instrument>
+
+  <instrument include="comradio.xml">
+    <params>
+      <selected-mhz>/instrumentation/comm[1]/frequencies/selected-mhz</selected-mhz>
+      <standby-mhz>/instrumentation/comm[1]/frequencies/standby-mhz</standby-mhz>
+    </params>
+    <name>Com2</name>
+    <x>660</x>
+    <y>272</y>
+    <w>48</w>
+    <h>54</h>
+  </instrument>
+
+  <instrument include="adf-radio.xml">
+    <name>ADF</name>
+    <x>445</x>
+    <y>174</y>
+    <w>48</w>
+    <h>54</h>
+  </instrument>
+  
+  <instrument include="gps.xml">
+    <name>GPS display</name>
+    <x>615</x>
+    <y>222</y>
+    <w>110</w>
+    <h>40</h>
+  </instrument>
+
+<instrument>
+  <name>panel hotspots</name>
+  <x>512</x>
+  <y>384</y>
+  <w>1024</w>
+  <h>768</h>
+  <w-base>1024</w-base>
+  <h-base>768</h-base>
+
+ <actions> 
+
+   <!--             Course              -->
+   <action>
+     <name></name>
+     <button>0</button>
+     <x>-282</x>
+     <y>-272</y>
+     <w>8</w>
+     <h>8</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/nav/radials/selected-deg</property>
+       <step>1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name></name>
+     <button>1</button>
+     <x>-282</x>
+     <y>-272</y>
+     <w>8</w>
+     <h>8</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/nav/radials/selected-deg</property>
+       <step>5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name></name>
+     <button>0</button>
+     <x>-290</x>
+     <y>-272</y>
+     <w>8</w>
+     <h>8</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/nav/radials/selected-deg</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name></name>
+     <button>1</button>
+     <x>-290</x>
+     <y>-272</y>
+     <w>8</w>
+     <h>8</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/nav/radials/selected-deg</property>
+       <step>-5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+
+   <!--             Heading              -->
+   <action>
+     <name>small decrease</name>
+     <button>0</button>
+     <x>-213</x>
+     <y>-272</y>
+     <w>8</w>
+     <h>8</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/heading-indicator/offset-deg</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>large decrease</name>
+     <button>1</button>
+     <x>-213</x>
+     <y>-272</y>
+     <w>8</w>
+     <h>8</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/heading-indicator/offset-deg</property>
+       <step>-5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>small increase</name>
+     <button>0</button>
+     <x>-205</x>
+     <y>-272</y>
+     <w>8</w>
+     <h>8</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/heading-indicator/offset-deg</property>
+       <step>1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>large increase</name>
+     <button>1</button>
+     <x>-205</x>
+     <y>-272</y>
+     <w>8</w>
+     <h>8</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/heading-indicator/offset-deg</property>
+       <step>5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+
+   
+  <!--             Altimeter              -->  
+  
+<action>
+  <name>calibrate fine</name>
+  <button>0</button>
+  <x>-214</x>
+  <y>-124</y>
+  <w>8</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>-0.01</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>calibrate coarse</name>
+  <button>1</button>
+  <x>-214</x>
+  <y>-124</y>
+  <w>8</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>-0.1</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>calibrate fine</name>
+  <button>0</button>
+  <x>-206</x>
+  <y>-124</y>
+  <w>8</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>0.01</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>calibrate coarse</name>
+  <button>1</button>
+  <x>-206</x>
+  <y>-124</y>
+  <w>8</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>0.1</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+  
+
+<!--           Altitude Set                           -->
+  
+<action>
+  <name>reset altitude</name>
+  <button>0</button>
+  <x>-84</x>
+  <y>-158</y>
+  <w>14</w>
+  <h>14</h>
+  <binding>
+    <command>property-assign</command>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <value>0.0</value>
+  </binding>
+</action>
+
+
+<action>
+  <name>decrease altitude 100</name>
+  <button>0</button>
+  <x>-36</x>
+  <y>-166</y>
+  <w>6</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <step>-100</step>
+    <min>0</min>
+    <max>99000</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>increase altitude 100</name>
+  <button>0</button>
+  <x>-30</x>
+  <y>-166</y>
+  <w>6</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <step>100</step>
+    <min>0</min>
+    <max>99000</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+
+<action>
+  <name>decrease altitude 1000</name>
+  <button>1</button>
+  <x>-36</x>
+  <y>-166</y>
+  <w>6</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <step>-1000</step>
+    <min>0</min>
+    <max>99000</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>increase altitude 1000</name>
+  <button>1</button>
+  <x>-30</x>
+  <y>-166</y>
+  <w>6</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <step>1000</step>
+    <min>0</min>
+    <max>99000</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+
+
+
+
+
+
+
+
+
+</actions>
+
+</instrument>
+
+</instruments>
+
+</PropertyList>

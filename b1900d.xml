@@ -96,10 +96,10 @@ Flight Model improvements by Dave Martin.
  <tank x="0.00" y="2.00" z="0.0" capacity="1000"/>
 
  <gear x="6.62" y="0.00" z="-2.2" compression=".15" retract-time="5" spring="0.2" damp="1.0">
-  <control-input axis="/controls/flight/rudder" control="STEER"/>
+  <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="7"/>
-  <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+  <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
  </gear>
 
  <gear x="-0.6" y="-2.65" z="-2.3" compression=".25" retract-time="5" spring="0.3" damp="1.0">
@@ -107,7 +107,7 @@ Flight Model improvements by Dave Martin.
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="6.2"/>
-  <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
  </gear>
 
  <gear x="-0.6" y="2.65" z="-2.3" compression=".25" retract-time="5" spring="0.3" damp="1.0">
@@ -117,29 +117,6 @@ Flight Model improvements by Dave Martin.
   <control-speed control="EXTEND" transition-time="6"/>
   <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
  </gear>
-
- <propeller x="1.9" y="-2.65" z="0.0"
-            mass="400" moment="80" radius="1.3"
-            cruise-speed="270" cruise-rpm="1700"
-            cruise-power="1000" cruise-alt="20000"
-            min-rpm="1000" max-rpm="1700">
-  <turbine-engine
-            eng-power="1270" eng-rpm="1700" alt="9000"
-            flat-rating="1000"
-            min-n2="70" max-n2="100"
-            bsfc="0.40"/>
-  <actionpt x="2.23" y="-2.65" z="0.0"/>
-  <control-input axis="/controls/engines/engine[0]/throttle"
-            control="THROTTLE"/>
-  <control-input axis="/controls/engines/engine[0]/condition"
-            control="CONDLEVER"/>
-  <control-input axis="/controls/engines/engine[0]/starter"
-            control="STARTER"/>
-  <control-input axis="/controls/engines/engine[0]/propeller-pitch"
-            control="ADVANCE"/>
-  <control-input axis="/controls/engines/engine[0]/propeller-feather"
-            control="PROPFEATHER"/>
- </propeller>
 
  <propeller x="1.9" y="2.65" z="0.0"
             mass="400" moment="80" radius="1.3"
@@ -152,6 +129,29 @@ Flight Model improvements by Dave Martin.
             min-n2="70" max-n2="100"
             bsfc="0.40"/>
   <actionpt x="2.23" y="2.65" z="0.0"/>
+  <control-input axis="/controls/engines/engine[0]/throttle"
+            control="THROTTLE"/>
+  <control-input axis="/controls/engines/engine[0]/condition"
+            control="CONDLEVER"/>
+  <control-input axis="/controls/engines/engine[0]/starter"
+            control="STARTER"/>
+  <control-input axis="/controls/engines/engine[0]/propeller-pitch"
+            control="ADVANCE"/>
+  <control-input axis="/controls/engines/engine[0]/propeller-feather"
+            control="PROPFEATHER"/>
+ </propeller>
+
+ <propeller x="1.9" y="-2.65" z="0.0"
+            mass="400" moment="80" radius="1.3"
+            cruise-speed="270" cruise-rpm="1700"
+            cruise-power="1000" cruise-alt="20000"
+            min-rpm="1000" max-rpm="1700">
+  <turbine-engine
+            eng-power="1270" eng-rpm="1700" alt="9000"
+            flat-rating="1000"
+            min-n2="70" max-n2="100"
+            bsfc="0.40"/>
+  <actionpt x="2.23" y="-2.65" z="0.0"/>
   <control-input axis="/controls/engines/engine[1]/throttle"
             control="THROTTLE"/>
   <control-input axis="/controls/engines/engine[1]/condition"
