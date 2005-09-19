@@ -393,23 +393,40 @@ GPS display
 
 
  <actions>
-  <action>
-   <name>select mode</name>
-   <button>0</button>
-   <x>-42</x>
-   <y>-6</y>
-   <w>8</w>
-   <h>6</h>
-   <binding>
-    <command>property-toggle</command>
-    <property>/instrumentation/gps/display-mode</property>
-    <step>1</step>
-    <min>0</min>
-    <max>1</max>
-    <resolution>1</resolution>
-    <wrap>true</wrap>
-   </binding>
-  </action>
+   <action>
+     <name>select mode</name>
+     <button>0</button>
+     <x>-42</x>
+     <y>-6</y>
+     <w>8</w>
+     <h>6</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>/instrumentation/gps/display-mode</property>
+       <step>1</step>
+       <min>0</min>
+       <max>1</max>
+       <resolution>1</resolution>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+   
+
+   <action>
+     <name>get nearest airport</name>
+     <button>0</button>
+     <x>34</x>
+     <y>-6</y>
+     <w>8</w>
+     <h>6</h>
+     <binding>
+       <command>nasal</command>
+       <script>
+ node =props.globals.getNode("/instrumentation/gps/wp/wp[1]/get-nearest-airport", 1);
+         node.setValue(1);
+    </script>
+     </binding>
+   </action>
 
 
  </actions>

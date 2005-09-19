@@ -16,7 +16,7 @@
      </greater-than>
    </condition>
    <volume>
-     <offset>0.25</offset>
+     <offset>0.2</offset>
    </volume>
    <position>
      <x>-3</x>
@@ -32,15 +32,22 @@
     <condition>
       <greater-than>
         <property>/engines/engine[0]/rpm</property>
-        <value>500</value>
+        <value>200</value>
       </greater-than>
     </condition>
     <volume>
       <property>/engines/engine[0]/rpm</property>
-      <factor>0.1</factor>
+      <factor>0.001</factor>
       <min>0.0</min>
       <max>1.5</max>
     </volume>
+    <pitch>
+      <property>/engines/engine[0]/rpm</property>
+      <offset>0.5</offset>
+      <factor>0.0005</factor>
+      <min>0.5</min>
+      <max>1.5</max>
+    </pitch>
     <position>
       <x>-3</x>
       <y>0</y>
@@ -59,7 +66,7 @@
       </greater-than>
     </condition>
         <volume>
-          <offset>0.25</offset>
+          <offset>0.15</offset>
         </volume>
         <position>
           <x>-3</x>
@@ -79,7 +86,7 @@
       </equals>
     </condition>
     <volume>
-      <offset>0.25</offset>
+      <offset>0.2</offset>
     </volume>
     <position>
       <x>-3</x>
@@ -101,7 +108,7 @@
      </greater-than>
    </condition>
    <volume>
-     <offset>0.25</offset>
+     <offset>0.2</offset>
    </volume>
    <position>
      <x>3</x>
@@ -119,15 +126,22 @@
    <condition>
      <greater-than>
        <property>/engines/engine[1]/rpm</property>
-       <value>500</value>
+       <value>200</value>
      </greater-than>
    </condition>
    <volume>
      <property>/engines/engine[1]/rpm</property>
-     <factor>0.01</factor>
-     <min>0.1</min>
-     <max>1.0</max>
+     <factor>0.001</factor>
+     <min>0.0</min>
+     <max>1.5</max>
    </volume>
+   <pitch>
+     <property>/engines/engine[1]/rpm</property>
+     <offset>0.5</offset>
+     <factor>0.0005</factor>
+     <min>0.5</min>
+     <max>1.5</max>
+   </pitch>
    <position>
      <x>3</x>
      <y>0</y>
@@ -146,7 +160,7 @@
      </greater-than>
    </condition>
        <volume>
-         <offset>0.25</offset>
+         <offset>0.2</offset>
        </volume>
        <position>
          <x>3</x>
@@ -188,9 +202,9 @@
     </or>
    </condition>
    <volume>
-    <property>/velocities/airspeed-kt</property>
-    <type>log</type>
-    <factor>0.5</factor>
+     <property>/velocities/airspeed-kt</property>
+     <type>log</type>
+     <factor>0.5</factor>
    </volume>
   </rumble>
 
@@ -199,8 +213,11 @@
    <mode>in-transit</mode>
    <path>Sounds/gear.wav</path>
    <property>/gear/gear[0]/position-norm</property>
+   <volume>
+     <offset>0.5</offset>
+   </volume>
    <pitch>
-    <offset>0.5</offset>
+     <offset>0.3</offset>
    </pitch>
   </gear>
  

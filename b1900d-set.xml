@@ -28,7 +28,7 @@ An awful lot of guess work here :)
   </startup>
 
   <model>
-   <path>Aircraft/b1900d/Models/b1900d.xml</path>
+   <path>Aircraft/b1900d/Models/b1900d-anim.xml</path>
   </model> 
   
    

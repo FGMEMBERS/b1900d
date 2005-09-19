@@ -89,6 +89,8 @@
  <actions> 
 
    <!--             Course              -->
+<!--
+   
    <action>
      <name></name>
      <button>0</button>
@@ -156,8 +158,10 @@
        <wrap>1</wrap>
      </binding>
    </action>
+-->
 
    <!--             Heading              -->
+   <!--
    <action>
      <name>small decrease</name>
      <button>0</button>
@@ -226,7 +230,7 @@
      </binding>
    </action>
 
-   
+-->
   <!--             Altimeter              -->  
   
 <action>
@@ -384,8 +388,75 @@
   </binding>
 </action>
 
+<!--                   Analog Clock               -->
 
+<action>
+  <name>adjust hour up</name>
+  <button>1</button>
+  <x>-462</x>
+  <y>-138</y>
+  <w>10</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/clock/offset-sec</property>
+    <step>3600</step>
+    <min>0</min>
+    <max>43200</max>
+    <wrap>true</wrap>
+  </binding>
+</action>
 
+<action>
+  <name>adjust hour down</name>
+  <button>1</button>
+  <x>-472</x>
+  <y>-138</y>
+  <w>10</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/clock/offset-sec</property>
+    <step>-3600</step>
+    <min>0</min>
+    <max>43200</max>
+    <wrap>1</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>adjust minute up</name>
+  <button>0</button>
+  <x>-462</x>
+  <y>-138</y>
+  <w>10</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/clock/offset-sec</property>
+    <step>60</step>
+    <min>0</min>
+    <max>43200</max>
+    <wrap>true</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>adjust minute down</name>
+  <button>1</button>
+  <x>-472</x>
+  <y>-138</y>
+  <w>10</w>
+  <h>8</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/clock/offset-sec</property>
+    <step>60</step>
+    <min>0</min>
+    <max>43200</max>
+    <wrap>1</wrap>
+  </binding>
+</action>
 
 
 
