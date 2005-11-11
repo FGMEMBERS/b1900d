@@ -38,15 +38,15 @@
     <volume>
       <property>/engines/engine[0]/rpm</property>
       <factor>0.001</factor>
-      <min>0.0</min>
-      <max>1.5</max>
+      <min>0.2</min>
+      <max>1.0</max>
     </volume>
     <pitch>
       <property>/engines/engine[0]/rpm</property>
       <offset>0.5</offset>
       <factor>0.0005</factor>
       <min>0.5</min>
-      <max>1.5</max>
+      <max>1.0</max>
     </pitch>
     <position>
       <x>-3</x>
@@ -62,18 +62,25 @@
     <condition>
       <greater-than>
         <property>/engines/engine[0]/n2</property>
-        <value>50.995</value>
+        <value>50.0</value>
       </greater-than>
     </condition>
-        <volume>
-          <offset>0.15</offset>
-        </volume>
-        <position>
-          <x>-3</x>
-          <y>0</y>
-          <z>3</z>
-        </position>
-      </turbine0>
+    <volume>
+      <property>/engines/engine[0]/n2</property>
+      <offset>0.2</offset>
+      <factor>0.002</factor>
+    </volume>
+    <pitch>
+      <property>/engines/engine[0]/n2</property>
+      <offset>0.5</offset>
+      <factor>0.01</factor>
+    </pitch>
+    <position>
+      <x>-3</x>
+      <y>0</y>
+      <z>3</z>
+    </position>
+  </turbine0>
   
   <shutdown>
     <name>engine0 off</name>
@@ -132,8 +139,8 @@
    <volume>
      <property>/engines/engine[1]/rpm</property>
      <factor>0.001</factor>
-     <min>0.0</min>
-     <max>1.5</max>
+     <min>0.2</min>
+     <max>1.0</max>
    </volume>
    <pitch>
      <property>/engines/engine[1]/rpm</property>
@@ -159,15 +166,22 @@
        <value>50.995</value>
      </greater-than>
    </condition>
-       <volume>
-         <offset>0.2</offset>
-       </volume>
-       <position>
-         <x>3</x>
-         <y>0</y>
-         <z>3</z>
-       </position>
-     </turbine1>
+   <volume>
+     <property>/engines/engine[1]/n2</property>
+     <offset>0.2</offset>
+     <factor>0.002</factor>
+   </volume>
+   <pitch>
+     <property>/engines/engine[1]/n2</property>
+     <offset>0.5</offset>
+     <factor>0.01</factor>
+   </pitch>
+   <position>
+     <x>3</x>
+     <y>0</y>
+     <z>3</z>
+   </position>
+ </turbine1>
   
   <shutdown>
     <name>engine1 off</name>
@@ -205,6 +219,7 @@
      <property>/velocities/airspeed-kt</property>
      <type>log</type>
      <factor>0.5</factor>
+     <max>1.0</max>
    </volume>
   </rumble>
 
@@ -215,6 +230,7 @@
    <property>/gear/gear[0]/position-norm</property>
    <volume>
      <offset>0.5</offset>
+     <max>1.0</max>
    </volume>
    <pitch>
      <offset>0.3</offset>
