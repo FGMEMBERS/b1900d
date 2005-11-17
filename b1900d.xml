@@ -57,7 +57,7 @@ Flight Model improvements by Dave Martin.
 	   
 	   
  <wing x="0.0" y="0.80" z="-0.9" length ="8.0" chord ="2.8"
-      sweep="0" dihedral="7" taper="0.4"  camber ="0.1" incidence ="3.0" twist ="-4.0"><!-- incidence="4.0" twist="-4.0"  -->
+      sweep="0" dihedral="7" taper="0.4"  camber ="0.1" incidence ="-3.0" twist ="4.0"><!-- incidence="4.0" twist="-4.0"  -->
   <stall aoa="7.5" width="6" peak="1.5"/>
   <flap0 start="0" end=".57" lift="1.2" drag="1.3"/>
   <flap1 start=".57" end=".95" lift="1.7" drag="1.2"/>
