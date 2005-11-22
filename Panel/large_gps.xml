@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!--
+Honeywell Bendix/King KLN-90B GPS
+-->
+
+<PropertyList>
+
+  <name>GPS Large Display</name>
+  <background>Aircraft/b1900d/Panel/transparent-bg.rgb</background>
+  <w>1024</w>
+  <h>768</h>
+
+  <instruments>
+    <instrument include="gps.xml">
+      <name>GPS</name>
+      <x>774</x>
+      <y>686</y>
+      <w>500</w>
+      <h>166</h>
+    </instrument>
+  
+    <instrument include="gpstext.xml">
+      <name>GPStext</name>
+      <x>774</x>
+      <y>686</y>
+      <w>500</w>
+      <h>166</h>
+    </instrument>
+
+</instruments>
+
+</PropertyList>

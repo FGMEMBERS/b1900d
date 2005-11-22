@@ -5,18 +5,20 @@ Beechcraft B1900D
 
 July 2004 Syd Adams
 
-An awful lot of guess work here :)
+An lot of guess work here :)
 
 
 ************************************************************************
 -->
 
 <PropertyList>
- <sim>
 
-  <description>Beechcraft B1900D</description>
+
+  <sim>
+
+    <description>Beechcraft B1900D  (YASim) w 3d panel</description>
   <status>developement</status>
-  
+
   <author>Syd Adams</author>
 
   <flight-model>yasim</flight-model>
@@ -29,7 +31,151 @@ An awful lot of guess work here :)
 
   <model>
    <path>Aircraft/b1900d/Models/b1900d-anim.xml</path>
-  </model> 
+   <b1900d>
+       <wiper type="bool">true</wiper>
+       
+       <material>
+         <instruments>
+           <diffuse>
+             <red type="string">1.0</red>
+             <green type="string">1.0</green>
+             <blue type="string">1.0</blue>
+           </diffuse>
+           <ambient>
+             <red type="string">1.0</red>
+             <green type="string">1.0</green>
+             <blue type="string">1.0</blue>
+           </ambient>
+           <specular>
+             <red type="string">0.0</red>
+             <green type="string">0.0</green>
+             <blue type="string">0.0</blue>
+           </specular>
+           <emission>
+             <red type="string">0.9</red>
+             <green type="string">0.5</green>
+             <blue type="string">0.2</blue>
+           </emission>
+           <transparency>
+             <alpha>1.0</alpha>
+           </transparency>
+           <shininess>0</shininess>
+           <factor>0.0</factor>
+         </instruments>
+
+         <engines>
+           <diffuse>
+             <red type="string">1.0</red>
+             <green type="string">1.0</green>
+             <blue type="string">1.0</blue>
+           </diffuse>
+           <ambient>
+             <red type="string">1.0</red>
+             <green type="string">1.0</green>
+             <blue type="string">1.0</blue>
+           </ambient>
+           <specular>
+             <red type="string">0.0</red>
+             <green type="string">0.0</green>
+             <blue type="string">0.0</blue>
+           </specular>
+           <emission>
+             <red type="string">0.9</red>
+             <green type="string">0.5</green>
+             <blue type="string">0.2</blue>
+           </emission>
+           <transparency>
+             <alpha>1.0</alpha>
+           </transparency>
+           <shininess>0</shininess>
+           <factor>0.0</factor>
+         </engines>
+
+         <pfd>
+           <diffuse>
+             <red type="string">0.0</red>
+             <green type="string">0.0</green>
+             <blue type="string">0.0</blue>
+           </diffuse>
+           <ambient>
+             <red type="string">0.0</red>
+             <green type="string">0.0</green>
+             <blue type="string">0.0</blue>
+           </ambient>
+           <specular>
+             <red type="string">0.0</red>
+             <green type="string">0.0</green>
+             <blue type="string">0.0</blue>
+           </specular>
+           <emission>
+             <red type="string">1.0</red>
+             <green type="string">1.0</green>
+             <blue type="string">1.0</blue>
+           </emission>
+           <transparency>
+             <alpha>1.0</alpha>
+           </transparency>
+           <shininess>0</shininess>
+           <factor>0.0</factor>
+         </pfd>
+
+         <panel>
+           <diffuse>
+             <red type="string">1.0</red>
+             <green type="string">1.0</green>
+             <blue type="string">1.0</blue>
+           </diffuse>
+           <ambient>
+             <red type="string">1.0</red>
+             <green type="string">1.0</green>
+             <blue type="string">1.0</blue>
+           </ambient>
+           <specular>
+             <red type="string">0.0</red>
+             <green type="string">0.0</green>
+             <blue type="string">0.0</blue>
+           </specular>
+           <emission>
+             <red type="string">1.0</red>
+             <green type="string">1.0</green>
+             <blue type="string">1.0</blue>
+           </emission>
+           <transparency>
+             <alpha>1.0</alpha>
+           </transparency>
+           <shininess>0</shininess>
+           <factor>0.5</factor>
+         </panel>
+         <radiance>
+           <diffuse>
+             <red type="string">1.0</red>
+             <green type="string">1.0</green>
+             <blue type="string">1.0</blue>
+           </diffuse>
+           <ambient>
+             <red type="string">1.0</red>
+             <green type="string">1.0</green>
+             <blue type="string">1.0</blue>
+           </ambient>
+           <specular>
+             <red type="string">0.0</red>
+             <green type="string">0.0</green>
+             <blue type="string">0.0</blue>
+           </specular>
+           <emission>
+             <red type="string">0.08</red>
+             <green type="string">0.10</green>
+             <blue type="string">0.08</blue>
+           </emission>
+           <transparency>
+             <alpha>1.0</alpha>
+           </transparency>
+           <shininess>0</shininess>
+           <factor>0.2</factor>
+         </radiance>
+       </material>
+</b1900d>
+ </model>
   
    
    <view n="0">
@@ -37,18 +183,25 @@ An awful lot of guess work here :)
     <type>lookfrom</type>
     <internal type="bool">true</internal>
     <config>
-     <x-offset-m type="double">-0.25</x-offset-m>
-     <y-offset-m type="double">0.26</y-offset-m>
-     <z-offset-m type="double">-4.15</z-offset-m>
+      <target-x-offset-m type="double">-0.25</target-x-offset-m>
+      <target-y-offset-m type="double">0.26</target-y-offset-m>
+      <target-z-offset-m type="double">-4.15</target-z-offset-m>
+      <x-offset-m type="double">-0.25</x-offset-m>
+      <y-offset-m type="double">0.26</y-offset-m>
+      <z-offset-m type="double">-4.15</z-offset-m>
      <pitch-offset-deg>-12</pitch-offset-deg>
-     <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+     <default-field-of-view-deg>60.0</default-field-of-view-deg>
     </config>
   </view>
 
+
+  <current-view>
+    <field-of-view>60.0</field-of-view>
+  </current-view>
   
-   <systems>
+  <systems>
     <electrical>
-      <path>Aircraft/beech99/beech99-electrical.xml</path>
+      <path></path>
     </electrical>
   </systems>
   
@@ -60,6 +213,10 @@ An awful lot of guess work here :)
    <path>Aircraft/b1900d/autopilot.xml</path>
   </autopilot>
 
+<panel>
+    <path>Aircraft/b1900d/Panel/large_gps.xml</path>
+    <visibility>false</visibility>
+</panel>
   
   <hud>
    <enable3d>false</enable3d>
@@ -76,7 +233,16 @@ An awful lot of guess work here :)
    </key>
   </help>
 
+
  </sim>
+
+ <nasal>
+   <systems>
+     <file>Aircraft/b1900d/systems.nas</file>
+     <file>Aircraft/b1900d/b1900d-electrical.nas</file>
+   </systems>
+ </nasal>
+
 
  <!-- aircraft specific loading -->
  <yasim>
@@ -121,22 +287,36 @@ An awful lot of guess work here :)
     <propeller-pitch>0</propeller-pitch>
   </engine>
 </engines>
+<switches>
+  <master-panel type="bool">false</master-panel>
+</switches>
+<lighting>
+<ice-lights type="bool">false</ice-lights>
+<recog type="bool">false</recog>
+<engines-norm type="double">0.000</engines-norm>
+<eadi-ehsi-norm type="double">0.500</eadi-ehsi-norm>
+<panel-norm type="double">0.500</panel-norm>
+</lighting>
 </controls>
 
 <instrumentation>
 <gps>
-  <display-mode type="int">0</display-mode>
+  <serviceable>false</serviceable>
 </gps>
+<nav>
+  <slaved-to-gps>true</slaved-to-gps>
+</nav>
+<nav n="1">
+  <slaved-to-gps>true</slaved-to-gps>
+</nav>
 </instrumentation>
 
- <nasal>
-  <b1900d>
-   <script>
-    settimer(func { controls.adjMixture = controls.adjCondition }, 2);
-   </script>
-  </b1900d>
- </nasal>
+<environment>
+  <turbulence>
+    <use-cloud-turbulence>true</use-cloud-turbulence>
+  </turbulence>
+</environment>
+
+
 
 </PropertyList>
-
-

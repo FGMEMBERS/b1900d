@@ -18,6 +18,13 @@
       <standby-mhz>/instrumentation/comm[0]/frequencies/standby-mhz</standby-mhz>
     </params>
     <name>Com1</name>
+    <condition>
+      <greater-than>
+        <property>/systems/electrical/volts</property>
+        <value>0.2</value>
+      </greater-than>
+      <property>/instrumentation/comm/serviceable</property>
+    </condition>
     <x>445</x>
     <y>272</y>
     <w>48</w>
@@ -30,9 +37,16 @@
       <standby-mhz>/instrumentation/nav[0]/frequencies/standby-mhz</standby-mhz>
     </params>
     <name>Nav1</name>
+    <condition>
+      <greater-than>
+        <property>/systems/electrical/volts</property>
+        <value>0.2</value>
+      </greater-than>
+      <property>/instrumentation/nav/serviceable</property>
+    </condition>
     <x>500</x>
     <y>272</y>
-    <w>48</w>
+    <w>48</w><font></font>
     <h>54</h>
   </instrument>
   
@@ -43,6 +57,13 @@
       <standby-mhz>/instrumentation/nav[1]/frequencies/standby-mhz</standby-mhz>
     </params>
     <name>Nav2</name>
+    <condition>
+      <greater-than>
+        <property>/systems/electrical/volts</property>
+        <value>0.2</value>
+      </greater-than>
+      <property>/instrumentation/nav[1]/serviceable</property>
+    </condition>
     <x>606</x>
     <y>272</y>
     <w>48</w>
@@ -55,6 +76,13 @@
       <standby-mhz>/instrumentation/comm[1]/frequencies/standby-mhz</standby-mhz>
     </params>
     <name>Com2</name>
+    <condition>
+      <greater-than>
+        <property>/systems/electrical/volts</property>
+        <value>0.2</value>
+      </greater-than>
+      <property>/instrumentation/comm[1]/serviceable</property>
+    </condition>
     <x>660</x>
     <y>272</y>
     <w>48</w>
@@ -63,17 +91,32 @@
 
   <instrument include="adf-radio.xml">
     <name>ADF</name>
+    <condition>
+      <greater-than>
+        <property>/systems/electrical/volts</property>
+        <value>0.2</value>
+      </greater-than>
+      <property>/instrumentation/adf/serviceable</property>
+    </condition>
     <x>445</x>
     <y>174</y>
     <w>48</w>
     <h>54</h>
   </instrument>
-  
-  <instrument include="gps.xml">
-    <name>GPS display</name>
+
+  <instrument include="gpstext.xml">
+    <name>GPStext</name>
     <x>615</x>
-    <y>222</y>
-    <w>110</w>
+    <y>221</y>
+    <w>120</w>
+    <h>40</h>
+  </instrument>
+
+  <instrument include="Ap_Fd.xml">
+    <name>Autopilot/Flight Director</name>
+    <x>207</x>
+    <y>345</y>
+    <w>100</w>
     <h>40</h>
   </instrument>
 
@@ -89,13 +132,12 @@
  <actions> 
 
    <!--             Course              -->
-<!--
    
    <action>
      <name></name>
      <button>0</button>
-     <x>-282</x>
-     <y>-272</y>
+     <x>-278</x>
+     <y>-230</y>
      <w>8</w>
      <h>8</h>
      <binding>
@@ -111,8 +153,8 @@
    <action>
      <name></name>
      <button>1</button>
-     <x>-282</x>
-     <y>-272</y>
+     <x>-278</x>
+     <y>-230</y>
      <w>8</w>
      <h>8</h>
      <binding>
@@ -128,8 +170,8 @@
    <action>
      <name></name>
      <button>0</button>
-     <x>-290</x>
-     <y>-272</y>
+     <x>-286</x>
+     <y>-230</y>
      <w>8</w>
      <h>8</h>
      <binding>
@@ -145,8 +187,8 @@
    <action>
      <name></name>
      <button>1</button>
-     <x>-290</x>
-     <y>-272</y>
+     <x>-286</x>
+     <y>-230</y>
      <w>8</w>
      <h>8</h>
      <binding>
@@ -158,20 +200,18 @@
        <wrap>1</wrap>
      </binding>
    </action>
--->
 
    <!--             Heading              -->
-   <!--
    <action>
      <name>small decrease</name>
      <button>0</button>
-     <x>-213</x>
-     <y>-272</y>
+     <x>-340</x>
+     <y>-230</y>
      <w>8</w>
      <h>8</h>
      <binding>
        <command>property-adjust</command>
-       <property>/instrumentation/heading-indicator/offset-deg</property>
+       <property>/autopilot/settings/heading-bug-deg</property>
        <step>-1</step>
        <min>0</min>
        <max>360</max>
@@ -182,13 +222,13 @@
    <action>
      <name>large decrease</name>
      <button>1</button>
-     <x>-213</x>
-     <y>-272</y>
+     <x>-340</x>
+     <y>-230</y>
      <w>8</w>
      <h>8</h>
      <binding>
        <command>property-adjust</command>
-       <property>/instrumentation/heading-indicator/offset-deg</property>
+       <property>/autopilot/settings/heading-bug-deg</property>
        <step>-5</step>
        <min>0</min>
        <max>360</max>
@@ -199,13 +239,13 @@
    <action>
      <name>small increase</name>
      <button>0</button>
-     <x>-205</x>
-     <y>-272</y>
+     <x>-332</x>
+     <y>-230</y>
      <w>8</w>
      <h>8</h>
      <binding>
        <command>property-adjust</command>
-       <property>/instrumentation/heading-indicator/offset-deg</property>
+       <property>/autopilot/settings/heading-bug-deg</property>
        <step>1</step>
        <min>0</min>
        <max>360</max>
@@ -216,13 +256,13 @@
    <action>
      <name>large increase</name>
      <button>1</button>
-     <x>-205</x>
-     <y>-272</y>
+     <x>-332</x>
+     <y>-230</y>
      <w>8</w>
      <h>8</h>
      <binding>
        <command>property-adjust</command>
-       <property>/instrumentation/heading-indicator/offset-deg</property>
+       <property>/autopilot/settings/heading-bug-deg</property>
        <step>5</step>
        <min>0</min>
        <max>360</max>
@@ -230,8 +270,7 @@
      </binding>
    </action>
 
--->
-  <!--             Altimeter              -->  
+  <!--             Altimeter              -->
   
 <action>
   <name>calibrate fine</name>
@@ -457,11 +496,152 @@
     <wrap>1</wrap>
   </binding>
 </action>
+<!-- ********************* Master Switches    *************************  -->
+<action>
+  <name>Master Battery Switch</name>
+  <button>0</button>
+  <x>-478</x>
+  <y>-288</y>
+  <w>10</w>
+  <h>10</h>
+  <binding>
+    <command>property-toggle</command>
+    <property>/controls/electric/battery-switch</property>
+    <step>1</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>true</wrap>
+  </binding>
+</action>
 
+<action>
+  <name>LH Generator Switch</name>
+  <button>0</button>
+  <x>-456</x>
+  <y>-288</y>
+  <w>10</w>
+  <h>10</h>
+  <binding>
+    <command>property-toggle</command>
+    <property>/controls/electric/engine[0]/generator</property>
+    <step>1</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>true</wrap>
+  </binding>
+</action>
 
+<action>
+  <name>RH Generator Switch</name>
+  <button>0</button>
+  <x>-433</x>
+  <y>-288</y>
+  <w>10</w>
+  <h>10</h>
+  <binding>
+    <command>property-toggle</command>
+    <property>/controls/electric/engine[1]/generator</property>
+    <step>1</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>true</wrap>
+  </binding>
+</action>
 
+<action>
+  <name>Ext Power Switch</name>
+  <button>0</button>
+  <x>-466</x>
+  <y>-256</y>
+  <w>10</w>
+  <h>10</h>
+  <binding>
+    <command>property-toggle</command>
+    <property>/controls/electric/external-power</property>
+    <step>1</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>true</wrap>
+  </binding>
+</action>
 
+<action>
+  <name>Avoinics Switch</name>
+  <button>0</button>
+  <x>-480</x>
+  <y>-324</y>
+  <w>10</w>
+  <h>10</h>
+  <binding>
+    <command>property-toggle</command>
+    <property>/controls/switches/master-avionics</property>
+    <step>1</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>true</wrap>
+  </binding>
+</action>
 
+<!--             EADI/EHSI dimmer switch              -->
+<action>
+  <name>EADI increase</name>
+  <button>0</button>
+  <x>-397</x>
+  <y>-228</y>
+  <w>10</w>
+  <h>12</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/lighting/eadi-ehsi-norm</property>
+    <step>0.05</step>
+    <min>0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+<action>
+  <name>EADI decrease</name>
+  <button>0</button>
+  <x>-407</x>
+  <y>-228</y>
+  <w>10</w>
+  <h>12</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/lighting/eadi-ehsi-norm</property>
+    <step>-0.05</step>
+    <min>0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<!-- ********************* GPS Mode Switches    *************************  -->
+<action>
+  <name>GPS Approach On/Off</name>
+  <button>0</button>
+  <x>-234</x>
+  <y>-48</y>
+  <w>12</w>
+  <h>12</h>
+  <binding>
+    <command>nasal</command>
+<script>systems.GpsAppr()</script>
+  </binding>
+</action>
+
+<action>
+  <name>GPS Course On/Off</name>
+  <button>0</button>
+  <x>-220</x>
+  <y>-48</y>
+  <w>12</w>
+  <h>12</h>
+  <binding>
+    <command>nasal</command>
+<script>systems.GpsCrs()</script>
+  </binding>
+</action>
 
 
 </actions>

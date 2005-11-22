@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>B1900D Overhead Switches</name>
+ <background>Aircraft/b1900d/Panel/transparent-bg.rgb</background>
+ <w>512</w>
+ <h>384</h>
+
+<instruments>
+<instrument>
+  <name>panel hotspots</name>
+  <x>256</x>
+  <y>192</y>
+  <w>512</w>
+  <h>384</h>
+  <w-base>512</w-base>
+  <h-base>384</h-base>
+
+ <actions> 
+
+   <action>
+     <name>Master Panel Switch</name>
+     <button>0</button>
+     <x>-230</x>
+     <y>30</y>
+     <w>20</w>
+     <h>30</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>/controls/switches/master-panel</property>
+       <step>1</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+
+   <action>
+     <name>Left Landing Light</name>
+     <button>0</button>
+     <x>-218</x>
+     <y>-16</y>
+     <w>10</w>
+     <h>16</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>/controls/switches/landing-light[0]</property>
+       <step>1</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+
+   <action>
+     <name>Right Landing Light</name>
+     <button>0</button>
+     <x>-193</x>
+     <y>-16</y>
+     <w>10</w>
+     <h>16</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>/controls/switches/landing-light[1]</property>
+       <step>1</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+
+   <action>
+     <name>Taxi Lights</name>
+     <button>0</button>
+     <x>-168</x>
+     <y>-16</y>
+     <w>10</w>
+     <h>16</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>/controls/switches/taxi-lights</property>
+       <step>1</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+ 
+   <action>
+     <name>Ice Lights</name>
+     <button>0</button>
+     <x>-142</x>
+     <y>-16</y>
+     <w>10</w>
+     <h>16</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>/controls/switches/ice-light</property>
+       <step>1</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+ 
+   <action>
+     <name>Nav Lights</name>
+     <button>0</button>
+     <x>-113</x>
+     <y>-16</y>
+     <w>10</w>
+     <h>16</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>/controls/switches/nav-lights</property>
+       <step>1</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+
+   <action>
+     <name>Beacon</name>
+     <button>0</button>
+     <x>-87</x>
+     <y>-16</y>
+     <w>10</w>
+     <h>16</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>/controls/switches/beacon</property>
+       <step>1</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+
+   <action>
+     <name>Strobe</name>
+     <button>0</button>
+     <x>-58</x>
+     <y>-16</y>
+     <w>10</w>
+     <h>16</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>/controls/switches/strobe</property>
+       <step>1</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+
+   <action>
+     <name>Recog Lights</name>
+     <button>0</button>
+     <x>-0</x>
+     <y>-16</y>
+     <w>10</w>
+     <h>16</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>/controls/switches/recog</property>
+       <step>1</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+
+   <action>
+     <name>Tail Flood Lights</name>
+     <button>0</button>
+     <x>28</x>
+     <y>-16</y>
+     <w>10</w>
+     <h>16</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>/controls/switches/logo</property>
+       <step>1</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+
+   <action>
+     <name>Instrument Lights Dimmer decrease</name>
+     <button>0</button>
+     <x>-188</x>
+     <y>40</y>
+     <w>30</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/lighting/instruments-norm</property>
+       <step>-0.05</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+   <action>
+     <name>Instrument Lights Dimmer increase</name>
+     <button>0</button>
+     <x>-188</x>
+     <y>20</y>
+     <w>30</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/lighting/instruments-norm</property>
+       <step>0.05</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>Engine Lights Dimmer decrease</name>
+     <button>0</button>
+     <x>-140</x>
+     <y>40</y>
+     <w>30</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/lighting/engines-norm</property>
+       <step>-0.05</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+   <action>
+     <name>Engine Lights Dimmer increase</name>
+     <button>0</button>
+     <x>-140</x>
+     <y>20</y>
+     <w>30</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/lighting/engines-norm</property>
+       <step>0.05</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+
+   <action>
+     <name>Panel Lights Dimmer decrease</name>
+     <button>0</button>
+     <x>90</x>
+     <y>40</y>
+     <w>30</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/lighting/panel-norm</property>
+       <step>-0.05</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+   <action>
+     <name>Panel Lights Dimmer increase</name>
+     <button>0</button>
+     <x>90</x>
+     <y>20</y>
+     <w>30</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/lighting/panel-norm</property>
+       <step>0.05</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+
+   
+ </actions>
+</instrument>
+</instruments>
+
+</PropertyList>

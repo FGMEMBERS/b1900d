@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+ <name>Autopilot/FlightDirector</name>
+ <w-base>100</w-base>
+ <h-base>40</h-base>
+
+ <layers>
+
+ </layers>
+
+ <actions>
+ 
+  <action>
+    <name>Heading Toggle</name>
+    <button>0</button>
+    <x>-42</x>
+    <y>-4</y>
+    <w>12</w>
+    <h>6</h>
+    <binding>
+    <command>nasal</command>
+   <script>
+     node = props.globals.getNode("/autopilot/locks/heading", 1);
+     if ( node.getValue() == "dg-heading-hold" ) {
+       node.setValue( "" );
+     } else {
+       node.setValue( "dg-heading-hold" );
+     }
+   </script>
+    </binding>
+  </action>
+
+ <action>
+    <name>Altitude Toggle</name>
+    <button>0</button>
+    <x>-42</x>
+    <y>-16</y>
+    <w>12</w>
+    <h>6</h>
+    <binding>
+    <command>nasal</command>
+   <script>
+     node = props.globals.getNode("/autopilot/locks/altitude", 1);
+     if ( node.getValue() == "altitude-hold" ) {
+       node.setValue( "" );
+     } else {
+       node.setValue( "altitude-hold" );
+     }
+   </script>
+    </binding>
+  </action>
+
+  <action>
+    <name>Glideslope Toggle</name>
+    <button>0</button>
+    <x>-9</x>
+    <y>-4</y>
+    <w>12</w>
+    <h>6</h>
+    <binding>
+   <command>nasal</command>
+   <script>
+     node = props.globals.getNode("/autopilot/locks/altitude", 1);
+     if ( node.getValue() == "gs1-hold" ) {
+       node.setValue( "" );
+     } else {
+       node.setValue( "gs1-hold" );
+     }
+   </script>
+    </binding>
+  </action>
+
+
+  <action>
+    <name>Nav1 Toggle</name>
+    <button>0</button>
+    <x>-25</x>
+    <y>-4</y>
+    <w>12</w>
+    <h>6</h>
+    <binding>
+   <command>nasal</command>
+   <script>
+     node = props.globals.getNode("/autopilot/locks/heading", 1);
+     if ( node.getValue() == "nav1-hold" ) {
+       node.setValue( "" );
+     } else {
+       node.setValue( "nav1-hold" );
+     }
+   </script>
+    </binding>
+  </action> 
+
+  <action>
+    <name>Pitch Toggle</name>
+    <button>0</button>
+    <x>-9</x>
+    <y>-16</y>
+    <w>12</w>
+    <h>6</h>
+    <binding>
+   <command>nasal</command>
+   <script>
+     node = props.globals.getNode("/autopilot/locks/altitude", 1);
+     if ( node.getValue() == "pitch-hold" ) {
+       node.setValue( "" );
+     } else {
+       node.setValue( "pitch-hold" );
+       pitch = props.globals.getNode("/autopilot/settings/target-pitch-deg", 1);
+       pitch.setValue( getprop("/orientation/pitch-deg") );
+     }
+   </script>
+    </binding>
+  </action> 
+ 
+  <action>
+    <name>Throttle Toggle</name>
+    <button>0</button>
+    <x>7</x>
+    <y>-16</y>
+    <w>12</w>
+    <h>6</h>
+    <binding>
+    <command>nasal</command>
+   <script>
+     node = props.globals.getNode("/autopilot/locks/speed", 1);
+     if ( node.getValue() == "speed-with-throttle" ) {
+       node.setValue( "" );
+     } else {
+       node.setValue( "speed-with-throttle" );
+     }
+   </script>
+    </binding>
+  </action> 
+
+
+
+
+
+
+
+ </actions>
+
+</PropertyList>
