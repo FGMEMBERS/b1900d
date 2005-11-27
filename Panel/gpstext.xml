@@ -435,7 +435,7 @@ TK      </text>
     
     <chunk>
       <type>number-value</type>
-      <property>/instrumentation/gps/indicated-track_magnetic-deg</property>
+      <property>/instrumentation/gps/indicated-track-magnetic-deg</property>
       <format>%03.0f</format>
     </chunk>
     
