@@ -6,7 +6,7 @@ Flight Model improvements by Dave Martin.
 -->
 <airplane mass="10500">
 
- <approach speed="105" aoa="5" fuel="0.2">
+ <approach speed="105" aoa="5" fuel="0.8">
   <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
