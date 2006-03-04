@@ -459,6 +459,9 @@ avionics_bus_1 = func() {
     # Avionics Fan Power
     setprop("/systems/electrical/outputs/avionics-fan", bus_volts);
     
+    # MK VIII Power
+    setprop("/systems/electrical/outputs/mk-viii", bus_volts);
+
     # GPS Power
     setprop("/systems/electrical/outputs/gps", bus_volts);
   

@@ -29,6 +29,17 @@ An lot of guess work here :)
    <splash-texture>Aircraft/b1900d/b1900dsplash.rgb</splash-texture>
   </startup>
 
+  <mk-viii>
+    <assemblies>
+      <emission>
+        <red alias="/sim/model/b1900d/material/instruments/emission/red"/>
+        <green alias="/sim/model/b1900d/material/instruments/emission/green"/>
+        <blue alias="/sim/model/b1900d/material/instruments/emission/blue"/>
+        <factor alias="/sim/model/b1900d/material/instruments/factor"/>
+      </emission>
+    </assemblies>
+  </mk-viii>
+
   <model>
    <path>Aircraft/b1900d/Models/b1900d-anim.xml</path>
    <b1900d>
@@ -309,6 +320,18 @@ An lot of guess work here :)
 <nav n="1">
   <slaved-to-gps>true</slaved-to-gps>
 </nav>
+<mk-viii>
+ <serviceable>true</serviceable>
+ <configuration-module>
+  <category-1>1</category-1>	<!-- GA Fast, 150' Mode 4B -->
+ </configuration-module>
+ <inputs>
+  <arinc429>
+   <decision-height-ncd>false</decision-height-ncd>
+   <decision-height>200</decision-height>
+  </arinc429>
+ </inputs>
+</mk-viii>
 </instrumentation>
 
 <environment>
