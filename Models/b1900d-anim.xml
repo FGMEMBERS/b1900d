@@ -2570,47 +2570,6 @@
       <z-m>-0.088</z-m>
     </center>
 </animation>
-<!--                  GPWS                    -->
-<animation>
-  <type>select</type>
-  <object-name>BelowGsOn</object-name>
-  <condition>
-<and>
-    <greater-than>
-      <property>/instrumentation/nav[0]/gs-needle-deflection</property>
-      <value>1.3</value>
-    </greater-than>
-    <less-than>
-      <property>/position/altitude-agl-ft</property>
-      <value>1000.0</value>
-    </less-than>
-  </and>
-  </condition>
-</animation>
-
-<animation>
-  <type>select</type>
-  <object-name>GPWSon</object-name>
-  <condition>
-        <less-than>
-          <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-          <value>180.0</value>
-        </less-than>
-        <less-than>
-          <property>/position/altitude-agl-ft</property>
-          <value>1000.0</value>
-        </less-than>
-  <less-than>
-    <property>/gear/gear/position-norm</property>
-    <value>1</value>
-  </less-than>
-  <equals>
-    <property>/surface-positions/flap-pos-norm</property>
-    <value>0.0</value>
-  </equals>
-    </condition>
-</animation>
-
 
 <!--__________________________________ airspeed ________________________________-->
 
