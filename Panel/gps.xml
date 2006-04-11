@@ -7,34 +7,35 @@ Honeywell Bendix/King KLN-90B GPS
 <PropertyList>
 
   <name>KLN-90B</name>
-  <w-base>512</w-base>
-  <h-base>176</h-base>
+  <w-base>144</w-base>
+  <h-base>48</h-base>
 
 
  <layers>
-   <layer>
-     <name>bezel</name>
-     <texture>
-       <path>Aircraft/b1900d/Models/gps.rgb</path>
-       <x1>0.0</x1>
-       <y1>0.3</y1>
-       <x2>1.0</x2>
-       <y2>1.0</y2>
-     </texture>
-     <w>512</w>
-     <h>176</h>
-   </layer>
 </layers>
 
 <actions>
 
+<!--
+  <action>
+    <name>bezel outline</name>
+    <button>0</button>
+    <x>-72</x>
+    <y>-24</y>
+    <w>144</w>
+    <h>48</h>
+    <binding>
+    </binding>
+  </action>
+-->
+
   <action>
     <name>select left mode down</name>
-    <button>0</button>
-    <x>-225</x>
-    <y>-52</y>
+    <button>1</button>
+    <x>-63</x>
+    <y>-21</y>
     <w>18</w>
-    <h>25</h>
+    <h>10</h>
     <binding>
       <command>nasal</command>
       <script>systems.lh_menu_update(1)</script>
@@ -43,11 +44,11 @@ Honeywell Bendix/King KLN-90B GPS
    
   <action>
     <name>select left mode up</name>
-    <button>0</button>
-    <x>-181</x>
-    <y>-52</y>
+    <button>1</button>
+    <x>-63</x>
+    <y>-12</y>
     <w>18</w>
-    <h>25</h>
+    <h>10</h>
     <binding>
       <command>nasal</command>
       <script>systems.lh_menu_update(2)</script>
@@ -57,10 +58,10 @@ Honeywell Bendix/King KLN-90B GPS
   <action>
     <name>select left mode down fine</name>
     <button>0</button>
-    <x>-207</x>
-    <y>-52</y>
-    <w>13</w>
-    <h>25</h>
+    <x>-63</x>
+    <y>-21</y>
+    <w>18</w>
+    <h>10</h>
     <binding>
       <command>nasal</command>
       <script>systems.lh_menu_update(3)</script>
@@ -70,10 +71,10 @@ Honeywell Bendix/King KLN-90B GPS
   <action>
     <name>select left mode up fine </name>
     <button>0</button>
-    <x>-194</x>
-    <y>-52</y>
-    <w>13</w>
-    <h>25</h>
+    <x>-63</x>
+    <y>-12</y>
+    <w>18</w>
+    <h>10</h>
     <binding>
       <command>nasal</command>
       <script>systems.lh_menu_update(4)</script>
@@ -83,11 +84,11 @@ Honeywell Bendix/King KLN-90B GPS
    
   <action>
     <name>select right mode down</name>
-    <button>0</button>
-    <x>158</x>
-    <y>-52</y>
+    <button>1</button>
+    <x>44</x>
+    <y>-21</y>
     <w>18</w>
-    <h>25</h>
+    <h>10</h>
     <binding>
       <command>nasal</command>
       <script>systems.rh_menu_update(1)</script>
@@ -96,11 +97,11 @@ Honeywell Bendix/King KLN-90B GPS
    
   <action>
     <name>select right mode up</name>
-    <button>0</button>
-    <x>202</x>
-    <y>-52</y>
+    <button>1</button>
+    <x>44</x>
+    <y>-12</y>
     <w>18</w>
-    <h>25</h>
+    <h>10</h>
     <binding>
       <command>nasal</command>
       <script>systems.rh_menu_update(2)</script>
@@ -110,10 +111,10 @@ Honeywell Bendix/King KLN-90B GPS
   <action>
     <name>select right mode down fine</name>
     <button>0</button>
-    <x>176</x>
-    <y>-52</y>
-    <w>13</w>
-    <h>25</h>
+    <x>44</x>
+    <y>-21</y>
+    <w>18</w>
+    <h>10</h>
     <binding>
       <command>nasal</command>
       <script>systems.rh_menu_update(3)</script>
@@ -123,10 +124,10 @@ Honeywell Bendix/King KLN-90B GPS
   <action>
     <name>select right mode up fine </name>
     <button>0</button>
-    <x>189</x>
-    <y>-52</y>
-    <w>13</w>
-    <h>25</h>
+    <x>44</x>
+    <y>-12</y>
+    <w>18</w>
+    <h>10</h>
     <binding>
       <command>nasal</command>
       <script>systems.rh_menu_update(4)</script>
@@ -136,10 +137,10 @@ Honeywell Bendix/King KLN-90B GPS
    <action>
      <name>get nearest airport</name>
      <button>0</button>
-     <x>167</x>
-     <y>-2</y>
-     <w>44</w>
-     <h>32</h>
+     <x>48</x>
+     <y>0</y>
+     <w>10</w>
+     <h>7</h>
      <binding>
        <command>nasal</command>
        <script>
@@ -152,10 +153,10 @@ Honeywell Bendix/King KLN-90B GPS
      <action>
        <name>power on-off</name>
        <button>0</button>
-       <x>177</x>
-       <y>41</y>
-       <w>28</w>
-       <h>28</h>
+       <x>50</x>
+       <y>10</y>
+       <w>8</w>
+       <h>8</h>
        <binding>
          <command>nasal</command>
          <script>systems.gpspower()</script>
@@ -166,10 +167,10 @@ Honeywell Bendix/King KLN-90B GPS
      <action>
        <name>enter button</name>
        <button>0</button>
-       <x>90</x>
-       <y>-71</y>
-       <w>34</w>
-       <h>20</h>
+       <x>25</x>
+       <y>-20</y>
+       <w>10</w>
+       <h>7</h>
        <binding>
          <command>nasal</command>
          <script></script>
@@ -179,10 +180,10 @@ Honeywell Bendix/King KLN-90B GPS
      <action>
        <name>clr button</name>
        <button>0</button>
-       <x>35</x>
-       <y>-71</y>
-       <w>34</w>
-       <h>20</h>
+       <x>10</x>
+       <y>-20</y>
+       <w>10</w>
+       <h>7</h>
        <binding>
          <command>nasal</command>
          <script></script>
@@ -192,10 +193,10 @@ Honeywell Bendix/King KLN-90B GPS
      <action>
        <name>direct_to button</name>
        <button>0</button>
-       <x>-19</x>
-       <y>-71</y>
-       <w>34</w>
-       <h>20</h>
+       <x>-6</x>
+       <y>-20</y>
+       <w>10</w>
+       <h>7</h>
        <binding>
          <command>nasal</command>
          <script>systems.direct_to()</script>
@@ -205,10 +206,10 @@ Honeywell Bendix/King KLN-90B GPS
      <action>
        <name>alt button</name>
        <button>0</button>
-       <x>-75</x>
-       <y>-71</y>
-       <w>34</w>
-       <h>20</h>
+       <x>-21</x>
+       <y>-20</y>
+       <w>10</w>
+       <h>7</h>
        <binding>
          <command>nasal</command>
          <script></script>
@@ -218,10 +219,10 @@ Honeywell Bendix/King KLN-90B GPS
      <action>
        <name>msg button</name>
        <button>0</button>
-       <x>-128</x>
-       <y>-71</y>
-       <w>34</w>
-       <h>20</h>
+       <x>-36</x>
+       <y>-20</y>
+       <w>10</w>
+       <h>7</h>
        <binding>
          <command>nasal</command>
          <script></script>

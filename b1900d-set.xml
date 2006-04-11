@@ -19,11 +19,13 @@ An lot of guess work here :)
     <description>Beechcraft B1900D  (YASim) w 3d panel</description>
   <status>developement</status>
 
-  <author>Syd Adams</author>
+  <author>Syd Adams (3d model/FDM)
+  - Jean-Yves Lefort (MKVIII gpws)
+   </author>
 
   <flight-model>yasim</flight-model>
   <aero>b1900d</aero>
-  <fuel-fraction>0.7</fuel-fraction>
+  <fuel-fraction>0.8</fuel-fraction>
 
   <startup>
    <splash-texture>Aircraft/b1900d/b1900dsplash.rgb</splash-texture>
@@ -45,7 +47,7 @@ An lot of guess work here :)
    <b1900d>
        <wiper type="bool">true</wiper>
        
-       <material>
+             <material>
          <instruments>
            <diffuse>
              <red type="string">1.0</red>
@@ -73,118 +75,7 @@ An lot of guess work here :)
            <shininess>0</shininess>
            <factor>0.0</factor>
          </instruments>
-
-         <engines>
-           <diffuse>
-             <red type="string">1.0</red>
-             <green type="string">1.0</green>
-             <blue type="string">1.0</blue>
-           </diffuse>
-           <ambient>
-             <red type="string">1.0</red>
-             <green type="string">1.0</green>
-             <blue type="string">1.0</blue>
-           </ambient>
-           <specular>
-             <red type="string">0.0</red>
-             <green type="string">0.0</green>
-             <blue type="string">0.0</blue>
-           </specular>
-           <emission>
-             <red type="string">0.9</red>
-             <green type="string">0.5</green>
-             <blue type="string">0.2</blue>
-           </emission>
-           <transparency>
-             <alpha>1.0</alpha>
-           </transparency>
-           <shininess>0</shininess>
-           <factor>0.0</factor>
-         </engines>
-
-         <pfd>
-           <diffuse>
-             <red type="string">0.0</red>
-             <green type="string">0.0</green>
-             <blue type="string">0.0</blue>
-           </diffuse>
-           <ambient>
-             <red type="string">0.0</red>
-             <green type="string">0.0</green>
-             <blue type="string">0.0</blue>
-           </ambient>
-           <specular>
-             <red type="string">0.0</red>
-             <green type="string">0.0</green>
-             <blue type="string">0.0</blue>
-           </specular>
-           <emission>
-             <red type="string">1.0</red>
-             <green type="string">1.0</green>
-             <blue type="string">1.0</blue>
-           </emission>
-           <transparency>
-             <alpha>1.0</alpha>
-           </transparency>
-           <shininess>0</shininess>
-           <factor>0.0</factor>
-         </pfd>
-
-         <panel>
-           <diffuse>
-             <red type="string">1.0</red>
-             <green type="string">1.0</green>
-             <blue type="string">1.0</blue>
-           </diffuse>
-           <ambient>
-             <red type="string">1.0</red>
-             <green type="string">1.0</green>
-             <blue type="string">1.0</blue>
-           </ambient>
-           <specular>
-             <red type="string">0.0</red>
-             <green type="string">0.0</green>
-             <blue type="string">0.0</blue>
-           </specular>
-           <emission>
-             <red type="string">1.0</red>
-             <green type="string">1.0</green>
-             <blue type="string">1.0</blue>
-           </emission>
-           <transparency>
-             <alpha>1.0</alpha>
-           </transparency>
-           <shininess>0</shininess>
-           <factor>0.5</factor>
-         </panel>
-         <radiance>
-           <diffuse>
-             <red type="string">1.0</red>
-             <green type="string">1.0</green>
-             <blue type="string">1.0</blue>
-           </diffuse>
-           <ambient>
-             <red type="string">1.0</red>
-             <green type="string">1.0</green>
-             <blue type="string">1.0</blue>
-           </ambient>
-           <specular>
-             <red type="string">0.0</red>
-             <green type="string">0.0</green>
-             <blue type="string">0.0</blue>
-           </specular>
-           <emission>
-             <red type="string">0.08</red>
-             <green type="string">0.10</green>
-             <blue type="string">0.08</blue>
-           </emission>
-           <transparency>
-             <alpha>1.0</alpha>
-           </transparency>
-           <shininess>0</shininess>
-           <factor>0.2</factor>
-         </radiance>
-       </material>
+</material> 
 </b1900d>
  </model>
   
@@ -214,20 +105,36 @@ An lot of guess work here :)
     <electrical>
       <path></path>
     </electrical>
+  <autopilot>
+   <path>Aircraft/b1900d/b1900d-autopilot.xml</path>
+  </autopilot>
   </systems>
   
   <sound>
    <path>Aircraft/b1900d/b1900d-sound.xml</path>
   </sound>
 
-  <autopilot>
-   <path>Aircraft/b1900d/autopilot.xml</path>
-  </autopilot>
 
+<!-- uncomment this for popup gps 
 <panel>
     <path>Aircraft/b1900d/Panel/large_gps.xml</path>
     <visibility>false</visibility>
 </panel>
+-->
+
+<!--  comment this out if popup gps is enabled -->
+<panel>
+    <path>Aircraft/beech99/beech99-panel.xml</path>
+    <visibility>false</visibility>
+</panel>
+<!-- ******************************************-->
+  <flaps>
+   <setting>0.000</setting>
+   <setting>0.25</setting> 
+   <setting>0.50</setting> 
+   <setting>0.75</setting> 
+   <setting>1.000</setting> 
+  </flaps>
   
   <hud>
    <enable3d>false</enable3d>
@@ -239,18 +146,29 @@ An lot of guess work here :)
   <help>
    <title>Beechcraft B1900D</title>
    <key>
-    <name>m/M</name>
-    <desc>increase/decrease condition lever</desc>
+   <name>CTRL-A</name>
+   <desc>Toggle autopilot on/off</desc>
    </key>
+   <line></line>
+   <text>
+   Autopilot modes are selected with the FlightDirector:
+   Autopilot on with no flightdirector modes selected
+   defaults to Wing-Level;
+   
+   
+   </text>
   </help>
-
 
  </sim>
 
  <nasal>
+     <b1900d>
+       <script>settimer(func {gui.menuEnable("autopilot", 0)}, 1)</script>
+     </b1900d>
    <systems>
-     <file>Aircraft/b1900d/systems.nas</file>
-     <file>Aircraft/b1900d/b1900d-electrical.nas</file>
+     <file>Aircraft/b1900d/Nasal/systems.nas</file>
+     <file>Aircraft/b1900d/Nasal/b1900d-electrical.nas</file>
+     <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
    </systems>
  </nasal>
 
@@ -283,11 +201,21 @@ An lot of guess work here :)
   
  </yasim>
 
-  
+<!--   power / engines off 
+
  <controls>
   <gear>
    <brake-parking>1</brake-parking>
   </gear>
+ <electric>
+ <battery-switch>false</battery-switch>
+ <engine n="0">
+ <generator>false</generator>
+ </engine>
+ <engine n="1">
+ <generator>false</generator>
+ </engine>
+ </electric>
 <engines>
   <engine n="0">
     <condition>0</condition>
@@ -300,6 +228,7 @@ An lot of guess work here :)
 </engines>
 <switches>
   <master-panel type="bool">false</master-panel>
+ <master-avionics>false</master-avionics>
 </switches>
 <lighting>
 <ice-lights type="bool">false</ice-lights>
@@ -310,15 +239,58 @@ An lot of guess work here :)
 </lighting>
 </controls>
 
+-->
+<!--   power / engines on  -->
+ <controls>
+ <electric>
+ <battery-switch>true</battery-switch>
+ <engine n="0">
+ <generator>true</generator>
+ </engine>
+ <engine n="1">
+ <generator>true</generator>
+ </engine>
+ </electric>
+  <gear>
+   <brake-parking>1</brake-parking>
+  </gear>
+<engines>
+  <engine n="0">
+    <condition>1</condition>
+    <propeller-pitch>1</propeller-pitch>
+  </engine>
+  <engine n="1">
+    <condition>1</condition>
+    <propeller-pitch>1</propeller-pitch>
+  </engine>
+</engines>
+<switches>
+  <master-panel type="bool">true</master-panel>
+ <master-avionics type="bool">true</master-avionics>
+</switches>
+<lighting>
+<ice-lights type="bool">false</ice-lights>
+<recog type="bool">false</recog>
+<engines-norm type="double">0.500</engines-norm>
+<instruments-norm type="double">0.500</instruments-norm>
+<eadi-ehsi-norm type="double">0.800</eadi-ehsi-norm>
+<panel-norm type="double">0.500</panel-norm>
+</lighting>
+</controls>
+
+
+
+
+
 <instrumentation>
 <gps>
-  <serviceable>false</serviceable>
+ <serviceable>true</serviceable> 
 </gps>
 <nav>
-  <slaved-to-gps>true</slaved-to-gps>
+  <slaved-to-gps>false</slaved-to-gps>
 </nav>
 <nav n="1">
-  <slaved-to-gps>true</slaved-to-gps>
+  <slaved-to-gps>false</slaved-to-gps>
 </nav>
 <mk-viii>
  <serviceable>true</serviceable>
@@ -340,6 +312,17 @@ An lot of guess work here :)
   </turbulence>
 </environment>
 
-
+<input>
+<keyboard>
+ <key n="1">
+  <name>Ctrl-A</name>
+  <desc>Toggle autopilot</desc>
+  <binding>
+   <command>property-toggle</command>
+   <property>/instrumentation/flightdirector/autopilot-on</property>
+  </binding>
+ </key>
+</keyboard>
+</input>
 
 </PropertyList>

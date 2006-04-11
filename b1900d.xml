@@ -2,13 +2,37 @@
 YASIM flight model for the Beechcraft B1900D.
 Jan 2005 by Syd Adams.
 
-Flight Model improvements by Dave Martin.
+
+
+
+SPECS:
+
+Height: 4.72m
+Length: 17.63
+Wing span: 17.67
+Max level spd: 272 kts
+Max TO weight: 16,950 lbs
+
+Max cruise spd (15000 lbs)
+8000 ft : 272 kt
+16,000  : 283 kt
+25,000  : 274 kt
+
+Unstick spd - T/O flap : 105 IAS
+Approach spd max weight: 117 kt
+
+Stall spd - max TO weight:
+Wheels/Flaps up : 101 kt
+Wheels down TO flap: 90 kt
+Wheels/Flaps down Max Landing weight: 84 kt
+	      		
 -->
+
 <airplane mass="10500">
 
- <approach speed="105" aoa="5" fuel="0.8">
-  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
-  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
+ <approach speed="117" aoa="6" fuel="0.8">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.25"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.25"/>
   <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
   <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
   <control-setting axis="/controls/engines/engine[0]/propeller-pitch"
@@ -19,7 +43,7 @@ Flight Model improvements by Dave Martin.
   <control-setting axis="/controls/gear/gear-down" value="1"/>
  </approach>
 
- <cruise speed="270" alt="25000" fuel="0.8"> 
+ <cruise speed="274" alt="25000" fuel="0.8"> 
   <control-setting axis="/controls/flight/elevator-trim" value="0.0"/>
   <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
   <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
@@ -44,24 +68,23 @@ Flight Model improvements by Dave Martin.
  <fuselage ax="-4.0"  ay="0" az="0" bx="-9.5" by="0" bz="0"
            width="1.5" taper="0" midpoint="0.0"/>
 
- <!--
-
-<fuselage ax="2.5"  ay="-2.8" az="-0.5" bx="-1.0" by="-2.80" bz="-1.0"
-           width="1.0" taper="0" midpoint="0.5"/>
-<fuselage ax="2.5"  ay="2.8" az="-0.5" bx="-1.0" by="2.80" bz="-1.0"
-           width="1.0" taper="0" midpoint="0.5"/>
 	   
+<!-- 
+Wing chord - root: 2.18 m 
+	      tip:0.91 m
+Wing aspect ratio: 10.9	      
+	      
+Wing area 28.80m	      
+
 -->	   
 	   
 	   
-	   
-	   
- <wing x="0.0" y="0.80" z="-0.9" length ="8.0" chord ="2.8"
-       sweep="0" dihedral="6" taper="0.4"  camber ="0.1"
-       incidence ="3.29" twist ="-4.69">
-  <stall aoa="7.5" width="6" peak="1.5"/>
-  <flap0 start="0" end=".57" lift="1.2" drag="1.3"/>
-  <flap1 start=".57" end=".95" lift="1.7" drag="1.2"/>
+ <wing x="0.0" y="0.80" z="-0.9" length="8.0" chord="2.18"
+       sweep="0" dihedral="6" taper="0.417"  camber="0.1"
+       incidence="3.29" twist="-4.69">
+  <stall aoa="16" width="6" peak="1.5"/>
+  <flap0 start="0" end=".6" lift="1.5" drag="1.7"/>
+  <flap1 start=".6" end=".95" lift="1.2" drag="1.2"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
   <control-speed control="FLAP0" transition-time="5"/>
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
@@ -74,8 +97,8 @@ Flight Model improvements by Dave Martin.
 		  prop="/surface-positions/right-aileron-pos-norm"/>
  </wing>
 
- <hstab x="-9.25" y="0.0" z="2.5" length ="2.8" chord ="1.8" 
-        sweep="12" dihedral="0" taper="0.55" incidence="0" effectiveness="3.0">
+ <hstab x="-9.25" y="0.0" z="2.5" length="2.8" chord="1.8" 
+        sweep="12" dihedral="0" taper="0.55" incidence="0" effectiveness="3.5">
   <stall aoa="18" width="4" peak="1.5"/>
   <flap0 start="0" end="1" lift="1.5" drag="1.2"/>
   <control-input axis="/controls/flight/elevator" control="FLAP0"/>
@@ -83,33 +106,31 @@ Flight Model improvements by Dave Martin.
   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
  </hstab>
 
- <vstab x="-8.0" y="0.00" z="0.5" length ="2.2" chord ="3.0"
-        sweep="22" taper="0.7" effectiveness="1.0">
+ <vstab x="-8.0" y="0.00" z="0.5" length="2.2" chord="3.0"
+        sweep="22" taper="0.7" effectiveness="1.5">
   <stall aoa="16" width="4" peak="1.5"/>
-  <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
+  <flap0 start="0" end="1" lift="1.2" drag="1.2"/>
   <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
   <control-input axis="/controls/flight/rudder-trim" control="FLAP0"
                  invert="true"/>
   <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
  </vstab>
 
- <tank x="0.00" y="2.00" z="-0.7" capacity="1500"/>
- <tank x="0.00" y="-2.00" z="-0.7" capacity="1500"/>
- <tank x="0.00" y="4.00" z="-0.5" capacity="500"/>
- <tank x="0.00" y="-4.00" z="-0.5" capacity="500"/>
+<!--
+wet wing fuel storage:
+Useable fuel - 665 US gallons, 4548 lbs (Jet A - 6.84 ppg )
 
- <gear x="6.62" y="0.00" z="-2.2" compression=".15" retract-time="5" spring="0.2" damp="1.0">
+
+-->
+ <tank x="0.00" y="2.00" z="-0.7" capacity="1775" jet="true"/>
+ <tank x="0.00" y="-2.00" z="-0.7" capacity="1775" jet="true"/>
+ <tank x="0.00" y="4.00" z="-0.5" capacity="500" jet="true"/>
+ <tank x="0.00" y="-4.00" z="-0.5" capacity="500" jet="true"/>
+
+ <gear x="6.87" y="0.00" z="-2.267" compression=".15" retract-time="5" spring="0.2" damp="1.0">
   <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-  <control-speed control="EXTEND" transition-time="7"/>
-  <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
- </gear>
-
- <gear x="-0.6" y="-2.65" z="-2.3" compression=".25" retract-time="5" spring="0.3" damp="1.0">
-  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
-  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
-  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-  <control-speed control="EXTEND" transition-time="6.2"/>
+  <control-speed control="EXTEND" transition-time="5"/>
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
  </gear>
 
@@ -117,20 +138,38 @@ Flight Model improvements by Dave Martin.
   <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-  <control-speed control="EXTEND" transition-time="6"/>
+  <control-speed control="EXTEND" transition-time="5.1"/>
   <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
  </gear>
 
- <propeller x="1.9" y="-2.65" z="0.0"
-            mass="400" moment="80" radius="1.3"
-            cruise-speed="270" cruise-rpm="1700"
-            cruise-power="1000" cruise-alt="20000"
-            min-rpm="1000" max-rpm="1700">
+ <gear x="-0.6" y="-2.65" z="-2.3" compression=".25" retract-time="5" spring="0.3" damp="1.0">
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-speed control="EXTEND" transition-time="5.2"/>
+  <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+ </gear>
+
+
+<!-- 
+Engines:
+2 PT6A-67D
+1279 shp
+Prop diam: 2.78 m 
+
+-->
+
+ <propeller x="1.9" y="2.65" z="0.0"
+            mass="500" moment="95" radius="1.39"
+            cruise-speed="280" cruise-rpm="1700"
+            cruise-power="1270" cruise-alt="25000"
+            min-rpm="1000" max-rpm="1700"
+	    fine-stop="0.5" coarse-stop="4.0">
   <turbine-engine
-            eng-power="1270" eng-rpm="1700" alt="9000"
-            flat-rating="1000"
+            eng-power="1279" eng-rpm="1700" alt="18000"
+            flat-rating="1250"
             min-n2="70" max-n2="100"
-            bsfc="0.40"/>
+            bsfc="0.46"/>
   <actionpt x="2.23" y="-2.65" z="0.0"/>
   <control-input axis="/controls/engines/engine[0]/throttle"
                  control="THROTTLE"/>
@@ -144,16 +183,17 @@ Flight Model improvements by Dave Martin.
             control="PROPFEATHER"/>
  </propeller>
 
- <propeller x="1.9" y="2.65" z="0.0"
-            mass="400" moment="80" radius="1.3"
-            cruise-speed="270" cruise-rpm="1700"
-            cruise-power="1000" cruise-alt="20000"
-            min-rpm="1000" max-rpm="1700">
+ <propeller x="1.9" y="-2.65" z="0.0"
+            mass="500" moment="95" radius="1.39"
+            cruise-speed="280" cruise-rpm="1700"
+            cruise-power="1270" cruise-alt="25000"
+            min-rpm="1000" max-rpm="1700"
+	    fine-stop="0.5" coarse-stop="4.0">
   <turbine-engine
-            eng-power="1270" eng-rpm="1700" alt="9000"
-            flat-rating="1000"
+            eng-power="1279" eng-rpm="1700" alt="18000"
+            flat-rating="1250"
             min-n2="70" max-n2="100"
-            bsfc="0.40"/>
+            bsfc="0.46"/>
   <actionpt x="2.23" y="2.65" z="0.0"/>
   <control-input axis="/controls/engines/engine[1]/throttle"
             control="THROTTLE"/>
@@ -172,19 +212,15 @@ Flight Model improvements by Dave Martin.
 <ballast x="1.4" y="2.65" z="-0.5" mass="1200"/>
 
 <!-- Cockpit mass and Avionics -->
-<ballast x="4.5" y="0.0" z="0.0" mass="900"/>
+<ballast x="4.5" y="0.0" z="0.0" mass="1500"/>
 
 <!-- NoseGear assembly -->
-<ballast x="4.7" y="0.0" z="-1.0" mass="500"/>
+<ballast x="4.7" y="0.0" z="-1.0" mass="600"/>
 
 <!-- MainGear assembly -->
 <ballast x="0.0" y="-2.65" z="-1.0" mass="600"/>
 <ballast x="0.0" y="2.65" z="-1.0" mass="600"/>
 
-<!--  
-    <ballast x="1.0" y="0.0" z="0.0" mass="1500"/> 
-  <ballast x="-5.0" y="0" z="0.0" mass="-2500"/>
- -->
  <weight x="4.2" y="-0.3" z="0" mass-prop="/yasim/pilot-lbs"/>
  <weight x="4.2" y="0.3" z="0" mass-prop="/yasim/copilot-lbs"/>
 

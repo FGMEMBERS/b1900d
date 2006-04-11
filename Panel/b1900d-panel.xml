@@ -104,21 +104,31 @@
     <h>54</h>
   </instrument>
 
+    <instrument include="gps.xml">
+      <name>GPS</name>
+      <x>615</x>
+      <y>221</y>
+      <w>120</w>
+      <h>40</h>
+    </instrument>
+    
   <instrument include="gpstext.xml">
     <name>GPStext</name>
     <x>615</x>
     <y>221</y>
-    <w>120</w>
-    <h>40</h>
+    <w>108</w>
+    <h>36</h>
   </instrument>
 
   <instrument include="Ap_Fd.xml">
     <name>Autopilot/Flight Director</name>
-    <x>207</x>
-    <y>345</y>
-    <w>100</w>
-    <h>40</h>
+    <x>202</x>
+    <y>344</y>
+    <w>120</w>
+    <h>39</h>
   </instrument>
+
+
 
 <instrument>
   <name>panel hotspots</name>
@@ -134,12 +144,18 @@
    <!--             Course              -->
    
    <action>
-     <name></name>
+     <name>nav radial increase 1</name>
      <button>0</button>
      <x>-278</x>
      <y>-230</y>
      <w>8</w>
      <h>8</h>
+     <condition>
+     <equals>
+     <property>/instrumentation/nav/slaved-to-gps</property>
+     <value>false</value>
+     </equals>
+     </condition>
      <binding>
        <command>property-adjust</command>
        <property>/instrumentation/nav/radials/selected-deg</property>
@@ -151,12 +167,18 @@
    </action>
    
    <action>
-     <name></name>
+     <name>nav radial increase 5</name>
      <button>1</button>
      <x>-278</x>
      <y>-230</y>
      <w>8</w>
      <h>8</h>
+     <condition>
+     <equals>
+     <property>/instrumentation/nav/slaved-to-gps</property>
+     <value>false</value>
+     </equals>
+     </condition>
      <binding>
        <command>property-adjust</command>
        <property>/instrumentation/nav/radials/selected-deg</property>
@@ -168,12 +190,18 @@
    </action>
    
    <action>
-     <name></name>
+     <name>nav radial decrease 1</name>
      <button>0</button>
      <x>-286</x>
      <y>-230</y>
      <w>8</w>
      <h>8</h>
+     <condition>
+     <equals>
+     <property>/instrumentation/nav/slaved-to-gps</property>
+     <value>false</value>
+     </equals>
+     </condition>
      <binding>
        <command>property-adjust</command>
        <property>/instrumentation/nav/radials/selected-deg</property>
@@ -185,12 +213,18 @@
    </action>
    
    <action>
-     <name></name>
+     <name>nav radial decrease 5</name>
      <button>1</button>
      <x>-286</x>
      <y>-230</y>
      <w>8</w>
      <h>8</h>
+     <condition>
+     <equals>
+     <property>/instrumentation/nav/slaved-to-gps</property>
+     <value>false</value>
+     </equals>
+     </condition>
      <binding>
        <command>property-adjust</command>
        <property>/instrumentation/nav/radials/selected-deg</property>
@@ -200,6 +234,102 @@
        <wrap>1</wrap>
      </binding>
    </action>
+
+   
+   <action>
+     <name>gps course increase 1</name>
+     <button>0</button>
+     <x>-278</x>
+     <y>-230</y>
+     <w>8</w>
+     <h>8</h>
+     <condition>
+     <equals>
+     <property>/instrumentation/nav/slaved-to-gps</property>
+     <value>true</value>
+     </equals>
+     </condition>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+       <step>1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>gps course increase 5</name>
+     <button>1</button>
+     <x>-278</x>
+     <y>-230</y>
+     <w>8</w>
+     <h>8</h>
+     <condition>
+     <equals>
+     <property>/instrumentation/nav/slaved-to-gps</property>
+     <value>true</value>
+     </equals>
+     </condition>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+       <step>5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>gps course decrease 1</name>
+     <button>0</button>
+     <x>-286</x>
+     <y>-230</y>
+     <w>8</w>
+     <h>8</h>
+     <condition>
+     <equals>
+     <property>/instrumentation/nav/slaved-to-gps</property>
+     <value>true</value>
+     </equals>
+     </condition>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>gps course decrease 5</name>
+     <button>1</button>
+     <x>-286</x>
+     <y>-230</y>
+     <w>8</w>
+     <h>8</h>
+     <condition>
+     <equals>
+     <property>/instrumentation/nav/slaved-to-gps</property>
+     <value>true</value>
+     </equals>
+     </condition>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+       <step>-5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+
+
+
 
    <!--             Heading              -->
    <action>
@@ -346,10 +476,10 @@
 <action>
   <name>reset altitude</name>
   <button>0</button>
-  <x>-84</x>
+  <x>-80</x>
   <y>-158</y>
-  <w>14</w>
-  <h>14</h>
+  <w>12</w>
+  <h>8</h>
   <binding>
     <command>property-assign</command>
     <property>/autopilot/settings/target-altitude-ft</property>
@@ -361,7 +491,7 @@
 <action>
   <name>decrease altitude 100</name>
   <button>0</button>
-  <x>-36</x>
+  <x>-48</x>
   <y>-166</y>
   <w>6</w>
   <h>8</h>
@@ -378,7 +508,7 @@
 <action>
   <name>increase altitude 100</name>
   <button>0</button>
-  <x>-30</x>
+  <x>-42</x>
   <y>-166</y>
   <w>6</w>
   <h>8</h>
@@ -396,7 +526,7 @@
 <action>
   <name>decrease altitude 1000</name>
   <button>1</button>
-  <x>-36</x>
+  <x>-48</x>
   <y>-166</y>
   <w>6</w>
   <h>8</h>
@@ -413,7 +543,7 @@
 <action>
   <name>increase altitude 1000</name>
   <button>1</button>
-  <x>-30</x>
+  <x>-42</x>
   <y>-166</y>
   <w>6</w>
   <h>8</h>
@@ -482,7 +612,7 @@
 
 <action>
   <name>adjust minute down</name>
-  <button>1</button>
+  <button>0</button>
   <x>-472</x>
   <y>-138</y>
   <w>10</w>
@@ -490,7 +620,7 @@
   <binding>
     <command>property-adjust</command>
     <property>/instrumentation/clock/offset-sec</property>
-    <step>60</step>
+    <step>-60</step>
     <min>0</min>
     <max>43200</max>
     <wrap>1</wrap>

@@ -28,11 +28,11 @@ init_electrical = func {
     alternator2 = AlternatorClass.new();
 
     # set initial switch postiions
-    setprop("/controls/electric/battery-switch", 0);
+#    setprop("/controls/electric/battery-switch", 0);
     setprop("/controls/electric/external-power", 0);
-    setprop("/controls/electric/engine[0]/generator", 0);
-    setprop("/controls/electric/engine[1]/generator", 0);
-    setprop("/controls/switches/master-avionics", 0);
+#    setprop("/controls/electric/engine[0]/generator", 0);
+#    setprop("/controls/electric/engine[1]/generator", 0);
+#    setprop("/controls/switches/master-avionics", 0);
     setprop("/controls/switches/landing-light[0]", 0);
     setprop("/controls/switches/landing-light[1]", 0);
     setprop("/controls/switches/taxi-lights", 0);

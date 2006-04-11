@@ -6,28 +6,28 @@
 
  <name>B1900D Overhead Switches</name>
  <background>Aircraft/b1900d/Panel/transparent-bg.rgb</background>
- <w>512</w>
- <h>384</h>
+ <w>404</w>
+ <h>304</h>
 
 <instruments>
 <instrument>
   <name>panel hotspots</name>
-  <x>256</x>
-  <y>192</y>
-  <w>512</w>
-  <h>384</h>
-  <w-base>512</w-base>
-  <h-base>384</h-base>
+  <x>202</x>
+  <y>152</y>
+  <w>404</w>
+  <h>304</h>
+  <w-base>404</w-base>
+  <h-base>304</h-base>
 
  <actions> 
 
    <action>
      <name>Master Panel Switch</name>
      <button>0</button>
-     <x>-230</x>
-     <y>30</y>
+     <x>-176</x>
+     <y>-31</y>
      <w>20</w>
-     <h>30</h>
+     <h>20</h>
      <binding>
        <command>property-toggle</command>
        <property>/controls/switches/master-panel</property>
@@ -41,10 +41,10 @@
    <action>
      <name>Left Landing Light</name>
      <button>0</button>
-     <x>-218</x>
-     <y>-16</y>
-     <w>10</w>
-     <h>16</h>
+     <x>-166</x>
+     <y>-81</y>
+     <w>8</w>
+     <h>18</h>
      <binding>
        <command>property-toggle</command>
        <property>/controls/switches/landing-light[0]</property>
@@ -58,10 +58,10 @@
    <action>
      <name>Right Landing Light</name>
      <button>0</button>
-     <x>-193</x>
-     <y>-16</y>
-     <w>10</w>
-     <h>16</h>
+     <x>-146</x>
+     <y>-81</y>
+     <w>8</w>
+     <h>18</h>
      <binding>
        <command>property-toggle</command>
        <property>/controls/switches/landing-light[1]</property>
@@ -75,10 +75,10 @@
    <action>
      <name>Taxi Lights</name>
      <button>0</button>
-     <x>-168</x>
-     <y>-16</y>
-     <w>10</w>
-     <h>16</h>
+     <x>-127</x>
+     <y>-81</y>
+     <w>8</w>
+     <h>18</h>
      <binding>
        <command>property-toggle</command>
        <property>/controls/switches/taxi-lights</property>
@@ -92,10 +92,10 @@
    <action>
      <name>Ice Lights</name>
      <button>0</button>
-     <x>-142</x>
-     <y>-16</y>
-     <w>10</w>
-     <h>16</h>
+     <x>-106</x>
+     <y>-81</y>
+     <w>8</w>
+     <h>18</h>
      <binding>
        <command>property-toggle</command>
        <property>/controls/switches/ice-light</property>
@@ -109,10 +109,10 @@
    <action>
      <name>Nav Lights</name>
      <button>0</button>
-     <x>-113</x>
-     <y>-16</y>
-     <w>10</w>
-     <h>16</h>
+     <x>-85</x>
+     <y>-81</y>
+     <w>8</w>
+     <h>18</h>
      <binding>
        <command>property-toggle</command>
        <property>/controls/switches/nav-lights</property>
@@ -126,10 +126,10 @@
    <action>
      <name>Beacon</name>
      <button>0</button>
-     <x>-87</x>
-     <y>-16</y>
-     <w>10</w>
-     <h>16</h>
+     <x>-63</x>
+     <y>-81</y>
+     <w>8</w>
+     <h>18</h>
      <binding>
        <command>property-toggle</command>
        <property>/controls/switches/beacon</property>
@@ -143,10 +143,10 @@
    <action>
      <name>Strobe</name>
      <button>0</button>
-     <x>-58</x>
-     <y>-16</y>
-     <w>10</w>
-     <h>16</h>
+     <x>-42</x>
+     <y>-81</y>
+     <w>8</w>
+     <h>18</h>
      <binding>
        <command>property-toggle</command>
        <property>/controls/switches/strobe</property>
@@ -160,10 +160,10 @@
    <action>
      <name>Recog Lights</name>
      <button>0</button>
-     <x>-0</x>
-     <y>-16</y>
-     <w>10</w>
-     <h>16</h>
+     <x>3</x>
+     <y>-81</y>
+     <w>8</w>
+     <h>18</h>
      <binding>
        <command>property-toggle</command>
        <property>/controls/switches/recog</property>
@@ -177,10 +177,10 @@
    <action>
      <name>Tail Flood Lights</name>
      <button>0</button>
-     <x>28</x>
-     <y>-16</y>
-     <w>10</w>
-     <h>16</h>
+     <x>25</x>
+     <y>-81</y>
+     <w>8</w>
+     <h>18</h>
      <binding>
        <command>property-toggle</command>
        <property>/controls/switches/logo</property>
@@ -194,10 +194,10 @@
    <action>
      <name>Instrument Lights Dimmer decrease</name>
      <button>0</button>
-     <x>-188</x>
-     <y>40</y>
-     <w>30</w>
-     <h>20</h>
+     <x>-141</x>
+     <y>-27</y>
+     <w>22</w>
+     <h>14</h>
      <binding>
        <command>property-adjust</command>
        <property>/controls/lighting/instruments-norm</property>
@@ -210,10 +210,10 @@
    <action>
      <name>Instrument Lights Dimmer increase</name>
      <button>0</button>
-     <x>-188</x>
-     <y>20</y>
-     <w>30</w>
-     <h>20</h>
+     <x>-141</x>
+     <y>-41</y>
+     <w>22</w>
+     <h>14</h>
      <binding>
        <command>property-adjust</command>
        <property>/controls/lighting/instruments-norm</property>
@@ -227,10 +227,10 @@
    <action>
      <name>Engine Lights Dimmer decrease</name>
      <button>0</button>
-     <x>-140</x>
-     <y>40</y>
-     <w>30</w>
-     <h>20</h>
+     <x>-103</x>
+     <y>-27</y>
+     <w>22</w>
+     <h>14</h>
      <binding>
        <command>property-adjust</command>
        <property>/controls/lighting/engines-norm</property>
@@ -243,10 +243,10 @@
    <action>
      <name>Engine Lights Dimmer increase</name>
      <button>0</button>
-     <x>-140</x>
-     <y>20</y>
-     <w>30</w>
-     <h>20</h>
+     <x>-103</x>
+     <y>-41</y>
+     <w>22</w>
+     <h>14</h>
      <binding>
        <command>property-adjust</command>
        <property>/controls/lighting/engines-norm</property>
@@ -260,10 +260,10 @@
    <action>
      <name>Panel Lights Dimmer decrease</name>
      <button>0</button>
-     <x>90</x>
-     <y>40</y>
-     <w>30</w>
-     <h>20</h>
+     <x>81</x>
+     <y>-27</y>
+     <w>22</w>
+     <h>14</h>
      <binding>
        <command>property-adjust</command>
        <property>/controls/lighting/panel-norm</property>
@@ -276,10 +276,10 @@
    <action>
      <name>Panel Lights Dimmer increase</name>
      <button>0</button>
-     <x>90</x>
-     <y>20</y>
-     <w>30</w>
-     <h>20</h>
+     <x>81</x>
+     <y>-41</y>
+     <w>22</w>
+     <h>14</h>
      <binding>
        <command>property-adjust</command>
        <property>/controls/lighting/panel-norm</property>

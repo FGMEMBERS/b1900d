@@ -1,6 +1,9 @@
 
 # B1900d systems
 
+millibars = 0.0;
+pph1 = 0.0;
+pph2 = 0.0;
 power = nil;
 eadi = nil;
 engines = nil;
@@ -9,6 +12,7 @@ panel = nil;
 volts = nil;
 eyepoint = 0.0;
 force = 0.0;
+fuel_density=0.0;
 viewnum = nil;
 gpsmode = nil;
 gpsnode = nil;
@@ -17,7 +21,7 @@ apprnode= nil;
 LEFTMODES =["TRI ","MOD ","FPL ","NAV ","CAL ","STA ","SET ","OTH "];
 RIGHTMODES =["CTR ","REF ","ACT ","D/T ","NAV ","APT ","VOR ","NDB ","INT ","SUP "];
 PAGENUM = ["1","2","3","4","5","6","7","8","9","10"];
-
+stall = 0.0;
 rhmenu = nil;
 lhmenu = nil;
 lhsubmenu =[0,0,0,0,0,0,0,0];
@@ -41,17 +45,15 @@ rhmenu = 5;
 lhsubmenu[lhmenu] = 1;
 rhsubmenu[rhmenu] = 3;
 
-setprop("/instrumentation/gps-annunciator/mode-string[0]","POWER OFF");
-setprop("/instrumentation/gps-annunciator/mode-string[1]","POWER OFF");
+setprop("/instrumentation/altimeter/millibars",0.0);
+fuel_density=getprop("consumables/fuel/tank[0]/density-ppg");
+setprop("/instrumentation/gps-annunciator/mode-string[0]","PWR OFF");
+setprop("/instrumentation/gps-annunciator/mode-string[1]","PWR OFF");
 setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
 setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
-setprop("/instrumentation/gps/serviceable","false");
 setprop("/instrumentation/heading-indicator/offset-deg",-1 * getprop("/environment/magnetic-variation-deg"));
 print("KLN-90B Initialized ");
 }
-
-
-
 
 update_systems = func {
 power = getprop("/controls/switches/master-panel");
@@ -69,40 +71,30 @@ if (panel == nil) {panel = 0.0;}
 viewnum = getprop("/sim/current-view/view-number");
 if (viewnum == nil) {viewnum = 0;}
 
-setprop("/sim/model/b1900d/material/instruments/factor", 0.0);
-setprop("/sim/model/b1900d/material/engines/factor", 0.0);
-setprop("/sim/model/b1900d/material/pfd/factor", 0.0);
+pph1 = getprop("/engines/engine[0]/fuel-flow-gph");
+pph2 = getprop("/engines/engine[1]/fuel-flow-gph");
+if(pph1 == nil){pph1 = 6.84;}
+if(pph2 == nil){pph2 = 6.84;}
+setprop("engines/engine[0]/fuel-flow-pph",pph1* fuel_density);
+setprop("engines/engine[1]/fuel-flow-pph",pph2* fuel_density);
+
+setprop("/instrumentation/altimeter/millibars",getprop("/instrumentation/altimeter/setting-inhg") * 33.8637526);
 setprop("/sim/model/b1900d/material/panel/factor", 0.0);
 setprop("/sim/model/b1900d/material/radiance/factor", 0.0);
 
-   if (volts > 0.2){
-setprop("/sim/model/b1900d/material/instruments/factor", instruments);
-setprop("/sim/model/b1900d/material/pfd/factor", eadi);
-
-#gpsmode = props.globals.getNode("/instrumentation/nav/slaved-to-gps");
-#if(gpsmode.getBoolValue()){setprop("/autopilot/settings/heading-bug-deg",getprop("/instrumentation/gps#/wp/leg-mag-course-deg"));}
-
-if(power > 0){
-setprop("/sim/model/b1900d/material/engines/factor", engines);
-setprop("/sim/model/b1900d/material/panel/factor", panel);
-setprop("/sim/model/b1900d/material/radiance/factor", panel);
-  }
+if (volts > 0.2){
+	if(power > 0){
+	setprop("/sim/model/b1900d/material/panel/factor", panel);
+	setprop("/sim/model/b1900d/material/radiance/factor", panel);
+	}
 }
-
-rock = -0.25;
-    force = getprop("/accelerations/pilot-g");
-    sideslip = getprop("/orientation/side-slip-rad");
+force = getprop("/accelerations/pilot-g");
 if(force == nil) {force = 1.0;}
-if(sideslip == nil) {sideslip = 0.0;}
 eyepoint = (0.26 - (force * 0.01));
-
-if(getprop("/gear/gear[2]/wow") == 0){
-rock = (-0.25 - (sideslip * 0.1));}
 if(getprop("/sim/current-view/view-number") < 1){
 setprop("/sim/current-view/y-offset-m",eyepoint);
-setprop("/sim/current-view/x-offset-m",rock);
 }
-    settimer(update_systems, 0);
+settimer(update_systems, 0);
 }
 
 settimer(update_systems, 0);
@@ -238,8 +230,9 @@ setprop("/instrumentation/gps-annunciator/mode-string[1]",RIGHTMODES[rhmenu] ~ P
 }
 
 direct_to = func {
-setprop("/instrumentation/gps/wp/wp/waypoint-type","");
+setprop("/instrumentation/gps/wp/wp/waypoint-type","fix");
 setprop("/instrumentation/gps/wp/wp/ID","");
+setprop("/instrumentation/gps/wp/wp/name","");
 setprop("/instrumentation/gps/wp/wp/latitude-deg",getprop("/position/latitude-deg"));
 setprop("/instrumentation/gps/wp/wp/longitude-deg",getprop("/position/longitude-deg"));
 }
