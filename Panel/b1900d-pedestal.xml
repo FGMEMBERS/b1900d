@@ -29,7 +29,7 @@
      <h>10</h>
      <binding>
        <command>property-toggle</command>
-       <property>/instrumentation/flightdirector/autopilot-on</property>
+       <property>autopilot/locks/passive-mode</property>
      </binding>
    </action>
 

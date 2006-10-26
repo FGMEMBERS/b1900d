@@ -159,6 +159,21 @@ An lot of guess work here :)
    </text>
   </help>
 
+
+       <weight n="0">
+        <name>Crew</name>
+        <weight-lb>380</weight-lb> 
+        <max-lb>400</max-lb>
+       <min-lb>180</min-lb>
+        </weight>
+
+        <weight n="1">
+        <name>Passengers</name>
+        <weight-lb>4500</weight-lb> 
+        <max-lb>4500</max-lb>
+        <min-lb>0</min-lb>      
+        </weight>
+
  </sim>
 
  <nasal>
@@ -278,9 +293,11 @@ An lot of guess work here :)
 </lighting>
 </controls>
 
-
-
-
+    <autopilot>
+        <locks>
+        <passive-mode type="bool">true</passive-mode>
+        </locks>
+    </autopilot>
 
 <instrumentation>
 <gps>

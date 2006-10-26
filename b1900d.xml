@@ -35,12 +35,12 @@ Wheels/Flaps down Max Landing weight: 84 kt
   <control-setting axis="/controls/engines/engine[1]/throttle" value="0.25"/>
   <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
   <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
-  <control-setting axis="/controls/engines/engine[0]/propeller-pitch"
-                   value="1.0"/>
-  <control-setting axis="/controls/engines/engine[1]/propeller-pitch"
-                   value="1.0"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1.0"/>
   <control-setting axis="/controls/flight/flaps" value="1.0"/>
   <control-setting axis="/controls/gear/gear-down" value="1"/>
+  <solve-weight idx="0" weight="400"/>	
+  <solve-weight idx="1" weight="4500"/>	
  </approach>
 
  <cruise speed="274" alt="25000" fuel="0.8"> 
@@ -49,12 +49,12 @@ Wheels/Flaps down Max Landing weight: 84 kt
   <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
   <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
   <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
-  <control-setting axis="/controls/engines/engine[0]/propeller-pitch"
-                   value="1.0"/>
-  <control-setting axis="/controls/engines/engine[1]/propeller-pitch"
-                   value="1.0"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1.0"/>
   <control-setting axis="/controls/flight/flaps" value="0.0"/>
   <control-setting axis="/controls/gear/gear-down" value="0"/>
+  <solve-weight idx="0" weight="400"/>	
+  <solve-weight idx="1" weight="4500"/>	
  </cruise>
 
  
@@ -221,27 +221,7 @@ Prop diam: 2.78 m
 <ballast x="0.0" y="-2.65" z="-1.0" mass="600"/>
 <ballast x="0.0" y="2.65" z="-1.0" mass="600"/>
 
- <weight x="4.2" y="-0.3" z="0" mass-prop="/yasim/pilot-lbs"/>
- <weight x="4.2" y="0.3" z="0" mass-prop="/yasim/copilot-lbs"/>
-
-<weight x="2.5" y="-0.3" z="0" mass-prop="/yasim/pass01"/>
-<weight x="2.5" y="0.3" z="0" mass-prop="/yasim/pass02"/>
-<weight x="1.95" y="-0.3" z="0" mass-prop="/yasim/pass03"/>
-<weight x="1.95" y="0.3" z="0" mass-prop="/yasim/pass04"/>
-<weight x="1.15" y="-0.3" z="0" mass-prop="/yasim/pass05"/>
-<weight x="1.15" y="0.3" z="0" mass-prop="/yasim/pass06"/>
-<weight x="0.35" y="-0.3" z="0" mass-prop="/yasim/pass07"/>
-<weight x="0.35" y="0.3" z="0" mass-prop="/yasim/pass08"/>
-<weight x="-0.4" y="-0.3" z="0" mass-prop="/yasim/pass09"/>
-<weight x="-0.4" y="0.3" z="0" mass-prop="/yasim/pass10"/>
-<weight x="-1.2" y="-0.3" z="0" mass-prop="/yasim/pass11"/>
-<weight x="-1.2" y="0.3" z="0" mass-prop="/yasim/pass12"/>
-<weight x="-1.95" y="-0.3" z="0" mass-prop="/yasim/pass13"/>
-<weight x="-1.95" y="0.3" z="0" mass-prop="/yasim/pass14"/>
-<weight x="-2.75" y="-0.3" z="0" mass-prop="/yasim/pass15"/>
-<weight x="-2.75" y="0.3" z="0" mass-prop="/yasim/pass16"/>
-<weight x="-3.5" y="-0.3" z="0" mass-prop="/yasim/pass17"/>
-<weight x="-3.5" y="0.3" z="0" mass-prop="/yasim/pass18"/>
-<weight x="-3.5" y="0.0" z="0" mass-prop="/yasim/pass19"/> 
+ <weight x="4.2" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
+ <weight x="0" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>
  
 </airplane>

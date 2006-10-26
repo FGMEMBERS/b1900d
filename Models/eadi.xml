@@ -62,7 +62,7 @@
     <axis>
      <x>0</x>
      <y>1</y>
-     <z>0</z>
+     <z></z>
    </axis>
   </transform>
   <transform>
@@ -79,15 +79,15 @@
    </axis>
   </transform>
  </animation>              
- 
+  
    <animation>
   <type>rotate</type>
     <object-name>ROLLneedle</object-name>
     <property>/orientation/roll-deg</property>
     <axis>
-      <x>1.0</x>
+      <x>0.0</x>
       <y>0</y>
-      <z>0.0</z>
+      <z>1.0</z>
     </axis>
     <center>
       <x-m>0.0</x-m>
@@ -96,10 +96,10 @@
     </center>
   </animation>
   
-   <animation>
+  <animation>
    <type>translate</type>
    <object-name>FDbars</object-name>
-   <property>/instrumentation/flightdirector/vbar-pitch</property>
+    <property>/autopilot/settings/target-pitch-deg</property>
 <factor>0.00087</factor>
 <axis>
      <x>0.0</x>
@@ -116,7 +116,7 @@
  <animation>
    <type>rotate</type>
    <object-name>FDbars</object-name>
-   <property>/instrumentation/flightdirector/vbar-roll</property>
+    <property>/orientation/roll-deg</property>
    <axis>
      <x>1.0</x>
      <y>0.0</y>
@@ -130,6 +130,40 @@
  </animation>
 
   <animation>
+   <type>translate</type>
+   <object-name>FDbars</object-name>
+    <property>/orientation/pitch-deg</property>
+<factor>0.00087</factor>
+<axis>
+     <x>0.0</x>
+     <y>0.0</y>
+     <z>-1.0</z>
+   </axis>
+   <center>
+     <x-m>0.000</x-m>
+     <y-m>0</y-m>
+     <z-m>0.001</z-m>
+   </center>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>FDbars</object-name>
+    <property>/autopilot/internal/target-roll-deg</property>
+   <axis>
+     <x>-1.0</x>
+     <y>0.0</y>
+     <z>0.0</z>
+   </axis>
+   <center>
+     <x-m>0.0</x-m>
+     <y-m>0</y-m>
+     <z-m>0.007</z-m>
+   </center>
+ </animation>
+
+
+<animation>
   <type>material</type>
     <object-name>EADI.face</object-name>
     <global type="bool">true</global>
