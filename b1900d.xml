@@ -2,11 +2,7 @@
 YASIM flight model for the Beechcraft B1900D.
 Jan 2005 by Syd Adams.
 
-
-
-
 SPECS:
-
 Height: 4.72m
 Length: 17.63
 Wing span: 17.67
@@ -25,7 +21,6 @@ Stall spd - max TO weight:
 Wheels/Flaps up : 101 kt
 Wheels down TO flap: 90 kt
 Wheels/Flaps down Max Landing weight: 84 kt
-	      		
 -->
 
 <airplane mass="10500">

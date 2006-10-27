@@ -45,109 +45,85 @@ slaved = 0;
 # Use tha nasal timer to call the initialization function once the sim is
 # up and running
 #############################################################################
-
-INIT = func {
-    # default values
-    print("Initializing Flight Director");
-    setprop("/instrumentation/flightdirector/lnav", 0.0);
-    setprop("/instrumentation/flightdirector/vnav", 0.0);
-    setprop("/instrumentation/flightdirector/alt-offset", 0.0);
-    setprop("/instrumentation/flightdirector/autopilot-on",0.0);
-    setprop("/instrumentation/flightdirector/alt-alert", alt_alert);
-    setprop("/instrumentation/flightdirector/course", 0.0);
-    setprop("/instrumentation/flightdirector/dtk", 0.0);
-    setprop("/instrumentation/flightdirector/nav-hdg", 0.0);
-    setprop("/instrumentation/flightdirector/nav-mag-brg", 0.0);
-    setprop("/instrumentation/flightdirector/course-offset", course_offset);
-    setprop("/instrumentation/flightdirector/target-inhg", 29.92);
-    setprop("/autopilot/settings/heading-bug-deg",0);
-    setprop("/autopilot/settings/target-altitude-ft",0);
-    setprop("/instrumentation/nav/slaved-to-gps",slaved);
-current_alt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
-alt_select = getprop("/autopilot/settings/target-altitude-ft");
-}
-settimer(INIT, 0);
-
+setlistener("/sim/signals/fdm-initialized", func {
+    current_alt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
+    alt_select = getprop("/autopilot/settings/target-altitude-ft");
+    print("Systems Initialized");
+});
 
 #############################################################################
 # handle KC 290 Mode Controller inputs, and compute correct mode/settings
 #############################################################################
 
 handle_inputs = func {
-# Autopilot  activate
     lnav = getprop("/instrumentation/flightdirector/lnav");
     vnav = getprop("/instrumentation/flightdirector/vnav");
-   ap_on = getprop("/autopilot/locks/passive-mode");
+    ap_on = getprop("/autopilot/locks/passive-mode");
 
-if(lnav == 0 or lnav ==nil){setprop("autopilot/locks/heading","wing-leveler");}
-if(lnav == 1){setprop("autopilot/locks/heading","dg-heading-hold");}
-if(lnav == 2){setprop("autopilot/locks/heading","nav1-hold");}
-if(lnav == 3){setprop("autopilot/locks/heading","appr-hold");}
-if(lnav == 4){setprop("autopilot/locks/heading","bc-hold");}
-
-if(vnav == 0 or vnav == nil){setprop("autopilot/locks/altitude","");}
-if(vnav == 1){setprop("autopilot/locks/altitude","altitude-hold");}
-if(vnav == 2){setprop("autopilot/locks/altitude","altitude-select");}
-if(vnav == 3){setprop("autopilot/locks/speed","vs-hold");}
-if(vnav == 4){setprop("autopilot/locks/speed","ias-hold");}
-if(vnav == 5){setprop("autopilot/locks/speed","dcs-hold");}
-if(vnav == 6){setprop("autopilot/locks/speed","climb-hold");}
-maxroll = getprop("/orientation/roll-deg");
-if(maxroll > 45 or maxroll < -45){ap_on = 0;}
-maxpitch = getprop("/orientation/pitch-deg");
-if(maxpitch > 45 or maxpitch < -45){ap_on = 0;}
-if(getprop("/position/altitude-agl-ft") < 200){ap_on = 0;}
-setprop("/instrumentation/flightdirector/autopilot-on",ap_on);
-}
+    if(lnav == 0 or lnav ==nil){setprop("autopilot/locks/heading","wing-leveler");}
+    if(lnav == 1){setprop("autopilot/locks/heading","dg-heading-hold");}
+    if(lnav == 2){setprop("autopilot/locks/heading","nav1-hold");}
+    if(lnav == 3){setprop("autopilot/locks/heading","appr-hold");}
+    if(lnav == 4){setprop("autopilot/locks/heading","bc-hold");}
+    if(vnav == 0 or vnav == nil){setprop("autopilot/locks/altitude","");}
+    if(vnav == 1){setprop("autopilot/locks/altitude","altitude-hold");}
+    if(vnav == 2){setprop("autopilot/locks/altitude","altitude-select");}
+    if(vnav == 3){setprop("autopilot/locks/speed","vs-hold");}
+    if(vnav == 4){setprop("autopilot/locks/speed","ias-hold");}
+    if(vnav == 5){setprop("autopilot/locks/speed","dcs-hold");}
+    if(vnav == 6){setprop("autopilot/locks/speed","climb-hold");}
+    maxroll = getprop("/orientation/roll-deg");
+    if(maxroll > 45 or maxroll < -45){props.globals.getNode("autopilot/locks/passive-mode").setBoolValue(1);}
+    maxpitch = getprop("/orientation/pitch-deg");
+    if(maxpitch > 45 or maxpitch < -45){props.globals.getNode("autopilot/locks/passive-mode").setBoolValue(1);}
+    if(getprop("/position/altitude-agl-ft") < 200){props.globals.getNode("autopilot/locks/passive-mode").setBoolValue(1);} 
+   }
 
 #############################################################################
 #update nav gps or nav setting
 #############################################################################
 
 update_nav = func (){
-slaved = getprop("/instrumentation/nav/slaved-to-gps");
-current_heading = getprop("/orientation/heading-magnetic-deg");
+    slaved = getprop("/instrumentation/nav/slaved-to-gps");
+    current_heading = getprop("/orientation/heading-magnetic-deg");
+    if(slaved == 0){
+        desired_course = getprop("/instrumentation/nav/radials/selected-deg");
+        course_offset = getprop("/instrumentation/nav/heading-needle-deflection");
+        nav_mag_brg = getprop("/instrumentation/nav/heading-deg");
+    }
+    else
+    {
+        desired_course = getprop("/instrumentation/gps/wp/wp[1]/desired-course-deg");
+        desired_course -= getprop("/environment/magnetic-variation-deg");
+        nav_mag_brg = getprop("/instrumentation/gps/wp/wp[1]/bearing-mag-deg");
+        if(desired_course < 0){desired_course += 360;}
+        elsif(desired_course > 360){desired_course -= 360;}
+        course_offset = getprop("/instrumentation/gps/wp/wp[1]/course-deviation-deg");
+        if(course_offset > 10.0){course_offset = 10.0;}
+        if(course_offset < -10.0){course_offset = -10.0;}
+    }
+    setprop("/instrumentation/flightdirector/dtk",desired_course);
+    if(nav_mag_brg == nil){nav_mag_brg = 0;}
+    nav_mag_brg -= current_heading;
+    if(nav_mag_brg > 180){nav_mag_brg -= 360};
+    if(nav_mag_brg < -180){nav_mag_brg += 360};
 
-if(slaved == 0){
-desired_course = getprop("/instrumentation/nav/radials/selected-deg");
-course_offset = getprop("/instrumentation/nav/heading-needle-deflection");
-nav_mag_brg = getprop("/instrumentation/nav/heading-deg");
-}
-else
-{
-desired_course = getprop("/instrumentation/gps/wp/wp[1]/desired-course-deg");
-desired_course -= getprop("/environment/magnetic-variation-deg");
-nav_mag_brg = getprop("/instrumentation/gps/wp/wp[1]/bearing-mag-deg");
-if(desired_course < 0){desired_course += 360;}
-elsif(desired_course > 360){desired_course -= 360;}
-course_offset = getprop("/instrumentation/gps/wp/wp[1]/course-deviation-deg");
-if(course_offset > 10.0){course_offset = 10.0;}
-if(course_offset < -10.0){course_offset = -10.0;}
-}
-setprop("/instrumentation/flightdirector/dtk",desired_course);
-
-if(nav_mag_brg == nil){nav_mag_brg = 0;}
-nav_mag_brg -= current_heading;
-if(nav_mag_brg > 180){nav_mag_brg -= 360};
-if(nav_mag_brg < -180){nav_mag_brg += 360};
 #########    set radial offset from current heading ###########
-desired_course -= current_heading;
-if(desired_course < -180){desired_course += 360;}
-elsif(desired_course > 180){desired_course -= 360;}
-setprop("/instrumentation/flightdirector/course",desired_course);
+    desired_course -= current_heading;
+    if(desired_course < -180){desired_course += 360;}
+    elsif(desired_course > 180){desired_course -= 360;}
+    setprop("/instrumentation/flightdirector/course",desired_course);
 
 ##### adjust autopilot nav heading with deviation ###########
-nav_adjust = ( course_offset * 4.5);
-nav_hdg_offset = desired_course + nav_adjust;
-if(nav_hdg_offset < -180){nav_hdg_offset += 360;}
-elsif(nav_hdg_offset > 180){nav_hdg_offset -= 360;}
+    nav_adjust = ( course_offset * 4.5);
+    nav_hdg_offset = desired_course + nav_adjust;
+    if(nav_hdg_offset < -180){nav_hdg_offset += 360;}
+    elsif(nav_hdg_offset > 180){nav_hdg_offset -= 360;}
 
-
-setprop("/instrumentation/flightdirector/nav-mag-brg",nav_mag_brg);
-setprop("/instrumentation/flightdirector/course-offset",course_offset);
-setprop("/instrumentation/flightdirector/nav-hdg",nav_hdg_offset);
+    setprop("/instrumentation/flightdirector/nav-mag-brg",nav_mag_brg);
+    setprop("/instrumentation/flightdirector/course-offset",course_offset);
+    setprop("/instrumentation/flightdirector/nav-hdg",nav_hdg_offset);
 }
-
 
 #############################################################################
 # main update function to be called each frame
@@ -158,8 +134,6 @@ update = func {
     update_nav();
     registerTimer();
 }
-
-
 
 #############################################################################
 # Use tha nasal timer to call ourselves every frame
