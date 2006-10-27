@@ -131,22 +131,6 @@ July 2004 Syd Adams
         </text>
     </help>
 
-
-    <weight n="0">
-        <name>Crew</name>
-        <weight-lb>380</weight-lb> 
-        <max-lb>400</max-lb>
-       <min-lb>180</min-lb>
-    </weight>
-
-    <weight n="1">
-        <name>Passengers</name>
-        <weight-lb>4500</weight-lb> 
-        <max-lb>4500</max-lb>
-        <min-lb>0</min-lb>      
-    </weight>
-    </sim>
-
  <!-- aircraft specific loading -->
     <weight n="0">
         <name>Crew</name>
@@ -161,7 +145,7 @@ July 2004 Syd Adams
         <max-lb>4000</max-lb>
         <min-lb>0</min-lb>      
     </weight>
-
+</sim>
 <!--   power / engines on  -->
     <controls>
         <electric>
@@ -254,7 +238,7 @@ July 2004 Syd Adams
         <desc>Toggle autopilot</desc>
         <binding>
             <command>property-toggle</command>
-            <property>/instrumentation/flightdirector/autopilot-on</property>
+            <property>autopilot/locks/passive-mode</property>
         </binding>
         </key>
         </keyboard>

@@ -572,10 +572,26 @@
   <animation>
     <type>noshadow</type>
     <object-name>Logo</object-name>
+    <object-name>Glass</object-name>
     <object-name>RHFastprop</object-name>
     <object-name>RHSlowprop</object-name>
     <object-name>LHFastprop</object-name>
     <object-name>LHSlowprop</object-name>
+</animation>
+
+ <animation>
+	<type>shader</type>
+        <shader>chrome</shader>
+	<texture>Aircraft/b1900d/Models/chrome1.rgb</texture>
+	<object-name>Glass</object-name>
+</animation>
+
+ <animation>
+	<type>shader</type>
+        <shader>chrome</shader>
+	<texture>Aircraft/b1900d/Models/chrome.rgb</texture>
+	<object-name>LHspinner</object-name>
+	<object-name>RHspinner</object-name>
 </animation>
 
  <animation>
@@ -590,6 +606,10 @@
    <property>position/gear-agl-m</property>
    <value>1000</value>
    </less-than>
+   <equals>
+   <property>sim/multiplay/txhost</property>
+   <value>0</value>
+   </equals>
    </and>
    </condition>
  </animation>
