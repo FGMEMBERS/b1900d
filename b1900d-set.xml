@@ -15,7 +15,7 @@ July 2004 Syd Adams
         <aero>b1900d</aero>
         <fuel-fraction>0.8</fuel-fraction>
         <startup>
-            <splash-texture>Aircraft/b1900d/b1900dsplash.rgb</splash-texture>
+            <splash-texture>Aircraft/b1900d/b1900dsplash1.rgb</splash-texture>
         </startup>
     <mk-viii>
         <assemblies>
@@ -31,6 +31,9 @@ July 2004 Syd Adams
     <model>
     <path>Aircraft/b1900d/Models/b1900d-anim.xml</path>
     <b1900d>
+     <texture n="0">NZAlivery.rgb</texture>
+     <texture n="1">CMAlivery.rgb</texture>
+     <livery-num type="int">0</livery-num>
         <wiper type="bool">true</wiper>
         <material>
             <instruments>
@@ -65,17 +68,15 @@ July 2004 Syd Adams
     </model>
      
     <view n="0">
+    <internal archive="y">true</internal>
     <name>Cockpit</name>
     <type>lookfrom</type>
     <internal type="bool">true</internal>
     <config>
-        <target-x-offset-m type="double">-0.25</target-x-offset-m>
-        <target-y-offset-m type="double">0.26</target-y-offset-m>
-        <target-z-offset-m type="double">-4.15</target-z-offset-m>
-        <x-offset-m type="double">-0.25</x-offset-m>
-        <y-offset-m type="double">0.26</y-offset-m>
-        <z-offset-m type="double">-4.15</z-offset-m>
-        <pitch-offset-deg>-12</pitch-offset-deg>
+        <x-offset-m type="double">-0.38</x-offset-m>
+        <y-offset-m type="double">0.27</y-offset-m>
+        <z-offset-m type="double">-4.192</z-offset-m>
+        <pitch-offset-deg>-15</pitch-offset-deg>
         <default-field-of-view-deg>60.0</default-field-of-view-deg>
     </config>
     </view>
@@ -123,6 +124,10 @@ July 2004 Syd Adams
         <name>CTRL-A</name>
         <desc>Toggle autopilot on/off</desc>
         </key>
+        <key>
+        <name>y</name>
+        <desc>Toggle yokes on / off</desc>
+        </key>
         <line></line>
         <text>
         Autopilot modes are selected with the FlightDirector:
@@ -145,11 +150,24 @@ July 2004 Syd Adams
         <max-lb>4000</max-lb>
         <min-lb>0</min-lb>      
     </weight>
+
+        <replay>
+            <disable>1</disable>
+        </replay>
+
+        <multiplay>
+            <chat_display>1</chat_display>
+        </multiplay>
+	
+	<yokes-visible type="bool">1</yokes-visible>
+
 </sim>
 <!--   power / engines on  -->
-    <controls>
+
+<controls>
         <electric>
-            <battery-switch>true</battery-switch>
+            <battery-switch type = "bool">1</battery-switch>
+	    <external-power type = "bool">1</external-power>
             <engine n="0">
             <generator>true</generator>
             </engine>
@@ -173,6 +191,15 @@ July 2004 Syd Adams
         <switches>
             <master-panel type="bool">true</master-panel>
             <master-avionics type="bool">true</master-avionics>
+	    <landing-light n="0">0</landing-light>
+	    <landing-light n="1">0</landing-light>
+	    <taxi-lights n="0">0</taxi-lights>
+	    <ice-light n="0">0</ice-light>
+	    <nav-lights n="0">0</nav-lights>
+	    <beacon n="0">0</beacon>
+	    <strobe n="0">0</strobe>
+	    <recog n="0">0</recog>
+	    <logo n="0">0</logo>	    
         </switches>
         <lighting>
             <ice-lights type="bool">false</ice-lights>
@@ -205,6 +232,10 @@ July 2004 Syd Adams
 	<gps>
             <serviceable>true</serviceable> 
         </gps>
+	<gps-annunciator>
+	    <mode-string n="0">POWER OFF</mode-string>
+	    <mode-string n="1">POWER OFF</mode-string>
+	</gps-annunciator>
         <nav>
             <slaved-to-gps>false</slaved-to-gps>
         </nav>
@@ -223,6 +254,9 @@ July 2004 Syd Adams
                 </arinc429>
             </inputs>
         </mk-viii>
+	<altimeter>
+	    <millibars type= "double">0</millibars>
+	</altimeter>
     </instrumentation>
 
     <environment>
@@ -230,7 +264,16 @@ July 2004 Syd Adams
         <use-cloud-turbulence>true</use-cloud-turbulence>
         </turbulence>
     </environment>
-
+    
+    <engines>
+    <engine n="0">
+    <fuel-flow-pph type="float">0</fuel-flow-pph>
+    </engine>
+    <engine n="1">
+    <fuel-flow-pph type="float">0</fuel-flow-pph>
+    </engine>
+    </engines>
+    
     <input>
         <keyboard>
         <key n="1">
@@ -241,17 +284,22 @@ July 2004 Syd Adams
             <property>autopilot/locks/passive-mode</property>
         </binding>
         </key>
-        </keyboard>
+        <key n="121">
+        <name>y</name>
+        <desc>Toggle yokes</desc>
+        <binding>
+        <command>property-toggle</command>
+        <property>/sim/yokes-visible</property>
+        </binding>
+        </key>
+	</keyboard>
     </input>
-
+    
     <nasal>
-        <b1900d>
-            <script>settimer(func {gui.menuEnable("autopilot", 0)}, 1)</script>
-        </b1900d>
         <systems>
-            <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
-            <file>Aircraft/b1900d/Nasal/systems.nas</file>
             <file>Aircraft/b1900d/Nasal/b1900d-electrical.nas</file>
+            <file>Aircraft/b1900d/Nasal/systems.nas</file>
+            <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
         </systems>
     </nasal>
 

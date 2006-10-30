@@ -477,7 +477,17 @@
     </offsets>
   </model>
 
-
+ <model>
+    <name>Pilot</name>
+    <path>Aircraft/b1900d/Models/testpilot.xml</path>
+    <offsets>
+      <x-m>-4.275</x-m>
+      <y-m>-0.389</y-m>
+      <z-m>-0.566</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+ 
   <panel>
     <path>Aircraft/b1900d/Panel/b1900d-panel.xml</path>
     <bottom-left>
@@ -496,9 +506,6 @@
       <z-m>0.561</z-m>
     </top-left>
   </panel>
-
-
-  
 
   <panel>
     <path>Aircraft/b1900d/Panel/b1900d-throttles.xml</path>
@@ -538,7 +545,6 @@
     </top-left>
   </panel>
 
-
   <panel>
     <path>Aircraft/b1900d/Panel/lightswitches.xml</path>
     <bottom-left>
@@ -557,12 +563,70 @@
       <z-m>0.594</z-m>
     </top-left>
   </panel>
+
+<animation>
+  <type>material</type>
+  <condition>
+  <equals>
+  <property>sim/model/b1900d/livery-num</property>
+  <value>0</value>
+  </equals>
+  </condition>
+  <object-name>Fuselage</object-name>
+  <object-name>Rudder</object-name>
+  <object-name>Engines</object-name>
+  <object-name>Wing</object-name>
+  <object-name>frtWheeldoor</object-name>
+  <object-name>RHgeardoor2</object-name>
+  <object-name>RHgeardoor1</object-name>
+  <object-name>LHgeardoor1</object-name>
+  <object-name>LHgeardoor2</object-name>
+  <texture-prop>/sim/model/b1900d/texture</texture-prop>
+</animation>
+
+<animation>
+  <type>material</type>
+  <condition>
+  <equals>
+  <property>sim/model/b1900d/livery-num</property>
+  <value>1</value>
+  </equals>
+  </condition>
+  <object-name>Fuselage</object-name>
+  <object-name>Rudder</object-name>
+  <object-name>Engines</object-name>
+  <object-name>Wing</object-name>
+  <object-name>frtWheeldoor</object-name>
+  <object-name>RHgeardoor2</object-name>
+  <object-name>RHgeardoor1</object-name>
+  <object-name>LHgeardoor1</object-name>
+  <object-name>LHgeardoor2</object-name>
+  <texture-prop>/sim/model/b1900d/texture[1]</texture-prop>
+</animation>
   
+<animation>
+    <type>select</type>
+    <object-name>pilot</object-name>
+    <condition>
+    <not-equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+    </not-equals>
+    </condition>
+</animation>
+
+<animation>
+    <type>select</type>
+    <object-name>Yoke</object-name> 
+    <object-name>Yoke1</object-name>
+    <condition>
+    <property>sim/yokes-visible</property>
+    </condition>
+</animation>
 
 <animation>
     <name>Alpha Sort</name>
     <object-name>shadowplane</object-name>
-    <object-name>Logo</object-name>
     <object-name>LHFastprop</object-name>
     <object-name>LHSlowprop</object-name>
     <object-name>RHFastprop</object-name>
@@ -571,7 +635,8 @@
 
   <animation>
     <type>noshadow</type>
-    <object-name>Logo</object-name>
+    <object-name>windows</object-name>
+    <object-name>Trim</object-name>
     <object-name>Glass</object-name>
     <object-name>RHFastprop</object-name>
     <object-name>RHSlowprop</object-name>
@@ -584,6 +649,12 @@
         <shader>chrome</shader>
 	<texture>Aircraft/b1900d/Models/chrome1.rgb</texture>
 	<object-name>Glass</object-name>
+	<object-name>Throttle0</object-name>
+	<object-name>Throttle1</object-name>
+	<object-name>Cond0</object-name>
+	<object-name>Cond1</object-name>
+	<object-name>PropP0</object-name>
+	<object-name>PropP1</object-name>
 </animation>
 
  <animation>
@@ -1233,6 +1304,7 @@
   <animation>
     <type>rotate</type>
     <object-name>PropP0</object-name>
+    <object-name>PropP0.001</object-name>
     <property>controls/engines/engine[0]/propeller-pitch</property>
     <factor>-28.0</factor>
     <center>
@@ -1250,6 +1322,7 @@
   <animation>
     <type>rotate</type>
     <object-name>PropP1</object-name>
+    <object-name>PropP1.001</object-name>
     <property>controls/engines/engine[1]/propeller-pitch</property>
     <factor>-28.0</factor>
     <center>
@@ -1267,6 +1340,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Cond0</object-name>
+    <object-name>Cond0.001</object-name>
     <property>controls/engines/engine[0]/condition</property>
     <factor>-27.0</factor>
     <center>
@@ -1284,6 +1358,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Cond1</object-name>
+    <object-name>Cond1.001</object-name>
     <property>controls/engines/engine[1]/condition</property>
     <factor>-27.0</factor>
     <center>
@@ -1318,6 +1393,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Throttle0</object-name>
+    <object-name>Throttle0.001</object-name>
     <property>controls/engines/engine[0]/throttle</property>
     <factor>-42.0</factor>
     <center>
@@ -1335,6 +1411,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Throttle1</object-name>
+    <object-name>Throttle1.001</object-name>
     <property>controls/engines/engine[1]/throttle</property>
     <factor>-42.0</factor>
     <center>
@@ -1596,10 +1673,16 @@
     <type>select</type>
     <object-name>Taxi-light</object-name>
     <condition>
+    <and>
       <greater-than>
         <property>/systems/electrical/outputs/taxi-lights</property>
         <value>0.2</value>
       </greater-than>
+      <equals>
+      <property>/gear/gear/position-norm</property>
+      <value>1</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   
@@ -2205,8 +2288,7 @@
   <animation>
     <type>rotate</type>
     <object-name>frtWheeldoor</object-name>
-    <object-name>Taxi-light</object-name>
-<property>/gear/gear[0]/position-norm</property>
+    <property>/gear/gear[0]/position-norm</property>
     <offset-deg>95</offset-deg>
     <factor>-95</factor>
     <center>
@@ -2220,6 +2302,25 @@
       <z>0</z>
     </axis>
   </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Taxi-light</object-name>
+    <property>/gear/gear[0]/position-norm</property>
+    <offset-deg>95</offset-deg>
+    <factor>-95</factor>
+    <center>
+      <x-m>-6.881</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.931</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
   
     <animation>
     <type>translate</type>

@@ -72,8 +72,12 @@
      <command>nasal</command>
     <script>
     if(getprop("/instrumentation/flightdirector/lnav") != 3){
-    setprop("/instrumentation/flightdirector/lnav",3);}else{
-    setprop("/instrumentation/flightdirector/lnav",0);}
+    setprop("/instrumentation/flightdirector/lnav",3);
+    setprop("/instrumentation/flightdirector/vnav",7);
+    }else{
+    setprop("/instrumentation/flightdirector/lnav",0);
+    setprop("/instrumentation/flightdirector/vnav",0);
+    }
     </script>
      </binding>
    </action>
@@ -167,11 +171,12 @@
     <binding>
     <command>nasal</command>
     <script>
-    if(getprop("/instrumentation/flightdirector/vnav") != 4){
-    setprop("/instrumentation/flightdirector/vnav",4);
+    if(getprop("/instrumentation/flightdirector/spd") != 1){
+    setprop("/instrumentation/flightdirector/spd",1);
     setprop("/autopilot/settings/target-speed-kt",getprop("/velocities/airspeed-kt"));
     }else{
-    setprop("/instrumentation/flightdirector/vnav",0);}
+    setprop("/instrumentation/flightdirector/spd",0);
+    setprop("/autopilot/settings/target-speed-kt",0);}
     </script>
 
     </binding>

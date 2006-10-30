@@ -1,82 +1,89 @@
 #############################################################################
-#
 # B1900D Flight Director/Autopilot controller.
-#
-# Written by Syd Adams
-#Modification of Curtis Olson's flight director.
-# Started 30 Jan 2006.
-#
-#############################################################################
-
-#############################################################################
-# Global shared variables
+#Syd Adams
 #############################################################################
 
 # 0 - Off: v-bars hidden
 # lnav -0=off,1=HDG,2=NAV,3=APR,4=BC
 # vnav - 0=off,1=BARO ALT,2=ALT SELECT,3=VS,4=IAS, 5= DCS,6 = CLIMB
 
-
-lnav = 0;
-vnav=0;
-lnav_last = 0;
-vbar_roll = 0.0;
-vbar_pitch = 0.0;
-vbar_rol_propl = 0.0;
-vbar_pitch_prop = 0.0;
-nav_dist = 0.0;
-last_nav_dist = 0.0;
-last_nav_time = 0.0;
-tth_filter = 0.0;
-alt_select = 0.0;
-current_alt=0.0;
-current_heading = 0.0;
-n_offset = 0.0;
-alt_offset = 0.0;
-kfcmode="";
-ap_on = 0.0;
-alt_alert = 0.0;
-course = 0.0;
-course_offset=0.0;
-nav_hdg_offset=0.0;
-nav_mag_brg=0.0;
-slaved = 0;
+var GO = 0;
+var lnav = 0;
+var vnav=0;
+var spd=0;
+var lnav_last = 0;
+var nav_dist = 0.0;
+var last_nav_dist = 0.0;
+var last_nav_time = 0.0;
+var tth_filter = 0.0;
+var alt_select = 0.0;
+var current_alt=0.0;
+var current_heading = 0.0;
+var n_offset = 0.0;
+var alt_offset = 0.0;
+var ap_on = 0.0;
+AP_hdg=nil;
+AP_alt=nil;
+AP_spd=nil;
+AP_lnav=nil;
+AP_vnav=nil;
+AP_passive=nil;
+var alt_alert = 0.0;
+var course = 0.0;
+var course_offset=0.0;
+var nav_hdg_offset=0.0;
+var nav_mag_brg=0.0;
+var slaved = 0;
+var BC_btn = nil;
 #############################################################################
-# Use tha nasal timer to call the initialization function once the sim is
-# up and running
 #############################################################################
 setlistener("/sim/signals/fdm-initialized", func {
     current_alt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
     alt_select = getprop("/autopilot/settings/target-altitude-ft");
-    print("Systems Initialized");
+    AP_hdg = props.globals.getNode("/autopilot/locks/heading",1);
+    AP_alt = props.globals.getNode("/autopilot/locks/altitude",1);
+    AP_spd = props.globals.getNode("/autopilot/locks/speed",1);
+    AP_lnav = props.globals.getNode("/instrumentation/flightdirector/lnav",1);
+    AP_vnav = props.globals.getNode("/instrumentation/flightdirector/vnav",1);
+    AP_passive = props.globals.getNode("/autopilot/locks/passive-mode",1);
+    BC_btn = props.globals.getNode("/instrumentation/nav/back-course-btn",1);
+    GO = 1;
+    print("Flight Director Check");
 });
 
-#############################################################################
-# handle KC 290 Mode Controller inputs, and compute correct mode/settings
-#############################################################################
-
+####################################################################
+#######    handle KC 290 Mode Controller inputs,    ######################
+####################################################################
 handle_inputs = func {
-    lnav = getprop("/instrumentation/flightdirector/lnav");
-    vnav = getprop("/instrumentation/flightdirector/vnav");
-    ap_on = getprop("/autopilot/locks/passive-mode");
-
-    if(lnav == 0 or lnav ==nil){setprop("autopilot/locks/heading","wing-leveler");}
-    if(lnav == 1){setprop("autopilot/locks/heading","dg-heading-hold");}
-    if(lnav == 2){setprop("autopilot/locks/heading","nav1-hold");}
-    if(lnav == 3){setprop("autopilot/locks/heading","appr-hold");}
-    if(lnav == 4){setprop("autopilot/locks/heading","bc-hold");}
-    if(vnav == 0 or vnav == nil){setprop("autopilot/locks/altitude","");}
-    if(vnav == 1){setprop("autopilot/locks/altitude","altitude-hold");}
-    if(vnav == 2){setprop("autopilot/locks/altitude","altitude-select");}
-    if(vnav == 3){setprop("autopilot/locks/speed","vs-hold");}
-    if(vnav == 4){setprop("autopilot/locks/speed","ias-hold");}
-    if(vnav == 5){setprop("autopilot/locks/speed","dcs-hold");}
-    if(vnav == 6){setprop("autopilot/locks/speed","climb-hold");}
-    maxroll = getprop("/orientation/roll-deg");
-    if(maxroll > 45 or maxroll < -45){props.globals.getNode("autopilot/locks/passive-mode").setBoolValue(1);}
-    maxpitch = getprop("/orientation/pitch-deg");
-    if(maxpitch > 45 or maxpitch < -45){props.globals.getNode("autopilot/locks/passive-mode").setBoolValue(1);}
-    if(getprop("/position/altitude-agl-ft") < 200){props.globals.getNode("autopilot/locks/passive-mode").setBoolValue(1);} 
+    if (GO != 1) {return;}
+    lnav = AP_lnav.getValue();
+    vnav = AP_vnav.getValue();
+    spd = AP_spd.getValue();
+    
+    if(lnav == 0 or lnav ==nil){AP_hdg.setValue("wing-leveler");BC_btn.setBoolValue(0);}
+    if(lnav == 1){AP_hdg.setValue("dg-heading-hold");BC_btn.setBoolValue(0);if(vnav ==7 ){vnav = 0;}}
+    if(lnav == 2){AP_hdg.setValue("nav1-hold");BC_btn.setBoolValue(0);if(vnav ==7 ){vnav = 0;}}
+    if(lnav == 3){AP_hdg.setValue("nav1-hold");BC_btn.setBoolValue(0);}
+    if(lnav == 4){AP_hdg.setValue("nav1-hold");BC_btn.setBoolValue(1);if(vnav ==7 ){vnav = 0;}}
+    if(spd == 0){AP_spd.setValue("");}
+    if(spd == 1){AP_spd.setValue("speed-with-throttle");}
+    if(vnav == 0 or vnav == nil){AP_alt.setValue("");}
+    if(vnav == 1){AP_alt.setValue("altitude-hold");}
+    if(vnav == 2){AP_alt.setValue("altitude-hold");}
+    if(vnav == 3){AP_alt.setValue("vertical-speed-hold");}
+    if(vnav == 5){AP_spd.setValue("dcs-hold");}
+    if(vnav == 6){AP_alt.setValue("pitch-hold");}
+    if(vnav == 7){
+    AP_alt.setValue("gs1-hold");
+    if (props.globals.getNode("/instrumentation/nav/has-gs",1).getValue() == 0){
+            vnav = 0;
+            AP_alt.setValue("");}
+        }
+    maxroll = props.globals.getNode("/orientation/roll-deg",1).getValue();
+    if(maxroll > 45 or maxroll < -45){AP_passive.setBoolValue(1);}
+    maxpitch = props.globals.getNode("/orientation/pitch-deg").getValue();
+    if(maxpitch > 45 or maxpitch < -45){AP_passive.setBoolValue(1);}
+    if(props.globals.getNode("/position/altitude-agl-ft").getValue() < 200){AP_passive.setBoolValue(1);} 
    }
 
 #############################################################################

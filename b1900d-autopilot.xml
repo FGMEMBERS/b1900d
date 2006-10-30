@@ -398,7 +398,7 @@
 		<debug>false</debug>
 		<enable>
 			<prop>/autopilot/locks/speed</prop>
-			<value>ias-hold</value>
+			<value>speed-with-throttle</value>
 		</enable>
 		<input>
 			<prop>/velocities/airspeed-kt</prop>
@@ -436,17 +436,19 @@
 		<name>VS Hold</name>
 		<debug>false</debug>
 		<enable>
-			<prop>/autopilot/locks/speed</prop>
-			<value>vs-hold</value>
+			<prop>/autopilot/locks/altitude</prop>
+			<value>vertical-speed-hold</value>
+			<honor-passive>true</honor-passive>
 		</enable>
 		<input>
 			<prop>/velocities/vertical-speed-fps</prop>
 		</input>
 		<reference>
-			<prop>/autopilot/settings/target-vs-fps</prop>
+			<prop>/autopilot/settings/vertical-speed-fpm</prop>
+			<scale>0.01667</scale>
 		</reference>
 		<output>
-			<prop>/autopilot/internal/target-climb-rate-fps</prop>
+			<prop>/controls/flight/elevator-trim</prop>
 		</output>
 		<config>
       <Ts>0.02</Ts>
@@ -467,17 +469,18 @@
 		<name>Climb Hold</name>
 		<debug>false</debug>
 		<enable>
-			<prop>/autopilot/locks/speed</prop>
-			<value>climb-hold</value>
+			<prop>/autopilot/locks/altitude</prop>
+			<value>pitch-hold</value>
+			 <honor-passive>true</honor-passive>
 		</enable>
 		<input>
-			<prop>/velocities/vertical-speed-fps</prop>
+			<prop>/orientation/pitch-deg</prop>
 		</input>
 		<reference>
-			<prop>/autopilot/settings/target-vs-fps</prop>
+			<prop>/autopilot/settings/target-pitch-deg</prop>
 		</reference>
 		<output>
-			<prop>/autopilot/internal/target-climb-rate-fps</prop>
+			<prop>/controls/flight/elevator-trim</prop>
 		</output>
 		<config>
       <Ts>0.02</Ts>

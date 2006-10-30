@@ -26,8 +26,8 @@ Wheels/Flaps down Max Landing weight: 84 kt
 <airplane mass="10500">
 
  <approach speed="117" aoa="6" fuel="0.8">
-  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.25"/>
-  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.25"/>
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
   <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
   <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
@@ -78,7 +78,7 @@ Wing area 28.80m
        sweep="0" dihedral="6" taper="0.417"  camber="0.1"
        incidence="3.29" twist="-4.69">
   <stall aoa="16" width="6" peak="1.5"/>
-  <flap0 start="0" end=".6" lift="1.5" drag="1.7"/>
+  <flap0 start="0" end=".6" lift="1.5" drag="1.8"/>
   <flap1 start=".6" end=".95" lift="1.2" drag="1.2"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
   <control-speed control="FLAP0" transition-time="5"/>
@@ -111,16 +111,61 @@ Wing area 28.80m
   <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
  </vstab>
 
+<!-- Canards -->
+
+ <vstab x="-7.164" y="0.334" z="0.095" length="1.35" chord="0.95"
+        sweep="23" taper="0.5" dihedral="0" effectiveness="1.5">
+  <stall aoa="16" width="4" peak="1.5"/>
+ </vstab>
+ 
+ <vstab x="-7.164" y="-0.334" z="0.095" length="1.35" chord="0.95"
+        sweep="23" taper="0.5" dihedral="180" effectiveness="1.5">
+  <stall aoa="16" width="4" peak="1.5"/>
+ </vstab>
+
+ <vstab x="-7.222" y="-0.221" z="-0.183" length="0.5" chord="2.5"
+        sweep="15" taper="0.5" dihedral="245" effectiveness="1.5">
+  <stall aoa="16" width="4" peak="1.5"/>
+ </vstab>
+
+ <vstab x="-7.222" y="0.221" z="-0.183" length="0.5" chord="2.5"
+        sweep="15" taper="0.5" dihedral="295" effectiveness="1.5">
+  <stall aoa="16" width="4" peak="1.5"/>
+ </vstab>
+
+<!-- Winglets  -->
+
+ <vstab x="-0.476" y="8.645" z="-0.065" length="0.66" chord="0.45"
+        sweep="15" taper="0.7" dihedral="90" effectiveness="1.5">
+  <stall aoa="16" width="4" peak="1.5"/>
+ </vstab>
+
+ <vstab x="-0.476" y="-8.645" z="-0.065" length="0.66" chord="0.45"
+        sweep="15" taper="0.7" dihedral="90" effectiveness="1.5">
+  <stall aoa="16" width="4" peak="1.5"/>
+ </vstab>
+
+ <vstab x="-9.766" y="2.284" z="2.441" length="0.65" chord="0.39"
+        sweep="0" taper="0.7" dihedral="270" effectiveness="1.5">
+  <stall aoa="16" width="4" peak="1.5"/>
+ </vstab>
+
+ <vstab x="-9.766" y="-2.284" z="2.441" length="0.65" chord="0.39"
+        sweep="0" taper="0.7" dihedral="270" effectiveness="1.5">
+  <stall aoa="16" width="4" peak="1.5"/>
+ </vstab>
+
+
 <!--
 wet wing fuel storage:
 4484 lbs (Jet A - 6.84 ppg )
 
 
 -->
- <tank x="0.00" y="2.00" z="-0.7" capacity="1775" jet="true"/>
- <tank x="0.00" y="-2.00" z="-0.7" capacity="1775" jet="true"/>
- <tank x="0.00" y="4.00" z="-0.5" capacity="500" jet="true"/>
- <tank x="0.00" y="-4.00" z="-0.5" capacity="500" jet="true"/>
+ <tank x="0.00" y="1.40" z="-0.785" capacity="2000" jet="true"/>
+ <tank x="0.00" y="-1.40" z="-0.785" capacity="2000" jet="true"/>
+ <tank x="0.00" y="4.00" z="-0.550" capacity="242" jet="true"/>
+ <tank x="0.00" y="-4.00" z="-0.550" capacity="242" jet="true"/>
 
  <gear x="6.87" y="0.00" z="-2.267" compression=".15" retract-time="5" spring="0.2" damp="1.0">
   <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
