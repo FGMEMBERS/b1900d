@@ -48,11 +48,11 @@ setlistener("/sim/signals/fdm-initialized", func {
     AP_passive = props.globals.getNode("/autopilot/locks/passive-mode",1);
     BC_btn = props.globals.getNode("/instrumentation/nav/back-course-btn",1);
     GO = 1;
-    print("Flight Director Check");
+    print("Flight Director ...Check");
 });
 
 ####################################################################
-#######    handle KC 290 Mode Controller inputs,    ######################
+#######                 Mode Controller inputs               ######################
 ####################################################################
 handle_inputs = func {
     if (GO != 1) {return;}
@@ -86,11 +86,11 @@ handle_inputs = func {
     if(props.globals.getNode("/position/altitude-agl-ft").getValue() < 200){AP_passive.setBoolValue(1);} 
    }
 
-#############################################################################
-#update nav gps or nav setting
-#############################################################################
+#####################################################
+#######       update nav gps or nav setting          ##########
+#####################################################
 
-update_nav = func (){
+update_nav = func {
     slaved = getprop("/instrumentation/nav/slaved-to-gps");
     current_heading = getprop("/orientation/heading-magnetic-deg");
     if(slaved == 0){

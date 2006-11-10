@@ -98,11 +98,6 @@ July 2004 Syd Adams
         <path>Aircraft/b1900d/b1900d-sound.xml</path>
     </sound>
 
-    <panel>
-    <path>Aircraft/beech99/beech99-panel.xml</path>
-    <visibility>false</visibility>
-    </panel>
-
     <flaps>
         <setting>0.000</setting>
         <setting>0.25</setting> 
@@ -120,6 +115,7 @@ July 2004 Syd Adams
 
     <help>
         <title>Beechcraft B1900D</title>
+        <line></line>
         <key>
         <name>CTRL-A</name>
         <desc>Toggle autopilot on/off</desc>
@@ -129,9 +125,7 @@ July 2004 Syd Adams
         <desc>Toggle yokes on / off</desc>
         </key>
         <line></line>
-        <text>
-        Autopilot modes are selected with the FlightDirector:
-        Autopilot on with no flightdirector modes selected
+        <text>Autopilot on with no flightdirector modes selected
         defaults to Wing-Level;
         </text>
     </help>

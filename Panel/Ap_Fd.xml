@@ -115,7 +115,7 @@
     <script>
     if(getprop("/instrumentation/flightdirector/vnav") != 1){
     setprop("/instrumentation/flightdirector/vnav",1);
-    setprop("/autopilot/settings/target-alt-hold",getprop("/position/altitude-ft"));
+    setprop("/autopilot/settings/target-altitude-ft",getprop("/position/altitude-ft"));
     }else{
     setprop("/instrumentation/flightdirector/vnav",0);}
     </script>

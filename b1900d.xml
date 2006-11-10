@@ -25,7 +25,7 @@ Wheels/Flaps down Max Landing weight: 84 kt
 
 <airplane mass="10500">
 
- <approach speed="117" aoa="6" fuel="0.8">
+ <approach speed="110" aoa="6" fuel="0.8">
   <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
@@ -75,10 +75,10 @@ Wing area 28.80m
 	   
 	   
  <wing x="0.0" y="0.80" z="-0.9" length="8.0" chord="2.18"
-       sweep="0" dihedral="6" taper="0.417"  camber="0.1"
+       sweep="0" dihedral="6" taper="0.417"  camber="0.1" idrag="5.0"
        incidence="3.29" twist="-4.69">
   <stall aoa="16" width="6" peak="1.5"/>
-  <flap0 start="0" end=".6" lift="1.5" drag="1.8"/>
+  <flap0 start="0" end=".6" lift="1.6" drag="1.8"/>
   <flap1 start=".6" end=".95" lift="1.2" drag="1.2"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
   <control-speed control="FLAP0" transition-time="5"/>
@@ -159,7 +159,7 @@ Wing area 28.80m
 <!--
 wet wing fuel storage:
 4484 lbs (Jet A - 6.84 ppg )
-
+6.719 property tree ?
 
 -->
  <tank x="0.00" y="1.40" z="-0.785" capacity="2000" jet="true"/>
@@ -200,7 +200,7 @@ Prop diam: 2.78 m
 -->
 
  <propeller x="1.9" y="2.65" z="0.0"
-            mass="500" moment="95" radius="1.39"
+            mass="500" moment="75" radius="1.2"
             cruise-speed="280" cruise-rpm="1700"
             cruise-power="1270" cruise-alt="25000"
             min-rpm="1000" max-rpm="1700"
@@ -224,7 +224,7 @@ Prop diam: 2.78 m
  </propeller>
 
  <propeller x="1.9" y="-2.65" z="0.0"
-            mass="500" moment="95" radius="1.39"
+            mass="500" moment="75" radius="1.2"
             cruise-speed="280" cruise-rpm="1700"
             cruise-power="1270" cruise-alt="25000"
             min-rpm="1000" max-rpm="1700"
@@ -252,14 +252,18 @@ Prop diam: 2.78 m
 <ballast x="1.4" y="2.65" z="-0.5" mass="1200"/>
 
 <!-- Cockpit mass and Avionics -->
-<ballast x="4.5" y="0.0" z="0.0" mass="1500"/>
+<ballast x="4.5" y="0.0" z="0.0" mass="1800"/>
 
 <!-- NoseGear assembly -->
-<ballast x="4.7" y="0.0" z="-1.0" mass="600"/>
+<ballast x="4.7" y="0.0" z="-1.0" mass="800"/>
 
 <!-- MainGear assembly -->
 <ballast x="0.0" y="-2.65" z="-1.0" mass="600"/>
 <ballast x="0.0" y="2.65" z="-1.0" mass="600"/>
+
+<ballast x="-7.0" y="0.0" z="0.0" mass="-500"/>
+
+
 
  <weight x="4.2" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
  <weight x="0" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>

@@ -202,12 +202,12 @@
     <prop>/autopilot/internal/target-climb-rate-fps</prop>
   </output>
   <config>
-    <Kp>0.3</Kp>
+    <Kp>-1.5</Kp>
     <!-- proportional gain -->
     <Ki>0.0</Ki>
-    <u_min>-33.3</u_min>
+    <u_min>-40.0</u_min>
     <!-- minimum output clamp -->
-    <u_max>33.3</u_max>
+    <u_max>40.0</u_max>
     <!-- maximum output clamp -->
   </config>
 </pi-simple-controller>
@@ -231,13 +231,13 @@
     <prop>/autopilot/settings/target-pitch-deg</prop>
   </output>
   <config>
-    <Kp>0.06</Kp>       <!-- proportional gain -->
+    <Kp>1.5</Kp>       <!-- proportional gain -->
     <beta>1.0</beta>    <!-- input value weighing factor -->
     <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
     <gamma>0.0</gamma>  <!-- input value weighing factor for -->
                         <!-- unfiltered derivative error -->
     <Ti>10.0</Ti>       <!-- integrator time -->
-    <Td>0.00001</Td>    <!-- derivator time -->
+    <Td>0.001</Td>    <!-- derivator time -->
     <u_min>-5.0</u_min> <!-- minimum output clamp -->
     <u_max>5.0</u_max>  <!-- maximum output clamp -->
   </config>
@@ -302,7 +302,7 @@
       <alpha>0.01</alpha>
       <gamma>0.0</gamma>
       <Ti>20.0</Ti>
-      <Td>0.0000000000000000000000000000000000001</Td>
+      <Td>0.001</Td>
        <u_min>-8.3</u_min>
 	<u_max>8.3</u_max>
 	</config>

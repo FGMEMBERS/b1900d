@@ -3,6 +3,82 @@
   
   <path>b1900d.ac</path>
 
+  <panel>
+    <path>Aircraft/b1900d/Panel/b1900d-panel.xml</path>
+    <bottom-left>
+      <x-m>-4.663</x-m>
+      <y-m>-0.615</y-m>
+      <z-m>-0.317</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>-4.663</x-m>
+      <y-m>0.597</y-m>
+      <z-m>-0.317</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>-4.898</x-m>
+      <y-m>-0.615</y-m>
+      <z-m>0.561</z-m>
+    </top-left>
+  </panel>
+
+  <panel>
+    <path>Aircraft/b1900d/Panel/b1900d-throttles.xml</path>
+    <bottom-left>
+      <x-m>-4.362</x-m>
+      <y-m>-0.159</y-m>
+      <z-m>-0.479</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>-4.362</x-m>
+      <y-m>0.090</y-m>
+      <z-m>-0.479</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>-4.634</x-m>
+      <y-m>-0.159</y-m>
+      <z-m>-0.288</z-m>
+    </top-left>
+  </panel>
+
+  <panel>
+    <path>Aircraft/b1900d/Panel/b1900d-pedestal.xml</path>
+    <bottom-left>
+      <x-m>-3.987</x-m>
+      <y-m>-0.136</y-m>
+      <z-m>-0.531</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>-3.987</x-m>
+      <y-m>0.113</y-m>
+      <z-m>-0.531</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>-4.360</x-m>
+      <y-m>-0.136</y-m>
+      <z-m>-0.499</z-m>
+    </top-left>
+  </panel>
+
+  <panel>
+    <path>Aircraft/b1900d/Panel/lightswitches.xml</path>
+    <bottom-left>
+      <x-m>-4.453</x-m>
+      <y-m>-0.203</y-m>
+      <z-m>0.441</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>-4.453</x-m>
+      <y-m>0.201</y-m>
+      <z-m>0.441</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>-4.189</x-m>
+      <y-m>-0.203</y-m>
+      <z-m>0.594</z-m>
+    </top-left>
+  </panel>
+
 
   <model>
     <name>GPWS warning lamp/button (captain)</name>
@@ -487,82 +563,6 @@
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
- 
-  <panel>
-    <path>Aircraft/b1900d/Panel/b1900d-panel.xml</path>
-    <bottom-left>
-      <x-m>-4.663</x-m>
-      <y-m>-0.615</y-m>
-      <z-m>-0.317</z-m>
-    </bottom-left>
-    <bottom-right>
-      <x-m>-4.663</x-m>
-      <y-m>0.597</y-m>
-      <z-m>-0.317</z-m>
-    </bottom-right>
-    <top-left>
-      <x-m>-4.898</x-m>
-      <y-m>-0.615</y-m>
-      <z-m>0.561</z-m>
-    </top-left>
-  </panel>
-
-  <panel>
-    <path>Aircraft/b1900d/Panel/b1900d-throttles.xml</path>
-    <bottom-left>
-      <x-m>-4.362</x-m>
-      <y-m>-0.159</y-m>
-      <z-m>-0.479</z-m>
-    </bottom-left>
-    <bottom-right>
-      <x-m>-4.362</x-m>
-      <y-m>0.090</y-m>
-      <z-m>-0.479</z-m>
-    </bottom-right>
-    <top-left>
-      <x-m>-4.634</x-m>
-      <y-m>-0.159</y-m>
-      <z-m>-0.288</z-m>
-    </top-left>
-  </panel>
-
-  <panel>
-    <path>Aircraft/b1900d/Panel/b1900d-pedestal.xml</path>
-    <bottom-left>
-      <x-m>-3.987</x-m>
-      <y-m>-0.136</y-m>
-      <z-m>-0.531</z-m>
-    </bottom-left>
-    <bottom-right>
-      <x-m>-3.987</x-m>
-      <y-m>0.113</y-m>
-      <z-m>-0.531</z-m>
-    </bottom-right>
-    <top-left>
-      <x-m>-4.360</x-m>
-      <y-m>-0.136</y-m>
-      <z-m>-0.499</z-m>
-    </top-left>
-  </panel>
-
-  <panel>
-    <path>Aircraft/b1900d/Panel/lightswitches.xml</path>
-    <bottom-left>
-      <x-m>-4.453</x-m>
-      <y-m>-0.203</y-m>
-      <z-m>0.441</z-m>
-    </bottom-left>
-    <bottom-right>
-      <x-m>-4.453</x-m>
-      <y-m>0.201</y-m>
-      <z-m>0.441</z-m>
-    </bottom-right>
-    <top-left>
-      <x-m>-4.189</x-m>
-      <y-m>-0.203</y-m>
-      <z-m>0.594</z-m>
-    </top-left>
-  </panel>
 
 <animation>
   <type>material</type>
@@ -627,27 +627,25 @@
 <animation>
     <name>Alpha Sort</name>
     <object-name>shadowplane</object-name>
+    <object-name>Glass</object-name>
+    <object-name>Trim</object-name>
+    <object-name>windows</object-name>
     <object-name>LHFastprop</object-name>
     <object-name>LHSlowprop</object-name>
     <object-name>RHFastprop</object-name>
     <object-name>RHSlowprop</object-name>
 </animation>
-
+<!--
   <animation>
     <type>noshadow</type>
-    <object-name>windows</object-name>
-    <object-name>Trim</object-name>
-    <object-name>Glass</object-name>
-    <object-name>RHFastprop</object-name>
-    <object-name>RHSlowprop</object-name>
-    <object-name>LHFastprop</object-name>
-    <object-name>LHSlowprop</object-name>
+    <object-name>Alpha Sort</object-name>
 </animation>
 
  <animation>
 	<type>shader</type>
         <shader>chrome</shader>
 	<texture>Aircraft/b1900d/Models/chrome1.rgb</texture>
+	<object-name>handle</object-name>
 	<object-name>Glass</object-name>
 	<object-name>Throttle0</object-name>
 	<object-name>Throttle1</object-name>
@@ -664,7 +662,8 @@
 	<object-name>LHspinner</object-name>
 	<object-name>RHspinner</object-name>
 </animation>
-
+-->
+  
  <animation>
    <type>select</type>
    <object-name>shadowplane</object-name>
