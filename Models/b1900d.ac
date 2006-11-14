@@ -17,7 +17,7 @@ OBJECT poly
 name "LHgeardoor2"
 data 4
 Mesh
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 8
@@ -49,7 +49,7 @@ OBJECT poly
 name "LHStrut"
 data 8
 Mesh.013
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 21
@@ -1165,7 +1165,7 @@ OBJECT poly
 name "Rudder"
 data 8
 Mesh.207
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 6
@@ -1214,7 +1214,7 @@ OBJECT poly
 name "Rtrim"
 data 8
 Mesh.004
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 36
@@ -1463,7 +1463,7 @@ OBJECT poly
 name "FlapLever"
 data 8
 Mesh.005
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 18
@@ -2019,7 +2019,7 @@ OBJECT poly
 name "RHStrut"
 data 8
 Mesh.006
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 21
@@ -2170,7 +2170,7 @@ OBJECT poly
 name "RLdamper"
 data 8
 Mesh.007
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 8
@@ -2249,7 +2249,7 @@ OBJECT poly
 name "Throttle1.001"
 data 8
 Mesh.205
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 22
@@ -4327,7 +4327,7 @@ OBJECT poly
 name "RHwheel"
 data 8
 Mesh.011
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 260
@@ -6625,7 +6625,7 @@ OBJECT poly
 name "LLdamper"
 data 8
 Mesh.014
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 8
@@ -6685,7 +6685,7 @@ OBJECT poly
 name "RHshock"
 data 8
 Mesh.015
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 20
@@ -7877,7 +7877,7 @@ OBJECT poly
 name "LUdamper"
 data 8
 Mesh.018
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 8
@@ -7945,7 +7945,7 @@ OBJECT poly
 name "LHwiper"
 data 8
 Mesh.020
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 32
@@ -9453,7 +9453,7 @@ OBJECT poly
 name "RHflap1"
 data 8
 Mesh.023
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 6
@@ -9604,7 +9604,7 @@ OBJECT poly
 name "RHflap"
 data 8
 Mesh.025
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 25
@@ -9908,7 +9908,7 @@ OBJECT poly
 name "Rblade"
 data 8
 Mesh.027
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 60
 numvert 56
@@ -10332,7 +10332,7 @@ OBJECT poly
 name "FUdamper"
 data 8
 Mesh.028
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 8
@@ -10523,7 +10523,7 @@ OBJECT poly
 name "RHelevator"
 data 8
 Mesh.030
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 21
@@ -12684,7 +12684,7 @@ OBJECT poly
 name "Logo-lights"
 data 8
 Mesh.032
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 50
 numvert 44
@@ -13460,7 +13460,7 @@ OBJECT poly
 name "PropP0.001"
 data 8
 Mesh.204
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 20
@@ -14672,7 +14672,7 @@ OBJECT poly
 name "Taxi-light"
 data 8
 Mesh.043
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 13
@@ -14767,7 +14767,7 @@ OBJECT poly
 name "Lblade"
 data 8
 Mesh.044
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 60
 numvert 56
@@ -15432,7 +15432,7 @@ OBJECT poly
 name "RUdamper"
 data 8
 Mesh.045
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 8
@@ -15534,7 +15534,7 @@ OBJECT poly
 name "Cond1.001"
 data 8
 Mesh.201
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 20
@@ -16984,7 +16984,7 @@ OBJECT poly
 name "Lblade.001"
 data 8
 Mesh.058
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 60
 numvert 56
@@ -17434,7 +17434,7 @@ OBJECT poly
 name "FLdamper"
 data 8
 Mesh.082
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 8
@@ -17960,7 +17960,7 @@ OBJECT poly
 name "Throttle0.001"
 data 8
 Mesh.206
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 20
@@ -18149,7 +18149,7 @@ OBJECT poly
 name "PropP1.001"
 data 8
 Mesh.203
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 22
@@ -18554,7 +18554,7 @@ OBJECT poly
 name "RHwiper"
 data 8
 Mesh.056
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 32
@@ -21308,7 +21308,7 @@ OBJECT poly
 name "Lblade.003"
 data 8
 Mesh.059
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 60
 numvert 56
@@ -21732,7 +21732,7 @@ OBJECT poly
 name "Lblade.002"
 data 8
 Mesh.060
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 60
 numvert 56
@@ -22432,7 +22432,7 @@ OBJECT poly
 name "LHflap"
 data 8
 Mesh.009
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 25
@@ -22604,7 +22604,7 @@ OBJECT poly
 name "FWheel"
 data 8
 Mesh.065
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 42
@@ -23195,7 +23195,7 @@ OBJECT poly
 name "LHelevator"
 data 8
 Mesh.067
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 21
@@ -23460,7 +23460,7 @@ OBJECT poly
 name "Engines"
 data 8
 Mesh.132
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 50
 numvert 542
@@ -27911,7 +27911,7 @@ OBJECT poly
 name "toggle.020"
 data 8
 Mesh.072
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 60
 numvert 13
@@ -28214,7 +28214,7 @@ OBJECT poly
 name "RHaileron"
 data 8
 Mesh.075
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 6
@@ -28263,7 +28263,7 @@ OBJECT poly
 name "Wing"
 data 8
 Mesh.076
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 130
@@ -30586,7 +30586,7 @@ OBJECT poly
 name "Cond0.001"
 data 8
 Mesh.202
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 20
@@ -30768,7 +30768,7 @@ OBJECT poly
 name "Navlights"
 data 8
 Mesh.063
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 27
@@ -30962,7 +30962,7 @@ OBJECT poly
 name "LHaileron"
 data 8
 Mesh.079
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 6
@@ -32094,7 +32094,7 @@ OBJECT poly
 name "RH-landing"
 data 8
 Mesh.088
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 13
@@ -32870,7 +32870,7 @@ OBJECT poly
 name "Throttle0"
 data 8
 Mesh.097
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 16
@@ -32987,7 +32987,7 @@ OBJECT poly
 name "Throttle1"
 data 8
 Mesh.098
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 16
@@ -33104,7 +33104,7 @@ OBJECT poly
 name "frtWheeldoor"
 data 8
 Mesh.099
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 38
@@ -33507,7 +33507,7 @@ OBJECT poly
 name "Rblade.003"
 data 8
 Mesh.101
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 60
 numvert 56
@@ -33931,7 +33931,7 @@ OBJECT poly
 name "Rblade.002"
 data 8
 Mesh.102
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 60
 numvert 56
@@ -34355,7 +34355,7 @@ OBJECT poly
 name "Rblade.001"
 data 8
 Mesh.103
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 60
 numvert 56
@@ -35208,7 +35208,7 @@ OBJECT poly
 name "Seats"
 data 8
 Mesh.105
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 60
 numvert 266
@@ -37460,7 +37460,7 @@ OBJECT poly
 name "PropP0"
 data 8
 Mesh.106
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 16
@@ -37577,7 +37577,7 @@ OBJECT poly
 name "PropP1"
 data 8
 Mesh.107
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 16
@@ -37998,7 +37998,7 @@ OBJECT poly
 name "NoseGear"
 data 8
 Mesh.111
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 41
@@ -42150,7 +42150,7 @@ OBJECT poly
 name "Atrim"
 data 8
 Mesh.126
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 36
@@ -42500,7 +42500,7 @@ OBJECT poly
 name "LH-landing"
 data 8
 Mesh.128
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 13
@@ -42595,7 +42595,7 @@ OBJECT poly
 name "Cond0"
 data 8
 Mesh.129
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 8
@@ -42641,7 +42641,7 @@ OBJECT poly
 name "Cond1"
 data 8
 Mesh.130
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 8
@@ -42687,7 +42687,7 @@ OBJECT poly
 name "LHgeardoor1"
 data 8
 Mesh.001
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 8
@@ -43258,7 +43258,7 @@ OBJECT poly
 name "RHgeardoor1"
 data 8
 Mesh.135
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 8
@@ -43290,7 +43290,7 @@ OBJECT poly
 name "LHwheel"
 data 8
 Mesh.136
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 260
@@ -45512,7 +45512,7 @@ OBJECT poly
 name "LHshock"
 data 8
 Mesh.137
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 20
@@ -45662,7 +45662,7 @@ OBJECT poly
 name "RHgeardoor2"
 data 8
 Mesh.138
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 8
@@ -52112,7 +52112,7 @@ OBJECT poly
 name "Trim"
 data 6
 Circle
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 220
@@ -53214,7 +53214,7 @@ OBJECT poly
 name "beacon"
 data 8
 Mesh.143
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 26
@@ -55227,7 +55227,7 @@ OBJECT poly
 name "Fuselage"
 data 8
 Mesh.155
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 1000
@@ -68245,7 +68245,7 @@ OBJECT poly
 name "FTire"
 data 8
 Mesh.162
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 45
 numvert 130
@@ -69361,7 +69361,7 @@ OBJECT poly
 name "LHflap1"
 data 8
 Mesh.163
-texture "CMAlivery.png"
+texture "CMAlivery.rgb"
 texrep 1 1
 crease 30
 numvert 6
