@@ -35,9 +35,9 @@ modestring1 = nil;
 # Lighting system
 
 strobe_switch = props.globals.getNode("controls/switches/strobe", 1);
-aircraft.light.new("sim/model/b1900d/lighting/strobe", 0.05, 1.30, strobe_switch);
+aircraft.light.new("sim/model/b1900d/lighting/strobe", [0.05, 1.30], strobe_switch);
 beacon_switch = props.globals.getNode("controls/switches/beacon", 1);
-aircraft.light.new("sim/model/b1900d/lighting/beacon", 1.0, 1.0, beacon_switch);
+aircraft.light.new("sim/model/b1900d/lighting/beacon", [1.0, 1.0], beacon_switch);
 
 setlistener("/sim/signals/fdm-initialized", func {
    lhmenu = 3;
