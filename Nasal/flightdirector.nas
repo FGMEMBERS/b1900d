@@ -99,16 +99,17 @@ update_nav = func {
         nav_mag_brg = getprop("/instrumentation/nav/heading-deg");
     }
     else
-    {
+    {if (getprop("/instrumentation/gps/serviceable")){
         desired_course = getprop("/instrumentation/gps/wp/wp[1]/desired-course-deg");
         desired_course -= getprop("/environment/magnetic-variation-deg");
         nav_mag_brg = getprop("/instrumentation/gps/wp/wp[1]/bearing-mag-deg");
         if(desired_course < 0){desired_course += 360;}
         elsif(desired_course > 360){desired_course -= 360;}
         course_offset = getprop("/instrumentation/gps/wp/wp[1]/course-deviation-deg");
+        if(course_offset == nil){course_offset = 0.0;}
         if(course_offset > 10.0){course_offset = 10.0;}
         if(course_offset < -10.0){course_offset = -10.0;}
-    }
+    }}
     setprop("/instrumentation/flightdirector/dtk",desired_course);
     if(nav_mag_brg == nil){nav_mag_brg = 0;}
     nav_mag_brg -= current_heading;

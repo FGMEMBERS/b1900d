@@ -6,8 +6,7 @@
   <animation>
   <type>material</type>
     <object-name>RMI.compass</object-name>
-    <global type="bool">true</global>
-  <emission>
+    <emission>
     <red>1.0</red>
     <green>0.5</green>
     <blue>0.2</blue>

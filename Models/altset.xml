@@ -9,8 +9,7 @@
   <type>material</type>
     <object-name>AltSet.cancel</object-name>
     <object-name>APalt1</object-name>
-    <global type="bool">true</global>
-  <emission>
+    <emission>
     <red>1.0</red>
     <green>0.5</green>
     <blue>0.2</blue>
@@ -21,8 +20,7 @@
  <animation>
   <type>material</type>
     <object-name>AltSet.bezel</object-name>
-    <global type="bool">true</global>
-  <emission>
+    <emission>
     <red>0.2</red>
     <green>0.2</green>
     <blue>0.2</blue>

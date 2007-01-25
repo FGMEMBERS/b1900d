@@ -7,8 +7,7 @@
   <type>material</type>
     <object-name>EHSI.face</object-name>
     <object-name>EHSI.gsp1</object-name>
-    <global type="bool">true</global>
-  <emission>
+    <emission>
     <red>1.0</red>
     <green>1.0</green>
     <blue>1.0</blue>
@@ -19,8 +18,7 @@
  <animation>
   <type>material</type>
     <object-name>EHSI.bezel</object-name>
-    <global type="bool">true</global>
-  <emission>
+    <emission>
     <red>0.2</red>
     <green>0.2</green>
     <blue>0.2</blue>

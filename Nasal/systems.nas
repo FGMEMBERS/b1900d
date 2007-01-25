@@ -46,14 +46,25 @@ setlistener("/sim/signals/fdm-initialized", func {
    rhsubmenu[rhmenu] = 3;
    setprop("/instrumentation/altimeter/millibars",0.0);
    fuel_density=getprop("consumables/fuel/tank[0]/density-ppg");
-   setprop("/instrumentation/gps-annunciator/mode-string[0]","PWR OFF");
-   setprop("/instrumentation/gps-annunciator/mode-string[1]","PWR OFF");
    setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
    setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
    setprop("/instrumentation/heading-indicator/offset-deg",-1 * getprop("/environment/magnetic-variation-deg"));
-   setprop("/instrumentation/gps/serviceable",0);
-   print("KLN-90B GPS  ---check");
+   print("KLN-90B GPS  ...Check");
 });
+
+setlistener("/engines/engine/out-of-fuel", func {
+if(cmdarg().getValue() != 0){
+   fueltanks = props.globals.getNode("consumables/fuel").getChildren("tank");
+   foreach(f; fueltanks) {
+        if(f.getNode("selected", 1).getBoolValue()){
+           if(f.getNode("level-lbs").getValue() > 0.01){
+                 setprop("/engines/engine/out-of-fuel",0);               
+              }           
+           }
+       }
+   }
+}
+);
 
 
 update_systems = func {

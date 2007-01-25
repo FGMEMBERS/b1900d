@@ -9,8 +9,7 @@
   <type>material</type>
     <object-name>Fuelface</object-name>
     <object-name>FQneedle</object-name>
-    <global type="bool">true</global>
-  <emission>
+    <emission>
     <red>1.0</red>
     <green>0.4</green>
     <blue>0.2</blue>
@@ -22,8 +21,7 @@
  <animation>
   <type>material</type>
     <object-name>FuelPanel</object-name>
-    <global type="bool">true</global>
-  <emission>
+    <emission>
     <red>0.2</red>
     <green>0.2</green>
     <blue>0.2</blue>

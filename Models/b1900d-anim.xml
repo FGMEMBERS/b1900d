@@ -515,8 +515,8 @@
       <y-m>-0.576</y-m>
       <z-m>-0.089</z-m>
       <heading-deg>87</heading-deg>
-      <pitch-deg>-31</pitch-deg>
-    </offsets>
+      <roll-deg>31</roll-deg>
+      </offsets>
   </model>
 
  <model>
@@ -589,7 +589,7 @@
   <condition>
   <equals>
   <property>sim/model/b1900d/livery-num</property>
-  <value>1</value>
+  <value>0</value>
   </equals>
   </condition>
   <object-name>Fuselage</object-name>
@@ -768,7 +768,7 @@
   <object-name>Cabin</object-name>
 <condition>
 <not-equals>
-<property>/controls/switches/master-panel</property>
+<property>controls/switches/master-panel</property>
 <value>0</value>
 </not-equals>
 </condition>
@@ -791,7 +791,7 @@
   <global type="bool">true</global>
 <condition>
 <not-equals>
-<property>/controls/switches/master-panel</property>
+<property>controls/switches/master-panel</property>
 <value>0</value>
 </not-equals>
 </condition>
@@ -827,7 +827,7 @@
     <object-name>LHFastprop</object-name>
     <condition>
       <greater-than>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <value>999</value>
       </greater-than>
     </condition>
@@ -838,11 +838,11 @@
     <object-name>LHSlowprop</object-name>
     <condition>
       <greater-than>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <value>499</value>
       </greater-than>
       <less-than>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <value>1000</value>
       </less-than>
     </condition>
@@ -853,7 +853,7 @@
     <object-name>LHspinner</object-name>
     <condition>
       <less-than>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <value>500</value>
       </less-than>
     </condition>
@@ -862,7 +862,7 @@
   <animation>
     <type>spin</type>
     <object-name>LHspinner</object-name>
-    <property>/engines/engine[0]/rpm</property>
+    <property>engines/engine[0]/rpm</property>
     <center>
       <x-m>-2.226</x-m>
       <y-m>-2.634</y-m>
@@ -878,7 +878,7 @@
   <animation>
     <type>spin</type>
     <object-name>LHSlowprop</object-name>
-    <property>/engines/engine[0]/rpm</property>
+    <property>engines/engine[0]/rpm</property>
     <factor>.2</factor>   
     <center>
       <x-m>-2.226</x-m>
@@ -895,7 +895,7 @@
   <animation>
     <type>spin</type>
     <object-name>LHFastprop</object-name>
-    <property>/engines/engine[0]/rpm</property>
+    <property>engines/engine[0]/rpm</property>
     <factor>.005</factor>   
 	<center>
       <x-m>-2.226</x-m>
@@ -914,7 +914,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Lblade</object-name>
-  <property>/controls/engines/engine[0]/propeller-pitch</property>
+  <property>controls/engines/engine[0]/propeller-pitch</property>
   <interpolation>
     <entry>
       <ind>0.0</ind>
@@ -943,7 +943,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lblade.002</object-name>
-    <property>/controls/engines/engine[0]/propeller-pitch</property>
+    <property>controls/engines/engine[0]/propeller-pitch</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
@@ -972,7 +972,7 @@
     <animation>
           <type>rotate</type>
       <object-name>Lblade.001</object-name>
-      <property>/controls/engines/engine[0]/propeller-pitch</property>
+      <property>controls/engines/engine[0]/propeller-pitch</property>
       <interpolation>
         <entry>
           <ind>0.0</ind>
@@ -1001,7 +1001,7 @@
       <animation>
         <type>rotate</type>
         <object-name>Lblade.003</object-name>
-        <property>/controls/engines/engine[0]/propeller-pitch</property>
+        <property>controls/engines/engine[0]/propeller-pitch</property>
         <interpolation>
           <entry>
             <ind>0.0</ind>
@@ -1037,7 +1037,7 @@
     <object-name>RHFastprop</object-name>
     <condition>
       <greater-than>
-        <property>/engines/engine[1]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <value>999</value>
       </greater-than>
     </condition>
@@ -1048,11 +1048,11 @@
     <object-name>RHSlowprop</object-name>
     <condition>
       <greater-than>
-        <property>/engines/engine[1]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <value>499</value>
       </greater-than>
       <less-than>
-        <property>/engines/engine[1]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <value>1000</value>
       </less-than>
     </condition>
@@ -1063,7 +1063,7 @@
     <object-name>RHspinner</object-name>
     <condition>
       <less-than>
-        <property>/engines/engine[1]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <value>500</value>
       </less-than>
     </condition>
@@ -1072,7 +1072,7 @@
   <animation>
     <type>spin</type>
     <object-name>RHspinner</object-name>
-    <property>/engines/engine[1]/rpm</property>
+    <property>engines/engine[1]/rpm</property>
     <center>
       <x-m>-2.226</x-m>
       <y-m>2.634</y-m>
@@ -1088,7 +1088,7 @@
   <animation>
     <type>spin</type>
     <object-name>RHSlowprop</object-name>
-    <property>/engines/engine[1]/rpm</property>
+    <property>engines/engine[1]/rpm</property>
     <factor>.2</factor>   
     <center>
       <x-m>-2.226</x-m>
@@ -1105,7 +1105,7 @@
   <animation>
     <type>spin</type>
     <object-name>RHFastprop</object-name>
-    <property>/engines/engine[1]/rpm</property>
+    <property>engines/engine[1]/rpm</property>
     <factor>.005</factor>   
 	<center>
       <x-m>-2.226</x-m>
@@ -1247,7 +1247,7 @@
     <object-name>Gearlamp</object-name>
     <condition>
       <equals>
-        <property>/gear/gear/position-norm</property>
+        <property>gear/gear/position-norm</property>
         <value>1</value>
       </equals>
     </condition>
@@ -1503,21 +1503,21 @@
     <object-name>GPS-alt</object-name>
     <object-name>GPS-navmode</object-name>
     <condition>
-      <property>/instrumentation/nav/slaved-to-gps</property>
+      <property>instrumentation/nav/slaved-to-gps</property>
     </condition>
   </animation>
   <animation>
     <type>select</type>
     <object-name>gps-leg</object-name>
     <condition>
-      <property>/instrumentation/gps/leg-mode</property>
+      <property>instrumentation/gps/leg-mode</property>
     </condition>
   </animation>
   <animation>
     <type>select</type>
     <object-name>gps-appr</object-name>
     <condition>
-      <property>/instrumentation/gps/approach-active</property>
+      <property>instrumentation/gps/approach-active</property>
     </condition>
   </animation>
 
@@ -1525,7 +1525,7 @@
     <type>select</type>
     <object-name>Beacon1</object-name>
     <condition>
-      <property>/sim/model/b1900d/lighting/beacon/state</property>
+      <property>sim/model/b1900d/lighting/beacon/state</property>
     </condition>
   </animation>
   <animation>
@@ -1547,9 +1547,9 @@
     <object-name>Beacon2</object-name>
     <condition>
       <not>
-   <property>/sim/model/b1900d/lighting/beacon/state</property>
+   <property>sim/model/b1900d/lighting/beacon/state</property>
       </not>
-   <property>/controls/switches/beacon</property>
+   <property>controls/switches/beacon</property>
     </condition>
   </animation>
   <animation>
@@ -1570,7 +1570,7 @@
     <type>select</type>
     <object-name>Strobe1</object-name>
     <condition>
-      <property>/sim/model/b1900d/lighting/strobe/state</property>
+      <property>sim/model/b1900d/lighting/strobe/state</property>
     </condition>
   </animation>
   <animation>
@@ -1592,7 +1592,7 @@
     <type>select</type>
     <object-name>Strobe2</object-name>
     <condition>
-      <property>/sim/model/b1900d/lighting/strobe/state</property>
+      <property>sim/model/b1900d/lighting/strobe/state</property>
     </condition>
   </animation>
   <animation>
@@ -1616,7 +1616,7 @@
     <object-name>LH-landing</object-name>
     <condition>
       <greater-than>
-        <property>/systems/electrical/outputs/landing-light[0]</property>
+        <property>systems/electrical/outputs/landing-light[0]</property>
         <value>0.2</value>
       </greater-than>
     </condition>
@@ -1629,7 +1629,7 @@
     <object-name>RH-landing</object-name>
     <condition>
       <greater-than>
-        <property>/systems/electrical/outputs/landing-light[1]</property>
+        <property>systems/electrical/outputs/landing-light[1]</property>
         <value>0.2</value>
       </greater-than>
     </condition>
@@ -1640,7 +1640,7 @@
     <object-name>Navlights</object-name>
     <condition>
       <greater-than>
-        <property>/systems/electrical/outputs/nav-lights</property>
+        <property>systems/electrical/outputs/nav-lights</property>
         <value>0.2</value>
       </greater-than>
     </condition>
@@ -1651,7 +1651,7 @@
     <object-name>beacon</object-name>
     <condition>
       <greater-than>
-        <property>/systems/electrical/outputs/beacon</property>
+        <property>systems/electrical/outputs/beacon</property>
         <value>0.2</value>
       </greater-than>
     </condition>
@@ -1662,7 +1662,7 @@
     <object-name>Logo-lights</object-name>
     <condition>
       <greater-than>
-        <property>/systems/electrical/outputs/logo</property>
+        <property>systems/electrical/outputs/logo</property>
         <value>0.2</value>
       </greater-than>
     </condition>
@@ -1674,11 +1674,11 @@
     <condition>
     <and>
       <greater-than>
-        <property>/systems/electrical/outputs/taxi-lights</property>
+        <property>systems/electrical/outputs/taxi-lights</property>
         <value>0.2</value>
       </greater-than>
       <equals>
-      <property>/gear/gear/position-norm</property>
+      <property>gear/gear/position-norm</property>
       <value>1</value>
       </equals>
       </and>
@@ -1691,11 +1691,11 @@
     <condition>
       <or>
       <less-than>
-        <property>/sim/time/sun-angle-rad</property>
+        <property>sim/time/sun-angle-rad</property>
         <value>1.660001</value>
       </less-than>
       <equals>
-        <property>/controls/switches/master-panel</property>
+        <property>controls/switches/master-panel</property>
         <value>0.0</value>
       </equals>
     </or>
@@ -1707,11 +1707,11 @@
     <object-name>LitPanel</object-name>
     <condition>
         <greater-than>
-          <property>/sim/time/sun-angle-rad</property>
+          <property>sim/time/sun-angle-rad</property>
           <value>1.660000</value>
         </greater-than>
         <greater-than>
-          <property>/controls/switches/master-panel</property>
+          <property>controls/switches/master-panel</property>
           <value>0.0</value>
         </greater-than>
     </condition>
@@ -1722,17 +1722,17 @@
     <object-name>GPSbtn</object-name>
     <condition>
         <greater-than>
-          <property>/systems/electrical/outputs/gps</property>
+          <property>systems/electrical/outputs/gps</property>
           <value>0.2</value>
         </greater-than>
-          <property>/instrumentation/gps/serviceable</property>
+          <property>instrumentation/gps/serviceable</property>
     </condition>
   </animation>
 
   <animation>
     <type>translate</type>
     <object-name>Extlights</object-name>
-    <property>/controls/switches/landing-light</property>
+    <property>controls/switches/landing-light</property>
     <min>0.0</min>
     <max>1.0</max>
     <interpolation>
@@ -1760,7 +1760,7 @@
   <animation>
     <type>translate</type>
     <object-name>Extlights.001</object-name>
-    <property>/controls/switches/landing-light[1]</property>
+    <property>controls/switches/landing-light[1]</property>
     <min>0.0</min>
     <max>1.0</max>
     <interpolation>
@@ -1789,7 +1789,7 @@
   <animation>
     <type>translate</type>
     <object-name>Extlights.002</object-name>
-    <property>/controls/switches/taxi-lights</property>
+    <property>controls/switches/taxi-lights</property>
     <min>0.0</min>
     <max>1.0</max>
     <interpolation>
@@ -1818,7 +1818,7 @@
   <animation>
     <type>translate</type>
     <object-name>Extlights.003</object-name>
-    <property>/controls/switches/ice-light</property>
+    <property>controls/switches/ice-light</property>
     <min>0.0</min>
     <max>1.0</max>
     <interpolation>
@@ -1847,7 +1847,7 @@
   <animation>
     <type>translate</type>
     <object-name>Extlights.004</object-name>
-    <property>/controls/switches/nav-lights</property>
+    <property>controls/switches/nav-lights</property>
     <min>0.0</min>
     <max>1.0</max>
     <interpolation>
@@ -1876,7 +1876,7 @@
   <animation>
     <type>translate</type>
     <object-name>Extlights.005</object-name>
-    <property>/controls/switches/beacon</property>
+    <property>controls/switches/beacon</property>
     <min>0.0</min>
     <max>1.0</max>
     <interpolation>
@@ -1905,7 +1905,7 @@
   <animation>
     <type>translate</type>
     <object-name>Extlights.006</object-name>
-    <property>/controls/switches/strobe</property>
+    <property>controls/switches/strobe</property>
     <min>0.0</min>
     <max>1.0</max>
     <interpolation>
@@ -1934,7 +1934,7 @@
   <animation>
     <type>translate</type>
     <object-name>Extlights.007</object-name>
-    <property>/controls/switches/recog</property>
+    <property>controls/switches/recog</property>
     <min>0.0</min>
     <max>1.0</max>
     <interpolation>
@@ -1962,7 +1962,7 @@
   <animation>
     <type>translate</type>
     <object-name>Extlights.008</object-name>
-    <property>/controls/switches/logo</property>
+    <property>controls/switches/logo</property>
     <min>0.0</min>
     <max>1.0</max>
     <interpolation>
@@ -1990,7 +1990,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Masterpanel</object-name>
-    <property>/controls/switches/master-panel</property>
+    <property>controls/switches/master-panel</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
@@ -2017,7 +2017,7 @@
   <animation>
     <type>rotate</type>
     <object-name>OHknob</object-name>
-    <property>/controls/lighting/instruments-norm</property>
+    <property>controls/lighting/instruments-norm</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
@@ -2044,7 +2044,7 @@
   <animation>
     <type>rotate</type>
     <object-name>OHknob.001</object-name>
-    <property>/controls/lighting/engines-norm</property>
+    <property>controls/lighting/engines-norm</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
@@ -2070,7 +2070,7 @@
   <animation>
     <type>rotate</type>
     <object-name>OHknob.005</object-name>
-    <property>/controls/lighting/panel-norm</property>
+    <property>controls/lighting/panel-norm</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
@@ -2109,7 +2109,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Extpowerselect</object-name>
-    <property>/controls/electric/external-power</property>
+    <property>controls/electric/external-power</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
@@ -2135,7 +2135,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Avionicsswitch</object-name>
-    <property>/controls/switches/master-avionics</property>
+    <property>controls/switches/master-avionics</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
@@ -2162,7 +2162,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Battselect</object-name>
-    <property>/controls/electric/battery-switch</property>
+    <property>controls/electric/battery-switch</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
@@ -2188,7 +2188,7 @@
   <animation>
     <type>rotate</type>
     <object-name>LHGen</object-name>
-    <property>/controls/electric/engine[0]/generator</property>
+    <property>controls/electric/engine[0]/generator</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
@@ -2214,7 +2214,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RHGen</object-name>
-    <property>/controls/electric/engine[1]/generator</property>
+    <property>controls/electric/engine[1]/generator</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
@@ -2251,7 +2251,7 @@
     <object-name>FWheel</object-name>
     <object-name>FLdamper</object-name>
     <object-name>FUdamper</object-name>
-    <property>/gear/gear[0]/caster-angle-deg</property>
+    <property>gear/gear[0]/caster-angle-deg</property>
     <center>
       <x-m>-6.824</x-m>
       <y-m>0.0</y-m>
@@ -2268,7 +2268,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Frtgear</object-name>
-<property>/gear/gear[0]/position-norm</property>
+<property>gear/gear[0]/position-norm</property>
     <offset-deg>100</offset-deg>
     <factor>-100</factor>
     <center>
@@ -2287,7 +2287,7 @@
   <animation>
     <type>rotate</type>
     <object-name>frtWheeldoor</object-name>
-    <property>/gear/gear[0]/position-norm</property>
+    <property>gear/gear[0]/position-norm</property>
     <offset-deg>95</offset-deg>
     <factor>-95</factor>
     <center>
@@ -2305,7 +2305,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Taxi-light</object-name>
-    <property>/gear/gear[0]/position-norm</property>
+    <property>gear/gear[0]/position-norm</property>
     <offset-deg>95</offset-deg>
     <factor>-95</factor>
     <center>
@@ -2394,7 +2394,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RHgear</object-name>
-  <property>/gear/gear[2]/position-norm</property>
+  <property>gear/gear[2]/position-norm</property>
     <interpolation>
       <entry>
         <ind>0</ind>
@@ -2424,7 +2424,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RHgeardoor1</object-name>
-    <property>/gear/gear[2]/position-norm</property>
+    <property>gear/gear[2]/position-norm</property>
     <interpolation>
       <entry>
         <ind>0</ind>
@@ -2454,7 +2454,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RHgeardoor2</object-name>
-    <property>/gear/gear[2]/position-norm</property>
+    <property>gear/gear[2]/position-norm</property>
     <interpolation>
       <entry>
         <ind>0</ind>
@@ -2552,7 +2552,7 @@
   <animation>
     <type>rotate</type>
     <object-name>LHgear</object-name>
-  <property>/gear/gear[1]/position-norm</property>
+  <property>gear/gear[1]/position-norm</property>
     <interpolation>
       <entry>
         <ind>0</ind>
@@ -2582,7 +2582,7 @@
   <animation>
     <type>rotate</type>
     <object-name>LHgeardoor1</object-name>
-    <property>/gear/gear[1]/position-norm</property>
+    <property>gear/gear[1]/position-norm</property>
     <interpolation>
       <entry>
         <ind>0</ind>
@@ -2612,7 +2612,7 @@
   <animation>
     <type>rotate</type>
     <object-name>LHgeardoor2</object-name>
-    <property>/gear/gear[1]/position-norm</property>
+    <property>gear/gear[1]/position-norm</property>
     <interpolation>
       <entry>
         <ind>0</ind>
@@ -2714,7 +2714,7 @@
  <animation>
     <type>rotate</type>
     <object-name>Rudder</object-name>
-    <property>/controls/flight/rudder</property>
+    <property>controls/flight/rudder</property>
     <factor>25</factor>
     <center>
       <x-m>8.909</x-m>
@@ -2731,7 +2731,7 @@
   <animation>
     <type>rotate</type>
     <object-name>LHelevator</object-name>
-    <property>/surface-positions/elevator-pos-norm</property>
+    <property>surface-positions/elevator-pos-norm</property>
     <factor>15</factor>
     <center>
       <x-m>9.755</x-m>
@@ -2748,7 +2748,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RHelevator</object-name>
-    <property>/surface-positions/elevator-pos-norm</property>
+    <property>surface-positions/elevator-pos-norm</property>
     <factor>15</factor>
     <center>
       <x-m>9.755</x-m>
@@ -2765,7 +2765,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RHflap</object-name>
-    <property>/surface-positions/flap-pos-norm</property>
+    <property>surface-positions/flap-pos-norm</property>
     <factor>35</factor>
     <center>
       <x-m>1.185</x-m>
@@ -2782,7 +2782,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RHflap1</object-name>
-    <property>/surface-positions/flap-pos-norm</property>
+    <property>surface-positions/flap-pos-norm</property>
     <factor>35</factor>
     <center>
       <x-m>1.061</x-m>
@@ -2816,7 +2816,7 @@
   <animation>
     <type>rotate</type>
     <object-name>LHflap</object-name>
-    <property>/surface-positions/flap-pos-norm</property>
+    <property>surface-positions/flap-pos-norm</property>
     <factor>35</factor>
     <center>
       <x-m>1.185</x-m>
@@ -2833,7 +2833,7 @@
   <animation>
     <type>rotate</type>
     <object-name>LHflap1</object-name>
-    <property>/surface-positions/flap-pos-norm</property>
+    <property>surface-positions/flap-pos-norm</property>
     <factor>35</factor>
     <center>
       <x-m>1.061</x-m>
@@ -2868,7 +2868,7 @@
 <animation>
   <type>rotate</type>
   <object-name>cmpsrose</object-name>
-  <property>/instrumentation/magnetic-compass/indicated-heading-deg</property>
+  <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
   <axis>
     <x>0.0</x>
     <y>0.0</y>
@@ -2884,7 +2884,7 @@
 <animation>
     <type>rotate</type>
     <object-name>Flapneedle</object-name>
-    <property>/surface-positions/flap-pos-norm</property>
+    <property>surface-positions/flap-pos-norm</property>
     <interpolation>
       <entry>
         <ind>  0.0</ind>
@@ -2911,7 +2911,7 @@
 <animation>
  <type>textranslate</type>
   <object-name>GPS-navmode</object-name>
-    <property>/instrumentation/gps/approach-active</property>
+    <property>instrumentation/gps/approach-active</property>
   <factor>0.078124</factor>
   <axis>
    <x>1</x>

@@ -202,12 +202,12 @@
     <prop>/autopilot/internal/target-climb-rate-fps</prop>
   </output>
   <config>
-    <Kp>-1.5</Kp>
+    <Kp>0.3</Kp>
     <!-- proportional gain -->
     <Ki>0.0</Ki>
-    <u_min>-40.0</u_min>
+    <u_min>-33.3</u_min>
     <!-- minimum output clamp -->
-    <u_max>40.0</u_max>
+    <u_max>33.3</u_max>
     <!-- maximum output clamp -->
   </config>
 </pi-simple-controller>
@@ -231,13 +231,13 @@
     <prop>/autopilot/settings/target-pitch-deg</prop>
   </output>
   <config>
-    <Kp>1.5</Kp>       <!-- proportional gain -->
+    <Kp>0.06</Kp>       <!-- proportional gain -->
     <beta>1.0</beta>    <!-- input value weighing factor -->
     <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
     <gamma>0.0</gamma>  <!-- input value weighing factor for -->
                         <!-- unfiltered derivative error -->
     <Ti>10.0</Ti>       <!-- integrator time -->
-    <Td>0.001</Td>    <!-- derivator time -->
+    <Td>0.00001</Td>    <!-- derivator time -->
     <u_min>-5.0</u_min> <!-- minimum output clamp -->
     <u_max>5.0</u_max>  <!-- maximum output clamp -->
   </config>
@@ -274,6 +274,7 @@
     <u_max>1.0</u_max>  <!-- maximum output clamp -->
   </config>
 </pid-controller>
+
 	<!--
     Simple Altitude Baro hold.
     sets target rate of climb based on diff between current inhg

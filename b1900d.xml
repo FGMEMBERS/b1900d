@@ -168,7 +168,9 @@ wet wing fuel storage:
  <tank x="0.00" y="-4.00" z="-0.550" capacity="242" jet="true"/>
 
  <gear x="6.87" y="0.00" z="-2.267" compression=".15" retract-time="5" spring="0.2" damp="1.0">
-  <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
+  <control-input axis="/controls/flight/rudder" control="STEER" square="true"
+                  src0="-1.0" src1="1.0"
+                 dst0="-1.75" dst1="1.75"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="5"/>
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>

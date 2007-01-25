@@ -81,8 +81,7 @@
    <animation>
   <type>material</type>
     <object-name>TRFace</object-name>
-    <global type="bool">true</global>
-  <emission>
+    <emission>
     <red>1.0</red>
     <green>0.4</green>
     <blue>0.2</blue>
