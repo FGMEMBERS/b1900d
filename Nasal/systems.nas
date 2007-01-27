@@ -102,6 +102,7 @@ if (volts > 0.2 ){
       setprop("/sim/current-view/y-offset-m",eyepoint);
       }
    }
+settimer(update_systems, 0);
 }
 
 ####################################

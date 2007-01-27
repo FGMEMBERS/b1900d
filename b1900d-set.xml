@@ -23,7 +23,7 @@ July 2004 Syd Adams
                 <red alias="/sim/model/b1900d/material/instruments/emission/red"/>
                 <green alias="/sim/model/b1900d/material/instruments/emission/green"/>
                 <blue alias="/sim/model/b1900d/material/instruments/emission/blue"/>
-                <factor alias="/sim/model/b1900d/material/instruments/factor"/>
+                <factor alias="/controls/lighting/instruments-norm"/>
             </emission>
         </assemblies>
     </mk-viii>

@@ -113,6 +113,7 @@ if(getprop("/sim/signals/fdm-initialized")){
     last_time = time;
     update_virtual_bus( dt );
     }
+settimer(update_electrical, 0);
 }
 
 update_virtual_bus = func( dt ) {

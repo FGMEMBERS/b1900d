@@ -140,14 +140,11 @@ update_nav = func {
 update = func {
     handle_inputs();
     update_nav();
-    registerTimer();
+    settimer(update, 0);
 }
 
 #############################################################################
 # Use tha nasal timer to call ourselves every frame
 #############################################################################
 
-registerTimer = func {
-    settimer(update, 0);
-}
-registerTimer();
+setlistener("/sim/signals/fdm-initialized", update);
