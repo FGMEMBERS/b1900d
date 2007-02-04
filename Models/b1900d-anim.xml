@@ -589,7 +589,7 @@
   <condition>
   <equals>
   <property>sim/model/b1900d/livery-num</property>
-  <value>0</value>
+  <value>1</value>
   </equals>
   </condition>
   <object-name>Fuselage</object-name>
@@ -718,7 +718,7 @@
 </animation>
 
 <animation>
-    <name>RHspinner</name>
+    <name>RHprop</name>
     <object-name>Rblade</object-name>
     <object-name>Rblade.001</object-name>
     <object-name>Rblade.002</object-name>
@@ -727,7 +727,7 @@
 
 
 <animation>
-    <name>LHspinner</name>
+    <name>LHprop</name>
     <object-name>Lblade</object-name>
     <object-name>Lblade.001</object-name>
     <object-name>Lblade.002</object-name>
@@ -850,7 +850,7 @@
   
   <animation>
     <type>select</type>
-    <object-name>LHspinner</object-name>
+    <object-name>LHprop</object-name>
     <condition>
       <less-than>
         <property>engines/engine[0]/rpm</property>
@@ -861,7 +861,7 @@
 
   <animation>
     <type>spin</type>
-    <object-name>LHspinner</object-name>
+    <object-name>LHprop</object-name>
     <property>engines/engine[0]/rpm</property>
     <center>
       <x-m>-2.226</x-m>
@@ -1060,7 +1060,7 @@
   
   <animation>
     <type>select</type>
-    <object-name>RHspinner</object-name>
+    <object-name>RHprop</object-name>
     <condition>
       <less-than>
         <property>engines/engine[1]/rpm</property>
@@ -1071,7 +1071,7 @@
 
   <animation>
     <type>spin</type>
-    <object-name>RHspinner</object-name>
+    <object-name>RHprop</object-name>
     <property>engines/engine[1]/rpm</property>
     <center>
       <x-m>-2.226</x-m>
