@@ -30,7 +30,8 @@ rhsubmenu =[0,0,0,0,0,0,0,0,0,0];
 dmode = nil;
 getpage = nil;
 modestring1 = nil;
-
+S_volume = props.globals.getNode("/sim/sound/E_volume",1);
+C_volume = props.globals.getNode("/sim/sound/cabin",1);
 
 # Lighting system
 
@@ -40,17 +41,19 @@ beacon_switch = props.globals.getNode("controls/switches/beacon", 1);
 aircraft.light.new("sim/model/b1900d/lighting/beacon", [1.0, 1.0], beacon_switch);
 
 setlistener("/sim/signals/fdm-initialized", func {
-   lhmenu = 3;
-   rhmenu = 5;
-   lhsubmenu[lhmenu] = 1;
-   rhsubmenu[rhmenu] = 3;
-   setprop("/instrumentation/altimeter/millibars",0.0);
-   fuel_density=getprop("consumables/fuel/tank[0]/density-ppg");
-   setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
-   setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
-   setprop("/instrumentation/heading-indicator/offset-deg",-1 * getprop("/environment/magnetic-variation-deg"));
-   print("KLN-90B GPS  ...Check");
-});
+	S_volume.setValue(0.3);
+	C_volume.setValue(0.3);
+	lhmenu = 3;
+	rhmenu = 5;
+	lhsubmenu[lhmenu] = 1;
+	rhsubmenu[rhmenu] = 3;
+	setprop("/instrumentation/altimeter/millibars",0.0);
+	fuel_density=getprop("consumables/fuel/tank[0]/density-ppg");
+	setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
+	setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
+	setprop("/instrumentation/heading-indicator/offset-deg",-1 * getprop("/environment/magnetic-variation-deg"));
+	print("KLN-90B GPS  ...Check");
+	});
 
 setlistener("/engines/engine/out-of-fuel", func {
 if(cmdarg().getValue() != 0){
@@ -66,8 +69,18 @@ if(cmdarg().getValue() != 0){
 }
 );
 
+update_sound = func{
+	if(getprop("/sim/current-view/view-number")== 0){
+	S_volume.setValue(0.3);
+	C_volume.setValue(0.3);
+	}else{
+	S_volume.setValue(0.9);
+	C_volume.setValue(0.05);
+	}
+}
 
 update_systems = func {
+update_sound();
 if(getprop("/sim/signals/fdm-initialized")){
 power = getprop("/controls/switches/master-panel");
 eadi = getprop("/controls/lighting/eadi-ehsi-norm");

@@ -1,98 +1,102 @@
 <?xml version="1.0"?>
-
 <PropertyList>
 
- <path>altset.ac</path>
+	<path>altset.ac</path>
 
+	<animation>
+  		<type>material</type>
+    	<object-name>AltSet.cancel</object-name>
+		<object-name>APalt</object-name>
+    	<object-name>APalt1</object-name>
+		<object-name>APalt2</object-name>
+		<object-name>APalt3</object-name>
+		<object-name>APalt4</object-name>
+		<object-name>APalt5</object-name>
+    	<emission>
+    		<red>1.0</red>
+    		<green>0.5</green>
+    		<blue>0.2</blue>
+    		<factor-prop>/controls/lighting/instruments-norm</factor-prop>
+  		</emission>
+	</animation>
 
- <animation>
-  <type>material</type>
-    <object-name>AltSet.cancel</object-name>
-    <object-name>APalt1</object-name>
-    <emission>
-    <red>1.0</red>
-    <green>0.5</green>
-    <blue>0.2</blue>
-    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
-  </emission>
-</animation>
+	<animation>
+  		<type>material</type>
+    	<object-name>AltSet.bezel</object-name>
+		<object-name>AltSet.knob</object-name>
+    	<emission>
+    		<red>0.2</red>
+    		<green>0.2</green>
+    		<blue>0.2</blue>
+    		<factor-prop>/controls/lighting/panel-norm</factor-prop>
+  		</emission>
+	</animation>
 
- <animation>
-  <type>material</type>
-    <object-name>AltSet.bezel</object-name>
-    <emission>
-    <red>0.2</red>
-    <green>0.2</green>
-    <blue>0.2</blue>
-    <factor-prop>/controls/lighting/panel-norm</factor-prop>
-  </emission>
-</animation>
+<!--####    InHg    ####-->
 
-
-<!--__________________________________ inhg  ______________________________________-->
-
-<!--                Altitude Setting                              -->
- <animation>
-  <type>textranslate</type>
-  <object-name>APalt1</object-name>
-  <property>/autopilot/settings/target-altitude-ft</property>
-  <factor>0.00001</factor>
-  <step>10000</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- <animation>
-  <type>textranslate</type>
-  <object-name>APalt2</object-name>
-  <property>/autopilot/settings/target-altitude-ft</property>
-  <factor>0.0001</factor>
-  <step>1000</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- <animation>
-  <type>textranslate</type>
-  <object-name>APalt3</object-name>
-  <property>/autopilot/settings/target-altitude-ft</property>
-  <factor>0.001</factor>
-  <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- <animation>
-  <type>textranslate</type>
-  <object-name>APalt4</object-name>
-  <property>/autopilot/settings/target-altitude-ft</property>
-  <factor>0.01</factor>
-  <step>10</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- <animation>
-  <type>textranslate</type>
-  <object-name>APalt5</object-name>
-  <property>/autopilot/settings/target-altitude-ft</property>
-  <factor>0.1</factor>
-  <step>1</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-
+	<animation>
+  		<type>textranslate</type>
+  		<object-name>APalt1</object-name>
+  		<property>/autopilot/settings/target-altitude-ft</property>
+  		<factor>0.00001</factor>
+  		<step>10000</step>
+  		<axis>
+   			<x>0</x>
+   			<y>1</y>
+   			<z>0</z>
+  		</axis>
+ 	</animation>
+ 	
+	<animation>
+  		<type>textranslate</type>
+  		<object-name>APalt2</object-name>
+  		<property>/autopilot/settings/target-altitude-ft</property>
+  		<factor>0.0001</factor>
+  		<step>1000</step>
+  		<axis>
+   			<x>0</x>
+   			<y>1</y>
+   			<z>0</z>
+  		</axis>
+	</animation>
+	
+	<animation>
+  		<type>textranslate</type>
+  		<object-name>APalt3</object-name>
+  		<property>/autopilot/settings/target-altitude-ft</property>
+  		<factor>0.001</factor>
+  		<step>100</step>
+  		<axis>
+   			<x>0</x>
+   			<y>1</y>
+   			<z>0</z>
+  		</axis>
+	</animation>
+	
+	<animation>
+  		<type>textranslate</type>
+  		<object-name>APalt4</object-name>
+  		<property>/autopilot/settings/target-altitude-ft</property>
+  		<factor>0.01</factor>
+  		<step>10</step>
+  		<axis>
+   			<x>0</x>
+   			<y>1</y>
+   			<z>0</z>
+  		</axis>
+	</animation>
+	
+	<animation>
+  		<type>textranslate</type>
+  		<object-name>APalt5</object-name>
+  		<property>/autopilot/settings/target-altitude-ft</property>
+  		<factor>0.1</factor>
+  		<step>1</step>
+  		<axis>
+   			<x>0</x>
+   			<y>1</y>
+   			<z>0</z>
+  		</axis>
+ 	</animation>
 
 </PropertyList>

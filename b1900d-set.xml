@@ -7,8 +7,8 @@ July 2004 Syd Adams
 -->
 
 <PropertyList>
-    <sim>
-        <description>Beechcraft B1900D  (YASim) w 3d panel</description>
+	<sim>
+    	<description>Beechcraft B1900D  (YASim) w 3d panel</description>
         <status>developement</status>
         <author>Syd Adams (3d model/FDM) - Jean-Yves Lefort (MKVIII gpws)</author>
         <flight-model>yasim</flight-model>
@@ -17,8 +17,9 @@ July 2004 Syd Adams
         <startup>
             <splash-texture>Aircraft/b1900d/b1900dsplash1.rgb</splash-texture>
         </startup>
+    
     <mk-viii>
-        <assemblies>
+		<assemblies>
             <emission>
                 <red alias="/sim/model/b1900d/material/instruments/emission/red"/>
                 <green alias="/sim/model/b1900d/material/instruments/emission/green"/>
@@ -29,56 +30,56 @@ July 2004 Syd Adams
     </mk-viii>
 
     <model>
-    <path>Aircraft/b1900d/Models/b1900d-anim.xml</path>
-    <b1900d>
-     <texture n="0">NZAlivery.rgb</texture>
-     <texture n="1">CMAlivery.rgb</texture>
-     <livery-num type="int">0</livery-num>
-        <wiper type="bool">true</wiper>
-        <material>
-            <instruments>
-                <diffuse>
-                <red type="string">1.0</red>
-                <green type="string">1.0</green>
-                <blue type="string">1.0</blue>
-                </diffuse>
-                <ambient>
-                <red type="string">1.0</red>
-                <green type="string">1.0</green>
-                <blue type="string">1.0</blue>
-                </ambient>
-                <specular>
-                <red type="string">0.0</red>
-                <green type="string">0.0</green>
-                <blue type="string">0.0</blue>
-                </specular>
-                <emission>
-                <red type="string">0.9</red>
-                <green type="string">0.5</green>
-                <blue type="string">0.2</blue>
-                </emission>
-                <transparency>
-                <alpha>1.0</alpha>
-                </transparency>
-                <shininess>0</shininess>
-                <factor>0.0</factor>
-            </instruments>
-        </material> 
-    </b1900d>
+    	<path>Aircraft/b1900d/Models/b1900d-anim.xml</path>
+    	<b1900d>
+     		<texture n="0">NZAlivery.rgb</texture>
+     		<texture n="1">CMAlivery.rgb</texture>
+     		<livery-num type="int">0</livery-num>
+        	<wiper type="bool">true</wiper>
+        	<material>
+            	<instruments>
+               		<diffuse>
+               			<red type="string">1.0</red>
+               			<green type="string">1.0</green>
+               			<blue type="string">1.0</blue>
+               		</diffuse>
+               		<ambient>
+               			<red type="string">1.0</red>
+               			<green type="string">1.0</green>
+               			<blue type="string">1.0</blue>
+               		</ambient>
+               		<specular>
+               			<red type="string">0.0</red>
+               			<green type="string">0.0</green>
+               			<blue type="string">0.0</blue>
+               		</specular>
+               		<emission>
+               			<red type="string">0.9</red>
+               			<green type="string">0.5</green>
+               			<blue type="string">0.2</blue>
+               		</emission>
+               		<transparency>
+               			<alpha>1.0</alpha>
+               		</transparency>
+               		<shininess>0</shininess>
+               		<factor>0.0</factor>
+            	</instruments>
+        	</material> 
+    	</b1900d>
     </model>
      
     <view n="0">
-    <internal archive="y">true</internal>
-    <name>Cockpit</name>
-    <type>lookfrom</type>
-    <internal type="bool">true</internal>
-    <config>
-        <x-offset-m type="double">-0.38</x-offset-m>
-        <y-offset-m type="double">0.27</y-offset-m>
-        <z-offset-m type="double">-4.192</z-offset-m>
-        <pitch-offset-deg>-15</pitch-offset-deg>
-        <default-field-of-view-deg>60.0</default-field-of-view-deg>
-    </config>
+    	<internal archive="y">true</internal>
+    	<name>Cockpit</name>
+    	<type>lookfrom</type>
+    	<internal type="bool">true</internal>
+    	<config>
+        	<x-offset-m type="double">-0.38</x-offset-m>
+        	<y-offset-m type="double">0.27</y-offset-m>
+        	<z-offset-m type="double">-4.192</z-offset-m>
+        	<pitch-offset-deg>-15</pitch-offset-deg>
+        	<default-field-of-view-deg>60.0</default-field-of-view-deg>
+    	</config>
     </view>
 
     <current-view>
@@ -87,10 +88,10 @@ July 2004 Syd Adams
   
     <systems>
         <electrical>
-        <path></path>
+        	<path></path>
         </electrical>
         <autopilot>
-        <path>Aircraft/b1900d/b1900d-autopilot.xml</path>
+        	<path>Aircraft/b1900d/b1900d-autopilot.xml</path>
         </autopilot>
     </systems>
   
@@ -117,12 +118,12 @@ July 2004 Syd Adams
         <title>Beechcraft B1900D</title>
         <line></line>
         <key>
-        <name>CTRL-A</name>
-        <desc>Toggle autopilot on/off</desc>
+        	<name>CTRL-A</name>
+        	<desc>Toggle autopilot on/off</desc>
         </key>
         <key>
-        <name>y</name>
-        <desc>Toggle yokes on / off</desc>
+        	<name>y</name>
+        	<desc>Toggle yokes on / off</desc>
         </key>
         <line></line>
         <text>Autopilot on with no flightdirector modes selected
@@ -130,12 +131,11 @@ July 2004 Syd Adams
         </text>
     </help>
 
- <!-- aircraft specific loading -->
-    <weight n="0">
-        <name>Crew</name>
+	<weight n="0">
+    	<name>Crew</name>
         <weight-lb>180</weight-lb> 
         <max-lb>400</max-lb>
-       <min-lb>180</min-lb>
+       	<min-lb>180</min-lb>
     </weight>
 
     <weight n="1">
@@ -145,13 +145,13 @@ July 2004 Syd Adams
         <min-lb>0</min-lb>      
     </weight>
 
-        <replay>
-            <disable>1</disable>
-        </replay>
+	<replay>
+    	<disable>1</disable>
+    </replay>
 
-        <multiplay>
-            <chat_display>1</chat_display>
-        </multiplay>
+    <multiplay>
+    	<chat_display>1</chat_display>
+	</multiplay>
 	
 	<yokes-visible type="bool">1</yokes-visible>
 

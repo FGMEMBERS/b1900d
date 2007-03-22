@@ -1,6 +1,4 @@
-# 
-# B1900D   electrical system.
-# 
+## B1900D   electrical system. ## 
 
 battery = nil;
 alternator1 = nil;
@@ -106,22 +104,14 @@ AlternatorClass.get_output_amps = func {
     return me.ideal_amps * factor;
 }
 
-update_electrical = func {
-if(getprop("/sim/signals/fdm-initialized")){
-    time = getprop("/sim/time/elapsed-sec");
-    dt = time - last_time;
-    last_time = time;
-    update_virtual_bus( dt );
-    }
-settimer(update_electrical, 0);
-}
+#####################################
 
 update_virtual_bus = func( dt ) {
     battery_volts = battery.get_output_volts();
     alternator1_volts = alternator1.get_output_volts();
     alternator2_volts = alternator2.get_output_volts();
-external_volts = 0.0;
-  load = 0.0;
+	external_volts = 0.0;
+	load = 0.0;
 
     master_bat = getprop("/controls/electric/battery-switch");
     master_alt1 = getprop("/controls/electric/engine[0]/generator");
@@ -136,23 +126,23 @@ external_volts = 0.0;
     if ( master_bat ) {
         bus_volts = battery_volts;
         power_source = "battery";
-    }
+		}
    if ( master_alt1 and (alternator1_volts > bus_volts) ) {
         bus_volts = alternator1_volts;
         power_source = "alternator1";
-    }
+		}
     if ( master_alt2 and (alternator2_volts > bus_volts) ) {
         bus_volts = alternator2_volts;
         power_source = "alternator2";
-    }
+		}
     if (external_switch and ( external_volts > bus_volts) ) {
         bus_volts = external_volts;
-    }
+		}
     starter_switch = getprop("/controls/engines/engine[0]/starter");
     starter_volts = 0.0;
     if ( starter_switch ) {
         starter_volts = bus_volts;
-    }
+		}
     setprop("/systems/electrical/outputs/starter[0]", starter_volts);
 
     load += electrical_bus_1();
@@ -167,15 +157,15 @@ external_volts = 0.0;
 
         if ( power_source == "battery" ) {
             ammeter = -load;
-        } else {
+			} else {
             ammeter = battery.charge_amps;
-        }
-    }
+			}
+		}
     if ( power_source == "battery" ) {
         battery.apply_load( load, dt );
-    } elsif ( bus_volts > battery_volts ) {
+		} elsif ( bus_volts > battery_volts ) {
         battery.apply_load( -battery.charge_amps, dt );
-    }
+		}
 
     ammeter_ave = 0.8 * ammeter_ave + 0.2 * ammeter;
 
@@ -191,56 +181,56 @@ electrical_bus_1 = func() {
     
     if ( getprop("/controls/circuit-breakers/cabin-lights-pwr") ) {
         setprop("/systems/electrical/outputs/cabin-lights", bus_volts);
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/cabin-lights", 0.0);
-    }
+		}
 
     setprop("/systems/electrical/outputs/instr-ignition-switch", bus_volts);
 
     if ( getprop("/controls/engines/engine[0]/fuel-pump") ) {
         setprop("/systems/electrical/outputs/fuel-pump", bus_volts);
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/fuel-pump", 0.0);
-    }
+		}
 
     if ( getprop("/controls/switches/landing-light[0]") ) {
         setprop("/systems/electrical/outputs/landing-light[0]", bus_volts);
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/landing-light[0]", 0.0 );
-    }
+		}
 
     if ( getprop("/controls/switches/landing-light[1]") ) {
         setprop("/systems/electrical/outputs/landing-light[1]", bus_volts);
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/landing-light[1]", 0.0 );
-    }
+		}
 
     if ( getprop("/controls/switches/nav-lights") ) {
         setprop("/systems/electrical/outputs/nav-lights", bus_volts);
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/nav-lights", 0.0 );
-    }
+		}
 
     if ( getprop("/controls/switches/beacon" ) ) {
         setprop("/systems/electrical/outputs/beacon", bus_volts);
         if ( bus_volts > 1.0 ) { load += 7.5; }
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/beacon", 0.0);
-    }
+		}
 
     if ( getprop("/controls/switches/logo" ) ) {
         setprop("/systems/electrical/outputs/logo", bus_volts);
         if ( bus_volts > 1.0 ) { load += 7.5; }
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/logo", 0.0);
-    }
+		}
 
     if ( getprop("/controls/switches/recog" ) ) {
         setprop("/systems/electrical/outputs/recog", bus_volts);
         if ( bus_volts > 1.0 ) { load += 7.5; }
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/recog", 0.0);
-    }
+		}
 
     setprop("/systems/electrical/outputs/flaps", bus_volts);
 
@@ -259,41 +249,42 @@ electrical_bus_2 = func() {
     if ( getprop("/controls/switches/map-lights" ) ) {
         setprop("/systems/electrical/outputs/map-lights", bus_volts);
         if ( bus_volts > 1.0 ) { load += 7.0; }
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/map-lights", 0.0);
-    }
+		}
   
     if ( getprop("/controls/switches/master-panel" ) ) {
     setprop("/systems/electrical/outputs/instrument-lights", bus_volts);
         if ( bus_volts > 1.0 ) { load += 7.0; }
-    } else {
-    setprop("/systems/electrical/outputs/instrument-lights", 0.0);
-    }
+		} else {
+		setprop("/systems/electrical/outputs/instrument-lights", 0.0);
+		}
   
     if ( getprop("/controls/switches/strobe" ) ) {
         setprop("/systems/electrical/outputs/strobe-lights", bus_volts);
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/strobe-lights", 0.0);
-    }
+		}
   
     if ( getprop("/controls/switches/taxi-lights" ) ) {
         setprop("/systems/electrical/outputs/taxi-lights", bus_volts);
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/taxi-lights", 0.0);
-    }
+		}
 
     if ( getprop("/controls/switches/ice-light" ) ) {
         setprop("/systems/electrical/outputs/ice-light", bus_volts);
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/ice-light", 0.0);
-    }
+		}
  
     if ( getprop("/controls/switches/pitot-heat" ) ) {
         setprop("/systems/electrical/outputs/pitot-heat", bus_volts);
-    } else {
+		} else {
         setprop("/systems/electrical/outputs/pitot-heat", 0.0);
-    }
-    ebus2_volts = bus_volts;
+		}
+    
+	ebus2_volts = bus_volts;
     return load;
 }
 
@@ -301,9 +292,9 @@ electrical_bus_2 = func() {
 cross_feed_bus = func() {
     if ( ebus1_volts > ebus2_volts ) {
         bus_volts = ebus1_volts;
-    } else {
+		} else {
         bus_volts = ebus2_volts;
-    }
+		}
     load = 0.0;
     setprop("/systems/electrical/outputs/annunciators", bus_volts);
     return load;
@@ -314,9 +305,9 @@ avionics_bus_1 = func() {
     master_av = getprop("/controls/switches/master-avionics");
     if ( master_av ) {
         bus_volts = ebus1_volts;
-    } else {
+		} else {
         bus_volts = 0.0;
-    }
+		}
     load = 0.0;
     
     setprop("/systems/electrical/outputs/avionics-fan", bus_volts);
@@ -334,9 +325,9 @@ avionics_bus_2 = func() {
 
     if ( master_av ) {
         bus_volts = ebus2_volts;
-    } else {
+		} else {
         bus_volts = 0.0;
-    }
+		}
     load = 0.0;
 
     setprop("/systems/electrical/outputs/nav[1]", bus_volts);
@@ -347,7 +338,15 @@ avionics_bus_2 = func() {
     return load;
 }
 
-registerTimer = func {
-    settimer(update_electrical, 0);
+update_electrical = func {
+	if(getprop("/sim/signals/fdm-initialized")){
+    time = getprop("/sim/time/elapsed-sec");
+    dt = time - last_time;
+    last_time = time;
+    update_virtual_bus( dt );
+    }
+settimer(update_electrical, 0);
 }
-registerTimer();
+
+settimer(update_electrical, 0);
+
