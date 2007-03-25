@@ -2,6 +2,19 @@
 <PropertyList>
 
 	<path>oilgauge.ac</path>
+	
+	<animation>
+  		<type>material</type>
+    	<object-name>OilFace</object-name>
+		<object-name>Oil.needle1</object-name>
+		<object-name>Oil.needle2</object-name>
+    	<emission>
+    		<red>1.0</red>
+    		<green>0.4</green>
+    		<blue>0.2</blue>
+    		<factor-prop>/controls/lighting/engines-norm</factor-prop>
+  		</emission>
+	</animation>
 
 	<animation>
     	<type>rotate</type>
@@ -40,18 +53,5 @@
       		<z>0.0</z>
     	</axis>
 	</animation> 
-  
-	<animation>
-  		<type>material</type>
-    	<object-name>OilFace</object-name>
-		<object-name>Oil.needle1</object-name>
-		<object-name>Oil.needle2</object-name>
-    	<emission>
-    		<red>1.0</red>
-    		<green>0.4</green>
-    		<blue>0.2</blue>
-    		<factor-prop>/controls/lighting/engines-norm</factor-prop>
-  		</emission>
-	</animation>
   
 </PropertyList>

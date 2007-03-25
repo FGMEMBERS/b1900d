@@ -161,7 +161,7 @@ July 2004 Syd Adams
 <controls>
         <electric>
             <battery-switch type = "bool">1</battery-switch>
-	    <external-power type = "bool">1</external-power>
+	    	<external-power type = "bool">1</external-power>
             <engine n="0">
             <generator>true</generator>
             </engine>
@@ -213,23 +213,24 @@ July 2004 Syd Adams
 
     <instrumentation>
         <flightdirector>
-	    <lnav type = "double">0</lnav>
-	    <vnav type = "double">0</vnav>
-	    <alt-offset type = "double">0</alt-offset>
-	    <alt-alert type = "double">0</alt-alert>
-	    <course type = "double">0</course>
-	    <dtk type = "double">0</dtk>
-	    <nav-hdg type = "double">0</nav-hdg>
-	    <nav-mag-brg type = "double">0</nav-mag-brg>
-	    <course-offset type = "double">0</course-offset>
-	</flightdirector>
-	<gps>
-            <serviceable>true</serviceable> 
+	    	<lnav type = "double">0</lnav>
+	    	<vnav type = "double">0</vnav>
+	    	<alt-offset type = "double">0</alt-offset>
+	    	<alt-alert type = "double">0</alt-alert>
+	    	<course type = "double">0</course>
+	    	<dtk type = "double">0</dtk>
+	    	<nav-hdg type = "double">0</nav-hdg>
+	    	<nav-mag-brg type = "double">0</nav-mag-brg>
+	    	<course-offset type = "double">0</course-offset>
+		</flightdirector>
+		<gps>
+        	<serviceable>true</serviceable> 
         </gps>
-	<gps-annunciator>
-	    <mode-string n="0">POWER OFF</mode-string>
-	    <mode-string n="1">POWER OFF</mode-string>
-	</gps-annunciator>
+		<gps-annunciator>
+	    	<mode-string n="0">POWER OFF</mode-string>
+	    	<mode-string n="1">POWER OFF</mode-string>
+		</gps-annunciator>
+        
         <nav>
             <slaved-to-gps>false</slaved-to-gps>
         </nav>

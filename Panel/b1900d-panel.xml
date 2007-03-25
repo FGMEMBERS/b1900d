@@ -102,17 +102,17 @@
 
     <instrument include="gps.xml">
       <name>GPS</name>
-      <x>615</x>
-      <y>221</y>
+      <x>617</x>
+      <y>223</y>
       <w>120</w>
       <h>40</h>
     </instrument>
     
   <instrument include="gpstext.xml">
     <name>GPStext</name>
-    <x>615</x>
+    <x>612</x>
     <y>221</y>
-    <w>108</w>
+    <w>90</w>
     <h>36</h>
   </instrument>
 

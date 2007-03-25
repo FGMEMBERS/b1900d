@@ -2,6 +2,18 @@
 <PropertyList>
 
 	<path>trbgauge.ac</path>
+	
+	<animation>
+  		<type>material</type>
+    	<object-name>TRFace</object-name>
+    	<object-name>TR.needle</object-name>
+    	<emission>
+    		<red>1.0</red>
+    		<green>0.4</green>
+    		<blue>0.2</blue>
+    		<factor-prop>/controls/lighting/engines-norm</factor-prop>
+  		</emission>
+	</animation>
 
 	<animation>
     	<type>rotate</type>
@@ -74,16 +86,4 @@
   		</axis>
 	</animation> 
  
-	<animation>
-  		<type>material</type>
-    	<object-name>TRFace</object-name>
-    	<object-name>TR.needle</object-name>
-    	<emission>
-    		<red>1.0</red>
-    		<green>0.4</green>
-    		<blue>0.2</blue>
-    		<factor-prop>/controls/lighting/engines-norm</factor-prop>
-  		</emission>
-	</animation>
-
 </PropertyList>

@@ -7,17 +7,17 @@
     	<path>Aircraft/b1900d/Panel/b1900d-panel.xml</path>
     	<bottom-left>
       		<x-m>-4.663</x-m>
-      		<y-m>-0.615</y-m>
+      		<y-m>-0.618</y-m>
       		<z-m>-0.317</z-m>
     	</bottom-left>
     	<bottom-right>
       		<x-m>-4.663</x-m>
-      		<y-m>0.597</y-m>
+      		<y-m>0.586</y-m>
       		<z-m>-0.317</z-m>
     	</bottom-right>
     	<top-left>
       		<x-m>-4.898</x-m>
-      		<y-m>-0.615</y-m>
+      		<y-m>-0.618</y-m>
       		<z-m>0.561</z-m>
     	</top-left>
   	</panel>
@@ -1461,6 +1461,13 @@
 	<animation>
     	<type>select</type>
     	<object-name>GPS-slaved</object-name>
+    	<condition>
+      		<property>instrumentation/nav/slaved-to-gps</property>
+    	</condition>
+  	</animation>
+  	
+  	<animation>
+    	<type>select</type>
     	<object-name>GPS-alt</object-name>
     	<object-name>GPS-navmode</object-name>
     	<condition>
