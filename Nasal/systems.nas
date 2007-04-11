@@ -12,7 +12,7 @@ var volts = 0.0;
 var eyepoint = 0.0;
 var force = 0.0;
 var fuel_density=0.0;
-var viewnum = 0.0;
+var ViewNum = 0.0;
 gpsmode = nil;
 gpsnode = nil;
 navnode = props.globals.getNode("/instrumentation/nav/slaved-to-gps",1);
@@ -30,8 +30,9 @@ getpage = nil;
 modestring1 = nil;
 S_volume = props.globals.getNode("/sim/sound/E_volume",1);
 C_volume = props.globals.getNode("/sim/sound/cabin",1);
-
-# Lighting system
+FDM_ON = 0;
+GForce = props.globals.getNode("/accelerations/pilot-g",1);
+EyePoint = 0;
 
 strobe_switch = props.globals.getNode("controls/switches/strobe", 1);
 aircraft.light.new("sim/model/b1900d/lighting/strobe", [0.05, 1.30], strobe_switch);
@@ -50,7 +51,9 @@ setlistener("/sim/signals/fdm-initialized", func {
 	fuel_density=getprop("consumables/fuel/tank[0]/density-ppg");
 	setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
 	setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
+	EyePoint = props.globals.getNode("sim/view/config/y-offset-m").getValue();
 	setprop("/instrumentation/heading-indicator/offset-deg",-1 * getprop("/environment/magnetic-variation-deg"));
+	FDM_ON =1;
 	print("KLN-90B GPS  ...Check");
 	});
 
@@ -68,19 +71,21 @@ if(cmdarg().getValue() != 0){
 }
 );
 
-update_sound = func{
-	if(getprop("/sim/current-view/view-number")== 0){
-	S_volume.setValue(0.3);
-	C_volume.setValue(0.3);
-	}else{
-	S_volume.setValue(0.9);
-	C_volume.setValue(0.05);
-	}
-}
+setlistener("/sim/current-view/view-number", func {
+	if(FDM_ON !=0){
+	ViewNum = cmdarg().getValue();
+	if(ViewNum == 0){
+		S_volume.setValue(0.3);
+		C_volume.setValue(0.3);
+		}else{
+			S_volume.setValue(0.9);
+			C_volume.setValue(0.05);	
+			}
+		}
+	});
 
 update_systems = func {
-	update_sound();
-	if(getprop("/sim/signals/fdm-initialized")){
+	if(FDM_ON != 0){
 		power = getprop("/controls/switches/master-panel");
 		eadi = getprop("/controls/lighting/eadi-ehsi-norm");
 		engines = getprop("/controls/lighting/engines-norm");
@@ -99,20 +104,20 @@ update_systems = func {
 		setprop("/sim/model/b1900d/material/panel/factor", 0.0);
 		setprop("/sim/model/b1900d/material/radiance/factor", 0.0);
 		if (volts > 0.2 ){
-		if(power > 0){
-			setprop("/sim/model/b1900d/material/panel/factor", panel);
-			setprop("/sim/model/b1900d/material/radiance/factor", panel);
+			if(power > 0){
+				setprop("/sim/model/b1900d/material/panel/factor", panel);
+				setprop("/sim/model/b1900d/material/radiance/factor", panel);
 			}
-}
+		}
 
-	force = getprop("/accelerations/pilot-g");
-   	if(force == nil) {force = 1.0;}
-   	eyepoint = getprop("sim/view/config/y-offset-m") +0.01;
-   	eyepoint -= (force * 0.01);
-   	if(getprop("/sim/current-view/view-number") < 1){
-    	setprop("/sim/current-view/y-offset-m",eyepoint);
-      	}
-   	}
+	var force = GForce.getValue();
+	if(force == nil) {force = 1.0;}
+	var eyepoint = EyePoint +0.01;
+	eyepoint -= (force * 0.01);
+	if(ViewNum == 0){
+		props.globals.getNode("/sim/current-view/y-offset-m").setValue(eyepoint);
+		}
+	}
 	settimer(update_systems, 0);
 }
 
