@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <name>Autopilot/FlightDirector</name>
+ <w-base>144</w-base>
+ <h-base>48</h-base>
+
+ <layers>
+
+ </layers>
+
+ <actions>
+
+ <!--
+  <action>
+    <name>bezel outline</name>
+    <button>0</button>
+    <x>-72</x>
+    <y>-24</y>
+    <w>144</w>
+    <h>48</h>
+    <binding>
+    </binding>
+  </action>
+-->
+
+ <!--     LNAV MODES        -->
+
+
+  <action>
+    <name>Heading Toggle</name>
+    <button>0</button>
+    <x>-46</x>
+    <y>-4</y>
+    <w>17</w>
+    <h>10</h>
+    <binding>
+    <command>nasal</command>
+    <script>
+    if(getprop("/instrumentation/flightdirector/lnav") != 1){
+    setprop("/instrumentation/flightdirector/lnav",1);}else{
+    setprop("/instrumentation/flightdirector/lnav",0);}
+    </script>
+    </binding>
+  </action>
+
+  <action>
+    <name>Nav Toggle</name>
+    <button>0</button>
+    <x>-26</x>
+    <y>-4</y>
+    <w>17</w>
+    <h>10</h>
+    <binding>
+    <command>nasal</command>
+    <script>
+    if(getprop("/instrumentation/flightdirector/lnav") != 2){
+    setprop("/instrumentation/flightdirector/lnav",2);}else{
+    setprop("/instrumentation/flightdirector/lnav",0);}
+    </script>
+    </binding>
+  </action>
+
+   <action>
+     <name>Appr Toggle</name>
+     <button>0</button>
+     <x>-7</x>
+     <y>-4</y>
+     <w>17</w>
+     <h>10</h>
+     <binding>
+     <command>nasal</command>
+    <script>
+    if(getprop("/instrumentation/flightdirector/lnav") != 3){
+    setprop("/instrumentation/flightdirector/lnav",3);
+    setprop("/instrumentation/flightdirector/vnav",7);
+    }else{
+    setprop("/instrumentation/flightdirector/lnav",0);
+    setprop("/instrumentation/flightdirector/vnav",0);
+    }
+    </script>
+     </binding>
+   </action>
+
+
+   <action>
+     <name>BC Toggle</name>
+     <button>0</button>
+     <x>13</x>
+     <y>-4</y>
+     <w>17</w>
+     <h>10</h>
+     <binding>
+     <command>nasal</command>
+    <script>
+    if(getprop("/instrumentation/flightdirector/lnav") != 4){
+    setprop("/instrumentation/flightdirector/lnav",4);}else{
+    setprop("/instrumentation/flightdirector/lnav",0);}
+    </script>
+     </binding>
+   </action>
+
+
+<!-- VNAV     MODES -->
+
+ <action>
+    <name>Altitude Hold Toggle </name>
+    <button>0</button>
+    <x>-46</x>
+    <y>-19</y>
+    <w>17</w>
+    <h>10</h>
+    <binding>
+    <command>nasal</command>
+    <script>
+    if(getprop("/instrumentation/flightdirector/vnav") != 1){
+    setprop("/instrumentation/flightdirector/vnav",1);
+    setprop("/autopilot/settings/target-altitude-ft",getprop("/position/altitude-ft"));
+    }else{
+    setprop("/instrumentation/flightdirector/vnav",0);}
+    </script>
+    </binding>
+  </action>
+
+ <action>
+    <name>Altitude Select Toggle</name>
+    <button>0</button>
+    <x>-26</x>
+    <y>-19</y>
+    <w>17</w>
+    <h>10</h>
+    <binding>
+    <command>nasal</command>
+    <script>
+    if(getprop("/instrumentation/flightdirector/vnav") != 2){
+    setprop("/instrumentation/flightdirector/vnav",2);}else{
+    setprop("/instrumentation/flightdirector/vnav",0);}
+    </script>
+    </binding>
+  </action>
+
+
+  <action>
+    <name>VS Toggle On</name>
+    <button>0</button>
+    <x>-7</x>
+    <y>-19</y>
+    <w>17</w>
+    <h>10</h>
+    <binding>
+    <command>nasal</command>
+    <script>
+    if(getprop("/instrumentation/flightdirector/vnav") != 3){
+    setprop("/instrumentation/flightdirector/vnav",3);
+    setprop("/autopilot/settings/target-vs-fps",getprop("/velocities/vertical-speed-fps"));    
+    }else{
+    setprop("/instrumentation/flightdirector/vnav",0);}
+    </script>
+
+    </binding>
+  </action>
+
+
+  <action>
+    <name>IAS Toggle On</name>
+    <button>0</button>
+    <x>13</x>
+    <y>-19</y>
+    <w>17</w>
+    <h>10</h>
+    <binding>
+    <command>nasal</command>
+    <script>
+    if(getprop("/instrumentation/flightdirector/spd") != 1){
+    setprop("/instrumentation/flightdirector/spd",1);
+    setprop("/autopilot/settings/target-speed-kt",getprop("/velocities/airspeed-kt"));
+    }else{
+    setprop("/instrumentation/flightdirector/spd",0);
+    setprop("/autopilot/settings/target-speed-kt",0);}
+    </script>
+
+    </binding>
+  </action>
+
+  <action>
+    <name>DCS Toggle On</name>
+    <button>0</button>
+    <x>33</x>
+    <y>-19</y>
+    <w>17</w>
+    <h>10</h>
+    <binding>
+    <command>nasal</command>
+    <script>
+    if(getprop("/instrumentation/flightdirector/vnav") != 5){
+    setprop("/instrumentation/flightdirector/vnav",5);}else{
+    setprop("/instrumentation/flightdirector/vnav",0);}
+    </script>
+    </binding>
+  </action>
+
+   <action>
+     <name>Climb Toggle</name>
+     <button>0</button>
+     <x>33</x>
+     <y>-4</y>
+     <w>17</w>
+     <h>10</h>
+     <binding>
+     <command>nasal</command>
+    <script>
+    if(getprop("/instrumentation/flightdirector/vnav") != 6){
+    setprop("/instrumentation/flightdirector/vnav",6);
+    setprop("/autopilot/settings/target-vs-fps",8.3);    
+    }else{
+    setprop("/instrumentation/flightdirector/vnav",0);}
+    </script>
+     </binding>
+   </action>
+
+ </actions>
+</PropertyList>

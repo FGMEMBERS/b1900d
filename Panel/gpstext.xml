@@ -1,0 +1,555 @@
+<?xml version="1.0"?>
+
+<!--
+Honeywell Bendix/King KLN-90B GPS
+-->
+
+<PropertyList>
+
+  <name>KLN-90B</name>
+  <w-base>512</w-base>
+  <h-base>176</h-base>
+
+
+ <layers>
+
+   <layer>
+     <name>status bar</name>
+     <condition>
+       <greater-than>
+         <property>/systems/electrical/outputs/gps</property>
+         <value>0.2</value>
+       </greater-than>
+       <property>/instrumentation/gps/serviceable</property>
+     </condition>
+     <type>text</type>
+     <font>courier-bold</font>
+     <point-size>24</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>_______________</text>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-114</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>-20</offset>
+       </transformation>
+     </transformations>
+   </layer>
+   <layer>
+     <name>divider</name>
+     <condition>
+       <greater-than>
+         <property>/systems/electrical/outputs/gps</property>
+         <value>0.2</value>
+       </greater-than>
+       <property>/instrumentation/gps/serviceable</property>
+     </condition>
+     <type>text</type>
+     <font>courier-bold</font>
+     <point-size>24</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>|
+|
+|</text>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-0</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>38</offset>
+       </transformation>
+     </transformations>
+   </layer>
+ <layer>
+     <name>divider1</name>
+     <condition>
+       <greater-than>
+         <property>/systems/electrical/outputs/gps</property>
+         <value>0.2</value>
+       </greater-than>
+       <property>/instrumentation/gps/serviceable</property>
+     </condition>
+     <type>text</type>
+     <font>courier-bold</font>
+     <point-size>24</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>literal</type>
+         <text>|
+|
+|</text>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-0</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>32</offset>
+       </transformation>
+     </transformations>
+   </layer>
+
+   <layer>
+     <name>anunn 1</name>
+     <condition>
+       <greater-than>
+         <property>/systems/electrical/outputs/gps</property>
+         <value>0.2</value>
+       </greater-than>
+       <property>/instrumentation/gps/serviceable</property>
+     </condition>
+     <type>text</type>
+     <font>courier-bold</font>
+     <point-size>14</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>text-value</type>
+         <property>/instrumentation/gps-annunciator/mode-string[0]</property>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>-112</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>-36</offset>
+       </transformation>
+     </transformations>
+   </layer>
+   
+   <layer>
+     <name>anunn 2</name>
+     <condition>
+       <greater-than>
+         <property>/systems/electrical/outputs/gps</property>
+         <value>0.2</value>
+       </greater-than>
+       <property>/instrumentation/gps/serviceable</property>
+     </condition>
+     <type>text</type>
+     <font>courier-bold</font>
+     <point-size>14</point-size>
+     <color>
+       <red>0.4</red>
+       <green>1.0</green>
+       <blue>0.1</blue>
+     </color>
+     <chunks>
+       <chunk>
+         <type>text-value</type>
+         <property>/instrumentation/gps-annunciator/mode-string[1]</property>
+       </chunk>
+     </chunks>
+     <transformations>
+       <transformation>
+         <type>x-shift</type>
+         <offset>62</offset>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>-36</offset>
+       </transformation>
+     </transformations>
+   </layer>
+   
+
+
+
+   
+<!--            LH  NAV 1 page               -->
+<layer>
+  <name>nav page 1</name>
+  <condition>
+    <equals>
+      <property>/instrumentation/gps-annunciator/mode-string[0]</property>
+      <value>NAV 1</value>
+    </equals>
+    <greater-than>
+      <property>/systems/electrical/outputs/gps</property>
+      <value>0.2</value>
+    </greater-than>
+  </condition>
+  <type>text</type>
+  <font>courier-bold</font>
+  <point-size>14</point-size>
+  <color>
+    <red>0.4</red>
+    <green>1.0</green>
+    <blue>0.1</blue>
+  </color>
+  <chunks>
+    
+    <chunk>
+      <type>literal</type>
+      <text>    --> </text>
+    </chunk>
+    
+    <chunk>
+      <type>text-value</type>
+      <property>/instrumentation/gps/wp/wp[1]/ID</property>
+    </chunk>
+    <chunk>
+      <type>literal</type>
+      <text>
+    *****^*****
+</text>
+    </chunk>
+    
+    <chunk>
+      <type>literal</type>
+      <text>DIS </text>
+    </chunk>
+    
+    <chunk>
+      <type>number-value</type>
+      <property>/instrumentation/gps/wp/wp[1]/distance-nm</property>
+      <format>%5.1f</format>
+    </chunk>
+    <chunk>
+      <type>literal</type>
+      <text>NM
+GS    </text>
+    </chunk>
+    
+    <chunk>
+      <type>number-value</type>
+      <property>/instrumentation/gps/indicated-ground-speed-kt</property>
+      <format>%03.1f</format>
+    </chunk>
+    <chunk>
+      <type>literal</type>
+      <text> KT
+ETE  </text>
+    </chunk>
+    <chunk>
+      <type>text-value</type>
+      <property>/instrumentation/gps/wp/wp[1]/TTW</property>
+    </chunk>
+    <chunk>
+      <type>literal</type>
+      <text>
+BRG     </text>
+    </chunk>
+    <chunk>
+      <type>number-value</type>
+      <property>/instrumentation/gps/wp/wp[1]/bearing-mag-deg</property>
+      <format>%03.0f</format>
+    </chunk>
+    <chunk>
+      <type>literal</type>
+      <text>'</text>
+    </chunk>
+  </chunks>
+  <transformations>
+    <transformation>
+      <type>x-shift</type>
+      <offset>-116</offset>
+    </transformation>
+    <transformation>
+      <type>y-shift</type>
+      <offset>56</offset>
+    </transformation>
+  </transformations>
+</layer>
+
+
+<!--            LH  NAV 2 page               -->
+<layer>
+  <name>nav 2 page </name>
+  <condition>
+    <equals>
+      <property>/instrumentation/gps-annunciator/mode-string[0]</property>
+      <value>NAV 2</value>
+    </equals>
+    <greater-than>
+      <property>/systems/electrical/outputs/gps</property>
+      <value>0.2</value>
+    </greater-than>
+  </condition>
+  <type>text</type>
+  <font>courier-bold</font>
+  <point-size>14</point-size>
+  <color>
+    <red>0.4</red>
+    <green>1.0</green>
+    <blue>0.1</blue>
+  </color>
+  <chunks>
+    <chunk>
+      <type>literal</type>
+      <text>PRESENT POS
+
+</text>
+    </chunk>
+    <chunk>
+      <type>literal</type>
+      <text>SPL   </text>
+    </chunk>
+
+    <chunk>
+      <type>number-value</type>
+      <property>/instrumentation/gps/wp/wp[0]/bearing-mag-deg</property>
+      <format>%03.0f</format>
+    </chunk>
+
+    <chunk>
+      <type>literal</type>
+      <text>' BR
+       </text>
+    </chunk>
+
+    <chunk>
+      <type>number-value</type>
+      <property>/instrumentation/gps/wp/wp[0]/distance-nm</property>
+      <format>%03.1f</format>
+    </chunk>
+    
+    <chunk>
+      <type>literal</type>
+      <text> NM
+</text>
+    </chunk>
+    
+    <chunk>
+      <type>literal</type>
+      <text>N     </text>
+    </chunk>
+
+    <chunk>
+      <type>number-value</type>
+      <property>/instrumentation/gps/indicated-latitude-deg</property>
+      <format>%02.4f</format>
+    </chunk>
+    
+    <chunk>
+      <type>literal</type>
+      <text>
+E   </text>
+    </chunk>
+
+    <chunk>
+      <type>number-value</type>
+      <property>/instrumentation/gps/indicated-longitude-deg</property>
+      <format>%03.4f</format>
+    </chunk>
+  </chunks>
+  <transformations>
+    <transformation>
+      <type>x-shift</type>
+      <offset>-116</offset>
+    </transformation>
+    <transformation>
+      <type>y-shift</type>
+      <offset>56</offset>
+    </transformation>
+  </transformations>
+</layer>
+
+<!--            LH  NAV 3 page               -->
+<layer>
+  <name>nav 3 page </name>
+  <condition>
+    <equals>
+      <property>/instrumentation/gps-annunciator/mode-string[0]</property>
+      <value>NAV 3</value>
+    </equals>
+    <greater-than>
+      <property>/systems/electrical/outputs/gps</property>
+      <value>0.2</value>
+    </greater-than>
+  </condition>
+  <type>text</type>
+  <font>courier-bold</font>
+  <point-size>14</point-size>
+  <color>
+    <red>0.4</red>
+    <green>1.0</green>
+    <blue>0.1</blue>
+  </color>
+  <chunks>
+    <chunk>
+      <type>literal</type>
+      <text>    --> </text>
+    </chunk>
+
+    <chunk>
+      <type>text-value</type>
+      <property>/instrumentation/gps/wp/wp[1]/ID</property>
+    </chunk>
+
+    <chunk>
+      <type>literal</type>
+      <text>
+DTK     </text>
+    </chunk>
+
+    <chunk>
+      <type>number-value</type>
+      <property>/instrumentation/gps/wp/leg-mag-course-deg</property>
+      <format>%03.0f</format>
+    </chunk>
+    
+    <chunk>
+      <type>literal</type>
+      <text>'
+TK      </text>
+    </chunk>
+    
+    <chunk>
+      <type>number-value</type>
+      <property>/instrumentation/gps/indicated-track-magnetic-deg</property>
+      <format>%03.0f</format>
+    </chunk>
+    
+    <chunk>
+      <type>literal</type>
+      <text>'
+FLY    </text>
+    </chunk>
+
+    <chunk>
+      <type>number-value</type>
+      <property>/instrumentation/gps/wp/leg-course-error-nm</property>
+      <format>%03.1f</format>
+    </chunk>
+    
+    <chunk>
+      <type>literal</type>
+      <text> NM
+MSA --
+ESA --</text>
+    </chunk>
+  </chunks>
+  <transformations>
+    <transformation>
+      <type>x-shift</type>
+      <offset>-116</offset>
+    </transformation>
+    <transformation>
+      <type>y-shift</type>
+      <offset>56</offset>
+    </transformation>
+  </transformations>
+</layer>
+
+<!--            LH  NAV 4 page               -->
+<layer>
+  <name>nav 4 page </name>
+  <condition>
+    <equals>
+      <property>/instrumentation/gps-annunciator/mode-string[0]</property>
+      <value>NAV 4</value>
+    </equals>
+    <greater-than>
+      <property>/systems/electrical/outputs/gps</property>
+      <value>0.2</value>
+    </greater-than>
+  </condition>
+  <type>text</type>
+  <font>courier-bold</font>
+  <point-size>14</point-size>
+  <color>
+    <red>0.4</red>
+    <green>1.0</green>
+    <blue>0.1</blue>
+  </color>
+  <chunks>
+    <chunk>
+      <type>literal</type>
+      <text>    ALTITUDE
+BARO:
+    </text>
+    </chunk>
+
+    <chunk>
+      <type>number-value</type>
+      <property>/environment/pressure-sea-level-inhg</property>
+      <format>%2.2f</format>
+    </chunk>
+
+    <chunk>
+      <type>literal</type>
+      <text> inHG
+CURRENT:
+       </text>
+    </chunk>
+    
+    <chunk>
+      <type>number-value</type>
+      <property>/instrumentation/gps/indicated-altitude-ft</property>
+      <format>%5.0f</format>
+    </chunk>
+    
+    <chunk>
+      <type>literal</type>
+      <text> ft
+SEL:  </text>
+    </chunk>
+    
+    <chunk>
+      <type>number-value</type>
+      <property>/autopilot/settings/target-altitude-ft</property>
+      <format>%05.0f</format>
+    </chunk>
+    
+    <chunk>
+      <type>literal</type>
+      <text> ft</text>
+    </chunk>
+
+  </chunks>
+  <transformations>
+    <transformation>
+      <type>x-shift</type>
+      <offset>-116</offset>
+    </transformation>
+    <transformation>
+      <type>y-shift</type>
+      <offset>56</offset>
+    </transformation>
+  </transformations>
+</layer>
+
+<!--           Right Screen      -->
+
+</layers>
+
+</PropertyList>

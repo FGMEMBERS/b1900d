@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+
+<!--
+Collins Pro Line II radio
+-->
+
+<PropertyList>
+
+  <params>
+    <selected-mhz>/instrumentation/adf/frequencies/selected-khz</selected-mhz>
+    <standby-mhz>/instrumentation/adf/frequencies/standby-khz</standby-mhz>
+  </params>
+
+  <name>Radio</name>
+  <w-base>48</w-base>
+  <h-base>54</h-base>
+  <w>48</w>
+  <h>54</h>
+
+
+ <layers>
+  <layer>
+    <name>selected frequencies</name>
+    <type>text</type>
+    <font>led</font>
+    <point-size>3.5</point-size>
+    <color>
+      <red>0.9</red>
+      <green>0.2</green>
+      <blue>0.0</blue>
+    </color>
+    <chunks>
+      <chunk>
+        <type>number-value</type>
+        <property alias="../../../../../params/selected-mhz"/>
+        <format>%3.2f</format>
+      </chunk>
+    </chunks>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-15</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>10</offset>
+      </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+  <name>standby frequencies</name>
+  <type>text</type>
+  <font>led</font>
+  <point-size>3.5</point-size>
+  <color>
+  <red>0.6</red>
+  <green>0.1</green>
+  <blue>0.0</blue>
+  </color>
+  <chunks>
+  <chunk>
+  <type>number-value</type>
+  <property alias="../../../../../params/standby-mhz"/>
+  <format>%3.2f</format>
+  </chunk>
+  </chunks>
+  <transformations>
+  <transformation>
+  <type>x-shift</type>
+  <offset>-15</offset>
+  </transformation>
+  <transformation>
+  <type>y-shift</type>
+  <offset>2</offset>
+  </transformation>
+  </transformations>
+  </layer>
+</layers>
+
+ <actions>
+
+ <action>
+   <name>frequency decrease (decimal part)</name>
+   <button>0</button>
+   <x>8</x>
+   <y>-20</y>
+   <w>8</w>
+   <h>12</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/selected-mhz"/>
+    <step>-1.0</step>
+    <min>100</min>
+    <max>1300</max>
+    <resolution>1</resolution>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>frequency decrease (integer part)</name>
+   <button>1</button>
+   <x>8</x>
+   <y>-20</y>
+   <w>8</w>
+   <h>12</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/selected-mhz"/>
+    <step>-100</step>
+    <min>100</min>
+    <max>1300</max>
+    <resolution>1</resolution>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>frequency increase (decimal part)</name>
+   <button>0</button>
+   <x>16</x>
+   <y>-20</y>
+   <w>8</w>
+   <h>12</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/selected-mhz"/>
+    <step>1</step>
+    <min>100</min>
+    <max>1300</max>
+    <resolution>1</resolution>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>frequency increase (integer part)</name>
+   <button>1</button>
+   <x>16</x>
+   <y>-20</y>
+   <w>8</w>
+   <h>12</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/selected-mhz"/>
+    <step>100</step>
+    <min>100</min>
+    <max>1300</max>
+    <resolution>1</resolution>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+
+  <action>
+    <name>swap frequencies</name>
+    <button>0</button>
+    <x>14</x>
+    <y>6</y>
+    <w>8</w>
+    <h>6</h>
+    <binding>
+      <command>property-swap</command>
+      <property alias="../../../../params/selected-mhz"/>
+      <property alias="../../../../params/standby-mhz"/>
+    </binding>
+  </action>
+
+ </actions>
+
+</PropertyList>
