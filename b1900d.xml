@@ -148,7 +148,6 @@ Wing area 28.80m
     </vstab>
 
 <!--
-wet wing fuel storage:
 4484 lbs (Jet A - 6.84 ppg )
 -->
     <tank x="0.00" y="1.40" z="-0.785" capacity="2000" jet="true"/>
