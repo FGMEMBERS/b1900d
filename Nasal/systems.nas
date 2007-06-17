@@ -31,8 +31,6 @@ var modestring1 = nil;
 S_volume = props.globals.getNode("/sim/sound/E_volume",1);
 C_volume = props.globals.getNode("/sim/sound/cabin",1);
 var FDM_ON = 0;
-GForce = props.globals.getNode("/accelerations/pilot-g",1);
-var EyePoint = 0;
 var MB = props.globals.getNode("/instrumentation/altimeter/millibars",1);
 
 setlistener("/sim/signals/fdm-initialized", func {
@@ -47,7 +45,6 @@ setlistener("/sim/signals/fdm-initialized", func {
     fuel_density=props.globals.getNode("consumables/fuel/tank[0]/density-ppg").getValue();
     setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
     setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
-    EyePoint = props.globals.getNode("sim/view/config/y-offset-m").getValue();
     setprop("/instrumentation/heading-indicator/offset-deg",-1 * getprop("/environment/magnetic-variation-deg"));
     FDM_ON =1;
     print("KLN-90B GPS  ...Check");
@@ -95,14 +92,6 @@ update_systems = func {
         MB.setDoubleValue(mb);
         setprop("/sim/model/b1900d/material/panel/factor", 0.0);
         setprop("/sim/model/b1900d/material/radiance/factor", 0.0);
-
-        var force = GForce.getValue();
-        if(force == nil) {force = 1.0;}
-        var eyepoint = EyePoint +0.01;
-        eyepoint -= (force * 0.01);
-        if(ViewNum == 0){
-            props.globals.getNode("/sim/current-view/y-offset-m").setValue(eyepoint);
-        }
     }
     settimer(update_systems, 0);
 }
@@ -149,7 +138,7 @@ lh_menu_update = func (){
     if(gpsnode != 0.0){
         volts = getprop("/systems/electrical/outputs/gps");
         if(volts > 0.2){
-            modestring1 = getprop("/instrumentation/gps-annunciator/mode-string[0]");	
+            modestring1 = getprop("/instrumentation/gps-annunciator/mode-string[0]");
             test = arg[0];
             if(test == 1){lh_menu_modify(1);}
             if(test == 2){lh_menu_modify(2);}
