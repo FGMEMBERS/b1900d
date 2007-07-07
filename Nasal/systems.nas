@@ -33,6 +33,9 @@ C_volume = props.globals.getNode("/sim/sound/cabin",1);
 var FDM_ON = 0;
 var MB = props.globals.getNode("/instrumentation/altimeter/millibars",1);
 
+var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
+FHmeter.stop();
+
 setlistener("/sim/signals/fdm-initialized", func {
     S_volume.setValue(0.3);
     C_volume.setValue(0.3);
@@ -46,6 +49,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
     setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
     setprop("/instrumentation/heading-indicator/offset-deg",-1 * getprop("/environment/magnetic-variation-deg"));
+    setprop("/instrumentation/clock/flight-meter-hour",0);
     FDM_ON =1;
     print("KLN-90B GPS  ...Check");
     settimer(update_systems, 1);
@@ -77,6 +81,12 @@ setlistener("/sim/current-view/view-number", func {
             }
     });
 
+setlistener("/gear/gear[1]/wow", func {
+    if(cmdarg().getBoolValue()){
+    FHmeter.stop();
+    }else{FHmeter.start();}
+});
+
 update_systems = func {
     if(FDM_ON != 0){
         var mb = 33.8637526 * props.globals.getNode("/instrumentation/altimeter/setting-inhg").getValue();
@@ -93,7 +103,15 @@ update_systems = func {
         setprop("/sim/model/b1900d/material/panel/factor", 0.0);
         setprop("/sim/model/b1900d/material/radiance/factor", 0.0);
     }
+    flight_meter();
     settimer(update_systems, 0);
+}
+
+flight_meter = func{
+var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
+var fminute = fmeter * 0.016666;
+var fhour = fminute * 0.016666;
+setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
 
 setlistener("/instrumentation/gps/serviceable", func {
