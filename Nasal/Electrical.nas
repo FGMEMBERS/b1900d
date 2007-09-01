@@ -135,8 +135,8 @@ setlistener("/sim/signals/fdm-initialized", func {
 update_virtual_bus = func( dt ) {
     if(FDM != 1 ){return;}
     var PWR = props.globals.getNode("systems/electrical/serviceable",1).getBoolValue();
-    var engine0_state = props.globals.getNode("/engines/engine[0]/running").getBoolValue();
-    var engine1_state = props.globals.getNode("/engines/engine[1]/running").getBoolValue();
+    var engine0_state = getprop("/engines/engine[0]/running");
+    var engine1_state = getprop("/engines/engine[1]/running");
     var alternator1_volts = 0.0;
     var alternator2_volts = 0.0;
     battery_volts = battery.get_output_volts();
@@ -144,12 +144,12 @@ update_virtual_bus = func( dt ) {
     if (engine0_state){
     alternator1_volts = alternator1.get_output_volts();
     }
-    props.globals.getNode("/engines/engine[0]/amp-v",1).setValue(alternator1_volts);
+    setprop("/engines/engine[0]/amp-v",alternator1_volts);
 
     if (engine1_state){
     alternator2_volts = alternator2.get_output_volts();
     }
-    props.globals.getNode("/engines/engine[1]/amp-v",1).setValue(alternator2_volts);
+    setprop("/engines/engine[1]/amp-v",alternator1_volts);
 
     external_volts = 0.0;
     load = 0.0;

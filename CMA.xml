@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <variant type="string">CMA</variant>
+	<ordered type="int">1</ordered>
+        <all>
+          <texture>CMAlivery.rgb</texture>
+        </all>
+      </livery>
+    </model>
+  </sim>
+</PropertyList>

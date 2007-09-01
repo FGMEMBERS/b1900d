@@ -2,6 +2,25 @@
 <PropertyList>
 
     <path>b1900d.ac</path>
+    <animation>
+      <type>material</type>
+      <object-name>Engines</object-name>
+      <object-name>Fuselage</object-name>
+      <object-name>LHaileron</object-name>
+      <object-name>LHelevator</object-name>
+      <object-name>LHflap</object-name>
+      <object-name>LHflap1</object-name>
+      <object-name>RHaileron</object-name>
+      <object-name>RHelevator</object-name>
+      <object-name>RHflap</object-name>
+      <object-name>RHflap1</object-name>
+      <object-name>Rudder</object-name>
+      <object-name>Trim</object-name>
+      <object-name>Wing</object-name>
+      <property-base>/sim/model/livery/all</property-base>
+      <texture-prop>texture</texture-prop>
+      <texture>NZAlivery.rgb</texture>
+    </animation>
 
     <panel>
         <path>Aircraft/b1900d/Panel/b1900d-panel.xml</path>

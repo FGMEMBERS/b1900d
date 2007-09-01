@@ -1,5 +1,5 @@
 ####	B1900d systems	####
-
+aircraft.livery.init("Aircraft/b1900d/Liveries", "sim/model/livery/variant", "sim/model/livery/ordered");
 var millibars = 0.0;
 var pph1 = 0.0;
 var pph2 = 0.0;
@@ -93,12 +93,12 @@ update_systems = func {
         power = getprop("/controls/switches/master-panel");
         volts = getprop("/systems/electrical/volts");
         if(volts == nil){volts = 0.0;}
-        pph1 = props.globals.getNode("/engines/engine[0]/fuel-flow-gph").getValue();
-        pph2 = props.globals.getNode("/engines/engine[1]/fuel-flow-gph").getValue();
+        pph1 = getprop("/engines/engine[0]/fuel-flow-gph");
+        pph2 = getprop("/engines/engine[1]/fuel-flow-gph");
         if(pph1 == nil){pph1 = 6.72;}
         if(pph2 == nil){pph2 = 6.72;}
-        props.globals.getNode("engines/engine[0]/fuel-flow-pph").setDoubleValue(pph1* fuel_density);
-        props.globals.getNode("engines/engine[1]/fuel-flow-pph").setDoubleValue(pph2* fuel_density);
+        setprop("engines/engine[0]/fuel-flow-pph",pph1* fuel_density);
+        setprop("engines/engine[1]/fuel-flow-pph",pph2* fuel_density);
         MB.setDoubleValue(mb);
         setprop("/sim/model/b1900d/material/panel/factor", 0.0);
         setprop("/sim/model/b1900d/material/radiance/factor", 0.0);

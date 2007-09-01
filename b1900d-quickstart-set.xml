@@ -6,157 +6,12 @@ July 2004 Syd Adams
 ************************************************************************
 -->
 
-<PropertyList>
-    <sim>
-        <description>Beechcraft B1900D  (YASim) w 3d panel</description>
-        <status>developement</status>
-        <author>Syd Adams (3d model/FDM) - Jean-Yves Lefort (MKVIII gpws)</author>
-        <flight-model>yasim</flight-model>
-        <aero>b1900d</aero>
-        <fuel-fraction>0.8</fuel-fraction>
-        <startup>
-            <splash-texture>Aircraft/b1900d/b1900dsplash.rgb</splash-texture>
-        </startup>
-
-    <mk-viii>
-        <assemblies>
-            <emission>
-                <red alias="/sim/model/b1900d/material/instruments/emission/red"/>
-                <green alias="/sim/model/b1900d/material/instruments/emission/green"/>
-                <blue alias="/sim/model/b1900d/material/instruments/emission/blue"/>
-                <factor alias="/controls/lighting/instruments-norm"/>
-            </emission>
-        </assemblies>
-    </mk-viii>
-
-    <model>
-        <path>Aircraft/b1900d/Models/b1900d-anim.xml</path>
-        <b1900d>
-            <texture n="0">NZAlivery.rgb</texture>
-            <texture n="1">CMAlivery.rgb</texture>
-            <livery-num type="int">1</livery-num>
-            <wiper type="bool">true</wiper>
-            <material>
-                <instruments>
-                    <diffuse>
-                        <red type="string">1.0</red>
-                        <green type="string">1.0</green>
-                        <blue type="string">1.0</blue>
-                    </diffuse>
-                    <ambient>
-                        <red type="string">1.0</red>
-                        <green type="string">1.0</green>
-                        <blue type="string">1.0</blue>
-                    </ambient>
-                    <specular>
-                        <red type="string">0.0</red>
-                        <green type="string">0.0</green>
-                        <blue type="string">0.0</blue>
-                    </specular>
-                    <emission>
-                        <red type="string">0.9</red>
-                        <green type="string">0.5</green>
-                        <blue type="string">0.2</blue>
-                    </emission>
-                    <transparency>
-                        <alpha>1.0</alpha>
-                    </transparency>
-                    <shininess>0</shininess>
-                    <factor>0.0</factor>
-                </instruments>
-            </material> 
-        </b1900d>
-    </model>
-
-    <view n="0">
-        <internal archive="y">true</internal>
-        <name>Cockpit</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <config>
-            <x-offset-m type="double">-0.38</x-offset-m>
-            <y-offset-m type="double">0.27</y-offset-m>
-            <z-offset-m type="double">-4.192</z-offset-m>
-            <pitch-offset-deg>-15</pitch-offset-deg>
-            <default-field-of-view-deg>60.0</default-field-of-view-deg>
-        </config>
-    </view>
-
-    <current-view>
-        <field-of-view>60.0</field-of-view>
-    </current-view>
-  
-    <systems>
-        <electrical>
-            <path></path>
-        </electrical>
-        <autopilot>
-            <path>Aircraft/b1900d/b1900d-autopilot.xml</path>
-        </autopilot>
-    </systems>
-
-    <sound>
-        <path>Aircraft/b1900d/b1900d-sound.xml</path>
-    </sound>
-
-    <flaps>
-        <setting>0.000</setting>
-        <setting>0.25</setting>
-        <setting>0.50</setting>
-        <setting>0.75</setting>
-        <setting>1.000</setting>
-    </flaps>
-
-    <hud>
-        <enable3d>false</enable3d>
-    </hud>
-
-    <virtual-cockpit>true</virtual-cockpit>
-    <allow-toggle-cockpit>true</allow-toggle-cockpit>
-
-    <help>
-        <title>Beechcraft B1900D</title>
-        <line></line>
-        <key>
-            <name>CTRL-A</name>
-            <desc>Toggle autopilot on/off</desc>
-        </key>
-        <key>
-            <name>y</name>
-            <desc>Toggle yokes on / off</desc>
-        </key>
-        <line></line>
-        <text>Autopilot on with no flightdirector modes selected
-        defaults to Wing-Level;
-        </text>
-    </help>
-
-    <weight n="0">
-        <name>Crew</name>
-        <weight-lb>180</weight-lb>
-        <max-lb>400</max-lb>
-        <min-lb>180</min-lb>
-    </weight>
-
-    <weight n="1">
-        <name>Pax/Baggage</name>
-        <weight-lb>2500</weight-lb>
-        <max-lb>4000</max-lb>
-        <min-lb>0</min-lb>
-    </weight>
-
-    <replay>
-        <disable>1</disable>
-    </replay>
-
-    <multiplay>
-        <chat_display>1</chat_display>
-    </multiplay>
-    
-    <yokes-visible type="bool">1</yokes-visible>
-
+<PropertyList include="b1900d-base.xml">
+<sim>
+        <tutorials>
+        <!--tutorial include="Tutorials/startup_tutorial.xml"/-->
+        </tutorials>
 </sim>
-<!--   power / engines on  -->
 
 <controls>
         <electric>
@@ -188,29 +43,13 @@ July 2004 Syd Adams
         </engines>
     </controls>
 
-    <autopilot>
-        <locks>
-            <passive-mode type="bool">true</passive-mode>
-        </locks>
-    </autopilot>
-
     <instrumentation>
         <flightdirector>
-            <lnav type = "double">0</lnav>
-            <vnav type = "double">0</vnav>
-            <alt-offset type = "double">0</alt-offset>
-            <alt-alert type = "double">0</alt-alert>
-            <course type = "double">0</course>
-            <hdg-deg type = "double">0</hdg-deg>
-            <serviceable type = "bool">1</serviceable>
+            <serviceable>true</serviceable>
             </flightdirector>
         <gps>
             <serviceable>true</serviceable> 
         </gps>
-        <gps-annunciator>
-            <mode-string n="0">POWER OFF</mode-string>
-            <mode-string n="1">POWER OFF</mode-string>
-        </gps-annunciator>
         <nav>
             <slaved-to-gps>false</slaved-to-gps>
         </nav>
@@ -234,12 +73,6 @@ July 2004 Syd Adams
     </altimeter>
     </instrumentation>
 
-    <environment>
-        <turbulence>
-        <use-cloud-turbulence>true</use-cloud-turbulence>
-        </turbulence>
-    </environment>
-
     <engines>
     <engine n="0">
     <fuel-flow-pph type="float">0</fuel-flow-pph>
@@ -248,34 +81,5 @@ July 2004 Syd Adams
     <fuel-flow-pph type="float">0</fuel-flow-pph>
     </engine>
     </engines>
-
-    <input>
-        <keyboard>
-        <key n="1">
-        <name>Ctrl-A</name>
-        <desc>Toggle autopilot</desc>
-        <binding>
-            <command>property-toggle</command>
-            <property>autopilot/locks/passive-mode</property>
-        </binding>
-        </key>
-        <key n="121">
-        <name>y</name>
-        <desc>Toggle yokes</desc>
-        <binding>
-        <command>property-toggle</command>
-        <property>/sim/yokes-visible</property>
-        </binding>
-        </key>
-    </keyboard>
-    </input>
-
-    <nasal>
-        <systems>
-            <file>Aircraft/b1900d/Nasal/Electrical.nas</file>
-            <file>Aircraft/b1900d/Nasal/systems.nas</file>
-            <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
-        </systems>
-    </nasal>
 
 </PropertyList>
