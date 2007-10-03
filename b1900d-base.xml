@@ -31,10 +31,8 @@ July 2004 Syd Adams
 
     <model>
         <path>Aircraft/b1900d/Models/b1900d-anim.xml</path>
+        <variant type="int">0</variant>
         <b1900d>
-            <texture n="0">NZAlivery.rgb</texture>
-            <texture n="1">CMAlivery.rgb</texture>
-            <livery-num type="int">0</livery-num>
             <wiper type="bool">true</wiper>
             <material>
                 <instruments>

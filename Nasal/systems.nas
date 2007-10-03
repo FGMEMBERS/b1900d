@@ -1,5 +1,5 @@
 ####	B1900d systems	####
-aircraft.livery.init("Aircraft/b1900d/Liveries", "sim/model/livery/variant", "sim/model/livery/ordered");
+aircraft.livery.init("Aircraft/b1900d/Liveries", "sim/model/livery/name", "sim/model/livery/ordered");
 var millibars = 0.0;
 var pph1 = 0.0;
 var pph2 = 0.0;

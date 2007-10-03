@@ -17,7 +17,7 @@
       <object-name>Rudder</object-name>
       <object-name>Trim</object-name>
       <object-name>Wing</object-name>
-      <property-base>/sim/model/livery/all</property-base>
+      <property-base>/sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
       <texture>NZAlivery.rgb</texture>
     </animation>
@@ -667,46 +667,6 @@
             <blue>0.2</blue>
             <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
         </emission>
-    </animation>
-
-    <animation>
-        <type>material</type>
-        <condition>
-            <equals>
-                <property>sim/model/b1900d/livery-num</property>
-                <value>0</value>
-            </equals>
-        </condition>
-        <object-name>Fuselage</object-name>
-        <object-name>Rudder</object-name>
-        <object-name>Engines</object-name>
-        <object-name>Wing</object-name>
-        <object-name>frtWheeldoor</object-name>
-        <object-name>RHgeardoor2</object-name>
-        <object-name>RHgeardoor1</object-name>
-        <object-name>LHgeardoor1</object-name>
-        <object-name>LHgeardoor2</object-name>
-        <texture-prop>/sim/model/b1900d/texture</texture-prop>
-    </animation>
-
-    <animation>
-        <type>material</type>
-        <condition>
-            <equals>
-                <property>sim/model/b1900d/livery-num</property>
-                <value>1</value>
-            </equals>
-        </condition>
-        <object-name>Fuselage</object-name>
-        <object-name>Rudder</object-name>
-        <object-name>Engines</object-name>
-        <object-name>Wing</object-name>
-        <object-name>frtWheeldoor</object-name>
-        <object-name>RHgeardoor2</object-name>
-        <object-name>RHgeardoor1</object-name>
-        <object-name>LHgeardoor1</object-name>
-        <object-name>LHgeardoor2</object-name>
-        <texture-prop>/sim/model/b1900d/texture[1]</texture-prop>
     </animation>
 
     <animation>
