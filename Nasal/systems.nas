@@ -1,5 +1,5 @@
 ####	B1900d systems	####
-aircraft.livery.init("Aircraft/b1900d/Liveries", "sim/model/livery/name", "sim/model/livery/ordered");
+aircraft.livery.init("Aircraft/b1900d/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
 var millibars = 0.0;
 var pph1 = 0.0;
 var pph2 = 0.0;
@@ -30,7 +30,6 @@ var getpage = nil;
 var modestring1 = nil;
 S_volume = props.globals.getNode("/sim/sound/E_volume",1);
 C_volume = props.globals.getNode("/sim/sound/cabin",1);
-var FDM_ON = 0;
 var MB = props.globals.getNode("/instrumentation/altimeter/millibars",1);
 
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
@@ -50,13 +49,12 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
     setprop("/instrumentation/heading-indicator/offset-deg",-1 * getprop("/environment/magnetic-variation-deg"));
     setprop("/instrumentation/clock/flight-meter-hour",0);
-    FDM_ON =1;
     print("KLN-90B GPS  ...Check");
-    settimer(update_systems, 1);
+    settimer(update_systems, 2);
     });
 
-setlistener("/engines/engine/out-of-fuel", func {
-    if(cmdarg().getValue() != 0){
+setlistener("/engines/engine/out-of-fuel", func(nf){
+    if(nf.getValue() != 0){
         fueltanks = props.globals.getNode("consumables/fuel").getChildren("tank");
         foreach(f; fueltanks) {
             if(f.getNode("selected", 1).getBoolValue()){
@@ -66,29 +64,69 @@ setlistener("/engines/engine/out-of-fuel", func {
             }
         }
     }
-});
+},0,0);
 
-setlistener("/sim/current-view/view-number", func {
-    if(FDM_ON !=0){
-        ViewNum = cmdarg().getValue();
-        if(ViewNum == 0){
-            S_volume.setValue(0.3);
-            C_volume.setValue(0.3);
-            }else{
-                S_volume.setValue(0.9);
-                C_volume.setValue(0.05);
-                }
-            }
-    });
+setlistener("/sim/current-view/view-number", func(vw){
+    ViewNum = vw.getValue();
+    if(ViewNum == 0){
+        S_volume.setValue(0.3);
+        C_volume.setValue(0.3);
+        }else{
+            S_volume.setValue(0.9);
+            C_volume.setValue(0.05);
+        }
+},0,0);
 
-setlistener("/gear/gear[1]/wow", func {
-    if(cmdarg().getBoolValue()){
+setlistener("/sim/model/start-idling", func(idle){
+    var run= idle.getBoolValue();
+    if(run){
+    Startup();
+    }else{
+    Shutdown();
+    }
+},0,0);
+
+setlistener("/gear/gear[1]/wow", func(gr){
+    if(gr.getBoolValue()){
     FHmeter.stop();
     }else{FHmeter.start();}
-});
+},0,0);
 
-update_systems = func {
-    if(FDM_ON != 0){
+var Startup = func{
+setprop("controls/electric/engine[0]/generator",1);
+setprop("controls/electric/engine[1]/generator",1);
+setprop("controls/electric/avionics-switch",1);
+setprop("controls/electric/battery-switch",1);
+setprop("controls/electric/inverter-switch",1);
+setprop("controls/lighting/instrument-lights",1);
+setprop("controls/lighting/nav-lights",1);
+setprop("controls/lighting/beacon",1);
+setprop("controls/engines/engine[0]/condition",1);
+setprop("controls/engines/engine[1]/condition",1);
+setprop("controls/engines/engine[0]/propeller-pitch",1);
+setprop("controls/engines/engine[1]/propeller-pitch",1);
+setprop("engines/engine[0]/running",1);
+setprop("engines/engine[1]/running",1);
+}
+
+var Shutdown = func{
+setprop("controls/electric/engine[0]/generator",0);
+setprop("controls/electric/engine[1]/generator",0);
+setprop("controls/electric/avionics-switch",0);
+setprop("controls/electric/battery-switch",0);
+setprop("controls/electric/inverter-switch",0);
+setprop("controls/lighting/instrument-lights",0);
+setprop("controls/lighting/nav-lights",0);
+setprop("controls/lighting/beacon",0);
+setprop("controls/engines/engine[0]/condition",0);
+setprop("controls/engines/engine[1]/condition",0);
+setprop("controls/engines/engine[0]/propeller-pitch",0);
+setprop("controls/engines/engine[1]/propeller-pitch",0);
+setprop("engines/engine[0]/running",0);
+setprop("engines/engine[1]/running",0);
+}
+
+var update_systems = func {
         var mb = 33.8637526 * props.globals.getNode("/instrumentation/altimeter/setting-inhg").getValue();
         power = getprop("/controls/switches/master-panel");
         volts = getprop("/systems/electrical/volts");
@@ -102,20 +140,19 @@ update_systems = func {
         MB.setDoubleValue(mb);
         setprop("/sim/model/b1900d/material/panel/factor", 0.0);
         setprop("/sim/model/b1900d/material/radiance/factor", 0.0);
-    }
     flight_meter();
     settimer(update_systems, 0);
 }
 
-flight_meter = func{
+var flight_meter = func{
 var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
 var fminute = fmeter * 0.016666;
 var fhour = fminute * 0.016666;
 setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
 
-setlistener("/instrumentation/gps/serviceable", func {
-var power = cmdarg().getBoolValue();
+setlistener("/instrumentation/gps/serviceable", func(gps1){
+    var power = gps1.getBoolValue();
     if (power){
         setprop("/instrumentation/gps-annunciator/mode-string[0]",LEFTMODES[lhmenu] ~ PAGENUM[lhsubmenu[lhmenu]]);
         setprop("/instrumentation/gps-annunciator/mode-string[1]",RIGHTMODES[rhmenu] ~ PAGENUM[rhsubmenu[rhmenu]]);
@@ -123,9 +160,9 @@ var power = cmdarg().getBoolValue();
         setprop("/instrumentation/gps-annunciator/mode-string[0]","POWER OFF");
         setprop("/instrumentation/gps-annunciator/mode-string[1]","POWER OFF");
     }
-});
+},0,0);
 
-GpsAppr = func {
+var GpsAppr = func {
     gpsnode = props.globals.getNode("/instrumentation/gps/leg-mode");
     apprnode = props.globals.getNode("/instrumentation/gps/approach-active");
     navnode.getBoolValue();
@@ -139,7 +176,7 @@ GpsAppr = func {
     }
 }
 
-GpsCrs = func {gpsnode = props.globals.getNode("/instrumentation/gps/leg-mode");
+var GpsCrs = func {gpsnode = props.globals.getNode("/instrumentation/gps/leg-mode");
     apprnode = props.globals.getNode("/instrumentation/gps/approach-active");
     if(gpsnode.getBoolValue()){
         gpsnode.setBoolValue(0);
@@ -151,7 +188,7 @@ GpsCrs = func {gpsnode = props.globals.getNode("/instrumentation/gps/leg-mode");
         }
 }
 
-lh_menu_update = func (){
+var lh_menu_update = func (){
     setprop("/instrumentation/gps-annunciator/mode-string[0]","POWER OFF");
     if(gpsnode != 0.0){
         volts = getprop("/systems/electrical/outputs/gps");
@@ -162,11 +199,11 @@ lh_menu_update = func (){
             if(test == 2){lh_menu_modify(2);}
             if(test == 3){lh_submenu_modify(1);}
             if(test == 4){lh_submenu_modify(2);}
-            }
         }
     }
+}
 
-    lh_menu_modify = func (){
+var  lh_menu_modify = func (){
     test=arg[0];
     if(test == 1){
         lhmenu = lhmenu - 1;
@@ -180,7 +217,7 @@ lh_menu_update = func (){
     setprop("/instrumentation/gps-annunciator/mode-string[0]",LEFTMODES[lhmenu] ~ PAGENUM[lhsubmenu[lhmenu]]);
 }
 
-lh_submenu_modify = func (){
+var lh_submenu_modify = func (){
     test=arg[0];
     if(test == 1){
         lhsubmenu[lhmenu] = lhsubmenu[lhmenu] - 1;
@@ -194,7 +231,7 @@ lh_submenu_modify = func (){
     setprop("/instrumentation/gps-annunciator/mode-string[0]",LEFTMODES[lhmenu] ~ PAGENUM[lhsubmenu[lhmenu]]);
 }
 
-rh_menu_update = func (){
+var rh_menu_update = func (){
     setprop("/instrumentation/gps-annunciator/mode-string[1]","POWER OFF");
     if(gpsnode != 0.0){
         volts = getprop("/systems/electrical/outputs/gps");
@@ -204,11 +241,11 @@ rh_menu_update = func (){
             if(test == 2){rh_menu_modify(2);}
             if(test == 3){rh_submenu_modify(1);}
             if(test == 4){rh_submenu_modify(2);}
-            }
         }
     }
+}
 
-rh_menu_modify = func (){
+var rh_menu_modify = func (){
     test=arg[0];
     if(test == 1){
         rhmenu = rhmenu - 1;
@@ -222,7 +259,7 @@ rh_menu_modify = func (){
     setprop("/instrumentation/gps-annunciator/mode-string[1]",RIGHTMODES[rhmenu] ~ PAGENUM[rhsubmenu[rhmenu]]);
 }
 
-rh_submenu_modify = func (){
+var rh_submenu_modify = func (){
     test=arg[0];
     if(test == 1){
         rhsubmenu[rhmenu] = rhsubmenu[rhmenu] - 1;
@@ -236,10 +273,10 @@ rh_submenu_modify = func (){
     setprop("/instrumentation/gps-annunciator/mode-string[1]",RIGHTMODES[rhmenu] ~ PAGENUM[rhsubmenu[rhmenu]]);
 }
 
-direct_to = func {
+var direct_to = func {
     setprop("/instrumentation/gps/wp/wp/waypoint-type","fix");
     setprop("/instrumentation/gps/wp/wp/ID","");
     setprop("/instrumentation/gps/wp/wp/name","");
     setprop("/instrumentation/gps/wp/wp/latitude-deg",getprop("/position/latitude-deg"));
     setprop("/instrumentation/gps/wp/wp/longitude-deg",getprop("/position/longitude-deg"));
-    }
+}
