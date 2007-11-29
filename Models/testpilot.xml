@@ -8,7 +8,7 @@
         <object-name>pilot</object-name>
         <condition>
             <not-equals>
-                <property>/sim/current-view/view-num</property>
+                <property>/sim/current-view/view-number</property>
                 <value>0</value>
             </not-equals>
         </condition>
