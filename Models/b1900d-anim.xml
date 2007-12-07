@@ -648,7 +648,7 @@
 
     <model>
         <name>Pilot</name>
-        <path>Aircraft/b1900d/Models/testpilot.xml</path>
+        <path>Models/Aircraft/testpilot.xml</path>
         <offsets>
             <x-m>-4.275</x-m>
             <y-m>-0.389</y-m>
