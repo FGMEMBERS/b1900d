@@ -50,6 +50,8 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/heading-indicator/offset-deg",-1 * getprop("/environment/magnetic-variation-deg"));
     setprop("/instrumentation/clock/flight-meter-hour",0);
     print("KLN-90B GPS  ...Check");
+    setprop("controls/engines/engine/condition",0);
+    setprop("controls/engines/engine[1]/condition",0);
     settimer(update_systems, 2);
     });
 
@@ -127,6 +129,8 @@ setprop("engines/engine[1]/running",0);
 }
 
 var update_systems = func {
+        var Pfeather = 0;
+        var Ppitch = 0;
         var mb = 33.8637526 * props.globals.getNode("/instrumentation/altimeter/setting-inhg").getValue();
         power = getprop("/controls/switches/master-panel");
         volts = getprop("/systems/electrical/volts");
@@ -141,6 +145,20 @@ var update_systems = func {
         setprop("/sim/model/b1900d/material/panel/factor", 0.0);
         setprop("/sim/model/b1900d/material/radiance/factor", 0.0);
     flight_meter();
+    Ppitch = getprop("controls/engines/engine[0]/propeller-pitch");
+    if( Ppitch== 0){Pfeather = 1;
+        }else{
+        Pfeather = 0;
+        }
+    setprop("controls/engines/engine[0]/propeller-feather",Pfeather);
+    
+    Ppitch = getprop("controls/engines/engine[1]/propeller-pitch");
+    if( Ppitch== 0){Pfeather = 1;
+        }else{
+        Pfeather = 0;
+        }
+    setprop("controls/engines/engine[1]/propeller-feather",Pfeather);
+
     settimer(update_systems, 0);
 }
 

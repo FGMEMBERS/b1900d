@@ -13,7 +13,7 @@ July 2004 Syd Adams
         <author>Syd Adams (3d model/FDM) - Jean-Yves Lefort (MKVIII gpws)</author>
         <flight-model>yasim</flight-model>
         <aero>b1900d</aero>
-        <fuel-fraction>0.8</fuel-fraction>
+        <fuel-fraction>0.5</fuel-fraction>
         <startup>
             <splash-texture>Aircraft/b1900d/b1900dsplash1.rgb</splash-texture>
         </startup>
@@ -133,14 +133,14 @@ July 2004 Syd Adams
 
     <weight n="0">
         <name>Crew</name>
-        <weight-lb>180</weight-lb>
+        <weight-lb>360</weight-lb>
         <max-lb>400</max-lb>
         <min-lb>180</min-lb>
     </weight>
 
     <weight n="1">
         <name>Pax/Baggage</name>
-        <weight-lb>2500</weight-lb>
+        <weight-lb>1898</weight-lb>
         <max-lb>4000</max-lb>
         <min-lb>0</min-lb>
     </weight>
@@ -185,13 +185,13 @@ July 2004 Syd Adams
             <avionics-switch type = "bool">0</avionics-switch>
             <external-power type = "bool">0</external-power>
             <engine n="0">
-            <generator>false</generator>
+                <generator>false</generator>
             </engine>
             <engine n="1">
-            <generator>false</generator>
+                <generator>false</generator>
             </engine>
         </electric>
-        
+
         <lighting>
             <instrument-lights>0</instrument-lights>
         </lighting>
@@ -199,18 +199,37 @@ July 2004 Syd Adams
         <gear>
             <brake-parking>1</brake-parking>
         </gear>
-        
+
         <engines>
             <engine n="0">
-            <condition>0</condition>
-            <propeller-pitch>0</propeller-pitch>
+                <condition>0</condition>
+                <propeller-pitch>0</propeller-pitch>
             </engine>
             <engine n="1">
-            <condition>0</condition>
-            <propeller-pitch>0</propeller-pitch>
+                <condition>0</condition>
+                <propeller-pitch>0</propeller-pitch>
             </engine>
         </engines>
 </controls>
+
+<consumables>
+    <fuel>
+        <tank n="0">
+            <name>L Main</name>
+        </tank>
+        <tank n="1">
+            <name>R Main</name>
+        </tank>
+        <tank n="2">
+            <name>Aux1</name>
+            <level-gal_us type="double">0</level-gal_us>
+        </tank>
+        <tank n="3">
+            <name>Aux2</name>
+            <level-gal_us type="double">0</level-gal_us>
+        </tank>
+    </fuel>
+</consumables>
 
     <instrumentation>
         <flightdirector>
@@ -243,14 +262,16 @@ July 2004 Syd Adams
     </instrumentation>
 
     <engines>
-    <engine n="0">
-    <running>0</running>
-    <fuel-flow-pph type="float">0</fuel-flow-pph>
-    </engine>
-    <engine n="1">
-    <running>0</running>
-    <fuel-flow-pph type="float">0</fuel-flow-pph>
-    </engine>
+        <engine n="0">
+            <running>0</running>
+            <rpm>0</rpm>
+            <fuel-flow-pph type="float">0</fuel-flow-pph>
+        </engine>
+        <engine n="1">
+            <running>0</running>
+            <rpm>0</rpm>
+            <fuel-flow-pph type="float">0</fuel-flow-pph>
+        </engine>
     </engines>
 
     <autopilot>
