@@ -23,6 +23,38 @@
         <h>36</h>
     </instrument>
 
+    <instrument include="../../Instruments-3d/VHF-22/ctl22-com1-hotspot.xml">
+        <name>VHF22 com1</name>
+        <x>448</x>
+        <y>273</y>
+        <w>52</w>
+        <h>58</h>
+    </instrument>
+
+    <instrument include="../../Instruments-3d/VIR-32/ctl32-nav1-hotspot.xml">
+        <name>NAV1</name>
+        <x>501</x>
+        <y>273</y>
+        <w>52</w>
+        <h>58</h>
+    </instrument>
+
+    <instrument include="../../Instruments-3d/VIR-32/ctl32-nav2-hotspot.xml">
+        <name>NAV2</name>
+        <x>607</x>
+        <y>273</y>
+        <w>52</w>
+        <h>58</h>
+    </instrument>
+
+    <instrument include="../../Instruments-3d/VHF-22/ctl22-com2-hotspot.xml">
+        <name>VHF22 com2</name>
+        <x>660</x>
+        <y>273</y>
+        <w>52</w>
+        <h>58</h>
+    </instrument>
+
     <instrument include="Ap_Fd.xml">
         <name>Autopilot/Flight Director</name>
         <x>202</x>

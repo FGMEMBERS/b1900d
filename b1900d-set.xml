@@ -305,6 +305,8 @@ July 2004 Syd Adams
             <file>Aircraft/b1900d/Nasal/Electrical.nas</file>
             <file>Aircraft/b1900d/Nasal/systems.nas</file>
             <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
+            <file>Aircraft/Instruments-3d/VHF-22/vhf22.nas</file>
+            <file>Aircraft/Instruments-3d/VIR-32/vir32.nas</file>
         </systems>
     </nasal>
 
