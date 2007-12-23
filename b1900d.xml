@@ -25,9 +25,9 @@ Wheels/Flaps down Max Landing weight: 84 kt
 
 <airplane mass="10500">
 
-    <approach speed="120" aoa="6" fuel="0.5">
-        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
-        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
+    <approach speed="100" aoa="5" fuel="0.5">
+        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.15"/>
+        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.15"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
@@ -69,17 +69,15 @@ Wing area 28.80m
 -->
 
     <wing x="0.0" y="0.80" z="-0.9" length="8.0" chord="2.18"
-        sweep="0" dihedral="6" taper="0.417"  camber="0.170" incidence="3.29" twist="-4.69">
-        <stall aoa="16" width="6" peak="1.5"/>
-        <flap0 start="0" end=".6" lift="1.6" drag="1.8"/>
-        <flap1 start=".6" end=".95" lift="1.4" drag="1.2"/>
-        <spoiler start="0.3" end="0.5" lift="1.0" drag="10.0"/>
+        sweep="0" dihedral="6" taper="0.417"  camber="0.088" incidence="3.29" twist="-4.69">
+        <stall aoa="15" width="6" peak="1.5"/>
+        <flap0 start="0" end=".6" lift="1.6" drag="1.7"/>
+        <flap1 start=".6" end=".95" lift="1.2" drag="1.2"/>
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-speed control="FLAP0" transition-time="5"/>
         <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
         <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
         <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
-        <control-input axis="/gear/gear[0]/position-norm" control="SPOILER"/><!--simulate gear drag-->
         <control-output control="FLAP1" side="left"
         prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="FLAP1" side="right"
@@ -103,6 +101,11 @@ Wing area 28.80m
         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
     </vstab>
+
+    <mstab x="-0.6" y="2.65" z="-0.9" length="1.0" chord="1.0">
+        <flap0 start="0" end="1" lift="1.0" drag="20.0"/>
+        <control-input axis="gear/gear[0]/position-norm" control="FLAP0"/>
+    </mstab>
 
 <!-- Canards -->
 
@@ -151,12 +154,13 @@ Wing area 28.80m
 <!--
 4484 lbs (Jet A - 6.84 ppg )
 -->
-    <tank x="0.00" y="1.40" z="-0.785" capacity="2000" jet="true"/>
-    <tank x="0.00" y="-1.40" z="-0.785" capacity="2000" jet="true"/>
-    <tank x="0.00" y="4.00" z="-0.550" capacity="242" jet="true"/>
-    <tank x="0.00" y="-4.00" z="-0.550" capacity="242" jet="true"/>
+    <tank x="0.20" y="1.40" z="-0.785" capacity="2000" jet="true"/>
+    <tank x="0.20" y="-1.40" z="-0.785" capacity="2000" jet="true"/>
+    <tank x="0.20" y="4.00" z="-0.550" capacity="242" jet="true"/>
+    <tank x="0.20" y="-4.00" z="-0.550" capacity="242" jet="true"/>
 
-    <gear x="6.87" y="0.00" z="-2.267" compression=".3" retract-time="5" spring="1.0" damp="1.50">
+    <gear x="6.87" y="0.00" z="-2.267" compression=".3" retract-time="5"
+    spring="1.0" damp="1.50">
         <control-input axis="/controls/flight/rudder" control="STEER" square="true"
         src0="-1.0" src1="1.0"
         dst0="-0.8" dst1="0.8"/>
@@ -165,7 +169,8 @@ Wing area 28.80m
         <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
     </gear>
 
-    <gear x="-0.6" y="2.65" z="-2.3" compression=".4" retract-time="5" spring="1.0" damp="1.5" sfric="1.2" dfric="1.2">
+    <gear x="-0.6" y="2.65" z="-2.3" compression=".4" retract-time="5"
+    spring="1.0" damp="1.5" sfric="1.0">
         <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -173,7 +178,8 @@ Wing area 28.80m
         <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
     </gear>
 
-    <gear x="-0.6" y="-2.65" z="-2.3" compression=".4" retract-time="5" spring="1.0" damp="1.5" sfric="1.2" dfric="1.2">
+    <gear x="-0.6" y="-2.65" z="-2.3" compression=".4" retract-time="5"
+    spring="1.0" damp="1.5" sfric="1.0">
         <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -189,15 +195,15 @@ Prop diam: 2.78 m
 -->
 
     <propeller x="1.9" y="2.65" z="0.0"
-        mass="500" moment="80" radius="1.39"
-        cruise-speed="280" cruise-rpm="1700"
+        mass="500" moment="80" radius="0.9"
+        cruise-speed="275" cruise-rpm="1700"
         cruise-power="1250" cruise-alt="25000"
         min-rpm="1450" max-rpm="1700"
         fine-stop="0.25" coarse-stop="4.0">
         <turbine-engine
             eng-power="1279" eng-rpm="1700" alt="18000"
             flat-rating="1250"
-            min-n2="50" max-n2="100"
+            min-n2="70" max-n2="100"
             bsfc="0.46"/>
         <actionpt x="2.23" y="-2.65" z="0.0"/>
         <control-input axis="/controls/engines/engine[0]/throttle"
@@ -213,15 +219,15 @@ Prop diam: 2.78 m
     </propeller>
 
     <propeller x="1.9" y="-2.65" z="0.0"
-        mass="500" moment="80" radius="1.39"
-        cruise-speed="280" cruise-rpm="1700"
+        mass="500" moment="80" radius="0.9"
+        cruise-speed="275" cruise-rpm="1700"
         cruise-power="1250" cruise-alt="25000"
         min-rpm="1450" max-rpm="1700"
         fine-stop="0.25" coarse-stop="4.0">
         <turbine-engine
             eng-power="1279" eng-rpm="1700" alt="18000"
             flat-rating="1250"
-            min-n2="50" max-n2="100"
+            min-n2="70" max-n2="100"
             bsfc="0.46"/>
         <actionpt x="2.23" y="2.65" z="0.0"/>
         <control-input axis="/controls/engines/engine[1]/throttle"
@@ -250,7 +256,7 @@ Prop diam: 2.78 m
     <ballast x="0.7" y="2.65" z="-1.0" mass="600"/>
 
 <!--    Tail    -->
-<ballast x="-6.0" y="0.0" z="0.0" mass="-1200"/>
+<ballast x="-6.0" y="0.0" z="0.0" mass="-1150"/>
 
     <weight x="4.2" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
     <weight x="0.2" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>
