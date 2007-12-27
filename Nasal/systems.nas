@@ -32,13 +32,6 @@ S_volume = props.globals.getNode("/sim/sound/E_volume",1);
 C_volume = props.globals.getNode("/sim/sound/cabin",1);
 var MB = props.globals.getNode("/instrumentation/altimeter/millibars",1);
 
-var view_list =[];
-var Sview = props.globals.getNode("/sim").getChildren("view");
-foreach (v;Sview) {
-append(view_list,"sim/view["~v.getIndex()~"]/config/default-field-of-view-deg");
-}
-aircraft.data.add(view_list);
-
 
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
