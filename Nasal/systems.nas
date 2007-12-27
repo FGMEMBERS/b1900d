@@ -33,10 +33,10 @@ C_volume = props.globals.getNode("/sim/sound/cabin",1);
 var MB = props.globals.getNode("/instrumentation/altimeter/millibars",1);
 
 var view_list =[];
-var view = props.globals.getNode("/sim").getChildren("view");
-    for(var i=0; i<size(view); i+=1){
-        append(view_list,"sim/view["~i~"]/config/default-field-of-view-deg");
-        }
+var Sview = props.globals.getNode("/sim").getChildren("view");
+foreach (v;Sview) {
+append(view_list,"sim/view["~v.getIndex()~"]/config/default-field-of-view-deg");
+}
 aircraft.data.add(view_list);
 
 
@@ -78,7 +78,6 @@ setlistener("/engines/engine/out-of-fuel", func(nf){
 
 setlistener("/sim/current-view/view-number", func(vw){
     ViewNum = vw.getValue();
-    setprop("sim/current-view/field-of-view",getprop("sim/view["~ViewNum~"]/config/default-field-of-view-deg"));
     if(ViewNum == 0){
         S_volume.setValue(0.3);
         C_volume.setValue(0.3);
