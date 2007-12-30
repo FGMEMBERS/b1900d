@@ -35,6 +35,7 @@
         <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>30.0</ind><dep>0.0</dep></entry>
             <entry><ind>40.0</ind><dep>10.0</dep></entry>
             <entry><ind>100.0</ind><dep>88.0</dep></entry>
             <entry><ind>170.0</ind><dep>178.0</dep></entry>
