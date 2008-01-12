@@ -36,11 +36,7 @@
     <h>10</h>
     <binding>
     <command>nasal</command>
-    <script>
-    if(getprop("/instrumentation/flightdirector/lnav") != 1){
-    setprop("/instrumentation/flightdirector/lnav",1);}else{
-    setprop("/instrumentation/flightdirector/lnav",0);}
-    </script>
+    <script>systems.set_fdmode(0,1);</script>
     </binding>
   </action>
 
@@ -53,11 +49,7 @@
     <h>10</h>
     <binding>
     <command>nasal</command>
-    <script>
-    if(getprop("/instrumentation/flightdirector/lnav") != 2){
-    setprop("/instrumentation/flightdirector/lnav",2);}else{
-    setprop("/instrumentation/flightdirector/lnav",0);}
-    </script>
+    <script>systems.set_fdmode(0,2);</script>
     </binding>
   </action>
 
@@ -70,15 +62,7 @@
      <h>10</h>
      <binding>
      <command>nasal</command>
-    <script>
-    if(getprop("/instrumentation/flightdirector/lnav") != 3){
-    setprop("/instrumentation/flightdirector/lnav",3);
-    setprop("/instrumentation/flightdirector/vnav",7);
-    }else{
-    setprop("/instrumentation/flightdirector/lnav",0);
-    setprop("/instrumentation/flightdirector/vnav",0);
-    }
-    </script>
+    <script>systems.set_fdmode(0,4);</script>
      </binding>
    </action>
 
@@ -91,12 +75,8 @@
      <w>17</w>
      <h>10</h>
      <binding>
-     <command>nasal</command>
-    <script>
-    if(getprop("/instrumentation/flightdirector/lnav") != 4){
-    setprop("/instrumentation/flightdirector/lnav",4);}else{
-    setprop("/instrumentation/flightdirector/lnav",0);}
-    </script>
+     <command>property-toggle</command>
+    <property>instrumentation/nav/back-course-btn</property>
      </binding>
    </action>
 
@@ -113,13 +93,11 @@
     <binding>
     <command>nasal</command>
     <script>
-    if(getprop("/instrumentation/flightdirector/vnav") != 1){
-    setprop("/instrumentation/flightdirector/vnav",1);
-    setprop("/autopilot/settings/target-altitude-ft",getprop("/position/altitude-ft"));
-    }else{
-    setprop("/instrumentation/flightdirector/vnav",0);}
+        setprop("autopilot/settings/target-altitude-ft",getprop("position/altitude-ft"));
+        systems.set_fdmode(1,1);
     </script>
     </binding>
+    
   </action>
 
  <action>
@@ -131,11 +109,7 @@
     <h>10</h>
     <binding>
     <command>nasal</command>
-    <script>
-    if(getprop("/instrumentation/flightdirector/vnav") != 2){
-    setprop("/instrumentation/flightdirector/vnav",2);}else{
-    setprop("/instrumentation/flightdirector/vnav",0);}
-    </script>
+    <script>systems.set_fdmode(1,2);</script>
     </binding>
   </action>
 
@@ -149,14 +123,7 @@
     <h>10</h>
     <binding>
     <command>nasal</command>
-    <script>
-    if(getprop("/instrumentation/flightdirector/vnav") != 3){
-    setprop("/instrumentation/flightdirector/vnav",3);
-    setprop("/autopilot/settings/target-vs-fps",getprop("/velocities/vertical-speed-fps"));    
-    }else{
-    setprop("/instrumentation/flightdirector/vnav",0);}
-    </script>
-
+    <script>systems.set_fdmode(1,3);</script>
     </binding>
   </action>
 
@@ -170,15 +137,7 @@
     <h>10</h>
     <binding>
     <command>nasal</command>
-    <script>
-    if(getprop("/instrumentation/flightdirector/spd") != 1){
-    setprop("/instrumentation/flightdirector/spd",1);
-    setprop("/autopilot/settings/target-speed-kt",getprop("/velocities/airspeed-kt"));
-    }else{
-    setprop("/instrumentation/flightdirector/spd",0);
-    setprop("/autopilot/settings/target-speed-kt",0);}
-    </script>
-
+    <script>systems.set_fdmode(2,1);</script>
     </binding>
   </action>
 
@@ -191,11 +150,7 @@
     <h>10</h>
     <binding>
     <command>nasal</command>
-    <script>
-    if(getprop("/instrumentation/flightdirector/vnav") != 5){
-    setprop("/instrumentation/flightdirector/vnav",5);}else{
-    setprop("/instrumentation/flightdirector/vnav",0);}
-    </script>
+    <script>systems.set_fdmode(1,4);</script>
     </binding>
   </action>
 
@@ -208,13 +163,7 @@
      <h>10</h>
      <binding>
      <command>nasal</command>
-    <script>
-    if(getprop("/instrumentation/flightdirector/vnav") != 6){
-    setprop("/instrumentation/flightdirector/vnav",6);
-    setprop("/autopilot/settings/target-vs-fps",8.3);    
-    }else{
-    setprop("/instrumentation/flightdirector/vnav",0);}
-    </script>
+    <script>systems.set_fdmode(1,5);</script>
      </binding>
    </action>
 

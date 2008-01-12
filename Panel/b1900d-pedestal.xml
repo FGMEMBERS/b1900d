@@ -7,34 +7,15 @@
 
 <instruments>
 
-
-<instrument>
-  <name>pedestal hotspots</name>
-  <x>128</x>
-  <y>128</y>
-  <w>256</w>
-  <h>256</h>
-  <w-base>256</w-base>
-  <h-base>256</h-base>
-
- <actions> 
-
-   <!--             Pedestal              -->
-   <action>
-     <name>Toggle Autopilot</name>
-     <button>0</button>
-     <x>-88</x>
-     <y>-14</y>
-     <w>40</w>
-     <h>10</h>
-     <binding>
-       <command>property-toggle</command>
-       <property>autopilot/locks/passive-mode</property>
-     </binding>
-   </action>
-
-</actions>
-</instrument>
+<!-- AP -->
+    <instrument include="../../Instruments-3d/primus-1000/AP-hotspots.xml">
+        <name>AP</name>
+        <x>66</x>
+        <y>131</y>
+        <w>150</w>
+        <h>45</h>
+    </instrument>
+    
 </instruments>
 
 </PropertyList>

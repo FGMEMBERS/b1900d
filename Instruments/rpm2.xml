@@ -8,17 +8,17 @@
         <object-name>RPMFace</object-name>
         <object-name>RPM.needle</object-name>
         <emission>
-            <red>1.0</red>
-            <green>0.4</green>
-            <blue>0.2</blue>
-            <factor-prop>/systems/electrical/outputs/eng-lights</factor-prop>
+            <red>0.035</red>
+            <green>0.012</green>
+            <blue>0.007</blue>
+            <factor-prop>systems/electrical/outputs/eng-lights</factor-prop>
         </emission>
     </animation>
 
     <animation>
         <type>rotate</type>
         <object-name>RPM.needle</object-name>
-        <property>/engines/engine[1]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>1000.0</ind><dep>106.0</dep></entry>

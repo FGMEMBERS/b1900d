@@ -275,6 +275,14 @@ x     </binding>
        <max>1</max>
        <wrap>false</wrap>
      </binding>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine[0]/mixture</property>
+       <step>.05</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>false</wrap>
+     </binding>
    </action>
    
    <action>
@@ -287,6 +295,14 @@ x     </binding>
      <binding>
        <command>property-adjust</command>
        <property>/controls/engines/engine[1]/condition</property>
+       <step>.05</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>false</wrap>
+     </binding>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine[1]/mixture</property>
        <step>.05</step>
        <min>0</min>
        <max>1</max>
@@ -312,6 +328,22 @@ x     </binding>
      <binding>
        <command>property-adjust</command>
        <property>/controls/engines/engine[1]/condition</property>
+       <step>.05</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>false</wrap>
+     </binding>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine[0]/mixture</property>
+       <step>.05</step>
+       <min>0</min>
+       <max>1</max>
+       <wrap>false</wrap>
+     </binding>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine[1]/mixture</property>
        <step>.05</step>
        <min>0</min>
        <max>1</max>

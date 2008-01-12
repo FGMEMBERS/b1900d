@@ -78,6 +78,11 @@
 
     <action>
         <name>nav radial increase 1</name>
+        <condition>
+            <not>
+                <property>instrumentation/nav/slaved-to-gps</property>
+            </not>
+        </condition>
         <button>0</button>
         <x>-278</x>
         <y>-230</y>
@@ -85,7 +90,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/nav/radials/selected-deg</property>
+            <property>instrumentation/nav/radials/selected-deg</property>
             <step>1</step>
             <min>0</min>
             <max>360</max>
@@ -95,6 +100,11 @@
 
     <action>
         <name>nav radial increase 5</name>
+        <condition>
+            <not>
+                <property>instrumentation/nav/slaved-to-gps</property>
+            </not>
+        </condition>
         <button>1</button>
         <x>-278</x>
         <y>-230</y>
@@ -102,7 +112,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/nav/radials/selected-deg</property>
+            <property>instrumentation/nav/radials/selected-deg</property>
             <step>5</step>
             <min>0</min>
             <max>360</max>
@@ -112,6 +122,11 @@
 
     <action>
         <name>nav radial decrease 1</name>
+        <condition>
+            <not>
+                <property>instrumentation/nav/slaved-to-gps</property>
+            </not>
+        </condition>
         <button>0</button>
         <x>-286</x>
         <y>-230</y>
@@ -119,7 +134,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/nav/radials/selected-deg</property>
+            <property>instrumentation/nav/radials/selected-deg</property>
             <step>-1</step>
             <min>0</min>
             <max>360</max>
@@ -129,6 +144,11 @@
 
     <action>
         <name>nav radial decrease 5</name>
+        <condition>
+            <not>
+                <property>instrumentation/nav/slaved-to-gps</property>
+            </not>
+        </condition>
         <button>1</button>
         <x>-286</x>
         <y>-230</y>
@@ -136,13 +156,96 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/nav/radials/selected-deg</property>
+            <property>instrumentation/nav/radials/selected-deg</property>
             <step>-5</step>
             <min>0</min>
             <max>360</max>
             <wrap>1</wrap>
         </binding>
     </action>
+
+<!--             DTK             -->
+
+    <action>
+        <name>dtk increase 1</name>
+        <condition>
+            <property>instrumentation/nav/slaved-to-gps</property>
+        </condition>
+        <button>0</button>
+        <x>-278</x>
+        <y>-230</y>
+        <w>8</w>
+        <h>8</h>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+            <step>1</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+
+    <action>
+        <name>dtk increase 5</name>
+        <condition>
+            <property>instrumentation/nav/slaved-to-gps</property>
+        </condition>
+        <button>1</button>
+        <x>-278</x>
+        <y>-230</y>
+        <w>8</w>
+        <h>8</h>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+            <step>5</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+        </binding>
+    </action>
+
+    <action>
+        <name>dtk decrease 1</name>
+        <condition>
+            <property>instrumentation/nav/slaved-to-gps</property>
+        </condition>
+        <button>0</button>
+        <x>-286</x>
+        <y>-230</y>
+        <w>8</w>
+        <h>8</h>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+            <step>-1</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+
+    <action>
+        <name>dtk decrease 5</name>
+        <condition>
+            <property>instrumentation/nav/slaved-to-gps</property>
+        </condition>
+        <button>1</button>
+        <x>-286</x>
+        <y>-230</y>
+        <w>8</w>
+        <h>8</h>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+            <step>-5</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+        </binding>
+    </action>
+
 
 <!--             Heading              -->
 
@@ -155,7 +258,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/autopilot/settings/heading-bug-deg</property>
+            <property>autopilot/settings/heading-bug-deg</property>
             <step>-1</step>
             <min>0</min>
             <max>360</max>
@@ -172,7 +275,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/autopilot/settings/heading-bug-deg</property>
+            <property>autopilot/settings/heading-bug-deg</property>
             <step>-5</step>
             <min>0</min>
             <max>360</max>
@@ -189,7 +292,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/autopilot/settings/heading-bug-deg</property>
+            <property>autopilot/settings/heading-bug-deg</property>
             <step>1</step>
             <min>0</min>
             <max>360</max>
@@ -206,7 +309,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/autopilot/settings/heading-bug-deg</property>
+            <property>autopilot/settings/heading-bug-deg</property>
             <step>5</step>
             <min>0</min>
             <max>360</max>
@@ -225,7 +328,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/altimeter/setting-inhg</property>
+            <property>instrumentation/altimeter/setting-inhg</property>
             <step>-0.01</step>
             <min>26.0</min>
             <max>33.0</max>
@@ -242,7 +345,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/altimeter/setting-inhg</property>
+            <property>instrumentation/altimeter/setting-inhg</property>
             <step>-0.1</step>
             <min>26.0</min>
             <max>33.0</max>
@@ -259,7 +362,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/altimeter/setting-inhg</property>
+            <property>instrumentation/altimeter/setting-inhg</property>
             <step>0.01</step>
             <min>26.0</min>
             <max>33.0</max>
@@ -276,7 +379,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/altimeter/setting-inhg</property>
+            <property>instrumentation/altimeter/setting-inhg</property>
             <step>0.1</step>
             <min>26.0</min>
             <max>33.0</max>
@@ -295,7 +398,12 @@
         <h>8</h>
         <binding>
             <command>property-assign</command>
-            <property>/autopilot/settings/target-altitude-ft</property>
+            <property>instrumentation/flightdirector/selected-alt-ft</property>
+            <value>0.0</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>autopilot/settings/target-altitude-ft</property>
             <value>0.0</value>
         </binding>
     </action>
@@ -309,7 +417,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/autopilot/settings/target-altitude-ft</property>
+            <property>instrumentation/flightdirector/selected-alt-ft</property>
             <step>-100</step>
             <min>0</min>
             <max>99000</max>
@@ -326,7 +434,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/autopilot/settings/target-altitude-ft</property>
+            <property>instrumentation/flightdirector/selected-alt-ft</property>
             <step>100</step>
             <min>0</min>
             <max>99000</max>
@@ -343,7 +451,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/autopilot/settings/target-altitude-ft</property>
+            <property>instrumentation/flightdirector/selected-alt-ft</property>
             <step>-1000</step>
             <min>0</min>
             <max>99000</max>
@@ -360,7 +468,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/autopilot/settings/target-altitude-ft</property>
+            <property>instrumentation/flightdirector/selected-alt-ft</property>
             <step>1000</step>
             <min>0</min>
             <max>99000</max>
@@ -379,7 +487,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/clock/offset-sec</property>
+            <property>instrumentation/clock/offset-sec</property>
             <step>3600</step>
             <min>0</min>
             <max>43200</max>
@@ -396,7 +504,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/clock/offset-sec</property>
+            <property>instrumentation/clock/offset-sec</property>
             <step>-3600</step>
             <min>0</min>
             <max>43200</max>
@@ -413,7 +521,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/clock/offset-sec</property>
+            <property>instrumentation/clock/offset-sec</property>
             <step>60</step>
             <min>0</min>
             <max>43200</max>
@@ -430,7 +538,7 @@
         <h>8</h>
         <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/clock/offset-sec</property>
+            <property>instrumentation/clock/offset-sec</property>
             <step>-60</step>
             <min>0</min>
             <max>43200</max>
@@ -449,7 +557,7 @@
         <h>10</h>
         <binding>
             <command>property-toggle</command>
-            <property>/controls/electric/battery-switch</property>
+            <property>controls/electric/battery-switch</property>
             <step>1</step>
             <min>0</min>
             <max>1</max>
@@ -466,7 +574,7 @@
         <h>10</h>
         <binding>
             <command>property-toggle</command>
-            <property>/controls/electric/engine[0]/generator</property>
+            <property>controls/electric/engine[0]/generator</property>
             <step>1</step>
             <min>0</min>
             <max>1</max>
@@ -483,7 +591,7 @@
         <h>10</h>
         <binding>
             <command>property-toggle</command>
-            <property>/controls/electric/engine[1]/generator</property>
+            <property>controls/electric/engine[1]/generator</property>
             <step>1</step>
             <min>0</min>
             <max>1</max>
@@ -500,7 +608,7 @@
         <h>10</h>
         <binding>
             <command>property-toggle</command>
-            <property>/controls/electric/external-power</property>
+            <property>controls/electric/external-power</property>
             <step>1</step>
             <min>0</min>
             <max>1</max>
@@ -517,7 +625,7 @@
         <h>10</h>
         <binding>
             <command>property-toggle</command>
-            <property>/controls/electric/avionics-switch</property>
+            <property>controls/electric/avionics-switch</property>
             <step>1</step>
             <min>0</min>
             <max>1</max>
@@ -536,7 +644,7 @@
         <h>12</h>
         <binding>
             <command>property-adjust</command>
-            <property>/controls/lighting/efis-norm</property>
+            <property>controls/lighting/efis-norm</property>
             <step>0.05</step>
             <min>0</min>
             <max>1.0</max>
@@ -553,7 +661,7 @@
         <h>12</h>
         <binding>
             <command>property-adjust</command>
-            <property>/controls/lighting/efis-norm</property>
+            <property>controls/lighting/efis-norm</property>
             <step>-0.05</step>
             <min>0</min>
             <max>1.0</max>

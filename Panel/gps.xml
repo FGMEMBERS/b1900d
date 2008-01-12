@@ -144,8 +144,7 @@ Honeywell Bendix/King KLN-90B GPS
      <binding>
        <command>nasal</command>
        <script>
-         node =props.globals.getNode("/instrumentation/gps/wp/wp[1]/get-nearest-airport", 1);
-         node.setValue(1);
+         setprop("/instrumentation/gps/wp/wp[1]/get-nearest-airport", 1);
        </script>
      </binding>
    </action>

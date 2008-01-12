@@ -800,8 +800,8 @@
         <object-name>LHFastprop</object-name>
         <condition>
             <greater-than>
-                <property>engines/engine[0]/rpm</property>
-                <value>999</value>
+                <property>engines/engine[0]/n2</property>
+                <value>70</value>
             </greater-than>
         </condition>
     </animation>
@@ -811,12 +811,12 @@
         <object-name>LHSlowprop</object-name>
         <condition>
             <greater-than>
-                <property>engines/engine[0]/rpm</property>
-                <value>499</value>
+                <property>engines/engine[0]/n2</property>
+                <value>50</value>
             </greater-than>
             <less-than>
-                <property>engines/engine[0]/rpm</property>
-                <value>1000</value>
+                <property>engines/engine[0]/n2</property>
+                <value>70.01</value>
             </less-than>
         </condition>
     </animation>
@@ -826,8 +826,8 @@
         <object-name>LHprop</object-name>
         <condition>
             <less-than>
-                <property>engines/engine[0]/rpm</property>
-                <value>500</value>
+                <property>engines/engine[0]/n2</property>
+                <value>50.01</value>
             </less-than>
         </condition>
     </animation>
@@ -835,7 +835,7 @@
     <animation>
         <type>spin</type>
         <object-name>LHprop</object-name>
-        <property>engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/n2</property>
         <center>
             <x-m>-2.226</x-m>
             <y-m>-2.634</y-m>
@@ -851,8 +851,8 @@
     <animation>
         <type>spin</type>
         <object-name>LHSlowprop</object-name>
-        <property>engines/engine[0]/rpm</property>
-        <factor>.2</factor>   
+        <property>engines/engine[0]/n2</property>
+        <factor>.5</factor>   
         <center>
             <x-m>-2.226</x-m>
             <y-m>-2.634</y-m>
@@ -868,8 +868,8 @@
     <animation>
         <type>spin</type>
         <object-name>LHFastprop</object-name>
-        <property>engines/engine[0]/rpm</property>
-        <factor>.005</factor>   
+        <property>engines/engine[0]/n2</property>
+        <factor>.1</factor>   
         <center>
             <x-m>-2.226</x-m>
             <y-m>-2.634</y-m>
@@ -999,8 +999,8 @@
         <object-name>RHFastprop</object-name>
         <condition>
             <greater-than>
-                <property>engines/engine[1]/rpm</property>
-                <value>999</value>
+                <property>engines/engine[1]/n2</property>
+                <value>70</value>
             </greater-than>
         </condition>
     </animation>
@@ -1010,12 +1010,12 @@
         <object-name>RHSlowprop</object-name>
         <condition>
             <greater-than>
-                <property>engines/engine[1]/rpm</property>
-                <value>499</value>
+                <property>engines/engine[1]/n2</property>
+                <value>50</value>
             </greater-than>
             <less-than>
-                <property>engines/engine[1]/rpm</property>
-                <value>1000</value>
+                <property>engines/engine[1]/n2</property>
+                <value>70.01</value>
             </less-than>
         </condition>
     </animation>
@@ -1025,8 +1025,8 @@
         <object-name>RHprop</object-name>
         <condition>
             <less-than>
-                <property>engines/engine[1]/rpm</property>
-                <value>500</value>
+                <property>engines/engine[1]/n2</property>
+                <value>50.01</value>
             </less-than>
         </condition>
     </animation>
@@ -1034,7 +1034,7 @@
     <animation>
         <type>spin</type>
         <object-name>RHprop</object-name>
-        <property>engines/engine[1]/rpm</property>
+        <property>engines/engine[1]/n2</property>
         <center>
             <x-m>-2.226</x-m>
             <y-m>2.634</y-m>
@@ -1050,8 +1050,8 @@
     <animation>
         <type>spin</type>
         <object-name>RHSlowprop</object-name>
-        <property>engines/engine[1]/rpm</property>
-        <factor>.2</factor>   
+        <property>engines/engine[1]/n2</property>
+        <factor>.5</factor>   
         <center>
             <x-m>-2.226</x-m>
             <y-m>2.634</y-m>
@@ -1067,8 +1067,8 @@
     <animation>
         <type>spin</type>
         <object-name>RHFastprop</object-name>
-        <property>engines/engine[1]/rpm</property>
-        <factor>.005</factor>   
+        <property>engines/engine[1]/n2</property>
+        <factor>.1</factor>   
         <center>
             <x-m>-2.226</x-m>
             <y-m>2.634</y-m>

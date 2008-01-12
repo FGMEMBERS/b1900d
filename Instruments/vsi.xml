@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!--Beechcraft Vertical Speed Indicator-->
 <PropertyList>
 
     <path>vsi.ac</path>
@@ -9,17 +8,17 @@
         <object-name>VSIface</object-name>
         <object-name>VSI.needle</object-name>
         <emission>
-            <red>1.0</red>
-            <green>0.4</green>
-            <blue>0.2</blue>
-            <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+            <red>0.035</red>
+            <green>0.012</green>
+            <blue>0.007</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
         </emission>
     </animation>
 
     <animation>
         <type>rotate</type>
         <object-name>VSI.needle</object-name>
-        <property>/autopilot/internal/vert-speed-fpm</property>
+        <property>autopilot/internal/vert-speed-fpm</property>
         <interpolation>
             <entry><ind>-4000.0</ind><dep>-173.0</dep></entry>
             <entry><ind>-1000.0</ind><dep>-76.0</dep></entry>

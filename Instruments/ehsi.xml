@@ -8,6 +8,8 @@
         <object-name>EHSI.face</object-name>
         <object-name>HDGback</object-name>
         <object-name>hdg-bug</object-name>
+        <object-name>toflag</object-name>
+        <object-name>fromflag</object-name>
         <object-name>CRSneedle</object-name>
         <object-name>CRSdeflection</object-name>
         <object-name>EHSI.gps</object-name>
@@ -23,10 +25,10 @@
         <object-name>HDGknob</object-name>
         <object-name>CRSknob</object-name>
         <emission>
-            <red>1.0</red>
-            <green>1.0</green>
-            <blue>1.0</blue>
-            <factor-prop>/systems/electrical/outputs/efis-lights</factor-prop>
+            <red>0.035</red>
+            <green>0.035</green>
+            <blue>0.035</blue>
+            <factor-prop>systems/electrical/outputs/efis-lights</factor-prop>
         </emission>
     </animation>
 
@@ -34,10 +36,10 @@
         <type>material</type>
         <object-name>EHSI.bezel</object-name>
         <emission>
-            <red>0.2</red>
-            <green>0.2</green>
-            <blue>0.2</blue>
-            <factor-prop>/systems/electrical/outputs/panel-lights</factor-prop>
+            <red>0.010</red>
+            <green>0.010</green>
+            <blue>0.010</blue>
+            <factor-prop>systems/electrical/outputs/panel-lights</factor-prop>
         </emission>
     </animation>
 
@@ -45,14 +47,30 @@
         <type>select</type>
         <object-name>EHSI.gps</object-name>
         <condition>
-            <property>/instrumentation/nav/slaved-to-gps</property>
+            <property>instrumentation/nav/slaved-to-gps</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>toflag</object-name>
+        <condition>
+            <property>instrumentation/flightdirector/to-flag</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>fromflag</object-name>
+        <condition>
+            <property>instrumentation/flightdirector/from-flag</property>
         </condition>
     </animation>
 
     <animation>
         <type>rotate</type>
         <object-name>hdg-bug</object-name>
-        <property>/autopilot/internal/fdm-heading-bug-error-deg</property>
+        <property>autopilot/internal/fdm-heading-bug-error-deg</property>
         <axis>
             <x>-1.0</x>
             <y>0</y>
@@ -87,6 +105,8 @@
         <type>rotate</type>
         <object-name>CRSneedle</object-name>
         <object-name>CRSdeflection</object-name>
+        <object-name>toflag</object-name>
+        <object-name>fromflag</object-name>
         <property>orientation/heading-magnetic-deg</property>
         <axis>
             <x>1.0</x>
@@ -100,12 +120,13 @@
         </center>
     </animation>
 
-
     <animation>
         <type>rotate</type>
         <object-name>CRSneedle</object-name>
         <object-name>CRSdeflection</object-name>
-        <property>/instrumentation/nav/radials/selected-deg</property>
+        <object-name>toflag</object-name>
+        <object-name>fromflag</object-name>
+        <property>instrumentation/flightdirector/dtk</property>
         <axis>
             <x>-1.0</x>
             <y>0</y>
@@ -121,13 +142,11 @@
     <animation>
         <type>translate</type>
         <object-name>CRSdeflection</object-name>
-        <property>/instrumentation/flightdirector/crs-deflection</property>
+        <property>instrumentation/flightdirector/deflection</property>
         <interpolation>
-            <entry><ind>-999.0</ind><dep>-0.02</dep></entry>
-            <entry><ind>-10.0</ind><dep>-0.02</dep></entry>
+            <entry><ind>-10.0</ind><dep>-0.0172</dep></entry>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>10.0</ind><dep>0.02</dep></entry>
-            <entry><ind>999.0</ind><dep>0.02</dep></entry>
+            <entry><ind>10.0</ind><dep>0.0172</dep></entry>
         </interpolation>
         <axis>
             <x>0</x>
@@ -144,7 +163,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.crs1</object-name>
-        <property>/instrumentation/nav/radials/selected-deg</property>
+        <property>instrumentation/flightdirector/dtk</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -157,7 +176,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.crs2</object-name>
-        <property>/instrumentation/nav/radials/selected-deg</property>
+        <property>instrumentation/flightdirector/dtk</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -170,7 +189,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.crs3</object-name>
-        <property>/instrumentation/nav/radials/selected-deg</property>
+        <property>instrumentation/flightdirector/dtk</property>
         <factor>0.1</factor>
         <step>1</step>
         <axis>
@@ -185,7 +204,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.hdg1</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property>
+        <property>autopilot/settings/heading-bug-deg</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -198,7 +217,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.hdg2</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property>
+        <property>autopilot/settings/heading-bug-deg</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -211,7 +230,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.hdg3</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property>
+        <property>autopilot/settings/heading-bug-deg</property>
         <factor>0.1</factor>
         <step>1</step>
         <axis>
@@ -226,7 +245,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.gsp1</object-name>
-        <property>/instrumentation/gps/indicated-ground-speed-kt</property>
+        <property>instrumentation/gps/indicated-ground-speed-kt</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -239,7 +258,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.gsp2</object-name>
-        <property>/instrumentation/gps/indicated-ground-speed-kt</property>
+        <property>instrumentation/gps/indicated-ground-speed-kt</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -252,7 +271,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.gsp3</object-name>
-        <property>/instrumentation/gps/indicated-ground-speed-kt</property>
+        <property>instrumentation/gps/indicated-ground-speed-kt</property>
         <factor>0.1</factor>
         <step>1</step>
         <axis>

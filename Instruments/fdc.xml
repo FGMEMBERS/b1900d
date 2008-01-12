@@ -7,10 +7,10 @@
         <type>material</type>
         <object-name>APbtn</object-name>
         <emission>
-            <red>1.0</red>
-            <green>0.5</green>
-            <blue>0.2</blue>
-            <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+            <red>0.025</red>
+            <green>0.012</green>
+            <blue>0.007</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
         </emission>
     </animation>
 
@@ -18,10 +18,10 @@
         <type>material</type>
         <object-name>FDC</object-name>
         <emission>
-            <red>0.2</red>
-            <green>0.22</green>
-            <blue>0.2</blue>
-            <factor-prop>/controls/lighting/panel-norm</factor-prop>
+            <red>0.01</red>
+            <green>0.01</green>
+            <blue>0.01</blue>
+            <factor-prop>controls/lighting/panel-norm</factor-prop>
         </emission>
     </animation>
  
@@ -30,7 +30,7 @@
         <object-name>AP-alt</object-name>
         <condition>
             <equals>
-                <property>/instrumentation/flightdirector/vnav</property>
+                <property>instrumentation/flightdirector/vnav</property>
                 <value>1</value>
             </equals>
         </condition>
@@ -41,7 +41,7 @@
         <object-name>AP-alts</object-name>
         <condition>
             <equals>
-                <property>/instrumentation/flightdirector/vnav</property>
+                <property>instrumentation/flightdirector/vnav</property>
                 <value>2</value>
             </equals>
         </condition>
@@ -52,7 +52,7 @@
         <object-name>AP-vs</object-name>
         <condition>
             <equals>
-                <property>/instrumentation/flightdirector/vnav</property>
+                <property>instrumentation/flightdirector/vnav</property>
                 <value>3</value>
             </equals>
         </condition>
@@ -63,8 +63,8 @@
         <object-name>AP-ias</object-name>
         <condition>
             <equals>
-                <property>/instrumentation/flightdirector/vnav</property>
-                <value>4</value>
+                <property>instrumentation/flightdirector/spd</property>
+                <value>1</value>
             </equals>
         </condition>
     </animation>
@@ -74,8 +74,8 @@
         <object-name>AP-dcs</object-name>
         <condition>
             <equals>
-                <property>/instrumentation/flightdirector/vnav</property>
-                <value>5</value>
+                <property>instrumentation/flightdirector/vnav</property>
+                <value>4</value>
             </equals>
         </condition>
     </animation>
@@ -85,8 +85,8 @@
         <object-name>AP-climb</object-name>
         <condition>
             <equals>
-                <property>/instrumentation/flightdirector/vnav</property>
-                <value>6</value>
+                <property>instrumentation/flightdirector/vnav</property>
+                <value>5</value>
             </equals>
         </condition>
     </animation>
@@ -97,13 +97,12 @@
         <condition>
             <and>
                 <equals>
-                    <property>/instrumentation/flightdirector/lnav</property>
+                    <property>instrumentation/flightdirector/lnav</property>
                     <value>0</value>
                 </equals>
-                <equals>
-                    <property>/instrumentation/flightdirector/autopilot-on</property>
-                    <value>1</value>
-                </equals>
+                <not>
+                    <property>autopilot/locks/passive-mode</property>
+                </not>
             </and>
         </condition>
     </animation>
@@ -113,7 +112,7 @@
         <object-name>AP-hdg</object-name>
         <condition>
             <equals>
-                <property>/instrumentation/flightdirector/lnav</property>
+                <property>instrumentation/flightdirector/lnav</property>
                 <value>1</value>
             </equals>
         </condition>
@@ -123,10 +122,16 @@
         <type>select</type>
         <object-name>AP-nav</object-name>
         <condition>
-            <equals>
-                <property>/instrumentation/flightdirector/lnav</property>
-                <value>2</value>
-            </equals>
+            <or>
+                <equals>
+                    <property>instrumentation/flightdirector/lnav</property>
+                    <value>2</value>
+                </equals>
+                <equals>
+                    <property>instrumentation/flightdirector/lnav</property>
+                    <value>3</value>
+                </equals>
+            </or>
         </condition>
     </animation>
 
@@ -134,10 +139,16 @@
         <type>select</type>
         <object-name>AP-apr</object-name>
         <condition>
-            <equals>
-                <property>/instrumentation/flightdirector/lnav</property>
-                <value>3</value>
-            </equals>
+            <or>
+                <equals>
+                    <property>instrumentation/flightdirector/lnav</property>
+                    <value>4</value>
+                </equals>
+                <equals>
+                    <property>instrumentation/flightdirector/lnav</property>
+                    <value>5</value>
+                </equals>
+            </or>
         </condition>
     </animation>
 
@@ -145,10 +156,15 @@
         <type>select</type>
         <object-name>AP-bc</object-name>
         <condition>
-            <equals>
-                <property>/instrumentation/flightdirector/lnav</property>
-                <value>4</value>
-            </equals>
+            <property>instrumentation/nav/back-course-btn</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP-gs</object-name>
+        <condition>
+            <property>autopilot/locks/gs1-hold</property>
         </condition>
     </animation>
 

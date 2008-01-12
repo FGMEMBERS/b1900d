@@ -8,10 +8,10 @@
         <object-name>TorqueFace</object-name>
         <object-name>Torque.needle</object-name>
         <emission>
-            <red>1.0</red>
-            <green>0.4</green>
-            <blue>0.2</blue>
-            <factor-prop>/systems/electrical/outputs/eng-lights</factor-prop>
+            <red>0.035</red>
+            <green>0.012</green>
+            <blue>0.007</blue>
+            <factor-prop>systems/electrical/outputs/eng-lights</factor-prop>
         </emission>
     </animation>
 

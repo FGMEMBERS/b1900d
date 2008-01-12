@@ -11,17 +11,29 @@
         <object-name>VORneedle</object-name>
         <object-name>ADFneedle</object-name>
         <emission>
-            <red>1.0</red>
-            <green>0.5</green>
-            <blue>0.2</blue>
-            <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+            <red>0.035</red>
+            <green>0.012</green>
+            <blue>0.007</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
         </emission>
     </animation>
 
     <animation>
         <type>rotate</type>
+        <object-name>RMI.compass</object-name>
+        <property>orientation/heading-magnetic-deg</property>
         <object-name>VORneedle</object-name>
-        <property>/instrumentation/flightdirector/nav-mag-brg</property>
+        <axis>
+            <x>1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>VORneedle</object-name>
+        <property>instrumentation/flightdirector/hdg-deg</property>
         <axis>
             <x>-1.0</x>
             <y>0</y>
@@ -32,22 +44,11 @@
     <animation>
         <type>rotate</type>
         <object-name>ADFneedle</object-name>
-        <property>/instrumentation/adf/indicated-bearing-deg</property>
+        <property>instrumentation/adf/indicated-bearing-deg</property>
         <axis>
             <x>-1.0</x>
             <y>0</y>
             <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>RMI.compass</object-name>
-        <property>/orientation/heading-magnetic-deg</property>
-        <axis>
-            <x>1.0</x>
-            <y>0</y>
-            <z>0.0</z>
         </axis>
     </animation>
 

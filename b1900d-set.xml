@@ -81,13 +81,8 @@ July 2004 Syd Adams
             <y-offset-m type="double">0.27</y-offset-m>
             <z-offset-m type="double">-4.192</z-offset-m>
             <pitch-offset-deg>-15</pitch-offset-deg>
-            <default-field-of-view-deg>60.0</default-field-of-view-deg>
         </config>
     </view>
-
-    <current-view>
-        <field-of-view>60.0</field-of-view>
-    </current-view>
 
     <systems>
         <electrical>
@@ -97,6 +92,10 @@ July 2004 Syd Adams
             <path>Aircraft/b1900d/b1900d-autopilot.xml</path>
         </autopilot>
     </systems>
+
+        <instrumentation>
+            <path>Aircraft/b1900d/instrumentation.xml</path>
+        </instrumentation>
 
     <sound>
         <path>Aircraft/b1900d/b1900d-sound.xml</path>
@@ -109,10 +108,6 @@ July 2004 Syd Adams
         <setting>0.75</setting>
         <setting>1.000</setting>
     </flaps>
-
-    <hud>
-        <enable3d>false</enable3d>
-    </hud>
 
     <virtual-cockpit>true</virtual-cockpit>
     <allow-toggle-cockpit>true</allow-toggle-cockpit>
@@ -259,6 +254,23 @@ July 2004 Syd Adams
     <altimeter>
         <millibars type= "double">0</millibars>
     </altimeter>
+    <transponder>
+        <inputs>
+            <serviceable type="bool">true</serviceable>
+        </inputs>
+    </transponder>
+    <nav n="0">
+        <serviceable type="bool">1</serviceable>
+    </nav>
+    <nav n="1">
+        <serviceable type="bool">1</serviceable>
+    </nav>
+    <comm n="0">
+        <serviceable type="bool">1</serviceable>
+    </comm>
+    <comm n="1">
+        <serviceable type="bool">1</serviceable>
+    </comm>
     </instrumentation>
 
     <engines>
@@ -304,6 +316,7 @@ July 2004 Syd Adams
         <systems>
             <file>Aircraft/b1900d/Nasal/Electrical.nas</file>
             <file>Aircraft/b1900d/Nasal/systems.nas</file>
+            <file>Aircraft/b1900d/Nasal/gps.nas</file>
             <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
             <file>Aircraft/Instruments-3d/VHF-22/vhf22.nas</file>
             <file>Aircraft/Instruments-3d/VIR-32/vir32.nas</file>

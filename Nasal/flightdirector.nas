@@ -1,156 +1,288 @@
 #############################################################################
-# B1900D Flight Director/Autopilot controller.
+# Collins FCP-65 Flight Control Panel
 #Syd Adams
 #############################################################################
 
 # 0 - Off: v-bars hidden
-# lnav -0=off,1=HDG,2=NAV,3=APR,4=BC
-# vnav - 0=off,1=BARO ALT,2=ALT SELECT,3=VS,4=IAS, 5= DCS,6 = CLIMB
+# lnav -0=off-wing-level,1=HDG,2=NAV arm,3=NAV cap,
+# 4=APR arm,5=APR cap
+# vnav - 0=off,1=ALT,2=ALT SELECT,3=VS, 4= DCS,5 = CLIMB
+#
+# Roll limit 25
+#Half bank 12.5
+#Pitch limits +20 & -10
+#GA = wing level & +10 pitch hold
+#
+
+var LN_txt=["wing-leveler","dg-heading-hold","dg-heading-hold","nav1-hold","dg-heading-hold","nav1-hold"];
+var VN_txt=["pitch-hold","altitude-hold","pitch-hold","vertical-speed-hold","dcs-hold","pitch-hold"];
+
 var MTR2KT=0.000539956803;
-var GPS_CDI=props.globals.getNode("/instrumentation/gps/cdi-deflection",1);
-var GO = 0;
-var alt_select = 0.0;
-var current_alt=0.0;
-var current_heading = 0.0;
-var lnav = 0.0;
-var vnav = 0.0;
-var spd = 0.0;
 var alt_alert = 0.0;
 var course = 0.0;
-var slaved = 0;
+var Slaved = 0;
 var mag_offset=0;
-AP_hdg = props.globals.getNode("/autopilot/locks/heading",1);
-AP_alt = props.globals.getNode("/autopilot/locks/altitude",1);
-AP_spd = props.globals.getNode("/autopilot/locks/speed",1);
-AP_lnav = props.globals.getNode("/instrumentation/flightdirector/lnav",1);
-FD_deflection = props.globals.getNode("/instrumentation/flightdirector/crs-deflection",1);
-FD_heading = props.globals.getNode("/instrumentation/flightdirector/hdg-deg",1);
-HDG_deflection = props.globals.getNode("/instrumentation/nav/heading-needle-deflection",1);
-AP_vnav = props.globals.getNode("/instrumentation/flightdirector/vnav",1);
-AP_speed = props.globals.getNode("/instrumentation/flightdirector/spd",1);
-AP_passive = props.globals.getNode("/autopilot/locks/passive-mode",1);
-BC_btn = props.globals.getNode("/instrumentation/nav/back-course-btn",1); 
-GPS_on = props.globals.getNode("/instrumentation/gps/serviceable",1);
-WP1 = props.globals.getNode("/instrumentation/gps/wp/wp[1]",1);
-RADIAL =props.globals.getNode("/instrumentation/nav/radials/selected-deg",1);
-NAV_BRG = props.globals.getNode("/instrumentation/flightdirector/nav-mag-brg",1);
+var AP_hdg = "autopilot/locks/heading";
+var AP_alt = "autopilot/locks/altitude";
+var AP_spd = "autopilot/locks/speed";
 
-setlistener("/sim/signals/fdm-initialized", func {
-    current_alt = props.globals.getNode("/instrumentation/altimeter/indicated-altitude-ft").getValue();
-    alt_select = props.globals.getNode("/autopilot/settings/target-altitude-ft").getValue();
-    AP_speed.setValue(0);
-    AP_lnav.setValue(0);
-    AP_vnav.setValue(0);
-    AP_passive.setBoolValue(1);
-    BC_btn.setValue(0);
-    course = props.globals.getNode("/instrumentation/nav/radials/selected-deg").getValue();
-    slaved = props.globals.getNode("/instrumentation/nav/slaved-to-gps").getBoolValue();
-    props.globals.getNode("instrumentation/gps/wp/wp[0]/desired-course-deg").setValue(course);
-    props.globals.getNode("instrumentation/gps/wp/wp[1]/desired-course-deg").setValue(course);
-    GPS_on.setBoolValue(1);
-    mag_offset=props.globals.getNode("/environment/magnetic-variation-deg").getValue();
-    GO = 1;
-    settimer(update, 1);
+var FD_defl = "instrumentation/flightdirector/deflection";
+var FD_hdg = "/instrumentation/flightdirector/hdg-deg";
+var FD_dtk = "/instrumentation/flightdirector/dtk";
+var FD_to = "/instrumentation/flightdirector/to-flag";
+var FD_from = "/instrumentation/flightdirector/from-flag";
+var FD_nav1 = "/instrumentation/flightdirector/nav-hdg-deg";
+var FD_asel = "/instrumentation/flightdirector/selected-alt-ft";
+
+var FD_lnav = "instrumentation/flightdirector/lnav";
+var FD_vnav = "instrumentation/flightdirector/vnav";
+var FD_spd = "instrumentation/flightdirector/spd";
+
+####   Init  ####
+
+setlistener("sim/signals/fdm-initialized", func {
+    setprop(AP_hdg,LN_txt[0]);
+    setprop(AP_alt,VN_txt[0]);
+    setprop(FD_lnav,0);
+    setprop(FD_vnav,0);
+    setprop(FD_spd,0);
+    setprop(FD_defl,0);
+    setprop(FD_hdg,0);
+    setprop(FD_dtk,0);
+    setprop(FD_to,0);
+    setprop(FD_nav1,0);
+    setprop(FD_asel,0);
+    mag_offset=getprop("/environment/magnetic-variation-deg");
+    settimer(update, 5);
     print("Flight Director ...Check");
 });
 
-####    Mode Controller inputs    ####
+setlistener("instrumentation/flightdirector/lnav", func(ln) {
+    setprop("/instrumentation/nav/back-course-btn",0);
+    update_lnav(ln.getValue());
+},0,0);
 
-setlistener("/instrumentation/flightdirector/lnav", func {
-    lnav = cmdarg().getValue();
-    if(lnav == 0 or lnav ==nil){AP_hdg.setValue("wing-leveler");
-        BC_btn.setBoolValue(0);
-        AP_alt.setValue("pitch-hold");
+setlistener("instrumentation/nav/back-course-btn", func(bc) {
+    if(bc.getBoolValue()){
+        var mode = getprop(FD_lnav);
+        if(mode !=3 or mode !=5)setprop("instrumentation/nav/back-course-btn",0);
     }
-    if(lnav == 1){AP_hdg.setValue("dg-heading-hold");BC_btn.setBoolValue(0);if(vnav ==7 ){vnav = 0;}}
-    if(lnav == 2){AP_hdg.setValue("nav1-hold");BC_btn.setBoolValue(0);if(vnav ==7 ){vnav = 0;}
-    }
-    if(lnav == 3){AP_hdg.setValue("nav1-hold");BC_btn.setBoolValue(0);}
-    if(lnav == 4){AP_hdg.setValue("nav1-hold");BC_btn.setBoolValue(1);if(vnav ==7 ){vnav = 0;}}
-});
+},0,0);
 
-setlistener("/instrumentation/flightdirector/vnav", func {
-    vnav = cmdarg().getValue();
-    if(vnav == 0 or vnav == nil){AP_alt.setValue("pitch-hold");}
-    if(vnav == 1){AP_alt.setValue("altitude-hold");}
-    if(vnav == 2){AP_alt.setValue("altitude-hold");}
-    if(vnav == 3){AP_alt.setValue("vertical-speed-hold");}
-    if(vnav == 5){AP_spd.setValue("dcs-hold");}
-    if(vnav == 6){AP_alt.setValue("pitch-hold");}
-    if(vnav == 7){
-        AP_alt.setValue("gs1-hold");
-        if (props.globals.getNode("/instrumentation/nav/has-gs",1).getValue() == 0){
-            vnav = 0;
-            AP_alt.setValue("");
-        }
-    }
-});
+setlistener("instrumentation/flightdirector/vnav", func(vn){
+    var vnav = vn.getValue();
+    
+    update_vnav(vnav);
+},0,0);
 
-setlistener("/instrumentation/flightdirector/spd", func {
-    spd = cmdarg().getValue();
-    if(spd == 0){AP_spd.setValue("");}
-    if(spd == 1){AP_spd.setValue("speed-with-throttle");}
-});
-
-setlistener("/instrumentation/nav/slaved-to-gps", func {
-    slaved = cmdarg().getBoolValue();
-});
-
-setlistener("/instrumentation/nav/radials/selected-deg", func {
-    course = cmdarg().getValue();
-    if(course == nil){course=0.0;}
-    course += mag_offset;
-    if(course >360){course -= 360;}
-    props.globals.getNode("instrumentation/gps/wp/wp[0]/desired-course-deg").setValue(course);
-    props.globals.getNode("instrumentation/gps/wp/wp[1]/desired-course-deg").setValue(course);
-},1);
-
-handle_inputs = func {
-    var nm = 0.0;
-    var hdg = 0.0;
-    var nav_brg=0.0;
-    var ap_hdg=0;
-    var track =0;
-    track =props.globals.getNode("/orientation/heading-deg").getValue();
-    maxroll = props.globals.getNode("/orientation/roll-deg",1).getValue();
-    if(maxroll > 45 or maxroll < -45){AP_passive.setBoolValue(1);}
-    maxpitch = props.globals.getNode("/orientation/pitch-deg").getValue();
-    if(maxpitch > 45 or maxpitch < -45){AP_passive.setBoolValue(1);}
-    if(props.globals.getNode("/position/altitude-agl-ft").getValue() < 100){AP_passive.setBoolValue(1);}
-    if(WP1.getNode("ID").getValue()!=nil){
-            nm = WP1.getNode("course-error-nm").getValue();
-            if(nm > 10){nm=10;}
-            if(nm < -10){nm=-10;}
-        }
-    GPS_CDI.setValue(nm);
-    hdg =RADIAL.getValue() + mag_offset;
-    hdg-=track;
-    if(hdg > 180){hdg-=360;}
-    if(hdg < -180){hdg+=360;}
-    if(slaved){
-        FD_deflection.setValue(nm);
-        nav_brg= WP1.getNode("bearing-true-deg").getValue();
-        if(nav_brg == nil){nav_brg = 0.0;}
+setlistener("instrumentation/flightdirector/spd", func(sp){
+    spd = sp.getValue();
+    if(spd == 1){
+        setprop(AP_spd,"speed-with-throttle");
         }else{
-            FD_deflection.setValue(HDG_deflection.getValue());
-            nav_brg= props.globals.getNode("instrumentation/nav/heading-deg").getValue();
-            if(nav_brg == nil){nav_brg = 0.0;}
-            nav_brg+= mag_offset;
+            setprop(AP_spd,"");
         }
-    nav_brg -=track;
-    if(nav_brg > 180){nav_brg -=360;}
-    if(nav_brg < -180){nav_brg +=360;}
-    NAV_BRG.setValue(nav_brg);
-    ap_hdg = hdg +(FD_deflection.getValue() *4);
-    if(ap_hdg > 180){ap_hdg -= 360;}
-    if(ap_hdg < -180){ap_hdg += 360;}
-    FD_heading.setValue(ap_hdg);
+},0,0);
+
+setlistener("instrumentation/nav/slaved-to-gps", func(slv){
+    Slaved = slv.getValue();
+    if(Slaved ==1){
+        if(getprop("instrumentation/gps/leg-mode")){
+        var lcrs=getprop("instrumentation/gps/wp/leg-mag-course-deg");
+        if(lcrs ==nil)lcrs=0;
+        setprop(FD_dtk,lcrs);
+        }else{
+        mag_offset=getprop("/environment/magnetic-variation-deg");
+        var mfg =getprop("instrumentation/gps/wp/wp[1]/desired-course-deg");
+        if(mfg != nil){
+            mfg-=mag_offset;
+            if(mfg > 360)mfg-=360;
+            if(mfg < 0)mfg+=360;
+            }else{
+            mfg=0;
+            }
+        setprop(FD_dtk,mfg);
+        }
+    }else{
+        setprop(FD_dtk,getprop("instrumentation/nav/radials/selected-deg"));
+    }
+},1,0);
+
+setlistener("instrumentation/gps/wp/wp[1]/desired-course-deg", func(crs1){
+    if(Slaved ==1){
+        if(!getprop("instrumentation/gps/leg-mode")){
+        mag_offset=getprop("/environment/magnetic-variation-deg");
+        var mfg =crs1.getValue()-mag_offset;
+        if(mfg > 360)mfg-=360;
+        if(mfg < 0)mfg+=360;
+        setprop(FD_dtk,mfg);
+        }
+    }
+},0,0);
+
+setlistener("instrumentation/nav/radials/selected-deg", func(crs2){
+    if(Slaved ==0){
+        setprop(FD_dtk,crs2.getValue());
+        }
+},0,0);
+
+setlistener("instrumentation/gps/wp/leg-mag-course-deg", func(lcrs){
+    if(Slaved ==1){
+        if(getprop("instrumentation/gps/leg-mode")){
+        setprop(FD_dtk,lcrs.getValue());
+        }
+    }
+},0,0);
+
+setlistener("autopilot/locks/passive-mode", func(ap){
+    if(!ap.getBoolValue()){
+   if(getprop(AP_alt)=="pitch-hold")setprop("autopilot/settings/target-pitch-deg",getprop("orientation/pitch-deg"));
+    if(getprop(AP_alt)=="vertical-speed-hold")setprop("autopilot/settings/vertical-speed-fpm",getprop("velocities/vertical-speed-fps") * 60);
+    }
+},0,0);
+
+setlistener("gear/gear[1]/wow", func(wow){
+    if(wow.getBoolValue())setprop("autopilot/locks/passive-mode",1);
+},0,0);
+
+####  Set AP lateral ####
+
+var update_lnav=func{
+    var lnav=arg[0];
+    if(lnav ==nil)lnav=0;
+    if(lnav ==2 and Slaved==1)lnav=3;
+    setprop(FD_lnav,lnav);
+    setprop(AP_hdg,LN_txt[lnav]);
+}
+
+####  Set AP vertical mode ####
+
+var update_vnav=func{
+    var vnav = arg[0];
+    if(vnav ==nil)vnav=0;
+    if(vnav == 1)setprop("autopilot/settings/target-altitude-ft",getprop("position/altitude-ft"));
+    if(vnav==3)setprop("autopilot/settings/vertical-speed-fpm",getprop("velocities/vertical-speed-fps") * 60);
+    setprop(AP_alt,VN_txt[vnav]);
+}
+####  Set correct FD mode ####
+
+var set_fdmode = func{
+var nav = arg[0];
+var mode = arg[1];
+if(nav==0){
+    if(getprop(FD_lnav)!=mode){
+        setprop(FD_lnav,mode);
+    }else{
+        setprop(FD_lnav,0);
+        }
+    }elsif(nav==1){
+        if(getprop(FD_vnav)!=mode){
+        setprop(FD_vnav,mode);
+    }else{
+        setprop(FD_vnav,0);
+        }
+    }elsif(nav==2){
+        if(getprop(FD_spd)!=mode){
+        setprop(FD_spd,mode);
+    }else{
+        setprop(FD_spd,0);
+        }
+    }
+}
+
+####    Handle FD status    ####
+
+handle_nav_inputs = func {
+    var dev=0;
+    var tofl=0;
+    var fromfl=0;
+    var brg=0;
+
+    if(Slaved==1){
+        if(getprop("instrumentation/gps/leg-mode")){
+            if(getprop("instrumentation/gps/wp/wp[1]/ID")!=nil){
+                dev=getprop("instrumentation/gps/wp/leg-course-error-nm");
+                if(dev>5)dev=5;
+                if(dev<-5)dev=-5;
+                dev=dev*2;
+                tofl=getprop("instrumentation/gps/wp/leg-to-flag");
+                fromfl=0;
+                brg=getprop("instrumentation/gps/wp/leg-mag-course-deg");
+            }
+        }else{
+            if(getprop("instrumentation/gps/wp/wp[1]/ID")!=nil){
+                dev=getprop("instrumentation/gps/wp/wp[1]/course-deviation-deg");
+                if(dev>5)dev=5;
+                if(dev<-5)dev=-5;
+                dev=dev*2;
+                tofl-getprop("instrumentation/gps/wp/wp[1]/to-flag");
+                fromfl=0;
+                brg=getprop("instrumentation/gps/wp/wp[1]/bearing-mag-deg");
+            }
+        }
+    }else{
+        if(getprop("instrumentation/nav/data-is-valid")){
+            dev=getprop("instrumentation/nav/heading-needle-deflection");
+            tofl=getprop("instrumentation/nav/to-flag");
+            fromfl=getprop("instrumentation/nav/from-flag");
+            brg=getprop("instrumentation/nav/heading-deg");
+        }
+    }
+    setprop(FD_defl,dev);
+    setprop(FD_to,tofl);
+    setprop(FD_from,fromfl);
+    setprop(FD_hdg,brg);
+
+    var NAVhdg =getprop(FD_dtk);
+    var myhdg = NAVhdg - getprop("orientation/heading-magnetic-deg");
+    if(myhdg > 180) myhdg -=360;
+    if(myhdg < -180) myhdg +=360;
+    myhdg+=(getprop(FD_defl)*4.5);
+
+    setprop(FD_nav1,myhdg);
 }
 
 ####    update nav gps or nav setting    ####
 
 update = func {
-if(GO==0){return;}
-    handle_inputs();
+    handle_nav_inputs();
+    var vnav=getprop(FD_vnav);
+    var lnav=getprop(FD_lnav);
+    var defl=getprop(FD_defl);
+
+    if(vnav==2){
+        var asel=getprop(FD_asel);
+        var alt_diff=getprop("position/altitude-ft")-asel;
+        if(alt_diff > -1000 and alt_diff < 1000){
+        setprop("autopilot/settings/target-altitude-ft",getprop(FD_asel));
+        vnav=1;
+        setprop(FD_vnav,vnav);
+        }
+    }
+
+#### Vor Armed ####
+    if(lnav==2){
+        if(defl>-9 and defl < 9){
+            lnav=3;
+            setprop(FD_lnav,lnav);
+        }
+    }
+
+#### Approach Armed #### 
+    if(lnav==4){
+        if(defl>-9 and defl < 9){
+            lnav=5;
+            setprop(FD_lnav,lnav);
+        }
+    }
+#### Glideslope Capture #### 
+    if(lnav==5){
+        if(getprop("instrumentation/nav/has-gs")){
+            var gsdefl=getprop("instrumentation/nav/gs-needle-deflection");
+            if(gsdefl <0.5 and gsdefl >-1.0)setprop(AP_alt,"gs1-hold");
+        }
+    }
+
+
     settimer(update, 0); 
     }
