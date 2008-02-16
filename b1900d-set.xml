@@ -34,7 +34,7 @@ July 2004 Syd Adams
     </mk-viii>
 
     <model>
-        <path>Aircraft/b1900d/Models/b1900d-anim.xml</path>
+        <path>Aircraft/b1900d/Models/B1900D.xml</path>
         <start-idling type="bool">0</start-idling>
         <variant type="int">0</variant>
         <b1900d>

@@ -68,7 +68,7 @@ Wing area 28.80m
 -->
 
     <wing x="0.0" y="0.80" z="-0.9" length="8.0" chord="2.18"
-        sweep="0" dihedral="6" taper="0.417"  camber="0.022" incidence="2">
+        sweep="0" dihedral="6" taper="0.417"  camber="0.028" incidence="2">
         <stall aoa="15" width="6" peak="1.5"/>
         <flap0 start="0" end=".6" lift="1.7" drag="1.7"/>
         <flap1 start=".6" end=".95" lift="1.2" drag="1.2"/>
@@ -235,7 +235,7 @@ Prop diam: 2.78 m
     <ballast x="0" y="0" z="-0.5" mass="2000"/>
     <ballast x="1.4" y="0" z="-0.5" mass="1400"/>
     <ballast x="4.3" y="0.0" z="0.0" mass="600"/>
-    <ballast x="4.3" y="0.0" z="-1.5" mass="400"/>
+    <ballast x="4.3" y="0.0" z="-1.5" mass="600"/>
     <ballast x="0.7" y="-2.65" z="-1.0" mass="600"/>
     <ballast x="0.7" y="2.65" z="-1.0" mass="600"/>
 

@@ -1,5 +1,13 @@
-####	B1900d systems	####
+####	B1900d systems	
+#### Syd Adams
+#### Barber pole code - K. Hoercher
+
 aircraft.livery.init("Aircraft/b1900d/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
+
+###### warning panel ########
+var Warning=props.globals.getNode("/instrumentation/annunciators/warning",1);
+var Caution=props.globals.getNode("/instrumentation/annunciators/caution",1);
+
 var millibars = 0.0;
 var pph1 = 0.0;
 var pph2 = 0.0;
@@ -22,13 +30,53 @@ var MB = props.globals.getNode("/instrumentation/altimeter/millibars",1);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
 
+#http://www.pprune.org/forums/archive/index.php/t-166572.html
+#http://www.airweb.faa.gov/Regulatory_and_Guidance_Library/rgMakeModel.nsf/0/4bd70d173cbc5f4586256fb80048f054/$FILE/A24CE.pdf
+var LIMIT_VIAS=248.0;
+var LIMIT_MACH=0.48;
+var LIMIT_CHANGE=13200.0;
+var CURR_HP_NODEP="instrumentation/altimeter/pressure-alt-ft";
+var CURR_KIAS_NODEP="instrumentation/airspeed-indicator/indicated-speed-kt";
+var CURR_MACH_NODEP="velocities/mach";
+var CURR_LIMIT_NODEP="instrumentation/airspeed-indicator/limit-indicated-speed-kt";
+props.globals.getNode(CURR_LIMIT_NODEP,1).setValue(LIMIT_VIAS);
+
+var set_barber_pole = func {
+  if (getprop(CURR_HP_NODEP)>LIMIT_CHANGE) {
+    setprop(CURR_LIMIT_NODEP,getprop(CURR_KIAS_NODEP)/getprop(CURR_MACH_NODEP)*LIMIT_MACH);
+  } else {
+    if (!(getprop(CURR_LIMIT_NODEP)==LIMIT_VIAS))
+      setprop(CURR_LIMIT_NODEP,LIMIT_VIAS);
+  }
+  settimer(set_barber_pole,0);
+}
+
 setlistener("/sim/signals/fdm-initialized", func {
+    Warning.getNode("CBN-alt",1).setBoolValue(0);
+    Warning.getNode("CBN-diff",1).setBoolValue(0);
+    Warning.getNode("CBN-door",1).setBoolValue(0);
+    Warning.getNode("BAG-door",1).setBoolValue(0);
+    Warning.getNode("EMR-lights-armed",1).setBoolValue(0);
+    Warning.getNode("AP-trim-fail",1).setBoolValue(0);
+    Warning.getNode("AP-fail",1).setBoolValue(0);
+    Warning.getNode("LENV-fail",1).setBoolValue(0);
+    Warning.getNode("LAC-fail",1).setBoolValue(0);
+    Warning.getNode("LFP-lo",1).setBoolValue(0);
+    Warning.getNode("LOP-lo",1).setBoolValue(0);
+    Warning.getNode("LBL-AIR-fail",1).setBoolValue(0);
+    Warning.getNode("RAC-fail",1).setBoolValue(0);
+    Warning.getNode("RENV-fail",1).setBoolValue(0);
+    Warning.getNode("RBL-AIR-fail",1).setBoolValue(0);
+    Warning.getNode("ROP-lo",1).setBoolValue(0);
+    Warning.getNode("RFP-lo",1).setBoolValue(0);
+
     S_volume.setValue(0.3);
     C_volume.setValue(0.3);
     MB.setDoubleValue(0.0);
     fuel_density=props.globals.getNode("consumables/fuel/tank[0]/density-ppg").getValue();
     setprop("/instrumentation/heading-indicator/offset-deg",-1 * getprop("/environment/magnetic-variation-deg"));
     setprop("/instrumentation/clock/flight-meter-hour",0);
+    set_barber_pole();
     print("system  ...Check");
     setprop("controls/engines/engine/condition",0);
     setprop("controls/engines/engine[1]/condition",0);
@@ -114,6 +162,37 @@ setprop("engines/engine[0]/running",0);
 setprop("engines/engine[1]/running",0);
 }
 
+var flight_meter = func{
+var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
+var fminute = fmeter * 0.016666;
+var fhour = fminute * 0.016666;
+setprop("/instrumentation/clock/flight-meter-hour",fhour);
+}
+
+var warning_panel_update = func{
+    var pwr =getprop("systems/electrical/volts");
+    if( pwr==nil or pwr<1)return;
+    if(!getprop("engines/engine[0]/running")){
+        Warning.getNode("LAC-fail",1).setBoolValue(1);
+        Warning.getNode("LFP-lo",1).setBoolValue(1);
+        Warning.getNode("LOP-lo",1).setBoolValue(1);
+    }else{
+        Warning.getNode("LAC-fail",1).setBoolValue(0);
+        Warning.getNode("LFP-lo",1).setBoolValue(0);
+        Warning.getNode("LOP-lo",1).setBoolValue(0);
+    }
+    if(!getprop("engines/engine[1]/running")){
+        Warning.getNode("RAC-fail",1).setBoolValue(1);
+        Warning.getNode("RFP-lo",1).setBoolValue(1);
+        Warning.getNode("ROP-lo",1).setBoolValue(1);
+    }else{
+        Warning.getNode("RAC-fail",1).setBoolValue(0);
+        Warning.getNode("RFP-lo",1).setBoolValue(0);
+        Warning.getNode("ROP-lo",1).setBoolValue(0);
+    }
+}
+
+
 var update_systems = func {
         var mb = 33.8637526 * props.globals.getNode("/instrumentation/altimeter/setting-inhg").getValue();
         power = getprop("/controls/switches/master-panel");
@@ -129,12 +208,6 @@ var update_systems = func {
         setprop("/sim/model/b1900d/material/panel/factor", 0.0);
         setprop("/sim/model/b1900d/material/radiance/factor", 0.0);
     flight_meter();
+    warning_panel_update();
     settimer(update_systems, 0);
-}
-
-var flight_meter = func{
-var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
-var fminute = fmeter * 0.016666;
-var fhour = fminute * 0.016666;
-setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }

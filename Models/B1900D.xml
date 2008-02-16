@@ -2777,4 +2777,142 @@
         </axis>
     </animation>
 
+<!-- Warning Panel-->
+
+    <animation>
+        <type>select</type>
+        <object-name>LFP-lo</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/LFP-lo</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RFP-lo</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/RFP-lo</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LOP-lo</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/LOP-lo</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ROP-lo</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/ROP-lo</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CALT-hi</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/CBN-alt</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CDIFF-hi</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/CBN-diff</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBN-door</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/CBN-door</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CRG-door</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/BAG-door</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ARMlites</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/EMR-lights-armed</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LENV-fail</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/LENV-fail</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RENV-fail</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/RENV-fail</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LAC-bus</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/LAC-fail</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RAC-bus</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/RAC-fail</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>APtrim-fail</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/AP-trim-fail</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP-fail</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/AP-fail</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LAIR-fail</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/LBL-AIR-fail</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RAIR-fail</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/RBL-AIR-fail</property>
+            </condition>
+    </animation>
+
 </PropertyList>

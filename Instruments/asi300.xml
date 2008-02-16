@@ -31,6 +31,23 @@
 
     <animation>
         <type>rotate</type>
+        <object-name>ASI.needle.001</object-name>
+        <property>/instrumentation/airspeed-indicator/limit-indicated-speed-kt</property>
+        <interpolation>
+        <entry><ind>0.0</ind><dep>178.0</dep></entry>
+            <entry><ind>170.0</ind><dep>178.0</dep></entry>
+            <entry><ind>240.0</ind><dep>268.0</dep></entry>
+            <entry><ind>300.0</ind><dep>333.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
         <object-name>ASI.needle</object-name>
         <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
         <interpolation>
