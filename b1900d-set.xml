@@ -81,6 +81,19 @@ July 2004 Syd Adams
             <y-offset-m type="double">0.27</y-offset-m>
             <z-offset-m type="double">-4.192</z-offset-m>
             <pitch-offset-deg>-15</pitch-offset-deg>
+            <limits>
+                <enabled type="bool">true</enabled>
+                <left>
+                  <heading-max-deg type="double">130</heading-max-deg>
+                  <x-offset-max-m type="double">0.25</x-offset-max-m>
+                  <x-offset-threshold-deg type="double">45</x-offset-threshold-deg>
+                </left>
+                <right>
+                    <heading-max-deg type="double">160</heading-max-deg>
+                    <x-offset-max-m type="double">0.20</x-offset-max-m>
+                    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                </right>
+            </limits>
         </config>
     </view>
 

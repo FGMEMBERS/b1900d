@@ -36,13 +36,13 @@
     <animation>
         <type>rotate</type>
         <object-name>DC-load1</object-name>
-        <property>/systems/electrical/amps</property>
+        <property>systems/electrical/gen-load</property>
         <interpolation>
-            <entry><ind>-60.0</ind><dep>0.0</dep></entry>
-            <entry><ind>0.0</ind><dep>80.0</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>1.0</ind><dep>80.0</dep></entry>
         </interpolation>
         <axis>
-            <x>1</x>
+            <x>-1</x>
             <y>0</y>
             <z>0</z>
         </axis>
@@ -56,13 +56,13 @@
     <animation>
         <type>rotate</type>
         <object-name>DC-load2</object-name>
-        <property>/systems/electrical/amps</property>
+        <property>systems/electrical/gen-load[1]</property>
         <interpolation>
-            <entry><ind>-60.0</ind><dep>0.0</dep></entry>
-            <entry><ind>0.0</ind><dep>80.0</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>1.0</ind><dep>80.0</dep></entry>
         </interpolation>
         <axis>
-            <x>1</x>
+            <x>-1</x>
             <y>0</y>
             <z>0</z>
         </axis>
@@ -76,7 +76,7 @@
     <animation>
         <type>rotate</type>
         <object-name>LHpropAmps</object-name>
-        <property>/systems/electrical/amps</property>
+        <property>engines/engine[0]/amp-v</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>40.0</ind><dep>85.0</dep></entry>
@@ -96,7 +96,7 @@
     <animation>
         <type>rotate</type>
         <object-name>RHpropAmps</object-name>
-        <property>/systems/electrical/amps</property>
+        <property>engines/engine[0]/amp-v</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>40.0</ind><dep>-85.0</dep></entry>
@@ -116,7 +116,7 @@
     <animation>
         <type>rotate</type>
         <object-name>Batt-volt</object-name>
-        <property>/systems/electrical/volts</property>
+        <property>/systems/electrical/batt-volts</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>10.0</ind><dep>-22.0</dep></entry>
