@@ -36,7 +36,7 @@
     <h>10</h>
     <binding>
     <command>nasal</command>
-    <script>systems.set_fdmode(0,1);</script>
+    <script>systems.FlDr.set_mode("hdg");</script>
     </binding>
   </action>
 
@@ -49,7 +49,7 @@
     <h>10</h>
     <binding>
     <command>nasal</command>
-    <script>systems.set_fdmode(0,2);</script>
+    <script>systems.FlDr.set_mode("nav");</script>
     </binding>
   </action>
 
@@ -62,7 +62,7 @@
      <h>10</h>
      <binding>
      <command>nasal</command>
-    <script>systems.set_fdmode(0,4);</script>
+    <script>systems.FlDr.set_mode("apr");</script>
      </binding>
    </action>
 
@@ -75,8 +75,8 @@
      <w>17</w>
      <h>10</h>
      <binding>
-     <command>property-toggle</command>
-    <property>instrumentation/nav/back-course-btn</property>
+     <command>nasal</command>
+    <script>systems.FlDr.set_mode("bc");</script>
      </binding>
    </action>
 
@@ -92,10 +92,8 @@
     <h>10</h>
     <binding>
     <command>nasal</command>
-    <script>
-        setprop("autopilot/settings/target-altitude-ft",getprop("position/altitude-ft"));
-        systems.set_fdmode(1,1);
-    </script>
+     <command>nasal</command>
+    <script>systems.FlDr.set_mode("alt");</script>
     </binding>
     
   </action>
@@ -108,8 +106,8 @@
     <w>17</w>
     <h>10</h>
     <binding>
-    <command>nasal</command>
-    <script>systems.set_fdmode(1,2);</script>
+     <command>nasal</command>
+    <script>systems.FlDr.set_mode("asel");</script>
     </binding>
   </action>
 
@@ -122,11 +120,10 @@
     <w>17</w>
     <h>10</h>
     <binding>
-    <command>nasal</command>
-    <script>systems.set_fdmode(1,3);</script>
+     <command>nasal</command>
+    <script>systems.FlDr.set_mode("vs");</script>
     </binding>
   </action>
-
 
   <action>
     <name>IAS Toggle On</name>
@@ -136,8 +133,8 @@
     <w>17</w>
     <h>10</h>
     <binding>
-    <command>nasal</command>
-    <script>systems.set_fdmode(2,1);</script>
+     <command>nasal</command>
+    <script>systems.FlDr.set_mode("ias");</script>
     </binding>
   </action>
 
@@ -149,8 +146,8 @@
     <w>17</w>
     <h>10</h>
     <binding>
-    <command>nasal</command>
-    <script>systems.set_fdmode(1,4);</script>
+     <command>nasal</command>
+    <script>systems.FlDr.set_mode("dcs");</script>
     </binding>
   </action>
 
@@ -163,7 +160,7 @@
      <h>10</h>
      <binding>
      <command>nasal</command>
-    <script>systems.set_fdmode(1,5);</script>
+    <script>systems.FlDr.set_mode("climb");</script>
      </binding>
    </action>
 

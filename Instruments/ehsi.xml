@@ -7,11 +7,14 @@
         <type>material</type>
         <object-name>EHSI.face</object-name>
         <object-name>HDGback</object-name>
+        <object-name>HDGback.gps</object-name>
         <object-name>hdg-bug</object-name>
         <object-name>toflag</object-name>
         <object-name>fromflag</object-name>
         <object-name>CRSneedle</object-name>
         <object-name>CRSdeflection</object-name>
+        <object-name>CRSneedle.gps</object-name>
+        <object-name>CRSdeflection.gps</object-name>
         <object-name>EHSI.gps</object-name>
         <object-name>EHSI.gsp1</object-name>
         <object-name>EHSI.gsp2</object-name>
@@ -22,6 +25,9 @@
         <object-name>EHSI.crs1</object-name>
         <object-name>EHSI.crs2</object-name>
         <object-name>EHSI.crs3</object-name>
+        <object-name>EHSI.crs1gps</object-name>
+        <object-name>EHSI.crs2gps</object-name>
+        <object-name>EHSI.crs3gps</object-name>
         <object-name>HDGknob</object-name>
         <object-name>CRSknob</object-name>
         <emission>
@@ -45,10 +51,16 @@
 
     <animation>
         <type>select</type>
-        <object-name>EHSI.gps</object-name>
         <condition>
             <property>instrumentation/nav/slaved-to-gps</property>
         </condition>
+        <object-name>HDGback.gps</object-name>
+        <object-name>EHSI.gps</object-name>
+        <object-name>EHSI.crs1gps</object-name>
+        <object-name>EHSI.crs2gps</object-name>
+        <object-name>EHSI.crs3gps</object-name>
+        <object-name>CRSneedle.gps</object-name>
+        <object-name>CRSdeflection.gps</object-name>
     </animation>
 
     <animation>
@@ -66,6 +78,22 @@
             <property>instrumentation/flightdirector/from-flag</property>
         </condition>
     </animation>
+
+    <animation>
+        <type>select</type>
+        <condition>
+            <not>
+                <property>instrumentation/nav/slaved-to-gps</property>
+            </not>
+        </condition>
+        <object-name>HDGback</object-name>
+        <object-name>CRSneedle</object-name>
+        <object-name>CRSdeflection</object-name>
+        <object-name>EHSI.crs1</object-name>
+        <object-name>EHSI.crs2</object-name>
+        <object-name>EHSI.crs3</object-name>
+    </animation>
+
 
     <animation>
         <type>rotate</type>
@@ -86,7 +114,29 @@
     <animation>
         <type>rotate</type>
         <object-name>HDGback</object-name>
+        <object-name>CRSneedle</object-name>
+        <object-name>CRSdeflection</object-name>
+        <object-name>toflag</object-name>
+        <object-name>fromflag</object-name>
         <property>orientation/heading-magnetic-deg</property>
+        <axis>
+            <x>1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.006</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>HDGback.gps</object-name>
+        <object-name>CRSneedle.gps</object-name>
+        <object-name>CRSdeflection.gps</object-name>
+        <property>orientation/heading-deg</property>
         <axis>
             <x>1.0</x>
             <y>0</y>
@@ -107,26 +157,7 @@
         <object-name>CRSdeflection</object-name>
         <object-name>toflag</object-name>
         <object-name>fromflag</object-name>
-        <property>orientation/heading-magnetic-deg</property>
-        <axis>
-            <x>1.0</x>
-            <y>0</y>
-            <z>0.0</z>
-        </axis>
-        <center>
-            <x-m>0.0</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.006</z-m>
-        </center>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>CRSneedle</object-name>
-        <object-name>CRSdeflection</object-name>
-        <object-name>toflag</object-name>
-        <object-name>fromflag</object-name>
-        <property>instrumentation/flightdirector/dtk</property>
+        <property>instrumentation/nav/radials/selected-deg</property>
         <axis>
             <x>-1.0</x>
             <y>0</y>
@@ -142,7 +173,45 @@
     <animation>
         <type>translate</type>
         <object-name>CRSdeflection</object-name>
-        <property>instrumentation/flightdirector/deflection</property>
+        <property>instrumentation/nav/heading-needle-deflection</property>
+        <interpolation>
+            <entry><ind>-10.0</ind><dep>-0.0172</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>10.0</ind><dep>0.0172</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.006</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>CRSneedle.gps</object-name>
+        <object-name>CRSdeflection.gps</object-name>
+        <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+        <axis>
+            <x>-1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.006</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>CRSdeflection.gps</object-name>
+        <property>instrumentation/gps/wp/wp[1]/course-deviation-deg</property>
         <interpolation>
             <entry><ind>-10.0</ind><dep>-0.0172</dep></entry>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -162,8 +231,47 @@
 
     <animation>
         <type>textranslate</type>
+        <object-name>EHSI.crs1gps</object-name>
+        <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>EHSI.crs2gps</object-name>
+        <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>EHSI.crs3gps</object-name>
+        <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
         <object-name>EHSI.crs1</object-name>
-        <property>instrumentation/flightdirector/dtk</property>
+        <property>instrumentation/nav/radials/selected-deg</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -176,7 +284,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.crs2</object-name>
-        <property>instrumentation/flightdirector/dtk</property>
+        <property>instrumentation/nav/radials/selected-deg</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -189,7 +297,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.crs3</object-name>
-        <property>instrumentation/flightdirector/dtk</property>
+        <property>instrumentation/nav/radials/selected-deg</property>
         <factor>0.1</factor>
         <step>1</step>
         <axis>

@@ -177,32 +177,21 @@
         <w>8</w>
         <h>8</h>
         <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
-            <step>1</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>true</wrap>
+            <command>nasal</command>
+            <script>systems.gps.adjust_dtk(1)</script>
         </binding>
     </action>
 
     <action>
         <name>dtk increase 5</name>
-        <condition>
-            <property>instrumentation/nav/slaved-to-gps</property>
-        </condition>
         <button>1</button>
         <x>-278</x>
         <y>-230</y>
         <w>8</w>
         <h>8</h>
         <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
-            <step>5</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>1</wrap>
+            <command>nasal</command>
+            <script>systems.gps.adjust_dtk(5)</script>
         </binding>
     </action>
 
@@ -217,12 +206,8 @@
         <w>8</w>
         <h>8</h>
         <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
-            <step>-1</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>true</wrap>
+            <command>nasal</command>
+            <script>systems.gps.adjust_dtk(-1)</script>
         </binding>
     </action>
 
@@ -237,12 +222,8 @@
         <w>8</w>
         <h>8</h>
         <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/gps/wp/wp[1]/desired-course-deg</property>
-            <step>-5</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>1</wrap>
+            <command>nasal</command>
+            <script>systems.gps.adjust_dtk(-5)</script>
         </binding>
     </action>
 
@@ -397,9 +378,8 @@
         <w>12</w>
         <h>8</h>
         <binding>
-            <command>property-assign</command>
-            <property>instrumentation/flightdirector/selected-alt-ft</property>
-            <value>0.0</value>
+            <command>nasal</command>
+            <script>systems.FlDr.preset_altitude(0)</script>
         </binding>
         <binding>
             <command>property-assign</command>
@@ -416,12 +396,8 @@
         <w>6</w>
         <h>8</h>
         <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/flightdirector/selected-alt-ft</property>
-            <step>-100</step>
-            <min>0</min>
-            <max>99000</max>
-            <wrap>false</wrap>
+            <command>nasal</command>
+            <script>systems.FlDr.preset_altitude(-100)</script>
         </binding>
     </action>
 
@@ -433,12 +409,8 @@
         <w>6</w>
         <h>8</h>
         <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/flightdirector/selected-alt-ft</property>
-            <step>100</step>
-            <min>0</min>
-            <max>99000</max>
-            <wrap>false</wrap>
+            <command>nasal</command>
+            <script>systems.FlDr.preset_altitude(100)</script>
         </binding>
     </action>
 
@@ -450,12 +422,8 @@
         <w>6</w>
         <h>8</h>
         <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/flightdirector/selected-alt-ft</property>
-            <step>-1000</step>
-            <min>0</min>
-            <max>99000</max>
-            <wrap>false</wrap>
+            <command>nasal</command>
+            <script>systems.FlDr.preset_altitude(-1000)</script>
         </binding>
     </action>
 
@@ -467,12 +435,8 @@
         <w>6</w>
         <h>8</h>
         <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/flightdirector/selected-alt-ft</property>
-            <step>1000</step>
-            <min>0</min>
-            <max>99000</max>
-            <wrap>false</wrap>
+            <command>nasal</command>
+            <script>systems.FlDr.preset_altitude(1000)</script>
         </binding>
     </action>
 
@@ -680,7 +644,7 @@
         <h>12</h>
         <binding>
             <command>nasal</command>
-            <script>systems.GpsAppr()</script>
+            <script>systems.gps.GPSappr()</script>
         </binding>
     </action>
 
@@ -693,7 +657,7 @@
         <h>12</h>
         <binding>
             <command>nasal</command>
-            <script>systems.GpsCrs()</script>
+            <script>systems.gps.GPScrs()</script>
         </binding>
     </action>
 

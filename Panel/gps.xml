@@ -38,7 +38,7 @@ Honeywell Bendix/King KLN-90B GPS
     <h>10</h>
     <binding>
       <command>nasal</command>
-      <script>systems.lh_menu_update(1)</script>
+      <script>systems.gps.lh_menu_update(1)</script>
     </binding>
   </action>
    
@@ -51,7 +51,7 @@ Honeywell Bendix/King KLN-90B GPS
     <h>10</h>
     <binding>
       <command>nasal</command>
-      <script>systems.lh_menu_update(2)</script>
+      <script>systems.gps.lh_menu_update(2)</script>
     </binding>
   </action>
 
@@ -64,7 +64,7 @@ Honeywell Bendix/King KLN-90B GPS
     <h>10</h>
     <binding>
       <command>nasal</command>
-      <script>systems.lh_menu_update(3)</script>
+      <script>systems.gps.lh_menu_update(3)</script>
     </binding>
   </action>
    
@@ -77,7 +77,7 @@ Honeywell Bendix/King KLN-90B GPS
     <h>10</h>
     <binding>
       <command>nasal</command>
-      <script>systems.lh_menu_update(4)</script>
+      <script>systems.gps.lh_menu_update(4)</script>
     </binding>
   </action>
 
@@ -91,7 +91,7 @@ Honeywell Bendix/King KLN-90B GPS
     <h>10</h>
     <binding>
       <command>nasal</command>
-      <script>systems.rh_menu_update(1)</script>
+      <script>systems.gps.rh_menu_update(1)</script>
     </binding>
   </action>
    
@@ -104,7 +104,7 @@ Honeywell Bendix/King KLN-90B GPS
     <h>10</h>
     <binding>
       <command>nasal</command>
-      <script>systems.rh_menu_update(2)</script>
+      <script>systems.gps.rh_menu_update(2)</script>
     </binding>
   </action>
    
@@ -117,7 +117,7 @@ Honeywell Bendix/King KLN-90B GPS
     <h>10</h>
     <binding>
       <command>nasal</command>
-      <script>systems.rh_menu_update(3)</script>
+      <script>systems.gps.rh_menu_update(3)</script>
     </binding>
   </action>
    
@@ -130,7 +130,7 @@ Honeywell Bendix/King KLN-90B GPS
     <h>10</h>
     <binding>
       <command>nasal</command>
-      <script>systems.rh_menu_update(4)</script>
+      <script>systems.gps.rh_menu_update(4)</script>
     </binding>
   </action>
 
@@ -157,8 +157,8 @@ Honeywell Bendix/King KLN-90B GPS
        <w>8</w>
        <h>8</h>
        <binding>
-         <command>property-toggle</command>
-         <property>/instrumentation/gps/serviceable</property>
+         <command>nasal</command>
+         <script>systems.gps.powerup()</script>
        </binding>
        
      </action>
@@ -198,7 +198,7 @@ Honeywell Bendix/King KLN-90B GPS
        <h>7</h>
        <binding>
          <command>nasal</command>
-         <script>systems.direct_to()</script>
+         <script>systems.gps.direct_to()</script>
        </binding>
      </action>
 

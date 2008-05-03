@@ -1380,9 +1380,9 @@
         <property>controls/flight/elevator-trim</property>
         <factor>160.0</factor>
         <center>
-            <x-m>-4.567</x-m>
+            <x-m>-4.586</x-m>
             <y-m>0.0</y-m>
-            <z-m>-0.435</z-m>
+            <z-m>-0.415</z-m>
         </center>
         <axis>
             <x>0.0</x>

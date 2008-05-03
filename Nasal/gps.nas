@@ -1,165 +1,181 @@
 ####	gps routines ####
 var gpsmode = nil;
 var gpsnode = nil;
-var navnode = props.globals.getNode("instrumentation/nav/slaved-to-gps",1);
-var apprnode= nil;
-var LEFTMODES =["TRI ","MOD ","FPL ","NAV ","CAL ","STA ","SET ","OTH "];
-var RIGHTMODES =["CTR ","REF ","ACT ","D/T ","NAV ","APT ","VOR ","NDB ","INT ","SUP "];
-var PAGENUM = ["1","2","3","4","5","6","7","8","9","10"];
+
 var stall = 0.0;
 var rhmenu = nil;
 var lhmenu = nil;
-var lhsubmenu =[0,0,0,0,0,0,0,0];
-var rhsubmenu =[0,0,0,0,0,0,0,0,0,0];
 var dmode = nil;
 var getpage = nil;
 var modestring1 = nil;
 
+#GPS KLN90B gps
+var GPS = {
+    new : func {
+    m = { parents : [GPS]};
+    m.LEFTMODES =["TRI ","MOD ","FPL ","NAV ","CAL ","STA ","SET ","OTH "];
+    m.RIGHTMODES =["CTR ","REF ","ACT ","D/T ","NAV ","APT ","VOR ","NDB ","INT ","SUP "];
+    m.Page1 =["1","2","3","4","5","6","7","8","9","10"];
+    m.Page2 =["1","2","3","4","5","6","7","8","9","10"];
+    m.rhmenu=5;
+    m.lhmenu=3;
+    m.lhsubmenu =[0,0,0,0,0,0,0,0];
+    m.rhsubmenu =[0,0,0,0,0,0,0,0,0,0];
+    m.gps = props.globals.getNode("instrumentation/gps");
+    m.serviceable = m.gps.getNode("serviceable");
+    m.serviceable.setBoolValue(0);
+    m.power=props.globals.getNode("systems/electrical/outputs/gps",1);
+    if(m.power.getValue()==nil)m.power.setDoubleValue(0);
+    m.dtrk=props.globals.getNode("instrumentation/gps/wp/wp[1]/desired-course-deg",1);
+    m.mode0 = props.globals.getNode("instrumentation/gps-annunciator/mode-string[0]",1);
+    m.mode0.setValue("POWER OFF");
+    m.mode1 = props.globals.getNode("instrumentation/gps-annunciator/mode-string[1]",1);
+    m.mode1.setValue("POWER OFF");
+    m.slaved = props.globals.getNode("instrumentation/nav/slaved-to-gps",1);
+    m.slaved.setBoolValue(1);
+    m.legmode = m.gps.getNode("leg-mode",1);
+    m.legmode.setBoolValue(1);
+    m.appr = m.gps.getNode("approach-active",1);
+    m.appr.setBoolValue(0);
+return m;
+    },
+##################
+    powerup : func {
+        var srv = me.serviceable.getValue();
+        srv=1-srv;
+        me.serviceable.setBoolValue(srv);
+        me.update();
+    },
+##################
+    adjust_dtk : func (amt){
+        if(me.slaved.getBoolValue()){
+            var trk = me.dtrk.getValue();
+            if(trk==nil)return;
+            trk += amt;
+            if(trk > 360){
+                trk -=360
+            }elsif(trk<1){
+                trk+=360;
+            }
+        me.dtrk.setValue(trk);
+        }
+    },
+##################
+    update : func (){
+        me.mode0.setValue("");
+        me.mode1.setValue("");
+        if(me.power.getValue() > 5){
+            me.mode0.setValue("POWER OFF");
+            me.mode1.setValue("POWER OFF");
+            if(me.serviceable.getBoolValue()){
+                me.mode0.setValue(me.LEFTMODES[me.lhmenu] ~ me.Page1[me.lhsubmenu[me.lhmenu]]);
+                me.mode1.setValue(me.RIGHTMODES[me.rhmenu] ~ me.Page2[me.rhsubmenu[me.rhmenu]]);
+            }
+        }
+        me.lh_menu_modify(0);
+        me.lh_submenu_modify(0);
+        me.rh_menu_modify(0);
+        me.rh_submenu_modify(0);
+    },
+##################
+    GPSappr : func {
+        me.legmode.setBoolValue(0);
+        me.slaved.setBoolValue(0);
+        if(me.appr.getBoolValue()){
+            me.appr.setBoolValue(0);
+        }else{
+            me.appr.setBoolValue(1);
+        }
+},
+##################
+    GPScrs : func {
+        me.appr.setBoolValue(0);
+        me.slaved.setBoolValue(1);
+        if(me.legmode.getBoolValue()){
+            me.legmode.setBoolValue(0);
+        }else{
+            me.legmode.setBoolValue(1);
+        }
+},
+##################
+    lh_menu_update : func (test){
+        me.mode0.setValue("POWER OFF");
+        if(me.power.getValue() > 5){
+            if(test == 1)me.lh_menu_modify(1);
+            if(test == 2)me.lh_menu_modify(2);
+            if(test == 3)me.lh_submenu_modify(1);
+            if(test == 4)me.lh_submenu_modify(2);
+        }
+    },
+#################
+    lh_menu_modify : func (tst1){
+        if(tst1 == 1){
+            me.lhmenu -= 1;
+            if(me.lhmenu < 0 )me.lhmenu += 8;
+        }elsif(tst1 == 2){
+            me.lhmenu += 1;
+            if(me.lhmenu > 7 )me.lhmenu -= 8;
+        }
+        me.mode0.setValue(me.LEFTMODES[me.lhmenu] ~ me.Page1[me.lhsubmenu[me.lhmenu]]);
+    },
+#################
+    lh_submenu_modify : func (tst2){
+        if(tst2 == 1){
+            me.lhsubmenu[me.lhmenu] -= 1;
+            if(me.lhsubmenu[me.lhmenu] < 0 )me.lhsubmenu[me.lhmenu] +=5;
+        }elsif(tst2 == 2){
+            me.lhsubmenu[me.lhmenu] += 1;
+            if(me.lhsubmenu[me.lhmenu] > 4 )me.lhsubmenu[me.lhmenu] -= 5;
+        }
+        me.mode0.setValue(me.LEFTMODES[me.lhmenu] ~ me.Page1[me.lhsubmenu[me.lhmenu]]);
+    },
+##################
+    rh_menu_update : func (test){
+        me.mode1.setValue("POWER OFF");
+        if(me.power.getValue() > 5){
+            if(test == 1)me.rh_menu_modify(1);
+            if(test == 2)me.rh_menu_modify(2);
+            if(test == 3)me.rh_submenu_modify(1);
+            if(test == 4)me.rh_submenu_modify(2);
+        }
+    },
+#################
+    rh_menu_modify : func (tst1){
+        if(tst1 == 1){
+            me.rhmenu -= 1;
+            if(me.rhmenu < 0 )me.rhmenu += 8;
+        }elsif(tst1 == 2){
+            me.rhmenu += 1;
+            if(me.rhmenu > 7 )me.rhmenu -=8;
+        }
+        me.mode1.setValue(me.RIGHTMODES[me.rhmenu] ~ me.Page2[me.rhsubmenu[me.rhmenu]]);
+    },
+#################
+    rh_submenu_modify : func (tst2){
+        if(tst2 == 1){
+            me.rhsubmenu[me.rhmenu] -= 1;
+            if(me.rhsubmenu[me.rhmenu] < 0 )me.rhsubmenu[me.rhmenu] +=5;
+        }elsif(tst2 == 2){
+            me.rhsubmenu[me.rhmenu] += 1;
+            if(me.rhsubmenu[me.rhmenu] > 4 )me.rhsubmenu[me.rhmenu] -= 5;
+        }
+        me.mode1.setValue(me.RIGHTMODES[me.rhmenu] ~ me.Page2[me.rhsubmenu[me.rhmenu]]);
+    },
+#################
+    direct_to : func {
+        setprop("instrumentation/gps/wp/wp[0]/waypoint-type","");
+        setprop("instrumentation/gps/wp/wp[0]/ID","");
+        setprop("instrumentation/gps/wp/wp[0]/name","");
+        setprop("instrumentation/gps/wp/wp[0]/latitude-deg",getprop("position/latitude-deg"));
+        setprop("instrumentation/gps/wp/wp[0]/longitude-deg",getprop("position/longitude-deg"));
+    }
+};
+
+var gps = GPS.new();
+
 setlistener("sim/signals/fdm-initialized", func {
-    lhmenu = 3;
-    rhmenu = 5;
-    lhsubmenu[lhmenu] = 1;
-    rhsubmenu[rhmenu] = 3;
-    navnode.setBoolValue(1);
     setprop("instrumentation/gps/wp/wp/ID",getprop("sim/tower/airport-id"));
     setprop("instrumentation/gps/wp/wp/waypoint-type","airport");
     print("KLN-90B GPS  ...Check");
     });
 
-var flight_meter = func{
-var fmeter = getprop("instrumentation/clock/flight-meter-sec");
-var fminute = fmeter * 0.016666;
-var fhour = fminute * 0.016666;
-setprop("instrumentation/clock/flight-meter-hour",fhour);
-}
-
-setlistener("instrumentation/gps/serviceable", func(gps1){
-    var power = gps1.getBoolValue();
-    if (power){
-        setprop("instrumentation/gps-annunciator/mode-string[0]",LEFTMODES[lhmenu] ~ PAGENUM[lhsubmenu[lhmenu]]);
-        setprop("instrumentation/gps-annunciator/mode-string[1]",RIGHTMODES[rhmenu] ~ PAGENUM[rhsubmenu[rhmenu]]);
-        }else{
-        setprop("instrumentation/gps-annunciator/mode-string[0]","POWER OFF");
-        setprop("instrumentation/gps-annunciator/mode-string[1]","POWER OFF");
-    }
-},0,0);
-
-var GpsAppr = func {
-    gpsnode = props.globals.getNode("instrumentation/gps/leg-mode");
-    apprnode = props.globals.getNode("instrumentation/gps/approach-active");
-    navnode.getBoolValue();
-    if(apprnode.getBoolValue()){
-        apprnode.setBoolValue(0);
-        navnode.setBoolValue(0);
-        }else{
-        apprnode.setBoolValue(1);
-        navnode.setBoolValue(1);
-        gpsnode.setBoolValue(0);
-    }
-}
-
-var GpsCrs = func {
-    gpsnode = props.globals.getNode("instrumentation/gps/leg-mode");
-    apprnode = props.globals.getNode("instrumentation/gps/approach-active");
-    if(gpsnode.getBoolValue()){
-        gpsnode.setBoolValue(0);
-        navnode.setBoolValue(0);
-        }else{
-        gpsnode.setBoolValue(1);
-        navnode.setBoolValue(1);
-        apprnode.setBoolValue(0);
-        }
-}
-
-var lh_menu_update = func (){
-    setprop("instrumentation/gps-annunciator/mode-string[0]","POWER OFF");
-    if(gpsnode != 0.0){
-        volts = getprop("systems/electrical/outputs/gps");
-        if(volts > 0.2){
-            modestring1 = getprop("instrumentation/gps-annunciator/mode-string[0]");
-            test = arg[0];
-            if(test == 1){lh_menu_modify(1);}
-            if(test == 2){lh_menu_modify(2);}
-            if(test == 3){lh_submenu_modify(1);}
-            if(test == 4){lh_submenu_modify(2);}
-        }
-    }
-}
-
-var  lh_menu_modify = func (){
-    test=arg[0];
-    if(test == 1){
-        lhmenu = lhmenu - 1;
-        if(lhmenu < 0 ){lhmenu =lhmenu + 8;}
-        }else{
-        if(test == 2){
-        lhmenu = lhmenu + 1;
-        if(lhmenu > 7 ){lhmenu =lhmenu - 8;}
-        }
-    }
-    setprop("instrumentation/gps-annunciator/mode-string[0]",LEFTMODES[lhmenu] ~ PAGENUM[lhsubmenu[lhmenu]]);
-}
-
-var lh_submenu_modify = func (){
-    test=arg[0];
-    if(test == 1){
-        lhsubmenu[lhmenu] = lhsubmenu[lhmenu] - 1;
-        if(lhsubmenu[lhmenu] < 0 ){lhsubmenu[lhmenu] =lhsubmenu[lhmenu] + 5;}
-        }else{
-        if(test == 2){
-        lhsubmenu[lhmenu] = lhsubmenu[lhmenu] + 1;
-        if(lhsubmenu[lhmenu] > 4 ){lhsubmenu[lhmenu] =lhsubmenu[lhmenu] - 5;}
-        }
-    }
-    setprop("instrumentation/gps-annunciator/mode-string[0]",LEFTMODES[lhmenu] ~ PAGENUM[lhsubmenu[lhmenu]]);
-}
-
-var rh_menu_update = func (){
-    setprop("instrumentation/gps-annunciator/mode-string[1]","POWER OFF");
-    if(gpsnode != 0.0){
-        volts = getprop("systems/electrical/outputs/gps");
-        if(volts > 0.2){
-            test = arg[0];
-            if(test == 1){rh_menu_modify(1);}
-            if(test == 2){rh_menu_modify(2);}
-            if(test == 3){rh_submenu_modify(1);}
-            if(test == 4){rh_submenu_modify(2);}
-        }
-    }
-}
-
-var rh_menu_modify = func (){
-    test=arg[0];
-    if(test == 1){
-        rhmenu = rhmenu - 1;
-        if(rhmenu < 0 ){rhmenu =rhmenu + 10;}
-        }else{
-        if(test == 2){
-            rhmenu = rhmenu + 1;
-            if(rhmenu > 7 ){rhmenu =rhmenu - 10;}
-            }
-        }
-    setprop("instrumentation/gps-annunciator/mode-string[1]",RIGHTMODES[rhmenu] ~ PAGENUM[rhsubmenu[rhmenu]]);
-}
-
-var rh_submenu_modify = func (){
-    test=arg[0];
-    if(test == 1){
-        rhsubmenu[rhmenu] = rhsubmenu[rhmenu] - 1;
-        if(rhsubmenu[rhmenu] < 0 ){rhsubmenu[rhmenu] =rhsubmenu[rhmenu] + 5;}
-        }else{
-        if(test == 2){
-            rhsubmenu[rhmenu] = rhsubmenu[rhmenu] + 1;
-            if(rhsubmenu[rhmenu] > 4 ){rhsubmenu[rhmenu] =rhsubmenu[rhmenu] - 5;}
-            }
-        }
-    setprop("instrumentation/gps-annunciator/mode-string[1]",RIGHTMODES[rhmenu] ~ PAGENUM[rhsubmenu[rhmenu]]);
-}
-
-var direct_to = func {
-    setprop("instrumentation/gps/wp/wp[0]/waypoint-type","");
-    setprop("instrumentation/gps/wp/wp[0]/ID","");
-    setprop("instrumentation/gps/wp/wp[0]/name","");
-    setprop("instrumentation/gps/wp/wp[0]/latitude-deg",getprop("position/latitude-deg"));
-    setprop("instrumentation/gps/wp/wp[0]/longitude-deg",getprop("position/longitude-deg"));
-}

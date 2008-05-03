@@ -25,9 +25,9 @@ Wheels/Flaps down Max Landing weight: 84 kt
 
 <airplane mass="10500">
 
-    <approach speed="90" aoa="6" fuel="0.5">
-        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
-        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
+    <approach speed="94" aoa="5.5" fuel="0.5">
+        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.25"/>
+        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.25"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.7"/>
@@ -39,8 +39,8 @@ Wheels/Flaps down Max Landing weight: 84 kt
     </approach>
 
     <cruise speed="283" alt="16000" fuel="0.5"> 
-        <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
-        <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
+        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.8"/>
+        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.8"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
@@ -68,7 +68,7 @@ Wing area 28.80m
 -->
 
     <wing x="0.0" y="0.80" z="-0.9" length="8.0" chord="2.18"
-        sweep="0" dihedral="6" taper="0.417"  camber="0.028" incidence="2">
+        sweep="0" dihedral="6" taper="0.417"  camber="0.0" incidence="2">
         <stall aoa="15" width="6" peak="1.5"/>
         <flap0 start="0" end=".6" lift="1.7" drag="1.7"/>
         <flap1 start=".6" end=".95" lift="1.2" drag="1.2"/>
@@ -146,12 +146,12 @@ Wing area 28.80m
     </vstab>
 
 <!--
-4484 lbs (Jet A - 6.84 ppg )
+4484 lbs (Jet A - 6.72 ppg )
 -->
-    <tank x="0.5" y="1.0" z="-0.785" capacity="2000" jet="true"/>
-    <tank x="0.50" y="-1.0" z="-0.785" capacity="2000" jet="true"/>
-    <tank x="0.50" y="2.00" z="-0.550" capacity="242" jet="true"/>
-    <tank x="0.50" y="-2.00" z="-0.550" capacity="242" jet="true"/>
+    <tank x="0.230" y="-4.490" z="-0.531" capacity="1621" jet="true"/>
+    <tank x="0.230" y="4.490" z="-0.531" capacity="1621" jet="true"/>
+    <tank x="0.230" y="-1.50" z="-0.778" capacity="621" jet="true"/>
+    <tank x="0.230" y="1.50" z="-0.778" capacity="621" jet="true"/>
 
     <gear x="6.87" y="0.00" z="-2.267" compression=".3" retract-time="5"
     spring="1.0" damp="1.50">
@@ -163,7 +163,7 @@ Wing area 28.80m
         <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
     </gear>
 
-    <gear x="-0.6" y="2.65" z="-2.3" compression=".4" retract-time="5"
+    <gear x="-1.0" y="2.65" z="-2.3" compression=".4" retract-time="5"
     spring="1.0" damp="1.5" sfric="1.0">
         <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
@@ -172,7 +172,7 @@ Wing area 28.80m
         <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
     </gear>
 
-    <gear x="-0.6" y="-2.65" z="-2.3" compression=".4" retract-time="5"
+    <gear x="-1.0" y="-2.65" z="-2.3" compression=".4" retract-time="5"
     spring="1.0" damp="1.5" sfric="1.0">
         <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
@@ -234,12 +234,12 @@ Prop diam: 2.78 m
 
     <ballast x="0" y="0" z="-0.5" mass="2000"/>
     <ballast x="1.4" y="0" z="-0.5" mass="1400"/>
-    <ballast x="4.3" y="0.0" z="0.0" mass="600"/>
+    <ballast x="4.3" y="0.0" z="0.0" mass="500"/>
     <ballast x="4.3" y="0.0" z="-1.5" mass="600"/>
     <ballast x="0.7" y="-2.65" z="-1.0" mass="600"/>
     <ballast x="0.7" y="2.65" z="-1.0" mass="600"/>
 
     <weight x="4.2" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
-    <weight x="0.1" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>
+    <weight x="0.0" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>
 
 </airplane>

@@ -131,6 +131,10 @@
                     <property>instrumentation/flightdirector/lnav</property>
                     <value>3</value>
                 </equals>
+                <equals>
+                    <property>instrumentation/flightdirector/lnav</property>
+                    <value>6</value>
+                </equals>
             </or>
         </condition>
     </animation>

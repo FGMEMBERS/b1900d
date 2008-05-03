@@ -97,6 +97,12 @@ July 2004 Syd Adams
         </config>
     </view>
 
+    <airport>
+        <runways>
+            <start-offset-m>20</start-offset-m>
+        </runways>
+    </airport>
+
     <systems>
         <electrical>
             <path></path>
@@ -185,6 +191,9 @@ July 2004 Syd Adams
         </default>
     </menubar>
 
+    <hud>
+        <enable3d>false</enable3d>
+    </hud>
 </sim>
 
 <controls>
@@ -229,29 +238,17 @@ July 2004 Syd Adams
             <name>R Main</name>
         </tank>
         <tank n="2">
-            <name>Aux1</name>
+            <name>L Aux</name>
             <level-gal_us type="double">0</level-gal_us>
         </tank>
         <tank n="3">
-            <name>Aux2</name>
+            <name>R Aux</name>
             <level-gal_us type="double">0</level-gal_us>
         </tank>
     </fuel>
 </consumables>
 
     <instrumentation>
-        <flightdirector>
-            <serviceable>true</serviceable>
-            </flightdirector>
-        <gps>
-            <serviceable>true</serviceable> 
-        </gps>
-        <nav>
-            <slaved-to-gps>false</slaved-to-gps>
-        </nav>
-        <nav n="1">
-            <slaved-to-gps>false</slaved-to-gps>
-        </nav>
         <mk-viii>
             <serviceable>true</serviceable>
             <configuration-module>
@@ -267,23 +264,14 @@ July 2004 Syd Adams
     <altimeter>
         <millibars type= "double">0</millibars>
     </altimeter>
+    <inst-vertical-speed-indicator>
+        <serviceable type="bool">true</serviceable>
+    </inst-vertical-speed-indicator>
     <transponder>
         <inputs>
             <serviceable type="bool">true</serviceable>
         </inputs>
     </transponder>
-    <nav n="0">
-        <serviceable type="bool">1</serviceable>
-    </nav>
-    <nav n="1">
-        <serviceable type="bool">1</serviceable>
-    </nav>
-    <comm n="0">
-        <serviceable type="bool">1</serviceable>
-    </comm>
-    <comm n="1">
-        <serviceable type="bool">1</serviceable>
-    </comm>
     </instrumentation>
 
     <engines>

@@ -59,52 +59,8 @@
 
     <animation>
         <type>rotate</type>
-        <object-name>FQneedle.1</object-name>
-        <property>/consumables/fuel/tank[2]/level-lbs</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind><dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>2000.0</ind><dep>240.0</dep>
-            </entry>
-        </interpolation>
-        <axis>
-            <x>-1.0</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-        <center>
-            <x-m>0.0</x-m>
-            <y-m>-0.045</y-m>
-            <z-m>0</z-m>
-        </center>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
         <object-name>FQneedle</object-name>
         <property>/consumables/fuel/tank[1]/level-lbs</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>2000.0</ind><dep>240.0</dep></entry>
-        </interpolation>
-        <axis>
-            <x>-1.0</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-        <center>
-            <x-m>0</x-m>
-            <y-m>0.045</y-m>
-            <z-m>0.0</z-m>
-        </center>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>FQneedle</object-name>
-        <property>/consumables/fuel/tank[3]/level-lbs</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>2000.0</ind><dep>240.0</dep></entry>

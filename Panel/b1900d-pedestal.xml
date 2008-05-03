@@ -8,7 +8,7 @@
 <instruments>
 
 <!-- AP -->
-    <instrument include="../../Instruments-3d/primus-1000/AP-hotspots.xml">
+    <instrument include="AP-hotspots.xml">
         <name>AP</name>
         <x>66</x>
         <y>131</y>

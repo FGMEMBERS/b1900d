@@ -35,7 +35,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>APalt1</object-name>
-        <property>instrumentation/flightdirector/selected-alt-ft</property>
+        <property>instrumentation/flightdirector/Asel</property>
         <factor>0.00001</factor>
         <step>10000</step>
         <axis>
@@ -48,7 +48,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>APalt2</object-name>
-        <property>instrumentation/flightdirector/selected-alt-ft</property>
+        <property>instrumentation/flightdirector/Asel</property>
         <factor>0.0001</factor>
         <step>1000</step>
         <axis>
@@ -61,7 +61,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>APalt3</object-name>
-        <property>instrumentation/flightdirector/selected-alt-ft</property>
+        <property>instrumentation/flightdirector/Asel</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -74,7 +74,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>APalt4</object-name>
-        <property>instrumentation/flightdirector/selected-alt-ft</property>
+        <property>instrumentation/flightdirector/Asel</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -87,7 +87,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>APalt5</object-name>
-        <property>instrumentation/flightdirector/selected-alt-ft</property>
+        <property>instrumentation/flightdirector/Asel</property>
         <factor>0.1</factor>
         <step>1</step>
         <axis>
