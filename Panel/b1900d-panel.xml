@@ -78,144 +78,45 @@
 
     <action>
         <name>nav radial increase 1</name>
-        <condition>
-            <not>
-                <property>instrumentation/nav/slaved-to-gps</property>
-            </not>
-        </condition>
         <button>0</button>
         <x>-278</x>
         <y>-230</y>
         <w>8</w>
         <h>8</h>
         <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/nav/radials/selected-deg</property>
-            <step>1</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>true</wrap>
+            <command>nasal</command>
+            <script>systems.FlDr.set_course(1)</script>
         </binding>
     </action>
 
     <action>
         <name>nav radial increase 5</name>
-        <condition>
-            <not>
-                <property>instrumentation/nav/slaved-to-gps</property>
-            </not>
-        </condition>
         <button>1</button>
         <x>-278</x>
         <y>-230</y>
         <w>8</w>
         <h>8</h>
         <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/nav/radials/selected-deg</property>
-            <step>5</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>1</wrap>
+            <command>nasal</command>
+            <script>systems.FlDr.set_course(10)</script>
         </binding>
     </action>
 
     <action>
         <name>nav radial decrease 1</name>
-        <condition>
-            <not>
-                <property>instrumentation/nav/slaved-to-gps</property>
-            </not>
-        </condition>
         <button>0</button>
         <x>-286</x>
         <y>-230</y>
         <w>8</w>
         <h>8</h>
         <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/nav/radials/selected-deg</property>
-            <step>-1</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>true</wrap>
+            <command>nasal</command>
+            <script>systems.FlDr.set_course(-1)</script>
         </binding>
     </action>
 
     <action>
         <name>nav radial decrease 5</name>
-        <condition>
-            <not>
-                <property>instrumentation/nav/slaved-to-gps</property>
-            </not>
-        </condition>
-        <button>1</button>
-        <x>-286</x>
-        <y>-230</y>
-        <w>8</w>
-        <h>8</h>
-        <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/nav/radials/selected-deg</property>
-            <step>-5</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>1</wrap>
-        </binding>
-    </action>
-
-<!--             DTK             -->
-
-    <action>
-        <name>dtk increase 1</name>
-        <condition>
-            <property>instrumentation/nav/slaved-to-gps</property>
-        </condition>
-        <button>0</button>
-        <x>-278</x>
-        <y>-230</y>
-        <w>8</w>
-        <h>8</h>
-        <binding>
-            <command>nasal</command>
-            <script>systems.gps.adjust_dtk(1)</script>
-        </binding>
-    </action>
-
-    <action>
-        <name>dtk increase 5</name>
-        <button>1</button>
-        <x>-278</x>
-        <y>-230</y>
-        <w>8</w>
-        <h>8</h>
-        <binding>
-            <command>nasal</command>
-            <script>systems.gps.adjust_dtk(5)</script>
-        </binding>
-    </action>
-
-    <action>
-        <name>dtk decrease 1</name>
-        <condition>
-            <property>instrumentation/nav/slaved-to-gps</property>
-        </condition>
-        <button>0</button>
-        <x>-286</x>
-        <y>-230</y>
-        <w>8</w>
-        <h>8</h>
-        <binding>
-            <command>nasal</command>
-            <script>systems.gps.adjust_dtk(-1)</script>
-        </binding>
-    </action>
-
-    <action>
-        <name>dtk decrease 5</name>
-        <condition>
-            <property>instrumentation/nav/slaved-to-gps</property>
-        </condition>
         <button>1</button>
         <x>-286</x>
         <y>-230</y>
@@ -223,10 +124,9 @@
         <h>8</h>
         <binding>
             <command>nasal</command>
-            <script>systems.gps.adjust_dtk(-5)</script>
+            <script>systems.FlDr.set_course(-10)</script>
         </binding>
     </action>
-
 
 <!--             Heading              -->
 

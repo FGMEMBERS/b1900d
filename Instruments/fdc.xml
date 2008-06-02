@@ -168,7 +168,10 @@
         <type>select</type>
         <object-name>AP-gs</object-name>
         <condition>
-            <property>autopilot/locks/gs1-hold</property>
+            <equals>
+                <property>autopilot/locks/altitude</property>
+                <value>GS</value>
+            </equals>
         </condition>
     </animation>
 

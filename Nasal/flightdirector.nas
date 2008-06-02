@@ -40,6 +40,7 @@ var flightdirector = {
     m.node = props.globals.getNode(fdprop,1);
         m.yawdamper = props.globals.getNode("autopilot/locks/yaw-damper",1);
         m.yawdamper.setBoolValue(0);
+        m.HSI = m.node.getNode("hsi",1);
         m.lnav = m.node.getNode("lnav",1);
         m.lnav.setIntValue(0);
         m.vnav = m.node.getNode("vnav",1);
@@ -53,6 +54,12 @@ var flightdirector = {
         m.DH = props.globals.getNode("autopilot/route-manager/min-lock-altitude-agl-ft",1);
         m.Defl = props.globals.getNode("instrumentation/nav/heading-needle-deflection");
         m.GSDefl = props.globals.getNode("instrumentation/nav/gs-needle-deflection");
+        m.FD_defl = m.HSI.getNode("crs-deflection",1);
+        m.FD_defl.setDoubleValue(0);
+        m.FD_crs = m.HSI.getNode("crs-mag-heading",1);
+        m.FD_crs.setDoubleValue(0);
+        m.FD_toflag = m.HSI.getNode("to-flag",1);
+        m.FD_toflag.setBoolValue(0);
         m.NavLoc = props.globals.getNode("instrumentation/nav/nav-loc");
         m.hasGS = props.globals.getNode("instrumentation/nav/has-gs");
         m.Valid = props.globals.getNode("instrumentation/nav/in-range");
@@ -152,8 +159,9 @@ var flightdirector = {
     },
 ###########################
     set_course : func(crs){
+        var mag=getprop("environment/magnetic-variation-deg");
         var rd =0;
-        rd = getprop("instrumentation/nav[0]/radials/selected-deg");
+        rd = me.FD_crs.getValue();
             if(crs ==0){
                 rd=int(getprop("orientation/heading-magnetic-deg"));
             }else{
@@ -161,7 +169,14 @@ var flightdirector = {
                 if(rd >360)rd =rd-360;
                 if(rd <1)rd = rd +360;
             }
-            setprop("instrumentation/nav[0]/radials/selected-deg",rd);
+            me.FD_crs.setValue(rd);
+            if(me.FMS.getValue()){
+                rd+=mag;
+                if(rd>360)rd-=360;
+                setprop("instrumentation/gps/wp/wp[1]/desired-course-deg",rd);
+            }else{
+                setprop("instrumentation/nav/radials/selected-deg",rd);
+            }
     },
 ###########################
     set_hdg_bug : func(hbg){
@@ -264,7 +279,6 @@ var flightdirector = {
             if(defl <= 9 and defl >= -9)lnv=5;
         }
     }elsif(lnv==6){
-        me.gps_course();
     }
     me.lnav.setValue(lnv);
         me.AP_hdg.setValue(me.lnav_text[lnv]);
@@ -272,33 +286,54 @@ var flightdirector = {
     me.AP_sublat_annun.setValue(me.subLAT[lnv]);
     },
 #### update vnav####
-    gps_course : func(){
-        var crs =getprop("instrumentation/gps/wp/wp[1]/desired-course-deg");
-        if(crs ==nil)crs=0;
-        crs=crs-getprop("orientation/heading-deg");
-        if(crs > 180)crs -=360;
-        if(crs < -180)crs +=360;
-        var crs_defl=getprop("instrumentation/gps/wp/wp[1]/course-deviation-deg");
-        if(crs_defl==nil)crs_defl=0;
-        var offset= crs+crs_defl;
-        if(offset>180)offset -=360;
-        if(offset<-180)offset +=360;
-        setprop("autopilot/internal/gps-true-course",offset);
-    },
-#### update vnav####
     update_vnav : func(){
         var vnv = me.vnav.getValue();
         if(me.gs_arm.getBoolValue()){
             var defl = me.GSDefl.getValue();
             if(defl < 1 and defl > -1){
-        vnv=5;
-        me.gs_arm.setBoolValue(0);
-        }
+                vnv=5;
+                me.gs_arm.setBoolValue(0);
+            }
         }
     me.vnav.setValue(vnv);
         me.AP_alt.setValue(me.vnav_text[vnv]);
     me.AP_vert_annun.setValue(me.VRT[vnv]);
     me.AP_subvert_annun.setValue(me.subVRT[me.gs_arm.getValue()]);
+    },
+#### update course from gps/nav####
+    update_crs : func(){
+        var mag=getprop("environment/magnetic-variation-deg");
+        var dfl=0;
+        var crs=0;
+        var to=0;
+        var hdg=0;
+        var gps_offset=0;
+        if(me.FMS.getValue()){
+            dfl = getprop("instrumentation/gps/wp/wp[1]/course-deviation-deg");
+            dfl = dfl * 0.33;
+            if(dfl>10)dfl=10;
+            if(dfl<-10)dfl=-10;
+            to=getprop("instrumentation/gps/wp/wp[1]/to-flag");
+            crs=getprop("instrumentation/gps/wp/wp[1]/desired-course-deg");
+            crs-=mag;
+            if(crs<0)crs+=360;
+            hdg=getprop("orientation/heading-magnetic-deg");
+            gps_offset=crs-hdg;
+            gps_offset+=(dfl*3);
+            if(gps_offset<-180)gps_offset+=360;
+            if(gps_offset>180)gps_offset-=360;
+            }else{
+            dfl = me.Defl.getValue();
+            to=getprop("instrumentation/nav/to-flag");
+            crs=getprop("instrumentation/nav/radials/selected-deg");
+        }
+        if(dfl==nil)dfl=0;
+        if(to==nil)to=0;
+        if(crs==nil)crs=0;
+        me.FD_defl.setValue(dfl);
+        me.FD_toflag.setValue(to);
+        me.FD_crs.setValue(crs);
+        setprop("autopilot/internal/gps-course-offset",gps_offset);
     },
 #### autopilot engage####
     toggle_autopilot : func(apmd){
@@ -376,5 +411,6 @@ var update_fd = func {
 var APoff = FlDr.check_AP_limits();
 FlDr.update_lnav();
 FlDr.update_vnav();
+FlDr.update_crs();
 settimer(update_fd, 0); 
 }

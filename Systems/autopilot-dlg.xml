@@ -376,7 +376,7 @@
    <y>75</y>
    <width>40</width>
    <height>20</height>
-   <property>instrumentation/nav[0]/radials/selected-deg</property>
+   <property>instrumentation/flightdirector/hsi/crs-mag-heading</property>
    <live>true</live>
    <binding>
     <command>dialog-apply</command>

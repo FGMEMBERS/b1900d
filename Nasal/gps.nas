@@ -47,20 +47,6 @@ return m;
         me.update();
     },
 ##################
-    adjust_dtk : func (amt){
-        if(me.slaved.getBoolValue()){
-            var trk = me.dtrk.getValue();
-            if(trk==nil)return;
-            trk += amt;
-            if(trk > 360){
-                trk -=360
-            }elsif(trk<1){
-                trk+=360;
-            }
-        me.dtrk.setValue(trk);
-        }
-    },
-##################
     update : func (){
         me.mode0.setValue("");
         me.mode1.setValue("");
@@ -90,11 +76,12 @@ return m;
 ##################
     GPScrs : func {
         me.appr.setBoolValue(0);
-        me.slaved.setBoolValue(1);
         if(me.legmode.getBoolValue()){
             me.legmode.setBoolValue(0);
+            me.slaved.setBoolValue(0);
         }else{
             me.legmode.setBoolValue(1);
+            me.slaved.setBoolValue(1);
         }
 },
 ##################
