@@ -194,7 +194,7 @@ var warning_panel_update = func{
 
 
 var update_systems = func {
-        var mb = 33.8637526 * props.globals.getNode("/instrumentation/altimeter/setting-inhg").getValue();
+        var mb = 33.8637526 * getprop("/instrumentation/altimeter/setting-inhg");
         power = getprop("/controls/switches/master-panel");
         volts = getprop("/systems/electrical/volts");
         if(volts == nil){volts = 0.0;}
@@ -202,8 +202,8 @@ var update_systems = func {
         pph2 = getprop("/engines/engine[1]/fuel-flow-gph");
         if(pph1 == nil){pph1 = 6.72;}
         if(pph2 == nil){pph2 = 6.72;}
-        setprop("engines/engine[0]/fuel-flow-pph",pph1* fuel_density);
-        setprop("engines/engine[1]/fuel-flow-pph",pph2* fuel_density);
+        setprop("engines/engine[0]/fuel-flow_pph",pph1* fuel_density);
+        setprop("engines/engine[1]/fuel-flow_pph",pph2* fuel_density);
         MB.setDoubleValue(mb);
         setprop("/sim/model/b1900d/material/panel/factor", 0.0);
         setprop("/sim/model/b1900d/material/radiance/factor", 0.0);

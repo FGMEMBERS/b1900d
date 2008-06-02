@@ -1,0 +1,547 @@
+<?xml version="1.0"?>
+<!-- B1900D  -->
+
+<PropertyList>
+
+<!-- =============================== -->
+<!-- ======  Roll Axis Modes  ====== -->
+<!-- =============================== -->
+
+<pi-simple-controller>
+    <name>Roll Control</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/heading</prop>
+        <value>ROLL</value>
+    </enable>
+    <input>
+        <prop>orientation/roll-deg</prop>
+    </input>
+    <reference>
+        <prop>autopilot/settings/target-roll-deg</prop>
+    </reference>
+    <output>
+        <prop>autopilot/internal/target-roll-deg</prop>
+    </output>
+    <config>
+        <Kp>1.0</Kp>
+        <Ki>0.0</Ki>
+        <u_min>
+            <prop>instrumentation/flightdirector/roll-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/flightdirector/roll-max</prop>
+        </u_max>
+    </config>
+</pi-simple-controller>
+
+<pi-simple-controller>
+    <name>HDG</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/heading</prop>
+        <value>HDG</value>
+    </enable>
+    <input>
+        <prop>autopilot/internal/fdm-heading-bug-error-deg</prop>
+    </input>
+    <reference>
+        <value>0.0</value>
+    </reference>
+    <output>
+        <prop>autopilot/internal/target-roll-deg</prop>
+    </output>
+    <config>
+        <Kp>-1.0</Kp>
+        <Ki>0.0</Ki>
+        <u_min>
+            <prop>instrumentation/flightdirector/roll-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/flightdirector/roll-max</prop>
+        </u_max>
+    </config>
+</pi-simple-controller>
+
+<pi-simple-controller>
+    <name>GPS course</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/heading</prop>
+        <value>GPS-CRS</value>
+    </enable>
+    <input>
+        <prop>autopilot/internal/true-heading-error-deg</prop>
+    </input>
+    <reference>
+        <value>0.0</value>
+    </reference>
+    <output>
+        <prop>autopilot/internal/target-roll-deg</prop>
+    </output>
+    <config>
+        <Kp>-1.0</Kp>
+        <Ki>0.0</Ki>
+        <u_min>
+            <prop>instrumentation/flightdirector/roll-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/flightdirector/roll-max</prop>
+        </u_max>
+    </config>
+</pi-simple-controller>
+
+<pi-simple-controller>
+    <name>NAV-arm</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/heading</prop>
+        <value>NAV-ARM</value>
+    </enable>
+    <input>
+        <prop>autopilot/internal/fdm-heading-bug-error-deg</prop>
+    </input>
+    <reference>
+        <value>0.0</value>
+    </reference>
+    <output>
+        <prop>autopilot/internal/target-roll-deg</prop>
+    </output>
+    <config>
+        <Kp>-1.0</Kp>
+        <Ki>0.0</Ki>
+        <u_min>
+            <prop>instrumentation/flightdirector/roll-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/flightdirector/roll-max</prop>
+        </u_max>
+    </config>
+</pi-simple-controller>
+
+
+<pi-simple-controller>
+    <name>Nav1 Hold</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/heading</prop>
+        <value>NAV</value>
+    </enable>
+    <input>
+        <prop>autopilot/internal/nav1-heading-error-deg</prop>
+    </input>
+    <reference>
+        <value>0.0</value>
+    </reference>
+    <output>
+        <prop>autopilot/internal/target-roll-deg</prop>
+    </output>
+    <config>
+        <Kp>-1.5</Kp>
+        <Ki>0.0</Ki>
+        <u_min>
+            <prop>instrumentation/flightdirector/roll-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/flightdirector/roll-max</prop>
+        </u_max>
+    </config>
+</pi-simple-controller>
+
+<pi-simple-controller>
+    <name>LOC arm</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/heading</prop>
+        <value>LOC-ARM</value>
+    </enable>
+    <input>
+        <prop>autopilot/internal/fdm-heading-bug-error-deg</prop>
+    </input>
+    <reference>
+        <value>0.0</value>
+    </reference>
+    <output>
+        <prop>autopilot/internal/target-roll-deg</prop>
+    </output>
+    <config>
+        <Kp>-1.0</Kp>
+        <Ki>0.0</Ki>
+        <u_min>
+            <prop>instrumentation/flightdirector/roll-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/flightdirector/roll-max</prop>
+        </u_max>
+    </config>
+</pi-simple-controller>
+
+<pi-simple-controller>
+    <name>LOC Hold</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/heading</prop>
+        <value>LOC</value>
+    </enable>
+    <input>
+        <prop>autopilot/internal/nav1-heading-error-deg</prop>
+    </input>
+    <reference>
+        <value>0.0</value>
+    </reference>
+    <output>
+        <prop>autopilot/internal/target-roll-deg</prop>
+    </output>
+    <config>
+        <Kp>-1.5</Kp>
+        <Ki>0.0</Ki>
+        <u_min>
+            <prop>instrumentation/flightdirector/roll-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/flightdirector/roll-max</prop>
+        </u_max>
+    </config>
+</pi-simple-controller>
+
+
+<pid-controller>
+    <name>Aileron Control</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/roll-active</prop>
+        <value>true</value>
+        <honor-passive>true</honor-passive>
+    </enable>
+    <input>
+        <prop>orientation/roll-deg</prop>
+    </input>
+    <reference>
+        <prop>autopilot/internal/target-roll-deg</prop>
+    </reference>
+    <output>
+        <prop>controls/flight/aileron</prop>
+    </output>
+    <config>
+        <Kp>0.5</Kp>
+        <beta>1.0</beta>
+        <alpha>0.1</alpha>
+        <gamma>0.0</gamma>
+        <Ti>1.0</Ti>
+        <Td>0.0</Td>
+        <u_min>
+            <value>-1.0</value>
+        </u_min>
+        <u_max>
+            <value>1.0</value>
+        </u_max>
+    </config>
+</pid-controller>
+
+<!-- ================================ -->
+<!-- ======= Pitch Axis Modes ======= -->
+<!-- ================================ -->
+
+<pid-controller>
+    <name>Altitude Hold</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/altitude</prop>
+        <value>ALT</value>
+    </enable>
+    <input>
+        <prop>instrumentation/altimeter/indicated-altitude-ft</prop>
+    </input>
+    <reference>
+        <prop>autopilot/settings/target-altitude-ft</prop>
+    </reference>
+    <output>
+        <prop>autopilot/settings/target-pitch-deg</prop>
+    </output>
+    <config>
+        <Kp>0.025</Kp>
+        <beta>1.0</beta>
+        <alpha>0.1</alpha>
+        <gamma>0.0</gamma>
+        <Ti>50.0</Ti>
+        <Td>0.0</Td>
+        <u_min>
+            <prop>instrumentation/flightdirector/pitch-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/flightdirector/pitch-max</prop>
+        </u_max>
+    </config>
+</pid-controller>
+
+<pid-controller>
+    <name>Selected Altitude Hold</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/altitude</prop>
+        <value>ASEL</value>
+    </enable>
+    <input>
+        <prop>instrumentation/altimeter/indicated-altitude-ft</prop>
+    </input>
+    <reference>
+        <prop>autopilot/settings/target-altitude-ft</prop>
+    </reference>
+    <output>
+        <prop>autopilot/settings/target-pitch-deg</prop>
+    </output>
+    <config>
+        <Kp>0.025</Kp>
+        <beta>1.0</beta>
+        <alpha>0.1</alpha>
+        <gamma>0.0</gamma>
+        <Ti>50.0</Ti>
+        <Td>0.0</Td>
+        <u_min>
+            <prop>instrumentation/flightdirector/pitch-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/flightdirector/pitch-max</prop>
+        </u_max>
+    </config>
+</pid-controller>
+
+<pid-controller>
+	<name>Glideslop Hold</name>
+	<debug>false</debug>
+	<enable>
+		<prop>/autopilot/locks/altitude</prop>
+		<value>G/S</value>
+	</enable>
+	<input>
+		<prop>instrumentation/nav/gs-needle-deflection</prop>
+	</input>
+	<reference>
+		<value>0</value>
+	</reference>
+	<output>
+		<prop>autopilot/settings/target-pitch-deg</prop>
+	</output>
+	<config>
+		<Kp>-1.0</Kp>
+		<beta>1.0</beta>
+		<alpha>0.1</alpha>
+		<gamma>0.0</gamma>
+		<Ti>10.0</Ti>
+		<Td>0.00001</Td>
+		<u_min>
+			<value>-10</value>
+		</u_min>
+		<u_max>
+			<value>0</value>
+		</u_max>
+	</config>
+</pid-controller>
+
+<pi-simple-controller>
+    <name>Vertical Speed Hold</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/altitude</prop>
+        <value>VS</value>
+    </enable>
+    <input>
+        <prop>autopilot/internal/vert-speed-fpm</prop>
+    </input>
+    <reference>
+        <prop>autopilot/settings/vertical-speed-fpm</prop>
+        </reference>
+    <output>
+        <prop>autopilot/settings/target-pitch-deg</prop>
+    </output>
+    <config>
+        <Kp>0.01</Kp>
+        <Ki>0.0</Ki>
+        <u_min>
+            <prop>instrumentation/flightdirector/pitch-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/flightdirector/pitch-max</prop>
+        </u_max>
+    </config>
+</pi-simple-controller>
+
+<pid-controller>
+    <name>Elevator Trim Control</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/pitch-active</prop>
+        <value>true</value>
+        <honor-passive>true</honor-passive>
+    </enable>
+    <input>
+        <prop>orientation/pitch-deg</prop>
+    </input>
+    <reference>
+        <prop>autopilot/settings/target-pitch-deg</prop>
+    </reference>
+    <output>
+        <prop>controls/flight/elevator-trim</prop>
+    </output>
+    <config>
+        <Kp>-0.05</Kp>
+        <beta>1.0</beta>
+        <alpha>0.1</alpha>
+        <gamma>0.0</gamma>
+        <Ti>10.0</Ti>
+        <Td>0.0</Td>
+        <u_min>-0.7</u_min>
+        <u_max>0.7</u_max>
+    </config>
+</pid-controller>
+
+<pid-controller>
+    <name>Yaw Damper</name>
+    <debug>false</debug>
+    <enable>
+        <prop>autopilot/locks/yaw-damper</prop>
+        <value>true</value>
+    </enable>
+    <input>
+        <prop>orientation/side-slip-deg</prop>
+    </input>
+    <reference>
+        <value>0</value>
+    </reference>
+    <output>
+        <prop>controls/flight/rudder</prop>
+    </output>
+    <config>
+        <Kp>0.25</Kp>
+        <beta>1.0</beta>
+        <alpha>0.1</alpha>
+        <gamma>0.0</gamma>
+        <Ti>1.0</Ti>
+        <Td>0.0</Td>
+        <u_min>-0.5</u_min>
+        <u_max>0.5</u_max>
+    </config>
+</pid-controller>
+
+<!--
+==============
+Velocity Modes
+==============
+-->
+<!-- Simple Auto throttle -->
+<pid-controller>
+<name>Auto Throttle</name>
+<debug>false</debug>
+<enable>
+<prop>/autopilot/locks/speed</prop>
+<value>IAS</value>
+</enable>
+<input>
+<prop>/velocities/airspeed-kt</prop>
+</input>
+<reference>
+<prop>/autopilot/settings/target-speed-kt</prop>
+</reference>
+<output>
+<prop>/controls/engines/engine[0]/throttle</prop>
+<prop>/controls/engines/engine[1]/throttle</prop>
+<prop>/controls/engines/engine[2]/throttle</prop>
+<prop>/controls/engines/engine[3]/throttle</prop>
+<prop>/controls/engines/engine[4]/throttle</prop>
+<prop>/controls/engines/engine[5]/throttle</prop>
+</output>
+<config>
+<Kp>0.1</Kp>
+<!-- proportional gain -->
+<beta>1.0</beta>
+<!-- input value weighing factor -->
+<alpha>0.1</alpha>
+<!-- low pass filter weighing factor -->
+<gamma>0.0</gamma>
+<!-- input value weighing factor for -->
+<!-- unfiltered derivative error -->
+<Ti>10.0</Ti>
+<!-- integrator time -->
+<Td>0.001</Td>
+<!-- derivator time -->
+<u_min>0.0</u_min>
+<!-- minimum output clamp -->
+<u_max>1.0</u_max>
+<!-- maximum output clamp -->
+</config>
+</pid-controller>
+<!-- Hold speed by varying pitch (Two stage cascading controller) -->
+<pid-controller>
+<name>Speed hold (vary pitch) Stage #1</name>
+<debug>false</debug>
+<enable>
+<prop>/autopilot/locks/speed</prop>
+<value>speed-with-pitch</value>
+</enable>
+<input>
+<prop>/velocities/airspeed-kt</prop>
+</input>
+<reference>
+<prop>/autopilot/settings/target-speed-kt</prop>
+</reference>
+<output>
+<prop>/autopilot/settings/target-pitch-deg</prop>
+</output>
+<config>
+<Kp>.05</Kp>
+<!-- proportional gain -->
+<beta>1.0</beta>
+<!-- input value weighing factor -->
+<alpha>0.1</alpha>
+<!-- low pass filter weighing factor -->
+<gamma>0.0</gamma>
+<!-- input value weighing factor for -->
+<!-- unfiltered derivative error -->
+<Ti>0.2</Ti>
+<!-- integrator time -->
+<Td>0.00001</Td>
+<!-- derivator time -->
+<u_min>-15.0</u_min><!-- minimum output clamp -->
+<u_max>15.0</u_max>
+<!-- maximum output clamp -->
+</config>
+</pid-controller>
+<pid-controller>
+<name>Speed hold (vary pitch) Stage #2</name>
+<debug>false</debug>
+<enable>
+<prop>/autopilot/locks/speed</prop>
+<value>speed-with-pitch-trim</value>
+</enable>
+<input>
+<prop>/orientation/pitch-deg</prop>
+</input>
+<reference>
+<prop>/autopilot/settings/target-pitch-deg</prop>
+</reference>
+<output>
+<prop>/controls/flight/elevator-trim</prop>
+</output>
+<config>
+<Kp>-0.05</Kp>
+<!-- proportional gain -->
+<beta>1.0</beta>
+<!-- input value weighing factor -->
+<alpha>0.1</alpha>
+<!-- low pass filter weighing factor -->
+<gamma>0.0</gamma>
+<!-- input value weighing factor for -->
+<!-- unfiltered derivative error -->
+<Ti>1.0</Ti>
+<!-- integrator time -->
+<Td>0.00001</Td>
+<!-- derivator time -->
+<u_min>-1.0</u_min>
+<!-- minimum output clamp -->
+<u_max>1.0</u_max>
+<!-- maximum output clamp -->
+</config>
+</pid-controller>
+
+</PropertyList>
+

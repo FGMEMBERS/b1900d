@@ -99,7 +99,7 @@ July 2004 Syd Adams
 
     <airport>
         <runways>
-            <start-offset-m>20</start-offset-m>
+            <start-offset-m>50</start-offset-m>
         </runways>
     </airport>
 
@@ -108,7 +108,7 @@ July 2004 Syd Adams
             <path></path>
         </electrical>
         <autopilot>
-            <path>Aircraft/b1900d/b1900d-autopilot.xml</path>
+            <path>Aircraft/b1900d/Systems/b1900d-autopilot.xml</path>
         </autopilot>
     </systems>
 
@@ -134,15 +134,6 @@ July 2004 Syd Adams
     <help>
         <title>Beechcraft B1900D</title>
         <line></line>
-        <key>
-            <name>CTRL-A</name>
-            <desc>Toggle autopilot on/off</desc>
-        </key>
-        <line></line>
-        <line>Note:</line>
-        <line>Autopilot on with no flightdirector modes selected</line>
-        <line>defaults to Wing-Level;</line>
-        <line></line>
     </help>
 
     <weight n="0">
@@ -163,6 +154,15 @@ July 2004 Syd Adams
 
     <menubar>
         <default>
+            <menu n="3">
+                <item n="0">
+                <label>Autopilot Settings</label>
+                    <binding>
+                        <command>nasal</command>
+                        <script>systems.ap_settings.open()</script>
+                    </binding>
+                </item>
+            </menu>
             <menu n="10">
                 <label>B1900D</label>
                 <enabled type="bool">true</enabled>
@@ -194,6 +194,7 @@ July 2004 Syd Adams
     <hud>
         <enable3d>false</enable3d>
     </hud>
+
 </sim>
 
 <controls>
@@ -278,12 +279,12 @@ July 2004 Syd Adams
         <engine n="0">
             <running>0</running>
             <rpm>0</rpm>
-            <fuel-flow-pph type="float">0</fuel-flow-pph>
+            <fuel-flow_pph type="float">0</fuel-flow_pph>
         </engine>
         <engine n="1">
             <running>0</running>
             <rpm>0</rpm>
-            <fuel-flow-pph type="float">0</fuel-flow-pph>
+            <fuel-flow_pph type="float">0</fuel-flow_pph>
         </engine>
     </engines>
 
@@ -302,13 +303,13 @@ July 2004 Syd Adams
     
     <input>
         <keyboard>
-        <key n="1">
-        <name>Ctrl-A</name>
-        <desc>Toggle autopilot</desc>
-        <binding>
-            <command>property-toggle</command>
-            <property>autopilot/locks/passive-mode</property>
-        </binding>
+        <key n="267">
+            <name>F11</name>
+            <desc>Pop up autopilot dialog</desc>
+            <binding>
+                <command>nasal</command>
+                <script>systems.ap_settings.toggle()</script>
+            </binding>
         </key>
     </keyboard>
     </input>
