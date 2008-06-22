@@ -53,6 +53,11 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </magnetic-compass>
 
+    <marker-beacon>
+        <name>marker-beacon</name>
+        <number>0</number>
+    </marker-beacon>
+
     <nav-radio>
         <name>nav</name>
         <number>0</number>

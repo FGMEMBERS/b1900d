@@ -311,7 +311,7 @@
 	<debug>false</debug>
 	<enable>
 		<prop>/autopilot/locks/altitude</prop>
-		<value>G/S</value>
+		<value>GS</value>
 	</enable>
 	<input>
 		<prop>instrumentation/nav/gs-needle-deflection</prop>
@@ -323,12 +323,12 @@
 		<prop>autopilot/settings/target-pitch-deg</prop>
 	</output>
 	<config>
-		<Kp>-1.0</Kp>
+		<Kp>-1.5</Kp>
 		<beta>1.0</beta>
 		<alpha>0.1</alpha>
 		<gamma>0.0</gamma>
 		<Ti>10.0</Ti>
-		<Td>0.00001</Td>
+		<Td>0.0</Td>
 		<u_min>
 			<value>-10</value>
 		</u_min>
@@ -346,16 +346,17 @@
         <value>VS</value>
     </enable>
     <input>
-        <prop>autopilot/internal/vert-speed-fpm</prop>
+        <prop>velocities/vertical-speed-fps</prop>
     </input>
     <reference>
         <prop>autopilot/settings/vertical-speed-fpm</prop>
-        </reference>
+        <scale>0.01667</scale>
+    </reference>
     <output>
         <prop>autopilot/settings/target-pitch-deg</prop>
     </output>
     <config>
-        <Kp>0.01</Kp>
+        <Kp>0.8</Kp>
         <Ki>0.0</Ki>
         <u_min>
             <prop>instrumentation/flightdirector/pitch-min</prop>
@@ -384,14 +385,14 @@
         <prop>controls/flight/elevator-trim</prop>
     </output>
     <config>
-        <Kp>-0.05</Kp>
+        <Kp>-0.15</Kp>
         <beta>1.0</beta>
         <alpha>0.1</alpha>
         <gamma>0.0</gamma>
         <Ti>10.0</Ti>
-        <Td>0.0</Td>
-        <u_min>-0.7</u_min>
-        <u_max>0.7</u_max>
+        <Td>0.2</Td>
+        <u_min>-1.0</u_min>
+        <u_max>1.0</u_max>
     </config>
 </pid-controller>
 
