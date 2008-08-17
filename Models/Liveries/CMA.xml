@@ -4,9 +4,8 @@
 <sim>
     <model>
         <livery>
-            <name type="string">CMA</name>
-            <index type="int">0</index>
-            <texture>CMAlivery.rgb</texture>
+            <name type="string">Central Mountain Air</name>
+            <texture>paint1.rgb</texture>
         </livery>
     </model>
 </sim>

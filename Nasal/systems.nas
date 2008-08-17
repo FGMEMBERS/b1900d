@@ -2,7 +2,7 @@
 #### Syd Adams
 #### Barber pole code - K. Hoercher
 
-aircraft.livery.init("Aircraft/b1900d/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
+aircraft.livery.init("Aircraft/b1900d/Models/Liveries");
 
 ###### warning panel ########
 var Warning=props.globals.getNode("/instrumentation/annunciators/warning",1);

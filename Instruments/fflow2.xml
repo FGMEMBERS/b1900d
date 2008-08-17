@@ -29,7 +29,7 @@
     <animation>
         <type>rotate</type>
         <object-name>PPH.needle</object-name>
-        <property>/engines/engine[1]/fuel-flow-pph</property>
+        <property>/engines/engine[1]/fuel-flow_pph</property>
         <interpolation>
             <entry>
                 <ind>0.0</ind><dep>0.0</dep>

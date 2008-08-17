@@ -2,6 +2,17 @@
 <PropertyList>
 
     <path>b1900d.ac</path>
+
+    <nasal>
+        <load>
+            var livery_update = aircraft.livery_update.new("Aircraft/b1900d/Models/Liveries", 10);
+        </load>
+
+        <unload>
+            livery_update.stop();
+        </unload>
+    </nasal>
+
     <animation>
       <type>material</type>
       <object-name>Engines</object-name>
@@ -15,11 +26,12 @@
       <object-name>RHflap</object-name>
       <object-name>RHflap1</object-name>
       <object-name>Rudder</object-name>
+      <object-name>Tail</object-name>
       <object-name>Trim</object-name>
       <object-name>Wing</object-name>
       <property-base>/sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
-      <texture>NZAlivery.rgb</texture>
+      <texture>paint3.rgb</texture>
     </animation>
 
     <panel>
@@ -801,7 +813,7 @@
         <condition>
             <greater-than>
                 <property>engines/engine[0]/n2</property>
-                <value>70</value>
+                <value>70.000</value>
             </greater-than>
         </condition>
     </animation>
@@ -812,11 +824,11 @@
         <condition>
             <greater-than>
                 <property>engines/engine[0]/n2</property>
-                <value>50</value>
+                <value>50.000</value>
             </greater-than>
             <less-than>
                 <property>engines/engine[0]/n2</property>
-                <value>70.01</value>
+                <value>70.001</value>
             </less-than>
         </condition>
     </animation>
@@ -827,7 +839,7 @@
         <condition>
             <less-than>
                 <property>engines/engine[0]/n2</property>
-                <value>50.01</value>
+                <value>50.0001</value>
             </less-than>
         </condition>
     </animation>
@@ -1000,7 +1012,7 @@
         <condition>
             <greater-than>
                 <property>engines/engine[1]/n2</property>
-                <value>70</value>
+                <value>70.000</value>
             </greater-than>
         </condition>
     </animation>
@@ -1011,11 +1023,11 @@
         <condition>
             <greater-than>
                 <property>engines/engine[1]/n2</property>
-                <value>50</value>
+                <value>50.000</value>
             </greater-than>
             <less-than>
                 <property>engines/engine[1]/n2</property>
-                <value>70.01</value>
+                <value>70.001</value>
             </less-than>
         </condition>
     </animation>
@@ -1026,7 +1038,7 @@
         <condition>
             <less-than>
                 <property>engines/engine[1]/n2</property>
-                <value>50.01</value>
+                <value>50.001</value>
             </less-than>
         </condition>
     </animation>
@@ -2230,10 +2242,10 @@
     </animation>
 
     <animation>
-        <type>rotate</type>
+        <type>spin</type>
         <object-name>FTire</object-name>
         <property>gear/gear[0]/rollspeed-ms</property>
-        <factor>268</factor>
+        <factor>15</factor>
         <center>
             <x-m>-6.874</x-m>
             <y-m>0.0</y-m>
@@ -2375,10 +2387,10 @@
     </animation>
 
     <animation>
-        <type>rotate</type>
+        <type>spin</type>
         <object-name>RHwheel</object-name>
         <property>gear/gear[2]/rollspeed-ms</property>
-        <factor>268</factor>
+        <factor>15</factor>
         <center>
             <x-m>0.596</x-m>
             <y-m>2.635</y-m>
@@ -2520,10 +2532,10 @@
     </animation>
 
     <animation>
-        <type>rotate</type>
+        <type>spin</type>
         <object-name>LHwheel</object-name>
         <property>gear/gear[1]/rollspeed-ms</property>
-        <factor>268</factor>
+        <factor>15</factor>
         <center>
             <x-m>0.596</x-m>
             <y-m>-2.635</y-m>
@@ -2735,9 +2747,9 @@
             <z>1.0</z>
         </axis>
         <center>
-            <x-m>-4.737</x-m>
+            <x-m>-4.767</x-m>
             <y-m>-0.002</y-m>
-            <z-m>0.274</z-m>
+            <z-m>0.280</z-m>
         </center>
     </animation>	
 

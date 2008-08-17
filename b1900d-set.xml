@@ -15,7 +15,7 @@ July 2004 Syd Adams
         <aero>b1900d</aero>
         <fuel-fraction>0.5</fuel-fraction>
         <startup>
-            <splash-texture>Aircraft/b1900d/b1900dsplash1.rgb</splash-texture>
+            <splash-texture>Aircraft/b1900d/b1900dsplash.rgb</splash-texture>
         </startup>
 
         <tutorials>

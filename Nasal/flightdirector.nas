@@ -94,9 +94,9 @@ var flightdirector = {
         m.bank_limit.setBoolValue(0);
 
         m.max_pitch=m.node.getNode("pitch-max",1);
-        m.max_pitch.setDoubleValue(10);
+        m.max_pitch.setDoubleValue(5);
         m.min_pitch=m.node.getNode("pitch-min",1);
-        m.min_pitch.setDoubleValue(-10);
+        m.min_pitch.setDoubleValue(-5);
         m.max_roll=m.node.getNode("roll-max",1);
         m.max_roll.setDoubleValue(27);
         m.min_roll=m.node.getNode("roll-min",1);
