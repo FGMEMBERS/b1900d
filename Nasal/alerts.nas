@@ -147,7 +147,11 @@ var Alarm = {
 ###############
     check_gpws:func{
         var msg =1;
-        if(getprop("gear/gear[1]/wow"))msg=0;
+        if(getprop("gear/gear[1]/wow")){
+            msg=0;
+            me.terrain_active.setValue(0);
+            me.altitude_active.setValue(0);
+        }
         var pwr=getprop("systems/electrical/volts");
         if(pwr==nil)pwr=0;
         if(pwr<5)msg=0;
