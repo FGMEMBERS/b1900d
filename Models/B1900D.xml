@@ -28,93 +28,38 @@
       <object-name>Rudder</object-name>
       <object-name>Tail</object-name>
       <object-name>Trim</object-name>
+      <object-name>Door</object-name>
       <object-name>Wing</object-name>
-      <property-base>/sim/model/livery</property-base>
+      <property-base>sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
-      <texture>paint3.rgb</texture>
+      <texture>paint2.png</texture>
     </animation>
 
     <panel>
-        <path>Aircraft/b1900d/Panel/b1900d-panel.xml</path>
+        <name>GPS screen</name>
+        <path>Aircraft/b1900d/Panel/gps.xml</path>
         <bottom-left>
-            <x-m>-4.663</x-m>
-            <y-m>-0.618</y-m>
-            <z-m>-0.317</z-m>
+            <x-m>-4.859</x-m>
+            <y-m>0.099</y-m>
+            <z-m>-0.092</z-m>
         </bottom-left>
         <bottom-right>
-            <x-m>-4.663</x-m>
-            <y-m>0.586</y-m>
-            <z-m>-0.317</z-m>
+            <x-m>-4.859</x-m>
+            <y-m>0.164</y-m>
+            <z-m>-0.092</z-m>
         </bottom-right>
         <top-left>
-            <x-m>-4.898</x-m>
-            <y-m>-0.618</y-m>
-            <z-m>0.561</z-m>
+            <x-m>-4.864</x-m>
+            <y-m>0.099</y-m>
+            <z-m>-0.061</z-m>
         </top-left>
     </panel>
-
-    <panel>
-        <path>Aircraft/b1900d/Panel/b1900d-throttles.xml</path>
-        <bottom-left>
-            <x-m>-4.362</x-m>
-            <y-m>-0.159</y-m>
-            <z-m>-0.479</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>-4.362</x-m>
-            <y-m>0.090</y-m>
-            <z-m>-0.479</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>-4.634</x-m>
-            <y-m>-0.159</y-m>
-            <z-m>-0.288</z-m>
-        </top-left>
-    </panel>
-
-    <panel>
-        <path>Aircraft/b1900d/Panel/b1900d-pedestal.xml</path>
-        <bottom-left>
-            <x-m>-3.987</x-m>
-            <y-m>-0.136</y-m>
-            <z-m>-0.531</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>-3.987</x-m>
-            <y-m>0.113</y-m>
-            <z-m>-0.531</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>-4.360</x-m>
-            <y-m>-0.136</y-m>
-            <z-m>-0.499</z-m>
-        </top-left>
-    </panel>
-
-    <panel>
-        <path>Aircraft/b1900d/Panel/lightswitches.xml</path>
-        <bottom-left>
-            <x-m>-4.453</x-m>
-            <y-m>-0.203</y-m>
-            <z-m>0.441</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>-4.453</x-m>
-            <y-m>0.201</y-m>
-            <z-m>0.441</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>-4.189</x-m>
-            <y-m>-0.203</y-m>
-            <z-m>0.594</z-m>
-        </top-left>
-    </panel>
-
+<!--
     <model>
         <name>GPWS warning lamp/button (captain)</name>
         <path>Aircraft/Instruments-3d/mk-viii/warning0.xml</path>
         <offsets>
-            <x-m>-4.78336</x-m>
+            <x-m>-4.88336</x-m>
             <y-m>-0.483107</y-m>
             <z-m>0.056249</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -125,7 +70,7 @@
         <name>GPWS caution lamp/button (captain)</name>
         <path>Aircraft/Instruments-3d/mk-viii/caution0.xml</path>
         <offsets>
-            <x-m>-4.78336</x-m>
+            <x-m>-4.88336</x-m>
             <y-m>-0.465107</y-m>
             <z-m>0.056249</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -136,7 +81,7 @@
         <name>GPWS warning lamp/button (first officer)</name>
         <path>Aircraft/Instruments-3d/mk-viii/warning1.xml</path>
         <offsets>
-            <x-m>-4.78336</x-m>
+            <x-m>-4.88336</x-m>
             <y-m>0.447107</y-m>
             <z-m>0.056249</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -147,7 +92,7 @@
         <name>GPWS caution lamp/button (first officer)</name>
         <path>Aircraft/Instruments-3d/mk-viii/caution1.xml</path>
         <offsets>
-            <x-m>-4.78336</x-m>
+            <x-m>-4.88336</x-m>
             <y-m>0.465107</y-m>
             <z-m>0.056249</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -158,7 +103,7 @@
         <name>GPWS glideslope cancelled lamp</name>
         <path>Aircraft/Instruments-3d/mk-viii/glideslope-cancelled.xml</path>
         <offsets>
-            <x-m>-4.74678</x-m>
+            <x-m>-4.84678</x-m>
             <y-m>-0.297468</y-m>
             <z-m>-0.128687</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -169,7 +114,7 @@
         <name>GPWS inop lamp</name>
         <path>Aircraft/Instruments-3d/mk-viii/inop.xml</path>
         <offsets>
-            <x-m>-4.74678</x-m>
+            <x-m>-4.84678</x-m>
             <y-m>-0.279468</y-m>
             <z-m>-0.128687</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -180,7 +125,7 @@
         <name>GPWS flap override lamp/button</name>
         <path>Aircraft/Instruments-3d/mk-viii/flap-override.xml</path>
         <offsets>
-            <x-m>-4.74678</x-m>
+            <x-m>-4.84678</x-m>
             <y-m>-0.261468</y-m>
             <z-m>-0.128687</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -191,7 +136,7 @@
         <name>GPWS steep approach lamp/button</name>
         <path>Aircraft/Instruments-3d/mk-viii/steep-approach.xml</path>
         <offsets>
-            <x-m>-4.74478</x-m>
+            <x-m>-4.84478</x-m>
             <y-m>-0.254722</y-m>
             <z-m>-0.151416</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -202,9 +147,10 @@
         <name>GPWS terrain fail lamp</name>
         <path>Aircraft/Instruments-3d/mk-viii/terrain-fail.xml</path>
         <offsets>
-            <x-m>-4.76047</x-m>
+            <x-m>-4.86047</x-m>
             <y-m>0.036922789</y-m>
             <z-m>-0.0675728</z-m>
+            <pitch-deg>-10</pitch-deg>
         </offsets>
     </model>
 
@@ -212,9 +158,10 @@
         <name>GPWS terrain inhibit lamp/button</name>
         <path>Aircraft/Instruments-3d/mk-viii/terrain-inhibit.xml</path>
         <offsets>
-            <x-m>-4.76047</x-m>
+            <x-m>-4.86047</x-m>
             <y-m>0.018922789</y-m>
             <z-m>-0.0675728</z-m>
+            <pitch-deg>-10</pitch-deg>
         </offsets>
     </model>
 
@@ -222,17 +169,18 @@
         <name>GPWS inhibit lamp/button</name>
         <path>Aircraft/Instruments-3d/mk-viii/inhibit.xml</path>
         <offsets>
-            <x-m>-4.76047</x-m>
+            <x-m>-4.86047</x-m>
             <y-m>0.000922786</y-m>
             <z-m>-0.0675728</z-m>
+            <pitch-deg>-10</pitch-deg>
         </offsets>
     </model>
-
+-->
     <model>
         <name>VHF-22 Com1</name>
-        <path>Aircraft/Instruments-3d/VHF-22/ctl22-com1.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/ctl22-com1.xml</path>
         <offsets>
-            <x-m>-4.774</x-m>
+            <x-m>-4.874</x-m>
             <y-m>-0.080</y-m>
             <z-m>-0.016</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -241,9 +189,9 @@
 
     <model>
         <name>VHF-22 Com2</name>
-        <path>Aircraft/Instruments-3d/VHF-22/ctl22-com2.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/ctl22-com2.xml</path>
         <offsets>
-            <x-m>-4.774</x-m>
+            <x-m>-4.874</x-m>
             <y-m>0.181</y-m>
             <z-m>-0.016</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -252,9 +200,9 @@
 
     <model>
         <name>VIR-32 Nav1</name>
-        <path>Aircraft/Instruments-3d/VIR-32/ctl32-nav1.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/ctl32-nav1.xml</path>
         <offsets>
-            <x-m>-4.774</x-m>
+            <x-m>-4.874</x-m>
             <y-m>-0.015</y-m>
             <z-m>-0.016</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -263,9 +211,9 @@
 
     <model>
         <name>VIR-32 Nav2</name>
-        <path>Aircraft/Instruments-3d/VIR-32/ctl32-nav2.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/ctl32-nav2.xml</path>
         <offsets>
-            <x-m>-4.774</x-m>
+            <x-m>-4.874</x-m>
             <y-m>0.116</y-m>
             <z-m>-0.016</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -274,9 +222,9 @@
 
     <model>
         <name>ADF-462</name>
-        <path>Aircraft/Instruments-3d/ADF-462/ctl62-adf.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/ctl62-adf.xml</path>
         <offsets>
-            <x-m>-4.752</x-m>
+            <x-m>-4.852</x-m>
             <y-m>-0.077</y-m>
             <z-m>-0.140</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -285,9 +233,9 @@
 
     <model>
         <name>TDR-94</name>
-        <path>Aircraft/Instruments-3d/TDR-94/ctl92-transponder.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/ctl92-transponder.xml</path>
         <offsets>
-            <x-m>-4.752</x-m>
+            <x-m>-4.852</x-m>
             <y-m>0.173</y-m>
             <z-m>-0.140</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -296,9 +244,9 @@
 
     <model>
         <name>Stby-gyro</name>
-        <path>Aircraft/b1900d/Instruments/stby-gyro.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/stby-gyro.xml</path>
         <offsets>
-            <x-m>-4.774</x-m>
+            <x-m>-4.874</x-m>
             <y-m>0.050</y-m>
             <z-m>-0.018</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -307,9 +255,9 @@
 
     <model>
         <name>ITT1 gauge</name>
-        <path>Aircraft/b1900d/Instruments/itt1.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/itt1.xml</path>
         <offsets>
-            <x-m>-4.792</x-m>
+            <x-m>-4.892</x-m>
             <y-m>-0.205</y-m>
             <z-m>0.094</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -318,9 +266,9 @@
 
     <model>
         <name>ITT2 gauge</name>
-        <path>Aircraft/b1900d/Instruments/itt2.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/itt2.xml</path>
         <offsets>
-            <x-m>-4.792</x-m>
+            <x-m>-4.892</x-m>
             <y-m>-0.149</y-m>
             <z-m>0.094</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -329,9 +277,9 @@
 
     <model>
         <name>Torq1 gauge</name>
-        <path>Aircraft/b1900d/Instruments/torq1.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/torq1.xml</path>
         <offsets>
-            <x-m>-4.783</x-m>
+            <x-m>-4.883</x-m>
             <y-m>-0.205</y-m>
             <z-m>0.043</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -340,9 +288,9 @@
 
     <model>
         <name>Torq2 gauge</name>
-        <path>Aircraft/b1900d/Instruments/torq2.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/torq2.xml</path>
         <offsets>
-            <x-m>-4.783</x-m>
+            <x-m>-4.883</x-m>
             <y-m>-0.149</y-m>
             <z-m>0.043</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -351,9 +299,9 @@
 
     <model>
         <name>RPM1 gauge</name>
-        <path>Aircraft/b1900d/Instruments/rpm1.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/rpm1.xml</path>
         <offsets>
-            <x-m>-4.774</x-m>
+            <x-m>-4.874</x-m>
             <y-m>-0.205</y-m>
             <z-m>-0.008</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -362,9 +310,9 @@
 
     <model>
         <name>RPM2 gauge</name>
-        <path>Aircraft/b1900d/Instruments/rpm2.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/rpm2.xml</path>
         <offsets>
-            <x-m>-4.774</x-m>
+            <x-m>-4.874</x-m>
             <y-m>-0.149</y-m>
             <z-m>-0.008</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -373,9 +321,9 @@
 
     <model>
         <name>N21 gauge</name>
-        <path>Aircraft/b1900d/Instruments/n21.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/n21.xml</path>
         <offsets>
-            <x-m>-4.765</x-m>
+            <x-m>-4.865</x-m>
             <y-m>-0.205</y-m>
             <z-m>-0.059</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -384,9 +332,9 @@
 
     <model>
         <name>N22 gauge</name>
-        <path>Aircraft/b1900d/Instruments/n22.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/n22.xml</path>
         <offsets>
-            <x-m>-4.765</x-m>
+            <x-m>-4.865</x-m>
             <y-m>-0.149</y-m>
             <z-m>-0.059</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -395,9 +343,9 @@
 
     <model>
         <name>FFlow1 gauge</name>
-        <path>Aircraft/b1900d/Instruments/fflow1.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/fflow1.xml</path>
         <offsets>
-            <x-m>-4.756</x-m>
+            <x-m>-4.856</x-m>
             <y-m>-0.205</y-m>
             <z-m>-0.110</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -406,9 +354,9 @@
 
     <model>
         <name>FFlow2 gauge</name>
-        <path>Aircraft/b1900d/Instruments/fflow2.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/fflow2.xml</path>
         <offsets>
-            <x-m>-4.756</x-m>
+            <x-m>-4.856</x-m>
             <y-m>-0.149</y-m>
             <z-m>-0.110</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -417,9 +365,9 @@
 
     <model>
         <name>Oil1 gauge</name>
-        <path>Aircraft/b1900d/Instruments/oilp1.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/oilp1.xml</path>
         <offsets>
-            <x-m>-4.747</x-m>
+            <x-m>-4.847</x-m>
             <y-m>-0.205</y-m>
             <z-m>-0.161</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -428,9 +376,9 @@
 
     <model>
         <name>Oil2 gauge</name>
-        <path>Aircraft/b1900d/Instruments/oilp2.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/oilp2.xml</path>
         <offsets>
-            <x-m>-4.747</x-m>
+            <x-m>-4.847</x-m>
             <y-m>-0.149</y-m>
             <z-m>-0.161</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -439,9 +387,9 @@
 
     <model>
         <name>ALT1 gauge</name>
-        <path>Aircraft/b1900d/Instruments/altimeter1.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/altimeter1.xml</path>
         <offsets>
-            <x-m>-4.777</x-m>
+            <x-m>-4.877</x-m>
             <y-m>-0.280</y-m>
             <z-m>0.002</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -450,9 +398,9 @@
 
     <model>
         <name>ALT2 gauge</name>
-        <path>Aircraft/b1900d/Instruments/altimeter1.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/altimeter1.xml</path>
         <offsets>
-            <x-m>-4.777</x-m>
+            <x-m>-4.877</x-m>
             <y-m>0.257</y-m>
             <z-m>0.002</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -461,9 +409,9 @@
 
     <model>
         <name>VSI 1 gauge</name>
-        <path>Aircraft/b1900d/Instruments/vsi.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/vsi.xml</path>
         <offsets>
-            <x-m>-4.760</x-m>
+            <x-m>-4.860</x-m>
             <y-m>-0.280</y-m>
             <z-m>-0.082</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -472,9 +420,9 @@
 
     <model>
         <name>VSI 2 gauge</name>
-        <path>Aircraft/b1900d/Instruments/vsi.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/vsi.xml</path>
         <offsets>
-            <x-m>-4.760</x-m>
+            <x-m>-4.860</x-m>
             <y-m>0.450</y-m>
             <z-m>-0.082</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -483,9 +431,9 @@
 
     <model>
         <name>ASI 1 gauge</name>
-        <path>Aircraft/b1900d/Instruments/asi300.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/asi300.xml</path>
         <offsets>
-            <x-m>-4.776</x-m>
+            <x-m>-4.876</x-m>
             <y-m>-0.475</y-m>
             <z-m>0.002</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -494,9 +442,9 @@
 
     <model>
         <name>ASI 2 gauge</name>
-        <path>Aircraft/b1900d/Instruments/asi300.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/asi300.xml</path>
         <offsets>
-            <x-m>-4.776</x-m>
+            <x-m>-4.876</x-m>
             <y-m>0.450</y-m>
             <z-m>0.002</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -505,9 +453,9 @@
 
     <model>
         <name>EFIS84 EADI-pilot</name>
-        <path>Aircraft/b1900d/Instruments/eadi.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/eadi.xml</path>
         <offsets>
-            <x-m>-4.776</x-m>
+            <x-m>-4.876</x-m>
             <y-m>-0.377</y-m>
             <z-m>-0.011</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -516,9 +464,9 @@
 
     <model>
         <name>EFIS84 EADI-copilot</name>
-        <path>Aircraft/b1900d/Instruments/eadi.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/eadi.xml</path>
         <offsets>
-            <x-m>-4.776</x-m>
+            <x-m>-4.876</x-m>
             <y-m>0.353</y-m>
             <z-m>-0.011</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -527,9 +475,9 @@
 
     <model>
         <name>EFIS84 EHSI-pilot</name>
-        <path>Aircraft/b1900d/Instruments/ehsi.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/ehsi.xml</path>
         <offsets>
-            <x-m>-4.756</x-m>
+            <x-m>-4.856</x-m>
             <y-m>-0.377</y-m>
             <z-m>-0.117</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -538,9 +486,9 @@
 
     <model>
         <name>EFIS84 EHSI-copilot</name>
-        <path>Aircraft/b1900d/Instruments/ehsi.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/ehsi.xml</path>
         <offsets>
-            <x-m>-4.756</x-m>
+            <x-m>-4.856</x-m>
             <y-m>0.353</y-m>
             <z-m>-0.117</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -549,20 +497,20 @@
 
     <model>
         <name>Autopilot Control</name>
-        <path>Aircraft/Instruments-3d/primus-1000/AP-control.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/AP-control.xml</path>
         <offsets>
-            <x-m>-4.178</x-m>
-            <y-m>-0.071</y-m>
-            <z-m>-0.520</z-m>
-            <pitch-deg>-86</pitch-deg>
+            <x-m>-4.337</x-m>
+            <y-m>-0.068</y-m>
+            <z-m>-0.506</z-m>
+            <pitch-deg>-90</pitch-deg>
         </offsets>
     </model>
 
     <model>
         <name>Altitude Set</name>
-        <path>Aircraft/b1900d/Instruments/altset.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/altset.xml</path>
         <offsets>
-            <x-m>-4.765</x-m>
+            <x-m>-4.865</x-m>
             <y-m>-0.070</y-m>
             <z-m>-0.070</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -571,9 +519,9 @@
 
     <model>
         <name>RMI pilot</name>
-        <path>Aircraft/b1900d/Instruments/rmi.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/rmi.xml</path>
         <offsets>
-            <x-m>-4.763</x-m>
+            <x-m>-4.863</x-m>
             <y-m>-0.473</y-m>
             <z-m>-0.080</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -582,9 +530,9 @@
 
     <model>
         <name>RMI copilot</name>
-        <path>Aircraft/b1900d/Instruments/rmi.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/rmi.xml</path>
         <offsets>
-            <x-m>-4.763</x-m>
+            <x-m>-4.863</x-m>
             <y-m>0.257</y-m>
             <z-m>-0.080</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -593,9 +541,9 @@
 
     <model>
         <name>Pilot clock</name>
-        <path>Aircraft/b1900d/Instruments/clock.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/clock.xml</path>
         <offsets>
-            <x-m>-4.773</x-m>
+            <x-m>-4.873</x-m>
             <y-m>-0.548</y-m>
             <z-m>-0.022</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -604,9 +552,9 @@
 
     <model>
         <name>Copilot clock</name>
-        <path>Aircraft/b1900d/Instruments/clock.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/clock.xml</path>
         <offsets>
-            <x-m>-4.773</x-m>
+            <x-m>-4.873</x-m>
             <y-m>0.524</y-m>
             <z-m>-0.022</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -614,33 +562,67 @@
     </model>
 
     <model>
-        <name>Fuel Quantity</name>
-        <path>Aircraft/b1900d/Instruments/fuelqty.xml</path>
+        <name>CCU-65</name>
+        <path>Aircraft/b1900d/Models/Instruments/ccu65.xml</path>
         <offsets>
-            <x-m>-4.548</x-m>
-            <y-m>-0.576</y-m>
-            <z-m>-0.089</z-m>
+            <x-m>-4.863</x-m>
+            <y-m>-0.547</y-m>
+            <z-m>-0.084</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>CCU-65 CP</name>
+        <path>Aircraft/b1900d/Models/Instruments/ccu65.xml</path>
+        <offsets>
+            <x-m>-4.863</x-m>
+            <y-m>0.525</y-m>
+            <z-m>-0.084</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+
+
+    <model>
+        <name>Fuel Quantity</name>
+        <path>Aircraft/b1900d/Models/Instruments/fuelqty.xml</path>
+        <offsets>
+            <x-m>-4.661</x-m>
+            <y-m>-0.601</y-m>
+            <z-m>-0.051</z-m>
             <pitch-deg>-30</pitch-deg>
-            <heading-deg>87</heading-deg>
+            <heading-deg>90</heading-deg>
         </offsets>
     </model>
 
     <model>
         <name>DC Panel</name>
-        <path>Aircraft/b1900d/Models/dcpanel.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/dcpanel.xml</path>
         <offsets>
-            <x-m>-4.468</x-m>
+            <x-m>-4.492</x-m>
             <y-m>0.0</y-m>
-            <z-m>0.415</z-m>
+            <z-m>0.494</z-m>
             <pitch-deg>30</pitch-deg>
         </offsets>
     </model>
 
     <model>
-        <name>FDC Pilot</name>
-        <path>Aircraft/b1900d/Instruments/fdc.xml</path>
+        <name>Mag Compass</name>
+        <path>Aircraft/b1900d/Models/Instruments/magcompass.xml</path>
         <offsets>
-            <x-m>-4.789</x-m>
+            <x-m>-4.706</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.407</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>FDC Pilot</name>
+        <path>Aircraft/b1900d/Models/Instruments/fdc.xml</path>
+        <offsets>
+            <x-m>-4.889</x-m>
             <y-m>-0.378</y-m>
             <z-m>0.071</z-m>
             <pitch-deg>-10</pitch-deg>
@@ -649,11 +631,22 @@
 
     <model>
         <name>FDC CoPilot</name>
-        <path>Aircraft/b1900d/Instruments/fdc.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/fdc.xml</path>
         <offsets>
-            <x-m>-4.789</x-m>
+            <x-m>-4.889</x-m>
             <y-m>0.356</y-m>
             <z-m>0.071</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>GPS</name>
+        <path>Aircraft/b1900d/Models/Instruments/kln90b.xml</path>
+        <offsets>
+            <x-m>-4.864</x-m>
+            <y-m>0.132</y-m>
+            <z-m>-0.080</z-m>
             <pitch-deg>-10</pitch-deg>
         </offsets>
     </model>
@@ -674,9 +667,9 @@
         <object-name>flapgauge</object-name>
         <object-name>Flapneedle</object-name>
         <emission>
-            <red>1.0</red>
-            <green>0.5</green>
-            <blue>0.2</blue>
+            <red>0.035</red>
+            <green>0.012</green>
+            <blue>0.007</blue>
             <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
         </emission>
     </animation>
@@ -757,7 +750,7 @@
 
     <animation>
         <type>material</type>
-        <object-name>Cabin</object-name>
+        <object-name>Fdeck</object-name>
         <condition>
             <not-equals>
                 <property>controls/lighting/instrument-lights</property>
@@ -774,28 +767,6 @@
 
     <animation>
         <type>material</type>
-        <object-name>LwrPanel</object-name>
-        <object-name>Panel1</object-name>
-        <object-name>ThrottleQuadrant</object-name>
-        <object-name>GPSbezel</object-name>
-        <object-name>Firehandles</object-name>
-        <object-name>Radios</object-name>
-        <condition>
-            <not-equals>
-                <property>controls/lighting/instrument-lights</property>
-                <value>0</value>
-            </not-equals>
-        </condition>
-        <emission>
-            <red>0.2</red>
-            <green>0.22</green>
-            <blue>0.2</blue>
-            <factor-prop>/controls/lighting/panel-norm</factor-prop>
-        </emission>
-    </animation>
-
-    <animation>
-        <type>material</type>
         <object-name>LitPanel</object-name>
         <emission>
             <red>0.8</red>
@@ -805,6 +776,28 @@
         </emission>
     </animation>
 
+   <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/b1900d/Models/chrome1.png</texture>
+        <object-name>Glass</object-name>
+        <object-name>windows</object-name>
+    </animation>
+
+    <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/b1900d/Models/chrome2.png</texture>
+        <object-name>LHspinner</object-name>
+        <object-name>RHspinner</object-name>
+        <object-name>Inlet.heaters</object-name>
+        <object-name>Tx.lens</object-name>
+        <object-name>Land.lens</object-name>
+        <object-name>handle</object-name>
+        <object-name>handle.001</object-name>
+    </animation>
+
+
 <!--                LH ENGINE          -->
 
     <animation>
@@ -813,7 +806,7 @@
         <condition>
             <greater-than>
                 <property>engines/engine[0]/n2</property>
-                <value>70.000</value>
+                <value>70.0000</value>
             </greater-than>
         </condition>
     </animation>
@@ -828,7 +821,7 @@
             </greater-than>
             <less-than>
                 <property>engines/engine[0]/n2</property>
-                <value>70.001</value>
+                <value>70.0001</value>
             </less-than>
         </condition>
     </animation>
@@ -877,23 +870,6 @@
         </axis>
     </animation>
 
-    <animation>
-        <type>spin</type>
-        <object-name>LHFastprop</object-name>
-        <property>engines/engine[0]/n2</property>
-        <factor>.1</factor>   
-        <center>
-            <x-m>-2.226</x-m>
-            <y-m>-2.634</y-m>
-            <z-m>-0.327</z-m>
-        </center>
-        <axis>
-            <x>-1.0</x>
-            <y>0.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-  
 <!--          Prop pitch  -->
 
     <animation>
@@ -1012,7 +988,7 @@
         <condition>
             <greater-than>
                 <property>engines/engine[1]/n2</property>
-                <value>70.000</value>
+                <value>70.0000</value>
             </greater-than>
         </condition>
     </animation>
@@ -1027,7 +1003,7 @@
             </greater-than>
             <less-than>
                 <property>engines/engine[1]/n2</property>
-                <value>70.001</value>
+                <value>70.0001</value>
             </less-than>
         </condition>
     </animation>
@@ -1064,23 +1040,6 @@
         <object-name>RHSlowprop</object-name>
         <property>engines/engine[1]/n2</property>
         <factor>.5</factor>   
-        <center>
-            <x-m>-2.226</x-m>
-            <y-m>2.634</y-m>
-            <z-m>-0.327</z-m>
-        </center>
-        <axis>
-            <x>-1.0</x>
-            <y>0.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-    
-    <animation>
-        <type>spin</type>
-        <object-name>RHFastprop</object-name>
-        <property>engines/engine[1]/n2</property>
-        <factor>.1</factor>   
         <center>
             <x-m>-2.226</x-m>
             <y-m>2.634</y-m>
@@ -1204,14 +1163,97 @@
 <!--####    Controls    ####-->
 
     <animation>
+        <type>rotate</type>
+        <object-name>Door</object-name>
+<object-name>Door.inner</object-name>
+<object-name>handle.001</object-name>
+        <property>controls/cabin-door/position-norm</property>
+        <factor>145.0</factor>
+        <center>
+            <x-m>-3.438</x-m>
+            <y-m>-0.620</y-m>
+            <z-m>-0.768</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
         <type>select</type>
-        <object-name>Gearlamp</object-name>
+        <object-name>Nosegear.lamp</object-name>
         <condition>
-            <equals>
-                <property>gear/gear/position-norm</property>
-                <value>1</value>
-            </equals>
+            <and>
+                <equals>
+                    <property>gear/gear/position-norm</property>
+                    <value>1</value>
+                </equals>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
         </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LHgear.lamp</object-name>
+        <condition>
+            <and>
+                <equals>
+                    <property>gear/gear[1]/position-norm</property>
+                    <value>1</value>
+                </equals>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RHgear.lamp</object-name>
+        <condition>
+            <and>
+                <equals>
+                    <property>gear/gear[2]/position-norm</property>
+                    <value>1</value>
+                </equals>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>RHpedal</object-name>
+        <property>controls/flight/rudder</property>
+        <factor>0.05</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>LHpedal</object-name>
+        <property>controls/flight/rudder</property>
+        <factor>0.05</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
     </animation>
 
     <animation>
@@ -1233,9 +1275,9 @@
         <property>controls/flight/aileron</property>
         <factor>-45.0</factor>
         <center>
-            <x-m>-4.903</x-m>
-            <y-m>-0.379</y-m>
-            <z-m>-0.248</z-m>
+            <x-m>-4.853</x-m>
+            <y-m>-0.373</y-m>
+            <z-m>-0.258</z-m>
         </center>
         <axis>
             <x>0.973</x>
@@ -1250,9 +1292,9 @@
         <property>controls/flight/aileron</property>
         <factor>-45.0</factor>
         <center>
-            <x-m>-4.903</x-m>
-            <y-m>0.355</y-m>
-            <z-m>-0.247</z-m>
+            <x-m>-4.853</x-m>
+            <y-m>0.357</y-m>
+            <z-m>-0.258</z-m>
         </center>
         <axis>
             <x>0.973</x>
@@ -1268,9 +1310,9 @@
         <property>controls/engines/engine[0]/propeller-pitch</property>
         <factor>-28.0</factor>
         <center>
-            <x-m>-4.626</x-m>
+            <x-m>-4.734</x-m>
             <y-m>0.0</y-m>
-            <z-m>-0.501</z-m>
+            <z-m>-0.510</z-m>
         </center>
         <axis>
             <x>0.0</x>
@@ -1286,9 +1328,9 @@
         <property>controls/engines/engine[1]/propeller-pitch</property>
         <factor>-28.0</factor>
         <center>
-            <x-m>-4.626</x-m>
+            <x-m>-4.734</x-m>
             <y-m>0.0</y-m>
-            <z-m>-0.501</z-m>
+            <z-m>-0.510</z-m>
         </center>
         <axis>
             <x>0.0</x>
@@ -1304,9 +1346,9 @@
         <property>controls/engines/engine[0]/condition</property>
         <factor>-27.0</factor>
         <center>
-            <x-m>-4.626</x-m>
+            <x-m>-4.734</x-m>
             <y-m>0.0</y-m>
-            <z-m>-0.501</z-m>
+            <z-m>-0.510</z-m>
         </center>
         <axis>
             <x>0.0</x>
@@ -1322,9 +1364,9 @@
         <property>controls/engines/engine[1]/condition</property>
         <factor>-27.0</factor>
         <center>
-            <x-m>-4.626</x-m>
+            <x-m>-4.734</x-m>
             <y-m>0.0</y-m>
-            <z-m>-0.501</z-m>
+            <z-m>-0.510</z-m>
         </center>
         <axis>
             <x>0.0</x>
@@ -1339,9 +1381,9 @@
         <property>controls/flight/flaps</property>
         <factor>12.0</factor>
         <center>
-            <x-m>-4.626</x-m>
+            <x-m>-4.734</x-m>
             <y-m>0.0</y-m>
-            <z-m>-0.501</z-m>
+            <z-m>-0.510</z-m>
         </center>
         <axis>
             <x>0.0</x>
@@ -1355,11 +1397,11 @@
         <object-name>Throttle0</object-name>
         <object-name>Throttle0.001</object-name>
         <property>controls/engines/engine[0]/throttle</property>
-        <factor>-42.0</factor>
+        <factor>-28.5</factor>
         <center>
-            <x-m>-4.626</x-m>
+            <x-m>-4.734</x-m>
             <y-m>0.0</y-m>
-            <z-m>-0.501</z-m>
+            <z-m>-0.510</z-m>
         </center>
         <axis>
             <x>0.0</x>
@@ -1373,11 +1415,11 @@
         <object-name>Throttle1</object-name>
         <object-name>Throttle1.001</object-name>
         <property>controls/engines/engine[1]/throttle</property>
-        <factor>-42.0</factor>
+        <factor>-28.5</factor>
         <center>
-            <x-m>-4.626</x-m>
+            <x-m>-4.734</x-m>
             <y-m>0.0</y-m>
-            <z-m>-0.501</z-m>
+            <z-m>-0.510</z-m>
         </center>
         <axis>
             <x>0.0</x>
@@ -1392,7 +1434,7 @@
         <property>controls/flight/elevator-trim</property>
         <factor>160.0</factor>
         <center>
-            <x-m>-4.586</x-m>
+            <x-m>-4.687</x-m>
             <y-m>0.0</y-m>
             <z-m>-0.415</z-m>
         </center>
@@ -1407,16 +1449,16 @@
         <type>rotate</type>
         <object-name>Atrim</object-name>
         <property>controls/flight/aileron-trim</property>
-        <factor>90.0</factor>
+        <factor>-90.0</factor>
         <center>
-            <x-m>-4.485</x-m>
-            <y-m>-0.038</y-m>
-            <z-m>-0.387</z-m>
+            <x-m>-4.537</x-m>
+            <y-m>-0.070</y-m>
+            <z-m>-0.457</z-m>
         </center>
         <axis>
-            <x>1.0</x>
+            <x>0.906</x>
             <y>0.0</y>
-            <z>0.2</z>
+            <z>0.423</z>
         </axis>
     </animation>
 
@@ -1424,33 +1466,70 @@
         <type>rotate</type>
         <object-name>Rtrim</object-name>
         <property>controls/flight/rudder-trim</property>
-        <factor>90.0</factor>
+        <factor>-90.0</factor>
         <center>
-            <x-m>-4.446</x-m>
-            <y-m>0.030</y-m>
-            <z-m>-0.421</z-m>
+            <x-m>-4.518</x-m>
+            <y-m>0.026</y-m>
+            <z-m>-0.467</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0.766</x>
             <y>0.0</y>
-            <z>1.0</z>
+            <z>0.643</z>
         </axis>
     </animation>
 
     <animation>
         <type>rotate</type>
         <object-name>Gearlever</object-name>
+        <object-name>Gearwarn</object-name>
         <property>controls/gear/gear-down</property>
-        <factor>20.0</factor>
+        <factor>10.0</factor>
         <center>
-            <x-m>-4.805</x-m>
+            <x-m>-4.970</x-m>
             <y-m>-0.0</y-m>
-            <z-m>-0.278</z-m>
+            <z-m>-0.371</z-m>
         </center>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
             <z>0.0</z>
+        </axis>
+    </animation>
+
+<!-- Wipers -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RHwiper</object-name>
+        <property>controls/electric/wipers/position-norm</property>
+        <factor>60.0</factor>
+        <center>
+            <x-m>-5.167</x-m>
+            <y-m>0.107</y-m>
+            <z-m>0.123</z-m>
+        </center>
+        <axis>
+            <x>-0.615</x>
+            <y>0.140</y>
+            <z>0.776</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>LHwiper</object-name>
+        <property>controls/electric/wipers/position-norm</property>
+        <factor>-60.0</factor>
+        <center>
+            <x-m>-5.167</x-m>
+            <y-m>-0.107</y-m>
+            <z-m>0.123</z-m>
+        </center>
+        <axis>
+            <x>-0.615</x>
+            <y>-0.140</y>
+            <z>0.776</z>
         </axis>
     </animation>
 
@@ -1477,7 +1556,10 @@
         <type>select</type>
         <object-name>gps-leg</object-name>
         <condition>
-            <property>instrumentation/gps/leg-mode</property>
+            <and>
+                <property>instrumentation/gps/leg-mode</property>
+                <property>instrumentation/gps/serviceable</property>
+            </and>
         </condition>
     </animation>
     
@@ -1486,6 +1568,7 @@
         <object-name>gps-appr</object-name>
         <condition>
             <property>instrumentation/gps/approach-active</property>
+            <property>instrumentation/gps/serviceable</property>
         </condition>
     </animation>
 
@@ -1493,7 +1576,10 @@
         <type>select</type>
         <object-name>Beacon1</object-name>
         <condition>
-            <property>controls/lighting/beacon-state/state</property>
+            <greater-than>
+                <property>systems/electrical/outputs/beacon</property>
+                <value>0</value>
+            </greater-than>
         </condition>
     </animation>
     
@@ -1516,10 +1602,16 @@
         <type>select</type>
         <object-name>Beacon2</object-name>
         <condition>
-            <not>
-                <property>controls/lighting/beacon-state/state</property>
-            </not>
-            <property>controls/lighting/beacon</property>
+            <and>
+                <equals>
+                    <property>systems/electrical/outputs/beacon</property>
+                    <value>0</value>
+                </equals>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
         </condition>
     </animation>
       
@@ -1538,15 +1630,18 @@
         <type>billboard</type>
         <object-name>Beacon2</object-name>
     </animation>
-  
+
     <animation>
         <type>select</type>
         <object-name>Strobe1</object-name>
         <condition>
-            <property>controls/lighting/strobe-state/state</property>
+            <greater-than>
+                <property>systems/electrical/outputs/strobe</property>
+                <value>0</value>
+            </greater-than>
         </condition>
     </animation>
-    
+
     <animation>
         <type>translate</type>
         <object-name>Strobe1</object-name>
@@ -1567,7 +1662,10 @@
         <type>select</type>
         <object-name>Strobe2</object-name>
         <condition>
-            <property>controls/lighting/strobe-state/state</property>
+            <greater-than>
+                <property>systems/electrical/outputs/strobe</property>
+                <value>0</value>
+            </greater-than>
         </condition>
     </animation>
     
@@ -1586,10 +1684,27 @@
         <type>billboard</type>
         <object-name>Strobe2</object-name>
     </animation>
-  
+
     <animation>
         <type>select</type>
-        <object-name>LH-landing</object-name>
+        <object-name>navlight.glow</object-name>
+        <condition>
+            <and>
+                <not>
+                    <property>controls/lighting/strobe-state/state</property>
+                </not>
+                <greater-than>
+                    <property>systems/electrical/outputs/nav-lights</property>
+                    <value>0.2</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>LHflare</object-name>
         <condition>
             <greater-than>
                 <property>systems/electrical/outputs/landing-lights[0]</property>
@@ -1599,8 +1714,29 @@
     </animation>
 
     <animation>
+        <type>flash</type>
+        <object-name>LHflare</object-name>
+        <center>
+            <x-m>-0.882</x-m>
+            <y-m>-3.148</y-m>
+            <z-m>-0.686</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <power>2</power>
+        <factor>2</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.05</min>
+        <max>2</max>
+    </animation>
+
+    <animation>
         <type>select</type>
-        <object-name>RH-landing</object-name>
+        <object-name>RHflare</object-name>
         <condition>
             <greater-than>
                 <property>systems/electrical/outputs/landing-lights[1]</property>
@@ -1610,22 +1746,32 @@
     </animation>
 
     <animation>
+        <type>flash</type>
+        <object-name>RHflare</object-name>
+        <center>
+            <x-m>-0.882</x-m>
+            <y-m>3.148</y-m>
+            <z-m>-0.686</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <power>2</power>
+        <factor>2</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.05</min>
+        <max>2</max>
+    </animation>
+
+    <animation>
         <type>select</type>
         <object-name>Navlights</object-name>
         <condition>
             <greater-than>
                 <property>systems/electrical/outputs/nav-lights</property>
-                <value>0.2</value>
-            </greater-than>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>beacon</object-name>
-        <condition>
-            <greater-than>
-                <property>systems/electrical/outputs/beacon</property>
                 <value>0.2</value>
             </greater-than>
         </condition>
@@ -1658,22 +1804,26 @@
             </and>
         </condition>
     </animation>
-  
+
     <animation>
-        <type>select</type>
-        <object-name>Panel</object-name>
-        <condition>
-            <or>
-                <less-than>
-                    <property>sim/time/sun-angle-rad</property>
-                    <value>1.660001</value>
-                </less-than>
-                <equals>
-                    <property>controls/lighting/instrument-lights</property>
-                    <value>0.0</value>
-                </equals>
-            </or>
-        </condition>
+        <type>flash</type>
+        <object-name>Taxi-light</object-name>
+        <center>
+            <x-m>-7.024</x-m>
+            <y-m>0</y-m>
+            <z-m>-1.241</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <power>2</power>
+        <factor>2</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.05</min>
+        <max>2</max>
     </animation>
 
     <animation>
@@ -1691,19 +1841,7 @@
         </condition>
     </animation>
 
-    <animation>
-        <type>select</type>
-        <object-name>GPSbtn</object-name>
-        <condition>
-            <greater-than>
-                <property>systems/electrical/outputs/gps</property>
-                <value>0.2</value>
-            </greater-than>
-            <property>instrumentation/gps/serviceable</property>
-        </condition>
-    </animation>
-
-    <animation>
+        <animation>
         <type>translate</type>
         <object-name>Extlights</object-name>
         <property>controls/lighting/landing-lights</property>
@@ -1955,9 +2093,9 @@
             <z>0.0</z>
         </axis>
         <center>
-            <x-m>-4.335</x-m>
-            <y-m>-0.168</y-m>
-            <z-m>0.507</z-m>
+            <x-m>-4.369</x-m>
+            <y-m>-0.170</y-m>
+            <z-m>0.578</z-m>
         </center>
     </animation>
   
@@ -1979,9 +2117,9 @@
             <z>0.866</z>
         </axis>
         <center>
-            <x-m>-4.342</x-m>
-            <y-m>-0.131</y-m>
-            <z-m>0.505</z-m>
+            <x-m>-4.374</x-m>
+            <y-m>-0.134</y-m>
+            <z-m>0.578</z-m>
         </center>
     </animation>
   
@@ -2003,9 +2141,9 @@
             <z>0.866</z>
         </axis>
         <center>
-            <x-m>-4.342</x-m>
-            <y-m>-0.093</y-m>
-            <z-m>0.505</z-m>
+            <x-m>-4.374</x-m>
+            <y-m>-0.095</y-m>
+            <z-m>0.578</z-m>
         </center>
     </animation>
   
@@ -2027,31 +2165,41 @@
             <z>0.866</z>
         </axis>
         <center>
-            <x-m>-4.342</x-m>
-            <y-m>0.092</y-m>
-            <z-m>0.505</z-m>
+            <x-m>-4.374</x-m>
+            <y-m>0.091</y-m>
+            <z-m>0.578</z-m>
         </center>
     </animation>
 
     <animation>
         <type>rotate</type>
-        <object-name>Extpowerselect</object-name>
+        <object-name>Wiper.knob</object-name>
+        <property>controls/electric/wipers/switch</property>
+        <factor>45</factor>
+        <axis>
+            <x>-0.50</x>
+            <y>0.0</y>
+            <z>0.866</z>
+        </axis>
+        <center>
+            <x-m>-4.322</x-m>
+            <y-m>0.111</y-m>
+            <z-m>0.608</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ExtPwr</object-name>
         <property>controls/electric/external-power</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind><dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind><dep>-40.0</dep>
-            </entry>
-        </interpolation>
+        <factor>-40</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
             <z>0.0</z>
         </axis>
         <center>
-            <x-m>-4.735</x-m>
+            <x-m>-4.837</x-m>
             <y-m>-0.572</y-m>
             <z-m>-0.189</z-m>
         </center>
@@ -2059,23 +2207,16 @@
 
     <animation>
         <type>rotate</type>
-        <object-name>Avionicsswitch</object-name>
+        <object-name>AV</object-name>
         <property>controls/electric/avionics-switch</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind><dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind><dep>-40.0</dep>
-            </entry>
-        </interpolation>
+        <factor>-40.0</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
             <z>0.0</z>
         </axis>
         <center>
-            <x-m>-4.697</x-m>
+            <x-m>-4.798</x-m>
             <y-m>-0.581</y-m>
             <z-m>-0.256</z-m>
         </center>
@@ -2083,23 +2224,16 @@
 
     <animation>
         <type>rotate</type>
-        <object-name>Battselect</object-name>
+        <object-name>Batt</object-name>
         <property>controls/electric/battery-switch</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind><dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind><dep>-40.0</dep>
-            </entry>
-        </interpolation>
+        <factor>-40.0</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
             <z>0.0</z>
         </axis>
         <center>
-            <x-m>-4.718</x-m>
+            <x-m>-4.818</x-m>
             <y-m>-0.583</y-m>
             <z-m>-0.221</z-m>
         </center>
@@ -2107,51 +2241,140 @@
 
     <animation>
         <type>rotate</type>
-        <object-name>LHGen</object-name>
+        <object-name>LGen</object-name>
         <property>controls/electric/engine[0]/generator</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind><dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind><dep>-40.0</dep>
-            </entry>
-        </interpolation>
+        <factor>-40.0</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
             <z>0.0</z>
         </axis>
         <center>
-            <x-m>-4.718</x-m>
-            <y-m>-0.555</y-m>
+            <x-m>-4.818</x-m>
+            <y-m>-0.554</y-m>
             <z-m>-0.221</z-m>
         </center>
     </animation>
 
     <animation>
         <type>rotate</type>
-        <object-name>RHGen</object-name>
+        <object-name>RGen</object-name>
         <property>controls/electric/engine[1]/generator</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind><dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind><dep>-40.0</dep>
-            </entry>
-        </interpolation>
+        <factor>-40.0</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
             <z>0.0</z>
         </axis>
         <center>
-            <x-m>-4.718</x-m>
-            <y-m>-0.555</y-m>
+            <x-m>-4.819</x-m>
+            <y-m>-0.527</y-m>
             <z-m>-0.221</z-m>
         </center>
     </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Lstarter</object-name>
+        <property>controls/engines/engine[0]/starter</property>
+        <factor>-40.0</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-4.779</x-m>
+            <y-m>-0.581</y-m>
+            <z-m>-0.290</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Rstarter</object-name>
+        <property>controls/engines/engine[1]/starter</property>
+        <factor>-40.0</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-4.779</x-m>
+            <y-m>-0.581</y-m>
+            <z-m>-0.290</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Fswitch.3</object-name>
+        <property>controls/fuel/gauge-switch</property>
+        <factor>40.0</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-4.768</x-m>
+            <y-m>-0.586</y-m>
+            <z-m>-0.068</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>LAC</object-name>
+        <property>controls/electric/LH-AC-bus</property>
+        <factor>-40.0</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-4.837</x-m>
+            <y-m>-0.539</y-m>
+            <z-m>-0.191</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RAC</object-name>
+        <property>controls/electric/RH-AC-bus</property>
+        <factor>-40.0</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-4.837</x-m>
+            <y-m>-0.539</y-m>
+            <z-m>-0.191</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>GRlock</object-name>
+        <property>controls/gear/gear-lock</property>
+        <factor>40.0</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-4.789</x-m>
+            <y-m>-0.204</y-m>
+            <z-m>-0.274</z-m>
+        </center>
+    </animation>
+
 
 <!--####    Gear Animation    ####-->
 
@@ -2195,6 +2418,8 @@
     <animation>
         <type>rotate</type>
         <object-name>frtWheeldoor</object-name>
+        <object-name>frtWheeldoor.001</object-name>
+        <object-name>Tx.lens</object-name>
         <property>gear/gear[0]/position-norm</property>
         <offset-deg>95</offset-deg>
         <factor>-95</factor>
@@ -2739,22 +2964,6 @@
 
     <animation>
         <type>rotate</type>
-        <object-name>cmpsrose</object-name>
-        <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
-        <axis>
-            <x>0.0</x>
-            <y>0.0</y>
-            <z>1.0</z>
-        </axis>
-        <center>
-            <x-m>-4.767</x-m>
-            <y-m>-0.002</y-m>
-            <z-m>0.280</z-m>
-        </center>
-    </animation>	
-
-    <animation>
-        <type>rotate</type>
         <object-name>Flapneedle</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <interpolation>
@@ -2771,7 +2980,7 @@
             <z>-0.628</z>
         </axis>
         <center>
-            <x-m>-4.652</x-m>
+            <x-m>-4.754</x-m>
             <y-m>-0.077</y-m>
             <z-m>-0.285</z-m>
         </center>
@@ -2789,13 +2998,30 @@
         </axis>
     </animation>
 
-<!-- Warning Panel-->
+<!-- Alerts-->
 
+    <animation>
+        <type>select</type>
+        <object-name>Mstr.Warning.001</object-name>
+        <condition>
+            <property>instrumentation/annunciators/warning/flasher</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Mstr.Ctn.001</object-name>
+        <condition>
+            <property>instrumentation/annunciators/caution/flasher</property>
+            </condition>
+    </animation>
+
+<!-- Warning Panel-->
     <animation>
         <type>select</type>
         <object-name>LFP-lo</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/LFP-lo</property>
+            <property>instrumentation/annunciators/warning/L-fuel-psi</property>
             </condition>
     </animation>
 
@@ -2803,7 +3029,7 @@
         <type>select</type>
         <object-name>RFP-lo</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/RFP-lo</property>
+            <property>instrumentation/annunciators/warning/R-fuel-psi</property>
             </condition>
     </animation>
 
@@ -2811,7 +3037,7 @@
         <type>select</type>
         <object-name>LOP-lo</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/LOP-lo</property>
+            <property>instrumentation/annunciators/warning/L-oil-psi</property>
             </condition>
     </animation>
 
@@ -2819,7 +3045,7 @@
         <type>select</type>
         <object-name>ROP-lo</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/ROP-lo</property>
+            <property>instrumentation/annunciators/warning/R-oil-psi</property>
             </condition>
     </animation>
 
@@ -2827,7 +3053,7 @@
         <type>select</type>
         <object-name>CALT-hi</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/CBN-alt</property>
+            <property>instrumentation/annunciators/warning/cbn-alt</property>
             </condition>
     </animation>
 
@@ -2835,7 +3061,7 @@
         <type>select</type>
         <object-name>CDIFF-hi</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/CBN-diff</property>
+            <property>instrumentation/annunciators/warning/cbn-diff</property>
             </condition>
     </animation>
 
@@ -2843,7 +3069,7 @@
         <type>select</type>
         <object-name>CBN-door</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/CBN-door</property>
+            <property>instrumentation/annunciators/warning/cbn-door</property>
             </condition>
     </animation>
 
@@ -2851,7 +3077,7 @@
         <type>select</type>
         <object-name>CRG-door</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/BAG-door</property>
+            <property>instrumentation/annunciators/warning/crg-door</property>
             </condition>
     </animation>
 
@@ -2859,7 +3085,7 @@
         <type>select</type>
         <object-name>ARMlites</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/EMR-lights-armed</property>
+            <property>instrumentation/annunciators/warning/emer-lights</property>
             </condition>
     </animation>
 
@@ -2867,7 +3093,7 @@
         <type>select</type>
         <object-name>LENV-fail</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/LENV-fail</property>
+            <property>instrumentation/annunciators/warning/L-env-fail</property>
             </condition>
     </animation>
 
@@ -2875,7 +3101,7 @@
         <type>select</type>
         <object-name>RENV-fail</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/RENV-fail</property>
+            <property>instrumentation/annunciators/warning/R-env-fail</property>
             </condition>
     </animation>
 
@@ -2883,7 +3109,7 @@
         <type>select</type>
         <object-name>LAC-bus</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/LAC-fail</property>
+            <property>instrumentation/annunciators/warning/L-ac-bus</property>
             </condition>
     </animation>
 
@@ -2891,7 +3117,7 @@
         <type>select</type>
         <object-name>RAC-bus</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/RAC-fail</property>
+            <property>instrumentation/annunciators/warning/R-ac-bus</property>
             </condition>
     </animation>
 
@@ -2899,7 +3125,7 @@
         <type>select</type>
         <object-name>APtrim-fail</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/AP-trim-fail</property>
+            <property>instrumentation/annunciators/warning/AP-trim</property>
             </condition>
     </animation>
 
@@ -2915,7 +3141,7 @@
         <type>select</type>
         <object-name>LAIR-fail</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/LBL-AIR-fail</property>
+            <property>instrumentation/annunciators/warning/L-bleed-air</property>
             </condition>
     </animation>
 
@@ -2923,8 +3149,575 @@
         <type>select</type>
         <object-name>RAIR-fail</object-name>
         <condition>
-            <property>instrumentation/annunciators/warning/RBL-AIR-fail</property>
+            <property>instrumentation/annunciators/warning/R-bleed-air</property>
             </condition>
+    </animation>
+
+<!-- Hotspots-->
+<!-- OH panel -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>Masterpanel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/instrument-lights</property>
+                <step>1</step>
+                <min>0</min>
+                <max>1</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Extlights</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/landing-lights[0]</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Extlights.001</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/landing-lights[1]</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Extlights.002</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                    <command>property-toggle</command>
+                    <property>controls/lighting/taxi-lights</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Extlights.003</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                    <command>property-toggle</command>
+                    <property>controls/lighting/wing-lights</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Extlights.004</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                    <command>property-toggle</command>
+                    <property>controls/lighting/nav-lights</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Extlights.005</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                    <command>property-toggle</command>
+                    <property>controls/lighting/beacon</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Extlights.006</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                    <command>property-toggle</command>
+                    <property>controls/lighting/strobe</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Extlights.007</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                    <command>property-toggle</command>
+                    <property>controls/lighting/recog-lights</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Extlights.008</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                    <command>property-toggle</command>
+                    <property>controls/lighting/logo-lights</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Wiper.knob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/electric/wipers/switch</property>
+            <step>1</step>
+            <min>0</min>
+            <max>2</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Wiper.knob</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/electric/wipers/switch</property>
+            <step>-1</step>
+            <min>0</min>
+            <max>2</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+
+<!-- Main panel -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>Batt</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/battery-switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>LGen</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/engine[0]/generator</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RGen</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/engine[1]/generator</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ExtPwr</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/external-power</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>AV</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/avionics-switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>LAC</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/LH-AC-bus</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RAC</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/RH-AC-bus</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>GRlock</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/gear/gear-lock</property>
+            </binding>
+        </action>
+    </animation>
+
+
+<!--    EADI/EHSI dimmer switch      -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>EFISdimmer.dn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/efis-norm</property>
+                <step>-0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>EFISdimmer.up</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/efis-norm</property>
+                <step>0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>eadi.on</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/eadi/serviceable</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ehsi.on</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/ehsi/serviceable</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>GPS-apr</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>systems.Gps.GPSappr()</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>GPS-crs</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>systems.Gps.GPScrs()</script>
+            </binding>
+        </action>
+    </animation>
+
+<!-- Trim knobs -->
+    <animation>
+        <type>pick</type>
+        <object-name>Atrim</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/flight/aileron-trim</property>
+            <step>-0.01</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Atrim</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/flight/aileron-trim</property>
+            <step>0.01</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Rtrim</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/flight/rudder-trim</property>
+            <step>-0.01</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Rtrim</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/flight/rudder-trim</property>
+            <step>0.01</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Rtrim</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/flight/rudder-trim</property>
+            <step>0.01</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Fswitch.3</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/fuel/gauge-switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Stall.horn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>sim/alarms/stall-warning</property>
+            <value>1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>sim/alarms/stall-warning</property>
+                    <value>0</value>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Gearlever</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>systems.gear_toggle(-1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Gearlever</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>systems.gear_toggle(1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Mstr.Warning</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/annunciators/warning/Master</property>
+            <value>0</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Mstr.Ctn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/annunciators/caution/Master</property>
+            <value>0</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Warn-test</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/annunciators/warning/test</property>
+            <value>1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>instrumentation/annunciators/warning/test</property>
+                    <value>0</value>
+                </binding>
+            </mod-up>
+        </action>
     </animation>
 
 </PropertyList>

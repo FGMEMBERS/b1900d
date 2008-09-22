@@ -5,7 +5,7 @@
     <model>
         <livery>
             <name type="string">Air New Zealand</name>
-            <texture>paint3.rgb</texture>
+            <texture>paint2.png</texture>
         </livery>
     </model>
 </sim>

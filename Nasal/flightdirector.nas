@@ -51,7 +51,8 @@ var flightdirector = {
         m.asel.setDoubleValue(10000);
         m.speed = m.node.getNode("spd",1);
         m.speed.setIntValue(0);
-        m.DH = props.globals.getNode("autopilot/route-manager/min-lock-altitude-agl-ft",1);
+        m.DH = m.node.getNode("decision-hold",1);
+        m.DH.setDoubleValue(200);
         m.Defl = props.globals.getNode("instrumentation/nav/heading-needle-deflection");
         m.GSDefl = props.globals.getNode("instrumentation/nav/gs-needle-deflection");
         m.FD_defl = m.HSI.getNode("crs-deflection",1);
@@ -249,14 +250,14 @@ var flightdirector = {
         if(!apmode){
             var maxroll = getprop("/orientation/roll-deg");
             var maxpitch = getprop("/orientation/pitch-deg");
-            if(maxroll > 65 or maxroll < -65){
+            if(maxroll > 60 or maxroll < -60){
                 apmode = 1;
             }
-            if(maxpitch > 30 or maxpitch < -20){
+            if(maxpitch > 30 or maxpitch < -30){
                 apmode = 1;
                 setprop("controls/flight/elevator-trim",0);
             }
-            if(agl < 180)apmode = 1;
+            if(agl < 150)apmode = 1;
             me.AP_off.setBoolValue(apmode);
         }
         if(agl < 50)me.yawdamper.setBoolValue(0);
@@ -309,8 +310,9 @@ var flightdirector = {
         var hdg=0;
         var gps_offset=0;
         if(me.FMS.getValue()){
-            dfl = getprop("instrumentation/gps/wp/wp[1]/course-deviation-deg");
-            dfl = dfl * 0.33;
+            dfl = getprop("instrumentation/gps/wp/wp[1]/course-error-nm");
+            if(dfl==nil)dfl=0;
+            dfl = dfl * 2;
             if(dfl>10)dfl=10;
             if(dfl<-10)dfl=-10;
             to=getprop("instrumentation/gps/wp/wp[1]/to-flag");
@@ -319,7 +321,7 @@ var flightdirector = {
             if(crs<0)crs+=360;
             hdg=getprop("orientation/heading-magnetic-deg");
             gps_offset=crs-hdg;
-            gps_offset+=(dfl*3);
+            gps_offset+=(dfl*4.5);
             if(gps_offset<-180)gps_offset+=360;
             if(gps_offset>180)gps_offset-=360;
             }else{

@@ -5,7 +5,7 @@
     <model>
         <livery>
             <name type="string">Central Mountain Air</name>
-            <texture>paint1.rgb</texture>
+            <texture>paint1.png</texture>
         </livery>
     </model>
 </sim>

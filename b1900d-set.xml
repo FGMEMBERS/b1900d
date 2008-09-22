@@ -20,55 +20,15 @@ July 2004 Syd Adams
 
         <tutorials>
         <tutorial include="Tutorials/startup_tutorial.xml"/>
+        <tutorial include="Tutorials/gps-nav.xml"/>
         </tutorials>
-
-    <mk-viii>
-        <assemblies>
-            <emission>
-                <red alias="/sim/model/b1900d/material/instruments/emission/red"/>
-                <green alias="/sim/model/b1900d/material/instruments/emission/green"/>
-                <blue alias="/sim/model/b1900d/material/instruments/emission/blue"/>
-                <factor alias="/controls/lighting/instruments-norm"/>
-            </emission>
-        </assemblies>
-    </mk-viii>
 
     <model>
         <path>Aircraft/b1900d/Models/B1900D.xml</path>
+        <livery>
+                <file type="string">CMA</file>
+            </livery>
         <start-idling type="bool">0</start-idling>
-        <variant type="int">0</variant>
-        <b1900d>
-            <wiper type="bool">true</wiper>
-            <material>
-                <instruments>
-                    <diffuse>
-                        <red type="string">1.0</red>
-                        <green type="string">1.0</green>
-                        <blue type="string">1.0</blue>
-                    </diffuse>
-                    <ambient>
-                        <red type="string">1.0</red>
-                        <green type="string">1.0</green>
-                        <blue type="string">1.0</blue>
-                    </ambient>
-                    <specular>
-                        <red type="string">0.0</red>
-                        <green type="string">0.0</green>
-                        <blue type="string">0.0</blue>
-                    </specular>
-                    <emission>
-                        <red type="string">0.9</red>
-                        <green type="string">0.5</green>
-                        <blue type="string">0.2</blue>
-                    </emission>
-                    <transparency>
-                        <alpha>1.0</alpha>
-                    </transparency>
-                    <shininess>0</shininess>
-                    <factor>0.0</factor>
-                </instruments>
-            </material> 
-        </b1900d>
     </model>
 
     <view n="0">
@@ -97,6 +57,47 @@ July 2004 Syd Adams
         </config>
     </view>
 
+    <view n="100">
+        <name>Passenger View</name>
+        <enabled type="bool">true</enabled>
+        <type>lookfrom</type>
+        <internal type="bool">false</internal>
+        <config>
+            <from-model type="bool">true</from-model>
+            <from-model-idx type="int">0</from-model-idx>
+            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+            <default-pitch-deg type="double">0</default-pitch-deg>
+            <default-heading-deg type="double">0</default-heading-deg>
+            <front-direction-deg type="double">0</front-direction-deg>
+            <front-left-direction-deg type="double">45</front-left-direction-deg>
+            <left-direction-deg type="double">90</left-direction-deg>
+            <back-left-direction-deg type="double">135</back-left-direction-deg>
+            <back-direction-deg type="double">180</back-direction-deg>
+            <back-right-direction-deg type="double">225</back-right-direction-deg>
+            <right-direction-deg type="double">270</right-direction-deg>
+            <front-right-direction-deg type="double">315</front-right-direction-deg>
+            <x-offset-m type="double">0.40</x-offset-m>
+            <y-offset-m type="double">0.26</y-offset-m>
+            <z-offset-m type="double">2.05</z-offset-m>
+            <pitch-offset-deg>0</pitch-offset-deg>
+            <dynamic-view type="bool">true</dynamic-view>
+            <limits>
+                <enabled type="bool">true</enabled>
+                <left>
+                    <heading-max-deg type="double">140</heading-max-deg>
+                    <x-offset-max-m type="double">0.15</x-offset-max-m>
+                    <x-offset-threshold-deg type="double">45</x-offset-threshold-deg>
+                </left>
+                <right>
+                    <heading-max-deg type="double">140</heading-max-deg>
+                    <x-offset-max-m type="double">0.15</x-offset-max-m>
+                    <x-offset-threshold-deg type="double">45</x-offset-threshold-deg>
+                </right>
+            </limits>
+        </config>
+    </view>
+
     <airport>
         <runways>
             <start-offset-m>50</start-offset-m>
@@ -117,7 +118,7 @@ July 2004 Syd Adams
         </instrumentation>
 
     <sound>
-        <path>Aircraft/b1900d/b1900d-sound.xml</path>
+        <path>Aircraft/b1900d/Sound/b1900d-sound.xml</path>
     </sound>
 
     <flaps>
@@ -128,13 +129,7 @@ July 2004 Syd Adams
         <setting>1.000</setting>
     </flaps>
 
-    <virtual-cockpit>true</virtual-cockpit>
     <allow-toggle-cockpit>true</allow-toggle-cockpit>
-
-    <help>
-        <title>Beechcraft B1900D</title>
-        <line></line>
-    </help>
 
     <weight n="0">
         <name>Crew</name>
@@ -181,6 +176,13 @@ July 2004 Syd Adams
                     </binding>
                 </item>
                 <item>
+                    <label>Open/Close Cabin Door</label>
+                    <binding>
+                        <command>nasal</command>
+                        <script>systems.cabin_door.toggle()</script>
+                    </binding>
+                </item>
+                <item>
                     <label>Select Livery</label>
                     <binding>
                         <command>nasal</command>
@@ -195,39 +197,62 @@ July 2004 Syd Adams
         <enable3d>false</enable3d>
     </hud>
 
+    <alarms>
+        <stall-warning type="double">0</stall-warning>
+    </alarms>
 </sim>
 
 <controls>
-        <electric>
-            <battery-switch type = "bool">0</battery-switch>
-            <avionics-switch type = "bool">0</avionics-switch>
-            <external-power type = "bool">0</external-power>
-            <engine n="0">
-                <generator>false</generator>
-            </engine>
-            <engine n="1">
-                <generator>false</generator>
-            </engine>
-        </electric>
+    <electric>
+        <battery-switch type = "bool">0</battery-switch>
+        <avionics-switch type = "bool">0</avionics-switch>
+        <external-power type = "bool">0</external-power>
+        <RH-AC-bus type = "bool">0</RH-AC-bus>
+        <LH-AC-bus type = "bool">0</LH-AC-bus>
+        <engine n="0">
+            <generator>false</generator>
+        </engine>
+        <engine n="1">
+            <generator>false</generator>
+        </engine>
+        <wipers>
+            <arc-sec type="double" n="0">0</arc-sec>
+            <arc-sec type="double" n="1">1</arc-sec>
+            <arc-sec type="double" n="2">0.6</arc-sec>
+            <delay-sec type="double" n="0">0</delay-sec>
+            <delay-sec type="double" n="1">0</delay-sec>
+            <delay-sec type="double" n="2">0</delay-sec>
+            <switch type="int">0</switch>
+            <position-norm type="double">0</position-norm>
+        </wipers>
+    </electric>
 
-        <lighting>
-            <instrument-lights>0</instrument-lights>
-        </lighting>
-        
-        <gear>
-            <brake-parking>1</brake-parking>
-        </gear>
+    <lighting>
+        <instrument-lights>0</instrument-lights>
+    </lighting>
 
-        <engines>
-            <engine n="0">
-                <condition>0</condition>
-                <propeller-pitch>0</propeller-pitch>
-            </engine>
-            <engine n="1">
-                <condition>0</condition>
-                <propeller-pitch>0</propeller-pitch>
-            </engine>
-        </engines>
+    <gear>
+        <brake-parking>1</brake-parking>
+        <gear-lock type="bool">0</gear-lock>
+    </gear>
+
+    <engines>
+        <engine n="0">
+            <condition>0</condition>
+            <propeller-pitch>0</propeller-pitch>
+        </engine>
+        <engine n="1">
+            <condition>0</condition>
+            <propeller-pitch>0</propeller-pitch>
+        </engine>
+    </engines>
+
+    <fuel>
+    <gauge-switch type="bool">1</gauge-switch>
+    </fuel>
+    <flight>
+        <aileron-trim>0.06</aileron-trim>
+    </flight>
 </controls>
 
 <consumables>
@@ -250,29 +275,32 @@ July 2004 Syd Adams
 </consumables>
 
     <instrumentation>
-        <mk-viii>
-            <serviceable>true</serviceable>
-            <configuration-module>
-            <category-1>1</category-1><!-- GA Fast, 150' Mode 4B -->
-            </configuration-module>
-            <inputs>
-                <arinc429>
-                <decision-height-ncd>false</decision-height-ncd>
-                <decision-height>200</decision-height>
-                </arinc429>
-            </inputs>
-        </mk-viii>
     <altimeter>
         <millibars type= "double">0</millibars>
     </altimeter>
     <inst-vertical-speed-indicator>
         <serviceable type="bool">true</serviceable>
     </inst-vertical-speed-indicator>
-    <transponder>
-        <inputs>
-            <serviceable type="bool">true</serviceable>
-        </inputs>
-    </transponder>
+    <adf>
+        <func-knob type="int">2</func-knob>
+        <volume-norm type="double">0.2</volume-norm>
+    </adf>
+    <comm n="0">
+        <func-knob type="int">1</func-knob>
+        <volume type="double">0.2</volume>
+    </comm>
+    <comm n="1">
+        <func-knob type="int">1</func-knob>
+        <volume type="double">0.2</volume>
+    </comm>
+    <nav n="0">
+        <func-knob type="int">1</func-knob>
+        <volume type="double">0.2</volume>
+    </nav>
+    <nav n="1">
+        <func-knob type="int">1</func-knob>
+        <volume type="double">0.2</volume>
+    </nav>
     </instrumentation>
 
     <engines>
@@ -299,30 +327,86 @@ July 2004 Syd Adams
         <use-cloud-turbulence>true</use-cloud-turbulence>
         </turbulence>
     </environment>
-    
-    
+
     <input>
         <keyboard>
-        <key n="267">
-            <name>F11</name>
-            <desc>Pop up autopilot dialog</desc>
-            <binding>
-                <command>nasal</command>
-                <script>systems.ap_settings.toggle()</script>
-            </binding>
-        </key>
-    </keyboard>
+            <key n="267">
+                <name>F11</name>
+                <desc>Pop up autopilot dialog</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.ap_settings.toggle()</script>
+                </binding>
+            </key>
+            <key n="71">
+                <name>G</name>
+                <desc>Gear down.</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.gear_toggle(1)</script>
+                </binding>
+            </key>
+            <key n="103">
+                <name>g</name>
+                <desc>Gear Up.</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.gear_toggle(-1)</script>
+                </binding>
+            </key>
+             <key n="77">
+                <name>M</name>
+                <desc>Condition leaner</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <step>-0.01</step>
+                    <min>0</min>
+                    <max>1</max>
+                    <wrap>0</wrap>
+                </binding>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>controls/engines/engine[1]/condition</property>
+                    <step>-0.01</step>
+                    <min>0</min>
+                    <max>1</max>
+                    <wrap>0</wrap>
+                </binding>
+            </key>
+             <key n="109">
+                <name>m</name>
+                <desc>Condition richer</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <step>0.01</step>
+                    <min>0</min>
+                    <max>1</max>
+                    <wrap>0</wrap>
+                </binding>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>controls/engines/engine[1]/condition</property>
+                    <step>0.01</step>
+                    <min>0</min>
+                    <max>1</max>
+                    <wrap>0</wrap>
+                </binding>
+            </key>
+        </keyboard>
     </input>
 
     <nasal>
         <systems>
             <file>Aircraft/b1900d/Nasal/Electrical.nas</file>
             <file>Aircraft/b1900d/Nasal/systems.nas</file>
-            <file>Aircraft/b1900d/Nasal/gps.nas</file>
+            <file>Aircraft/b1900d/Nasal/alerts.nas</file>
+            <file>Aircraft/b1900d/Nasal/kln90b.nas</file>
             <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
-            <file>Aircraft/Instruments-3d/VHF-22/vhf22.nas</file>
-            <file>Aircraft/Instruments-3d/VIR-32/vir32.nas</file>
-        </systems>
+            </systems>
     </nasal>
 
 </PropertyList>

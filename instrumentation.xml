@@ -63,16 +63,15 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </nav-radio>
 
+    <nav-radio>
+        <name>nav</name>
+        <number>1</number>
+    </nav-radio>
+
     <slip-skid-ball>
         <name>slip-skid-ball</name>
         <number>0</number>
     </slip-skid-ball>
-
-    <transponder>
-        <name>transponder</name>
-        <number>0</number>
-        <mode-c-altitude>/instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
-    </transponder>
 
     <turn-indicator>
         <name>turn-indicator</name>
@@ -90,15 +89,9 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </gps>
 
-    <mk-viii>
-        <name>mk-viii</name>
+    <KT-70>
+        <name>kt-70</name>
         <number>0</number>
-        <serviceable>true</serviceable>
-    </mk-viii>
-
-    <encoder>
-        <name>encoder</name>
-        <number>0</number>
-    </encoder>
+    </KT-70>
 
 </PropertyList>

@@ -1,66 +1,66 @@
 <PropertyList>
-    <name>Start Up</name>
-    <description>B1900D start procedure</description>
+    <name>Manual Startup</name>
+    <description>Manual Start</description>
 
     <init>
         <set>
-            <property>/sim/current-view/view-number</property>
+            <property>sim/current-view/view-number</property>
             <value>0</value>
         </set>
         <set>
-            <property>/controls/gear/brake-parking</property>
+            <property>controls/gear/brake-parking</property>
             <value>1</value>
         </set>
         <set>
-            <property>/controls/flight/flaps</property>
+            <property>controls/flight/flaps</property>
             <value>0.0</value>
         </set>
         <set>
-            <property>/controls/electric/external-power</property>
+            <property>controls/electric/external-power</property>
             <value>0</value>
         </set>
         <set>
-            <property>/controls/electric/battery-switch</property>
+            <property>controls/electric/battery-switch</property>
             <value>0</value>
         </set>
         <set>
-            <property>/controls/electric/engine[0]/generator</property>
+            <property>controls/electric/engine[0]/generator</property>
             <value>0</value>
         </set>
         <set>
-            <property>/controls/electric/engine[1]/generator</property>
+            <property>controls/electric/engine[1]/generator</property>
             <value>0</value>
         </set>
         <set>
-            <property>/controls/engines/engine[0]/condition</property>
+            <property>controls/engines/engine[0]/condition</property>
             <value>0</value>
         </set>
         <set>
-            <property>/controls/engines/engine[1]/condition</property>
+            <property>controls/engines/engine[1]/condition</property>
             <value>0</value>
         </set>
         <set>
-            <property>/controls/engines/engine[0]/propeller-pitch</property>
+            <property>controls/engines/engine[0]/propeller-pitch</property>
             <value>0</value>
         </set>
         <set>
-            <property>/controls/engines/engine[1]/propeller-pitch</property>
+            <property>controls/engines/engine[1]/propeller-pitch</property>
             <value>0</value>
         </set>
         <set>
-            <property>/controls/engines/engine[0]/throttle</property>
+            <property>controls/engines/engine[0]/throttle</property>
             <value>0.0</value>
         </set>
         <set>
-            <property>/controls/engines/engine[1]/throttle</property>
+            <property>controls/engines/engine[1]/throttle</property>
             <value>0.0</value>
         </set>
         <set>
-            <property>/engines/engine[0]/running</property>
+            <property>engines/engine[0]/running</property>
             <value>0</value>
         </set>
         <set>
-            <property>/engines/engine[1]/running</property>
+            <property>engines/engine[1]/running</property>
             <value>0</value>
         </set>
     </init>
@@ -81,9 +81,9 @@
             <condition>
                 <and>
                     <not>
-                        <property>/controls/electric/battery-switch</property>
-                        <property>/controls/electric/engine[0]/generator</property>
-                        <property>/controls/electric/engine[1]/generator</property>
+                        <property>controls/electric/battery-switch</property>
+                        <property>controls/electric/engine[0]/generator</property>
+                        <property>controls/electric/engine[1]/generator</property>
                     </not>
                 </and>
             </condition>
@@ -91,9 +91,9 @@
         <exit>
             <condition>
                 <and>
-                        <property>/controls/electric/battery-switch</property>
-                        <property>/controls/electric/engine[0]/generator</property>
-                        <property>/controls/electric/engine[1]/generator</property>
+                        <property>controls/electric/battery-switch</property>
+                        <property>controls/electric/engine[0]/generator</property>
+                        <property>controls/electric/engine[1]/generator</property>
                 </and>
             </condition>
         </exit>
@@ -114,13 +114,13 @@
             </message>
             <condition>
                 <not>
-                        <property>/controls/electric/avionics-switch</property>
+                        <property>controls/electric/avionics-switch</property>
                     </not>
             </condition>
         </error>
         <exit>
             <condition>
-                        <property>/controls/electric/avionics-switch</property>
+                        <property>controls/electric/avionics-switch</property>
             </condition>
         </exit>
     </step>
@@ -140,11 +140,11 @@
             <condition>
                 <or>
                     <less-than>
-                    <property>/controls/engines/engine[0]/condition</property>
+                    <property>controls/engines/engine[0]/condition</property>
                     <value>1</value>
                     </less-than>
                     <less-than>
-                    <property>/controls/engines/engine[1]/condition</property>
+                    <property>controls/engines/engine[1]/condition</property>
                     <value>1</value>
                     </less-than>
                 </or>
@@ -154,11 +154,11 @@
             <condition>
                 <and>
                     <equals>
-                        <property>/controls/engines/engine[0]/condition</property>
+                        <property>controls/engines/engine[0]/condition</property>
                         <value>1</value>
                     </equals>
                     <equals>
-                        <property>/controls/engines/engine[1]/condition</property>
+                        <property>controls/engines/engine[1]/condition</property>
                         <value>1</value>
                     </equals>
                 </and>
@@ -181,11 +181,11 @@
             <condition>
                 <or>
                     <less-than>
-                    <property>/controls/engines/engine[0]/propeller-pitch</property>
+                    <property>controls/engines/engine[0]/propeller-pitch</property>
                     <value>1</value>
                     </less-than>
                     <less-than>
-                    <property>/controls/engines/engine[1]/propeller-pitch</property>
+                    <property>controls/engines/engine[1]/propeller-pitch</property>
                     <value>1</value>
                     </less-than>
                 </or>
@@ -195,11 +195,11 @@
             <condition>
                 <and>
                     <equals>
-                        <property>/controls/engines/engine[0]/propeller-pitch</property>
+                        <property>controls/engines/engine[0]/propeller-pitch</property>
                         <value>1</value>
                     </equals>
                     <equals>
-                        <property>/controls/engines/engine[1]/propeller-pitch</property>
+                        <property>controls/engines/engine[1]/propeller-pitch</property>
                         <value>1</value>
                     </equals>
                 </and>
@@ -222,11 +222,11 @@
             <condition>
                 <or>
                     <less-than>
-                    <property>/controls/engines/engine[0]/throttle</property>
+                    <property>controls/engines/engine[0]/throttle</property>
                     <value>0.41</value>
                     </less-than>
                     <less-than>
-                    <property>/controls/engines/engine[1]/throttle</property>
+                    <property>controls/engines/engine[1]/throttle</property>
                     <value>0.41</value>
                     </less-than>
                 </or>
@@ -236,11 +236,11 @@
             <condition>
                 <and>
                     <greater-than>
-                        <property>/controls/engines/engine[0]/throttle</property>
+                        <property>controls/engines/engine[0]/throttle</property>
                         <value>0.35</value>
                     </greater-than>
                     <greater-than>
-                        <property>/controls/engines/engine[1]/throttle</property>
+                        <property>controls/engines/engine[1]/throttle</property>
                         <value>0.35</value>
                     </greater-than>
                 </and>
@@ -263,13 +263,13 @@
             </message>
             <condition>
                 <not>
-                    <property>/controls/lighting/instrument-lights</property>
+                    <property>controls/lighting/instrument-lights</property>
                 </not>
             </condition>
         </error>
         <exit>
             <condition>
-                <property>/controls/lighting/instrument-lights</property>
+                <property>controls/lighting/instrument-lights</property>
             </condition>
         </exit>
     </step>
