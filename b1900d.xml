@@ -70,7 +70,7 @@ Tip incidence -1.4 deg.
 -->
 
     <wing x="0.0" y="0.80" z="-0.9" length="8.0" chord="2.18"
-        sweep="0" dihedral="6" taper="0.417"  camber="0.1"
+        sweep="0" dihedral="6" taper="0.417"  camber="0.05"
         incidence="3.29" twist="-4.69">
         <stall aoa="12" width="8" peak="1.5"/>
         <flap0 start="0" end=".6" lift="1.5" drag="1.7"/>
@@ -231,7 +231,7 @@ Prop diam: 2.78 m
         control="PROPFEATHER"/>
     </propeller>
 
-<ballast x="4" y="0" z="0" mass="4100"/>
+<ballast x="4" y="0" z="0" mass="4000"/>
 
 <!--
 
