@@ -404,7 +404,7 @@ July 2004 Syd Adams
             <file>Aircraft/b1900d/Nasal/Electrical.nas</file>
             <file>Aircraft/b1900d/Nasal/systems.nas</file>
             <file>Aircraft/b1900d/Nasal/alerts.nas</file>
-            <file>Aircraft/b1900d/Nasal/kln90b.nas</file>
+            <file>Aircraft/b1900d/Models/Instruments/KLN90B/kln90b.nas</file>
             <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
             </systems>
     </nasal>

@@ -35,25 +35,7 @@
       <texture>paint2.png</texture>
     </animation>
 
-    <panel>
-        <name>GPS screen</name>
-        <path>Aircraft/b1900d/Panel/gps.xml</path>
-        <bottom-left>
-            <x-m>-4.859</x-m>
-            <y-m>0.099</y-m>
-            <z-m>-0.092</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>-4.859</x-m>
-            <y-m>0.164</y-m>
-            <z-m>-0.092</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>-4.864</x-m>
-            <y-m>0.099</y-m>
-            <z-m>-0.061</z-m>
-        </top-left>
-    </panel>
+
 <!--
     <model>
         <name>GPWS warning lamp/button (captain)</name>
@@ -642,7 +624,7 @@
 
     <model>
         <name>GPS</name>
-        <path>Aircraft/b1900d/Models/Instruments/kln90b.xml</path>
+        <path>Aircraft/b1900d/Models/Instruments/KLN90B/kln90b.xml</path>
         <offsets>
             <x-m>-4.864</x-m>
             <y-m>0.132</y-m>
