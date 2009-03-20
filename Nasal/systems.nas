@@ -5,6 +5,46 @@
 aircraft.livery.init("Aircraft/b1900d/Models/Liveries");
 var cabin_door = aircraft.door.new("/controls/cabin-door", 4);
 
+TireSpeed = {
+    new : func(number){
+        m = { parents : [TireSpeed] };
+            m.num=number;
+            m.circumference=[];
+            m.tire=[];
+            m.rpm=[];
+            for(var i=0; i<m.num; i+=1) {
+                var diam =arg[i];
+                var circ=diam * math.pi;
+                append(m.circumference,circ);
+                append(m.tire,props.globals.initNode("gear/gear["~i~"]/tire-rpm",0,"DOUBLE"));
+                append(m.rpm,0);
+            }
+        m.count = 0;
+        return m;
+    },
+    #### calculate and write rpm ###########
+    get_rotation: func (fdm1){
+        var speed=0;
+        if(fdm1=="yasim"){ 
+            speed =getprop("gear/gear["~me.count~"]/rollspeed-ms") or 0;
+            speed=speed*60;
+            }elsif(fdm1=="jsb"){
+                speed =getprop("fdm/jsbsim/gear/unit["~me.count~"]/wheel-speed-fps") or 0;
+                speed=speed*18.288;
+            }
+        var wow = getprop("gear/gear["~me.count~"]/wow");
+        if(wow){
+            me.rpm[me.count] = speed / me.circumference[me.count];
+        }else{
+            if(me.rpm[me.count] > 0) me.rpm[me.count]=me.rpm[me.count]*0.95;
+        }
+        me.tire[me.count].setValue(me.rpm[me.count]);
+        me.count+=1;
+        if(me.count>=me.num)me.count=0;
+    }
+};
+
+
 var Wiper = {
     new : func(prop,power,settings){
         m = { parents : [Wiper] };
@@ -81,6 +121,7 @@ var MB = props.globals.getNode("/instrumentation/altimeter/millibars",1);
 var wiper = Wiper.new("controls/electric/wipers","systems/electrical/volts",3);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
+var tire=TireSpeed.new(3,0.429,0.553,0.553);
 
 #http://www.pprune.org/forums/archive/index.php/t-166572.html
 #http://www.airweb.faa.gov/Regulatory_and_Guidance_Library/rgMakeModel.nsf/0/4bd70d173cbc5f4586256fb80048f054/$FILE/A24CE.pdf
@@ -272,6 +313,7 @@ var gear_toggle = func(dir){
 }
 
 var update_systems = func {
+    tire.get_rotation("yasim");
         var mb = 33.8637526 * getprop("/instrumentation/altimeter/setting-inhg");
         power = getprop("/controls/switches/master-panel");
         volts = getprop("/systems/electrical/volts");

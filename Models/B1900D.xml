@@ -2451,8 +2451,7 @@
     <animation>
         <type>spin</type>
         <object-name>FTire</object-name>
-        <property>gear/gear[0]/rollspeed-ms</property>
-        <factor>15</factor>
+        <property>gear/gear[0]/tire-rpm</property>
         <center>
             <x-m>-6.874</x-m>
             <y-m>0.0</y-m>
@@ -2596,8 +2595,7 @@
     <animation>
         <type>spin</type>
         <object-name>RHwheel</object-name>
-        <property>gear/gear[2]/rollspeed-ms</property>
-        <factor>15</factor>
+        <property>gear/gear[2]/tire-rpm</property>
         <center>
             <x-m>0.596</x-m>
             <y-m>2.635</y-m>
@@ -2741,8 +2739,7 @@
     <animation>
         <type>spin</type>
         <object-name>LHwheel</object-name>
-        <property>gear/gear[1]/rollspeed-ms</property>
-        <factor>15</factor>
+        <property>gear/gear[1]/tire-rpm</property>
         <center>
             <x-m>0.596</x-m>
             <y-m>-2.635</y-m>
