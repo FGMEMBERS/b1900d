@@ -503,7 +503,7 @@
         <type>rotate</type>
         <object-name>Door</object-name>
         <object-name>handle.001</object-name>
-        <property>controls/cabin-door/position-norm</property>
+        <property>sim/multiplay/generic/float</property>
         <factor>145.0</factor>
         <center>
             <x-m>-3.438</x-m>
