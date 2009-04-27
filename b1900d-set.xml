@@ -299,9 +299,9 @@ July 2004 Syd Adams
                 </arinc429>
             </inputs>
             <speaker>
-                <volume>0.7</volume>
+                <volume>1</volume>
                 <max-dist>0.5</max-dist>
-                <reference-dist>0.2</reference-dist>
+                <reference-dist>0.25</reference-dist>
                 <position>
                     <x>-4</x>
                     <y>0</y>

@@ -553,12 +553,14 @@
         </axis>
     </animation>
 
+<!-- Exterior lights -->
+
     <animation>
         <type>select</type>
         <object-name>Beacon1</object-name>
         <condition>
             <greater-than>
-                <property>systems/electrical/outputs/beacon</property>
+                <property>sim/multiplay/generic/int</property>
                 <value>0</value>
             </greater-than>
         </condition>
@@ -579,13 +581,22 @@
         <object-name>Beacon1</object-name>
     </animation>
   
+      <animation>
+        <type>dist-scale</type>
+        <object-name>Beacon1</object-name>
+        <factor>0.01</factor>
+        <offset>1.0</offset>
+        <min>1.0</min>
+        <max>500.0</max>
+    </animation>
+
     <animation>
         <type>select</type>
         <object-name>Beacon2</object-name>
         <condition>
             <and>
                 <equals>
-                    <property>systems/electrical/outputs/beacon</property>
+                    <property>sim/multiplay/generic/int</property>
                     <value>0</value>
                 </equals>
                 <greater-than>
@@ -612,12 +623,21 @@
         <object-name>Beacon2</object-name>
     </animation>
 
+      <animation>
+        <type>dist-scale</type>
+        <object-name>Beacon2</object-name>
+        <factor>0.01</factor>
+        <offset>1.0</offset>
+        <min>1.0</min>
+        <max>500.0</max>
+    </animation>
+
     <animation>
         <type>select</type>
         <object-name>Strobe1</object-name>
         <condition>
             <greater-than>
-                <property>systems/electrical/outputs/strobe</property>
+                <property>sim/multiplay/generic/int[1]</property>
                 <value>0</value>
             </greater-than>
         </condition>
@@ -639,12 +659,21 @@
         <object-name>Strobe1</object-name>
     </animation>
   
+        <animation>
+        <type>dist-scale</type>
+        <object-name>Strobe1</object-name>
+        <factor>0.01</factor>
+        <offset>1.0</offset>
+        <min>1.0</min>
+        <max>500.0</max>
+    </animation>
+
     <animation>
         <type>select</type>
         <object-name>Strobe2</object-name>
         <condition>
             <greater-than>
-                <property>systems/electrical/outputs/strobe</property>
+                <property>sim/multiplay/generic/int[1]</property>
                 <value>0</value>
             </greater-than>
         </condition>
@@ -666,6 +695,15 @@
         <object-name>Strobe2</object-name>
     </animation>
 
+      <animation>
+        <type>dist-scale</type>
+        <object-name>Strobe2</object-name>
+        <factor>0.01</factor>
+        <offset>1.0</offset>
+        <min>1.0</min>
+        <max>500.0</max>
+    </animation>
+
     <animation>
         <type>select</type>
         <object-name>navlight.glow</object-name>
@@ -675,7 +713,7 @@
                     <property>controls/lighting/strobe-state/state</property>
                 </not>
                 <greater-than>
-                    <property>systems/electrical/outputs/nav-lights</property>
+                    <property>sim/multiplay/generic/int[2]</property>
                     <value>0.2</value>
                 </greater-than>
             </and>
@@ -687,7 +725,7 @@
         <object-name>LHflare</object-name>
         <condition>
             <greater-than>
-                <property>systems/electrical/outputs/landing-lights[0]</property>
+                <property>sim/multiplay/generic/int[3]</property>
                 <value>0.2</value>
             </greater-than>
         </condition>
@@ -719,7 +757,7 @@
         <object-name>RHflare</object-name>
         <condition>
             <greater-than>
-                <property>systems/electrical/outputs/landing-lights[1]</property>
+                <property>sim/multiplay/generic/int[4]</property>
                 <value>0.2</value>
             </greater-than>
         </condition>
@@ -751,7 +789,7 @@
         <object-name>Navlights</object-name>
         <condition>
             <greater-than>
-                <property>systems/electrical/outputs/nav-lights</property>
+                <property>sim/multiplay/generic/int[2]</property>
                 <value>0.2</value>
             </greater-than>
         </condition>
@@ -774,7 +812,7 @@
         <condition>
             <and>
                 <greater-than>
-                    <property>systems/electrical/outputs/taxi-lights</property>
+                    <property>sim/multiplay/generic/int[5]</property>
                     <value>0.2</value>
                 </greater-than>
                 <equals>
