@@ -1181,7 +1181,7 @@
   
     <animation>
         <type>rotate</type>
-        <object-name>OHknob</object-name>
+        <object-name>Pilot.dimmer</object-name>
         <property>controls/lighting/instruments-norm</property>
         <interpolation>
             <entry>
@@ -1205,7 +1205,7 @@
   
     <animation>
         <type>rotate</type>
-        <object-name>OHknob.001</object-name>
+        <object-name>Engine.dimmer</object-name>
         <property>controls/lighting/engines-norm</property>
         <interpolation>
             <entry>
@@ -1229,7 +1229,7 @@
   
     <animation>
         <type>rotate</type>
-        <object-name>OHknob.005</object-name>
+        <object-name>edgelight.dimmer</object-name>
         <property>controls/lighting/panel-norm</property>
         <interpolation>
             <entry>
@@ -1870,10 +1870,6 @@
             <binding>
                 <command>property-toggle</command>
                 <property>controls/lighting/instrument-lights</property>
-                <step>1</step>
-                <min>0</min>
-                <max>1</max>
-                <wrap>true</wrap>
             </binding>
         </action>
     </animation>
@@ -2029,6 +2025,113 @@
         </action>
     </animation>
 
+    <animation>
+        <type>pick</type>
+        <object-name>Engine.dimmer</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/lighting/engines-norm</property>
+            <step>0.05</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Engine.dimmer</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/lighting/engines-norm</property>
+            <step>-0.05</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>edgelight.dimmer</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/lighting/panel-norm</property>
+            <step>0.05</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>edgelight.dimmer</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/lighting/panel-norm</property>
+            <step>-0.05</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Pilot.dimmer</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/lighting/instruments-norm</property>
+            <step>0.05</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Pilot.dimmer</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/lighting/instruments-norm</property>
+            <step>-0.05</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
 
 <!-- Main panel -->
 
@@ -2141,9 +2244,9 @@
 
     <animation>
         <type>pick</type>
-        <object-name>EFISdimmer.dn</object-name>
+        <object-name>EFISdimmer</object-name>
         <action>
-            <button>0</button>
+            <button>1</button>
             <repeatable>true</repeatable>
             <binding>
                 <command>property-adjust</command>
@@ -2158,10 +2261,42 @@
 
     <animation>
         <type>pick</type>
-        <object-name>EFISdimmer.up</object-name>
+        <object-name>EFISdimmer</object-name>
         <action>
             <button>0</button>
             <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/efis-norm</property>
+                <step>0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>EFISdimmer</object-name>
+        <action>
+            <button>4</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/efis-norm</property>
+                <step>-0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>EFISdimmer</object-name>
+        <action>
+            <button>3</button>
             <binding>
                 <command>property-adjust</command>
                 <property>controls/lighting/efis-norm</property>
