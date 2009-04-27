@@ -143,86 +143,7 @@ var Alarm = {
             me.warning_index[6].setValue(cbndoor);
 
 
-    },
-###############
-    check_gpws:func{
-        var msg =1;
-        if(getprop("gear/gear[1]/wow")){
-            msg=0;
-            me.terrain_active.setValue(0);
-            me.altitude_active.setValue(0);
-        }
-        var pwr=getprop("systems/electrical/volts");
-        if(pwr==nil)pwr=0;
-        if(pwr<5)msg=0;
-
-        var flaps=getprop("controls/flight/flaps");
-        var trn=me.terrain_active.getValue();
-        var altactive=me.altitude_active.getValue();
-        var DH=getprop("instrumentation/flightdirector/decision-hold");
-        var alt=getprop("position/altitude-agl-ft");
-        if(alt>DH)me.dh_armed=1;
-        var tmpalt=0;
-        var maxroll=getprop("/orientation/roll-deg");
-        var maxpitch=getprop("/orientation/pitch-deg");
-
-            if(!altactive){
-                if(alt >1100)me.altitude_active.setValue(1);
-            }else{
-                if(alt<1100 and flaps >=0.25){
-                    if(alt <=1000) tmpalt=1000;
-                    if(alt <=500) tmpalt=500;
-                    if(alt <=400) tmpalt=400;
-                    if(alt <=300) tmpalt=300;
-                    if(alt <=200) tmpalt=200;
-                    if(alt <=100) tmpalt=100;
-                    if(alt <=50) tmpalt=50;
-                    if(alt <=40) tmpalt=40;
-                    if(alt <=30) tmpalt=30;
-                    if(alt <=20) tmpalt=20;
-                    if(alt <=10) tmpalt=10;
-                    me.altitude_callout.setValue(tmpalt *msg);
-                    if(alt <=DH){
-                        me.minimums.setValue(me.dh_armed *msg);
-                        me.dh_armed=0;
-                    }else{
-                        me.minimums.setValue(0);
-                    }
-                }
-            }
-
-            if(!me.terrain_active.getValue()){
-                if(alt >500)me.terrain_active.setValue(1);
-            }else{
-                if(alt<500 and flaps==0){
-                    me.terrain_alert.setValue(me.gpwstimer*msg);
-                }else{
-                    me.terrain_alert.setValue(0);
-                }
-            }
-
-            if(maxroll >60 or maxroll< -60){
-                me.bank.setValue(msg);
-            }else{
-                me.bank.setValue(0);
-            }
-            if(maxpitch < -30){
-                me.pitch.setValue(msg);
-            }else{
-                me.pitch.setValue(0);
-            }
-            if(getprop("velocities/vertical-speed-fps")> 66){
-                me.sink.setValue(msg);
-            }else{
-                me.sink.setValue(0);
-            }
-
-        me.gpwscounter+=1;
-        if(me.gpwscounter >= 2){
-            me.gpwscounter=0;
-            me.gpwstimer=1-me.gpwstimer;
-        }
-    },
+    }
 };
 
 
@@ -240,14 +161,8 @@ var update_alarms = func {
         alert.check_caution();
     }elsif(alert.counter ==1){
         alert.check_warning();
-    }elsif(alert.counter ==2){
-        alert.check_gpws();
     }
-
-    
-
-    alert.counter+=1;
-    if(alert.counter>2)alert.counter=0;
+    alert.counter =1-alert.counter;
 
 settimer(update_alarms,0.2);
 }

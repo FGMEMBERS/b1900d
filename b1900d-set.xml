@@ -15,7 +15,7 @@ July 2004 Syd Adams
         <aero>b1900d</aero>
         <fuel-fraction>0.5</fuel-fraction>
         <startup>
-            <splash-texture>Aircraft/b1900d/b1900dsplash.rgb</splash-texture>
+            <splash-texture>Aircraft/b1900d/b1900dsplash.png</splash-texture>
         </startup>
 
         <tutorials>
@@ -61,7 +61,7 @@ July 2004 Syd Adams
         <name>Passenger View</name>
         <enabled type="bool">true</enabled>
         <type>lookfrom</type>
-        <internal type="bool">false</internal>
+        <internal type="bool">true</internal>
         <config>
             <from-model type="bool">true</from-model>
             <from-model-idx type="int">0</from-model-idx>
@@ -203,6 +203,18 @@ July 2004 Syd Adams
 </sim>
 
 <controls>
+    <assemblies>
+        <caution0-button type="double">0</caution0-button>
+        <flap-override-button type="double">0</flap-override-button>
+        <flap-override-guard type="double">1</flap-override-guard>
+        <inhibit-button type="double">0</inhibit-button>
+        <inhibit-guard type="double">1</inhibit-guard>
+        <steep-approach-button type="double">0</steep-approach-button>
+        <steep-approach-guard type="double">1</steep-approach-guard>
+        <terrain-inhibit-button type="double">0</terrain-inhibit-button>
+        <terrain-inhibit-guard type="double">1</terrain-inhibit-guard>
+        <warning0-button type="double">0</warning0-button>
+    </assemblies>
     <electric>
         <battery-switch type = "bool">0</battery-switch>
         <avionics-switch type = "bool">0</avionics-switch>
@@ -275,6 +287,28 @@ July 2004 Syd Adams
 </consumables>
 
     <instrumentation>
+        <mk-viii>
+            <serviceable>true</serviceable>
+            <configuration-module>
+                <category-1>1</category-1>	<!-- GA Fast, 150' Mode 4B -->
+            </configuration-module>
+            <inputs>
+                <arinc429>
+                    <decision-height-ncd>false</decision-height-ncd>
+                    <decision-height>200</decision-height>
+                </arinc429>
+            </inputs>
+            <speaker>
+                <volume>0.7</volume>
+                <max-dist>0.5</max-dist>
+                <reference-dist>0.2</reference-dist>
+                <position>
+                    <x>-4</x>
+                    <y>0</y>
+                    <z>0</z>
+                </position>
+            </speaker>
+        </mk-viii>
     <altimeter>
         <millibars type= "double">0</millibars>
     </altimeter>

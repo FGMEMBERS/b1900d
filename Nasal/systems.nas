@@ -170,16 +170,15 @@ setlistener("/engines/engine/out-of-fuel", func(nf){
     }
 },0,0);
 
-setlistener("/sim/current-view/view-number", func(vw){
-    ViewNum = vw.getValue();
-    if(ViewNum == 0){
+setlistener("/sim/current-view/internal", func(vw){
+    if(vw.getValue()){
         S_volume.setValue(0.3);
         C_volume.setValue(0.3);
         }else{
             S_volume.setValue(0.9);
             C_volume.setValue(0.05);
         }
-},0,0);
+},1,0);
 
 setlistener("/sim/model/start-idling", func(idle){
     var run= idle.getBoolValue();
@@ -210,42 +209,6 @@ setlistener("/instrumentation/adf/func-knob", func(btn){
     setprop("instrumentation/adf/mode","adf");
     }elsif(tst==3){
     setprop("instrumentation/adf/ident-audible",1);
-    }
-},1,0);
-
-setlistener("/instrumentation/comm/func-knob", func(btn){
-    var tst = btn.getValue();
-    if(tst ==0){
-    setprop("instrumentation/comm/serviceable",0);
-    }elsif(tst==1){
-    setprop("instrumentation/comm/serviceable",1);
-    }
-},1,0);
-
-setlistener("/instrumentation/comm[1]/func-knob", func(btn){
-    var tst = btn.getValue();
-    if(tst ==0){
-    setprop("instrumentation/comm[1]/serviceable",0);
-    }elsif(tst==1){
-    setprop("instrumentation/comm[1]/serviceable",1);
-    }
-},1,0);
-
-setlistener("/instrumentation/nav/func-knob", func(btn){
-    var tst = btn.getValue();
-    if(tst ==0){
-    setprop("instrumentation/nav/serviceable",0);
-    }elsif(tst==1){
-    setprop("instrumentation/nav/serviceable",1);
-    }
-},1,0);
-
-setlistener("/instrumentation/nav[1]/func-knob", func(btn){
-    var tst = btn.getValue();
-    if(tst ==0){
-    setprop("instrumentation/nav[1]/serviceable",0);
-    }elsif(tst==1){
-    setprop("instrumentation/nav[1]/serviceable",1);
     }
 },1,0);
 

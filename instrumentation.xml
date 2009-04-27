@@ -8,6 +8,11 @@ This file selects the instrumentation modules that should be available.
 
 <PropertyList>
 
+    <mk-viii>
+        <name>mk-viii</name>
+        <number>0</number>
+    </mk-viii>
+
     <adf>
         <name>adf</name>
         <number>0</number>
