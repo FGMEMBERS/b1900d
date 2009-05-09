@@ -6,70 +6,35 @@ var GPS = {
     m.Menu2 = 4;
     m.Page1 = 0;
     m.Page2 = 0;
+    m.LHstring=[];
+    m.RHstring=[];
     m.PWR=0;
-    m.gps = props.globals.getNode("instrumentation/gps",1);
-    m.gps_annun = props.globals.getNode("instrumentation/gps-annunciator",1);
-    m.serviceable = m.gps.getNode("serviceable");
-    m.serviceable.setBoolValue(0);
-    m.pwr=props.globals.getNode("/systems/electrical/outputs/gps",1);
-    m.pwr.setDoubleValue(0);
-    m.dtrk=m.gps.getNode("wp/wp[1]/desired-course-deg",1);
+    m.gps = props.globals.initNode("instrumentation/gps");
+    m.gps_annun = props.globals.initNode("instrumentation/gps-annunciator");
+    m.serviceable = m.gps.initNode("serviceable",0,"BOOL");
+    m.pwr=props.globals.initNode("systems/electrical/outputs/gps",0.0);
+    m.dtrk=m.gps.initNode("wp/wp[1]/desired-course-deg",0.0);
+    
+    for(var i=0; i<7; i+=1) {
+        append(m.LHstring,m.gps_annun.initNode("LHmode-string["~i~"]","","STRING"));
+        append(m.RHstring,m.gps_annun.initNode("RHmode-string["~i~"]","","STRING"));
+    }
 
-    m.LHstring0 = m.gps_annun.getNode("LHmode-string[0]",1);
-    m.LHstring0.setValue("");
-    m.LHstring1 = m.gps_annun.getNode("LHmode-string[1]",1);
-    m.LHstring1.setValue("");
-    m.LHstring2 = m.gps_annun.getNode("LHmode-string[2]",1);
-    m.LHstring2.setValue("");
-    m.LHstring3 = m.gps_annun.getNode("LHmode-string[3]",1);
-    m.LHstring3.setValue("");
-    m.LHstring4 = m.gps_annun.getNode("LHmode-string[4]",1);
-    m.LHstring4.setValue("");
-    m.LHstring5 = m.gps_annun.getNode("LHmode-string[5]",1);
-    m.LHstring5.setValue("");
-    m.LHstring6 = m.gps_annun.getNode("LHmode-string[6]",1);
-    m.LHstring6.setValue("");
-
-    m.RHstring0 = m.gps_annun.getNode("RHmode-string[0]",1);
-    m.RHstring0.setValue("");
-    m.RHstring1 = m.gps_annun.getNode("RHmode-string[1]",1);
-    m.RHstring1.setValue("");
-    m.RHstring2 = m.gps_annun.getNode("RHmode-string[2]",1);
-    m.RHstring2.setValue("");
-    m.RHstring3 = m.gps_annun.getNode("RHmode-string[3]",1);
-    m.RHstring3.setValue("");
-    m.RHstring4 = m.gps_annun.getNode("RHmode-string[4]",1);
-    m.RHstring4.setValue("");
-    m.RHstring5 = m.gps_annun.getNode("RHmode-string[5]",1);
-    m.RHstring5.setValue("");
-    m.RHstring6 = m.gps_annun.getNode("RHmode-string[6]",1);
-    m.RHstring6.setValue("");
-
-    m.slaved = props.globals.getNode("instrumentation/nav/slaved-to-gps",1);
-    m.slaved.setBoolValue(1);
-    m.legmode = m.gps.getNode("leg-mode",1);
-    m.legmode.setBoolValue(1);
-    m.appr = m.gps.getNode("approach-active",1);
-    m.appr.setBoolValue(0);
-return m;
+    m.slaved = props.globals.initNode("instrumentation/nav/slaved-to-gps",0."BOOL");
+    m.legmode = m.gps.initNode("leg-mode");
+    m.appr = m.gps.initNode("approach-active",0."BOOL");
+    return m;
     },
 ##################
     draw_display : func(){
-        if(me.PWR == 0){
-            me.LHstring0.setValue("");
-            me.LHstring1.setValue("");
-            me.LHstring2.setValue("");
-            me.LHstring3.setValue("");
-            me.LHstring4.setValue("");
-            me.LHstring5.setValue("");
-            me.LHstring6.setValue("POWER OFF");
-            me.RHstring0.setValue("");
-            me.RHstring1.setValue("");
-            me.RHstring2.setValue("");
-            me.RHstring3.setValue("");
-            me.RHstring4.setValue("");
-            me.RHstring5.setValue("");
-            me.RHstring6.setValue("POWER OFF");
+        for(var i=0; i<7; i+=1) {
+        me.LHstring[i].setValue("");
+        me.RHstring[i].setValue("");
+    }
+
+    if(me.PWR == 0){
+            me.LHstring[6].setValue("POWER OFF");
+            me.RHstring[6].setValue("POWER OFF");
         }else{
         me.setmode1();
         me.setmode2();
@@ -80,6 +45,11 @@ return m;
         var tmp=me.serviceable.getValue();
         tmp=1-tmp;
         me.serviceable.setBoolValue(tmp);
+        if(tmp==0){
+            setprop("instrumentation/gps/wp/wp[1]/waypoint-type","");
+            setprop("/instrumentation/gps/wp/wp[1]/ID","");
+            setprop("instrumentation/gps/wp/wp[1]/name","");
+        }
         me.get_power();
     },
 ##################
@@ -142,114 +112,114 @@ return m;
 #############################
     set_TRI1: func {
         var num=me.Page1+1;
-        me.LHstring6.setValue("TRI "~num);
+        me.LHstring[6].setValue("TRI "~num);
     },
 ################
     set_MOD1: func {
         var num=me.Page1+1;
-        me.LHstring6.setValue("MOD "~num);
+        me.LHstring[6].setValue("MOD "~num);
     },
 ###############
     set_FPL1: func {
         var num=me.Page1+1;
-        me.LHstring6.setValue("FPL "~num);
+        me.LHstring[6].setValue("FPL "~num);
     },
 ################
     set_NAV1: func {
         var num=me.Page1+1;
-        me.LHstring6.setValue("NAV "~num);
+        me.LHstring[6].setValue("NAV "~num);
         var buf="";
         var ID=getprop("instrumentation/gps/wp/wp/ID");
         if(ID==nil)ID="D";
         var ID2=getprop("instrumentation/gps/wp/wp[1]/ID");
         if(ID2==nil)ID2=" ";
         buf = sprintf("   %s > %s",ID,ID2);
-        me.LHstring0.setValue(buf);
-        me.LHstring1.setValue("* * * * * * * * * * *");
+        me.LHstring[0].setValue(buf);
+        me.LHstring[1].setValue("* * * * * * * * * * *");
         var DIS=getprop("instrumentation/gps/wp/wp[1]/distance-nm");
         buf = sprintf("DIS     %4.0fNM",DIS);
-        me.LHstring2.setValue(buf);
+        me.LHstring[2].setValue(buf);
         var GS=getprop("velocities/groundspeed-kt");
         buf = sprintf("GS     %3.0fKT",GS);
-        me.LHstring3.setValue(buf);
+        me.LHstring[3].setValue(buf);
         var ETE=getprop("instrumentation/gps/wp/wp[1]/TTW");
         buf = sprintf("ETE     %s",ETE);
-        me.LHstring4.setValue(buf);
+        me.LHstring[4].setValue(buf);
         var BRG=getprop("instrumentation/gps/wp/wp[1]/bearing-mag-deg");
         buf = sprintf("BRG     %3.0f",BRG);
-        me.LHstring5.setValue(buf);
+        me.LHstring[5].setValue(buf);
     },
 #################
     set_CAL1: func {
         var num=me.Page1+1;
-        me.LHstring6.setValue("CAL "~num);
+        me.LHstring[6].setValue("CAL "~num);
     },
 #################
     set_STA1: func {
         var num=me.Page1+1;
-        me.LHstring6.setValue("STA "~num);
+        me.LHstring[6].setValue("STA "~num);
     },
 ##################
     set_SET1: func {
         var num=me.Page1+1;
-        me.LHstring6.setValue("SET "~num);
+        me.LHstring[6].setValue("SET "~num);
     },
 ##################
     set_OTH1: func {
         var num=me.Page1+1;
-        me.LHstring6.setValue("OTH "~num);
+        me.LHstring[6].setValue("OTH "~num);
     },
 ##############################
 ####### RIGHT MENU ###########
 ##############################
     set_CTR2: func {
         var num=me.Page2+1;
-        me.RHstring6.setValue("CTR "~num);
+        me.RHstring[6].setValue("CTR "~num);
     },
 #################
     set_REF2: func {
         var num=me.Page2+1;
-        me.RHstring6.setValue("REF "~num);
+        me.RHstring[6].setValue("REF "~num);
     },
 ################
     set_ACT2: func {
         var num=me.Page2+1;
-        me.RHstring6.setValue("ACT "~num);
+        me.RHstring[6].setValue("ACT "~num);
     },
 #################
     set_DT2: func {
         var num=me.Page2+1;
-        me.RHstring6.setValue("D/T "~num);
+        me.RHstring[6].setValue("D/T "~num);
     },
 ################
     set_NAV2: func {
         var num=me.Page2+1;
-        me.RHstring6.setValue("NAV "~num);
+        me.RHstring[6].setValue("NAV "~num);
     },
 ###################
     set_APT2: func {
         var num=me.Page2+1;
-        me.RHstring6.setValue("APT "~num);
+        me.RHstring[6].setValue("APT "~num);
     },
 ###################
     set_VOR2: func {
         var num=me.Page2+1;
-        me.RHstring6.setValue("VOR "~num);
+        me.RHstring[6].setValue("VOR "~num);
     },
 ##################
     set_NDB2: func {
         var num=me.Page2+1;
-        me.RHstring6.setValue("NDB "~num);
+        me.RHstring[6].setValue("NDB "~num);
     },
 #################
     set_INT2: func {
         var num=me.Page2+1;
-        me.RHstring6.setValue("INT "~num);
+        me.RHstring[6].setValue("INT "~num);
     },
 ##################
     set_SUP2: func {
         var num=me.Page2+1;
-        me.RHstring6.setValue("SUP "~num);
+        me.RHstring[6].setValue("SUP "~num);
     },
 ##################
 ##################
