@@ -249,8 +249,8 @@ Syd Adams
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                 <command>nasal</command>
-         <script>systems.Gps.power_up();</script>
+                 <command>property-toggle</command>
+         <property>instrumentation/gps/serviceable</property>
             </binding>
         </action>
     </animation>
