@@ -745,10 +745,65 @@
         </axis>
     </animation>
   
+
+
+
+  <!--	flap clickables	-->
+  <animation>
+   <type>pick</type>
+   <object-name>FlapsDownClick</object-name>
+   <visible>false</visible>
+   <action>
+     <name>increase flaps</name>
+     <button>0</button>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/flight/flaps</property>
+       <step>0.1</step>
+       <min>0</min>
+       <max>1</max>
+     </binding>
+   </action>
+  </animation>
+  <animation>
+   <type>pick</type>
+   <object-name>FlapsUpClick</object-name>
+   <visible>false</visible>
+   <action>
+     <name>decrease flaps</name>
+     <button>0</button>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/flight/flaps</property>
+       <step>-0.1</step>
+       <min>0</min>
+       <max>1</max>
+     </binding>
+   </action>
+  </animation>
+
+  <!--	flap Leverage	-->
     <animation>
         <type>rotate</type>
         <object-name>FlapLever</object-name>
         <property>controls/flight/flaps</property>
+        <factor>12.0</factor>
+        <center>
+            <x-m>-4.734</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-0.510</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>  
+  <!--	flap Indicator	-->
+    <animation>
+        <type>rotate</type>
+        <object-name>FlapIndicator</object-name>
+        <property>surface-positions/flap-pos-norm</property>
         <factor>12.0</factor>
         <center>
             <x-m>-4.734</x-m>
