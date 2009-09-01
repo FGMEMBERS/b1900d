@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "backlit" rgb 0.9 0.9 0.9 amb 0.2 0.2 0.2 emis 0.2 0.2 0.2 spec 0.372264 0.372264 0.372264 shi 17 trans 0
-MATERIAL "Orangeglow" rgb 0.9 0.9 0.9 amb 0.2 0.5 0.5 emis 0.2 0.2 0.2 spec 0 0 0 shi 0 trans 0
+MATERIAL "backlit" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 0.2 0.2 0.2 spec 0.372264 0.372264 0.372264 shi 17 trans 0
+MATERIAL "Orangeglow" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 0.2 0.2 0.2 spec 0 0 0 shi 0 trans 0
 OBJECT world
 kids 6
 OBJECT poly

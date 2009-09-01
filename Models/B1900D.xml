@@ -71,6 +71,52 @@
         <max-m>100</max-m>
     </animation>
 
+	<model><!-- LH tail reg-->
+		<path>Aircraft/b1900d/Models/registration.xml</path>
+		<offsets>
+			<x-m>6.857</x-m>
+			<y-m>-0.01</y-m>
+			<z-m>0.935</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>0</heading-deg>
+		</offsets>
+		<overlay>
+			<params>
+				<size>0.50</size>
+				<alignment>xz-plane</alignment>
+				<color>
+					<red>0.8</red>
+					<green>0.8</green>
+					<blue>0.8</blue>
+				</color>
+			</params>
+		</overlay>
+	</model>
+
+	<model><!-- RH tail reg-->
+		<path>Aircraft/b1900d/Models/registration.xml</path>
+		<offsets>
+			<x-m>6.857</x-m>
+			<y-m>0.01</y-m>
+			<z-m>0.935</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>0</heading-deg>
+		</offsets>
+		<overlay>
+			<params>
+				<size>0.50</size>
+				<alignment>reversed-xz-plane</alignment>
+				<color>
+					<red>0.8</red>
+					<green>0.8</green>
+					<blue>0.8</blue>
+				</color>
+			</params>
+		</overlay>
+	</model>
+
     <animation>
         <name>RHprop</name>
         <object-name>Rblade</object-name>
@@ -709,9 +755,10 @@
         <object-name>navlight.glow</object-name>
         <condition>
             <and>
-                <not>
-                    <property>controls/lighting/strobe-state/state</property>
-                </not>
+                <equals>
+                    <property>sim/multiplay/generic/int[1]</property>
+                    <value>0</value>
+                </equals>
                 <greater-than>
                     <property>sim/multiplay/generic/int[2]</property>
                     <value>0.2</value>

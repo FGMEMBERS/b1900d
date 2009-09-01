@@ -1,30 +1,30 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "gloss.005" rgb 0.771291 0.771291 0.771291 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 38 trans 0
-MATERIAL "gloss.006" rgb 1 1 1 amb 1 1 1 emis 0.014983 0.014983 0.014983 spec 0.504136 0.504136 0.504136 shi 32 trans 0
+MATERIAL "gloss.004" rgb 0.771291 0.771291 0.771291 amb 0.771291 0.771291 0.771291 emis 0 0 0 spec 1 1 1 shi 38 trans 0
+MATERIAL "gloss.001" rgb 1 1 1 amb 1 1 1 emis 0.014983 0.014983 0.014983 spec 0.504136 0.504136 0.504136 shi 32 trans 0
 MATERIAL "Gaugelight.002" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 0 0 0 shi 32 trans 0
-MATERIAL "backlit.001" rgb 0.816803 0.816803 0.816803 amb 1 1 1 emis 0.2 0.2 0.2 spec 0.792374 0.792374 0.792374 shi 17 trans 0
-MATERIAL "bezels.001" rgb 0.9 0.9 0.9 amb 1 1 1 emis 0.2 0.2 0.2 spec 0 0 0 shi 17 trans 0
-MATERIAL "panellight.001" rgb 1 1 1 amb 1 1 1 emis 0.564826 0.564826 0.564826 spec 0 0 0 shi 72 trans 0
-MATERIAL "gloss.007" rgb 0.545036 0.545036 0.545036 amb 0.560027 0.560027 0.560027 emis 0 0 0 spec 1 1 1 shi 57 trans 0
-MATERIAL "glossblack.001" rgb 0.060829 0.060829 0.060829 amb 0.132808 0.132808 0.132808 emis 0 0 0 spec 1 0.94931 0.94931 shi 71 trans 0
-MATERIAL "pfd.001" rgb 0 0 0 amb 1 1 1 emis 0 0 0 spec 0 0 0 shi 0 trans 0
-MATERIAL "gloss.008" rgb 0.901507 0.901507 0.901507 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 53 trans 0
-MATERIAL "dark.005" rgb 0.5 0.5 0.5 amb 0.634977 0.634977 0.634977 emis 0 0 0 spec 0.40263 0.40263 0.40263 shi 12 trans 0
-MATERIAL "FlapIndicator" rgb 1 1 1 amb 1 1 1 emis 0.312709 0.312709 0.312709 spec 0 0 0 shi 72 trans 0
-MATERIAL "instruments.002" rgb 1 1 1 amb 1 1 1 emis 0.6 0.6 0.6 spec 0 0 0 shi 72 trans 0
-MATERIAL "lights.002" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 0 0 0 shi 72 trans 0
-MATERIAL "dark.006" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0.644771 0.644771 0.644771 shi 6 trans 0.9
-MATERIAL "semigloss.002" rgb 0.901507 0.901507 0.901507 amb 1 1 1 emis 0 0 0 spec 0.566912 0.566912 0.566912 shi 53 trans 0
+MATERIAL "backlit.001" rgb 0.816803 0.816803 0.816803 amb 0.816803 0.816803 0.816803 emis 0.2 0.2 0.2 spec 0.792374 0.792374 0.792374 shi 17 trans 0
+MATERIAL "bezels" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 0.2 0.2 0.2 spec 0 0 0 shi 17 trans 0
+MATERIAL "panellight" rgb 1 1 1 amb 1 1 1 emis 0.564826 0.564826 0.564826 spec 0 0 0 shi 72 trans 0
+MATERIAL "gloss.002" rgb 0.545036 0.545036 0.545036 amb 0.545036 0.545036 0.545036 emis 0 0 0 spec 1 1 1 shi 57 trans 0
+MATERIAL "glossblack" rgb 0.060829 0.060829 0.060829 amb 0.060829 0.060829 0.060829 emis 0 0 0 spec 1 0.94931 0.94931 shi 71 trans 0
+MATERIAL "pfd" rgb 0 0 0 amb 0 0 0 emis 0 0 0 spec 0 0 0 shi 0 trans 0
+MATERIAL "gloss.003" rgb 0.901507 0.901507 0.901507 amb 0.901507 0.901507 0.901507 emis 0 0 0 spec 1 1 1 shi 53 trans 0
+MATERIAL "dark.001" rgb 0.5 0.5 0.5 amb 0.5 0.5 0.5 emis 0 0 0 spec 0.40263 0.40263 0.40263 shi 12 trans 0
+MATERIAL "Gaugemetal" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 0.2 0.2 0.2 spec 0.779111 0.779111 0.779111 shi 45 trans 0
+MATERIAL "instruments" rgb 1 1 1 amb 1 1 1 emis 0.6 0.6 0.6 spec 0 0 0 shi 72 trans 0
+MATERIAL "lights" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 0 0 0 shi 72 trans 0
+MATERIAL "dark" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0.644771 0.644771 0.644771 shi 6 trans 0.9
+MATERIAL "semigloss" rgb 0.901507 0.901507 0.901507 amb 0.901507 0.901507 0.901507 emis 0 0 0 spec 0.566912 0.566912 0.566912 shi 53 trans 0
 OBJECT world
-kids 212
+kids 210
 OBJECT group
 name "flapgauge"
 kids 2
 OBJECT poly
 name "flapgauge_0"
 data 8
-Mesh.307
+Mesh.002
 texture "gauges1.png"
 texrep 1 1
 crease 30.000000
@@ -376,7 +376,7 @@ kids 0
 OBJECT poly
 name "flapgauge_1"
 data 8
-Mesh.308
+Mesh.003
 texture "gauges1.png"
 texrep 1 1
 crease 30.000000
@@ -443,7 +443,7 @@ kids 0
 OBJECT poly
 name "AFDled3"
 data 8
-Mesh.309
+Mesh.004
 crease 30.000000
 numvert 0
 numsurf 0
@@ -451,7 +451,7 @@ kids 0
 OBJECT poly
 name "ALTstatic.sw"
 data 8
-Mesh.310
+Mesh.005
 crease 60.000000
 numvert 13
 -4.779766 -0.29033 0.241037
@@ -550,7 +550,7 @@ kids 0
 OBJECT poly
 name "AP-fail"
 data 8
-Mesh.311
+Mesh.006
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -571,7 +571,7 @@ kids 0
 OBJECT poly
 name "APtrim-fail"
 data 8
-Mesh.312
+Mesh.007
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -592,7 +592,7 @@ kids 0
 OBJECT poly
 name "ARMlites"
 data 8
-Mesh.313
+Mesh.008
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -613,7 +613,7 @@ kids 0
 OBJECT poly
 name "AUTOfthr.sw"
 data 8
-Mesh.314
+Mesh.009
 crease 60.000000
 numvert 13
 -4.779121 -0.289327 0.448191
@@ -712,7 +712,7 @@ kids 0
 OBJECT poly
 name "AV"
 data 8
-Mesh.315
+Mesh.010
 crease 60.000000
 numvert 13
 -4.799575 -0.255731 0.579379
@@ -811,7 +811,7 @@ kids 0
 OBJECT poly
 name "Atrim"
 data 8
-Mesh.316
+Mesh.011
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -1060,7 +1060,7 @@ kids 0
 OBJECT poly
 name "AudioSw"
 data 8
-Mesh.317
+Mesh.012
 crease 60.000000
 numvert 13
 -4.892061 0.083002 0.103149
@@ -1159,7 +1159,7 @@ kids 0
 OBJECT poly
 name "AudioSw.001"
 data 8
-Mesh.318
+Mesh.013
 crease 60.000000
 numvert 13
 -4.892061 0.083002 0.091791
@@ -1258,7 +1258,7 @@ kids 0
 OBJECT poly
 name "AudioSw.002"
 data 8
-Mesh.319
+Mesh.014
 crease 60.000000
 numvert 13
 -4.892061 0.083002 0.078198
@@ -1357,7 +1357,7 @@ kids 0
 OBJECT poly
 name "AudioSw.003"
 data 8
-Mesh.320
+Mesh.015
 crease 60.000000
 numvert 13
 -4.892061 0.083002 0.066356
@@ -1456,7 +1456,7 @@ kids 0
 OBJECT poly
 name "AudioSw.004"
 data 8
-Mesh.321
+Mesh.016
 crease 60.000000
 numvert 13
 -4.892061 0.083002 0.053512
@@ -1555,7 +1555,7 @@ kids 0
 OBJECT poly
 name "AudioSw.005"
 data 8
-Mesh.322
+Mesh.017
 crease 60.000000
 numvert 13
 -4.892061 0.083002 0.041669
@@ -1654,7 +1654,7 @@ kids 0
 OBJECT poly
 name "AudioSw.006"
 data 8
-Mesh.323
+Mesh.018
 crease 60.000000
 numvert 13
 -4.892061 0.083002 0.028576
@@ -1753,7 +1753,7 @@ kids 0
 OBJECT poly
 name "AudioSw.007"
 data 8
-Mesh.324
+Mesh.019
 crease 60.000000
 numvert 13
 -4.892061 0.083002 0.0174
@@ -1852,7 +1852,7 @@ kids 0
 OBJECT poly
 name "AudioSw.008"
 data 8
-Mesh.325
+Mesh.020
 crease 60.000000
 numvert 13
 -4.892061 0.083002 0.004807
@@ -1951,7 +1951,7 @@ kids 0
 OBJECT poly
 name "AudioSw.009"
 data 8
-Mesh.326
+Mesh.021
 crease 60.000000
 numvert 13
 -4.892061 0.083002 -0.013374
@@ -2050,7 +2050,7 @@ kids 0
 OBJECT poly
 name "AudioSw.010"
 data 8
-Mesh.327
+Mesh.022
 crease 60.000000
 numvert 13
 -4.892061 0.083002 -0.083921
@@ -2149,7 +2149,7 @@ kids 0
 OBJECT poly
 name "AudioSw.011"
 data 8
-Mesh.328
+Mesh.023
 crease 60.000000
 numvert 13
 -4.892061 0.083002 -0.109885
@@ -2248,7 +2248,7 @@ kids 0
 OBJECT poly
 name "AudioSw.012"
 data 8
-Mesh.329
+Mesh.024
 crease 60.000000
 numvert 13
 -4.892061 0.083002 -0.120971
@@ -2347,7 +2347,7 @@ kids 0
 OBJECT poly
 name "AudioSw.013"
 data 8
-Mesh.330
+Mesh.025
 crease 60.000000
 numvert 13
 -4.892061 0.083002 -0.134099
@@ -2446,7 +2446,7 @@ kids 0
 OBJECT poly
 name "AudioSw.014"
 data 8
-Mesh.331
+Mesh.026
 crease 60.000000
 numvert 13
 -4.892061 0.083002 -0.145622
@@ -2545,7 +2545,7 @@ kids 0
 OBJECT poly
 name "AudioSw.015"
 data 8
-Mesh.332
+Mesh.027
 crease 60.000000
 numvert 13
 -4.892061 0.083002 -0.158312
@@ -2644,7 +2644,7 @@ kids 0
 OBJECT poly
 name "AudioSw.016"
 data 8
-Mesh.333
+Mesh.028
 crease 60.000000
 numvert 13
 -4.892061 0.083002 -0.170565
@@ -2743,7 +2743,7 @@ kids 0
 OBJECT poly
 name "AudioSw.017"
 data 8
-Mesh.334
+Mesh.029
 crease 60.000000
 numvert 13
 -4.892061 0.083002 -0.182526
@@ -2842,7 +2842,7 @@ kids 0
 OBJECT poly
 name "AudioSw.018"
 data 8
-Mesh.335
+Mesh.030
 crease 60.000000
 numvert 13
 -4.892061 0.083002 -0.194779
@@ -2941,7 +2941,7 @@ kids 0
 OBJECT poly
 name "AudioSw.019"
 data 8
-Mesh.336
+Mesh.031
 crease 60.000000
 numvert 13
 -4.892061 0.083002 -0.207177
@@ -3040,7 +3040,7 @@ kids 0
 OBJECT poly
 name "AudioSw.020"
 data 8
-Mesh.337
+Mesh.032
 crease 60.000000
 numvert 13
 -4.887974 0.059987 0.013224
@@ -3139,7 +3139,7 @@ kids 0
 OBJECT poly
 name "AudioSw.021"
 data 8
-Mesh.338
+Mesh.033
 crease 60.000000
 numvert 13
 -4.887974 0.059987 -0.008361
@@ -3238,7 +3238,7 @@ kids 0
 OBJECT poly
 name "AudioSw.022"
 data 8
-Mesh.339
+Mesh.034
 crease 60.000000
 numvert 13
 -4.887974 0.059987 -0.10666
@@ -3337,7 +3337,7 @@ kids 0
 OBJECT poly
 name "AudioSw.023"
 data 8
-Mesh.340
+Mesh.035
 crease 60.000000
 numvert 13
 -4.883094 0.035428 0.005227
@@ -3436,7 +3436,7 @@ kids 0
 OBJECT poly
 name "AudioSw.024"
 data 8
-Mesh.341
+Mesh.036
 crease 60.000000
 numvert 13
 -4.883094 0.035428 -0.019326
@@ -3535,7 +3535,7 @@ kids 0
 OBJECT poly
 name "AudioSw.025"
 data 8
-Mesh.342
+Mesh.037
 crease 60.000000
 numvert 13
 -4.883094 0.035428 -0.048003
@@ -3634,7 +3634,7 @@ kids 0
 OBJECT poly
 name "AudioSw.026"
 data 8
-Mesh.343
+Mesh.038
 crease 60.000000
 numvert 13
 -4.883094 0.035428 -0.102133
@@ -3733,7 +3733,7 @@ kids 0
 OBJECT poly
 name "AudioSw.027"
 data 8
-Mesh.344
+Mesh.039
 crease 60.000000
 numvert 13
 -4.883094 0.035428 -0.124096
@@ -3832,7 +3832,7 @@ kids 0
 OBJECT poly
 name "Avn.dimmer"
 data 8
-Mesh.345
+Mesh.176
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -4073,7 +4073,7 @@ kids 0
 OBJECT poly
 name "BRKdeice.sw"
 data 8
-Mesh.346
+Mesh.040
 crease 60.000000
 numvert 13
 -4.779766 -0.29033 0.222161
@@ -4172,7 +4172,7 @@ kids 0
 OBJECT poly
 name "BUS.sw"
 data 8
-Mesh.347
+Mesh.041
 crease 60.000000
 numvert 13
 -4.799386 -0.255731 0.531801
@@ -4271,7 +4271,7 @@ kids 0
 OBJECT poly
 name "Batt"
 data 8
-Mesh.348
+Mesh.042
 crease 60.000000
 numvert 13
 -4.818416 -0.222448 0.578489
@@ -4370,7 +4370,7 @@ kids 0
 OBJECT poly
 name "Bezel"
 data 8
-Mesh.349
+Mesh.045
 crease 30.000000
 numvert 0
 numsurf 0
@@ -4378,11 +4378,11 @@ kids 0
 OBJECT poly
 name "Bezels"
 data 8
-Mesh.350
+Mesh.046
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
-numvert 109
+numvert 113
 -4.741237 0.076642 0.267655
 -4.896897 0.118769 0.244171
 -4.899727 0.11827 0.244171
@@ -4492,7 +4492,11 @@ numvert 109
 -4.880369 0.021426 -0.216679
 -4.880369 0.021426 0.116655
 -4.895059 0.099102 0.116655
-numsurf 92
+-4.898253 0.121795 -0.184656
+-4.894783 0.102119 -0.184656
+-4.894783 0.102119 -0.12214
+-4.898253 0.121795 -0.12214
+numsurf 93
 SURF 0x10
 mat 5
 refs 4
@@ -5105,11 +5109,18 @@ refs 4
 108 0.523085594177 0.108897566795
 107 0.523085474968 0.00717820134014
 106 0.959598600864 0.00717820134014
+SURF 0x00
+mat 5
+refs 4
+111 0.021994151175 0.60751336813
+110 0.0747258886695 0.60751336813
+109 0.0747258886695 0.624110400677
+112 0.021994151175 0.624110400677
 kids 0
 OBJECT poly
 name "Bezels.002"
 data 8
-Mesh.351
+Mesh.047
 texture "cabin.png"
 texrep 1 1
 crease 30.000000
@@ -5130,7 +5141,7 @@ kids 0
 OBJECT poly
 name "CALT-hi"
 data 8
-Mesh.352
+Mesh.048
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -5151,7 +5162,7 @@ kids 0
 OBJECT poly
 name "CBN-door"
 data 8
-Mesh.353
+Mesh.049
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -5172,7 +5183,7 @@ kids 0
 OBJECT poly
 name "CDIFF-hi"
 data 8
-Mesh.354
+Mesh.050
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -5193,7 +5204,7 @@ kids 0
 OBJECT poly
 name "CRG-door"
 data 8
-Mesh.355
+Mesh.051
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -5214,7 +5225,7 @@ kids 0
 OBJECT poly
 name "CTN.panel"
 data 8
-Mesh.356
+Mesh.052
 texture "caution-panel.png"
 texrep 1 1
 crease 30.000000
@@ -5235,7 +5246,7 @@ kids 0
 OBJECT poly
 name "Cmps.needle"
 data 8
-Mesh.357
+Mesh.055
 crease 30.000000
 numvert 4
 -4.676994 0.416173 -6.5e-05
@@ -5254,7 +5265,7 @@ kids 0
 OBJECT poly
 name "Cond0"
 data 8
-Mesh.358
+Mesh.056
 crease 45.000000
 numvert 8
 -4.634247 -0.363631 -0.029484
@@ -5269,36 +5280,36 @@ numsurf 4
 SURF 0x10
 mat 7
 refs 4
-0 0.0 0.0
-3 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
+0 0 0
+3 0 0
+6 0 0
+7 0 0
 SURF 0x10
 mat 7
 refs 4
-3 0.0 0.0
-2 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
+3 0 0
+2 0 0
+5 0 0
+6 0 0
 SURF 0x10
 mat 7
 refs 4
-2 0.0 0.0
-1 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
+2 0 0
+1 0 0
+4 0 0
+5 0 0
 SURF 0x10
 mat 7
 refs 4
-1 0.0 0.0
-0 0.0 0.0
-7 0.0 0.0
-4 0.0 0.0
+1 0 0
+0 0 0
+7 0 0
+4 0 0
 kids 0
 OBJECT poly
 name "Cond0.001"
 data 8
-Mesh.359
+Mesh.057
 crease 45.000000
 numvert 20
 -4.576147 -0.292076 -0.019782
@@ -5325,160 +5336,160 @@ numsurf 24
 SURF 0x10
 mat 8
 refs 4
-10 0.0 0.0
-2 0.0 0.0
-9 0.0 0.0
-16 0.0 0.0
+10 0 0
+2 0 0
+9 0 0
+16 0 0
 SURF 0x10
 mat 8
 refs 4
-11 0.0 0.0
-3 0.0 0.0
-2 0.0 0.0
-10 0.0 0.0
+11 0 0
+3 0 0
+2 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 4
-12 0.0 0.0
-4 0.0 0.0
-3 0.0 0.0
-11 0.0 0.0
+12 0 0
+4 0 0
+3 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 4
-13 0.0 0.0
-5 0.0 0.0
-4 0.0 0.0
-12 0.0 0.0
+13 0 0
+5 0 0
+4 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 4
-19 0.0 0.0
-6 0.0 0.0
-5 0.0 0.0
-13 0.0 0.0
+19 0 0
+6 0 0
+5 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 4
-14 0.0 0.0
-7 0.0 0.0
-6 0.0 0.0
-19 0.0 0.0
+14 0 0
+7 0 0
+6 0 0
+19 0 0
 SURF 0x10
 mat 8
 refs 4
-15 0.0 0.0
-8 0.0 0.0
-7 0.0 0.0
-14 0.0 0.0
+15 0 0
+8 0 0
+7 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 4
-16 0.0 0.0
-9 0.0 0.0
-8 0.0 0.0
-15 0.0 0.0
+16 0 0
+9 0 0
+8 0 0
+15 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-9 0.0 0.0
-2 0.0 0.0
+0 0 0
+9 0 0
+2 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-10 0.0 0.0
-16 0.0 0.0
+1 0 0
+10 0 0
+16 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-2 0.0 0.0
-3 0.0 0.0
+0 0 0
+2 0 0
+3 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-11 0.0 0.0
-10 0.0 0.0
+1 0 0
+11 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-3 0.0 0.0
-4 0.0 0.0
+0 0 0
+3 0 0
+4 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-12 0.0 0.0
-11 0.0 0.0
+1 0 0
+12 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
+0 0 0
+4 0 0
+5 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-13 0.0 0.0
-12 0.0 0.0
+1 0 0
+13 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
+0 0 0
+5 0 0
+6 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-19 0.0 0.0
-13 0.0 0.0
+1 0 0
+19 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
+0 0 0
+6 0 0
+7 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-14 0.0 0.0
-19 0.0 0.0
+1 0 0
+14 0 0
+19 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-7 0.0 0.0
-8 0.0 0.0
+0 0 0
+7 0 0
+8 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-15 0.0 0.0
-14 0.0 0.0
+1 0 0
+15 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-8 0.0 0.0
-9 0.0 0.0
+0 0 0
+8 0 0
+9 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-16 0.0 0.0
-15 0.0 0.0
+1 0 0
+16 0 0
+15 0 0
 kids 0
 OBJECT poly
 name "Cond1"
 data 8
-Mesh.360
+Mesh.058
 crease 45.000000
 numvert 8
 -4.634607 -0.364122 -0.050053
@@ -5493,36 +5504,36 @@ numsurf 4
 SURF 0x10
 mat 7
 refs 4
-0 0.0 0.0
-4 0.0 0.0
-7 0.0 0.0
-3 0.0 0.0
+0 0 0
+4 0 0
+7 0 0
+3 0 0
 SURF 0x10
 mat 7
 refs 4
-3 0.0 0.0
-7 0.0 0.0
-6 0.0 0.0
-2 0.0 0.0
+3 0 0
+7 0 0
+6 0 0
+2 0 0
 SURF 0x10
 mat 7
 refs 4
-2 0.0 0.0
-6 0.0 0.0
-5 0.0 0.0
-1 0.0 0.0
+2 0 0
+6 0 0
+5 0 0
+1 0 0
 SURF 0x10
 mat 7
 refs 4
-4 0.0 0.0
-0 0.0 0.0
-1 0.0 0.0
-5 0.0 0.0
+4 0 0
+0 0 0
+1 0 0
+5 0 0
 kids 0
 OBJECT poly
 name "Cond1.001"
 data 8
-Mesh.361
+Mesh.059
 crease 45.000000
 numvert 20
 -4.576147 -0.292076 -0.077438
@@ -5549,160 +5560,160 @@ numsurf 24
 SURF 0x10
 mat 8
 refs 4
-10 0.0 0.0
-15 0.0 0.0
-9 0.0 0.0
-2 0.0 0.0
+10 0 0
+15 0 0
+9 0 0
+2 0 0
 SURF 0x10
 mat 8
 refs 4
-11 0.0 0.0
-10 0.0 0.0
-2 0.0 0.0
-3 0.0 0.0
+11 0 0
+10 0 0
+2 0 0
+3 0 0
 SURF 0x10
 mat 8
 refs 4
-12 0.0 0.0
-11 0.0 0.0
-3 0.0 0.0
-4 0.0 0.0
+12 0 0
+11 0 0
+3 0 0
+4 0 0
 SURF 0x10
 mat 8
 refs 4
-19 0.0 0.0
-12 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
+19 0 0
+12 0 0
+4 0 0
+5 0 0
 SURF 0x10
 mat 8
 refs 4
-18 0.0 0.0
-19 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
+18 0 0
+19 0 0
+5 0 0
+6 0 0
 SURF 0x10
 mat 8
 refs 4
-13 0.0 0.0
-18 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
+13 0 0
+18 0 0
+6 0 0
+7 0 0
 SURF 0x10
 mat 8
 refs 4
-14 0.0 0.0
-13 0.0 0.0
-7 0.0 0.0
-8 0.0 0.0
+14 0 0
+13 0 0
+7 0 0
+8 0 0
 SURF 0x10
 mat 8
 refs 4
-15 0.0 0.0
-14 0.0 0.0
-8 0.0 0.0
-9 0.0 0.0
+15 0 0
+14 0 0
+8 0 0
+9 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-2 0.0 0.0
-9 0.0 0.0
+0 0 0
+2 0 0
+9 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-15 0.0 0.0
-10 0.0 0.0
+1 0 0
+15 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-3 0.0 0.0
-2 0.0 0.0
+0 0 0
+3 0 0
+2 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-10 0.0 0.0
-11 0.0 0.0
+1 0 0
+10 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-4 0.0 0.0
-3 0.0 0.0
+0 0 0
+4 0 0
+3 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-11 0.0 0.0
-12 0.0 0.0
+1 0 0
+11 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-5 0.0 0.0
-4 0.0 0.0
+0 0 0
+5 0 0
+4 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-12 0.0 0.0
-19 0.0 0.0
+1 0 0
+12 0 0
+19 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-6 0.0 0.0
-5 0.0 0.0
+0 0 0
+6 0 0
+5 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-19 0.0 0.0
-18 0.0 0.0
+1 0 0
+19 0 0
+18 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-7 0.0 0.0
-6 0.0 0.0
+0 0 0
+7 0 0
+6 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-18 0.0 0.0
-13 0.0 0.0
+1 0 0
+18 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-8 0.0 0.0
-7 0.0 0.0
+0 0 0
+8 0 0
+7 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-13 0.0 0.0
-14 0.0 0.0
+1 0 0
+13 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-9 0.0 0.0
-8 0.0 0.0
+0 0 0
+9 0 0
+8 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-14 0.0 0.0
-15 0.0 0.0
+1 0 0
+14 0 0
+15 0 0
 kids 0
 OBJECT poly
 name "Console.dimmer"
 data 8
-Mesh.362
+Mesh.180
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -5943,7 +5954,7 @@ kids 0
 OBJECT poly
 name "Copilot.dimmer"
 data 8
-Mesh.363
+Mesh.181
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -6184,7 +6195,7 @@ kids 0
 OBJECT poly
 name "Cylinder.004"
 data 8
-Mesh.364
+Mesh.060
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -6364,7 +6375,7 @@ kids 0
 OBJECT poly
 name "DCknob"
 data 8
-Mesh.365
+Mesh.061
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -6605,7 +6616,7 @@ kids 0
 OBJECT poly
 name "DEICE.sw"
 data 8
-Mesh.366
+Mesh.062
 crease 60.000000
 numvert 13
 -4.798286 -0.257201 0.295524
@@ -6704,7 +6715,7 @@ kids 0
 OBJECT poly
 name "EFISaux.sw"
 data 8
-Mesh.367
+Mesh.065
 crease 50.000000
 numvert 13
 -4.849493 -0.137438 0.562765
@@ -6803,7 +6814,7 @@ kids 0
 OBJECT poly
 name "EFISaux.sw.001"
 data 8
-Mesh.368
+Mesh.066
 crease 50.000000
 numvert 13
 -4.849493 -0.137438 -0.509593
@@ -6902,7 +6913,7 @@ kids 0
 OBJECT poly
 name "EFISdimmer"
 data 8
-Mesh.369
+Mesh.290
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -7154,7 +7165,7 @@ kids 0
 OBJECT poly
 name "EngGauge"
 data 8
-Mesh.370
+Mesh.069
 crease 30.000000
 numvert 0
 numsurf 0
@@ -7162,7 +7173,7 @@ kids 0
 OBJECT poly
 name "Engine.dimmer"
 data 8
-Mesh.371
+Mesh.175
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -7403,7 +7414,7 @@ kids 0
 OBJECT poly
 name "Etrim"
 data 8
-Mesh.372
+Mesh.072
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -7786,7 +7797,7 @@ kids 0
 OBJECT poly
 name "ExtPwr"
 data 8
-Mesh.373
+Mesh.073
 crease 50.000000
 numvert 13
 -4.83755 -0.190681 0.564033
@@ -7885,7 +7896,7 @@ kids 0
 OBJECT poly
 name "Extlights"
 data 8
-Mesh.374
+Mesh.074
 crease 50.000000
 numvert 17
 -4.411973 0.556999 0.163742
@@ -8014,7 +8025,7 @@ kids 0
 OBJECT poly
 name "Extlights.001"
 data 8
-Mesh.375
+Mesh.075
 crease 50.000000
 numvert 17
 -4.411973 0.556999 0.143884
@@ -8143,7 +8154,7 @@ kids 0
 OBJECT poly
 name "Extlights.002"
 data 8
-Mesh.376
+Mesh.076
 crease 50.000000
 numvert 17
 -4.411973 0.556999 0.124929
@@ -8272,7 +8283,7 @@ kids 0
 OBJECT poly
 name "Extlights.003"
 data 8
-Mesh.377
+Mesh.077
 crease 50.000000
 numvert 17
 -4.411973 0.556999 0.103979
@@ -8401,7 +8412,7 @@ kids 0
 OBJECT poly
 name "Extlights.004"
 data 8
-Mesh.378
+Mesh.078
 crease 50.000000
 numvert 17
 -4.411973 0.556999 0.082384
@@ -8530,7 +8541,7 @@ kids 0
 OBJECT poly
 name "Extlights.005"
 data 8
-Mesh.379
+Mesh.079
 crease 50.000000
 numvert 17
 -4.411973 0.556999 0.061223
@@ -8659,7 +8670,7 @@ kids 0
 OBJECT poly
 name "Extlights.006"
 data 8
-Mesh.380
+Mesh.080
 crease 50.000000
 numvert 17
 -4.411973 0.556999 0.038847
@@ -8788,7 +8799,7 @@ kids 0
 OBJECT poly
 name "Extlights.007"
 data 8
-Mesh.381
+Mesh.081
 crease 50.000000
 numvert 17
 -4.411973 0.556999 -0.006707
@@ -8917,7 +8928,7 @@ kids 0
 OBJECT poly
 name "Extlights.008"
 data 8
-Mesh.382
+Mesh.082
 crease 50.000000
 numvert 17
 -4.411973 0.556999 -0.028315
@@ -9046,7 +9057,7 @@ kids 0
 OBJECT poly
 name "Extlights.009"
 data 8
-Mesh.383
+Mesh.083
 crease 50.000000
 numvert 17
 -4.411973 0.556999 -0.061524
@@ -9175,7 +9186,7 @@ kids 0
 OBJECT poly
 name "Extlights.010"
 data 8
-Mesh.384
+Mesh.084
 crease 50.000000
 numvert 17
 -4.411973 0.556999 -0.093996
@@ -9304,7 +9315,7 @@ kids 0
 OBJECT poly
 name "Extlights.011"
 data 8
-Mesh.385
+Mesh.085
 crease 50.000000
 numvert 17
 -4.411973 0.556999 -0.114994
@@ -9433,7 +9444,7 @@ kids 0
 OBJECT poly
 name "Extlights.012"
 data 8
-Mesh.386
+Mesh.086
 crease 50.000000
 numvert 17
 -4.411973 0.556999 -0.140009
@@ -9562,7 +9573,7 @@ kids 0
 OBJECT poly
 name "Extlights.013"
 data 8
-Mesh.387
+Mesh.087
 crease 50.000000
 numvert 17
 -4.411973 0.556999 -0.159534
@@ -9691,7 +9702,7 @@ kids 0
 OBJECT poly
 name "Fdeck"
 data 8
-Mesh.388
+Mesh.092
 texture "cabin.png"
 texrep 1 1
 crease 45.000000
@@ -13952,68 +13963,139 @@ refs 3
 kids 0
 OBJECT poly
 name "FlapIndicator"
-data 8
-Mesh.518
-crease 45.000000
-numvert 8
--4.570441 -0.37652 0.005513
--4.570441 -0.37652 0.008768
--4.583973 -0.387074 0.008768
--4.583973 -0.387074 0.005513
--4.584876 -0.385917 0.008768
--4.584876 -0.385917 0.005513
--4.571343 -0.375363 0.005513
--4.571343 -0.375363 0.008768
-numsurf 6
-SURF 0x00
+data 12
+Cylinder.001
+crease 60.000000
+numvert 17
+-4.576714 -0.380561 0.005192
+-4.5762 -0.38106 0.006922
+-4.576714 -0.380561 0.008651
+-4.577954 -0.379356 0.009368
+-4.579195 -0.378151 0.008651
+-4.579709 -0.377652 0.006921
+-4.579195 -0.378151 0.005192
+-4.577955 -0.379356 0.004476
+-4.573305 -0.377053 0.005191
+-4.572791 -0.377552 0.006921
+-4.573305 -0.377052 0.008651
+-4.574545 -0.375847 0.009367
+-4.575786 -0.374642 0.00865
+-4.5763 -0.374143 0.006921
+-4.575786 -0.374642 0.005191
+-4.574546 -0.375848 0.004475
+-4.573755 -0.375033 0.006921
+numsurf 16
+SURF 0x10
+mat 12
+refs 3
+16 0 0
+9 0 0
+8 0 0
+SURF 0x10
+mat 12
+refs 3
+16 0 0
+10 0 0
+9 0 0
+SURF 0x10
+mat 12
+refs 3
+16 0 0
+11 0 0
+10 0 0
+SURF 0x10
+mat 12
+refs 3
+16 0 0
+12 0 0
+11 0 0
+SURF 0x10
+mat 12
+refs 3
+16 0 0
+13 0 0
+12 0 0
+SURF 0x10
+mat 12
+refs 3
+16 0 0
+14 0 0
+13 0 0
+SURF 0x10
+mat 12
+refs 3
+16 0 0
+15 0 0
+14 0 0
+SURF 0x10
+mat 12
+refs 3
+16 0 0
+8 0 0
+15 0 0
+SURF 0x10
 mat 12
 refs 4
-0 1.0 1.0
-1 1.0 0.0
-2 0.0 0.0
-3 0.0 1.0
-SURF 0x00
+0 0 0
+8 0 0
+9 0 0
+1 0 0
+SURF 0x10
 mat 12
 refs 4
-2 0.0 0.0
-4 0.0 1.0
-5 1.0 1.0
-3 1.0 0.0
-SURF 0x00
+1 0 0
+9 0 0
+10 0 0
+2 0 0
+SURF 0x10
 mat 12
 refs 4
-6 1.0 1.0
-0 1.0 0.0
-3 0.0 0.0
-5 0.0 1.0
-SURF 0x00
+2 0 0
+10 0 0
+11 0 0
+3 0 0
+SURF 0x10
 mat 12
 refs 4
-0 0.0 0.0
-6 0.0 1.0
-7 1.0 1.0
-1 1.0 0.0
-SURF 0x00
+3 0 0
+11 0 0
+12 0 0
+4 0 0
+SURF 0x10
 mat 12
 refs 4
-1 0.0 0.0
-7 0.0 1.0
-4 1.0 1.0
-2 1.0 0.0
-SURF 0x00
+4 0 0
+12 0 0
+13 0 0
+5 0 0
+SURF 0x10
 mat 12
 refs 4
-5 0.0 0.0
-4 0.0 1.0
-7 1.0 1.0
-6 1.0 0.0
+5 0 0
+13 0 0
+14 0 0
+6 0 0
+SURF 0x10
+mat 12
+refs 4
+6 0 0
+14 0 0
+15 0 0
+7 0 0
+SURF 0x10
+mat 12
+refs 4
+8 0 0
+0 0 0
+7 0 0
+15 0 0
 kids 0
 OBJECT poly
 name "FlapLever"
 data 8
-Mesh.389
+Mesh.093
 crease 45.000000
-numvert 26
+numvert 18
 -4.5662 -0.369121 -0.067733
 -4.563476 -0.369778 -0.067733
 -4.563507 -0.372578 -0.067733
@@ -14032,214 +14114,164 @@ numvert 26
 -4.57007 -0.370988 -0.043971
 -4.568162 -0.373432 -0.070111
 -4.568162 -0.373432 -0.041593
--4.571532 -0.376735 -0.050425
--4.571532 -0.376735 -0.04717
--4.585064 -0.387289 -0.04717
--4.585064 -0.387289 -0.050425
--4.585967 -0.386132 -0.04717
--4.585967 -0.386132 -0.050425
--4.572434 -0.375578 -0.050425
--4.572434 -0.375578 -0.04717
-numsurf 30
+numsurf 24
 SURF 0x10
 mat 8
 refs 3
-16 0.0 0.0
-0 0.0 0.0
-1 0.0 0.0
+16 0 0
+0 0 0
+1 0 0
 SURF 0x10
 mat 8
 refs 3
-17 0.0 0.0
-9 0.0 0.0
-8 0.0 0.0
+17 0 0
+9 0 0
+8 0 0
 SURF 0x10
 mat 8
 refs 3
-16 0.0 0.0
-1 0.0 0.0
-2 0.0 0.0
+16 0 0
+1 0 0
+2 0 0
 SURF 0x10
 mat 8
 refs 3
-17 0.0 0.0
-10 0.0 0.0
-9 0.0 0.0
+17 0 0
+10 0 0
+9 0 0
 SURF 0x10
 mat 8
 refs 3
-16 0.0 0.0
-2 0.0 0.0
-3 0.0 0.0
+16 0 0
+2 0 0
+3 0 0
 SURF 0x10
 mat 8
 refs 3
-17 0.0 0.0
-11 0.0 0.0
-10 0.0 0.0
+17 0 0
+11 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 3
-16 0.0 0.0
-3 0.0 0.0
-4 0.0 0.0
+16 0 0
+3 0 0
+4 0 0
 SURF 0x10
 mat 8
 refs 3
-17 0.0 0.0
-12 0.0 0.0
-11 0.0 0.0
+17 0 0
+12 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 3
-16 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
+16 0 0
+4 0 0
+5 0 0
 SURF 0x10
 mat 8
 refs 3
-17 0.0 0.0
-13 0.0 0.0
-12 0.0 0.0
+17 0 0
+13 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 3
-16 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
+16 0 0
+5 0 0
+6 0 0
 SURF 0x10
 mat 8
 refs 3
-17 0.0 0.0
-14 0.0 0.0
-13 0.0 0.0
+17 0 0
+14 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 3
-16 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
+16 0 0
+6 0 0
+7 0 0
 SURF 0x10
 mat 8
 refs 3
-17 0.0 0.0
-15 0.0 0.0
-14 0.0 0.0
+17 0 0
+15 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 3
-7 0.0 0.0
-0 0.0 0.0
-16 0.0 0.0
+7 0 0
+0 0 0
+16 0 0
 SURF 0x10
 mat 8
 refs 3
-17 0.0 0.0
-8 0.0 0.0
-15 0.0 0.0
+17 0 0
+8 0 0
+15 0 0
 SURF 0x10
 mat 8
 refs 4
-0 0.0 0.0
-8 0.0 0.0
-9 0.0 0.0
-1 0.0 0.0
+0 0 0
+8 0 0
+9 0 0
+1 0 0
 SURF 0x10
 mat 8
 refs 4
-1 0.0 0.0
-9 0.0 0.0
-10 0.0 0.0
-2 0.0 0.0
+1 0 0
+9 0 0
+10 0 0
+2 0 0
 SURF 0x10
 mat 8
 refs 4
-2 0.0 0.0
-10 0.0 0.0
-11 0.0 0.0
-3 0.0 0.0
+2 0 0
+10 0 0
+11 0 0
+3 0 0
 SURF 0x10
 mat 8
 refs 4
-3 0.0 0.0
-11 0.0 0.0
-12 0.0 0.0
-4 0.0 0.0
+3 0 0
+11 0 0
+12 0 0
+4 0 0
 SURF 0x10
 mat 8
 refs 4
-4 0.0 0.0
-12 0.0 0.0
-13 0.0 0.0
-5 0.0 0.0
+4 0 0
+12 0 0
+13 0 0
+5 0 0
 SURF 0x10
 mat 8
 refs 4
-5 0.0 0.0
-13 0.0 0.0
-14 0.0 0.0
-6 0.0 0.0
+5 0 0
+13 0 0
+14 0 0
+6 0 0
 SURF 0x10
 mat 8
 refs 4
-6 0.0 0.0
-14 0.0 0.0
-15 0.0 0.0
-7 0.0 0.0
+6 0 0
+14 0 0
+15 0 0
+7 0 0
 SURF 0x10
 mat 8
 refs 4
-8 0.0 0.0
-0 0.0 0.0
-7 0.0 0.0
-15 0.0 0.0
-SURF 0x00
-mat 8
-refs 4
-20 0.0 0.0
-21 0.0 1.0
-18 1.0 1.0
-19 1.0 0.0
-SURF 0x00
-mat 8
-refs 4
-20 0.0 0.0
-22 0.0 1.0
-23 1.0 1.0
-21 1.0 0.0
-SURF 0x00
-mat 8
-refs 4
-21 0.0 0.0
-23 0.0 1.0
-24 1.0 1.0
-18 1.0 0.0
-SURF 0x00
-mat 8
-refs 4
-18 0.0 0.0
-24 0.0 1.0
-25 1.0 1.0
-19 1.0 0.0
-SURF 0x00
-mat 8
-refs 4
-19 0.0 0.0
-25 0.0 1.0
-22 1.0 1.0
-20 1.0 0.0
-SURF 0x00
-mat 8
-refs 4
-23 0.0 0.0
-22 0.0 1.0
-25 1.0 1.0
-24 1.0 0.0
+8 0 0
+0 0 0
+7 0 0
+15 0 0
 kids 0
 OBJECT poly
 name "Flapneedle"
 data 8
-Mesh.391
+Mesh.094
 texture "gauges1.png"
 texrep 1 1
 crease 30.000000
@@ -14265,47 +14297,9 @@ refs 3
 4 0.454630196095 0.22438955307
 kids 0
 OBJECT poly
-name "FlapsDownClick"
-data 4
-Mesh
-crease 25.000000
-numvert 4
--4.557116 -0.414891 -0.065432
--4.552269 -0.424586 -0.065432
--4.557077 -0.414874 -0.017666
--4.552347 -0.424624 -0.017848
-numsurf 1
-SURF 0x10
-mat 4
-refs 4
-0 1.0 1.0
-2 0.0 1.0
-3 0.0 0.0
-1 1.0 0.0
-kids 0
-OBJECT poly
-name "FlapsUpClick"
-data 8
-Mesh.001
-crease 25.000000
-numvert 4
--4.582372 -0.373599 -0.065432
--4.57459 -0.381144 -0.06543
--4.582345 -0.373565 -0.017666
--4.574656 -0.3812 -0.017847
-numsurf 1
-SURF 0x10
-mat 4
-refs 4
-0 1.0 1.0
-2 0.0 1.0
-3 0.0 0.0
-1 1.0 0.0
-kids 0
-OBJECT poly
 name "Fswitch.1"
 data 8
-Mesh.392
+Mesh.095
 crease 45.000000
 numvert 41
 -4.767752 -0.018149 0.594793
@@ -14626,7 +14620,7 @@ kids 0
 OBJECT poly
 name "Fswitch.2"
 data 8
-Mesh.393
+Mesh.096
 crease 45.000000
 numvert 41
 -4.767833 -0.032762 0.585056
@@ -14947,7 +14941,7 @@ kids 0
 OBJECT poly
 name "Fswitch.3"
 data 8
-Mesh.394
+Mesh.097
 crease 45.000000
 numvert 41
 -4.767601 -0.066179 0.573408
@@ -15268,7 +15262,7 @@ kids 0
 OBJECT poly
 name "Fswitch.4"
 data 8
-Mesh.395
+Mesh.098
 crease 45.000000
 numvert 41
 -4.657722 -0.012365 0.596832
@@ -15589,7 +15583,7 @@ kids 0
 OBJECT poly
 name "Fswitch.5"
 data 8
-Mesh.396
+Mesh.099
 crease 45.000000
 numvert 41
 -4.547728 -0.018072 0.594837
@@ -15910,7 +15904,7 @@ kids 0
 OBJECT poly
 name "Fswitch.6"
 data 8
-Mesh.397
+Mesh.100
 crease 45.000000
 numvert 41
 -4.547719 -0.033065 0.585006
@@ -16231,7 +16225,7 @@ kids 0
 OBJECT poly
 name "FuelPanel"
 data 8
-Mesh.398
+Mesh.101
 texture "cabin.png"
 texrep 1 1
 crease 25.000000
@@ -17368,7 +17362,7 @@ kids 0
 OBJECT poly
 name "GENtie.sw"
 data 8
-Mesh.399
+Mesh.103
 crease 60.000000
 numvert 13
 -4.799386 -0.255731 0.503419
@@ -17467,7 +17461,7 @@ kids 0
 OBJECT poly
 name "GPS-apr"
 data 8
-Mesh.400
+Mesh.104
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -17499,7 +17493,7 @@ kids 0
 OBJECT poly
 name "GPS-crs"
 data 8
-Mesh.401
+Mesh.105
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -17531,7 +17525,7 @@ kids 0
 OBJECT poly
 name "GPWS.APsteep"
 data 8
-Mesh.402
+Mesh.106
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -17584,7 +17578,7 @@ kids 0
 OBJECT poly
 name "GPWS.FlapOV"
 data 8
-Mesh.403
+Mesh.107
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -17637,7 +17631,7 @@ kids 0
 OBJECT poly
 name "GPWS.GScancel"
 data 8
-Mesh.404
+Mesh.108
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -17690,7 +17684,7 @@ kids 0
 OBJECT poly
 name "GPWS.GSinop"
 data 8
-Mesh.405
+Mesh.109
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -17743,7 +17737,7 @@ kids 0
 OBJECT poly
 name "GPWS.Inhibit"
 data 8
-Mesh.406
+Mesh.110
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -17796,7 +17790,7 @@ kids 0
 OBJECT poly
 name "GPWS.Pcaution"
 data 8
-Mesh.407
+Mesh.111
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -17892,7 +17886,7 @@ kids 0
 OBJECT poly
 name "GPWS.Pwarn"
 data 8
-Mesh.408
+Mesh.112
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -17988,7 +17982,7 @@ kids 0
 OBJECT poly
 name "GPWS.TrnFail"
 data 8
-Mesh.409
+Mesh.113
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -18041,7 +18035,7 @@ kids 0
 OBJECT poly
 name "GPWS.TrnInh"
 data 8
-Mesh.410
+Mesh.114
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -18094,7 +18088,7 @@ kids 0
 OBJECT poly
 name "GPWS.flapOVRD"
 data 8
-Mesh.411
+Mesh.285
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -18115,7 +18109,7 @@ kids 0
 OBJECT poly
 name "GPWS.gscancel"
 data 8
-Mesh.412
+Mesh.282
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -18147,7 +18141,7 @@ kids 0
 OBJECT poly
 name "GPWS.inhibit-on"
 data 8
-Mesh.413
+Mesh.287
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -18168,7 +18162,7 @@ kids 0
 OBJECT poly
 name "GPWS.inop"
 data 8
-Mesh.414
+Mesh.284
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -18189,7 +18183,7 @@ kids 0
 OBJECT poly
 name "GPWS.stpapr"
 data 8
-Mesh.415
+Mesh.286
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -18210,7 +18204,7 @@ kids 0
 OBJECT poly
 name "GRlock"
 data 8
-Mesh.416
+Mesh.115
 crease 60.000000
 numvert 13
 -4.790096 -0.274022 0.202384
@@ -18309,7 +18303,7 @@ kids 0
 OBJECT poly
 name "GS.cancld"
 data 8
-Mesh.417
+Mesh.283
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -18330,7 +18324,7 @@ kids 0
 OBJECT poly
 name "Gauge.001"
 data 8
-Mesh.418
+Mesh.116
 crease 30.000000
 numvert 0
 numsurf 0
@@ -18338,7 +18332,7 @@ kids 0
 OBJECT poly
 name "Gearlever"
 data 8
-Mesh.419
+Mesh.117
 texture "cabin.png"
 texrep 1 1
 crease 50.000000
@@ -18831,7 +18825,7 @@ kids 0
 OBJECT poly
 name "Gearwarn"
 data 8
-Mesh.420
+Mesh.118
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -19322,7 +19316,7 @@ kids 0
 OBJECT poly
 name "Instr-indirect.dimmer"
 data 8
-Mesh.421
+Mesh.178
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -19563,7 +19557,7 @@ kids 0
 OBJECT poly
 name "Knob"
 data 8
-Mesh.422
+Mesh.122
 crease 45.000000
 numvert 264
 -4.887859 0.057931 0.091451
@@ -21144,7 +21138,7 @@ kids 0
 OBJECT poly
 name "LAC"
 data 8
-Mesh.423
+Mesh.123
 crease 60.000000
 numvert 13
 -4.83755 -0.190681 0.537687
@@ -21243,7 +21237,7 @@ kids 0
 OBJECT poly
 name "LAC-bus"
 data 8
-Mesh.424
+Mesh.124
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -21264,7 +21258,7 @@ kids 0
 OBJECT poly
 name "LACT.sw"
 data 8
-Mesh.425
+Mesh.125
 crease 60.000000
 numvert 13
 -4.799048 -0.25556 0.476112
@@ -21363,7 +21357,7 @@ kids 0
 OBJECT poly
 name "LAIR-fail"
 data 8
-Mesh.426
+Mesh.126
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -21384,7 +21378,7 @@ kids 0
 OBJECT poly
 name "LAuto.ign.sw"
 data 8
-Mesh.427
+Mesh.127
 crease 60.000000
 numvert 13
 -4.83755 -0.190681 0.46184
@@ -21483,7 +21477,7 @@ kids 0
 OBJECT poly
 name "LENGice.sw"
 data 8
-Mesh.428
+Mesh.128
 crease 60.000000
 numvert 13
 -4.81858 -0.222853 0.476112
@@ -21582,7 +21576,7 @@ kids 0
 OBJECT poly
 name "LENV-fail"
 data 8
-Mesh.429
+Mesh.129
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -21603,7 +21597,7 @@ kids 0
 OBJECT poly
 name "LFP-lo"
 data 8
-Mesh.430
+Mesh.130
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -21624,7 +21618,7 @@ kids 0
 OBJECT poly
 name "LFvent.sw"
 data 8
-Mesh.431
+Mesh.131
 crease 60.000000
 numvert 13
 -4.798616 -0.257397 0.240714
@@ -21723,7 +21717,7 @@ kids 0
 OBJECT poly
 name "LGen"
 data 8
-Mesh.432
+Mesh.132
 crease 60.000000
 numvert 13
 -4.818416 -0.222251 0.544899
@@ -21822,7 +21816,7 @@ kids 0
 OBJECT poly
 name "LHfirehandle"
 data 8
-Mesh.433
+Mesh.138
 texture "cabin.png"
 texrep 1 1
 crease 45.000000
@@ -22202,7 +22196,7 @@ kids 0
 OBJECT poly
 name "LHgear.lamp"
 data 8
-Mesh.434
+Mesh.142
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -22223,7 +22217,7 @@ kids 0
 OBJECT poly
 name "LHpedal"
 data 8
-Mesh.435
+Mesh.145
 texture "cabin.png"
 texrep 1 1
 crease 30.000000
@@ -22777,7 +22771,7 @@ kids 0
 OBJECT poly
 name "LOP-lo"
 data 8
-Mesh.436
+Mesh.151
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -22798,7 +22792,7 @@ kids 0
 OBJECT poly
 name "LT.test"
 data 8
-Mesh.437
+Mesh.152
 crease 30.000000
 numvert 17
 -4.790199 -0.271134 0.166425
@@ -22919,7 +22913,7 @@ kids 0
 OBJECT poly
 name "LT.test.001"
 data 8
-Mesh.438
+Mesh.153
 crease 30.000000
 numvert 17
 -4.77997 -0.287284 0.128439
@@ -23040,7 +23034,7 @@ kids 0
 OBJECT poly
 name "LitPanel"
 data 8
-Mesh.439
+Mesh.160
 texture "cabin.png"
 texrep 1 1
 crease 30.000000
@@ -23142,7 +23136,7 @@ kids 0
 OBJECT poly
 name "Lpitot.sw"
 data 8
-Mesh.440
+Mesh.162
 crease 60.000000
 numvert 13
 -4.779704 -0.290043 0.277176
@@ -23241,7 +23235,7 @@ kids 0
 OBJECT poly
 name "Lstarter"
 data 8
-Mesh.441
+Mesh.163
 crease 60.000000
 numvert 13
 -4.779121 -0.289327 0.580317
@@ -23340,7 +23334,7 @@ kids 0
 OBJECT poly
 name "LwrPanel"
 data 8
-Mesh.442
+Mesh.164
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -24490,7 +24484,7 @@ kids 0
 OBJECT poly
 name "LwrPanel_0"
 data 8
-Mesh.443
+Mesh.165
 crease 30.000000
 numvert 4
 -4.74279 -0.193781 -0.220547
@@ -24509,7 +24503,7 @@ kids 0
 OBJECT poly
 name "Masterpanel"
 data 8
-Mesh.444
+Mesh.166
 texture "cabin.png"
 texrep 1 1
 crease 45.000000
@@ -24600,7 +24594,7 @@ kids 0
 OBJECT poly
 name "Mstr.Ctn"
 data 8
-Mesh.445
+Mesh.167
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -24696,7 +24690,7 @@ kids 0
 OBJECT poly
 name "Mstr.Ctn.001"
 data 8
-Mesh.446
+Mesh.168
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -24728,7 +24722,7 @@ kids 0
 OBJECT poly
 name "Mstr.Warning"
 data 8
-Mesh.447
+Mesh.169
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -24824,7 +24818,7 @@ kids 0
 OBJECT poly
 name "Mstr.Warning.001"
 data 8
-Mesh.448
+Mesh.170
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -24856,7 +24850,7 @@ kids 0
 OBJECT poly
 name "Nosegear.lamp"
 data 8
-Mesh.449
+Mesh.173
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -24877,7 +24871,7 @@ kids 0
 OBJECT poly
 name "OHflood.dimme"
 data 8
-Mesh.450
+Mesh.177
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -25118,7 +25112,7 @@ kids 0
 OBJECT poly
 name "P-AIR"
 data 8
-Mesh.451
+Mesh.182
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -25241,7 +25235,7 @@ kids 0
 OBJECT poly
 name "P-AIR.001"
 data 8
-Mesh.452
+Mesh.183
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -25364,7 +25358,7 @@ kids 0
 OBJECT poly
 name "P-AIR.002"
 data 8
-Mesh.453
+Mesh.184
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -25487,7 +25481,7 @@ kids 0
 OBJECT poly
 name "P-AIR.003"
 data 8
-Mesh.454
+Mesh.185
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -25610,7 +25604,7 @@ kids 0
 OBJECT poly
 name "PROPheatA.sw"
 data 8
-Mesh.455
+Mesh.186
 crease 60.000000
 numvert 13
 -4.817246 -0.224589 0.277264
@@ -25709,7 +25703,7 @@ kids 0
 OBJECT poly
 name "PROPheatM.sw"
 data 8
-Mesh.456
+Mesh.187
 crease 60.000000
 numvert 13
 -4.817246 -0.224589 0.258978
@@ -25808,7 +25802,7 @@ kids 0
 OBJECT poly
 name "PROPtest.sw"
 data 8
-Mesh.457
+Mesh.188
 crease 60.000000
 numvert 13
 -4.779121 -0.289327 0.479848
@@ -25907,7 +25901,7 @@ kids 0
 OBJECT poly
 name "Panel"
 data 8
-Mesh.458
+Mesh.189
 texture "cabin.png"
 texrep 1 1
 crease 30.000000
@@ -26009,7 +26003,7 @@ kids 0
 OBJECT poly
 name "Panel1"
 data 8
-Mesh.459
+Mesh.190
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -28886,7 +28880,7 @@ kids 0
 OBJECT poly
 name "Pilot.dimmer"
 data 8
-Mesh.460
+Mesh.174
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -29127,7 +29121,7 @@ kids 0
 OBJECT poly
 name "Plane.006"
 data 8
-Mesh.461
+Mesh.191
 crease 30.000000
 numvert 0
 numsurf 0
@@ -29135,7 +29129,7 @@ kids 0
 OBJECT poly
 name "Plane.085"
 data 8
-Mesh.462
+Mesh.192
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -31933,7 +31927,7 @@ kids 0
 OBJECT poly
 name "PropP0"
 data 8
-Mesh.463
+Mesh.193
 crease 45.000000
 numvert 16
 -4.632139 -0.362857 0.018204
@@ -31956,99 +31950,99 @@ numsurf 13
 SURF 0x10
 mat 7
 refs 4
-0 0.0 0.0
-1 0.0 0.0
-2 0.0 0.0
-3 0.0 0.0
+0 0 0
+1 0 0
+2 0 0
+3 0 0
 SURF 0x10
 mat 7
 refs 4
-0 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
-1 0.0 0.0
+0 0 0
+4 0 0
+5 0 0
+1 0 0
 SURF 0x10
 mat 7
 refs 4
-1 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
-2 0.0 0.0
+1 0 0
+5 0 0
+6 0 0
+2 0 0
 SURF 0x10
 mat 7
 refs 4
-2 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
-3 0.0 0.0
+2 0 0
+6 0 0
+7 0 0
+3 0 0
 SURF 0x10
 mat 7
 refs 4
-4 0.0 0.0
-0 0.0 0.0
-3 0.0 0.0
-7 0.0 0.0
+4 0 0
+0 0 0
+3 0 0
+7 0 0
 SURF 0x10
 mat 7
 refs 4
-4 0.0 0.0
-7 0.0 0.0
-11 0.0 0.0
-8 0.0 0.0
+4 0 0
+7 0 0
+11 0 0
+8 0 0
 SURF 0x10
 mat 7
 refs 4
-7 0.0 0.0
-6 0.0 0.0
-10 0.0 0.0
-11 0.0 0.0
+7 0 0
+6 0 0
+10 0 0
+11 0 0
 SURF 0x10
 mat 7
 refs 4
-6 0.0 0.0
-5 0.0 0.0
-9 0.0 0.0
-10 0.0 0.0
+6 0 0
+5 0 0
+9 0 0
+10 0 0
 SURF 0x10
 mat 7
 refs 4
-5 0.0 0.0
-4 0.0 0.0
-8 0.0 0.0
-9 0.0 0.0
+5 0 0
+4 0 0
+8 0 0
+9 0 0
 SURF 0x10
 mat 7
 refs 4
-9 0.0 0.0
-8 0.0 0.0
-15 0.0 0.0
-14 0.0 0.0
+9 0 0
+8 0 0
+15 0 0
+14 0 0
 SURF 0x10
 mat 7
 refs 4
-10 0.0 0.0
-9 0.0 0.0
-14 0.0 0.0
-13 0.0 0.0
+10 0 0
+9 0 0
+14 0 0
+13 0 0
 SURF 0x10
 mat 7
 refs 4
-11 0.0 0.0
-10 0.0 0.0
-13 0.0 0.0
-12 0.0 0.0
+11 0 0
+10 0 0
+13 0 0
+12 0 0
 SURF 0x10
 mat 7
 refs 4
-8 0.0 0.0
-11 0.0 0.0
-12 0.0 0.0
-15 0.0 0.0
+8 0 0
+11 0 0
+12 0 0
+15 0 0
 kids 0
 OBJECT poly
 name "PropP0.001"
 data 8
-Mesh.464
+Mesh.194
 crease 45.000000
 numvert 20
 -4.540519 -0.24015 0.037854
@@ -32075,167 +32069,167 @@ numsurf 25
 SURF 0x10
 mat 8
 refs 4
-10 0.0 0.0
-2 0.0 0.0
-9 0.0 0.0
-17 0.0 0.0
+10 0 0
+2 0 0
+9 0 0
+17 0 0
 SURF 0x10
 mat 8
 refs 4
-11 0.0 0.0
-3 0.0 0.0
-2 0.0 0.0
-10 0.0 0.0
+11 0 0
+3 0 0
+2 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 4
-12 0.0 0.0
-4 0.0 0.0
-3 0.0 0.0
-11 0.0 0.0
+12 0 0
+4 0 0
+3 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 4
-13 0.0 0.0
-5 0.0 0.0
-4 0.0 0.0
-12 0.0 0.0
+13 0 0
+5 0 0
+4 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 4
-14 0.0 0.0
-6 0.0 0.0
-5 0.0 0.0
-13 0.0 0.0
+14 0 0
+6 0 0
+5 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 4
-15 0.0 0.0
-7 0.0 0.0
-6 0.0 0.0
-14 0.0 0.0
+15 0 0
+7 0 0
+6 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 4
-16 0.0 0.0
-8 0.0 0.0
-7 0.0 0.0
-15 0.0 0.0
+16 0 0
+8 0 0
+7 0 0
+15 0 0
 SURF 0x10
 mat 8
 refs 4
-17 0.0 0.0
-9 0.0 0.0
-8 0.0 0.0
-16 0.0 0.0
+17 0 0
+9 0 0
+8 0 0
+16 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-9 0.0 0.0
-2 0.0 0.0
+0 0 0
+9 0 0
+2 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-10 0.0 0.0
-17 0.0 0.0
+1 0 0
+10 0 0
+17 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-2 0.0 0.0
-3 0.0 0.0
+0 0 0
+2 0 0
+3 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-11 0.0 0.0
-10 0.0 0.0
+1 0 0
+11 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-3 0.0 0.0
-4 0.0 0.0
+0 0 0
+3 0 0
+4 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-12 0.0 0.0
-11 0.0 0.0
+1 0 0
+12 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
+0 0 0
+4 0 0
+5 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-13 0.0 0.0
-12 0.0 0.0
+1 0 0
+13 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
+0 0 0
+5 0 0
+6 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-14 0.0 0.0
-13 0.0 0.0
+1 0 0
+14 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
+0 0 0
+6 0 0
+7 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-15 0.0 0.0
-14 0.0 0.0
+1 0 0
+15 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-7 0.0 0.0
-8 0.0 0.0
+0 0 0
+7 0 0
+8 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-16 0.0 0.0
-15 0.0 0.0
+1 0 0
+16 0 0
+15 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-8 0.0 0.0
-9 0.0 0.0
+0 0 0
+8 0 0
+9 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-17 0.0 0.0
-16 0.0 0.0
+1 0 0
+17 0 0
+16 0 0
 SURF 0x10
 mat 8
 refs 4
-13 0.0 0.0
-19 0.0 0.0
-18 0.0 0.0
-14 0.0 0.0
+13 0 0
+19 0 0
+18 0 0
+14 0 0
 kids 0
 OBJECT poly
 name "PropP1"
 data 8
-Mesh.465
+Mesh.195
 crease 45.000000
 numvert 16
 -4.631968 -0.362966 -0.003239
@@ -32258,99 +32252,99 @@ numsurf 13
 SURF 0x10
 mat 7
 refs 4
-0 0.0 0.0
-1 0.0 0.0
-2 0.0 0.0
-3 0.0 0.0
+0 0 0
+1 0 0
+2 0 0
+3 0 0
 SURF 0x10
 mat 7
 refs 4
-0 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
-1 0.0 0.0
+0 0 0
+4 0 0
+5 0 0
+1 0 0
 SURF 0x10
 mat 7
 refs 4
-1 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
-2 0.0 0.0
+1 0 0
+5 0 0
+6 0 0
+2 0 0
 SURF 0x10
 mat 7
 refs 4
-2 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
-3 0.0 0.0
+2 0 0
+6 0 0
+7 0 0
+3 0 0
 SURF 0x10
 mat 7
 refs 4
-4 0.0 0.0
-0 0.0 0.0
-3 0.0 0.0
-7 0.0 0.0
+4 0 0
+0 0 0
+3 0 0
+7 0 0
 SURF 0x10
 mat 7
 refs 4
-4 0.0 0.0
-7 0.0 0.0
-11 0.0 0.0
-8 0.0 0.0
+4 0 0
+7 0 0
+11 0 0
+8 0 0
 SURF 0x10
 mat 7
 refs 4
-7 0.0 0.0
-6 0.0 0.0
-10 0.0 0.0
-11 0.0 0.0
+7 0 0
+6 0 0
+10 0 0
+11 0 0
 SURF 0x10
 mat 7
 refs 4
-6 0.0 0.0
-5 0.0 0.0
-9 0.0 0.0
-10 0.0 0.0
+6 0 0
+5 0 0
+9 0 0
+10 0 0
 SURF 0x10
 mat 7
 refs 4
-5 0.0 0.0
-4 0.0 0.0
-8 0.0 0.0
-9 0.0 0.0
+5 0 0
+4 0 0
+8 0 0
+9 0 0
 SURF 0x10
 mat 7
 refs 4
-9 0.0 0.0
-8 0.0 0.0
-15 0.0 0.0
-14 0.0 0.0
+9 0 0
+8 0 0
+15 0 0
+14 0 0
 SURF 0x10
 mat 7
 refs 4
-10 0.0 0.0
-9 0.0 0.0
-14 0.0 0.0
-13 0.0 0.0
+10 0 0
+9 0 0
+14 0 0
+13 0 0
 SURF 0x10
 mat 7
 refs 4
-11 0.0 0.0
-10 0.0 0.0
-13 0.0 0.0
-12 0.0 0.0
+11 0 0
+10 0 0
+13 0 0
+12 0 0
 SURF 0x10
 mat 7
 refs 4
-8 0.0 0.0
-11 0.0 0.0
-12 0.0 0.0
-15 0.0 0.0
+8 0 0
+11 0 0
+12 0 0
+15 0 0
 kids 0
 OBJECT poly
 name "PropP1.001"
 data 8
-Mesh.466
+Mesh.196
 crease 45.000000
 numvert 22
 -4.540579 -0.240109 0.011012
@@ -32379,167 +32373,167 @@ numsurf 25
 SURF 0x10
 mat 8
 refs 4
-10 0.0 0.0
-2 0.0 0.0
-9 0.0 0.0
-17 0.0 0.0
+10 0 0
+2 0 0
+9 0 0
+17 0 0
 SURF 0x10
 mat 8
 refs 4
-11 0.0 0.0
-3 0.0 0.0
-2 0.0 0.0
-10 0.0 0.0
+11 0 0
+3 0 0
+2 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 4
-12 0.0 0.0
-4 0.0 0.0
-3 0.0 0.0
-11 0.0 0.0
+12 0 0
+4 0 0
+3 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 4
-13 0.0 0.0
-5 0.0 0.0
-4 0.0 0.0
-12 0.0 0.0
+13 0 0
+5 0 0
+4 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 4
-14 0.0 0.0
-6 0.0 0.0
-5 0.0 0.0
-13 0.0 0.0
+14 0 0
+6 0 0
+5 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 4
-15 0.0 0.0
-7 0.0 0.0
-6 0.0 0.0
-14 0.0 0.0
+15 0 0
+7 0 0
+6 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 4
-16 0.0 0.0
-8 0.0 0.0
-7 0.0 0.0
-15 0.0 0.0
+16 0 0
+8 0 0
+7 0 0
+15 0 0
 SURF 0x10
 mat 8
 refs 4
-17 0.0 0.0
-9 0.0 0.0
-8 0.0 0.0
-16 0.0 0.0
+17 0 0
+9 0 0
+8 0 0
+16 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-9 0.0 0.0
-2 0.0 0.0
+0 0 0
+9 0 0
+2 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-10 0.0 0.0
-17 0.0 0.0
+1 0 0
+10 0 0
+17 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-2 0.0 0.0
-3 0.0 0.0
+0 0 0
+2 0 0
+3 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-11 0.0 0.0
-10 0.0 0.0
+1 0 0
+11 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-3 0.0 0.0
-4 0.0 0.0
+0 0 0
+3 0 0
+4 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-12 0.0 0.0
-11 0.0 0.0
+1 0 0
+12 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
+0 0 0
+4 0 0
+5 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-13 0.0 0.0
-12 0.0 0.0
+1 0 0
+13 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
+0 0 0
+5 0 0
+6 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-14 0.0 0.0
-13 0.0 0.0
+1 0 0
+14 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
+0 0 0
+6 0 0
+7 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-15 0.0 0.0
-14 0.0 0.0
+1 0 0
+15 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-7 0.0 0.0
-8 0.0 0.0
+0 0 0
+7 0 0
+8 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-16 0.0 0.0
-15 0.0 0.0
+1 0 0
+16 0 0
+15 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-8 0.0 0.0
-9 0.0 0.0
+0 0 0
+8 0 0
+9 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-17 0.0 0.0
-16 0.0 0.0
+1 0 0
+17 0 0
+16 0 0
 SURF 0x10
 mat 8
 refs 4
-18 0.0 0.0
-21 0.0 0.0
-20 0.0 0.0
-19 0.0 0.0
+18 0 0
+21 0 0
+20 0 0
+19 0 0
 kids 0
 OBJECT poly
 name "Pullup.test"
 data 8
-Mesh.467
+Mesh.281
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -32571,7 +32565,7 @@ kids 0
 OBJECT poly
 name "RAC"
 data 8
-Mesh.468
+Mesh.197
 crease 60.000000
 numvert 13
 -4.83755 -0.190681 0.513115
@@ -32670,7 +32664,7 @@ kids 0
 OBJECT poly
 name "RAC-bus"
 data 8
-Mesh.469
+Mesh.198
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -32691,7 +32685,7 @@ kids 0
 OBJECT poly
 name "RACT.sw"
 data 8
-Mesh.470
+Mesh.199
 crease 60.000000
 numvert 13
 -4.799048 -0.25556 0.443904
@@ -32790,7 +32784,7 @@ kids 0
 OBJECT poly
 name "RAIR-fail"
 data 8
-Mesh.471
+Mesh.200
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -32811,7 +32805,7 @@ kids 0
 OBJECT poly
 name "RAuto.ign.sw"
 data 8
-Mesh.472
+Mesh.201
 crease 60.000000
 numvert 13
 -4.83755 -0.190681 0.434712
@@ -32910,7 +32904,7 @@ kids 0
 OBJECT poly
 name "RENGice.sw"
 data 8
-Mesh.473
+Mesh.202
 crease 60.000000
 numvert 13
 -4.81858 -0.222853 0.443904
@@ -33009,7 +33003,7 @@ kids 0
 OBJECT poly
 name "RENV-fail"
 data 8
-Mesh.474
+Mesh.203
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -33030,7 +33024,7 @@ kids 0
 OBJECT poly
 name "RFP-lo"
 data 8
-Mesh.475
+Mesh.204
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -33051,7 +33045,7 @@ kids 0
 OBJECT poly
 name "RFvent.sw"
 data 8
-Mesh.476
+Mesh.205
 crease 60.000000
 numvert 13
 -4.798516 -0.257739 0.222873
@@ -33150,7 +33144,7 @@ kids 0
 OBJECT poly
 name "RGen"
 data 8
-Mesh.477
+Mesh.206
 crease 60.000000
 numvert 13
 -4.818704 -0.222872 0.503532
@@ -33249,7 +33243,7 @@ kids 0
 OBJECT poly
 name "RHfirehandle"
 data 8
-Mesh.478
+Mesh.212
 texture "cabin.png"
 texrep 1 1
 crease 45.000000
@@ -33629,7 +33623,7 @@ kids 0
 OBJECT poly
 name "RHgear.lamp"
 data 8
-Mesh.479
+Mesh.216
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -33650,7 +33644,7 @@ kids 0
 OBJECT poly
 name "RHpedal"
 data 8
-Mesh.480
+Mesh.219
 texture "cabin.png"
 texrep 1 1
 crease 30.000000
@@ -34204,7 +34198,7 @@ kids 0
 OBJECT poly
 name "ROP-lo"
 data 8
-Mesh.481
+Mesh.225
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -34225,7 +34219,7 @@ kids 0
 OBJECT poly
 name "Rpitot.sw"
 data 8
-Mesh.482
+Mesh.231
 crease 60.000000
 numvert 13
 -4.779704 -0.290043 0.259672
@@ -34324,7 +34318,7 @@ kids 0
 OBJECT poly
 name "Rstarter"
 data 8
-Mesh.483
+Mesh.232
 crease 60.000000
 numvert 13
 -4.779121 -0.289327 0.540222
@@ -34423,7 +34417,7 @@ kids 0
 OBJECT poly
 name "Rtrim"
 data 8
-Mesh.484
+Mesh.233
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -34672,7 +34666,7 @@ kids 0
 OBJECT poly
 name "STALLwrn.sw"
 data 8
-Mesh.485
+Mesh.235
 crease 60.000000
 numvert 13
 -4.780841 -0.290627 0.314597
@@ -34771,7 +34765,7 @@ kids 0
 OBJECT poly
 name "Seats"
 data 8
-Mesh.486
+Mesh.236
 texture "cabin.png"
 texrep 1 1
 crease 50.000000
@@ -35751,7 +35745,7 @@ kids 0
 OBJECT poly
 name "Stall.horn"
 data 8
-Mesh.487
+Mesh.237
 crease 60.000000
 numvert 13
 -4.793542 -0.265828 -0.216285
@@ -35850,7 +35844,7 @@ kids 0
 OBJECT poly
 name "TERR.fail"
 data 8
-Mesh.488
+Mesh.289
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -35871,7 +35865,7 @@ kids 0
 OBJECT poly
 name "TERR.inhibit-on"
 data 8
-Mesh.489
+Mesh.288
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -35892,7 +35886,7 @@ kids 0
 OBJECT poly
 name "Throttle0"
 data 8
-Mesh.490
+Mesh.242
 crease 45.000000
 numvert 16
 -4.621437 -0.344834 0.074412
@@ -35915,99 +35909,99 @@ numsurf 13
 SURF 0x10
 mat 7
 refs 4
-0 0.0 0.0
-1 0.0 0.0
-2 0.0 0.0
-3 0.0 0.0
+0 0 0
+1 0 0
+2 0 0
+3 0 0
 SURF 0x10
 mat 7
 refs 4
-0 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
-1 0.0 0.0
+0 0 0
+4 0 0
+5 0 0
+1 0 0
 SURF 0x10
 mat 7
 refs 4
-1 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
-2 0.0 0.0
+1 0 0
+5 0 0
+6 0 0
+2 0 0
 SURF 0x10
 mat 7
 refs 4
-2 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
-3 0.0 0.0
+2 0 0
+6 0 0
+7 0 0
+3 0 0
 SURF 0x10
 mat 7
 refs 4
-4 0.0 0.0
-0 0.0 0.0
-3 0.0 0.0
-7 0.0 0.0
+4 0 0
+0 0 0
+3 0 0
+7 0 0
 SURF 0x10
 mat 7
 refs 4
-4 0.0 0.0
-7 0.0 0.0
-11 0.0 0.0
-8 0.0 0.0
+4 0 0
+7 0 0
+11 0 0
+8 0 0
 SURF 0x10
 mat 7
 refs 4
-7 0.0 0.0
-6 0.0 0.0
-10 0.0 0.0
-11 0.0 0.0
+7 0 0
+6 0 0
+10 0 0
+11 0 0
 SURF 0x10
 mat 7
 refs 4
-6 0.0 0.0
-5 0.0 0.0
-9 0.0 0.0
-10 0.0 0.0
+6 0 0
+5 0 0
+9 0 0
+10 0 0
 SURF 0x10
 mat 7
 refs 4
-5 0.0 0.0
-4 0.0 0.0
-8 0.0 0.0
-9 0.0 0.0
+5 0 0
+4 0 0
+8 0 0
+9 0 0
 SURF 0x10
 mat 7
 refs 4
-9 0.0 0.0
-8 0.0 0.0
-15 0.0 0.0
-14 0.0 0.0
+9 0 0
+8 0 0
+15 0 0
+14 0 0
 SURF 0x10
 mat 7
 refs 4
-10 0.0 0.0
-9 0.0 0.0
-14 0.0 0.0
-13 0.0 0.0
+10 0 0
+9 0 0
+14 0 0
+13 0 0
 SURF 0x10
 mat 7
 refs 4
-11 0.0 0.0
-10 0.0 0.0
-13 0.0 0.0
-12 0.0 0.0
+11 0 0
+10 0 0
+13 0 0
+12 0 0
 SURF 0x10
 mat 7
 refs 4
-8 0.0 0.0
-11 0.0 0.0
-12 0.0 0.0
-15 0.0 0.0
+8 0 0
+11 0 0
+12 0 0
+15 0 0
 kids 0
 OBJECT poly
 name "Throttle0.001"
 data 8
-Mesh.491
+Mesh.243
 crease 45.000000
 numvert 20
 -4.527715 -0.222412 0.151811
@@ -36034,167 +36028,167 @@ numsurf 25
 SURF 0x10
 mat 8
 refs 4
-10 0.0 0.0
-2 0.0 0.0
-9 0.0 0.0
-17 0.0 0.0
+10 0 0
+2 0 0
+9 0 0
+17 0 0
 SURF 0x10
 mat 8
 refs 4
-11 0.0 0.0
-3 0.0 0.0
-2 0.0 0.0
-10 0.0 0.0
+11 0 0
+3 0 0
+2 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 4
-12 0.0 0.0
-4 0.0 0.0
-3 0.0 0.0
-11 0.0 0.0
+12 0 0
+4 0 0
+3 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 4
-13 0.0 0.0
-5 0.0 0.0
-4 0.0 0.0
-12 0.0 0.0
+13 0 0
+5 0 0
+4 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 4
-14 0.0 0.0
-6 0.0 0.0
-5 0.0 0.0
-13 0.0 0.0
+14 0 0
+6 0 0
+5 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 4
-15 0.0 0.0
-7 0.0 0.0
-6 0.0 0.0
-14 0.0 0.0
+15 0 0
+7 0 0
+6 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 4
-16 0.0 0.0
-8 0.0 0.0
-7 0.0 0.0
-15 0.0 0.0
+16 0 0
+8 0 0
+7 0 0
+15 0 0
 SURF 0x10
 mat 8
 refs 4
-17 0.0 0.0
-9 0.0 0.0
-8 0.0 0.0
-16 0.0 0.0
+17 0 0
+9 0 0
+8 0 0
+16 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-9 0.0 0.0
-2 0.0 0.0
+0 0 0
+9 0 0
+2 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-10 0.0 0.0
-17 0.0 0.0
+1 0 0
+10 0 0
+17 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-2 0.0 0.0
-3 0.0 0.0
+0 0 0
+2 0 0
+3 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-11 0.0 0.0
-10 0.0 0.0
+1 0 0
+11 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-3 0.0 0.0
-4 0.0 0.0
+0 0 0
+3 0 0
+4 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-12 0.0 0.0
-11 0.0 0.0
+1 0 0
+12 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
+0 0 0
+4 0 0
+5 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-13 0.0 0.0
-12 0.0 0.0
+1 0 0
+13 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
+0 0 0
+5 0 0
+6 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-14 0.0 0.0
-13 0.0 0.0
+1 0 0
+14 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
+0 0 0
+6 0 0
+7 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-15 0.0 0.0
-14 0.0 0.0
+1 0 0
+15 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-7 0.0 0.0
-8 0.0 0.0
+0 0 0
+7 0 0
+8 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-16 0.0 0.0
-15 0.0 0.0
+1 0 0
+16 0 0
+15 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-8 0.0 0.0
-9 0.0 0.0
+0 0 0
+8 0 0
+9 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-17 0.0 0.0
-16 0.0 0.0
+1 0 0
+17 0 0
+16 0 0
 SURF 0x10
 mat 8
 refs 4
-13 0.0 0.0
-19 0.0 0.0
-18 0.0 0.0
-14 0.0 0.0
+13 0 0
+19 0 0
+18 0 0
+14 0 0
 kids 0
 OBJECT poly
 name "Throttle1"
 data 8
-Mesh.492
+Mesh.244
 crease 45.000000
 numvert 16
 -4.621312 -0.344923 0.054431
@@ -36217,99 +36211,99 @@ numsurf 13
 SURF 0x10
 mat 7
 refs 4
-0 0.0 0.0
-1 0.0 0.0
-2 0.0 0.0
-3 0.0 0.0
+0 0 0
+1 0 0
+2 0 0
+3 0 0
 SURF 0x10
 mat 7
 refs 4
-0 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
-1 0.0 0.0
+0 0 0
+4 0 0
+5 0 0
+1 0 0
 SURF 0x10
 mat 7
 refs 4
-1 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
-2 0.0 0.0
+1 0 0
+5 0 0
+6 0 0
+2 0 0
 SURF 0x10
 mat 7
 refs 4
-2 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
-3 0.0 0.0
+2 0 0
+6 0 0
+7 0 0
+3 0 0
 SURF 0x10
 mat 7
 refs 4
-4 0.0 0.0
-0 0.0 0.0
-3 0.0 0.0
-7 0.0 0.0
+4 0 0
+0 0 0
+3 0 0
+7 0 0
 SURF 0x10
 mat 7
 refs 4
-4 0.0 0.0
-7 0.0 0.0
-11 0.0 0.0
-8 0.0 0.0
+4 0 0
+7 0 0
+11 0 0
+8 0 0
 SURF 0x10
 mat 7
 refs 4
-7 0.0 0.0
-6 0.0 0.0
-10 0.0 0.0
-11 0.0 0.0
+7 0 0
+6 0 0
+10 0 0
+11 0 0
 SURF 0x10
 mat 7
 refs 4
-6 0.0 0.0
-5 0.0 0.0
-9 0.0 0.0
-10 0.0 0.0
+6 0 0
+5 0 0
+9 0 0
+10 0 0
 SURF 0x10
 mat 7
 refs 4
-5 0.0 0.0
-4 0.0 0.0
-8 0.0 0.0
-9 0.0 0.0
+5 0 0
+4 0 0
+8 0 0
+9 0 0
 SURF 0x10
 mat 7
 refs 4
-9 0.0 0.0
-8 0.0 0.0
-15 0.0 0.0
-14 0.0 0.0
+9 0 0
+8 0 0
+15 0 0
+14 0 0
 SURF 0x10
 mat 7
 refs 4
-10 0.0 0.0
-9 0.0 0.0
-14 0.0 0.0
-13 0.0 0.0
+10 0 0
+9 0 0
+14 0 0
+13 0 0
 SURF 0x10
 mat 7
 refs 4
-11 0.0 0.0
-10 0.0 0.0
-13 0.0 0.0
-12 0.0 0.0
+11 0 0
+10 0 0
+13 0 0
+12 0 0
 SURF 0x10
 mat 7
 refs 4
-8 0.0 0.0
-11 0.0 0.0
-12 0.0 0.0
-15 0.0 0.0
+8 0 0
+11 0 0
+12 0 0
+15 0 0
 kids 0
 OBJECT poly
 name "Throttle1.001"
 data 8
-Mesh.493
+Mesh.245
 crease 45.000000
 numvert 22
 -4.52774 -0.222393 0.108829
@@ -36338,167 +36332,167 @@ numsurf 25
 SURF 0x10
 mat 8
 refs 4
-10 0.0 0.0
-2 0.0 0.0
-9 0.0 0.0
-17 0.0 0.0
+10 0 0
+2 0 0
+9 0 0
+17 0 0
 SURF 0x10
 mat 8
 refs 4
-11 0.0 0.0
-3 0.0 0.0
-2 0.0 0.0
-10 0.0 0.0
+11 0 0
+3 0 0
+2 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 4
-12 0.0 0.0
-4 0.0 0.0
-3 0.0 0.0
-11 0.0 0.0
+12 0 0
+4 0 0
+3 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 4
-13 0.0 0.0
-5 0.0 0.0
-4 0.0 0.0
-12 0.0 0.0
+13 0 0
+5 0 0
+4 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 4
-14 0.0 0.0
-6 0.0 0.0
-5 0.0 0.0
-13 0.0 0.0
+14 0 0
+6 0 0
+5 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 4
-15 0.0 0.0
-7 0.0 0.0
-6 0.0 0.0
-14 0.0 0.0
+15 0 0
+7 0 0
+6 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 4
-16 0.0 0.0
-8 0.0 0.0
-7 0.0 0.0
-15 0.0 0.0
+16 0 0
+8 0 0
+7 0 0
+15 0 0
 SURF 0x10
 mat 8
 refs 4
-17 0.0 0.0
-9 0.0 0.0
-8 0.0 0.0
-16 0.0 0.0
+17 0 0
+9 0 0
+8 0 0
+16 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-9 0.0 0.0
-2 0.0 0.0
+0 0 0
+9 0 0
+2 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-10 0.0 0.0
-17 0.0 0.0
+1 0 0
+10 0 0
+17 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-2 0.0 0.0
-3 0.0 0.0
+0 0 0
+2 0 0
+3 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-11 0.0 0.0
-10 0.0 0.0
+1 0 0
+11 0 0
+10 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-3 0.0 0.0
-4 0.0 0.0
+0 0 0
+3 0 0
+4 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-12 0.0 0.0
-11 0.0 0.0
+1 0 0
+12 0 0
+11 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-4 0.0 0.0
-5 0.0 0.0
+0 0 0
+4 0 0
+5 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-13 0.0 0.0
-12 0.0 0.0
+1 0 0
+13 0 0
+12 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-5 0.0 0.0
-6 0.0 0.0
+0 0 0
+5 0 0
+6 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-14 0.0 0.0
-13 0.0 0.0
+1 0 0
+14 0 0
+13 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-6 0.0 0.0
-7 0.0 0.0
+0 0 0
+6 0 0
+7 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-15 0.0 0.0
-14 0.0 0.0
+1 0 0
+15 0 0
+14 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-7 0.0 0.0
-8 0.0 0.0
+0 0 0
+7 0 0
+8 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-16 0.0 0.0
-15 0.0 0.0
+1 0 0
+16 0 0
+15 0 0
 SURF 0x10
 mat 8
 refs 3
-0 0.0 0.0
-8 0.0 0.0
-9 0.0 0.0
+0 0 0
+8 0 0
+9 0 0
 SURF 0x10
 mat 8
 refs 3
-1 0.0 0.0
-17 0.0 0.0
-16 0.0 0.0
+1 0 0
+17 0 0
+16 0 0
 SURF 0x10
 mat 8
 refs 4
-18 0.0 0.0
-21 0.0 0.0
-20 0.0 0.0
-19 0.0 0.0
+18 0 0
+21 0 0
+20 0 0
+19 0 0
 kids 0
 OBJECT poly
 name "ThrottleQuadrant"
 data 8
-Mesh.494
+Mesh.246
 texture "Panels.png"
 texrep 1 1
 crease 25.000000
@@ -37679,7 +37673,7 @@ kids 0
 OBJECT poly
 name "WSHDheat1.sw"
 data 8
-Mesh.495
+Mesh.248
 crease 60.000000
 numvert 13
 -4.817246 -0.223945 0.315039
@@ -37778,7 +37772,7 @@ kids 0
 OBJECT poly
 name "WSHDheat2.sw"
 data 8
-Mesh.496
+Mesh.249
 crease 60.000000
 numvert 13
 -4.817246 -0.223945 0.294983
@@ -37877,7 +37871,7 @@ kids 0
 OBJECT poly
 name "Warn-test"
 data 8
-Mesh.497
+Mesh.250
 crease 30.000000
 numvert 33
 -4.827286 0.178473 -0.080978
@@ -38126,7 +38120,7 @@ kids 0
 OBJECT poly
 name "Wiper.knob"
 data 8
-Mesh.498
+Mesh.254
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -38367,7 +38361,7 @@ kids 0
 OBJECT poly
 name "Yoke"
 data 8
-Mesh.499
+Mesh.255
 texture "Panels.png"
 texrep 1 1
 crease 50.000000
@@ -39564,7 +39558,7 @@ kids 0
 OBJECT poly
 name "Yoke1"
 data 8
-Mesh.500
+Mesh.256
 texture "Panels.png"
 texrep 1 1
 crease 50.000000
@@ -40761,7 +40755,7 @@ kids 0
 OBJECT poly
 name "Yokebase"
 data 8
-Mesh.501
+Mesh.257
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -41325,7 +41319,7 @@ kids 0
 OBJECT poly
 name "eadi.on"
 data 8
-Mesh.502
+Mesh.259
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -41378,7 +41372,7 @@ kids 0
 OBJECT poly
 name "edgelight.dimmer"
 data 8
-Mesh.503
+Mesh.179
 texture "Panels.png"
 texrep 1 1
 crease 45.000000
@@ -41619,7 +41613,7 @@ kids 0
 OBJECT poly
 name "ehsi.on"
 data 8
-Mesh.504
+Mesh.260
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -41672,7 +41666,7 @@ kids 0
 OBJECT poly
 name "gps-appr"
 data 8
-Mesh.505
+Mesh.263
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -41714,7 +41708,7 @@ kids 0
 OBJECT poly
 name "gps-leg"
 data 8
-Mesh.506
+Mesh.264
 texture "Panels.png"
 texrep 1 1
 crease 30.000000
@@ -41756,7 +41750,7 @@ kids 0
 OBJECT poly
 name "toggle"
 data 8
-Mesh.507
+Mesh.269
 crease 60.000000
 numvert 13
 -4.818764 -0.223316 -0.125752
@@ -41855,7 +41849,7 @@ kids 0
 OBJECT poly
 name "toggle.001"
 data 8
-Mesh.508
+Mesh.270
 crease 60.000000
 numvert 13
 -4.818764 -0.223316 -0.167422
@@ -41954,7 +41948,7 @@ kids 0
 OBJECT poly
 name "toggle.002"
 data 8
-Mesh.509
+Mesh.271
 crease 60.000000
 numvert 13
 -4.818764 -0.223316 -0.190043
@@ -42053,7 +42047,7 @@ kids 0
 OBJECT poly
 name "toggle.004"
 data 8
-Mesh.510
+Mesh.272
 crease 60.000000
 numvert 13
 -4.793542 -0.265828 -0.252147
@@ -42152,7 +42146,7 @@ kids 0
 OBJECT poly
 name "toggle.005"
 data 8
-Mesh.511
+Mesh.273
 crease 60.000000
 numvert 13
 -4.793542 -0.265828 -0.278292
@@ -42251,7 +42245,7 @@ kids 0
 OBJECT poly
 name "toggle.006"
 data 8
-Mesh.512
+Mesh.274
 crease 60.000000
 numvert 13
 -4.780676 -0.288271 -0.278292
@@ -42350,7 +42344,7 @@ kids 0
 OBJECT poly
 name "toggle.007"
 data 8
-Mesh.513
+Mesh.275
 crease 60.000000
 numvert 13
 -4.780676 -0.288271 -0.252147
@@ -42449,7 +42443,7 @@ kids 0
 OBJECT poly
 name "toggle.016"
 data 8
-Mesh.514
+Mesh.276
 crease 60.000000
 numvert 13
 -4.818764 -0.223316 -0.099692
@@ -42548,7 +42542,7 @@ kids 0
 OBJECT poly
 name "warningpanel.off"
 data 8
-Mesh.515
+Mesh.277
 texture "warning-panel.png"
 texrep 1 1
 crease 30.000000
@@ -42769,7 +42763,7 @@ kids 0
 OBJECT poly
 name "warningpanel.off.001"
 data 8
-Mesh.516
+Mesh.278
 crease 30.000000
 numvert 0
 numsurf 0
@@ -42777,7 +42771,7 @@ kids 0
 OBJECT poly
 name "warningpanel.off.010"
 data 8
-Mesh.517
+Mesh.279
 crease 30.000000
 numvert 0
 numsurf 0

@@ -180,10 +180,6 @@ setlistener("/sim/current-view/internal", func(vw){
         }
 },1,0);
 
-setlistener("controls/cabin-door/position-norm", func(dr){
-    setprop("sim/multiplay/generic/float",dr.getValue());
-},0,0);
-
 setlistener("/sim/model/start-idling", func(idle){
     var run= idle.getBoolValue();
     if(run){
@@ -304,5 +300,6 @@ var update_systems = func {
         setprop("sim/alarms/stall-warning",testwarn);
     }
     wiper.active();
+	
     settimer(update_systems, 0);
 }

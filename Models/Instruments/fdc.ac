@@ -1,16 +1,15 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "dimlit" rgb 0.5 0.5 0.5 amb 0 0 0 emis 0.5 0.5 0.5 spec 0 0 0 shi 0 trans 0
+MATERIAL "dimlit" rgb 0.5 0.5 0.5 amb 0.5 0.5 0.5 emis 0.5 0.5 0.5 spec 0 0 0 shi 0 trans 0
 MATERIAL "illum.001" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 0 0 0 shi 0 trans 0
-MATERIAL "instruments" rgb 1 1 1 amb 0 0 0 emis 0.6 0.6 0.6 spec 0 0 0 shi 72 trans 0
-MATERIAL "Bezel" rgb 0.9 0.9 0.9 amb 0.2 0.2 0.2 emis 0.2 0.2 0.2 spec 0.772973 0.772973 0.772973 shi 32 trans 0
+MATERIAL "Bezel" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 0.2 0.2 0.2 spec 0.772973 0.772973 0.772973 shi 32 trans 0
 MATERIAL "pfd.001" rgb 0 0 0 amb 0 0 0 emis 0 0 0 spec 0 0 0 shi 0 trans 0
 OBJECT world
 kids 25
 OBJECT poly
 name "ALT.btn"
 data 8
-Mesh.024
+Mesh.413
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -31,7 +30,7 @@ kids 0
 OBJECT poly
 name "ALTS.btn"
 data 8
-Mesh.023
+Mesh.414
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -52,7 +51,7 @@ kids 0
 OBJECT poly
 name "AP-alt"
 data 8
-Mesh.006
+Mesh.415
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -89,7 +88,7 @@ kids 0
 OBJECT poly
 name "AP-alts"
 data 8
-Mesh.016
+Mesh.416
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -126,7 +125,7 @@ kids 0
 OBJECT poly
 name "AP-apr"
 data 8
-Mesh.008
+Mesh.417
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -163,7 +162,7 @@ kids 0
 OBJECT poly
 name "AP-bc"
 data 8
-Mesh.015
+Mesh.418
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -200,7 +199,7 @@ kids 0
 OBJECT poly
 name "AP-climb"
 data 8
-Mesh.013
+Mesh.419
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -237,7 +236,7 @@ kids 0
 OBJECT poly
 name "AP-dcs"
 data 8
-Mesh.009
+Mesh.420
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -274,7 +273,7 @@ kids 0
 OBJECT poly
 name "AP-gs"
 data 8
-Mesh.020
+Mesh.421
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -304,7 +303,7 @@ kids 0
 OBJECT poly
 name "AP-hdg"
 data 8
-Mesh.017
+Mesh.422
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -341,7 +340,7 @@ kids 0
 OBJECT poly
 name "AP-ias"
 data 8
-Mesh.003
+Mesh.423
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -378,7 +377,7 @@ kids 0
 OBJECT poly
 name "AP-nav"
 data 8
-Mesh.004
+Mesh.424
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -415,7 +414,7 @@ kids 0
 OBJECT poly
 name "AP-vs"
 data 8
-Mesh.018
+Mesh.425
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -452,7 +451,7 @@ kids 0
 OBJECT poly
 name "AP-wl"
 data 8
-Mesh.005
+Mesh.426
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -478,7 +477,7 @@ kids 0
 OBJECT poly
 name "APPR.btn"
 data 8
-Mesh.002
+Mesh.427
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -499,7 +498,7 @@ kids 0
 OBJECT poly
 name "APbtn"
 data 8
-Mesh.019
+Mesh.428
 crease 30.000000
 numvert 0
 numsurf 0
@@ -507,7 +506,7 @@ kids 0
 OBJECT poly
 name "BC.btn"
 data 8
-Mesh.010
+Mesh.429
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -528,7 +527,7 @@ kids 0
 OBJECT poly
 name "CLIMB.btn"
 data 8
-Mesh.011
+Mesh.430
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -549,7 +548,7 @@ kids 0
 OBJECT poly
 name "DCS.btn"
 data 8
-Mesh.012
+Mesh.431
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -570,7 +569,7 @@ kids 0
 OBJECT poly
 name "FDC"
 data 8
-Mesh.014
+Mesh.432
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -605,184 +604,184 @@ numvert 28
 0.002517 0.009768 -0.057658
 numsurf 28
 SURF 0x00
-mat 4
+mat 3
 refs 3
 9 0.00390625 0.612200021744
 8 0.00390625 0.991106271744
 6 0.0 0.620012521744
 SURF 0x00
-mat 4
+mat 3
 refs 3
 8 0.00390625 0.991106271744
 5 0.0 0.983293771744
 6 0.0 0.620012521744
 SURF 0x00
-mat 4
+mat 3
 refs 3
 11 0.9921875 0.991106271744
 1 0.99609375 0.620012521744
 2 1.0 0.983293771744
 SURF 0x00
-mat 4
+mat 3
 refs 3
 11 0.9921875 0.991106271744
 10 0.9921875 0.612200021744
 1 0.99609375 0.620012521744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 1 0.99609375 0.620012521744
 0 0.99609375 0.620012521744
 3 1.0 0.983293771744
 2 1.0 0.983293771744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 14 0.9921875 0.612200021744
 0 0.99609375 0.620012521744
 1 0.99609375 0.620012521744
 10 0.9921875 0.612200021744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 3 1.0 0.983293771744
 15 0.9921875 0.991106271744
 11 0.9921875 0.991106271744
 2 1.0 0.983293771744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 7 0.0 0.620012521744
 6 0.0 0.620012521744
 5 0.0 0.983293771744
 4 0.0 0.983293771744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 12 0.00390625 0.991106271744
 4 0.0 0.983293771744
 5 0.0 0.983293771744
 8 0.00390625 0.991106271744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 9 0.00390625 0.612200021744
 6 0.0 0.620012521744
 7 0.0 0.620012521744
 13 0.00390625 0.612200021744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 16 0.08984375 0.60546875
 17 0.90625 0.60546875
 15 0.9921875 0.60546875
 12 0.00390625 0.60546875
 SURF 0x00
-mat 4
+mat 3
 refs 3
 8 0.00390625 0.592668771744
 16 0.08984375 0.592668771744
 12 0.00390625 0.592668771744
 SURF 0x00
-mat 4
+mat 3
 refs 3
 17 0.90625 0.592668771744
 11 0.9921875 0.592668771744
 15 0.9921875 0.592668771744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 19 0.90625 0.625
 18 0.08984375 0.625
 13 0.00390625 0.625
 14 0.9921875 0.625
 SURF 0x00
-mat 4
+mat 3
 refs 3
 10 0.9921875 0.612200021744
 19 0.90625 0.612200021744
 14 0.9921875 0.612200021744
 SURF 0x00
-mat 4
+mat 3
 refs 3
 18 0.08984375 0.612200021744
 9 0.00390625 0.612200021744
 13 0.00390625 0.612200021744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 21 0.08984375 0.881731271744
 20 0.08984375 0.948137521744
 8 0.00390625 0.991106271744
 9 0.00390625 0.612200021744
 SURF 0x00
-mat 4
+mat 3
 refs 3
 18 0.08984375 0.612200021744
 21 0.08984375 0.881731271744
 9 0.00390625 0.612200021744
 SURF 0x00
-mat 4
+mat 3
 refs 3
 20 0.08984375 0.549700021744
 16 0.08984375 0.592668771744
 8 0.00390625 0.592668771744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 19 0.90625 0.6640625
 23 0.90625 0.8828125
 21 0.08984375 0.8828125
 18 0.08984375 0.6640625
 SURF 0x00
-mat 4
+mat 3
 refs 4
 22 0.90625 0.5625
 17 0.90625 0.60546875
 16 0.08984375 0.60546875
 20 0.08984375 0.5625
 SURF 0x00
-mat 4
+mat 3
 refs 4
 22 0.90625 0.948137521744
 23 0.90625 0.881731271744
 10 0.9921875 0.612200021744
 11 0.9921875 0.991106271744
 SURF 0x00
-mat 4
+mat 3
 refs 3
 17 0.90625 0.592668771744
 22 0.90625 0.549700021744
 11 0.9921875 0.592668771744
 SURF 0x00
-mat 4
+mat 3
 refs 3
 23 0.90625 0.881731271744
 19 0.90625 0.612200021744
 10 0.9921875 0.612200021744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 22 0.90625 0.9609375
 20 0.08984375 0.9609375
 24 0.08984375 0.9609375
 25 0.90625 0.9609375
 SURF 0x00
-mat 4
+mat 3
 refs 4
 21 0.08984375 0.89453125
 23 0.90625 0.89453125
 27 0.90625 0.89453125
 26 0.08984375 0.89453125
 SURF 0x00
-mat 4
+mat 3
 refs 4
 23 0.90625 0.881731271744
 22 0.90625 0.948137521744
 25 0.90625 0.948137521744
 27 0.90625 0.881731271744
 SURF 0x00
-mat 4
+mat 3
 refs 4
 20 0.08984375 0.9609375
 21 0.08984375 0.89453125
@@ -792,7 +791,7 @@ kids 0
 OBJECT poly
 name "FDC.annun"
 data 8
-Mesh.007
+Mesh.433
 crease 30.000000
 numvert 4
 0.002517 0.008988 -0.058599
@@ -801,17 +800,17 @@ numvert 4
 0.002514 0.019526 0.0586
 numsurf 1
 SURF 0x00
-mat 5
+mat 4
 refs 4
-0 0 0
-2 0 0
-3 0 0
-1 0 0
+0 0.0 0.0
+2 0.0 0.0
+3 0.0 0.0
+1 0.0 0.0
 kids 0
 OBJECT poly
 name "HDG.btn"
-data 4
-Mesh
+data 8
+Mesh.434
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -832,7 +831,7 @@ kids 0
 OBJECT poly
 name "IAS.btn"
 data 8
-Mesh.021
+Mesh.435
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -853,7 +852,7 @@ kids 0
 OBJECT poly
 name "NAV.btn"
 data 8
-Mesh.001
+Mesh.436
 texture "FDC.png"
 texrep 1 1
 crease 30.000000
@@ -874,7 +873,7 @@ kids 0
 OBJECT poly
 name "VS.btn"
 data 8
-Mesh.022
+Mesh.437
 texture "FDC.png"
 texrep 1 1
 crease 30.000000

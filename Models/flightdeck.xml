@@ -3,6 +3,29 @@
 
     <path>flightdeck.ac</path>
 
+	<model><!-- reg label-->
+		<path>Aircraft/b1900d/Models/registration.xml</path>
+		<offsets>
+			<x-m>-4.896</x-m>
+			<y-m>0.153</y-m>
+			<z-m>0.112</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>-10</pitch-deg>
+			<heading-deg>0</heading-deg>
+		</offsets>
+		<overlay>
+			<params>
+				<size>0.030</size>
+				<alignment>yz-plane</alignment>
+				<color>
+					<red>0.8</red>
+					<green>0.8</green>
+					<blue>0.8</blue>
+				</color>
+			</params>
+		</overlay>
+	</model>
+
     <model>
         <name>VHF-22 Com1</name>
         <path>Aircraft/Instruments-3d/VHF-22/ctl22-com1.xml</path>
@@ -60,7 +83,7 @@
 
     <model>
         <name>TDR-94</name>
-        <path>Aircraft/b1900d/Models/Instruments/ctl92-transponder.xml</path>
+        <path>Aircraft/Instruments-3d/TDR-94/ctl92-transponder.xml</path>
         <offsets>
             <x-m>-4.852</x-m>
             <y-m>0.173</y-m>
@@ -751,8 +774,7 @@
   <!--	flap clickables	-->
   <animation>
    <type>pick</type>
-   <object-name>FlapsDownClick</object-name>
-   <visible>false</visible>
+   <object-name>FlapLever</object-name>
    <action>
      <name>increase flaps</name>
      <button>0</button>
@@ -765,13 +787,13 @@
      </binding>
    </action>
   </animation>
+
   <animation>
    <type>pick</type>
-   <object-name>FlapsUpClick</object-name>
-   <visible>false</visible>
+   <object-name>FlapLever</object-name>
    <action>
      <name>decrease flaps</name>
-     <button>0</button>
+     <button>1</button>
      <binding>
        <command>property-adjust</command>
        <property>/controls/flight/flaps</property>

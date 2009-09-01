@@ -22,7 +22,6 @@
         <type>rotate</type>
         <object-name>RMI.compass</object-name>
         <property>orientation/heading-magnetic-deg</property>
-        <object-name>VORneedle</object-name>
         <axis>
             <x>1.0</x>
             <y>0</y>
@@ -33,7 +32,18 @@
     <animation>
         <type>rotate</type>
         <object-name>VORneedle</object-name>
-        <property>instrumentation/flightdirector/hdg-deg</property>
+        <property>orientation/heading-deg</property>
+        <axis>
+            <x>1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>VORneedle</object-name>
+        <property>instrumentation/nav/heading-deg</property>
         <axis>
             <x>-1.0</x>
             <y>0</y>

@@ -1,12 +1,12 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "instruments" rgb 1 1 1 amb 0 0 0 emis 0.6 0.6 0.6 spec 0 0 0 shi 72 trans 0
+MATERIAL "instruments" rgb 1 1 1 amb 1 1 1 emis 0.6 0.6 0.6 spec 0 0 0 shi 72 trans 0
 OBJECT world
 kids 8
 OBJECT poly
 name "Batt-amp"
 data 8
-Mesh.007
+Mesh.405
 texture "dcgauges.png"
 texrep 1 1
 crease 30.000000
@@ -34,7 +34,7 @@ kids 0
 OBJECT poly
 name "Batt-volt"
 data 8
-Mesh.001
+Mesh.406
 texture "dcgauges.png"
 texrep 1 1
 crease 30.000000
@@ -62,7 +62,7 @@ kids 0
 OBJECT poly
 name "DC-load1"
 data 8
-Mesh.006
+Mesh.407
 texture "dcgauges.png"
 texrep 1 1
 crease 30.000000
@@ -90,7 +90,7 @@ kids 0
 OBJECT poly
 name "DC-load2"
 data 8
-Mesh.005
+Mesh.408
 texture "dcgauges.png"
 texrep 1 1
 crease 30.000000
@@ -118,7 +118,7 @@ kids 0
 OBJECT poly
 name "DCgauges"
 data 8
-Mesh.004
+Mesh.409
 texture "dcgauges.png"
 texrep 1 1
 crease 30.000000
@@ -413,7 +413,7 @@ kids 0
 OBJECT poly
 name "LHpropAmps"
 data 8
-Mesh.009
+Mesh.410
 texture "dcgauges.png"
 texrep 1 1
 crease 30.000000
@@ -441,7 +441,7 @@ kids 0
 OBJECT poly
 name "LHpropAmps.001"
 data 8
-Mesh.002
+Mesh.411
 texture "dcgauges.png"
 texrep 1 1
 crease 30.000000
@@ -469,7 +469,7 @@ kids 0
 OBJECT poly
 name "RHpropAmps"
 data 8
-Mesh.008
+Mesh.412
 texture "dcgauges.png"
 texrep 1 1
 crease 30.000000

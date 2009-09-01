@@ -1,39 +1,16 @@
 AC3Db
-MATERIAL "Gaugelight" rgb 1 1 1 amb 0.2 0.2 0.2 emis 0.7 0.7 0.7 spec 0 0 0 shi 32 trans 0
-MATERIAL "Gaugemetal" rgb 0.9 0.9 0.9 amb 0.2 0.2 0.2 emis 0.2 0.2 0.2 spec 0.779111 0.779111 0.779111 shi 45 trans 0
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
+MATERIAL "Gaugemetal" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 0.2 0.2 0.2 spec 0.779111 0.779111 0.779111 shi 45 trans 0
+MATERIAL "Gaugelight" rgb 1 1 1 amb 1 1 1 emis 0.1 0.1 0.1 spec 0 0 0 shi 32 trans 0
 OBJECT world
 kids 6
 OBJECT poly
-name "ScHand"
-texture "clock.png"
-texrep 1 1
-crease 30
-numvert 5
-0.001866 0.017803 -0.000287
-0.001866 0.002438 -0.000296
-0.001866 0.002438 0.000274
-0.001866 0.017803 0.000268
-0.001867 0.022424 -1e-05
-numsurf 2
-SURF 0x00
-mat 0
-refs 4
-0 0.9609375 0.953125
-3 0.89453125 0.953125
-2 0.89453125 0.90234375
-1 0.9609375 0.90234375
-SURF 0x00
-mat 0
-refs 3
-3 0.89453125 0.953125
-0 0.9609375 0.953125
-4 0.92578125 0.96875
-kids 0
-OBJECT poly
 name "Clock"
+data 8
+Mesh.400
 texture "clock.png"
 texrep 1 1
-crease 30
+crease 30.000000
 numvert 48
 0.002402 0.019116 -0.012896
 0.002402 0.012726 -0.01923
@@ -359,9 +336,11 @@ refs 4
 kids 0
 OBJECT poly
 name "Clock.face"
+data 8
+Mesh.401
 texture "clock.png"
 texrep 1 1
-crease 30
+crease 30.000000
 numvert 9
 0.001109 0.018076 -0.018076
 0.001109 0 -0.025563
@@ -374,49 +353,49 @@ numvert 9
 0.001109 0 0
 numsurf 8
 SURF 0x00
-mat 0
+mat 2
 refs 3
 1 1.01953125 0.5
 0 0.8671875 0.8671875
 8 0.5 0.5
 SURF 0x00
-mat 0
+mat 2
 refs 3
 8 0.5 0.5
 2 0.8671875 0.12890625
 1 1.01953125 0.5
 SURF 0x00
-mat 0
+mat 2
 refs 3
 8 0.5 0.5
 3 0.49609375 -0.0234375
 2 0.8671875 0.12890625
 SURF 0x00
-mat 0
+mat 2
 refs 3
 8 0.5 0.5
 4 0.12890625 0.12890625
 3 0.49609375 -0.0234375
 SURF 0x00
-mat 0
+mat 2
 refs 3
 8 0.5 0.5
 5 -0.0234375 0.5
 4 0.12890625 0.12890625
 SURF 0x00
-mat 0
+mat 2
 refs 3
 8 0.5 0.5
 6 0.12890625 0.8671875
 5 -0.0234375 0.5
 SURF 0x00
-mat 0
+mat 2
 refs 3
 8 0.5 0.5
 7 0.5 1.01953125
 6 0.12890625 0.8671875
 SURF 0x00
-mat 0
+mat 2
 refs 3
 8 0.5 0.5
 0 0.8671875 0.8671875
@@ -424,9 +403,11 @@ refs 3
 kids 0
 OBJECT poly
 name "Clock.knob"
+data 8
+Mesh.402
 texture "clock.png"
 texrep 1 1
-crease 50
+crease 50.000000
 numvert 17
 0.011367 -0.021458 0.020653
 0.011367 -0.015928 0.020653
@@ -553,9 +534,11 @@ refs 3
 kids 0
 OBJECT poly
 name "HrHand"
+data 8
+Mesh.403
 texture "clock.png"
 texrep 1 1
-crease 30
+crease 30.000000
 numvert 5
 0.001368 0.009986 -0.001064
 0.001368 0.002379 -0.000681
@@ -564,14 +547,14 @@ numvert 5
 0.001369 0.017092 -1e-05
 numsurf 2
 SURF 0x00
-mat 0
+mat 2
 refs 4
 0 0.97265625 0.078125
 3 0.875 0.078125
 2 0.88671875 0.03125
 1 0.96484375 0.03125
 SURF 0x00
-mat 0
+mat 2
 refs 3
 3 0.875 0.078125
 0 0.97265625 0.078125
@@ -579,9 +562,11 @@ refs 3
 kids 0
 OBJECT poly
 name "MnHand"
+data 8
+Mesh.404
 texture "clock.png"
 texrep 1 1
-crease 30
+crease 30.000000
 numvert 5
 0.001576 0.017751 -0.000578
 0.001575 0.002385 -0.000594
@@ -590,16 +575,44 @@ numvert 5
 0.001576 0.022373 -1e-05
 numsurf 2
 SURF 0x00
-mat 0
+mat 2
 refs 4
 0 0.9609375 0.08203125
 3 0.890625 0.08203125
 2 0.88671875 0.02734375
 1 0.9609375 0.02734375
 SURF 0x00
-mat 0
+mat 2
 refs 3
 3 0.890625 0.08203125
 0 0.9609375 0.08203125
 4 0.92578125 0.1015625
+kids 0
+OBJECT poly
+name "ScHand"
+data 8
+Mesh.399
+texture "clock.png"
+texrep 1 1
+crease 30.000000
+numvert 5
+0.001866 0.017803 -0.000287
+0.001866 0.002438 -0.000296
+0.001866 0.002438 0.000274
+0.001866 0.017803 0.000268
+0.001867 0.022424 -1e-05
+numsurf 2
+SURF 0x00
+mat 2
+refs 4
+0 0.9609375 0.953125
+3 0.89453125 0.953125
+2 0.89453125 0.90234375
+1 0.9609375 0.90234375
+SURF 0x00
+mat 2
+refs 3
+3 0.89453125 0.953125
+0 0.9609375 0.953125
+4 0.92578125 0.96875
 kids 0

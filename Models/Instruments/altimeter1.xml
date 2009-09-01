@@ -34,6 +34,7 @@
         <property>/instrumentation/altimeter/setting-inhg</property>
         <factor>0.01</factor>
         <step>10</step>
+		<bias>0.005</bias>
         <axis>
             <x>0</x>
             <y>1</y>
@@ -47,6 +48,7 @@
         <property>/instrumentation/altimeter/setting-inhg</property>
         <factor>0.1</factor>
         <step>1</step>
+		<bias>0.005</bias>
         <axis>
             <x>0</x>
             <y>1</y>
@@ -60,6 +62,7 @@
         <property>/instrumentation/altimeter/setting-inhg</property>
         <factor>1.0</factor>
         <step>0.1</step>
+		<bias>0.005</bias>
         <axis>
             <x>0</x>
             <y>1</y>
@@ -73,6 +76,7 @@
         <property>/instrumentation/altimeter/setting-inhg</property>
         <factor>10.0</factor>
         <step>0.01</step>
+		<bias>0.005</bias>
         <axis>
             <x>0</x>
             <y>1</y>
@@ -190,43 +194,7 @@
 
     <animation>
         <type>pick</type>
-        <object-name>inhg.dn</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.2</interval-sec>
-            <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/altimeter/setting-inhg</property>
-            <step>-0.01</step>
-            <min>26.0</min>
-            <max>33.0</max>
-            <wrap>false</wrap>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>inhg.dn</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.2</interval-sec>
-            <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/altimeter/setting-inhg</property>
-            <step>-0.1</step>
-            <min>26.0</min>
-            <max>33.0</max>
-            <wrap>false</wrap>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>inhg.up</object-name>
+        <object-name>BaroKnob</object-name>
         <action>
             <button>0</button>
             <repeatable>true</repeatable>
@@ -244,7 +212,7 @@
 
     <animation>
         <type>pick</type>
-        <object-name>inhg.up</object-name>
+        <object-name>BaroKnob</object-name>
         <action>
             <button>1</button>
             <repeatable>true</repeatable>
@@ -252,7 +220,39 @@
             <binding>
             <command>property-adjust</command>
             <property>instrumentation/altimeter/setting-inhg</property>
-            <step>0.1</step>
+            <step>-0.01</step>
+            <min>26.0</min>
+            <max>33.0</max>
+            <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>BaroKnob</object-name>
+        <action>
+            <button>3</button>
+            <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/altimeter/setting-inhg</property>
+            <step>0.01</step>
+            <min>26.0</min>
+            <max>33.0</max>
+            <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>BaroKnob</object-name>
+        <action>
+            <button>4</button>
+            <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/altimeter/setting-inhg</property>
+            <step>-0.01</step>
             <min>26.0</min>
             <max>33.0</max>
             <wrap>false</wrap>

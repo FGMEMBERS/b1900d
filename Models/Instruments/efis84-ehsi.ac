@@ -1,13 +1,13 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "pfd.001" rgb 0 0 0 amb 0.02 0.02 0.02 emis 1 1 1 spec 0 0 0 shi 72 trans 0
-MATERIAL "Gaugemetal.002" rgb 0.901507 0.901507 0.901507 amb 0 0 0 emis 0 0 0 spec 0.779111 0.779111 0.779111 shi 45 trans 0
+MATERIAL "pfd.003" rgb 0 0 0 amb 0 0 0 emis 1 1 1 spec 0 0 0 shi 72 trans 0
+MATERIAL "Gaugemetal" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 0.2 0.2 0.2 spec 0.779111 0.779111 0.779111 shi 45 trans 0
 OBJECT world
 kids 18
 OBJECT poly
 name "CRSdeflection"
 data 8
-Mesh.049
+Mesh.447
 texture "ehsi.png"
 texrep 1 1
 crease 30.000000
@@ -33,7 +33,7 @@ kids 0
 OBJECT poly
 name "CRSneedle"
 data 8
-Mesh.051
+Mesh.448
 texture "ehsi.png"
 texrep 1 1
 crease 30.000000
@@ -119,7 +119,7 @@ kids 0
 OBJECT poly
 name "EHSI.bezel"
 data 8
-Mesh.052
+Mesh.449
 texture "ehsi.png"
 texrep 1 1
 crease 50.000000
@@ -505,7 +505,7 @@ kids 0
 OBJECT poly
 name "EHSI.crs1"
 data 8
-Mesh.053
+Mesh.450
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -526,7 +526,7 @@ kids 0
 OBJECT poly
 name "EHSI.crs2"
 data 8
-Mesh.054
+Mesh.451
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -547,7 +547,7 @@ kids 0
 OBJECT poly
 name "EHSI.crs3"
 data 8
-Mesh.055
+Mesh.452
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -568,7 +568,7 @@ kids 0
 OBJECT poly
 name "EHSI.face"
 data 8
-Mesh.056
+Mesh.453
 texture "ehsi.png"
 texrep 1 1
 crease 30.000000
@@ -735,7 +735,7 @@ kids 0
 OBJECT poly
 name "EHSI.gps"
 data 8
-Mesh.057
+Mesh.454
 texture "ehsi.png"
 texrep 1 1
 crease 30.000000
@@ -756,7 +756,7 @@ kids 0
 OBJECT poly
 name "EHSI.gps.001"
 data 8
-Mesh.058
+Mesh.455
 crease 30.000000
 numvert 0
 numsurf 0
@@ -764,7 +764,7 @@ kids 0
 OBJECT poly
 name "EHSI.gsp1"
 data 8
-Mesh.059
+Mesh.456
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -785,7 +785,7 @@ kids 0
 OBJECT poly
 name "EHSI.gsp2"
 data 8
-Mesh.060
+Mesh.457
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -806,7 +806,7 @@ kids 0
 OBJECT poly
 name "EHSI.gsp3"
 data 8
-Mesh.061
+Mesh.458
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -827,7 +827,7 @@ kids 0
 OBJECT poly
 name "EHSI.hdg1"
 data 8
-Mesh.062
+Mesh.459
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -848,7 +848,7 @@ kids 0
 OBJECT poly
 name "EHSI.hdg2"
 data 8
-Mesh.063
+Mesh.460
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -869,7 +869,7 @@ kids 0
 OBJECT poly
 name "EHSI.hdg3"
 data 8
-Mesh.064
+Mesh.461
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -890,7 +890,7 @@ kids 0
 OBJECT poly
 name "HDGback"
 data 8
-Mesh.065
+Mesh.462
 texture "ehsi.png"
 texrep 1 1
 crease 30.000000

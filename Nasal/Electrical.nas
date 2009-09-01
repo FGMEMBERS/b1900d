@@ -323,13 +323,6 @@ setprop(outPut~"eng-lights",(bus_volts * ENG_DIMMER));
 setprop(outPut~"panel-lights",(bus_volts * PANEL_DIMMER));
 setprop(outPut~"efis-lights",(bus_volts * EFIS_DIMMER));
 
-setprop("sim/multiplay/generic/int",getprop(outPut~"beacon"));
-setprop("sim/multiplay/generic/int[1]",getprop(outPut~"strobe"));
-setprop("sim/multiplay/generic/int[2]",getprop(outPut~"nav-lights"));
-setprop("sim/multiplay/generic/int[3]",getprop(outPut~"landing-lights[0]"));
-setprop("sim/multiplay/generic/int[4]",getprop(outPut~"landing-lights[1]"));
-setprop("sim/multiplay/generic/int[5]",getprop(outPut~"taxi-lights"));
-
 
 if(getprop("controls/electric/wipers/switch")>0){
     setprop(outPut~"wipers",bus_volts);

@@ -1,13 +1,13 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "Gaugelight.001" rgb 1 1 1 amb 0.2 0.2 0.2 emis 0.7 0.7 0.7 spec 0 0 0 shi 32 trans 0
-MATERIAL "Gaugemetal.001" rgb 0.9 0.9 0.9 amb 0.2 0.2 0.2 emis 0.2 0.2 0.2 spec 0.779111 0.779111 0.779111 shi 45 trans 0
+MATERIAL "Gaugelight" rgb 1 1 1 amb 1 1 1 emis 0.7 0.7 0.7 spec 0 0 0 shi 32 trans 0
+MATERIAL "Gaugemetal" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 0.2 0.2 0.2 spec 0.779111 0.779111 0.779111 shi 45 trans 0
 OBJECT world
-kids 11
+kids 9
 OBJECT poly
 name "APalt"
 data 8
-Mesh.040
+Mesh.306
 texture "AltSet.png"
 texrep 1 1
 crease 30.000000
@@ -26,7 +26,7 @@ kids 0
 OBJECT poly
 name "APalt1"
 data 8
-Mesh.041
+Mesh.307
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -52,7 +52,7 @@ kids 0
 OBJECT poly
 name "APalt2"
 data 8
-Mesh.042
+Mesh.308
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -78,7 +78,7 @@ kids 0
 OBJECT poly
 name "APalt3"
 data 8
-Mesh.043
+Mesh.309
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -104,7 +104,7 @@ kids 0
 OBJECT poly
 name "APalt4"
 data 8
-Mesh.044
+Mesh.310
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -130,7 +130,7 @@ kids 0
 OBJECT poly
 name "APalt5"
 data 8
-Mesh.045
+Mesh.311
 texture "digits.png"
 texrep 1 1
 crease 30.000000
@@ -156,7 +156,7 @@ kids 0
 OBJECT poly
 name "AltSet.bezel"
 data 8
-Mesh.046
+Mesh.312
 texture "AltSet.png"
 texrep 1 1
 crease 10.000000
@@ -411,7 +411,7 @@ kids 0
 OBJECT poly
 name "AltSet.cancel"
 data 8
-Mesh.047
+Mesh.313
 texture "AltSet.png"
 texrep 1 1
 crease 30.000000
@@ -437,7 +437,7 @@ kids 0
 OBJECT poly
 name "AltSet.knob"
 data 8
-Mesh.048
+Mesh.314
 texture "AltSet.png"
 texrep 1 1
 crease 45.000000
@@ -536,46 +536,4 @@ refs 4
 14 0.547960996628 0.821398437023
 6 0.686414003372 0.821398437023
 7 0.686414003372 0.959851443768
-kids 0
-OBJECT poly
-name "Altset.dn"
-data 9
-Plane.021
-texture "AltSet.png"
-texrep 1 1
-crease 30.000000
-numvert 4
-0.001965 -0.004839 -0.021625
-0.001966 -0.016039 -0.021624
-0.001965 -0.004839 -0.014345
-0.001966 -0.016039 -0.014344
-numsurf 1
-SURF 0x00
-mat 2
-refs 4
-0 0.348726630211 0.699055016041
-2 0.261156141758 0.699055075645
-3 0.261156082153 0.564331173897
-1 0.348726570606 0.564331173897
-kids 0
-OBJECT poly
-name "Altset.up"
-data 9
-Plane.020
-texture "AltSet.png"
-texrep 1 1
-crease 30.000000
-numvert 4
-0.001966 -0.016039 -0.028905
-0.001965 -0.004839 -0.028905
-0.001966 -0.016039 -0.021624
-0.001965 -0.004839 -0.021625
-numsurf 1
-SURF 0x00
-mat 2
-refs 4
-2 0.348726570606 0.564331173897
-0 0.436297088861 0.564331173897
-1 0.436297148466 0.699054956436
-3 0.348726630211 0.699055016041
 kids 0

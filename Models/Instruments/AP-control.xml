@@ -74,9 +74,11 @@ Primus 1000 Autopilot Controller
 
     <animation>
         <type>pick</type>
-        <object-name>Ptch.dn</object-name>
+        <object-name>Pitch.trim</object-name>
         <action>
             <button>0</button>
+			<repeatable>1</repeatable>
+			<interval-sec>0.2</interval-sec>
             <binding>
                 <command>nasal</command>
                 <script>systems.FlDr.pitch_wheel(-1)</script>
@@ -86,9 +88,11 @@ Primus 1000 Autopilot Controller
 
     <animation>
         <type>pick</type>
-        <object-name>Ptch.up</object-name>
+        <object-name>Pitch.trim</object-name>
         <action>
-            <button>0</button>
+            <button>1</button>
+			<repeatable>1</repeatable>
+			<interval-sec>0.2</interval-sec>
             <binding>
                 <command>nasal</command>
                 <script>systems.FlDr.pitch_wheel(1)</script>
@@ -98,9 +102,35 @@ Primus 1000 Autopilot Controller
 
     <animation>
         <type>pick</type>
-        <object-name>Roll.dn</object-name>
+        <object-name>Pitch.trim</object-name>
+        <action>
+            <button>3</button>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.pitch_wheel(-1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Pitch.trim</object-name>
+        <action>
+            <button>4</button>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.pitch_wheel(1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Roll.trim</object-name>
         <action>
             <button>0</button>
+			<repeatable>1</repeatable>
+			<interval-sec>0.2</interval-sec>
             <binding>
                 <command>nasal</command>
                 <script>systems.FlDr.roll_knob(-1)</script>
@@ -110,9 +140,11 @@ Primus 1000 Autopilot Controller
 
     <animation>
         <type>pick</type>
-        <object-name>Roll.up</object-name>
+        <object-name>Roll.trim</object-name>
         <action>
-            <button>0</button>
+            <button>1</button>
+			<repeatable>1</repeatable>
+			<interval-sec>0.2</interval-sec>
             <binding>
                 <command>nasal</command>
                 <script>systems.FlDr.roll_knob(1)</script>

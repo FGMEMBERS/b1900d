@@ -18,6 +18,19 @@ July 2004 Syd Adams
             <splash-texture>Aircraft/b1900d/b1900dsplash.png</splash-texture>
         </startup>
 
+		<multiplay>
+			<generic>
+				<int n="0" alias="/systems/electrical/outputs/beacon"/>
+				<int n="1" alias="/systems/electrical/outputs/strobe"/>
+				<int n="2" alias="/systems/electrical/outputs/nav-lights"/>
+				<int n="3" alias="/systems/electrical/outputs/landing-lights"/>
+				<int n="4" alias="/systems/electrical/outputs/landing-lights[1]"/>
+				<int n="5" alias="/systems/electrical/outputs/taxi-lights"/>
+				<float  alias="/controls/cabin-door/position-norm"/>
+				<string  alias="/sim/multiplay/callsign"/>
+			</generic>
+		</multiplay>
+
         <tutorials>
         <tutorial include="Tutorials/startup_tutorial.xml"/>
         <tutorial include="Tutorials/gps-nav.xml"/>
@@ -312,6 +325,10 @@ July 2004 Syd Adams
     <altimeter>
         <millibars type= "double">0</millibars>
     </altimeter>
+    <airspeed-indicator>
+        <index n="0" type="double">117</index>
+		<index n="1" type="double">130</index>
+    </airspeed-indicator>
     <inst-vertical-speed-indicator>
         <serviceable type="bool">true</serviceable>
     </inst-vertical-speed-indicator>
