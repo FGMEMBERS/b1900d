@@ -54,7 +54,7 @@ var flightdirector = {
         m.DH = m.node.getNode("decision-hold",1);
         m.DH.setDoubleValue(200);
         m.Defl = props.globals.getNode("instrumentation/nav/heading-needle-deflection");
-        m.GSDefl = props.globals.getNode("instrumentation/nav/gs-needle-deflection");
+        m.GSDefl = props.globals.getNode("instrumentation/nav/gs-needle-deflection-norm");
         m.FD_defl = m.HSI.getNode("crs-deflection",1);
         m.FD_defl.setDoubleValue(0);
         m.FD_crs = m.HSI.getNode("crs-mag-heading",1);
@@ -291,7 +291,7 @@ var flightdirector = {
         var vnv = me.vnav.getValue();
         if(me.gs_arm.getBoolValue()){
             var defl = me.GSDefl.getValue();
-            if(defl < 1 and defl > -1){
+            if(defl < 0.3 and defl > -0.3){
                 vnv=5;
                 me.gs_arm.setBoolValue(0);
             }

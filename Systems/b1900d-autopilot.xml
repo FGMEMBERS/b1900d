@@ -314,7 +314,7 @@
 		<value>GS</value>
 	</enable>
 	<input>
-		<prop>instrumentation/nav/gs-needle-deflection</prop>
+		<prop>instrumentation/nav/gs-needle-deflection-norm</prop>
 	</input>
 	<reference>
 		<value>0</value>
@@ -323,7 +323,7 @@
 		<prop>autopilot/settings/target-pitch-deg</prop>
 	</output>
 	<config>
-		<Kp>-1.5</Kp>
+		<Kp>-10</Kp>
 		<beta>1.0</beta>
 		<alpha>0.1</alpha>
 		<gamma>0.0</gamma>

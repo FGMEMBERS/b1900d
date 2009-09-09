@@ -200,10 +200,10 @@
     <animation>
         <type>translate</type>
         <object-name>GS-pointer</object-name>
-        <property>instrumentation/nav/gs-needle-deflection</property>
+        <property>instrumentation/nav/gs-needle-deflection-norm</property>
         <interpolation>
-            <entry><ind>-10.0</ind><dep>-0.0108</dep></entry>
-            <entry><ind>10.0</ind><dep>0.0108</dep></entry>
+            <entry><ind>-1.0</ind><dep>-0.0108</dep></entry>
+            <entry><ind>1.0</ind><dep>0.0108</dep></entry>
         </interpolation>
         <axis>
             <x>0.0</x>
