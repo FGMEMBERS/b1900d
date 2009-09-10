@@ -20,7 +20,7 @@ Primus 1000 Autopilot Controller
         <type>select</type>
         <object-name>YD-on</object-name>
         <condition>
-            <property>controls/flight/yaw-damper</property>
+            <property>autopilot/locks/yaw-damper</property>
         </condition>
     </animation>
 
@@ -29,7 +29,7 @@ Primus 1000 Autopilot Controller
         <object-name>Low-on</object-name>
         <condition>
             <equals>
-                <property>autopilot/settings/low-bank-deg</property>
+                <property>instrumentation/flightdirector/roll-max</property>
                 <value>14</value>
             </equals>
         </condition>

@@ -350,7 +350,7 @@ var flightdirector = {
             md1 = me.yawdamper.getBoolValue();
             md1=1-md1;
             me.yawdamper.setBoolValue(md1);
-            if(md1==0)me.AP_off.setBoolValue(1);
+            #if(md1==0)me.AP_off.setBoolValue(1);
         }elsif(apmd=="bank"){
             md1 = me.bank_limit.getBoolValue();
             md1=1-md1;
