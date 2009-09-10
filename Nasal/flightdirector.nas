@@ -350,7 +350,7 @@ var flightdirector = {
             md1 = me.yawdamper.getBoolValue();
             md1=1-md1;
             me.yawdamper.setBoolValue(md1);
-            #if(md1==0)me.AP_off.setBoolValue(1);
+            if(md1==0)me.AP_off.setBoolValue(1);
         }elsif(apmd=="bank"){
             md1 = me.bank_limit.getBoolValue();
             md1=1-md1;
@@ -374,12 +374,12 @@ var flightdirector = {
         if(vmd==0){
             mx=me.max_pitch.getValue();
             mn=me.min_pitch.getValue();
-            ptc = getprop("autopilot/settings/target-pitch-deg");
+            ptc = getprop("autopilot/internal/target-pitch-deg");
             if(ptc==nil)ptc=0;
             ptc=ptc+0.10 *  amt;
             if(ptc>mx)ptc=mx;
             if(ptc<mn)ptc=mn;
-            setprop("autopilot/settings/target-pitch-deg",ptc);
+            setprop("autopilot/internal/target-pitch-deg",ptc);
         }elsif(vmd==3){
             mx=6000;
             mn=-6000;
@@ -404,7 +404,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("autopilot/settings/target-altitude-ft",0);
     settimer(update_fd, 5);
     setprop("autopilot/settings/vertical-speed-fpm",0);
-    setprop("autopilot/settings/target-pitch-deg",0);
+    setprop("autopilot/internal/target-pitch-deg",0);
     print("Flight Director ...Check");
 });
 
