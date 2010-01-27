@@ -44,7 +44,7 @@
             </condition>
             <volume>
                 <property>engines/engine[0]/n2</property>
-                <factor>0.01</factor>
+                <factor>0.015</factor>
             </volume>
             <volume>
                 <property>sim/sound/E_volume</property>
@@ -53,14 +53,14 @@
                 <property>engines/engine[0]/n2</property>
                 <offset>0.0</offset>
                 <factor>0.015</factor>
-                <min>0.2</min>
-                <max>1.2</max>
+                <min>0.0</min>
+                <max>2</max>
             </pitch>
             <position>
                  <x>-1.5</x>
                 <y>2.5</y>
                 <z>-0.33</z>
-            </position>
+            </position>p
         </prop>
 
         <turbine0>
@@ -150,7 +150,7 @@
             </condition>
             <volume>
                 <property>engines/engine[1]/n2</property>
-                <factor>0.01</factor>
+                <factor>0.015</factor>
             </volume>
             <volume>
                 <property>sim/sound/E_volume</property>
@@ -159,8 +159,8 @@
                 <property>engines/engine[1]/n2</property>
                 <offset>0.0</offset>
                 <factor>0.015</factor>
-                <min>0.2</min>
-                <max>1.2</max>
+                <min>0.0</min>
+                <max>2</max>
             </pitch>
             <position>
                 <x>-1.5</x>

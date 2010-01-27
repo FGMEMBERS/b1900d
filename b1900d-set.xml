@@ -18,18 +18,18 @@ July 2004 Syd Adams
             <splash-texture>Aircraft/b1900d/b1900dsplash.png</splash-texture>
         </startup>
 
-		<multiplay>
-			<generic>
-				<int n="0" alias="/systems/electrical/outputs/beacon"/>
-				<int n="1" alias="/systems/electrical/outputs/strobe"/>
-				<int n="2" alias="/systems/electrical/outputs/nav-lights"/>
-				<int n="3" alias="/systems/electrical/outputs/landing-lights"/>
-				<int n="4" alias="/systems/electrical/outputs/landing-lights[1]"/>
-				<int n="5" alias="/systems/electrical/outputs/taxi-lights"/>
-				<float  alias="/controls/cabin-door/position-norm"/>
-				<string  alias="/sim/multiplay/callsign"/>
-			</generic>
-		</multiplay>
+        <multiplay>
+            <generic>
+                <int n="0" alias="/systems/electrical/outputs/beacon"/>
+                <int n="1" alias="/systems/electrical/outputs/strobe"/>
+                <int n="2" alias="/systems/electrical/outputs/nav-lights"/>
+                <int n="3" alias="/systems/electrical/outputs/landing-lights"/>
+                <int n="4" alias="/systems/electrical/outputs/landing-lights[1]"/>
+                <int n="5" alias="/systems/electrical/outputs/taxi-lights"/>
+                <float  alias="/controls/cabin-door/position-norm"/>
+                <string  alias="/sim/multiplay/callsign"/>
+            </generic>
+        </multiplay>
 
         <tutorials>
         <tutorial include="Tutorials/startup_tutorial.xml"/>
@@ -42,6 +42,9 @@ July 2004 Syd Adams
                 <file type="string">CMA</file>
             </livery>
         <start-idling type="bool">0</start-idling>
+        <manual>
+            <total-pages type="int">3</total-pages>
+        </manual>
     </model>
 
     <view n="0">
@@ -53,7 +56,7 @@ July 2004 Syd Adams
             <x-offset-m type="double">-0.38</x-offset-m>
             <y-offset-m type="double">0.27</y-offset-m>
             <z-offset-m type="double">-4.192</z-offset-m>
-            <pitch-offset-deg>-15</pitch-offset-deg>
+            <pitch-offset-deg>-12</pitch-offset-deg>
             <limits>
                 <enabled type="bool">true</enabled>
                 <left>
@@ -167,10 +170,19 @@ July 2004 Syd Adams
                 <label>Autopilot Settings</label>
                     <binding>
                         <command>nasal</command>
-                        <script>systems.ap_settings.open()</script>
+                        <script>dialogs.ap_settings.open()</script>
                     </binding>
                 </item>
             </menu>
+                <menu n="5">
+                    <item n="1">
+                    <label>Radio Stack</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>dialogs.Radio.open()</script>
+                        </binding>
+                    </item>
+                </menu>
             <menu n="10">
                 <label>B1900D</label>
                 <enabled type="bool">true</enabled>
@@ -200,6 +212,13 @@ July 2004 Syd Adams
                     <binding>
                         <command>nasal</command>
                         <script>aircraft.livery.dialog.toggle()</script>
+                    </binding>
+                </item>
+                <item>
+                    <label>Manual</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>sim/model/manual/enabled</property>
                     </binding>
                 </item>
             </menu>
@@ -327,7 +346,7 @@ July 2004 Syd Adams
     </altimeter>
     <airspeed-indicator>
         <index n="0" type="double">117</index>
-		<index n="1" type="double">130</index>
+        <index n="1" type="double">130</index>
     </airspeed-indicator>
     <inst-vertical-speed-indicator>
         <serviceable type="bool">true</serviceable>
@@ -386,7 +405,15 @@ July 2004 Syd Adams
                 <desc>Pop up autopilot dialog</desc>
                 <binding>
                     <command>nasal</command>
-                    <script>systems.ap_settings.toggle()</script>
+                    <script>dialogs.ap_settings.toggle()</script>
+                </binding>
+            </key>
+            <key n="268">
+                <name>F12</name>
+                <desc>Radio Stack</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>dialogs.Radio.open()</script>
                 </binding>
             </key>
             <key n="71">
@@ -458,6 +485,12 @@ July 2004 Syd Adams
             <file>Aircraft/b1900d/Models/Instruments/KLN90B/kln90b.nas</file>
             <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
             </systems>
+        <dialogs>
+            <file>Aircraft/b1900d/Nasal/dialogs.nas</file>
+        </dialogs>
+        <manual>
+            <file>Aircraft/b1900d/Manual/doc.nas</file>
+        </manual>
     </nasal>
 
 </PropertyList>

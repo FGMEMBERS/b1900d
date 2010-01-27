@@ -1,21 +1,21 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "gloss.004" rgb 0.771291 0.771291 0.771291 amb 0.771291 0.771291 0.771291 emis 0 0 0 spec 1 1 1 shi 38 trans 0
-MATERIAL "gloss.001" rgb 1 1 1 amb 1 1 1 emis 0.014983 0.014983 0.014983 spec 0.504136 0.504136 0.504136 shi 32 trans 0
+MATERIAL "gloss.004" rgb 0.771 0.771 0.771 amb 0.771 0.771 0.771 emis 0 0 0 spec 1 1 1 shi 38 trans 0
+MATERIAL "gloss.001" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 0.504 0.504 0.504 shi 32 trans 0
 MATERIAL "Gaugelight.002" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 0 0 0 shi 32 trans 0
-MATERIAL "backlit.001" rgb 0.816803 0.816803 0.816803 amb 0.816803 0.816803 0.816803 emis 0.2 0.2 0.2 spec 0.792374 0.792374 0.792374 shi 17 trans 0
-MATERIAL "bezels" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 0.2 0.2 0.2 spec 0 0 0 shi 17 trans 0
-MATERIAL "panellight" rgb 1 1 1 amb 1 1 1 emis 0.564826 0.564826 0.564826 spec 0 0 0 shi 72 trans 0
-MATERIAL "gloss.002" rgb 0.545036 0.545036 0.545036 amb 0.545036 0.545036 0.545036 emis 0 0 0 spec 1 1 1 shi 57 trans 0
-MATERIAL "glossblack" rgb 0.060829 0.060829 0.060829 amb 0.060829 0.060829 0.060829 emis 0 0 0 spec 1 0.94931 0.94931 shi 71 trans 0
-MATERIAL "pfd" rgb 0 0 0 amb 0 0 0 emis 0 0 0 spec 0 0 0 shi 0 trans 0
-MATERIAL "gloss.003" rgb 0.901507 0.901507 0.901507 amb 0.901507 0.901507 0.901507 emis 0 0 0 spec 1 1 1 shi 53 trans 0
-MATERIAL "dark.001" rgb 0.5 0.5 0.5 amb 0.5 0.5 0.5 emis 0 0 0 spec 0.40263 0.40263 0.40263 shi 12 trans 0
-MATERIAL "Gaugemetal" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 0.2 0.2 0.2 spec 0.779111 0.779111 0.779111 shi 45 trans 0
-MATERIAL "instruments" rgb 1 1 1 amb 1 1 1 emis 0.6 0.6 0.6 spec 0 0 0 shi 72 trans 0
+MATERIAL "backlit.001" rgb 0.817 0.817 0.817 amb 0.817 0.817 0.817 emis 0.11 0.11 0.11 spec 0.792 0.792 0.792 shi 17 trans 0
+MATERIAL "bezels" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 1 1 1 spec 0 0 0 shi 17 trans 0
+MATERIAL "panellight" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 0 0 0 shi 72 trans 0
+MATERIAL "gloss.002" rgb 0.545 0.545 0.545 amb 0.545 0.545 0.545 emis 0.56 0.56 0.56 spec 1 1 1 shi 57 trans 0
+MATERIAL "glossblack" rgb 0.061 0.061 0.061 amb 0.061 0.061 0.061 emis 0.133 0.133 0.133 spec 1 0.949 0.949 shi 71 trans 0
+MATERIAL "pfd" rgb 0 0 0 amb 0 0 0 emis 1 1 1 spec 0 0 0 shi 0 trans 0
+MATERIAL "gloss.003" rgb 0.902 0.902 0.902 amb 0.902 0.902 0.902 emis 1 1 1 spec 1 1 1 shi 53 trans 0
+MATERIAL "dark.001" rgb 0.5 0.5 0.5 amb 0.5 0.5 0.5 emis 0.08 0.08 0.08 spec 0.403 0.403 0.403 shi 12 trans 0
+MATERIAL "Gaugemetal" rgb 0.9 0.9 0.9 amb 0.9 0.9 0.9 emis 0 0 0 spec 0.779 0.779 0.779 shi 45 trans 0
+MATERIAL "instruments" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 0 0 0 shi 72 trans 0
 MATERIAL "lights" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 0 0 0 shi 72 trans 0
-MATERIAL "dark" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0.644771 0.644771 0.644771 shi 6 trans 0.9
-MATERIAL "semigloss" rgb 0.901507 0.901507 0.901507 amb 0.901507 0.901507 0.901507 emis 0 0 0 spec 0.566912 0.566912 0.566912 shi 53 trans 0
+MATERIAL "dark" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0.645 0.645 0.645 shi 6 trans 0.9
+MATERIAL "semigloss" rgb 0.902 0.902 0.902 amb 0.902 0.902 0.902 emis 1 1 1 spec 0.567 0.567 0.567 shi 53 trans 0
 OBJECT world
 kids 210
 OBJECT group

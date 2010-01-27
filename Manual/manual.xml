@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>manual.ac</path>
+
+    <animation>
+        <name>POH</name>
+        <object-name>Manual</object-name>
+        <object-name>Manual.page-nxt</object-name>
+        <object-name>Manual.x</object-name>
+        <object-name>Manual.y</object-name>
+        <object-name>Manual.z</object-name>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>POH</object-name>
+        <condition>
+            <property>sim/model/manual/enabled</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>POH</object-name>
+        <property-base>sim/model/manual</property-base>
+        <texture-prop>page-texture</texture-prop>
+        <texture>page0.png</texture>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>POH</object-name>
+        <property>sim/model/manual/x-offset</property>
+        <factor>1</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>POH</object-name>
+        <property>sim/model/manual/y-offset</property>
+        <factor>1</factor>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>POH</object-name>
+        <property>sim/model/manual/z-offset</property>
+        <factor>1</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+<!-- Hotspots -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual.page-nxt</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>nasal</command>
+                <script>manual.flip_page(1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual.page-nxt</object-name>
+        <action>
+            <button>1</button>
+            <binding>
+                <command>nasal</command>
+                <script>manual.flip_page(-1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
+                <command>property-adjust</command>
+                <property>sim/model/manual/x-offset</property>
+                <step>0.005</step>
+                <min>-0.5</min>
+                <max>0.5</max>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-assign</command>
+                <property>sim/model/manual/enabled</property>
+                <value>0</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>sim/model/manual/x-offset</property>
+                <step>-0.005</step>
+                <min>-0.5</min>
+                <max>0.5</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual.y</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>sim/model/manual/y-offset</property>
+                <step>0.005</step>
+                <min>-0.5</min>
+                <max>0.5</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual.y</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>sim/model/manual/y-offset</property>
+                <step>-0.005</step>
+                <min>-0.5</min>
+                <max>0.5</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual.z</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>sim/model/manual/z-offset</property>
+                <step>0.005</step>
+                <min>-0.5</min>
+                <max>0.5</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual.z</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>sim/model/manual/z-offset</property>
+                <step>-0.005</step>
+                <min>-0.5</min>
+                <max>0.5</max>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>

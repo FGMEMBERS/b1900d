@@ -3,28 +3,39 @@
 
     <path>flightdeck.ac</path>
 
-	<model><!-- reg label-->
-		<path>Aircraft/b1900d/Models/registration.xml</path>
-		<offsets>
-			<x-m>-4.896</x-m>
-			<y-m>0.153</y-m>
-			<z-m>0.112</z-m>
-			<roll-deg>0</roll-deg>
-			<pitch-deg>-10</pitch-deg>
-			<heading-deg>0</heading-deg>
-		</offsets>
-		<overlay>
-			<params>
-				<size>0.030</size>
-				<alignment>yz-plane</alignment>
-				<color>
-					<red>0.8</red>
-					<green>0.8</green>
-					<blue>0.8</blue>
-				</color>
-			</params>
-		</overlay>
-	</model>
+    <model><!-- reg label-->
+        <path>Aircraft/b1900d/Models/registration.xml</path>
+        <offsets>
+            <x-m>-4.896</x-m>
+            <y-m>0.153</y-m>
+            <z-m>0.112</z-m>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>-10</pitch-deg>
+            <heading-deg>0</heading-deg>
+        </offsets>
+        <overlay>
+            <params>
+                <size>0.030</size>
+                <alignment>yz-plane</alignment>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </params>
+        </overlay>
+    </model>
+
+    <model>
+        <name>manual</name>
+        <path>Aircraft/b1900d/Manual/manual.xml</path>
+        <offsets>
+            <x-m>-4.5</x-m>
+            <y-m>-0.4</y-m>
+            <z-m>0.15</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
 
     <model>
         <name>VHF-22 Com1</name>

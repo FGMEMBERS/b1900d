@@ -8,8 +8,8 @@
         <object-name>AP-alt</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>1</value>
+                <property>autopilot/locks/altitude</property>
+                <value>ALT</value>
             </equals>
         </condition>
     </animation>
@@ -18,10 +18,7 @@
         <type>select</type>
         <object-name>AP-alts</object-name>
         <condition>
-            <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>2</value>
-            </equals>
+            <property>instrumentation/flightdirector/alt-arm</property>
         </condition>
     </animation>
 
@@ -30,8 +27,8 @@
         <object-name>AP-vs</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>3</value>
+                <property>autopilot/locks/altitude</property>
+                <value>VS</value>
             </equals>
         </condition>
     </animation>
@@ -41,8 +38,8 @@
         <object-name>AP-ias</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/spd</property>
-                <value>1</value>
+                <property>autopilot/locks/speed</property>
+                <value>IAS</value>
             </equals>
         </condition>
     </animation>
@@ -52,8 +49,8 @@
         <object-name>AP-dcs</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>4</value>
+                <property>autopilot/locks/altitude</property>
+                <value>DCS</value>
             </equals>
         </condition>
     </animation>
@@ -63,8 +60,8 @@
         <object-name>AP-climb</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>5</value>
+                <property>autopilot/locks/altitude</property>
+                <value>CLIMB</value>
             </equals>
         </condition>
     </animation>
@@ -73,15 +70,10 @@
         <type>select</type>
         <object-name>AP-wl</object-name>
         <condition>
-            <and>
-                <equals>
-                    <property>instrumentation/flightdirector/lnav</property>
-                    <value>0</value>
-                </equals>
-                <not>
-                    <property>autopilot/locks/passive-mode</property>
-                </not>
-            </and>
+            <equals>
+                <property>autopilot/locks/heading</property>
+                <value>ROLL</value>
+            </equals>
         </condition>
     </animation>
 
@@ -90,8 +82,8 @@
         <object-name>AP-hdg</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/lnav</property>
-                <value>1</value>
+                <property>autopilot/locks/heading</property>
+                <value>HDG</value>
             </equals>
         </condition>
     </animation>
@@ -102,16 +94,12 @@
         <condition>
             <or>
                 <equals>
-                    <property>instrumentation/flightdirector/lnav</property>
-                    <value>2</value>
+                    <property>autopilot/locks/heading</property>
+                    <value>NAV</value>
                 </equals>
                 <equals>
-                    <property>instrumentation/flightdirector/lnav</property>
-                    <value>3</value>
-                </equals>
-                <equals>
-                    <property>instrumentation/flightdirector/lnav</property>
-                    <value>6</value>
+                    <property>autopilot/locks/heading</property>
+                    <value>GPS-CRS</value>
                 </equals>
             </or>
         </condition>
@@ -119,18 +107,17 @@
 
     <animation>
         <type>select</type>
-        <object-name>AP-apr</object-name>
+        <object-name>AP-gs-arm</object-name>
         <condition>
-            <or>
-                <equals>
-                    <property>instrumentation/flightdirector/lnav</property>
-                    <value>4</value>
-                </equals>
-                <equals>
-                    <property>instrumentation/flightdirector/lnav</property>
-                    <value>5</value>
-                </equals>
-            </or>
+            <property>instrumentation/flightdirector/gs-arm</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP-navarm</object-name>
+        <condition>
+            <property>instrumentation/flightdirector/nav-arm</property>
         </condition>
     </animation>
 
@@ -152,7 +139,17 @@
             </equals>
         </condition>
     </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP-halfbank</object-name>
+        <condition>
+            <property>instrumentation/flightdirector/bank-limit-switch</property>
+        </condition>
+    </animation>
+
 <!-- Hotspots -->
+
 
     <animation>
         <type>pick</type>

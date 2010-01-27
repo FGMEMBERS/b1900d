@@ -79,16 +79,17 @@ Root incidence 3.29 deg.
 Tip incidence -1.4 deg.
 -->
 
-    <wing x="0.0" y="0.80" z="-0.9" length="8.0" chord="2.18"
-        sweep="0" dihedral="6" taper="0.417"  camber="0.02"
+    <wing x="0.5" y="0.80" z="-0.9" length="8.0" chord="2.18"
+        sweep="0" dihedral="12" taper="0.417"  camber="0.05"
         incidence="3.29" twist="-4.69">
         <stall aoa="14" width="12" peak="1.5"/>
-        <flap0 start="0" end=".6" lift="1.6" drag="1.5"/>
+        <flap0 start="0" end=".6" lift="1.4" drag="1.6"/>
         <flap1 start=".6" end=".95" lift="1.2" drag="1.2"/>
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-speed control="FLAP0" transition-time="15"/>
         <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
-        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"
+        src0="-1" dst0="-0.93" src1="1" dst1="1.07"/>
         <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
         <control-output control="FLAP1" side="left"
         prop="/surface-positions/left-aileron-pos-norm"/>
@@ -97,7 +98,7 @@ Tip incidence -1.4 deg.
     </wing>
 
     <hstab x="-9.25" y="0.0" z="2.5" length="2.8" chord="1.8"
-        sweep="18" dihedral="0" taper="0.55" camber="-0.08" effectiveness="1.5">
+        sweep="18" dihedral="0" taper="0.55" camber="-0.05" effectiveness="2.0">
         <stall aoa="12" width="3" peak="1.45"/>
         <flap0 start="0" end="1" lift="1.6" drag="1.2"/>
         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
@@ -106,8 +107,8 @@ Tip incidence -1.4 deg.
     </hstab>
 
     <vstab x="-8.0" y="0.00" z="0.5" length="2.2" chord="3.0"
-        sweep="22" taper="0.7" camber="-0.03">
-        <stall aoa="16" width="4" peak="1.5"/>
+        sweep="22" taper="0.7" camber="-0.01">
+        <stall aoa="14" width="4" peak="1.5"/>
         <flap0 start="0" end="1" lift="1.4" drag="1.2"/>
         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
@@ -117,7 +118,7 @@ Tip incidence -1.4 deg.
 <!-- Canards -->
 
     <mstab x="-7.164" y="0.334" z="0.095" length="1.35" chord="0.95"
-        sweep="23" taper="0.5" dihedral="0">
+        sweep="23" taper="0.5" dihedral="0" camber="0.05">
         <stall aoa="16" width="4" peak="1.5"/>
     </mstab>
 
@@ -145,12 +146,12 @@ Tip incidence -1.4 deg.
     </vstab>
 
     <vstab x="-9.766" y="2.284" z="2.441" length="0.65" chord="0.39"
-        sweep="0" taper="0.7" dihedral="270">
+        sweep="0" taper="0.7" dihedral="270" camber="-0.02">
         <stall aoa="16" width="4" peak="1.5"/>
     </vstab>
 
     <vstab x="-9.766" y="-2.284" z="2.441" length="0.65" chord="0.39"
-        sweep="0" taper="0.7" dihedral="270">
+        sweep="0" taper="0.7" dihedral="270" camber="-0.02">
         <stall aoa="16" width="4" peak="1.5"/>
     </vstab>
 
@@ -199,13 +200,13 @@ Prop diam: 2.78 m
 
     <propeller x="1.9" y="2.65" z="0.0"
         mass="515" moment="13" radius="1.39"
-        cruise-speed="250" cruise-rpm="1275"
-        cruise-power="1000" cruise-alt="16000"
-        min-rpm="1200" max-rpm="1700"
-        fine-stop="0.5" coarse-stop="4.0">
+        cruise-speed="290" cruise-rpm="1700"
+        cruise-power="1106" cruise-alt="25000"
+        min-rpm="1400" max-rpm="1700"
+        fine-stop="0.15" coarse-stop="4.0">
         <turbine-engine
             eng-power="1279" eng-rpm="1700" alt="16000"
-            flat-rating="1250" min-n2="65" max-n2="105" bsfc="0.46" spool-time="4"/>
+            flat-rating="1250" min-n2="65" max-n2="104" bsfc="0.46" spool-time="4"/>
         <actionpt x="2.23" y="2.65" z="0.0"/>
         <control-input axis="/controls/engines/engine[0]/throttle"
         control="THROTTLE"/>
@@ -221,13 +222,13 @@ Prop diam: 2.78 m
 
     <propeller x="1.9" y="-2.65" z="0.0"
         mass="515" moment="13" radius="1.39"
-        cruise-speed="250" cruise-rpm="1275"
-        cruise-power="1000" cruise-alt="16000"
-        min-rpm="1200" max-rpm="1700"
-        fine-stop="0.5" coarse-stop="4.0">
+        cruise-speed="290" cruise-rpm="1700"
+        cruise-power="1106" cruise-alt="25000"
+        min-rpm="1400" max-rpm="1700"
+        fine-stop="0.15" coarse-stop="4.0">
         <turbine-engine
             eng-power="1279" eng-rpm="1700" alt="16000"
-            flat-rating="1250" min-n2="65" max-n2="105" bsfc="0.46" spool-time="4"/>
+            flat-rating="1250" min-n2="65" max-n2="104" bsfc="0.46" spool-time="4"/>
         <actionpt x="2.23" y="-2.65" z="0.0"/>
         <control-input axis="/controls/engines/engine[1]/throttle"
         control="THROTTLE"/>
@@ -241,9 +242,8 @@ Prop diam: 2.78 m
         control="PROPFEATHER"/>
     </propeller>
 
-<ballast x="5" y="0" z="-0.8" mass="1500"/>
-<ballast x="3" y="0" z="-0.8" mass="1500"/>
-<ballast x="0.5" y="0" z="-0.8" mass="1500"/>
+<ballast x="-8" y="0" z="1.5" mass="-3000"/>
+<ballast x="4" y="0" z="-1.5" mass="2000"/>
 
     <weight x="4.2" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
     <weight x="0.5" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>

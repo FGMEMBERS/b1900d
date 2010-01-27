@@ -1,784 +1,765 @@
 <?xml version="1.0"?>
 <PropertyList>
-  <name>autopilot-dlg</name>
-  <layout>vbox</layout>
-
-  <text><label>Flight Director / Autopilot Control</label></text>
-
-  <hrule/>
-  <!-- Autopilot Locks Display-->
-      <halign>center</halign>
-    <text>
-  <label>      Lateral Mode       Vertical Mode       Speed Mode</label>
-  </text>
-
-    <frame>
-   <height>60</height>
-
-<input>
-    <x>15</x>
-    <y>30</y>
-    <width>100</width>
-    <height>25</height>
-    <border>2</border>
-   <property>autopilot/locks/heading</property>
-    <live>true</live>
-</input>
-
-<input>
-    <x>125</x>
-    <y>30</y>
-    <width>100</width>
-    <height>25</height>
-   <property>autopilot/locks/altitude</property>
-    <live>true</live>
-</input>
-
-<input>
-    <x>235</x>
-    <y>30</y>
-    <width>100</width>
-    <height>25</height>
-   <property>autopilot/locks/speed</property>
-    <live>true</live>
-</input>
-
-  <checkbox>
-   <x>20</x>
-   <y>10</y>
-   <width>14</width>
-   <height>14</height>
-   <label>GS armed</label>
-   <property>instrumentation/flightdirector/gs-arm</property>
-   <live>true</live>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </checkbox>
-
-  <checkbox>
-   <x>120</x>
-   <y>10</y>
-   <width>14</width>
-   <height>14</height>
-   <label>Back Course</label>
-   <property>instrumentation/nav/back-course-btn</property>
-   <live>true</live>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </checkbox>
-
-  <checkbox>
-   <x>220</x>
-   <y>10</y>
-   <width>14</width>
-   <height>14</height>
-   <label>GPS slaved</label>
-   <property>instrumentation/nav/slaved-to-gps</property>
-   <live>true</live>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </checkbox>
-
-</frame>
-
-<hrule/>
-  <text>
-  <label>Flight Director Buttons</label>
-  </text>
-
-  <!-- Flight Director Push Buttons-->
-
-    <frame>
+    <name>autopilot-dlg</name>
     <layout>vbox</layout>
-      <halign>center</halign>
 
-<group>
+    <group>
+        <layout>hbox</layout>
 
-    <layout>hbox</layout>
-      <halign>left</halign>
+        <text><label>Flight Director / Autopilot Control</label></text>
 
-    <button>
-    <x>1</x>
-    <y>1</y>
-   <width>80</width>
-   <height>30</height>
-    <legend>HDG</legend>
-    <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_mode("hdg");</script>
-    </binding>
-    </button>
+        <button>
+            <halign>right</halign>
+            <pref-width>30</pref-width>
+            <legend>X</legend>
+            <default>true</default>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
 
-   <button>
-    <x>1</x>
-    <y>1</y>
-   <width>80</width>
-   <height>30</height>
-    <legend>NAV</legend>
-    <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_mode("nav");</script>
-    </binding>
-   </button>
+<!-- Autopilot Locks Display-->
 
-   <button>
-    <x>1</x>
-    <y>1</y>
-   <width>80</width>
-   <height>30</height>
-    <legend>APPR</legend>
-    <binding>
-     <command>nasal</command>
-    <script>systems.FlDr.set_mode("apr");</script>
-    </binding>
-   </button>
+    <group>
+        <layout>hbox</layout>
 
-   <button>
-    <x>1</x>
-    <y>1</y>
-   <width>80</width>
-   <height>30</height>
-    <legend>B/C</legend>
-    <binding>
-     <command>nasal</command>
-    <script>systems.FlDr.set_mode("bc");</script>
-    </binding>
-   </button>
+        <hrule><stretch>true</stretch></hrule>
+        <text>
+            <halign>left</halign>
+            <label>Lateral Mode</label>
+        </text>
+        <hrule><stretch>true</stretch></hrule>
+        <text>
+            <halign>center</halign>
+            <label>Vertical Mode</label>
+        </text>
+        <hrule><stretch>true</stretch></hrule>
+        <text>
+            <halign>right</halign>
+            <label>Speed Mode</label>
+        </text>
+        <hrule><stretch>true</stretch></hrule>
+    </group>
 
+<!--   Mode Annunciators  -->
+    <group>
+        <layout>hbox</layout>
 
-<button>
-    <x>1</x>
-    <y>1</y>
-   <width>80</width>
-   <height>30</height>
-    <legend>CLIMB</legend>
-    <binding>
-     <command>nasal</command>
-    <script>systems.FlDr.set_mode("climb");</script>
-    </binding>
-   </button>
+        <input>
+            <pref-width>100</pref-width>
+            <property>autopilot/locks/heading</property>
+            <live>true</live>
+        </input>
+
+        <input>
+            <pref-width>100</pref-width>
+            <property>autopilot/locks/altitude</property>
+            <live>true</live>
+        </input>
+
+        <input>
+            <pref-width>100</pref-width>
+            <height>25</height>
+            <property>autopilot/locks/speed</property>
+            <live>true</live>
+        </input>
+    </group>
+
+    <hrule/>
+
+    <group>
+        <layout>hbox</layout>
+
+        <checkbox>
+            <label>GS armed</label>
+            <property>instrumentation/flightdirector/gs-arm</property>
+            <live>true</live>
+        </checkbox>
+
+        <checkbox>
+            <label>Back Course</label>
+            <property>instrumentation/nav/back-course-btn</property>
+            <live>true</live>
+        </checkbox>
+
+        <checkbox>
+            <label>GPS slaved</label>
+            <property>instrumentation/nav/slaved-to-gps</property>
+            <live>true</live>
+        </checkbox>
 
     </group>
 
     <group>
-    <layout>hbox</layout>
-      <halign>center</halign>
+        <layout>hbox</layout>
+        <hrule><stretch>true</stretch></hrule>
 
-   <button>
-    <x>1</x>
-    <y>1</y>
-   <width>50</width>
-   <height>30</height>
-    <legend>ALT</legend>
-    <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_mode("asel");</script>
-    </binding>
-   </button>
+        <text>
+            <label>Flight Director Buttons</label>
+        </text>
 
-    <button>
-    <x>1</x>
-    <y>1</y>
-   <width>50</width>
-   <height>30</height>
-    <legend>ALTS</legend>
-    <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_mode("alt");</script>
-    </binding>
-    </button>
+        <hrule><stretch>true</stretch></hrule>
+    </group>
 
-   <button>
-    <x>1</x>
-    <y>1</y>
-   <width>50</width>
-   <height>30</height>
-    <legend>VS</legend>
-    <binding>
-     <command>nasal</command>
-    <script>systems.FlDr.set_mode("vs");</script>
-    </binding>
-   </button>
 
-   <button>
-    <x>1</x>
-    <y>1</y>
-   <width>50</width>
-   <height>30</height>
-    <legend>SPD</legend>
-    <binding>
-     <command>nasal</command>
-    <script>systems.FlDr.set_mode("ias");</script>
-    </binding>
-   </button>
 
-   <button>
-    <x>1</x>
-    <y>1</y>
-   <width>50</width>
-   <height>30</height>
-    <legend>DCS</legend>
-    <binding>
-     <command>nasal</command>
-    <script>systems.FlDr.set_mode("dcs");</script>
-    </binding>
-   </button>
+  <!-- Flight Director Push Buttons-->
 
-</group>
-</frame>
+    <group>
+        <layout>hbox</layout>
 
-  <hrule/>
-  <text>
-  <label>Instrument Settings</label>
-  </text>
+        <button>
+            <legend>HDG</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("hdg");</script>
+            </binding>
+        </button>
 
-    <frame>
-    <width>350</width>
-    <height>140</height>
-      <halign>center</halign>
+        <button>
+            <legend>NAV</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("nav");</script>
+            </binding>
+        </button>
 
-    <text>
-   <x>5</x>
-   <y>100</y>
-    <label>HDG BUG:</label>
-    </text>
+        <button>
+            <legend>APPR</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("apr");</script>
+            </binding>
+        </button>
 
-    <button>
-   <x>75</x>
-   <y>100</y>
-   <width>35</width>
-   <height>20</height>
-   <legend>&lt;&lt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_hdg_bug(-10)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+        <button>
+            <legend>B/C</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("bc");</script>
+            </binding>
+        </button>
 
-  <button>
-   <x>110</x>
-   <y>100</y>
-   <width>30</width>
-   <height>20</height>
-   <legend>&lt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_hdg_bug(-1)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+        <button>
+            <legend>CLIMB</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("climb");</script>
+            </binding>
+        </button>
 
-  <input>
-   <x>150</x>
-   <y>100</y>
-   <width>40</width>
-   <height>20</height>
-   <property>autopilot/settings/heading-bug-deg</property>
-   <live>true</live>
-   <binding>
-    <command>dialog-apply</command>
-   </binding>
-  </input>
+    </group>
 
-  <button>
-   <x>200</x>
-   <y>100</y>
-   <width>30</width>
-   <height>20</height>
-   <legend>&gt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_hdg_bug(1)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+    <group>
+        <layout>hbox</layout>
 
-  <button>
-   <x>230</x>
-   <y>100</y>
-   <width>35</width>
-   <height>20</height>
-   <legend>&gt;&gt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_hdg_bug(10)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+        <button>
+            <legend>ALT</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("asel");</script>
+            </binding>
+        </button>
 
-  <button>
-   <x>280</x>
-   <y>100</y>
-   <width>40</width>
-   <height>20</height>
-   <legend>CNTR</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_hdg_bug(0)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+        <button>
+            <legend>ALTS</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("alt");</script>
+            </binding>
+        </button>
+
+        <button>
+            <legend>VS</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("vs");</script>
+            </binding>
+        </button>
+
+        <button>
+            <legend>IAS</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("ias");</script>
+            </binding>
+        </button>
+
+        <button>
+            <legend>DCS</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_mode("dcs");</script>
+            </binding>
+        </button>
+    </group>
+
+     <group>
+        <layout>hbox</layout>
+        <hrule><stretch>true</stretch></hrule>
+
+        <text>
+            <label>Instrument Settings</label>
+        </text>
+
+        <hrule><stretch>true</stretch></hrule>
+    </group>
+
+    <group>
+        <layout>hbox</layout>
+
+        <text>
+            <label>HDG BUG</label>
+        </text>
+
+        <button>
+            <halign>right</halign>
+            <pref-width>40</pref-width>
+            <legend>&lt;&lt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_hdg_bug(-10)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <halign>right</halign>
+            <pref-width>30</pref-width>
+            <legend>&lt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_hdg_bug(-1)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <input>
+            <property>autopilot/settings/heading-bug-deg</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </input>
+
+        <button>
+            <halign>left</halign>
+            <pref-width>30</pref-width>
+            <legend>&gt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_hdg_bug(1)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <halign>left</halign>
+            <pref-width>40</pref-width>
+            <legend>&gt;&gt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_hdg_bug(10)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+
+        <button>
+            <legend>CTR</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_hdg_bug(0)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+    </group>
 
 <!-- Course Set -->
 
-    <text>
-   <x>5</x>
-   <y>75</y>
-    <label>COURSE:</label>
-    </text>
+    <group>
+        <layout>hbox</layout>
 
-    <button>
-   <x>75</x>
-   <y>75</y>
-   <width>35</width>
-   <height>20</height>
-   <legend>&lt;&lt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_course(-10)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+        <text>
+            <label>COURSE </label>
+        </text>
 
-  <button>
-   <x>110</x>
-   <y>75</y>
-   <width>30</width>
-   <height>20</height>
-   <legend>&lt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_course(-1)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+        <button>
+            <halign>right</halign>
+            <pref-width>40</pref-width>
+            <legend>&lt;&lt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_course(-10)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-  <input>
-   <x>150</x>
-   <y>75</y>
-   <width>40</width>
-   <height>20</height>
-   <property>instrumentation/flightdirector/hsi/crs-mag-heading</property>
-   <live>true</live>
-   <binding>
-    <command>dialog-apply</command>
-   </binding>
-  </input>
+        <button>
+            <halign>right</halign>
+            <pref-width>30</pref-width>
+            <legend>&lt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_course(-1)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-  <button>
-   <x>200</x>
-   <y>75</y>
-   <width>30</width>
-   <height>20</height>
-   <legend>&gt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_course(1)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+        <input>
+            <property>instrumentation/flightdirector/hsi/crs-mag-heading</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </input>
 
-  <button>
-   <x>230</x>
-   <y>75</y>
-   <width>35</width>
-   <height>20</height>
-   <legend>&gt;&gt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_course(10)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+        <button>
+            <halign>left</halign>
+            <pref-width>30</pref-width>
+            <legend>&gt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_course(1)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-  <button>
-   <x>280</x>
-   <y>75</y>
-   <width>40</width>
-   <height>20</height>
-   <legend>CNTR</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.set_course(0)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+        <button>
+            <halign>left</halign>
+            <pref-width>40</pref-width>
+            <legend>&gt;&gt;</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_course(10)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
+        <button>
+            <width>40</width>
+            <height>20</height>
+            <legend>CTR</legend>
+            <binding>
+                <command>nasal</command>
+                <script>systems.FlDr.set_course(0)</script>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+    </group>
 <!-- ALT set -->
 
-    <text>
-   <x>5</x>
-   <y>50</y>
-        <label>ALT SET:</label>
-    </text>
+    <group>
+        <layout>hbox</layout>
+
+        <text>
+            <label>ALT SET</label>
+        </text>
   
-  <button>
-   <x>75</x>
-   <y>50</y>
-   <width>35</width>
-   <height>20</height>
-   <legend>&lt;&lt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.preset_altitude(-1000)</script>
-   </binding>
-  </button>
+        <button>
+            <halign>right</halign>
+            <pref-width>40</pref-width>
+            <legend>&lt;&lt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/flightdirector/Asel</property>
+                <step>-1000</step>
+                <min>0</min>
+                <max>30000</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-  <button>
-   <x>110</x>
-   <y>50</y>
-   <width>30</width>
-   <height>20</height>
-   <legend>&lt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.preset_altitude(-100)</script>
-   </binding>
-  </button>
+        <button>
+            <halign>right</halign>
+            <pref-width>30</pref-width>
+            <legend>&lt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/flightdirector/Asel</property>
+                <step>-100</step>
+                <min>0</min>
+                <max>30000</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-  <input>
-   <x>142</x>
-   <y>50</y>
-   <width>55</width>
-   <height>20</height>
-   <property>autopilot/settings/target-altitude-ft</property>
-   <live>true</live>
-   <binding>
-    <command>dialog-apply</command>
-   </binding>
-  </input>
+        <input>
+            <property>/instrumentation/flightdirector/Asel</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </input>
 
-  <button>
-   <x>200</x>
-   <y>50</y>
-   <width>30</width>
-   <height>20</height>
-   <border>1</border>
-   <legend>&gt;</legend>
-   <binding>
-       <command>nasal</command>
-    <script>systems.FlDr.preset_altitude(100)</script>
-</binding>
-  </button>
+        <button>
+            <halign>left</halign>
+            <pref-width>30</pref-width>
+            <legend>&gt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/flightdirector/Asel</property>
+                <step>100</step>
+                <min>0</min>
+                <max>30000</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-  <button>
-   <x>230</x>
-   <y>50</y>
-   <width>35</width>
-   <height>20</height>
-   <border>1</border>
-   <legend>&gt;&gt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.preset_altitude(1000)</script>
-   </binding>
-  </button>
+        <button>
+            <halign>left</halign>
+            <pref-width>40</pref-width>
+            <legend>&gt;&gt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/flightdirector/Asel</property>
+                <step>1000</step>
+                <min>0</min>
+                <max>30000</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-  <button>
-   <x>275</x>
-   <y>50</y>
-   <width>60</width>
-   <height>20</height>
-   <border>1</border>
-   <legend>RESET</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.preset_altitude(0)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+        <button>
+            <legend>RST</legend>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/flightdirector/Asel</property>
+                <value>10000</value>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-
+    </group>
 <!-- IAS set -->
 
-    <text>
-   <x>5</x>
-   <y>25</y>
-        <label>IAS bug:</label>
-    </text>
+    <group>
+        <layout>hbox</layout>
+
+        <text>
+            <label>IAS BUG</label>
+        </text>
   
-  <button>
-   <x>75</x>
-   <y>25</y>
-   <width>35</width>
-   <height>20</height>
-   <legend>&lt;&lt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.ias_set(-10)</script>
-   </binding>
-  </button>
+        <button>
+            <halign>right</halign>
+            <pref-width>40</pref-width>
+            <legend>&lt;&lt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step>-10</step>
+                <min>100</min>
+                <max>270</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-  <button>
-   <x>110</x>
-   <y>25</y>
-   <width>30</width>
-   <height>20</height>
-   <legend>&lt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.ias_set(-1)</script>
-   </binding>
-  </button>
+        <button>
+            <halign>right</halign>
+            <pref-width>30</pref-width>
+            <legend>&lt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step>-1</step>
+                <min>100</min>
+                <max>270</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-  <input>
-   <x>142</x>
-   <y>25</y>
-   <width>55</width>
-   <height>20</height>
-   <property>autopilot/settings/target-speed-kt</property>
-   <live>true</live>
-   <binding>
-    <command>dialog-apply</command>
-   </binding>
-  </input>
+        <input>
+            <property>autopilot/settings/target-speed-kt</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </input>
 
-  <button>
-   <x>200</x>
-   <y>25</y>
-   <width>30</width>
-   <height>20</height>
-   <border>1</border>
-   <legend>&gt;</legend>
-   <binding>
-       <command>nasal</command>
-    <script>systems.FlDr.ias_set(1)</script>
-</binding>
-  </button>
+        <button>
+            <halign>left</halign>
+            <pref-width>30</pref-width>
+            <legend>&gt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step>1</step>
+                <min>100</min>
+                <max>270</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-  <button>
-   <x>230</x>
-   <y>25</y>
-   <width>35</width>
-   <height>20</height>
-   <border>1</border>
-   <legend>&gt;&gt;</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.ias_set(10)</script>
-   </binding>
-  </button>
+        <button>
+            <halign>left</halign>
+            <pref-width>40</pref-width>
+            <legend>&gt;&gt;</legend>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step>10</step>
+                <min>100</min>
+                <max>270</max>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-  <button>
-   <x>275</x>
-   <y>25</y>
-   <width>60</width>
-   <height>20</height>
-   <border>1</border>
-   <legend>RESET</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.ias_set(0)</script>
-   </binding>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </button>
+        <button>
+            <legend>RST</legend>
+            <binding>
+                <command>property-assign</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <value>100</value>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
 
-</frame>
+    </group>
 
-<hrule/>
+     <group>
+        <layout>hbox</layout>
+        <hrule><stretch>true</stretch></hrule>
 
-<!-- AP control -->
-      <halign>center</halign>
-    <text>
-        <label>Autopilot Control</label>
-    </text>
+        <text>
+            <label>Autopilot Control</label>
+        </text>
 
-    <frame><!-- Pitch Wheel-->
-   <height>100</height>
+        <hrule><stretch>true</stretch></hrule>
+    </group>
 
-    <button>
-   <x>10</x>
-   <y>75</y>
-   <width>50</width>
-   <height>20</height>
-   <legend>DN</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.pitch_wheel(-1)</script>
-   </binding>
-  </button>
+<!--  AP controller  -->
 
-  <input>
-   <x>10</x>
-   <y>50</y>
-   <width>50</width>
-   <height>20</height>
-   <label>V/S</label>
-   <property>autopilot/settings/vertical-speed-fpm</property>
-   <live>true</live>
-   <binding>
-    <command>dialog-apply</command>
-   </binding>
-  </input>
+    <group>
+        <layout>hbox</layout>
 
-  <input>
-   <x>10</x>
-   <y>30</y>
-   <width>50</width>
-   <height>20</height>
-   <label>PITCH</label>
-   <property>autopilot/settings/target-pitch-deg</property>
-   <live>true</live>
-   <binding>
-    <command>dialog-apply</command>
-   </binding>
-  </input>
 
-    <button>
-   <x>10</x>
-   <y>5</y>
-   <width>50</width>
-   <height>20</height>
-   <legend>UP</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.pitch_wheel(1)</script>
-   </binding>
-  </button>
+        <group>
+            <layout>vbox</layout>
 
-<button>
-   <x>140</x>
-   <y>65</y>
-   <width>70</width>
-   <height>30</height>
-   <legend>Low Bank</legend>
-   <binding>
-    <command>nasal</command>
-    <script>systems.FlDr.toggle_autopilot("bank")</script>
-    </binding>
-    </button>
+            <button>
+                <legend>DN</legend>
+                <binding>
+                    <condition>
+                        <equals>
+                            <property>autopilot/locks/altitude</property>
+                            <value>VS</value>
+                        </equals>
+                    </condition>
+                    <command>property-adjust</command>
+                    <property>autopilot/settings/target-vs-fpm</property>
+                    <step>-100</step>
+                    <min>-6000</min>
+                    <max>6000</max>
+                </binding>
+                <binding>
+                    <condition>
+                        <equals>
+                            <property>autopilot/locks/altitude</property>
+                            <value>PITCH</value>
+                        </equals>
+                    </condition>
+                    <command>property-adjust</command>
+                    <property>autopilot/settings/target-pitch-deg</property>
+                    <step>-0.10</step>
+                    <min>-15</min>
+                    <max>15</max>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </button>
 
-  <text>
-   <x>210</x>
-   <y>70</y>
-   <label>99.99</label> <!-- placeholder for width -->
-   <format>% 2.0f *</format>
-   <property>instrumentation/flightdirector/roll-max</property>
-   <live>true</live>
-  </text>
+            <input>
+                <label>V/S</label>
+                <property>autopilot/settings/target-vs-fpm</property>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </input>
 
-<button>
-   <x>120</x>
-   <y>25</y>
-   <width>50</width>
-   <height>30</height>
-   <legend>A / P</legend>
-   <binding>
-        <command>nasal</command>
-        <script>systems.FlDr.toggle_autopilot("ap")</script>
-    </binding>
-    </button>
+            <input>
+                <label>PITCH</label>
+                <property>autopilot/settings/target-pitch-deg</property>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </input>
 
-  <checkbox>
-   <x>120</x>
-   <y>5</y>
-   <width>14</width>
-   <height>14</height>
-   <label>OFF</label>
-   <property>autopilot/locks/passive-mode</property>
-   <live>true</live>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </checkbox>
+            <button>
+                <legend>UP</legend>
+                <binding>
+                    <condition>
+                        <equals>
+                            <property>autopilot/locks/altitude</property>
+                            <value>VS</value>
+                        </equals>
+                    </condition>
+                    <command>property-adjust</command>
+                    <property>autopilot/settings/target-vs-fpm</property>
+                    <step>100</step>
+                    <min>-6000</min>
+                    <max>6000</max>
+                </binding>
+                <binding>
+                    <condition>
+                        <equals>
+                            <property>autopilot/locks/altitude</property>
+                            <value>PITCH</value>
+                        </equals>
+                    </condition>
+                    <command>property-adjust</command>
+                    <property>autopilot/settings/target-pitch-deg</property>
+                    <step>0.10</step>
+                    <min>-15</min>
+                    <max>15</max>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </button>
 
-  <checkbox>
-   <x>180</x>
-   <y>5</y>
-   <width>14</width>
-   <height>14</height>
-   <label>ON</label>
-   <property>autopilot/locks/yaw-damper</property>
-   <live>true</live>
-   <binding>
-    <command>dialog-update</command>
-   </binding>
-  </checkbox>
+        </group>
 
-<button>
-   <x>180</x>
-   <y>25</y>
-   <width>50</width>
-   <height>30</height>
-   <legend>Y / D</legend>
-   <binding>
-        <command>nasal</command>
-        <script>systems.FlDr.toggle_autopilot("yd")</script>
-    </binding>
-    </button>
+        <group>
+            <layout>vbox</layout>
 
-    <text>
-   <x>270</x>
-   <y>75</y>
-    <label>Roll Knob</label>
-    </text>
+            <button>
+                <legend>Low Bank</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.FlDr.toggle_autopilot("bank")</script>
+                </binding>
+            </button>
 
-  <dial>
-   <x>270</x>
-   <y>20</y>
-   <width>60</width>
-   <property>autopilot/settings/target-roll-deg</property>
-   <min>-30</min>
-   <max>30</max>
-   <wrap>false</wrap>
-   <live>true</live>
-   <binding>
-   <command>dialog-apply</command>
-   </binding>
-  </dial>
+            <text>
+                <label>99.99</label> <!-- placeholder for width -->
+                <format>% 2.0f *</format>
+                <property>instrumentation/flightdirector/roll-max</property>
+                <live>true</live>
+            </text>
 
-  <text>
-   <x>275</x>
-   <y>2</y>
-   <label>-99.99</label> <!-- placeholder for width -->
-   <format>% 2.1f</format>
-   <property>autopilot/settings/target-roll-deg</property>
-   <live>true</live>
-  </text>
+            <button>
+                <legend>A / P</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.FlDr.toggle_autopilot("ap")</script>
+                </binding>
+            </button>
 
-    </frame>
+            <checkbox>
+                <label>OFF</label>
+                <property>autopilot/locks/passive-mode</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </checkbox>
 
-<hrule/>
+            <checkbox>
+                <label>ON</label>
+                <property>autopilot/locks/yaw-damper</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </checkbox>
 
-  <button>
-    <legend>Close</legend>
-    <default>true</default>
-    <key>Esc</key>
-    <padding>10</padding>
-    <binding>
-      <command>dialog-apply</command>
-    </binding>
-    <binding>
-      <command>dialog-close</command>
-    </binding>
-  </button>
+            <button>
+                <legend>Y / D</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.FlDr.toggle_autopilot("yd")</script>
+                </binding>
+            </button>
+
+        </group>
+
+        <group>
+            <layout>vbox</layout>
+
+            <text>
+                <label>Roll Knob</label>
+            </text>
+
+            <dial>
+                <width>60</width>
+                <property>autopilot/settings/target-roll-deg</property>
+                <min>-30</min>
+                <max>30</max>
+                <wrap>false</wrap>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </dial>
+
+            <text>
+                <label>-99.99</label>
+                <format>% 2.1f</format>
+                <property>autopilot/settings/target-roll-deg</property>
+                <live>true</live>
+            </text>
+
+    </group>
 
 </PropertyList>
