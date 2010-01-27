@@ -43,7 +43,7 @@ July 2004 Syd Adams
             </livery>
         <start-idling type="bool">0</start-idling>
         <manual>
-            <total-pages type="int">3</total-pages>
+            <total-pages type="int">5</total-pages>
         </manual>
     </model>
 
