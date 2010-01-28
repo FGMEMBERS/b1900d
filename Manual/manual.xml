@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
+<!-- 
+Syd Adams 
+3D Flight Manual
+-->
 <PropertyList>
 
     <path>manual.ac</path>
@@ -119,6 +123,22 @@
                     <value>0</value>
                 </binding>
             </mod-up>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual</object-name>
+        <action>
+            <button>1</button>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/ctrl</property>
+                </condition>
+                <command>property-assign</command>
+                <property>sim/model/manual/enabled</property>
+                <value>0</value>
+            </binding>
         </action>
     </animation>
 

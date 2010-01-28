@@ -1,4 +1,4 @@
-#### POH ####
+#### Syd Adams --- 3D Flight Manual ####
 var poh = nil;
 var enabled = nil;
 var x = nil;
