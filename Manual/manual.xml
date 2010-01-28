@@ -64,6 +64,18 @@
         </axis>
     </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>POH</object-name>
+        <property>sim/model/manual/pitch</property>
+        <factor>1</factor>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
 <!-- Hotspots -->
 
     <animation>
@@ -95,26 +107,32 @@
         <object-name>Manual</object-name>
         <action>
             <button>0</button>
-            <repeatable>true</repeatable>
             <binding>
-                <condition>
-                    <not>
-                        <property>devices/status/keyboard/shift</property>
-                    </not>
-                </condition>
-                <command>property-adjust</command>
-                <property>sim/model/manual/x-offset</property>
-                <step>0.005</step>
-                <min>-0.5</min>
-                <max>0.5</max>
-            </binding>
-            <binding>
-                <condition>
-                    <property>devices/status/keyboard/shift</property>
-                </condition>
                 <command>property-assign</command>
-                <property>sim/model/manual/enabled</property>
-                <value>0</value>
+                <property>sim/model/manual/move</property>
+                <value>1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>sim/model/manual/move</property>
+                    <value>0</value>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Manual</object-name>
+        <action>
+            <button>3</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>sim/model/manual/pitch</property>
+                <step>1</step>
+                <min>-30</min>
+                <max>30</max>
             </binding>
         </action>
     </animation>
@@ -123,78 +141,13 @@
         <type>pick</type>
         <object-name>Manual</object-name>
         <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
+            <button>4</button>
             <binding>
                 <command>property-adjust</command>
-                <property>sim/model/manual/x-offset</property>
-                <step>-0.005</step>
-                <min>-0.5</min>
-                <max>0.5</max>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Manual.y</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>sim/model/manual/y-offset</property>
-                <step>0.005</step>
-                <min>-0.5</min>
-                <max>0.5</max>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Manual.y</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>sim/model/manual/y-offset</property>
-                <step>-0.005</step>
-                <min>-0.5</min>
-                <max>0.5</max>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Manual.z</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>sim/model/manual/z-offset</property>
-                <step>0.005</step>
-                <min>-0.5</min>
-                <max>0.5</max>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Manual.z</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>sim/model/manual/z-offset</property>
-                <step>-0.005</step>
-                <min>-0.5</min>
-                <max>0.5</max>
+                <property>sim/model/manual/pitch</property>
+                <step>-1</step>
+                <min>-30</min>
+                <max>30</max>
             </binding>
         </action>
     </animation>
