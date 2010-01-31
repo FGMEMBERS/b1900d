@@ -64,34 +64,6 @@
 </pi-simple-controller>
 
 <pi-simple-controller>
-    <name>GPS course</name>
-    <debug>false</debug>
-    <enable>
-        <prop>autopilot/locks/heading</prop>
-        <value>GPS-CRS</value>
-    </enable>
-    <input>
-        <prop>autopilot/internal/gps-course-offset</prop>
-    </input>
-    <reference>
-        <value>0.0</value>
-    </reference>
-    <output>
-        <prop>autopilot/internal/target-roll-deg</prop>
-    </output>
-    <config>
-        <Kp>-1.5</Kp>
-        <Ki>0.0</Ki>
-        <u_min>
-            <prop>instrumentation/flightdirector/roll-min</prop>
-        </u_min>
-        <u_max>
-            <prop>instrumentation/flightdirector/roll-max</prop>
-        </u_max>
-    </config>
-</pi-simple-controller>
-
-<pi-simple-controller>
     <name>Nav1 Hold</name>
     <debug>false</debug>
     <enable>
@@ -99,7 +71,8 @@
         <value>NAV</value>
     </enable>
     <input>
-        <prop>autopilot/internal/nav1-heading-error-deg</prop>
+        <prop>autopilot/internal/nav1-track-error-deg</prop>
+        <scale>5</scale>
     </input>
     <reference>
         <value>0.0</value>
@@ -108,7 +81,7 @@
         <prop>autopilot/internal/target-roll-deg</prop>
     </output>
     <config>
-        <Kp>-0.5</Kp>
+        <Kp>-0.25</Kp>
         <Ki>0</Ki>
         <u_min>
             <prop>instrumentation/flightdirector/roll-min</prop>
@@ -157,29 +130,29 @@
 <!-- ======= Pitch Axis Modes ======= -->
 <!-- ================================ -->
 
- <pi-simple-controller>
+<pi-simple-controller>
     <name>Altitude Hold</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/altitude</prop>
-      <value>ALT</value>
+        <prop>/autopilot/locks/altitude</prop>
+        <value>ALT</value>
     </enable>
     <input>
-      <prop>instrumentation/altimeter/indicated-altitude-ft</prop>
+        <prop>instrumentation/altimeter/indicated-altitude-ft</prop>
     </input>
     <reference>
-      <prop>/instrumentation/flightdirector/Asel</prop>
+        <prop>/instrumentation/flightdirector/Asel</prop>
     </reference>
     <output>
-      <prop>/autopilot/internal/target-climb-rate-fps</prop>
+        <prop>/autopilot/internal/target-climb-rate-fps</prop>
     </output>
     <config>
-      <Kp>0.5</Kp>
-      <Ki>0.0</Ki>
-      <u_min>-16.67</u_min>
-      <u_max>33.33</u_max>
+        <Kp>0.5</Kp>
+        <Ki>0.0</Ki>
+        <u_min>-16.67</u_min>
+        <u_max>33.33</u_max>
     </config>
-  </pi-simple-controller>
+</pi-simple-controller>
 
 <pid-controller>
     <name>Altitude Hold 2</name>
@@ -213,9 +186,8 @@
     </config>
 </pid-controller>
 
-
-<pid-controller>
-    <name>Glideslop Hold</name>
+<pi-simple-controller>
+    <name>Glideslope Hold</name>
     <debug>false</debug>
     <enable>
         <prop>/autopilot/locks/altitude</prop>
@@ -231,16 +203,12 @@
         <prop>autopilot/settings/target-pitch-deg</prop>
     </output>
     <config>
-      <Kp>-0.5</Kp>
-      <beta>1.0</beta>
-      <alpha>0.1</alpha>
-      <gamma>0.0</gamma>
-      <Ti>10.0</Ti>
-      <Td>0.0</Td>
-      <u_min>-0.2</u_min>
-      <u_max>0.2</u_max>
+        <Kp>-1.5</Kp>
+        <Ki>0.0</Ki>
+      <u_min>-10.0</u_min>
+      <u_max>0</u_max>
     </config>
-</pid-controller>
+</pi-simple-controller>
 
 <pi-simple-controller>
     <name>Vertical Speed Hold</name>
@@ -324,7 +292,7 @@
       <Ti>10.0</Ti>
       <Td>0.00001</Td>
         <u_min>
-            <value>-5</value>
+            <value>0</value>
         </u_min>
         <u_max>
             <value>15</value>

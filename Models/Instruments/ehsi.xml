@@ -47,7 +47,7 @@
         <type>select</type>
         <object-name>toflag</object-name>
         <condition>
-            <property>instrumentation/flightdirector/hsi/to-flag</property>
+            <property>instrumentation/nav/to-flag</property>
         </condition>
     </animation>
 
@@ -101,7 +101,7 @@
         <object-name>CRSneedle</object-name>
         <object-name>CRSdeflection</object-name>
         <object-name>toflag</object-name>
-        <property>instrumentation/flightdirector/hsi/crs-mag-heading</property>
+        <property>instrumentation/nav/radials/selected-deg</property>
         <axis>
             <x>-1.0</x>
             <y>0</y>
@@ -117,7 +117,7 @@
     <animation>
         <type>translate</type>
         <object-name>CRSdeflection</object-name>
-        <property>instrumentation/flightdirector/hsi/crs-deflection</property>
+        <property>instrumentation/nav/heading-needle-deflection</property>
         <interpolation>
             <entry><ind>-10.0</ind><dep>-0.0172</dep></entry>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -138,7 +138,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.crs1</object-name>
-        <property>instrumentation/flightdirector/hsi/crs-mag-heading</property>
+        <property>instrumentation/nav/radials/selected-deg</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -151,7 +151,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.crs2</object-name>
-        <property>instrumentation/flightdirector/hsi/crs-mag-heading</property>
+        <property>instrumentation/nav/radials/selected-deg</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -164,7 +164,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>EHSI.crs3</object-name>
-        <property>instrumentation/flightdirector/hsi/crs-mag-heading</property>
+        <property>instrumentation/nav/radials/selected-deg</property>
         <factor>0.1</factor>
         <step>1</step>
         <axis>

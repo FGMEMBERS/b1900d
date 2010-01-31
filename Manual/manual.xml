@@ -11,9 +11,7 @@ Syd Adams
         <name>POH</name>
         <object-name>Manual</object-name>
         <object-name>Manual.page-nxt</object-name>
-        <object-name>Manual.x</object-name>
-        <object-name>Manual.y</object-name>
-        <object-name>Manual.z</object-name>
+        <object-name>Manual.page-bck</object-name>
     </animation>
 
     <animation>
@@ -96,9 +94,9 @@ Syd Adams
 
     <animation>
         <type>pick</type>
-        <object-name>Manual.page-nxt</object-name>
+        <object-name>Manual.page-bck</object-name>
         <action>
-            <button>1</button>
+            <button>0</button>
             <binding>
                 <command>nasal</command>
                 <script>manual.flip_page(-1);</script>

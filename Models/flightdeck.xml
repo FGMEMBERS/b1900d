@@ -31,8 +31,8 @@
         <path>Aircraft/b1900d/Manual/manual.xml</path>
         <offsets>
             <x-m>-4.504</x-m>
-            <y-m>-0.48</y-m>
-            <z-m>0.15</z-m>
+            <y-m>-0.38</y-m>
+            <z-m>0.27</z-m>
             <pitch-deg>-12</pitch-deg>
         </offsets>
     </model>
@@ -361,6 +361,17 @@
         <path>Aircraft/b1900d/Models/Instruments/AP-control.xml</path>
         <offsets>
             <x-m>-4.337</x-m>
+            <y-m>-0.068</y-m>
+            <z-m>-0.506</z-m>
+            <pitch-deg>-90</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>RIC</name>
+        <path>Aircraft/b1900d/Models/Instruments/RIC.xml</path>
+        <offsets>
+            <x-m>-4.398</x-m>
             <y-m>-0.068</y-m>
             <z-m>-0.506</z-m>
             <pitch-deg>-90</pitch-deg>
@@ -960,31 +971,14 @@
     <animation>
         <type>select</type>
         <object-name>GPS-slaved</object-name>
-        <condition>
-            <property>instrumentation/nav/slaved-to-gps</property>
-        </condition>
-    </animation>
-    
-    <animation>
-        <type>select</type>
         <object-name>GPS-alt</object-name>
         <object-name>GPS-navmode</object-name>
+        <object-name>gps-leg</object-name>
         <condition>
             <property>instrumentation/nav/slaved-to-gps</property>
         </condition>
     </animation>
-    
-    <animation>
-        <type>select</type>
-        <object-name>gps-leg</object-name>
-        <condition>
-            <and>
-                <property>instrumentation/gps/leg-mode</property>
-                <property>instrumentation/gps/serviceable</property>
-            </and>
-        </condition>
-    </animation>
-    
+
     <animation>
         <type>select</type>
         <object-name>gps-appr</object-name>
@@ -2440,10 +2434,9 @@
         <object-name>GPS-crs</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
-            <command>nasal</command>
-            <script>systems.Gps.GPScrs()</script>
+            <command>property-toggle</command>
+            <property>instrumentation/nav/slaved-to-gps</property>
             </binding>
         </action>
     </animation>

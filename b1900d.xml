@@ -174,7 +174,7 @@ Tip incidence -1.4 deg.
     </gear>
 
     <gear x="-1.0" y="2.65" z="-2.3" compression=".4" retract-time="5"
-    spring="1.0" damp="1.5" sfric="1.0">
+    spring="1.0" damp="1.5" sfric="1.5" dfric="1.0">
         <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -183,7 +183,7 @@ Tip incidence -1.4 deg.
     </gear>
 
     <gear x="-1.0" y="-2.65" z="-2.3" compression=".4" retract-time="5"
-    spring="1.0" damp="1.5" sfric="1.0">
+    spring="1.0" damp="1.5" sfric="1.5" dfric="1.0">
         <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -200,10 +200,9 @@ Prop diam: 2.78 m
 
     <propeller x="1.9" y="2.65" z="0.0"
         mass="515" moment="13" radius="1.39"
-        cruise-speed="280" cruise-rpm="1550"
+        cruise-speed="300" cruise-rpm="1550"
         cruise-power="1106" cruise-alt="25000"
-        min-rpm="1400" max-rpm="1700"
-        fine-stop="0.15" coarse-stop="4.0">
+        min-rpm="1000" max-rpm="1700">
         <turbine-engine
             eng-power="1279" eng-rpm="1700" alt="16000"
             flat-rating="1250" min-n2="65" max-n2="104" bsfc="0.46" spool-time="4"/>
@@ -222,10 +221,9 @@ Prop diam: 2.78 m
 
     <propeller x="1.9" y="-2.65" z="0.0"
         mass="515" moment="13" radius="1.39"
-        cruise-speed="280" cruise-rpm="1550"
+        cruise-speed="300" cruise-rpm="1550"
         cruise-power="1106" cruise-alt="25000"
-        min-rpm="1400" max-rpm="1700"
-        fine-stop="0.15" coarse-stop="4.0">
+        min-rpm="1000" max-rpm="1700">
         <turbine-engine
             eng-power="1279" eng-rpm="1700" alt="16000"
             flat-rating="1250" min-n2="65" max-n2="104" bsfc="0.46" spool-time="4"/>

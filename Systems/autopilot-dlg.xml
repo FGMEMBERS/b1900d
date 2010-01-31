@@ -305,8 +305,12 @@
             <pref-width>40</pref-width>
             <legend>&lt;&lt;</legend>
             <binding>
-                <command>nasal</command>
-                <script>systems.FlDr.set_course(-10)</script>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>-10</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
             </binding>
             <binding>
                 <command>dialog-update</command>
@@ -318,8 +322,12 @@
             <pref-width>30</pref-width>
             <legend>&lt;</legend>
             <binding>
-                <command>nasal</command>
-                <script>systems.FlDr.set_course(-1)</script>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
             </binding>
             <binding>
                 <command>dialog-update</command>
@@ -327,7 +335,7 @@
         </button>
 
         <input>
-            <property>instrumentation/flightdirector/hsi/crs-mag-heading</property>
+            <property>instrumentation/nav/radials/selected-deg</property>
             <binding>
                 <command>dialog-apply</command>
             </binding>
@@ -341,8 +349,12 @@
             <pref-width>30</pref-width>
             <legend>&gt;</legend>
             <binding>
-                <command>nasal</command>
-                <script>systems.FlDr.set_course(1)</script>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
             </binding>
             <binding>
                 <command>dialog-update</command>
@@ -354,8 +366,12 @@
             <pref-width>40</pref-width>
             <legend>&gt;&gt;</legend>
             <binding>
-                <command>nasal</command>
-                <script>systems.FlDr.set_course(10)</script>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>10</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
             </binding>
             <binding>
                 <command>dialog-update</command>
@@ -367,8 +383,9 @@
             <height>20</height>
             <legend>CTR</legend>
             <binding>
-                <command>nasal</command>
-                <script>systems.FlDr.set_course(0)</script>
+                <command>property-assign</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>orientation/heading-magnetic-deg</property>
             </binding>
             <binding>
                 <command>dialog-update</command>

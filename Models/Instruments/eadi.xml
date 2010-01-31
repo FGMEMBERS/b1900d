@@ -220,7 +220,7 @@
     <animation>
         <type>translate</type>
         <object-name>LOC-pointer</object-name>
-        <property>instrumentation/flightdirector/deflection</property>
+        <property>instrumentation/nav/heading-needle-deflection</property>
         <factor>0.00116</factor>
         <axis>
             <x>0.0</x>

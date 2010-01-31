@@ -67,12 +67,10 @@ var flightdirector = {
         }elsif(me.step==1){
             me.update_vnav();
         }elsif(me.step==2){
-            me.update_crs();
-        }elsif(me.step==3){
             var APoff = me.check_AP_limits();
         }
         me.step +=1;
-        if(me.step >3)me.step=0;
+        if(me.step >2)me.step=0;
     },
     ############################
     preset_altitude : func(vl){
@@ -104,7 +102,7 @@ var flightdirector = {
     }
         if(vnv==1){
         var asel=getprop("instrumentation/altimeter/indicated-altitude-ft");
-        asel = int(asel * 0.01) * 100;
+        asel = int(asel * 0.1) * 10;
         me.asel.setValue(asel);
         }
         if(vnv==2){
@@ -235,17 +233,6 @@ var flightdirector = {
         var lnv = me.lnav.getValue();
         var fms = me.FMS.getValue();
         var armed = me.nav_arm.getValue();
-        
-        if(fms and armed){
-            lnv = 3;
-            me.nav_arm.setValue(0);
-        }
-
-        if(lnv==2){
-            if(fms) lnv =3;
-        }elsif(lnv==3){
-            if(!fms) lnv =2;
-        }
 
     if(armed){
         var defl = me.Defl.getValue();
