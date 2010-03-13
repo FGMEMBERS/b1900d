@@ -39,12 +39,12 @@ Wheels/Flaps down Max Landing weight: 84 kt
     </approach>
 
     <cruise speed="274" alt="25000" fuel="0.5"> 
-        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.75"/>
-        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.75"/>
+        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.85"/>
+        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.85"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
-        <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
-        <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1.0"/>
+        <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.78"/>
+        <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="0.78"/>
         <control-setting axis="/controls/flight/flaps" value="0.0"/>
         <control-setting axis="/controls/gear/gear-down" value="0"/>
         <solve-weight idx="0" weight="360"/>
@@ -80,9 +80,9 @@ Tip incidence -1.4 deg.
 -->
 
     <wing x="0.5" y="0.80" z="-0.9" length="8.0" chord="2.18"
-        sweep="0" dihedral="12" taper="0.417"  camber="0.05"
+        sweep="-2" dihedral="7" taper="0.417"  camber="0.05"
         incidence="3.29" twist="-4.69">
-        <stall aoa="12" width="18" peak="1.5"/>
+        <stall aoa="12" width="24" peak="1.5"/>
         <flap0 start="0" end=".6" lift="1.4" drag="1.6"/>
         <flap1 start=".6" end=".95" lift="1.2" drag="1.2"/>
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
@@ -202,7 +202,7 @@ Prop diam: 2.78 m
         mass="515" moment="13" radius="1.39"
         cruise-speed="300" cruise-rpm="1550"
         cruise-power="1106" cruise-alt="25000"
-        min-rpm="1000" max-rpm="1700">
+        min-rpm="1400" max-rpm="1700">
         <turbine-engine
             eng-power="1279" eng-rpm="1700" alt="16000"
             flat-rating="1250" min-n2="65" max-n2="104" bsfc="0.46" spool-time="4"/>
@@ -223,7 +223,7 @@ Prop diam: 2.78 m
         mass="515" moment="13" radius="1.39"
         cruise-speed="300" cruise-rpm="1550"
         cruise-power="1106" cruise-alt="25000"
-        min-rpm="1000" max-rpm="1700">
+        min-rpm="1400" max-rpm="1700">
         <turbine-engine
             eng-power="1279" eng-rpm="1700" alt="16000"
             flat-rating="1250" min-n2="65" max-n2="104" bsfc="0.46" spool-time="4"/>

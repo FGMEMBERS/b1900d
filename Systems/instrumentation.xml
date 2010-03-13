@@ -23,6 +23,7 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
         <total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
         <static-pressure>/systems/static/pressure-inhg</static-pressure>
+        <has-overspeed-indicator>1</has-overspeed-indicator>
     </airspeed-indicator>
 
     <altimeter>

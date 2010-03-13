@@ -41,7 +41,7 @@ var flightdirector = {
         m.AP_hdg_setting = props.globals.initNode("/autopilot/settings/heading-bug-deg",0,"INT");
         m.AP_spd_setting = props.globals.initNode("/autopilot/settings/target-speed-kt",100,"INT");
         m.AP_vsi_setting = props.globals.initNode("/autopilot/settings/target-vs-fpm",0,"INT");
-        m.AP_climb_speed = props.globals.initNode("/autopilot/settings/target-climb-speed",220,"INT");
+        m.AP_climb_speed = props.globals.initNode("/autopilot/settings/target-climb-speed",210,"INT");
         m.AP_descent_fpm = props.globals.initNode("/autopilot/settings/target-descent-fpm",-1500,"INT");
         m.AP_pitch= props.globals.initNode("/autopilot/settings/target-pitch-deg",0,"DOUBLE");
         m.AP_roll= props.globals.initNode("/autopilot/settings/target-roll-deg",0,"DOUBLE");
@@ -250,13 +250,15 @@ var flightdirector = {
 #### update vnav####
 
     update_vnav : func(){
+        var clmb_spd = me.AP_climb_speed.getValue();
         var vnv = me.vnav.getValue();
         var altmtr = getprop("instrumentation/altimeter/indicated-altitude-ft");
         var clm = altmtr-10000;
         if(clm<0)clm=0;
         clm *= 0.002;
-        me.AP_climb_speed.setValue(220-clm);
-        
+
+        setprop("autopilot/internal/climb-ias",clmb_spd-clm);
+
         if(me.gs_arm.getBoolValue()){
             var defl = me.GSDefl.getValue();
             if(defl < 0.2 and defl > -0.2){

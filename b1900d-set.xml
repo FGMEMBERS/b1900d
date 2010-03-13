@@ -133,7 +133,7 @@ July 2004 Syd Adams
     </systems>
 
         <instrumentation>
-            <path>Aircraft/b1900d/instrumentation.xml</path>
+            <path>Aircraft/b1900d/Systems/instrumentation.xml</path>
         </instrumentation>
 
     <sound>
@@ -350,6 +350,9 @@ July 2004 Syd Adams
     <airspeed-indicator>
         <index n="0" type="double">117</index>
         <index n="1" type="double">130</index>
+        <ias-limit>248.0</ias-limit>
+        <mach-limit>0.48</mach-limit>
+        <alt-threshold>13200.0</alt-threshold>
     </airspeed-indicator>
     <inst-vertical-speed-indicator>
         <serviceable type="bool">true</serviceable>

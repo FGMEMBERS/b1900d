@@ -123,27 +123,6 @@ var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
 var tire=TireSpeed.new(3,0.429,0.553,0.553);
 
-#http://www.pprune.org/forums/archive/index.php/t-166572.html
-#http://www.airweb.faa.gov/Regulatory_and_Guidance_Library/rgMakeModel.nsf/0/4bd70d173cbc5f4586256fb80048f054/$FILE/A24CE.pdf
-var LIMIT_VIAS=248.0;
-var LIMIT_MACH=0.48;
-var LIMIT_CHANGE=13200.0;
-var CURR_HP_NODEP="instrumentation/altimeter/pressure-alt-ft";
-var CURR_KIAS_NODEP="instrumentation/airspeed-indicator/indicated-speed-kt";
-var CURR_MACH_NODEP="velocities/mach";
-var CURR_LIMIT_NODEP="instrumentation/airspeed-indicator/limit-indicated-speed-kt";
-props.globals.getNode(CURR_LIMIT_NODEP,1).setValue(LIMIT_VIAS);
-
-var set_barber_pole = func {
-  if (getprop(CURR_HP_NODEP)>LIMIT_CHANGE) {
-    setprop(CURR_LIMIT_NODEP,getprop(CURR_KIAS_NODEP)/getprop(CURR_MACH_NODEP)*LIMIT_MACH);
-  } else {
-    if (!(getprop(CURR_LIMIT_NODEP)==LIMIT_VIAS))
-      setprop(CURR_LIMIT_NODEP,LIMIT_VIAS);
-  }
-  settimer(set_barber_pole,0);
-}
-
 setlistener("/sim/signals/fdm-initialized", func {
     S_volume.setValue(0.3);
     C_volume.setValue(0.3);
@@ -222,6 +201,8 @@ setprop("controls/lighting/instrument-lights",1);
 setprop("controls/lighting/nav-lights",1);
 setprop("controls/lighting/beacon",1);
 setprop("controls/lighting/strobe",1);
+setprop("controls/engines/engine[0]/cutoff",0);
+setprop("controls/engines/engine[1]/cutoff",0);
 setprop("controls/engines/engine[0]/condition",1);
 setprop("controls/engines/engine[1]/condition",1);
 setprop("controls/engines/engine[0]/mixture",1);
@@ -244,6 +225,8 @@ setprop("controls/lighting/instrument-lights",0);
 setprop("controls/lighting/nav-lights",0);
 setprop("controls/lighting/beacon",0);
 setprop("controls/lighting/strobe",0);
+setprop("controls/engines/engine[0]/cutoff",1);
+setprop("controls/engines/engine[1]/cutoff",1);
 setprop("controls/engines/engine[0]/condition",0);
 setprop("controls/engines/engine[1]/condition",0);
 setprop("controls/engines/engine[0]/mixture",0);

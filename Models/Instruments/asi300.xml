@@ -21,7 +21,7 @@
     <animation>
         <type>rotate</type>
         <object-name>ASI.needle.001</object-name>
-        <property>/instrumentation/airspeed-indicator/limit-indicated-speed-kt</property>
+        <property>/instrumentation/airspeed-indicator/airspeed-limit-kt</property>
         <interpolation>
         <entry><ind>0.0</ind><dep>178.0</dep></entry>
             <entry><ind>170.0</ind><dep>178.0</dep></entry>

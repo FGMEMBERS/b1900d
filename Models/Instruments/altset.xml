@@ -112,20 +112,20 @@
             <repeatable>true</repeatable>
             <interval-sec>0.2</interval-sec>
             <binding>
-				<condition>
-					<not>
-						<property>devices/status/keyboard/shift</property>
-					</not>
-				</condition>
-				<command>nasal</command>
-				<script>systems.FlDr.preset_altitude(100)</script>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
+                <command>nasal</command>
+                <script>systems.FlDr.preset_altitude(1000)</script>
             </binding>
             <binding>
-				<condition>
-					<property>devices/status/keyboard/shift</property>
-				</condition>
-				<command>nasal</command>
-				<script>systems.FlDr.preset_altitude(1000)</script>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>nasal</command>
+                <script>systems.FlDr.preset_altitude(100)</script>
             </binding>
         </action>
     </animation>
@@ -138,20 +138,20 @@
             <repeatable>true</repeatable>
             <interval-sec>0.2</interval-sec>
             <binding>
-				<condition>
-					<not>
-						<property>devices/status/keyboard/shift</property>
-					</not>
-				</condition>
-				<command>nasal</command>
-				<script>systems.FlDr.preset_altitude(-100)</script>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
+                <command>nasal</command>
+                <script>systems.FlDr.preset_altitude(-1000)</script>
             </binding>
             <binding>
-				<condition>
-					<property>devices/status/keyboard/shift</property>
-				</condition>
-				<command>nasal</command>
-				<script>systems.FlDr.preset_altitude(-1000)</script>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>nasal</command>
+                <script>systems.FlDr.preset_altitude(-100)</script>
             </binding>
         </action>
     </animation>
@@ -162,20 +162,20 @@
         <action>
             <button>3</button>
             <binding>
-				<condition>
-					<not>
-						<property>devices/status/keyboard/shift</property>
-					</not>
-				</condition>
-				<command>nasal</command>
-				<script>systems.FlDr.preset_altitude(100)</script>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
+                <command>nasal</command>
+                <script>systems.FlDr.preset_altitude(100)</script>
             </binding>
             <binding>
-				<condition>
-					<property>devices/status/keyboard/shift</property>
-				</condition>
-				<command>nasal</command>
-				<script>systems.FlDr.preset_altitude(1000)</script>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>nasal</command>
+                <script>systems.FlDr.preset_altitude(1000)</script>
             </binding>
         </action>
     </animation>
@@ -186,20 +186,20 @@
         <action>
             <button>4</button>
             <binding>
-				<condition>
-					<not>
-						<property>devices/status/keyboard/shift</property>
-					</not>
-				</condition>
-				<command>nasal</command>
-				<script>systems.FlDr.preset_altitude(-100)</script>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
+                <command>nasal</command>
+                <script>systems.FlDr.preset_altitude(-100)</script>
             </binding>
             <binding>
-				<condition>
-					<property>devices/status/keyboard/shift</property>
-				</condition>
-				<command>nasal</command>
-				<script>systems.FlDr.preset_altitude(-1000)</script>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>nasal</command>
+                <script>systems.FlDr.preset_altitude(-1000)</script>
             </binding>
         </action>
     </animation>
