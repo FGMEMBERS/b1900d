@@ -129,7 +129,6 @@ setlistener("/sim/signals/fdm-initialized", func {
     MB.setDoubleValue(0.0);
     setprop("/instrumentation/heading-indicator/offset-deg",-1 * getprop("/environment/magnetic-variation-deg"));
     setprop("/instrumentation/clock/flight-meter-hour",0);
-    set_barber_pole();
     print("system  ...Check");
     setprop("controls/engines/engine/condition",0);
     setprop("controls/engines/engine[1]/condition",0);
