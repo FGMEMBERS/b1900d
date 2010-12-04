@@ -322,18 +322,19 @@ July 2004 Syd Adams
 </consumables>
 
     <instrumentation>
-        <mk-viii>
-            <serviceable>true</serviceable>
-            <configuration-module>
-                <category-1>1</category-1>	<!-- GA Fast, 150' Mode 4B -->
-            </configuration-module>
-            <inputs>
-                <arinc429>
-                    <decision-height-ncd>false</decision-height-ncd>
-                    <decision-height>200</decision-height>
-                </arinc429>
-            </inputs>
-            <speaker>
+	<mk-viii>                          <!-- http://wiki.flightgear.org/index.php/GPWS -->
+	  <serviceable>true</serviceable>  <!-- EGPWS_ENABLE -->
+	  <configuration-module>
+	   <category-1>   1 </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+	   <category-8>   3 </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT -->
+	  </configuration-module>
+	  <inputs>                         <!-- Module I/O -->
+	   <arinc429>
+	    <decision-height-ncd> false </decision-height-ncd>
+	    <decision-height> 250 </decision-height>
+	   </arinc429>
+	  </inputs>
+          <speaker>
                 <volume>1</volume>
                 <max-dist>0.5</max-dist>
                 <reference-dist>0.3</reference-dist>
@@ -342,8 +343,8 @@ July 2004 Syd Adams
                     <y>0</y>
                     <z>0</z>
                 </position>
-            </speaker>
-        </mk-viii>
+          </speaker>
+	</mk-viii>
     <altimeter>
         <millibars type= "double">0</millibars>
     </altimeter>
