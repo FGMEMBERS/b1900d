@@ -168,24 +168,6 @@ July 2004 Syd Adams
 
     <menubar>
         <default>
-            <menu n="3">
-                <item n="0">
-                <label>Autopilot Settings</label>
-                    <binding>
-                        <command>nasal</command>
-                        <script>dialogs.ap_settings.open()</script>
-                    </binding>
-                </item>
-            </menu>
-                <menu n="5">
-                    <item n="1">
-                    <label>Radio Stack</label>
-                        <binding>
-                            <command>nasal</command>
-                            <script>dialogs.Radio.open()</script>
-                        </binding>
-                    </item>
-                </menu>
             <menu n="10">
                 <label>B1900D</label>
                 <enabled type="bool">true</enabled>
