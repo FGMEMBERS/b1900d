@@ -39,8 +39,8 @@ July 2004 Syd Adams
     <model>
         <path>Aircraft/b1900d/Models/B1900D.xml</path>
         <livery>
-                <file type="string">CMA</file>
-            </livery>
+            <file type="string">ANZ</file>
+        </livery>
         <start-idling type="bool">0</start-idling>
         <manual>
             <total-pages type="int">5</total-pages>
