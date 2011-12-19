@@ -67,9 +67,8 @@
 
 <!-- Normal shader effect. Separate effects required for each normal map texture -->
     <effect>
-        <inherits-from>Aircraft/b1900d/Models/Effects/rbs</inherits-from>
+        <inherits-from>Aircraft/b1900d/Models/Effects/skin-reflect-uber</inherits-from>
         <object-name>Door</object-name>
-        <object-name>Engines</object-name>
         <object-name>FTire</object-name>
         <object-name>Fuselage</object-name>
         <object-name>FUdamper</object-name>
@@ -83,14 +82,12 @@
         <object-name>Inlets</object-name>
         <object-name>LHaileron</object-name>
         <object-name>LHelevator</object-name>
-        <object-name>LHflap</object-name>
         <object-name>LHflap1</object-name>
         <object-name>LHgeardoor1</object-name>
         <object-name>LHgeardoor2</object-name>
         <object-name>LHwheel</object-name>
         <object-name>RHaileron</object-name>
         <object-name>RHelevator</object-name>
-        <object-name>RHflap</object-name>
         <object-name>RHflap1</object-name>
         <object-name>RHgeardoor1</object-name>
         <object-name>RHgeardoor2</object-name>
@@ -101,6 +98,14 @@
         <object-name>Whwell.001</object-name>
         <object-name>Wing</object-name>
     </effect>
+
+    <effect>
+        <inherits-from>Aircraft/b1900d/Models/Effects/skin-reflect-uber-landing</inherits-from>
+        <object-name>Engines</object-name>
+        <object-name>LHflap</object-name>
+        <object-name>RHflap</object-name>
+    </effect>
+
 
 <!-- GLASS REFLECTION -->
     <effect>

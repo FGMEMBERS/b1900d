@@ -8,7 +8,7 @@ July 2004 Syd Adams
 
 <PropertyList>
     <sim>
-        <description>Beechcraft B1900D</description>
+        <description>Beechcraft b1900d</description>
         <status>developement</status>
         <author>Syd Adams (3d model/FDM) - Jean-Yves Lefort (MKVIII gpws)</author>
         <flight-model>yasim</flight-model>
@@ -217,14 +217,6 @@ July 2004 Syd Adams
     <alarms>
         <stall-warning type="double">0</stall-warning>
     </alarms>
-
-    <flight-recorder>
-        <replay-config type="int">0</replay-config>
-        <config n="0" include="/Aircraft/Generic/flightrecorder/generic-turboprop-2.xml">
-            <!-- Add custom properties here -->
-        </config>
-    </flight-recorder>
-
 </sim>
 
 <controls>
@@ -481,7 +473,8 @@ July 2004 Syd Adams
             <file>Aircraft/b1900d/Nasal/alerts.nas</file>
             <file>Aircraft/b1900d/Models/Instruments/KLN90B/kln90b.nas</file>
             <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
-            </systems>
+            <file>Aircraft/b1900d/Nasal/lightmap.nas</file>
+        </systems>
         <dialogs>
             <file>Aircraft/b1900d/Nasal/dialogs.nas</file>
         </dialogs>
