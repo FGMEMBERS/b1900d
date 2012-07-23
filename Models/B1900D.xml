@@ -106,6 +106,28 @@
         <object-name>RHflap</object-name>
     </effect>
 
+<!--  REMBRANDT support for transparent objects -->
+<effect>
+  <inherits-from>Aircraft/b1900d/Models/Effects/glass_reflect</inherits-from>
+  <object-name>Glass</object-name>
+  <object-name>Windows</object-name>
+  <object-name>RHflare</object-name>
+  <object-name>LHflare</object-name>
+  <object-name>navlight.glow</object-name>
+  <object-name>Taxi-light</object-name>
+  <object-name>Beacon1</object-name>
+  <object-name>Beacon2</object-name>
+  <object-name>Strobe1</object-name>
+  <object-name>Strobe2</object-name>
+</effect>
+
+<effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>LHSlowprop</object-name>
+  <object-name>RHSlowprop</object-name>
+  <object-name>LHFastprop</object-name>
+  <object-name>RHFastprop</object-name>
+</effect>
 
 <!-- GLASS REFLECTION -->
     <effect>
