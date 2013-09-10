@@ -1,15 +1,39 @@
 <PropertyList>
-    <name>GPS Navigation</name>
-    <description>GPS waypoint navigation how-to</description>
+    <name>Autopilot Operation</name>
+    <description>Collins FCS-65 Flight Director Operation</description>
     <interval>2</interval>
 
     <init>
         <set>
-            <property>instrumentation/gps/wp/wp[1]/ID</property>
+            <property>instrumentation/fgc-65/app-65a/AP</property>
             <value></value>
         </set>
         <set>
-            <property>instrumentation/gps/serviceable</property>
+            <property>instrumentation/fgc-65/settings/alt</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>instrumentation/fgc-65/settings/crs</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>instrumentation/fgc-65/settings/hdg</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>instrumentation/fgc-65/settings/ias</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>instrumentation/fgc-65/settings/pitch</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>instrumentation/fgc-65/settings/roll</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>instrumentation/fgc-65/settings/vs</property>
             <value>0</value>
         </set>
     </init>
@@ -17,30 +41,27 @@
 
     <step>
         <message>
-            Make sure aircraft is running... power on.{|.}
-            Press power button on the GPS unit{|.}
+            Takeoff and climb above 500 ft{|.}
         </message>
         <view>
-            <heading-offset-deg>322.2</heading-offset-deg>
-            <pitch-offset-deg>-22.2</pitch-offset-deg>
-            <field-of-view>10</field-of-view>
+            <heading-offset-deg>0</heading-offset-deg>
+            <pitch-offset-deg>-12</pitch-offset-deg>
+            <field-of-view>70</field-of-view>
         </view>
         <error>
-            <message>Power up the GPS{|.}
-            Nav 1 page will display{|.}
-            </message>
+            <message>Takeoff and climb above 500 ft{|.}</message>
             <condition>
-                <equals>
-                        <property>systems/electrical/outputs/gps</property>
-                        <value>0</value>
-                </equals>
+                <less-than>
+                    <property>position/altitude-agl-ft</property>
+                    <value>500</value>
+                </less-than>
             </condition>
         </error>
         <exit>
             <condition>
                 <greater-than>
-                        <property>systems/electrical/outputs/gps</property>
-                        <value>0</value>
+                    <property>position/altitude-agl-ft</property>
+                    <value>500</value>
                 </greater-than>
             </condition>
         </exit>
@@ -48,109 +69,133 @@
 
     <step>
         <message>
-            Open Equipment/GPS Settings.{|.}
-            Select a waypoint type , and enter the ID.{|.}
-            Close the dialog
+            Once in a wing level climb press "AP ENG" on the pedestal.{|.}
+            (Or you can open the Menu/Autopilot/Autopilot Settings dialog).{|.}
+            The will hold current pitch and roll when the button was pressed.{|.}
         </message>
         <view>
-            <heading-offset-deg>322.2</heading-offset-deg>
-            <pitch-offset-deg>-22.2</pitch-offset-deg>
-            <field-of-view>12</field-of-view>
+            <heading-offset-deg>306</heading-offset-deg>
+            <pitch-offset-deg>-65</pitch-offset-deg>
+            <field-of-view>22</field-of-view>
         </view>
         <error>
             <message>
-            Enter waypoint type and ID in the Equipment/GPS dialog.{|.}
-            Waypoint ID will appear at the top of the  NAV1 page{|.}
-            when active{|.}
+            press "AP ENG"{|.}
+            </message>
+            <condition>
+                <not-equal>
+                        <property>instrumentation/fgc-65/app-65a/AP</property>
+                        <value>AP</value>
+                    </not-equal>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <equals>
+                        <property>instrumentation/fgc-65/app-65a/AP</property>
+                        <value>AP</value>
+                    </equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>
+            Press the PUSH HDG SYNC button{|.}
+            This sets the heading bug to your current heading{|.}
+            You can also open the Menu/Equipment/DSP-84 to operate these controls{|.}
+        </message>
+        <view>
+            <heading-offset-deg>313</heading-offset-deg>
+            <pitch-offset-deg>-64.5</pitch-offset-deg>
+            <field-of-view>9</field-of-view>
+        </view>
+        <error>
+            <message>
+            Press the PUSH HDG SYNC button{|.}
+            This sets the heading bug to your current heading{|.}
+            You can also open the Menu/Equipment/DSP-84 to operate these controls{|.}
+            Press the PUSH HDG SYNC button{|.}
             </message>
             <condition>
                 <equals>
-                        <property>instrumentation/gps/wp/wp[1]/ID</property>
-                        <value></value>
+                        <property>instrumentation/fgc-65/settings/hdg</property>
+                        <value>0</value>
                     </equals>
             </condition>
         </error>
         <exit>
             <condition>
-                <not-equals>
-                        <property>instrumentation/gps/wp/wp[1]/ID</property>
-                        <value></value>
-                    </not-equals>
+                <not-equal>
+                        <property>instrumentation/fgc-65/settings/hdg</property>
+                        <value>0</value>
+                    </not-equal>
+            </condition>
+        </exit>
+    </step>
+
+<step>
+        <message>
+            Press the PUSH CRS DIRECT button{|.}
+            This sets the nav1 selected course to your current heading{|.}
+            You can also open the Menu/Equipment/DSP-84 to operate these controls{|.}
+        </message>
+        <view>
+            <heading-offset-deg>313</heading-offset-deg>
+            <pitch-offset-deg>-64.5</pitch-offset-deg>
+            <field-of-view>9</field-of-view>
+        </view>
+        <error>
+            <message>
+            Press the PUSH CRS DIRECT button{|.}
+            This sets the nav1 selected course to your current heading{|.}
+            You can also open the Menu/Equipment/DSP-84 to operate these controls{|.}
+            </message>
+            <condition>
+                <equals>
+                        <property>instrumentation/fgc-65/settings/crs</property>
+                        <value>0</value>
+                    </equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not-equal>
+                        <property>instrumentation/fgc-65/settings/crs</property>
+                        <value>0</value>
+                    </not-equal>
             </condition>
         </exit>
     </step>
 
     <step>
         <message>
-            Press the GPS CRS button until GPS displays  on the EHSI{|.}
+            Press the HDG button {|.}
+            HDG will display on the annunciator panel{|.}
         </message>
         <view>
-            <heading-offset-deg>357.3</heading-offset-deg>
-            <pitch-offset-deg>-23.4</pitch-offset-deg>
-            <field-of-view>25</field-of-view>
+            <heading-offset-deg>358.0</heading-offset-deg>
+            <pitch-offset-deg>-15</pitch-offset-deg>
+            <field-of-view>13</field-of-view>
         </view>
         <error>
             <message>
-            Press GPS CRS again{|.}
-            GPS wil display in the EHSI when GPS mode enabled{|.}
+            Press the HDG button {|.}
+            HDG will display on the annunciator panel{|.}
             </message>
             <condition>
-                <not>
-                    <property>instrumentation/nav/slaved-to-gps</property>
-                </not>
+                <not-equal>
+                    <property>instrumentation/fgc-65/internal/lateral</property>
+                    <value>HDG</value>
+                </not-equal>
             </condition>
         </error>
         <exit>
             <condition>
-                <property>instrumentation/nav/slaved-to-gps</property>
-            </condition>
-        </exit>
-    </step>
-
-    <step>
-        <message>
-            Open Autopilot dialog (F11),and adjust COURSE{|.}
-            setting until deflection and course needle line up,{|.}
-            and white "TO" arrow appears{|.}
-        </message>
-        <view>
-            <heading-offset-deg>0.45</heading-offset-deg>
-            <pitch-offset-deg>-30</pitch-offset-deg>
-            <field-of-view>12</field-of-view>
-        </view>
-        <error>
-            <message>
-            Adjust Course settings{|.}
-            </message>
-            <condition>
-                <and>
-                    <greater-than>
-                        <property>instrumentation/flightdirector/hsi/crs-deflection</property>
-                        <value>0.1</value>
-                    </greater-than>
-                    <less-than>
-                        <property>instrumentation/flightdirector/hsi/crs-deflection</property>
-                        <value>-0.1</value>
-                    </less-than>
-                    <not>
-                        <property>instrumentation/flightdirector/hsi/to-flag</property>
-                    </not>
-                </and>
-            </condition>
-        </error>
-        <exit>
-            <condition>
-                <and>
-                    <less-than>
-                        <property>instrumentation/flightdirector/hsi/crs-deflection</property>
-                        <value>0.1</value>
-                    </less-than>
-                    <greater-than>
-                        <property>instrumentation/flightdirector/hsi/crs-deflection</property>
-                        <value>-0.1</value>
-                    </greater-than>
-                    <property>instrumentation/flightdirector/hsi/to-flag</property>
-                </and>
+                <equals>
+                    <property>instrumentation/fgc-65/internal/lateral</property>
+                    <value>HDG</value>
+                </equals>
             </condition>
         </exit>
     </step>

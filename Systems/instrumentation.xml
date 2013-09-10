@@ -100,4 +100,14 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </KT-70>
 
+    <radar>
+        <name>radar</name>
+        <number>0</number>
+    </radar>
+
+    <dme>
+        <name>dme</name>
+        <number>0</number>
+    </dme>
+
 </PropertyList>

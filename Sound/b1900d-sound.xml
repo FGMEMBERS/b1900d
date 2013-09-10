@@ -6,21 +6,17 @@
 
 <!-- Engine 1 -->
 
-<crank>
+        <crank>
             <name>engstart0</name>
             <reference-dist>3.0</reference-dist>
-            <max-dist>6.0</max-dist>
+            <max-dist>20.0</max-dist>
             <mode>once</mode>
             <path>Sounds/turbine_start.wav</path>
             <condition>
-                <greater-than>
-                    <property>controls/engines/engine[0]/condition</property>
-                    <value>0.1</value>
-                </greater-than>
+                <property>engines/engine[0]/cranking</property>
             </condition>
             <volume>
-                <property>sim/sound/cabin</property>
-                <factor>0.3</factor>
+                <property>sim/sound/E_volume</property>
             </volume>
             <position>
                 <x>-1.5</x>
@@ -31,60 +27,36 @@
 
         <prop>
             <name>prop1</name>
-            <reference-dist>150.0</reference-dist>
-            <max-dist>500.0</max-dist>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
             <mode>looped</mode>
             <path>Sounds/turboprop1.wav</path>
-            <property>engines/engine[0]/n2</property>
             <condition>
                 <greater-than>
-                    <property>controls/engines/engine[0]/condition</property>
-                    <value>0.001</value>
+                    <property>engines/engine[0]/n1</property>
+                    <value>30</value>
                 </greater-than>
             </condition>
             <volume>
-                <property>engines/engine[0]/n2</property>
-                <factor>0.015</factor>
+                <property>instrumentation/eng-gauge/prop</property>
+                <factor>0.000588</factor>
+                <min>0.5</min>
+                <max>1</max>
             </volume>
             <volume>
                 <property>sim/sound/E_volume</property>
             </volume>
             <pitch>
-                <property>engines/engine[0]/rpm</property>
-                <offset>0.5</offset>
-                <factor>0.0005</factor>
-                <min>0.5</min>
-                <max>1.5</max>
+                <property>engines/engine[0]/n1</property>
+                <factor>0.02</factor>
+                <offset>0.0</offset>
             </pitch>
             <position>
-                 <x>-1.5</x>
+                <x>-1.5</x>
                 <y>2.5</y>
                 <z>-0.33</z>
             </position>p
         </prop>
-
-        <turbine0>
-            <name>turbine0</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>4.0</max-dist>
-            <mode>looped</mode>
-            <path>Sounds/turbine_loop.wav</path>
-            <property>engines/engine[0]/n2</property>
-            <volume>
-                <property>sim/sound/cabin</property>
-                <factor>0.3</factor>
-            </volume>
-            <position>
-                 <x>-1.5</x>
-                <y>2.5</y>
-                <z>-0.33</z>
-            </position>
-            <pitch>
-                <property>engines/engine[0]/n2</property>
-                <offset>1.0</offset>
-                <factor>0.001</factor>
-            </pitch>
-        </turbine0>
 
         <shutdown>
             <name>engine0 off</name>
@@ -93,14 +65,12 @@
             <mode>once</mode>
             <path>Sounds/turbine_shutdown.wav</path>
             <condition>
-                <equals>
-                    <property>controls/engines/engine[0]/condition</property>
-                    <value>0</value>
-                </equals>
+                <not>
+                    <property>engines/engine[0]/running</property>
+                </not>
             </condition>
             <volume>
-                <property>sim/sound/cabin</property>
-                <factor>0.3</factor>
+                <property>sim/sound/E_volume</property>
             </volume>
             <position>
                  <x>-1.5</x>
@@ -113,111 +83,73 @@
 
         <crank>
             <name>engstart1</name>
-            <reference-dist>2.0</reference-dist>
-            <max-dist>4.0</max-dist>
+            <reference-dist>3.0</reference-dist>
+            <max-dist>20.0</max-dist>
             <mode>once</mode>
             <path>Sounds/turbine_start.wav</path>
             <condition>
-                <greater-than>
-                    <property>controls/engines/engine[1]/condition</property>
-                    <value>0</value>
-                </greater-than>
+                <property>engines/engine[1]/cranking</property>
             </condition>
             <volume>
-                <property>sim/sound/cabin</property>
-                <factor>0.3</factor>
+                <property>sim/sound/E_volume</property>
             </volume>
             <position>
                 <x>-1.5</x>
-                <y>-2.6</y>
+                <y>2.5</y>
                 <z>-0.33</z>
             </position>
         </crank>
 
-
         <prop>
             <name>prop2</name>
-            <reference-dist>150.0</reference-dist>
-            <max-dist>500.0</max-dist>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
             <mode>looped</mode>
             <path>Sounds/turboprop1.wav</path>
-            <property>engines/engine[1]/n2</property>
-            <condition>
+                <condition>
                 <greater-than>
-                    <property>controls/engines/engine[1]/condition</property>
-                    <value>0.001</value>
+                    <property>engines/engine[1]/n1</property>
+                    <value>30</value>
                 </greater-than>
             </condition>
             <volume>
-                <property>engines/engine[1]/n2</property>
-                <factor>0.015</factor>
+                <property>instrumentation/eng-gauge/prop</property>
+                <factor>0.000588</factor>
+                <min>0.5</min>
+                <max>1</max>
             </volume>
             <volume>
                 <property>sim/sound/E_volume</property>
             </volume>
             <pitch>
-                <property>engines/engine[1]/rpm</property>
-                <offset>0.5</offset>
-                <factor>0.0005</factor>
-                <min>0.5</min>
-                <max>1.5</max>
+                <property>engines/engine[1]/n1</property>
+                <factor>0.02</factor>
+                <offset>0.0</offset>
             </pitch>
             <position>
-                <x>-1.5</x>
-                <y>-2.6</y>
+                 <x>-1.5</x>
+                <y>2.5</y>
                 <z>-0.33</z>
-            </position>
+            </position>p
         </prop>
 
-
- 
-        <turbine1>
-            <name>turbine1</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>4.0</max-dist>
-            <mode>looped</mode>
-            <path>Sounds/turbine_loop.wav</path>
-            <condition>
-                <greater-than>
-                    <property>engines/engine[1]/n2</property>
-                    <value>50.995</value>
-                </greater-than>
-            </condition>
-            <volume>
-                <property>sim/sound/cabin</property>
-                <factor>0.3</factor>
-            </volume>
-            <position>
-                <x>-1.5</x>
-                <y>-2.6</y>
-                <z>-0.33</z>
-            </position>
-            <pitch>
-                <property>engines/engine[1]/n2</property>
-                <offset>1.0</offset>
-                <factor>0.001</factor>
-            </pitch>
-        </turbine1>
-
         <shutdown>
-            <name>engine1 off</name>
+            <name>engine0 off</name>
             <reference-dist>1.0</reference-dist>
             <max-dist>4.0</max-dist>
             <mode>once</mode>
             <path>Sounds/turbine_shutdown.wav</path>
             <condition>
-                <equals>
-                    <property>controls/engines/engine[1]/condition</property>
-                    <value>0</value>
-                </equals>
+                <not>
+                    <property>engines/engine[1]/running</property>
+                </not>
             </condition>
             <volume>
-                <property>sim/sound/cabin</property>
-                <factor>0.3</factor>
+                <property>sim/sound/E_volume</property>
             </volume>
             <position>
-                <x>-1.5</x>
-                <y>-2.6</y>
+                 <x>-1.5</x>
+                <y>2.5</y>
                 <z>-0.33</z>
             </position>
         </shutdown>
@@ -276,6 +208,22 @@
                     <property>gear/gear[0]/position-norm</property>
                     <value>0</value>
                 </equals>
+            </condition>
+            <reference-dist>2.0</reference-dist>
+            <max-dist>5.0</max-dist>
+            <position>
+                <x>-2</x>
+                <y>0</y>
+                <z>-2</z>
+            </position>
+        </gear>
+
+        <gear>
+            <name>gear-alarm</name>
+            <mode>looped</mode>
+            <path>Sounds/gear-hrn.wav</path>
+            <condition>
+                <property>gear/alarm</property>
             </condition>
             <reference-dist>2.0</reference-dist>
             <max-dist>5.0</max-dist>
@@ -376,21 +324,79 @@
             </pitch>
         </wind>
 
-        <stall>
-            <name>stall</name>
-            <path>Sounds/beep.wav</path>
+        <overspeed>
+            <name>stick shaker</name>
+            <mode>looped</mode>
+            <type>avionics</type>
+            <path>Sounds/overspeed.wav</path>
             <condition>
-                <property>sim/alarms/stall-warning</property>
+                <or>
+                    <property>sim/alarms/overspeed-warning</property>
+                    <greater-than>
+                        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <property>instrumentation/airspeed-indicator/airspeed-limit-kt</property>
+                    </greater-than>
+                </or>
             </condition>
-            <property>sim/alarms/stall-warning</property>
             <volume>
-            <property>sim/alarms/stall-warning</property>
-            <max>0.6</max>
-        </volume>
-        <pitch>
-            <offset>0.5</offset>
-        </pitch>
-  </stall>
+                <property>sim/sound/volume</property>
+            </volume>
+        </overspeed>
+
+        <stall>
+            <name>stick shaker</name>
+            <mode>looped</mode>
+            <type>avionics</type>
+            <path>Sounds/overspeed.wav</path>
+            <condition>
+                <or>
+                    <property>sim/alarms/stall-warning</property>
+                    <and>
+                        <greater-than>
+                            <property>orientation/alpha-deg</property>
+                            <value>18</value>
+                        </greater-than>
+                        <greater-than>
+                            <property>velocities/airspeed-kt</property>
+                            <value>60</value>
+                        </greater-than>
+                    </and>
+                </or>
+            </condition>
+            <volume>
+                <property>sim/sound/volume</property>
+            </volume>
+        </stall>
+
+        <click>
+            <name>click-on</name>
+            <type>avionics</type>
+            <path>Sounds/click.wav</path>
+            <condition>
+                    <property>sim/sound/click</property>
+            </condition>
+        </click>
+
+        <click>
+            <name>click-off</name>
+            <type>avionics</type>
+            <path>Sounds/click.wav</path>
+            <condition>
+                <not>
+                    <property>sim/sound/click</property>
+                </not>
+            </condition>
+        </click>
+
+        <alerter>
+            <name>alerter</name>
+            <mode>once</mode>
+            <type>avionics</type>
+            <path>Aircraft/b1900d/Sound/alerter.wav</path>
+            <condition>
+                <property>instrumentation/alt-alerter/alert</property>
+            </condition>
+        </alerter>
 
 <!-- generic GPWS-->
 

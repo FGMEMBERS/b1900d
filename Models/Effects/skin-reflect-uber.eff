@@ -19,11 +19,11 @@
 		<!-- Light Map -->
 		<lightmap-enabled type="int">1</lightmap-enabled>
 		<lightmap-multi type="int">1</lightmap-multi>
-		<lightmap-factor type="float" n="0"><use>sim/model/livery/beacon-down-lightfactor</use></lightmap-factor>
+		<lightmap-factor type="float" n="0"><use>systems/electrical/outputs/lights/beacon</use></lightmap-factor>
 		<lightmap-color type="vec3d" n="0"> 1 1 0.8 </lightmap-color>
-		<lightmap-factor type="float" n="1"><use>sim/model/livery/beacon-up-lightfactor</use></lightmap-factor>
+		<lightmap-factor type="float" n="1"><use>systems/electrical/outputs/lights/beacon[1]</use></lightmap-factor>
 		<lightmap-color type="vec3d" n="1"> 1 1 0.8 </lightmap-color>
-		<lightmap-factor type="float" n="2"><use>sim/model/livery/tail-logo-lightfactor</use></lightmap-factor>
+		<lightmap-factor type="float" n="2"><use>systems/electrical/outputs/lights/logo-lights</use></lightmap-factor>
 		<lightmap-color type="vec3d" n="2"> 1 1 0.8 </lightmap-color>
 		<lightmap-factor type="float" n="3"><use>sim/model/livery/alfa-lightfactor</use></lightmap-factor>
 		<lightmap-color type="vec3d" n="3"> 1 1 1 </lightmap-color>
