@@ -41,7 +41,6 @@ started July 2004 Syd Adams
 
         <tutorials>
             <tutorial include="Tutorials/startup_tutorial.xml"/>
-            <tutorial include="Tutorials/autopilot-help.xml"/>
         </tutorials>
 
     <model>

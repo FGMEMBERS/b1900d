@@ -826,8 +826,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
            <property>aero/alpha-rad</property>
-           <property>/controls/atest</property>
-           <!--value>-0.37</value-->
+            <value>-0.57</value>
        </product>
     </function>
 
