@@ -12,6 +12,27 @@ started July 2004 Syd Adams
         <status>developement</status>
         <author>Syd Adams (3d model/FDM) - Jean-Yves Lefort (MKVIII gpws)</author>
 
+        <long-description>The Beechcraft 1900 is a 19-passenger, pressurized twin-engine 
+            turboprop fixed-wing aircraft manufactured by Beechcraft. It was designed, and 
+            is primarily used, as a regional airliner. It is also used as a freight aircraft
+            and corporate transport.
+        </long-description>
+  
+        <tags>
+            <tag>beechcraft</tag>
+            <tag>turboprop</tag>
+            <tag>stol</tag>
+            <tag>ifr</tag>
+            <tag>twin-engine</tag>
+        </tags>
+  
+        <rating>
+          <FDM type="int">3</FDM>
+          <systems type="int">3</systems>
+          <model type="int">3</model>
+          <cockpit type="int">3</cockpit>
+        </rating>
+        
     <systems>
         <path>Aircraft/b1900d/Systems/systems.xml</path>
         <electrical>
