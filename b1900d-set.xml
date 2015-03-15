@@ -7,6 +7,8 @@
         <startup>
             <splash-texture>Aircraft/b1900d/b1900dsplash.png</splash-texture>
         </startup>
+        
+        <description>Beechcraft b1900d</description>
     </sim>
 
     <engines>
