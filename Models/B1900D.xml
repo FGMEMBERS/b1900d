@@ -43,6 +43,16 @@
       <texture>paint2.png</texture>
     </animation>
 
+    <model>
+        <name>cabin</name>
+        <path>Aircraft/b1900d/Models/cabin.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
 
    <model>
         <name>flightdeck</name>
@@ -55,48 +65,11 @@
         </offsets>
     </model>
 
-    <model>
-        <condition>
-            <property>/sim/rendering/rembrandt/enabled</property>
-        </condition>
-        <name>light</name>
-        <path>Aircraft/b1900d/Models/light.xml</path>
-        <offsets>
-            <x-m>-6.975</x-m>
-            <y-m>0</y-m>
-            <z-m>-1.256</z-m>
-            <pitch-deg>-20</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <name>shadow</name>
-        <path>Aircraft/b1900d/Models/shadow.xml</path>
-        <offsets>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0.0</z-m>
-            <pitch-deg>0</pitch-deg>
-        </offsets>
-    </model>
-
-        <animation>
-            <type>select</type>
-            <object-name>shadow</object-name>
-            <condition>
-                <and>
-                    <property>sim/model/shadow-2d</property>
-                    <not>
-                        <property>/sim/rendering/rembrandt/enabled</property>
-                    </not>
-                </and>
-            </condition>
-        </animation>
-
 <!-- Normal shader effect. Separate effects required for each normal map texture -->
     <effect>
-        <inherits-from>Aircraft/b1900d/Models/Effects/skin-reflect-uber</inherits-from>
+        <inherits-from>Aircraft/b1900d/Models/Effects/rbs</inherits-from>
         <object-name>Door</object-name>
+        <object-name>Engines</object-name>
         <object-name>FTire</object-name>
         <object-name>Fuselage</object-name>
         <object-name>FUdamper</object-name>
@@ -129,34 +102,6 @@
         <object-name>Wing</object-name>
     </effect>
 
-    <effect>
-        <inherits-from>Aircraft/b1900d/Models/Effects/skin-reflect-uber-landing</inherits-from>
-        <object-name>Engines</object-name>
-    </effect>
-
-<!--  REMBRANDT support for transparent objects -->
-<effect>
-  <inherits-from>Aircraft/b1900d/Models/Effects/glass_reflect</inherits-from>
-  <object-name>Glass</object-name>
-  <object-name>Windows</object-name>
-</effect>
-
-<effect>
-  <inherits-from>Effects/model-transparent</inherits-from>
-  <object-name>LHSlowprop</object-name>
-  <object-name>RHSlowprop</object-name>
-  <object-name>LHFastprop</object-name>
-  <object-name>RHFastprop</object-name>
-    <object-name>RHflare</object-name>
-  <object-name>LHflare</object-name>
-  <object-name>navlight.glow</object-name>
-  <object-name>Taxi-light</object-name>
-  <object-name>Beacon1</object-name>
-  <object-name>Beacon2</object-name>
-  <object-name>Strobe1</object-name>
-  <object-name>Strobe2</object-name>
-</effect>
-
 <!-- GLASS REFLECTION -->
     <effect>
         <inherits-from>Aircraft/b1900d/Models/Effects/glass_reflect</inherits-from>
@@ -180,11 +125,67 @@
 
     <animation>
         <type>range</type>
+        <object-name>cabin</object-name>
+        <min-m>0</min-m>
+        <max-m>100</max-m>
+    </animation>
+
+    <animation>
+        <type>range</type>
         <object-name>flightdeck</object-name>
         <min-m>0</min-m>
         <max-m>100</max-m>
     </animation>
 
+<!-- LH tail reg
+	<model>
+		<path>Aircraft/b1900d/Models/registration.xml</path>
+		<offsets>
+			<x-m>6.857</x-m>
+			<y-m>-0.01</y-m>
+			<z-m>0.935</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>0</heading-deg>
+		</offsets>
+		<overlay>
+			<params>
+				<size>0.50</size>
+				<alignment>xz-plane</alignment>
+				<color>
+					<red>0.8</red>
+					<green>0.8</green>
+					<blue>0.8</blue>
+				</color>
+			</params>
+		</overlay>
+	</model>
+-->
+
+<!-- RH tail reg
+	<model>
+		<path>Aircraft/b1900d/Models/registration.xml</path>
+		<offsets>
+			<x-m>6.857</x-m>
+			<y-m>0.01</y-m>
+			<z-m>0.935</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>0</heading-deg>
+		</offsets>
+		<overlay>
+			<params>
+				<size>0.50</size>
+				<alignment>reversed-xz-plane</alignment>
+				<color>
+					<red>0.8</red>
+					<green>0.8</green>
+					<blue>0.8</blue>
+				</color>
+			</params>
+		</overlay>
+	</model>
+-->
 
     <animation>
         <name>RHprop</name>
@@ -229,6 +230,32 @@
         <object-name>RHwheel</object-name>
     </animation>
 
+<!-- old glass shader
+   <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/b1900d/Models/chrome1.png</texture>
+        <object-name>Glass</object-name>
+        <object-name>windows</object-name>
+    </animation>
+-->
+
+<!-- old chrome shader
+    <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/b1900d/Models/chrome2.png</texture>
+        <object-name>LHspinner</object-name>
+        <object-name>RHspinner</object-name>
+        <object-name>Inlet.heaters</object-name>
+        <object-name>Tx.lens</object-name>
+        <object-name>Land.lens</object-name>
+        <object-name>handle</object-name>
+        <object-name>handle.001</object-name>
+    </animation>
+
+-->
+
 <!--                LH ENGINE          -->
 
     <animation>
@@ -236,7 +263,7 @@
         <object-name>LHFastprop</object-name>
         <condition>
             <greater-than>
-                <property>engines/engine[0]/n1</property>
+                <property>engines/engine[0]/n2</property>
                 <value>70.0000</value>
             </greater-than>
         </condition>
@@ -247,11 +274,11 @@
         <object-name>LHSlowprop</object-name>
         <condition>
             <greater-than>
-                <property>engines/engine[0]/n1</property>
+                <property>engines/engine[0]/n2</property>
                 <value>50.000</value>
             </greater-than>
             <less-than>
-                <property>engines/engine[0]/n1</property>
+                <property>engines/engine[0]/n2</property>
                 <value>70.0001</value>
             </less-than>
         </condition>
@@ -262,7 +289,7 @@
         <object-name>LHprop</object-name>
         <condition>
             <less-than>
-                <property>engines/engine[0]/n1</property>
+                <property>engines/engine[0]/n2</property>
                 <value>50.0001</value>
             </less-than>
         </condition>
@@ -271,8 +298,7 @@
     <animation>
         <type>spin</type>
         <object-name>LHprop</object-name>
-        <property>engines/engine[0]/n1</property>
-        <factor>10</factor>
+        <property>engines/engine[0]/n2</property>
         <center>
             <x-m>-2.226</x-m>
             <y-m>-2.634</y-m>
@@ -288,8 +314,8 @@
     <animation>
         <type>spin</type>
         <object-name>LHSlowprop</object-name>
-        <property>engines/engine[0]/n1</property>
-        <factor>.5</factor>
+        <property>engines/engine[0]/n2</property>
+        <factor>.5</factor>   
         <center>
             <x-m>-2.226</x-m>
             <y-m>-2.634</y-m>
@@ -419,7 +445,7 @@
         <object-name>RHFastprop</object-name>
         <condition>
             <greater-than>
-                <property>engines/engine[1]/n1</property>
+                <property>engines/engine[1]/n2</property>
                 <value>70.0000</value>
             </greater-than>
         </condition>
@@ -430,11 +456,11 @@
         <object-name>RHSlowprop</object-name>
         <condition>
             <greater-than>
-                <property>engines/engine[1]/n1</property>
+                <property>engines/engine[1]/n2</property>
                 <value>50.000</value>
             </greater-than>
             <less-than>
-                <property>engines/engine[1]/n1</property>
+                <property>engines/engine[1]/n2</property>
                 <value>70.0001</value>
             </less-than>
         </condition>
@@ -445,7 +471,7 @@
         <object-name>RHprop</object-name>
         <condition>
             <less-than>
-                <property>engines/engine[1]/n1</property>
+                <property>engines/engine[1]/n2</property>
                 <value>50.001</value>
             </less-than>
         </condition>
@@ -454,8 +480,7 @@
     <animation>
         <type>spin</type>
         <object-name>RHprop</object-name>
-        <property>engines/engine[1]/n1</property>
-        <factor>10</factor>
+        <property>engines/engine[1]/n2</property>
         <center>
             <x-m>-2.226</x-m>
             <y-m>2.634</y-m>
@@ -471,7 +496,7 @@
     <animation>
         <type>spin</type>
         <object-name>RHSlowprop</object-name>
-        <property>engines/engine[1]/n1</property>
+        <property>engines/engine[1]/n2</property>
         <factor>.5</factor>   
         <center>
             <x-m>-2.226</x-m>
@@ -598,7 +623,6 @@
     <animation>
         <type>rotate</type>
         <object-name>Door</object-name>
-        <object-name>Door.inner</object-name>
         <object-name>handle.001</object-name>
         <property>sim/multiplay/generic/float</property>
         <factor>145.0</factor>
@@ -656,7 +680,10 @@
         <type>select</type>
         <object-name>Beacon1</object-name>
         <condition>
-            <property>sim/multiplay/generic/float[1]</property>
+            <greater-than>
+                <property>sim/multiplay/generic/int</property>
+                <value>0</value>
+            </greater-than>
         </condition>
     </animation>
     
@@ -688,7 +715,16 @@
         <type>select</type>
         <object-name>Beacon2</object-name>
         <condition>
-            <property>sim/multiplay/generic/float[2]</property>
+            <and>
+                <equals>
+                    <property>sim/multiplay/generic/int</property>
+                    <value>0</value>
+                </equals>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
         </condition>
     </animation>
       
@@ -720,9 +756,11 @@
     <animation>
         <type>select</type>
         <object-name>Strobe1</object-name>
-        <object-name>Strobe2</object-name>
         <condition>
-            <property>sim/multiplay/generic/float[7]</property>
+            <greater-than>
+                <property>sim/multiplay/generic/int[1]</property>
+                <value>0</value>
+            </greater-than>
         </condition>
     </animation>
 
@@ -752,6 +790,17 @@
     </animation>
 
     <animation>
+        <type>select</type>
+        <object-name>Strobe2</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/multiplay/generic/int[1]</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+    
+    <animation>
         <type>translate</type>
         <object-name>Strobe2</object-name>
         <offset-m>8.568</offset-m>
@@ -761,7 +810,7 @@
             <z>-0.012</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>billboard</type>
         <object-name>Strobe2</object-name>
@@ -781,10 +830,14 @@
         <object-name>navlight.glow</object-name>
         <condition>
             <and>
-                <not>
-                    <property>sim/multiplay/generic/float[7]</property>
-                </not>
-                <property>sim/multiplay/generic/float[3]</property>
+                <equals>
+                    <property>sim/multiplay/generic/int[1]</property>
+                    <value>0</value>
+                </equals>
+                <greater-than>
+                    <property>sim/multiplay/generic/int[2]</property>
+                    <value>0.2</value>
+                </greater-than>
             </and>
         </condition>
     </animation>
@@ -793,7 +846,10 @@
         <type>select</type>
         <object-name>LHflare</object-name>
         <condition>
-            <property>sim/multiplay/generic/float[4]</property>
+            <greater-than>
+                <property>sim/multiplay/generic/int[3]</property>
+                <value>0.2</value>
+            </greater-than>
         </condition>
     </animation>
 
@@ -822,7 +878,10 @@
         <type>select</type>
         <object-name>RHflare</object-name>
         <condition>
-            <property>sim/multiplay/generic/float[5]</property>
+            <greater-than>
+                <property>sim/multiplay/generic/int[4]</property>
+                <value>0.2</value>
+            </greater-than>
         </condition>
     </animation>
 
@@ -852,7 +911,7 @@
         <object-name>Navlights</object-name>
         <condition>
             <greater-than>
-                <property>sim/multiplay/generic/float[3]</property>
+                <property>sim/multiplay/generic/int[2]</property>
                 <value>0.2</value>
             </greater-than>
         </condition>
@@ -862,7 +921,10 @@
         <type>select</type>
         <object-name>Logo-lights</object-name>
         <condition>
-            <property>sim/multiplay/generic/float[8]</property>
+            <greater-than>
+                <property>systems/electrical/outputs/logo-lights</property>
+                <value>0.2</value>
+            </greater-than>
         </condition>
     </animation>
 
@@ -870,7 +932,16 @@
         <type>select</type>
         <object-name>Taxi-light</object-name>
         <condition>
-                <property>sim/multiplay/generic/float[6]</property>
+            <and>
+                <greater-than>
+                    <property>sim/multiplay/generic/int[5]</property>
+                    <value>0.2</value>
+                </greater-than>
+                <equals>
+                    <property>gear/gear/position-norm</property>
+                    <value>1</value>
+                </equals>
+            </and>
         </condition>
     </animation>
 
@@ -903,8 +974,7 @@
         <object-name>FWheel</object-name>
         <object-name>FLdamper</object-name>
         <object-name>FUdamper</object-name>
-        <property>gear/gear[0]/steering-norm</property>
-        <factor>45</factor>
+        <property>gear/gear[0]/caster-angle-deg</property>
         <center>
             <x-m>-6.824</x-m>
             <y-m>0.0</y-m>
@@ -940,7 +1010,6 @@
         <object-name>frtWheeldoor</object-name>
         <object-name>frtWheeldoor.001</object-name>
         <object-name>Tx.lens</object-name>
-        <object-name>Taxi-light</object-name>
         <property>gear/gear[0]/position-norm</property>
         <offset-deg>95</offset-deg>
         <factor>-95</factor>
@@ -957,6 +1026,24 @@
     </animation>
 
     <animation>
+        <type>rotate</type>
+        <object-name>Taxi-light</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <offset-deg>95</offset-deg>
+        <factor>-95</factor>
+        <center>
+            <x-m>-6.881</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-0.931</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+  
+    <animation>
         <type>translate</type>
         <object-name>FWheel</object-name>
         <object-name>FTire</object-name>
@@ -972,8 +1059,7 @@
     <animation>
         <type>spin</type>
         <object-name>FTire</object-name>
-        <property>gear/gear[0]/rollspeed-ms</property>
-        <factor>45.82</factor>
+        <property>gear/gear[0]/tire-rpm</property>
         <center>
             <x-m>-6.874</x-m>
             <y-m>0.0</y-m>
@@ -1117,8 +1203,7 @@
     <animation>
         <type>spin</type>
         <object-name>RHwheel</object-name>
-        <property>gear/gear[2]/rollspeed-ms</property>
-        <factor>34.80</factor>
+        <property>gear/gear[2]/tire-rpm</property>
         <center>
             <x-m>0.596</x-m>
             <y-m>2.635</y-m>
@@ -1262,8 +1347,7 @@
     <animation>
         <type>spin</type>
         <object-name>LHwheel</object-name>
-        <property>gear/gear[1]/rollspeed-ms</property>
-        <factor>34.80</factor>
+        <property>gear/gear[1]/tire-rpm</property>
         <center>
             <x-m>0.596</x-m>
             <y-m>-2.635</y-m>
