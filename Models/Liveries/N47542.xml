@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Continental Connection</name>
+            <texture>Liveries/N47542.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>
