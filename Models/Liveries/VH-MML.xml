@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Impulse Airlines (VH-MML)</name>
+            <texture>Liveries/VH-MML.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>
