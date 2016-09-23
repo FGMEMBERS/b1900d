@@ -1315,7 +1315,7 @@
     <animation>
         <type>rotate</type>
         <object-name>Rudder</object-name>
-        <property>controls/flight/rudder</property>
+        <property>surface-positions/rudder-pos-norm</property>
         <factor>25</factor>
         <center>
             <x-m>8.909</x-m>
@@ -1332,8 +1332,14 @@
     <animation>
         <type>rotate</type>
         <object-name>LHelevator</object-name>
-        <property>surface-positions/elevator-pos-norm</property>
-        <factor>15</factor>
+        <expression>
+          <table>
+            <property>surface-positions/elevator-pos-norm</property>
+            <entry><ind>-1</ind><dep>-19.5</dep></entry>
+            <entry><ind> 0</ind><dep>  0  </dep></entry>
+            <entry><ind> 1</ind><dep> 14.0</dep></entry>
+          </table>
+        </expression>
         <center>
             <x-m>9.755</x-m>
             <y-m>-1.371</y-m>
@@ -1350,7 +1356,14 @@
         <type>rotate</type>
         <object-name>RHelevator</object-name>
         <property>surface-positions/elevator-pos-norm</property>
-        <factor>15</factor>
+        <expression>
+          <table>
+            <property>surface-positions/elevator-pos-norm</property>
+            <entry><ind>-1</ind><dep>-19.5</dep></entry>
+            <entry><ind> 0</ind><dep>  0  </dep></entry>
+            <entry><ind> 1</ind><dep> 14.0</dep></entry>
+          </table>
+        </expression>
         <center>
             <x-m>9.755</x-m>
             <y-m>1.371</y-m>
@@ -1400,8 +1413,14 @@
     <animation>
         <type>rotate</type>
         <object-name>RHaileron</object-name>
-        <property>surface-positions/right-aileron-pos-norm</property>
-        <factor>10</factor>
+        <expression>
+          <table>
+            <property>surface-positions/right-aileron-pos-norm</property>
+            <entry><ind>-1</ind><dep>-17.1</dep></entry>
+            <entry><ind> 0</ind><dep>  0  </dep></entry>
+            <entry><ind> 1</ind><dep> 24.1</dep></entry>
+          </table>
+        </expression>
         <center>
             <x-m>0.942</x-m>
             <y-m>4.876</y-m>
@@ -1451,8 +1470,14 @@
     <animation>
         <type>rotate</type>
         <object-name>LHaileron</object-name>
-        <property>surface-positions/left-aileron-pos-norm</property>
-        <factor>10</factor>
+        <expression>
+          <table>
+            <property>surface-positions/left-aileron-pos-norm</property>
+            <entry><ind>-1</ind><dep>-17.1</dep></entry>
+            <entry><ind> 0</ind><dep>  0  </dep></entry>
+            <entry><ind> 1</ind><dep> 24.1</dep></entry>
+          </table>
+        </expression>
         <center>
             <x-m>0.942</x-m>
             <y-m>-4.876</y-m>
