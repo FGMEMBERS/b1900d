@@ -1332,7 +1332,7 @@
     <animation>
         <type>rotate</type>
         <object-name>LHelevator</object-name>
-        <property>controls/flight/elevator</property>
+        <property>surface-positions/elevator-pos-norm</property>
         <factor>15</factor>
         <center>
             <x-m>9.755</x-m>
@@ -1349,7 +1349,7 @@
     <animation>
         <type>rotate</type>
         <object-name>RHelevator</object-name>
-        <property>controls/flight/elevator</property>
+        <property>surface-positions/elevator-pos-norm</property>
         <factor>15</factor>
         <center>
             <x-m>9.755</x-m>
@@ -1400,7 +1400,7 @@
     <animation>
         <type>rotate</type>
         <object-name>RHaileron</object-name>
-        <property>controls/flight/aileron</property>
+        <property>surface-positions/right-aileron-pos-norm</property>
         <factor>10</factor>
         <center>
             <x-m>0.942</x-m>
@@ -1451,8 +1451,8 @@
     <animation>
         <type>rotate</type>
         <object-name>LHaileron</object-name>
-        <property>controls/flight/aileron</property>
-        <factor>-10</factor>
+        <property>surface-positions/left-aileron-pos-norm</property>
+        <factor>10</factor>
         <center>
             <x-m>0.942</x-m>
             <y-m>-4.876</y-m>

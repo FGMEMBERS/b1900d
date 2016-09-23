@@ -887,7 +887,7 @@
         <object-name>Nosegear.lamp</object-name>
         <condition>
             <and>
-                <property>/controls/lighting/master-panel</property>
+                <property>controls/lighting/master-panel</property>
                 <property>systems/electrical/outputs/triple-fed-bus</property>
                 <equals>
                     <property>gear/gear[0]/position-norm</property>
@@ -902,7 +902,7 @@
         <object-name>LHgear.lamp</object-name>
         <condition>
             <and>
-                <property>/controls/lighting/master-panel</property>
+                <property>controls/lighting/master-panel</property>
                 <property>systems/electrical/outputs/triple-fed-bus</property>
                 <equals>
                     <property>gear/gear[1]/position-norm</property>
@@ -917,7 +917,7 @@
         <object-name>RHgear.lamp</object-name>
         <condition>
             <and>
-                <property>/controls/lighting/master-panel</property>
+                <property>controls/lighting/master-panel</property>
                 <property>systems/electrical/outputs/triple-fed-bus</property>
                 <equals>
                     <property>gear/gear[2]/position-norm</property>
