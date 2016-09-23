@@ -3,7 +3,7 @@
 
 <PropertyList>
 
-    <filter>
+    <filter> <!-- Heading bug offset -->
         <name>heading bug</name>
         <debug>false</debug>
         <type>gain</type>
@@ -22,8 +22,8 @@
         <gain>1.0</gain>
     </filter>
 
-    <filter>
-        <name>nav1 heading </name>
+    <filter> <!-- NAV1 heading offset -->
+        <name>NAV1 heading </name>
         <debug>false</debug>
         <type>gain</type>
         <input>
@@ -41,8 +41,8 @@
         <gain>1.0</gain>
     </filter>
 
-    <filter>
-        <name>nav2 heading </name>
+    <filter> <!-- NAV2 heading offset -->
+        <name>NAV2 heading </name>
         <debug>false</debug>
         <type>gain</type>
         <input>
@@ -60,8 +60,8 @@
         <gain>1.0</gain>
     </filter>
 
-    <filter>
-        <name>crs1 heading </name>
+    <filter> <!-- CRS1 heading offset -->
+        <name>CRS1 heading </name>
         <debug>false</debug>
         <type>gain</type>
         <input>
@@ -79,7 +79,7 @@
         <gain>1.0</gain>
     </filter>
 
-    <filter>
+    <filter> <!-- CRS2 heading offset -->
         <name>crs2 heading </name>
         <debug>false</debug>
         <type>gain</type>
@@ -98,87 +98,11 @@
         <gain>1.0</gain>
     </filter>
 
-    <filter>
-        <name>vbar pitch</name>
-        <debug>false</debug>
-        <type>gain</type>
-        <input>
-            <property>instrumentation/fgc-65/internal/fd/pitch</property>
-            <offset>
-                <property>orientation/pitch-deg</property>
-                <scale>-1</scale>
-            </offset>
-        </input>
-        <output>instrumentation/fgc-65/internal/fd/vbar-pitch</output>
-        <period>
-            <min>-30</min>
-            <max>30</max>
-        </period>
-        <gain>1.0</gain>
-    </filter>
-
-    <filter>
-        <name>vbar roll</name>
-        <debug>false</debug>
-        <type>gain</type>
-        <input>
-            <property>instrumentation/fgc-65/internal/fd/roll</property>
-            <offset>
-                <property>orientation/roll-deg</property>
-                <scale>-1</scale>
-            </offset>
-        </input>
-        <output>instrumentation/fgc-65/internal/fd/vbar-roll</output>
-        <period>
-            <min>-30</min>
-            <max>30</max>
-        </period>
-        <gain>1.0</gain>
-    </filter>
-
 <!--
-
-
-                                               Lateral
-
-
+                   Lateral Controllers
 -->
 
-    <pi-simple-controller>
-        <name>ROLL</name>
-        <debug>false</debug>
-        <enable>
-            <condition>
-                <equals>
-                    <property>instrumentation/fgc-65/internal/lateral</property>
-                    <value>ROLL</value>
-                </equals>
-            </condition>
-        </enable>
-        <input>
-            <property>/orientation/roll-deg</property>
-        </input>
-        <reference>
-            <property>instrumentation/fgc-65/settings/roll</property>
-        </reference>
-        <output>
-            <property>instrumentation/fgc-65/internal/fd/roll</property>
-        </output>
-        <config>
-            <Kp>0.5</Kp>
-            <Ki>0.0</Ki>
-            <min>
-                <property>instrumentation/fgc-65/app-65a/BANK</property>
-                <scale>-30.0</scale>
-            </min>
-            <max>
-                <property>instrumentation/fgc-65/app-65a/BANK</property>
-                <scale>30.0</scale>
-            </max>
-        </config>
-    </pi-simple-controller>
-
-    <pi-simple-controller>
+    <pi-simple-controller> <!-- Heading hold -->
         <name>Heading Hold</name>
         <debug>false</debug>
         <enable>
@@ -212,7 +136,7 @@
         </config>
     </pi-simple-controller>
 
-    <pi-simple-controller>
+    <pi-simple-controller> <!-- NAV1 hold -->
         <name>Nav1 Hold</name>
         <debug>false</debug>
         <enable>
@@ -247,7 +171,7 @@
         </config>
     </pi-simple-controller>
 
-    <pi-simple-controller>
+    <pi-simple-controller> <!-- ILS hold -->
         <name>ILS Hold</name>
         <debug>false</debug>
         <enable>
@@ -280,7 +204,41 @@
         </config>
     </pi-simple-controller>
 
-    <pid-controller>
+    <pi-simple-controller> <!-- Roll -->
+        <name>Roll</name>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <equals>
+                    <property>instrumentation/fgc-65/internal/lateral</property>
+                    <value>ROLL</value>
+                </equals>
+            </condition>
+        </enable>
+        <input>
+            <property>/orientation/roll-deg</property>
+        </input>
+        <reference>
+            <property>instrumentation/fgc-65/settings/roll</property>
+        </reference>
+        <output>
+            <property>instrumentation/fgc-65/internal/fd/roll</property>
+        </output>
+        <config>
+            <Kp>1.0</Kp>
+            <Ki>0.35</Ki>
+            <min>
+                <property>instrumentation/fgc-65/app-65a/BANK</property>
+                <scale>-30.0</scale>
+            </min>
+            <max>
+                <property>instrumentation/fgc-65/app-65a/BANK</property>
+                <scale>30.0</scale>
+            </max>
+        </config>
+    </pi-simple-controller>
+
+    <pid-controller> <!-- Aileron Controller -->
         <name>Aileron Control</name>
         <debug>false</debug>
         <input>
@@ -293,22 +251,22 @@
             <property>controls/flight/aileron-filter</property>
         </output>
         <config>
-            <Kp>0.015</Kp>
+            <Kp>0.01</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
-            <Ti>10.0</Ti>
+            <Ti>25.0</Ti>
             <Td>0.01</Td>
             <min>
-                <value>-0.9</value>
+                <value>-1.0</value>
             </min>
             <max>
-                <value>0.9</value>
+                <value>1.0</value>
             </max>
         </config>
     </pid-controller>
 
-<filter>
+    <filter> <!-- Aileron output filter -->
         <name>aileron filter</name>
         <debug>false</debug>
         <feedback-if-disabled>false</feedback-if-disabled>
@@ -326,21 +284,16 @@
         </input>
         <output>controls/flight/aileron-trim</output>
         <type>noise-spike</type>
-        <max-rate-of-change>0.2</max-rate-of-change>
+        <max-rate-of-change>0.3</max-rate-of-change>
         <min>-1</min>
         <max>1</max>
     </filter>
 
 <!--
-
-
-                         Pitch Axis Modes
-
-
+                         Pitch Controllers
 -->
-
-   <pi-simple-controller>
-        <name>Pitch</name>
+    <filter> <!-- V/S Sample for ALT Hold/Track V/S to make smooth transitions -->
+        <name>V/S Sample</name>
         <debug>false</debug>
         <enable>
             <condition>
@@ -350,84 +303,35 @@
                 </equals>
             </condition>
         </enable>
-        <input>
-            <property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
-        </input>
-        <reference>
-            <property>instrumentation/fgc-65/settings/pitch</property>
-        </reference>
-        <output>
-            <property>instrumentation/fgc-65/internal/fd/pitch</property>
-        </output>
-        <config>
-            <Kp>1</Kp>
-            <Ki>0.0</Ki>
-            <min>-15.0</min>
-            <max>30.0</max>
-        </config>
-    </pi-simple-controller>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>autopilot/internal/vert-speed-fpm</input>
+        <output>instrumentation/fgc-65/settings/vs</output>
+    </filter>
 
-    <pi-simple-controller>
-        <name>Altitude Hold Stage 1</name>
+    <filter> <!-- Altitude hold -->
+        <name>Altitude hold</name>
         <debug>false</debug>
         <enable>
-            <condition>
-                <equals>
-                    <property>instrumentation/fgc-65/internal/vertical</property>
-                    <value>ALT</value>
-                </equals>
-            </condition>
+            <property>instrumentation/fgc-65/internal/vertical</property>
+            <value>ALT</value>
         </enable>
+        <type>gain</type>
         <input>
             <property>instrumentation/altimeter/indicated-altitude-ft</property>
         </input>
         <reference>
             <property>instrumentation/fgc-65/settings/alt</property>
         </reference>
+        <gain>-1.0</gain>
         <output>
-            <property>instrumentation/fgc-65/internal/climb-fps</property>
+            <property>instrumentation/fgc-65/settings/vs</property>
         </output>
-        <config>
-            <Kp>1.0</Kp>
-            <Ki>0.0</Ki>
-            <min>-33.33</min>
-            <max>50</max>
-        </config>
-    </pi-simple-controller>
+        <min>-1500</min>
+        <max>2000</max>
+    </filter>
 
-    <pid-controller>
-        <name>Altitude Hold Stage 2</name>
-        <debug>false</debug>
-        <enable>
-        <condition>
-                <equals>
-                    <property>instrumentation/fgc-65/internal/vertical</property>
-                    <value>ALT</value>
-                </equals>
-            </condition>
-        </enable>
-        <input>
-            <property>/velocities/vertical-speed-fps</property>
-        </input>
-        <reference>
-            <property>instrumentation/fgc-65/internal/climb-fps</property>
-        </reference>
-        <output>
-            <property>instrumentation/fgc-65/internal/fd/pitch</property>
-        </output>
-        <config>
-            <Kp>1</Kp>
-            <beta>1.0</beta>
-            <alpha>0.1</alpha>
-            <gamma>0.0</gamma>
-            <Ti>30.0</Ti>
-            <Td>0.00001</Td>
-            <min>-10.0</min>
-            <max>20.0</max>
-        </config>
-    </pid-controller>
-
-    <pi-simple-controller>
+    <pi-simple-controller> <!-- Glideslope hold -->
         <name>Glideslope Hold</name>
         <debug>false</debug>
         <enable>
@@ -450,44 +354,12 @@
         <config>
             <Kp>1.0</Kp>
             <Ki>0.0</Ki>
-             <min>-1</min>
+            <min>-1</min>
             <max>1</max>
         </config>
     </pi-simple-controller>
 
-<pid-controller>
-    <name>Vertical Speed Hold</name>
-    <debug>false</debug>
-    <enable>
-            <condition>
-                <equals>
-                    <property>instrumentation/fgc-65/internal/vertical</property>
-                    <value>VS</value>
-                </equals>
-            </condition>
-        </enable>
-        <input>
-            <property>/autopilot/internal/vert-speed-fpm</property>
-        </input>
-        <reference>
-            <property>instrumentation/fgc-65/settings/vs</property>
-        </reference>
-        <output>
-            <property>instrumentation/fgc-65/internal/fd/pitch</property>
-        </output>
-    <config>
-      <Kp>0.01</Kp>
-      <beta>1.0</beta>
-      <alpha>0.1</alpha>
-      <gamma>0.0</gamma>
-      <Ti>10.0</Ti>
-      <Td>0.00001</Td>
-      <min>-10</min>
-      <max>30</max>
-    </config>
-  </pid-controller>
-
-    <pid-controller>
+    <pid-controller> <!-- IAS hold -->
         <name>IAS</name>
         <debug>false</debug>
         <enable>
@@ -514,12 +386,112 @@
             <gamma>0.0</gamma>
             <Ti>10.0</Ti>
             <Td>0.0</Td>
-             <min>-1</min>
+            <min>-1</min>
             <max>1</max>
         </config>
     </pid-controller>
 
-    <pid-controller>
+    <filter> <!-- Pitch Sample for V/S Hold -->
+      <name>Pitch Sample</name>
+      <debug>false</debug>
+      <enable>
+          <condition>
+              <not-equals>
+                  <property>instrumentation/fgc-65/internal/vertical</property>
+                  <value>VS</value>
+              </not-equals>
+          </condition>
+      </enable>
+      <type>gain</type>
+      <gain>1.0</gain>
+      <input>orientation/pitch-deg</input>
+      <output>instrumentation/fgc-65/internal/fd/pitch</output>
+    </filter>
+
+    <pid-controller> <!-- Vertical speed hold -->
+        <name>Vertical speed hold</name>
+        <debug>false</debug>
+        <enable>
+            <or>
+                <condition>
+                    <equals>
+                        <property>instrumentation/fgc-65/internal/vertical</property>
+                        <value>VS</value>
+                    </equals>
+                    <equals>
+                        <property>instrumentation/fgc-65/internal/vertical</property>
+                        <value>ALT</value>
+                    </equals>
+                </condition>
+            </or>
+        </enable>
+        <input>
+            <property>autopilot/internal/vert-speed-fpm</property>
+        </input>
+        <reference>
+            <property>instrumentation/fgc-65/settings/vs</property>
+        </reference>
+        <output>
+            <property>instrumentation/fgc-65/internal/fd/pitch</property>
+        </output>
+        <config>
+            <Kp>0.0005</Kp>
+            <beta>1.0</beta>
+            <alpha>0.1</alpha>
+            <gamma>0.0</gamma>
+            <Ti>1.0</Ti>
+            <Td>0.00001</Td>
+            <min>-10</min>
+            <max>20</max>
+        </config>
+    </pid-controller>
+
+    <filter> <!-- Pitch tracking for smooth transitions -->
+        <name>Pitch tracking</name>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <not-equals>
+                    <property>instrumentation/fgc-65/internal/vertical</property>
+                    <value>PITCH</value>
+                </not-equals>
+            </condition>
+        </enable>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>orientation/pitch-deg</input>
+        <output>instrumentation/fgc-65/settings/pitch</output>
+    </filter>
+
+    <pi-simple-controller> <!-- Pitch -->
+        <name>Pitch</name>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <equals>
+                    <property>instrumentation/fgc-65/internal/vertical</property>
+                    <value>PITCH</value>
+                </equals>
+            </condition>
+        </enable>
+        <input>
+            <property>orientation/pitch-deg</property>
+        </input>
+        <reference>
+            <property>instrumentation/fgc-65/settings/pitch</property>
+        </reference>
+        <output>
+            <property>instrumentation/fgc-65/internal/fd/pitch</property>
+        </output>
+        <config>
+            <Kp>1.0</Kp>
+            <Ki>0.0</Ki>
+            <u_min>-15</u_min>
+            <u_max>30</u_max>
+        </config>
+    </pi-simple-controller>
+
+    <pid-controller> <!-- Elevator trim controller -->
         <name>Elevator Trim Control</name>
         <debug>false</debug>
         <enable>
@@ -531,25 +503,48 @@
             </condition>
          </enable>
         <input>
-            <prop>orientation/pitch-deg</prop>
+            <property>orientation/pitch-deg</property>
         </input>
         <reference>
-            <prop>instrumentation/fgc-65/internal/fd/pitch</prop>
+            <property>instrumentation/fgc-65/internal/fd/pitch</property>
         </reference>
         <output>
-            <prop>controls/flight/elevator-trim</prop>
+            <property>controls/flight/elevator-filter</property>
         </output>
         <config>
-            <Kp>-0.015</Kp>
+            <Kp>-0.05</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
             <Ti>10.0</Ti>
-            <Td>0.00001</Td>
-            <min>-1</min>
-            <max>1</max>
+            <Td>0.0001</Td>
+            <u_min>-1</u_min>
+            <u_max>1</u_max>
         </config>
     </pid-controller>
 
-</PropertyList>
+    <filter> <!-- Elevator filter -->
+      <name>Elevator filter</name>
+      <debug>false</debug>
+      <feedback-if-disabled>false</feedback-if-disabled>
+      <initialize-to>output</initialize-to>
+      <enable>
+          <condition>
+              <equals>
+                  <property>instrumentation/fgc-65/app-65a/AP</property>
+                  <value>AP</value>
+              </equals>
+          </condition>
+       </enable>
+      <input>
+          <property>controls/flight/elevator-filter</property>
+      </input>
+      <output>controls/flight/elevator-trim</output>
+      <type>noise-spike</type>
+      <max-rate-of-change>0.3</max-rate-of-change>
+      <min>-1</min>
+      <max>1</max>
 
+    </filter>
+
+</PropertyList>

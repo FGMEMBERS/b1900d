@@ -80,18 +80,18 @@
         </offsets>
     </model>
 
-        <animation>
-            <type>select</type>
-            <object-name>shadow</object-name>
-            <condition>
-                <and>
-                    <property>sim/model/shadow-2d</property>
-                    <not>
-                        <property>/sim/rendering/rembrandt/enabled</property>
-                    </not>
-                </and>
-            </condition>
-        </animation>
+    <animation>
+        <type>select</type>
+        <object-name>shadow</object-name>
+        <condition>
+            <and>
+                <property>sim/model/shadow-2d</property>
+                <not>
+                    <property>/sim/rendering/rembrandt/enabled</property>
+                </not>
+            </and>
+        </condition>
+    </animation>
 
 <!-- Normal shader effect. Separate effects required for each normal map texture -->
     <effect>
@@ -135,27 +135,27 @@
     </effect>
 
 <!--  REMBRANDT support for transparent objects -->
-<effect>
-  <inherits-from>Aircraft/b1900d/Models/Effects/glass_reflect</inherits-from>
-  <object-name>Glass</object-name>
-  <object-name>Windows</object-name>
-</effect>
+    <effect>
+        <inherits-from>Aircraft/b1900d/Models/Effects/glass_reflect</inherits-from>
+        <object-name>Glass</object-name>
+        <object-name>Windows</object-name>
+    </effect>
 
-<effect>
-  <inherits-from>Effects/model-transparent</inherits-from>
-  <object-name>LHSlowprop</object-name>
-  <object-name>RHSlowprop</object-name>
-  <object-name>LHFastprop</object-name>
-  <object-name>RHFastprop</object-name>
-    <object-name>RHflare</object-name>
-  <object-name>LHflare</object-name>
-  <object-name>navlight.glow</object-name>
-  <object-name>Taxi-light</object-name>
-  <object-name>Beacon1</object-name>
-  <object-name>Beacon2</object-name>
-  <object-name>Strobe1</object-name>
-  <object-name>Strobe2</object-name>
-</effect>
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>LHSlowprop</object-name>
+        <object-name>RHSlowprop</object-name>
+        <object-name>LHFastprop</object-name>
+        <object-name>RHFastprop</object-name>
+        <object-name>RHflare</object-name>
+        <object-name>LHflare</object-name>
+        <object-name>navlight.glow</object-name>
+        <object-name>Taxi-light</object-name>
+        <object-name>Beacon1</object-name>
+        <object-name>Beacon2</object-name>
+        <object-name>Strobe1</object-name>
+        <object-name>Strobe2</object-name>
+    </effect>
 
 <!-- GLASS REFLECTION -->
     <effect>
@@ -166,7 +166,7 @@
 
 <!-- CHROME REFLECTION -->
     <effect>
-        <inherits-from>Aircraft/b1900d/Models/Effects/chrome-parts</inherits-from> 
+        <inherits-from>Aircraft/b1900d/Models/Effects/chrome-parts</inherits-from>
         <object-name>RHspinner</object-name>
         <object-name>LHspinner</object-name>
         <object-name>RHshock</object-name>
@@ -201,7 +201,7 @@
         <object-name>Lblade.002</object-name>
         <object-name>Lblade.003</object-name>
     </animation>
-    
+
     <animation>
         <name>Frtgear</name>
         <object-name>FTire</object-name>
@@ -241,7 +241,7 @@
             </greater-than>
         </condition>
     </animation>
-  
+
     <animation>
         <type>select</type>
         <object-name>LHSlowprop</object-name>
@@ -256,7 +256,7 @@
             </less-than>
         </condition>
     </animation>
-  
+
     <animation>
         <type>select</type>
         <object-name>LHprop</object-name>
@@ -284,7 +284,7 @@
             <z>0.0</z>
         </axis>
     </animation>
- 
+
     <animation>
         <type>spin</type>
         <object-name>LHSlowprop</object-name>
@@ -330,7 +330,7 @@
             <z>-1.0</z>
         </axis>
     </animation>
-    
+
     <animation>
         <type>rotate</type>
         <object-name>Lblade.002</object-name>
@@ -357,7 +357,7 @@
             <z>1.0</z>
         </axis>
     </animation>
-    
+
     <animation>
         <type>rotate</type>
         <object-name>Lblade.001</object-name>
@@ -384,7 +384,7 @@
             <z>0.0</z>
         </axis>
     </animation>
-    
+
     <animation>
         <type>rotate</type>
         <object-name>Lblade.003</object-name>
@@ -411,9 +411,9 @@
             <z>0.0</z>
         </axis>
     </animation>
-    
+
 <!--####    RH ENGINE    ####-->
-    
+
     <animation>
         <type>select</type>
         <object-name>RHFastprop</object-name>
@@ -424,7 +424,7 @@
             </greater-than>
         </condition>
     </animation>
-  
+
     <animation>
         <type>select</type>
         <object-name>RHSlowprop</object-name>
@@ -439,7 +439,7 @@
             </less-than>
         </condition>
     </animation>
-    
+
     <animation>
         <type>select</type>
         <object-name>RHprop</object-name>
@@ -450,7 +450,7 @@
             </less-than>
         </condition>
     </animation>
-    
+
     <animation>
         <type>spin</type>
         <object-name>RHprop</object-name>
@@ -467,12 +467,12 @@
             <z>0.0</z>
         </axis>
     </animation>
-    
+
     <animation>
         <type>spin</type>
         <object-name>RHSlowprop</object-name>
         <property>engines/engine[1]/n1</property>
-        <factor>.5</factor>   
+        <factor>.5</factor>
         <center>
             <x-m>-2.226</x-m>
             <y-m>2.634</y-m>
@@ -511,7 +511,7 @@
             <z>-1.0</z>
         </axis>
     </animation>
-    
+
     <animation>
         <type>rotate</type>
         <object-name>Rblade.002</object-name>
@@ -538,7 +538,7 @@
             <z>1.0</z>
         </axis>
     </animation>
-    
+
     <animation>
         <type>rotate</type>
         <object-name>Rblade.001</object-name>
@@ -565,7 +565,7 @@
             <z>0.0</z>
         </axis>
     </animation>
-    
+
     <animation>
         <type>rotate</type>
         <object-name>Rblade.003</object-name>
@@ -659,7 +659,7 @@
             <property>sim/multiplay/generic/float[1]</property>
         </condition>
     </animation>
-    
+
     <animation>
         <type>translate</type>
         <object-name>Beacon1</object-name>
@@ -669,12 +669,12 @@
             <z>-0.477</z>
         </axis>
     </animation>
-    
+
     <animation>
         <type>billboard</type>
         <object-name>Beacon1</object-name>
     </animation>
-  
+
       <animation>
         <type>dist-scale</type>
         <object-name>Beacon1</object-name>
@@ -691,8 +691,8 @@
             <property>sim/multiplay/generic/float[2]</property>
         </condition>
     </animation>
-      
-    
+
+
     <animation>
         <type>translate</type>
         <object-name>Beacon2</object-name>
@@ -702,7 +702,7 @@
             <z>0.272</z>
         </axis>
     </animation>
-    
+
     <animation>
         <type>billboard</type>
         <object-name>Beacon2</object-name>
@@ -736,12 +736,12 @@
             <z>-0.020</z>
         </axis>
     </animation>
-    
+
     <animation>
         <type>billboard</type>
         <object-name>Strobe1</object-name>
     </animation>
-  
+
         <animation>
         <type>dist-scale</type>
         <object-name>Strobe1</object-name>
@@ -934,7 +934,7 @@
             <z>0</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>frtWheeldoor</object-name>
@@ -1046,7 +1046,7 @@
             <z>0</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>RHgeardoor1</object-name>
@@ -1073,7 +1073,7 @@
             <z>0</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>RHgeardoor2</object-name>
@@ -1311,7 +1311,7 @@
     </animation>
 
 <!--####    Surface Positions    ####-->
- 
+
     <animation>
         <type>rotate</type>
         <object-name>Rudder</object-name>
@@ -1328,11 +1328,11 @@
             <z>0.63</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>LHelevator</object-name>
-        <property>surface-positions/elevator-pos-norm</property>
+        <property>controls/flight/elevator</property>
         <factor>15</factor>
         <center>
             <x-m>9.755</x-m>
@@ -1345,11 +1345,11 @@
             <z>0.0</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>RHelevator</object-name>
-        <property>surface-positions/elevator-pos-norm</property>
+        <property>controls/flight/elevator</property>
         <factor>15</factor>
         <center>
             <x-m>9.755</x-m>
@@ -1362,7 +1362,7 @@
             <z>0.0</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>RHflap</object-name>
@@ -1379,7 +1379,7 @@
             <z>9</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>RHflap1</object-name>
@@ -1396,11 +1396,11 @@
             <z>9</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>RHaileron</object-name>
-        <property>surface-positions/right-aileron-pos-norm</property>
+        <property>controls/flight/aileron</property>
         <factor>10</factor>
         <center>
             <x-m>0.942</x-m>
@@ -1413,7 +1413,7 @@
             <z>9</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>LHflap</object-name>
@@ -1430,7 +1430,7 @@
             <z>-9</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>LHflap1</object-name>
@@ -1447,12 +1447,12 @@
             <z>-9</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>LHaileron</object-name>
-        <property>surface-positions/left-aileron-pos-norm</property>
-        <factor>10</factor>
+        <property>controls/flight/aileron</property>
+        <factor>-10</factor>
         <center>
             <x-m>0.942</x-m>
             <y-m>-4.876</y-m>

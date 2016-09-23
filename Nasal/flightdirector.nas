@@ -18,6 +18,8 @@ var FCP_65=FGC_65.getNode("fcp-65",1);
     var vs_btn=FCP_65.initNode("vs-btn",0,"BOOL");
     var ias_btn=FCP_65.initNode("ias-btn",0,"BOOL");
     var dsc_btn=FCP_65.initNode("dsc-btn",0,"BOOL");
+    var pitchdn_btn=FCP_65.initNode("pitchdn-btn", -1, "INT");
+    var pitchup_btn=FCP_65.initNode("pitchup-btn", 1, "INT");
 var Internal=FGC_65.getNode("internal",1);
     var appr_armed=Internal.initNode("appr-armed",0,"BOOL");
     var appr_enabled=Internal.initNode("appr-active",0,"BOOL");
@@ -41,7 +43,7 @@ var Settings=FGC_65.getNode("settings",1);
     var ias_tgt=Settings.initNode("ias",0,"INT");
     var pitch_tgt=Settings.initNode("pitch",0,"DOUBLE");
     var roll_tgt=Settings.initNode("roll",0,"DOUBLE");
-    var vs_tgt=Settings.initNode("vs",0,"INT");
+    var vs_tgt=Settings.initNode("vs",0.0,"DOUBLE");
 
 var gps_enabled=props.globals.initNode("instrumentation/nav/slaved-to-gps");
 var localizer=props.globals.initNode("instrumentation/nav/nav-loc");
@@ -82,7 +84,6 @@ setlistener("instrumentation/nav/slaved-to-gps", func(gps) {
         nav_enabled.setValue(0);
     }
 });
-
 
 var btn_pressed=func(btn,val,unit){
     if(fgc_power==0)return;
@@ -161,6 +162,24 @@ var FCP65_input = func(mode){
             }
         }else tmp ="PITCH";
         Vmode.setValue(tmp);
+    } elsif (mode == "clmb") {
+      tmp = Vmode.getValue();
+      if (tmp != "CLMB") {
+        if(Lmode.getValue()  !=  "ROLL" or AP.getValue() ==  "AP") {
+          tmp = "CLMB";
+          setprop("instrumentation/fgc-65/settings/vs", 2000);
+        }
+      } else tmp = "ALT";
+      Vmode.setValue(tmp);
+    } elsif (mode == "dsc") {
+      tmp = Vmode.getValue();
+      if (tmp != "DSC") {
+        if(Lmode.getValue()  !=  "ROLL" or AP.getValue() ==  "AP") {
+          tmp = "DSC";
+          setprop("instrumentation/fgc-65/settings/vs", -1500);
+        }
+      } else tmp = "ALT";
+      Vmode.setValue(tmp);
     }
 }
 
@@ -170,14 +189,15 @@ var APP65_input = func(mode){
         var ap = AP.getValue();
         if(ap!="AP"){
         AP.setValue("AP");
+        Vmode.setValue("PITCH");
+        set_pitch();
         if(!yd_btn.getValue())yd_btn.setValue(1);
-        if(Vmode.getValue()=="PITCH") set_pitch();
         if(Lmode.getValue()=="ROLL") set_roll();
         } else AP.setValue("");
     }elsif(mode=="yd"){
         var yd = yd_btn.getValue();
         yd=1-yd;
-         yd_btn.setValue(yd);
+        yd_btn.setValue(yd);
     }elsif(mode=="sr"){
         var sr = sr_btn.getValue();
         sr=1-sr;
@@ -186,10 +206,16 @@ var APP65_input = func(mode){
         tmp=half_btn.getValue();
         if(tmp==1)tmp=0.5 else tmp=1;
         half_btn.setValue(tmp);
+    }elsif(mode=="pitch-dn"){
+        var pd = pitchdn_btn.getValue();
+        pitch_wheel(pd);
+    }elsif(mode=="pitch-up"){
+        var pu = pitchup_btn.getValue();
+        pitch_wheel(pu);
     }
 }
 
-pitch_wheel = func(dir){
+var pitch_wheel = func(dir){
     if(fgc_power==0)return;
     var tmp = Vmode.getValue();
     if(tmp=="VS"){
@@ -307,12 +333,12 @@ var test_alerter=func {
 }
 
 var update_fd = func {
-    
+
     if(count==0)monitor_Larmed();
     if(count==1)monitor_Varmed();
     if(count==2)monitor_faults();
     if(count==3)test_alerter();
     count+=1;
     if(count>3)count=0;
-settimer(update_fd, 0); 
+settimer(update_fd, 0);
 }
