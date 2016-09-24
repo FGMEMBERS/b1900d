@@ -348,13 +348,11 @@ left_gen_bus = func() {
 	setprop("/systems/electrical/outputs/lights/landing-lights[0]", 1*left_landing_light);
 	setprop("/systems/electrical/outputs/lights/landing-lights[1]", 1*right_landing_light);
     setprop("/systems/electrical/outputs/lights/logo-lights", 1*logo_light);
-    if (taxi_light) setprop("/systems/electrical/outputs/lights/taxi-lights", 1*bus_volts);
-	if (ice_light) setprop("/systems/electrical/outputs/lights/ice-lights", 1*bus_volts);
-	if (nav_light) setprop("/systems/electrical/outputs/lights/nav-lights", bus_volts);
-    if (master_panel_switch) {
-        setprop("/systems/electrical/outputs/lights/instrument-lights", 1*bus_volts);
-	    setprop("/systems/electrical/outputs/lights/eng-lights", 1*bus_volts);
-    }
+    setprop("/systems/electrical/outputs/lights/taxi-lights", taxi_light*bus_volts);
+	setprop("/systems/electrical/outputs/lights/ice-lights", ice_light*bus_volts);
+	setprop("/systems/electrical/outputs/lights/nav-lights", nav_light*bus_volts);
+    setprop("/systems/electrical/outputs/lights/instrument-lights", master_panel_switch*bus_volts);
+    setprop("/systems/electrical/outputs/lights/eng-lights", master_panel_switch*bus_volts);
     # setprop("/systems/electrical/outputs/lights/beacon[0]", 1*beacon_light);
 	# setprop("/systems/electrical/outputs/lights/beacon[1]", 1*beacon_light);
 	# setprop("/systems/electrical/outputs/lights/strobe", 1*bus_volts);
