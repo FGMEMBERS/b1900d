@@ -1,5 +1,6 @@
-####B1900d systems
+#### B1900d systems
 #### Syd Adams
+#### Jasin Colegrove (jasin at coleburt dot com)
 
 
 aircraft.livery.init("Aircraft/b1900d/Models/Liveries");
@@ -298,17 +299,27 @@ var update_fuel = func{
         setprop("consumables/fuel/gauge[0]",getprop("consumables/fuel/tank[0]/level-lbs"));
         setprop("consumables/fuel/gauge[1]",getprop("consumables/fuel/tank[1]/level-lbs"));
     }
-
+    
+    ## Check for empty tanks and make them inactive so collector tanks can drain
+    ## ELSE select the non-empty tank
     if(getprop("consumables/fuel/tank[2]/selected")){
         if(getprop("consumables/fuel/tank[2]/level-lbs") == 0.0){
             setprop("consumables/fuel/tank[2]/selected",0);
-            setprop("consumables/fuel/tank[0]/selected",1);
+            if(getprop("consumables/fuel/tank[0]/level-lbs") == 0.0){
+                setprop("consumables/fuel/tank[0]/selected",0);
+            } else {
+                setprop("consumables/fuel/tank[0]/selected",1);
             }
         }
+    }
     if(getprop("consumables/fuel/tank[3]/selected")){
         if(getprop("consumables/fuel/tank[3]/level-lbs") == 0.0){
             setprop("consumables/fuel/tank[3]/selected",0);
-            setprop("consumables/fuel/tank[1]/selected",1);
+            if(getprop("consumables/fuel/tank[1]/level-lbs") == 0.0){
+                setprop("consumables/fuel/tank[1]/selected",0);
+            } else {
+                setprop("consumables/fuel/tank[1]/selected",1);
+            }
         }
     }
 }

@@ -297,6 +297,11 @@ started July 2004 Syd Adams
             <ice-lights type="bool">0</ice-lights>
             <taxi-lights type="bool">0</taxi-lights>
             <master-panel type="bool">0</master-panel>
+            <dimmer>
+                <pilot type="int">25</pilot>
+                <engine type="int">25</engine>
+                <avionics type="int">25</avionics>
+            </dimmer>
         </lighting>
 
         <gear>

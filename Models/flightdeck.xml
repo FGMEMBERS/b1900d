@@ -3514,6 +3514,78 @@
         </center>
     </animation>
 
+<!--********************* OH panel knobs ********************-->
+
+    <animation>
+        <type>knob</type>
+        <object-name>Pilot.dimmer</object-name>
+        <property>/systems/electrical/outputs/lights/instrument-lights</property>
+        <axis>
+            <x1-m>-4.408</x1-m>
+            <y1-m>-0.126</y1-m>
+            <z1-m>0.572</z1-m>
+            <x2-m>-4.411</x2-m>
+            <y2-m>-0.126</y2-m>
+            <z2-m>0.577</z2-m>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/lighting/dimmer/pilot</property>
+                <factor>2</factor>
+                <min>0</min>
+                <max>25</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>Engine.dimmer</object-name>
+        <property>/systems/electrical/outputs/lights/eng-lights</property>
+        <axis>
+            <x1-m>-4.408</x1-m>
+            <y1-m>-0.0897</y1-m>
+            <z1-m>0.572</z1-m>
+            <x2-m>-4.411</x2-m>
+            <y2-m>-0.0897</y2-m>
+            <z2-m>0.577</z2-m>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/lighting/dimmer/engine</property>
+                <factor>2</factor>
+                <min>0</min>
+                <max>25</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>Avn.dimmer</object-name>
+        <axis>
+            <x1-m>-4.408</x1-m>
+            <y1-m>-0.054</y1-m>
+            <z1-m>0.572</z1-m>
+            <x2-m>-4.411</x2-m>
+            <y2-m>-0.054</y2-m>
+            <z2-m>0.577</z2-m>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/lighting/dimmer/avionics</property>
+                <factor>2</factor>
+                <min>0</min>
+                <max>25</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
 
 <!--********************* panel switches ***********************-->
 
@@ -5848,9 +5920,10 @@
         <object-name>Lturbine_txt</object-name>
         <object-name>Rturbine_txt</object-name>
         <emission>
-            <red>0.90</red>
-            <green>0.3</green>
-            <blue>0.0</blue>
+            <red>0.036</red>
+            <green>0.012</green>
+            <blue>0.00</blue>
+            <factor-prop>controls/lighting/dimmer/avionics</factor-prop>
         </emission>
         <diffuse>
             <red>0.0</red>
@@ -5883,9 +5956,9 @@
         <object-name>Oil.needle2</object-name>
         <object-name>Oil1.needle2</object-name>
         <emission>
-            <red>1.2</red>
-            <green>0.5</green>
-            <blue>0.2</blue>
+            <red>0.05</red>
+            <green>0.04</green>
+            <blue>0.04</blue>
             <factor-prop>systems/electrical/outputs/lights/eng-lights</factor-prop>
         </emission>
     </animation>
@@ -5974,9 +6047,9 @@
         <object-name>gpsENT.btn</object-name>
         <object-name>slipball</object-name>
         <emission>
-            <red>0.6</red>
-            <green>0.4</green>
-            <blue>0.4</blue>
+            <red>0.05</red>
+            <green>0.04</green>
+            <blue>0.04</blue>
             <factor-prop>/systems/electrical/outputs/lights/instrument-lights</factor-prop>
         </emission>
     </animation>
