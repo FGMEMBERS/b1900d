@@ -354,7 +354,7 @@ left_gen_bus = func() {
     setprop("/systems/electrical/outputs/lights/taxi-lights", taxi_light*bus_volts);
     setprop("/systems/electrical/outputs/lights/ice-lights", ice_light*bus_volts);
     setprop("/systems/electrical/outputs/lights/nav-lights", nav_light*bus_volts);
-    if (master_panel_switch) {
+    if (master_panel_switch and bus_volts) {
         setprop("/systems/electrical/outputs/lights/instrument-lights", pilot_dimmer);
         setprop("/systems/electrical/outputs/lights/eng-lights", engine_dimmer);
     } else {
@@ -382,33 +382,43 @@ right_gen_bus = func() {
 avionics_bus = func() {
 # we are fed from virtual bus
     var load = 0.0;
+    var avionics_dimmer = 0.0;
+    var pilot_efis_dimmer = 0.0;
+    var copilot_efis_dimmer = 0.0;
     var avionics_switch = getprop("/controls/electric/avionics-switch");
-    var avionics_dimmer = getprop("/controls/lighting/dimmer/avionics");
     var pilot_efis_switch = getprop("/controls/electric/efis/bank[0]");
     var copilot_efis_switch = getprop("/controls/electric/efis/bank[1]");
 
     if (avionics_switch){
-        var bus_volts = avionics_dimmer;
-    } else
+        avionics_dimmer = getprop("/controls/lighting/dimmer/avionics");
+        pilot_efis_dimmer = getprop("/controls/lighting/dimmer/pilot_efis");
+        copilot_efis_dimmer = getprop("/controls/lighting/dimmer/copilot_efis");
+    } else {
         bus_volts = 0.0;
+    }
 
-    setprop("/systems/electrical/outputs/nav[0]", bus_volts);
-    setprop("/systems/electrical/outputs/nav[1]", bus_volts);
-    setprop("/systems/electrical/outputs/comm[0]", bus_volts);
-    setprop("/systems/electrical/outputs/comm[1]", bus_volts);
-    setprop("/systems/electrical/outputs/dme", bus_volts);
-    setprop("/systems/electrical/outputs/adf", bus_volts);
-    setprop("/systems/electrical/outputs/gps", bus_volts);
-    setprop("/systems/electrical/outputs/transponder", bus_volts);
-    setprop("/systems/electrical/outputs/turn-coordinator", bus_volts);
-    setprop("/systems/electrical/outputs/mk-viii", bus_volts);
-    setprop("/systems/electrical/outputs/fgc-65", bus_volts);
+    setprop("/systems/electrical/outputs/nav[0]", avionics_dimmer);
+    setprop("/systems/electrical/outputs/nav[1]", avionics_dimmer);
+    setprop("/systems/electrical/outputs/comm[0]", avionics_dimmer);
+    setprop("/systems/electrical/outputs/comm[1]", avionics_dimmer);
+    setprop("/systems/electrical/outputs/dme", avionics_dimmer);
+    setprop("/systems/electrical/outputs/adf", avionics_dimmer);
+    setprop("/systems/electrical/outputs/gps", avionics_dimmer);
+    setprop("/systems/electrical/outputs/transponder", avionics_dimmer);
+    setprop("/systems/electrical/outputs/turn-coordinator", avionics_dimmer);
+    setprop("/systems/electrical/outputs/mk-viii", avionics_dimmer);
+    setprop("/systems/electrical/outputs/fgc-65", avionics_dimmer);
 
-    if (pilot_efis_switch)
-        setprop("/systems/electrical/outputs/efis[0]", bus_volts);
-    if (copilot_efis_switch)
-        setprop("/systems/electrical/outputs/efis[1]", bus_volts);
-
+    if (pilot_efis_switch) {
+        setprop("/systems/electrical/outputs/efis[0]", pilot_efis_dimmer);
+    } else {
+        setprop("/systems/electrical/outputs/efis[0]", 0);
+    }
+    if (copilot_efis_switch) {
+        setprop("/systems/electrical/outputs/efis[1]", copilot_efis_dimmer);
+    } else {
+        setprop("/systems/electrical/outputs/efis[1]", 0);
+    }
     return load;
 }
 

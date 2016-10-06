@@ -298,9 +298,11 @@ started July 2004 Syd Adams
             <taxi-lights type="bool">0</taxi-lights>
             <master-panel type="bool">0</master-panel>
             <dimmer>
-                <pilot type="int">25</pilot>
-                <engine type="int">25</engine>
-                <avionics type="int">25</avionics>
+                <pilot type="int">16</pilot>
+                <engine type="int">16</engine>
+                <avionics type="int">16</avionics>
+                <pilot_efis type="int">24</pilot_efis>
+                <copilot_efis type="int">24</copilot_efis>
             </dimmer>
         </lighting>
 

@@ -3514,12 +3514,69 @@
         </center>
     </animation>
 
+<!--********************* EFIS dimmer knobs ******************-->
+
+    <animation>
+        <type>knob</type>
+        <object-name>Pilot.EFISdimmer</object-name>
+        <property>/controls/lighting/dimmer/pilot_efis</property>
+        <factor>12</factor>
+        <center>
+            <x-m>-4.91610</x-m>
+            <y-m>-0.49031</y-m>
+            <z-m>-0.17194</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/lighting/dimmer/pilot_efis</property>
+                <factor>2</factor>
+                <min>0</min>
+                <max>25</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>Copilot.EFISdimmer</object-name>
+        <property>/controls/lighting/dimmer/copilot_efis</property>
+        <factor>12</factor>
+        <center>
+            <x-m>-4.91610</x-m>
+            <y-m>0.45941</y-m>
+            <z-m>-0.17194</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/lighting/dimmer/copilot_efis</property>
+                <factor>2</factor>
+                <min>0</min>
+                <max>25</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
 <!--********************* OH panel knobs ********************-->
 
     <animation>
         <type>knob</type>
         <object-name>Pilot.dimmer</object-name>
-        <property>/systems/electrical/outputs/lights/instrument-lights</property>
+        <property>/controls/lighting/dimmer/pilot</property>
+        <factor>12</factor>
         <axis>
             <x1-m>-4.408</x1-m>
             <y1-m>-0.126</y1-m>
@@ -3543,7 +3600,8 @@
     <animation>
         <type>knob</type>
         <object-name>Engine.dimmer</object-name>
-        <property>/systems/electrical/outputs/lights/eng-lights</property>
+        <property>/controls/lighting/dimmer/engine</property>
+        <factor>12</factor>
         <axis>
             <x1-m>-4.408</x1-m>
             <y1-m>-0.0897</y1-m>
@@ -3567,6 +3625,8 @@
     <animation>
         <type>knob</type>
         <object-name>Avn.dimmer</object-name>
+        <property>/controls/lighting/dimmer/avionics</property>
+        <factor>12</factor>
         <axis>
             <x1-m>-4.408</x1-m>
             <y1-m>-0.054</y1-m>
@@ -6053,6 +6113,32 @@
             <factor-prop>/systems/electrical/outputs/lights/instrument-lights</factor-prop>
         </emission>
     </animation>
+
+    <animation>
+        <name>white-efis-pilot</name>
+        <type>material</type>
+        <object-name>EFIS84 EHSI-pilot</object-name>
+        <object-name>EFIS84 EADI-pilot</object-name>
+        <emission>
+            <red>0.04</red>
+            <green>0.04</green>
+            <blue>0.04</blue>
+            <factor-prop>/controls/lighting/dimmer/pilot_efis</factor-prop>
+        </emission>
+    </animation> 
+
+    <animation>
+        <name>white-efis-copilot</name>
+        <type>material</type>
+        <object-name>EFIS84 EHSI-copilot</object-name>
+        <object-name>EFIS84 EADI-copilot</object-name>
+        <emission>
+            <red>0.04</red>
+            <green>0.04</green>
+            <blue>0.04</blue>
+            <factor-prop>/controls/lighting/dimmer/copilot_efis</factor-prop>
+        </emission>
+    </animation> 
 
 
 </PropertyList>
