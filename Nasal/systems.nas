@@ -1,5 +1,6 @@
-####B1900d systems
+#### B1900d systems
 #### Syd Adams
+#### Jasin Colegrove (jasin at coleburt dot com)
 
 
 aircraft.livery.init("Aircraft/b1900d/Models/Liveries");
@@ -44,7 +45,7 @@ var Wiper = {
         me.position.setValue(0);
         return;
         }
-    } 
+    }
 
     if(pos >=1.000){
         me.direction=-1;
@@ -82,43 +83,47 @@ var Alarm = {
     m.warning_index=[];
     m.caution_index=[];
     m.node = props.globals.initNode(prop);
-    m.Warning= m.node.initNode("warning");
     m.Caution = m.node.initNode("caution");
-        m.MCaution = m.Caution.initNode("Master",0,"BOOL");
-        m.Ctest = m.Caution.initNode("test",0,"BOOL");
-        m.MCflasher = m.Caution.initNode("flasher",0,"INT");
-        m.Warning = m.node.initNode("warning");
-        m.MWarning = m.Warning.initNode("Master",0,"BOOL");
-        m.Wtest = m.Warning.initNode("test",0,"BOOL");
-        m.MWflasher = m.Warning.initNode("flasher",0,"INT");
-        m.GPWS = m.node.initNode("gpws");
-        m.volume=m.GPWS.initNode("volume",0.5,"DOUBLE");
-        m.altitude_active=m.GPWS.initNode("altitude-active",0,"BOOL");
-        m.altitude_callout=m.GPWS.initNode("altitude-callout",0,"INT");
-        m.terrain_active=m.GPWS.initNode("terrain-active",0,"BOOL");
-        m.terrain_alert=m.GPWS.initNode("terrain-alert",0,"BOOL");
-        m.bank=m.GPWS.initNode("bank-angle",0,"BOOL");
-        m.pitch=m.GPWS.initNode("pitch",0,"BOOL");
-        m.sink=m.GPWS.initNode("sink-rate",0,"BOOL");
-        m.minimums=m.GPWS.initNode("minimums",0,"BOOL");
-        for(var i=0; i<size(m.warning_props); i+=1) {
-            append(m.warning_index,m.Warning.initNode(m.warning_props[i],0,"BOOL"));
-        }
-        for(var i=0; i<size(m.caution_props); i+=1) {
-            append(m.caution_index,m.Caution.initNode(m.caution_props[i],0,"BOOL"));
-        }
+    m.MCaution = m.Caution.initNode("Master",0,"BOOL");
+    m.Ctest = m.Caution.initNode("test",0,"BOOL");
+    m.MCflasher = m.Caution.initNode("flasher",0,"INT");
+    m.Warning = m.node.initNode("warning");
+    m.MWarning = m.Warning.initNode("Master",0,"BOOL");
+    m.Wtest = m.Warning.initNode("test",0,"BOOL");
+    m.MWflasher = m.Warning.initNode("flasher",0,"INT");
+    m.GPWS = m.node.initNode("gpws");
+    m.volume=m.GPWS.initNode("volume",0.5,"DOUBLE");
+    m.altitude_active=m.GPWS.initNode("altitude-active",0,"BOOL");
+    m.altitude_callout=m.GPWS.initNode("altitude-callout",0,"INT");
+    m.terrain_active=m.GPWS.initNode("terrain-active",0,"BOOL");
+    m.terrain_alert=m.GPWS.initNode("terrain-alert",0,"BOOL");
+    m.bank=m.GPWS.initNode("bank-angle",0,"BOOL");
+    m.pitch=m.GPWS.initNode("pitch",0,"BOOL");
+    m.sink=m.GPWS.initNode("sink-rate",0,"BOOL");
+    m.minimums=m.GPWS.initNode("minimums",0,"BOOL");
+    for(var i=0; i<size(m.warning_props); i+=1) {
+        append(m.warning_index,m.Warning.initNode(m.warning_props[i],0,"BOOL"));
+    }
+    for(var i=0; i<size(m.caution_props); i+=1) {
+        append(m.caution_index,m.Caution.initNode(m.caution_props[i],0,"BOOL"));
+    }
+
     return m;
-    },
+},
 
 ###############
     check_caution:func{
-        var pwr=getprop("systems/electrical/volts") or 0;
-        if(pwr==0)return;
-        var smpl=0;
-        var Ctest=me.MCaution.getValue();
+        var pwr = getprop("systems/electrical/outputs/caution-annunciator") or 0;
+        print(pwr);
+        if(pwr == 0) {
+            me.MCflasher.setValue(0);
+            return;
+        }
+        var smpl = 0;
+        var Ctest = me.MCaution.getValue();
         if(Ctest){
-            var Cflash =me.MCflasher.getValue();
-            Cflash=1-Cflash;
+            var Cflash = me.MCflasher.getValue();
+            Cflash = 1 - Cflash;
             me.MCflasher.setValue(Cflash);
         }else{
             me.MCflasher.setValue(Ctest);
@@ -139,7 +144,7 @@ var Alarm = {
         smpl=1;me.MCaution.setValue(1);}
         me.caution_index[3].setValue(smpl);
         smpl=0;
-        if(!getprop("controls/electric/engine/generator")){
+        if(!getprop("controls/electric/engine[0]/generator")){
         smpl=1;me.MCaution.setValue(1);}
         me.caution_index[0].setValue(smpl);
         smpl=0;
@@ -162,8 +167,7 @@ var Alarm = {
     },
 ###############
     check_warning:func{
-        var pwr=getprop("systems/electrical/volts") or 0;
-        if(pwr==0)return;
+        var pwr=getprop("systems/electrical/outputs/warning-annunciator") or 0;
         var testbutton=me.Wtest.getValue();
         var master=me.MWarning.getValue();
         var test1=0;
@@ -242,27 +246,25 @@ var Alarm = {
     }
 };
 
-
-
-
-
-var S_volume = props.globals.initNode("/sim/sound/E_volume",0.2);
+var S_volume = props.globals.initNode("/sim/sound/E_volume", 0.2);
 var Engstep = 0;
-var wiper = Wiper.new("controls/electric/wipers","systems/electrical/volts",3);
+var wiper = Wiper.new("controls/electric/wipers","systems/electrical/volts", 3);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
-var alert=Alarm.new("instrumentation/annunciators");
+var alert = Alarm.new("instrumentation/annunciators");
 
 setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/clock/flight-meter-hour",0);
     print("systems loaded");
     FDM=getprop("sim/flight-model");
-    setprop("consumables/fuel/tank[0]/selected",1);
-    setprop("consumables/fuel/tank[1]/selected",1);
-    setprop("consumables/fuel/tank[2]/selected",0);
-    setprop("consumables/fuel/tank[3]/selected",0);
-     settimer(update_systems, 2);
-    settimer(update_alarms,0);
+    setprop("consumables/fuel/tank[0]/selected", 0);
+    setprop("consumables/fuel/tank[1]/selected", 0);
+    setprop("consumables/fuel/tank[2]/selected", 1);
+    setprop("consumables/fuel/tank[3]/selected", 1);
+    setprop("/sim/rendering/als-secondary-lights/landing-light1-offset-deg", 8);
+    setprop("/sim/rendering/als-secondary-lights/landing-light2-offset-deg", -8);
+    settimer(update_systems, 2);
+    settimer(update_alarms, 0);
     });
 
 
@@ -287,6 +289,9 @@ setlistener("controls/fuel/Raux-switch", func(raux){
 },0,0);
 
 var update_fuel = func{
+    setprop("/consumables/fuel/tank[4]/selected", 1);
+    setprop("/consumables/fuel/tank[5]/selected", 1);
+
     if(getprop("controls/fuel/gauge-switch")=="auxilary"){
         setprop("consumables/fuel/gauge[0]",getprop("consumables/fuel/tank[2]/level-lbs"));
         setprop("consumables/fuel/gauge[1]",getprop("consumables/fuel/tank[3]/level-lbs"));
@@ -294,32 +299,57 @@ var update_fuel = func{
         setprop("consumables/fuel/gauge[0]",getprop("consumables/fuel/tank[0]/level-lbs"));
         setprop("consumables/fuel/gauge[1]",getprop("consumables/fuel/tank[1]/level-lbs"));
     }
-
+    
+    ## Check for empty tanks and make them inactive so collector tanks can drain
+    ## ELSE select the non-empty tank
     if(getprop("consumables/fuel/tank[2]/selected")){
-        if(getprop("consumables/fuel/tank[2]/level-lbs")<=3.35){
+        if(getprop("consumables/fuel/tank[2]/level-lbs") == 0.0){
             setprop("consumables/fuel/tank[2]/selected",0);
-            setprop("consumables/fuel/tank[0]/selected",1);
+            if(getprop("consumables/fuel/tank[0]/level-lbs") == 0.0){
+                setprop("consumables/fuel/tank[0]/selected",0);
+            } else {
+                setprop("consumables/fuel/tank[0]/selected",1);
             }
         }
+    }
     if(getprop("consumables/fuel/tank[3]/selected")){
-        if(getprop("consumables/fuel/tank[3]/level-lbs")<=3.35){
+        if(getprop("consumables/fuel/tank[3]/level-lbs") == 0.0){
             setprop("consumables/fuel/tank[3]/selected",0);
-            setprop("consumables/fuel/tank[1]/selected",1);
+            if(getprop("consumables/fuel/tank[1]/level-lbs") == 0.0){
+                setprop("consumables/fuel/tank[1]/selected",0);
+            } else {
+                setprop("consumables/fuel/tank[1]/selected",1);
+            }
         }
     }
 }
 
+setlistener("/controls/lighting/landing-lights[0]", func(b) {
+    if(getprop("/sim/current-view/internal")) {
+        setprop("/sim/rendering/als-secondary-lights/use-landing-light", b.getValue());
+
+    }
+},1 ,0);
+
+setlistener("/controls/lighting/landing-lights[1]", func(b) {
+    if(getprop("/sim/current-view/internal")) {
+        setprop("/sim/rendering/als-secondary-lights/use-alt-landing-light", b.getValue());
+
+    }
+},1 ,0);
 
 setlistener("/sim/current-view/internal", func(vw){
     if(vw.getValue()){
         S_volume.setValue(0.2);
-        }else{
-            S_volume.setValue(1.0);
-        }
+    } else {
+        S_volume.setValue(1.0);
+        setprop("/sim/rendering/als-secondary-lights/use-landing-light", 0);
+        setprop("/sim/rendering/als-secondary-lights/use-alt-landing-light", 0);
+    }
 },1,0);
 
 setlistener("/sim/model/start-idling", func(idle){
-    var run= idle.getBoolValue();
+    var run = idle.getBoolValue();
     if(run){
         Startup();
     }else{
@@ -329,8 +359,10 @@ setlistener("/sim/model/start-idling", func(idle){
 
 setlistener("/gear/gear[1]/wow", func(gr){
     if(gr.getBoolValue()){
-    FHmeter.stop();setprop("gear/alarm-enabled",1);
-    }else{FHmeter.start();setprop("controls/cabin-door/open",0);}
+        FHmeter.stop(); setprop("gear/alarm-enabled",1);
+    } else {
+        FHmeter.start(); setprop("controls/cabin-door/open",0);
+    }
 },0,0);
 
 setlistener("controls/engines/engine[0]/condition", func(c1){
@@ -342,7 +374,6 @@ setlistener("controls/engines/engine[1]/condition", func(c2){
     if(c2.getValue() <= 0.01) fuel_cutoff[1]=1 else fuel_cutoff[1]=0;
     setprop("controls/engines/engine[1]/cutoff",fuel_cutoff[1]);
 },1,0);
-
 
 var Startup = func{
 setprop("controls/engines/engine[0]/cutoff",0);
@@ -426,46 +457,39 @@ var flight_meter = func{
 var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
 var fminute = fmeter * 0.016666;
 var fhour = fminute * 0.016666;
-setprop("/instrumentation/clock/flight-meter-hour",fhour);
+setprop("/instrumentation/clock/flight-meter-hour", fhour);
 }
 
 controls.gearDown = func(v) {
-    if(getprop("controls/gear/gear-lock")) return;
+    if (getprop("controls/gear/gear-lock")) return;
     if (v < 0) {
-        if(!getprop("gear/gear[1]/wow"))setprop("/controls/gear/gear-down", 0);
+        if (!getprop("gear/gear[1]/wow"))
+            setprop("/controls/gear/gear-down", 0);
     } elsif (v > 0) {
       setprop("/controls/gear/gear-down", 1);
     }
 }
 
-controls.startEngine = func(v) {
-    if(getprop("systems/electrical/volts")==0)return;
-        if(getprop("controls/engines/engine[0]/selected"))setprop("/controls/engines/engine[0]/starter",v) 
-        else setprop("/controls/engines/engine[0]/starter",0);
-         if(getprop("controls/engines/engine[1]/selected"))setprop("/controls/engines/engine[1]/starter",v) 
-        else setprop("/controls/engines/engine[1]/starter",0);
-}
-
 var update_alarms = func {
-    if(alert.counter ==0){
+    if(alert.counter == 0){
         alert.check_caution();
-    }elsif(alert.counter ==1){
+    }elsif(alert.counter == 1){
         alert.check_warning();
     }
-    alert.counter =1-alert.counter;
-    settimer(update_alarms,0.25);
+    alert.counter = 1 - alert.counter;
+    settimer(update_alarms, 0.25);
 }
 
 var check_gear = func {
     if(getprop("controls/gear/gear-down")){
-        setprop("gear/alarm",0);
+        setprop("gear/alarm", 0);
         return;
     }
     var gd=0;
-    flp=getprop("controls/flight/flaps");
+    flp = getprop("controls/flight/flaps");
     if(flp==0.5){
         if(N1[0]<85 or N1[1]<85)
-        gd=getprop("gear/alarm-enabled");
+        gd = getprop("gear/alarm-enabled");
     }
     if(flp>0.5)gd=1;
     setprop("gear/alarm",gd);
@@ -506,7 +530,7 @@ var update_engine = func(eng){
 
 
 var update_systems = func {
-    
+
     flight_meter();
     wiper.active();
     update_fuel();

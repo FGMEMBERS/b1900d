@@ -3,8 +3,7 @@
 <PropertyList include="b190common.xml">
     <sim>
         <description>Beechcraft b1900d - YASim</description>
-        
-         <flight-model>yasim</flight-model>
+        <flight-model>yasim</flight-model>
         <aero>b1900d</aero>
         <fuel-fraction>0.5</fuel-fraction>
         <startup>

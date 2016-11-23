@@ -2,7 +2,7 @@
     <name>Basic Operation</name>
     <description>
     Instruction on manual starting, initial setup , and takeoff of the B1900D.
-    
+
     </description>
     <step-time>1</step-time>
     <exit-time>1</exit-time>
@@ -164,7 +164,7 @@
                         <value>0.10</value>
                     </less-than>
                     <greater-than>
-                        <property>controls/engines/engine[1]/condition</property>
+                        <property>controls/engines/engine[1]/propeller-pitch</property>
                         <value>0.15</value>
                     </greater-than>
                     <less-than>
@@ -186,7 +186,7 @@
                         <value>0.10</value>
                     </greater-than>
                     <less-than>
-                        <property>controls/engines/engine[1]/condition</property>
+                        <property>controls/engines/engine[1]/propeller-pitch</property>
                         <value>0.15</value>
                     </less-than>
                     <greater-than>
@@ -215,8 +215,8 @@
             </message>
             <condition>
                 <not>
-                        <property>controls/electric/battery-switch</property>
-                    </not>
+                    <property>controls/electric/battery-switch</property>
+                </not>
             </condition>
         </error>
         <exit>
@@ -344,9 +344,9 @@
         </view>
         <error>
             <message>
-             Press and hold the right IGNITION AND ENGINE START switch{|.}
-           Set R condition lever to Low Idle at 15% N1 ( M/m key){|.}
-           {|.}
+                Press and hold the right IGNITION AND ENGINE START switch{|.}
+                Set R condition lever to Low Idle at 15% N1 ( M/m key){|.}
+                {|.}
             </message>
             <condition>
                 <not>
@@ -361,7 +361,7 @@
         </exit>
     </step>
 
-<step>
+    <step>
         <message>
             Turn on the R GEN{|.}
             {|.}
@@ -373,13 +373,13 @@
         </view>
         <error>
             <message>
-            Turn on the R GEN{|.}
-            {|.}
+                Turn on the R GEN{|.}
+                {|.}
             </message>
             <condition>
                 <not>
-                        <property>controls/electric/engine[1]/bus-tie</property>
-                    </not>
+                    <property>controls/electric/engine[1]/bus-tie</property>
+                </not>
             </condition>
         </error>
         <exit>
@@ -402,9 +402,9 @@
         </view>
         <error>
             <message>
-             Set R Condition lever to HIGH IDLE position{|.}
-            (Mouse drag up)
-            {|.}
+                Set R Condition lever to HIGH IDLE position{|.}
+                (Mouse drag up)
+                {|.}
             </message>
             <condition>
                 <less-than>
@@ -435,8 +435,8 @@
         </view>
         <error>
             <message>
-             Set L Condition lever to CUTOFF (drag down with mouse){|.}
-            {|.}
+                Set L Condition lever to CUTOFF (drag down with mouse){|.}
+                {|.}
             </message>
             <condition>
                 <greater-than>
@@ -468,9 +468,9 @@
         </view>
         <error>
             <message>
-             Press and hold the L IGNITION AND ENGINE START switch{|.}
-           Set L condition lever to Low Idle at 15% N1 (M/m key){|.}
-           {|.}
+                Press and hold the L IGNITION AND ENGINE START switch{|.}
+                Set L condition lever to Low Idle at 15% N1 (M/m key){|.}
+                {|.}
             </message>
             <condition>
                 <not>
@@ -497,13 +497,13 @@
         </view>
         <error>
             <message>
-            Turn on the L GEN{|.}
-            {|.}
+                Turn on the L GEN{|.}
+                {|.}
             </message>
             <condition>
                 <not>
-                        <property>controls/electric/engine[0]/bus-tie</property>
-                    </not>
+                    <property>controls/electric/engine[0]/bus-tie</property>
+                </not>
             </condition>
         </error>
         <exit>
@@ -526,9 +526,9 @@
         </view>
         <error>
             <message>
-             Set L Condition lever to HIGH IDLE position{|.}
-            (Mouse drag up)
-            {|.}
+                Set L Condition lever to HIGH IDLE position{|.}
+                (Mouse drag up)
+                {|.}
             </message>
             <condition>
                 <less-than>
@@ -560,9 +560,9 @@
         </view>
         <error>
             <message>
-            Set Prop levers full forward{|.}
-            (N/n key or mouse drag){|.}
-            {|.}
+                Set Prop levers full forward{|.}
+                (N/n key or mouse drag){|.}
+                {|.}
             </message>
             <condition>
                 <and>
@@ -595,30 +595,6 @@
 
     <step>
         <message>
-            Press the flashing Master Warning and Caution lights to shut them off{|.}
-        </message>
-        <view>
-            <heading-offset-deg>355</heading-offset-deg>
-            <pitch-offset-deg>-10</pitch-offset-deg>
-            <field-of-view>20</field-of-view>
-        </view>
-        <error>
-            <message>Mouse-click the flashing Master Warning  and Caution lights to shut it off{|.}</message>
-            <condition>
-                <property>instrumentation/annunciators/warning/Master</property>
-            </condition>
-        </error>
-        <exit>
-            <condition>
-                <not>
-                    <property>instrumentation/annunciators/warning/Master</property>
-                </not>
-            </condition>
-        </exit>
-    </step>
-
-<step>
-        <message>
             Switch on L - R AC bus
             {|.}
         </message>
@@ -628,8 +604,10 @@
             <field-of-view>20</field-of-view>
         </view>
         <error>
-            <message>Switch on L - R AC bus
-            {|.}</message>
+            <message>
+                Switch on L - R AC bus
+                {|.}
+            </message>
             <condition>
                 <or>
                     <not>
@@ -653,7 +631,31 @@
 
     <step>
         <message>
-            Switch on taxi,nav, and strobe lights
+            Press the flashing Master Warning and Caution lights to shut them off{|.}
+        </message>
+        <view>
+            <heading-offset-deg>355</heading-offset-deg>
+            <pitch-offset-deg>-10</pitch-offset-deg>
+            <field-of-view>20</field-of-view>
+        </view>
+        <error>
+            <message>Mouse-click the flashing Master Warning  and Caution lights to shut it off{|.}</message>
+            <condition>
+                <property>instrumentation/annunciators/warning/Master</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>instrumentation/annunciators/warning/Master</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>
+            Switch on taxi, nav, and strobe lights
             {|.}
         </message>
         <view>
@@ -662,8 +664,10 @@
             <field-of-view>45</field-of-view>
         </view>
         <error>
-            <message>Switch on taxi,nav, and strobe lights
-            {|.}</message>
+            <message>
+                Switch on taxi, nav, and strobe lights
+                {|.}
+            </message>
             <condition>
                 <and>
                     <not>
@@ -689,7 +693,7 @@
         </exit>
     </step>
 
-<step>
+    <step>
         <message>
             Switch on landing lights
             {|.}
@@ -700,8 +704,10 @@
             <field-of-view>45</field-of-view>
         </view>
         <error>
-            <message>Switch on landing lights
-            {|.}</message>
+            <message>
+                Switch on landing lights
+                {|.}
+            </message>
             <condition>
                 <and>
                     <not>
@@ -735,8 +741,8 @@
         </view>
         <error>
             <message>
-            Arm the ENG AUTO IGNITION switches{|.}
-            {|.}
+                Arm the ENG AUTO IGNITION switches{|.}
+                {|.}
             </message>
             <condition>
                 <and>
@@ -770,8 +776,10 @@
             <field-of-view>25</field-of-view>
         </view>
         <error>
-            <message>Set takeoff flaps, (press " ] " or mouse click flap lever){|.}
-            {|.}</message>
+            <message>
+                Set takeoff flaps, (press " ] " or mouse click flap lever){|.}
+                {|.}
+            </message>
             <condition>
                 <equals>
                     <property>controls/flight/flaps</property>
@@ -801,8 +809,10 @@
             <field-of-view>35</field-of-view>
         </view>
         <error>
-            <message>Release Parking Brake ( B )
-            {|.}</message>
+            <message>
+                Release Parking Brake ( B )
+                {|.}
+            </message>
             <condition>
                 <property>controls/gear/brake-parking</property>
             </condition>
@@ -829,9 +839,9 @@
         </view>
         <error>
             <message>
-            Apply full throttle and rotate at 100-120 knots.{|.}
-            Hold a pitch attitude of 10 - 15 degrees during climb.
-            {|.}
+                Apply full throttle and rotate at 100-120 knots.{|.}
+                Hold a pitch attitude of 10 - 15 degrees during climb.
+                {|.}
             </message>
             <condition>
                 <less-than>
@@ -874,7 +884,7 @@
         </exit>
     </step>
 
-<step>
+    <step>
         <message>
             Raise flaps (" [ " key ") if you have a positive rate of climb{|.}
         </message>
@@ -902,7 +912,7 @@
         </exit>
     </step>
 
-<step>
+    <step>
         <message>
             Shut off Taxi and Landing Lights
             {|.}
@@ -913,8 +923,10 @@
             <field-of-view>70</field-of-view>
         </view>
         <error>
-            <message>Shut off Taxi and Landing Lights
-            {|.}</message>
+            <message>
+                Shut off Taxi and Landing Lights
+                {|.}
+            </message>
             <condition>
                 <or>
                     <property>controls/lighting/landing-lights[0]</property>

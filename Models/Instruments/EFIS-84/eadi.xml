@@ -282,9 +282,9 @@
         <type>material</type>
         <object-name>dheight</object-name>
         <emission>
-            <red>0.8</red>
-            <green>0.8</green>
-            <blue>0.8</blue>
+            <red>0.04</red>
+            <green>0.04</green>
+            <blue>0.04</blue>
         </emission>
     </animation>
 

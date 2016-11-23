@@ -142,7 +142,11 @@
             <pref-width>50</pref-width>
             <row>0</row>
             <col>4</col>
-            <legend>      </legend>
+            <legend>CLMB</legend>
+            <binding>
+                <command>nasal</command>
+                <script>FCS.FCP65_input("clmb");</script>
+            </binding>
         </button>
 
         <button>
@@ -162,7 +166,11 @@
             <pref-width>50</pref-width>
             <row>1</row>
             <col>1</col>
-            <legend>      </legend>
+            <legend>ALTS</legend>
+            <binding>
+                <command>nasal</command>
+                <script>FCS.FCP65_input("alts");</script>
+            </binding>
         </button>
 
         <button>
@@ -194,7 +202,11 @@
             <pref-width>50</pref-width>
             <row>1</row>
             <col>4</col>
-            <legend>      </legend>
+            <legend>DSC</legend>
+            <binding>
+                <command>nasal</command>
+                <script>FCS.FCP65_input("dsc");</script>
+            </binding>
         </button>
     </group>
 

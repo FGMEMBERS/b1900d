@@ -90,7 +90,7 @@
 
     <animation>
         <type>select</type>
-        <object-name>Yoke</object-name> 
+        <object-name>Yoke</object-name>
         <object-name>Yoke1</object-name>
         <object-name>Yokebase</object-name>
         <condition>
@@ -98,7 +98,7 @@
         </condition>
     </animation>
 
-<!-- 
+<!--
 ****************************** Levers/Controls ***********************
 -->
 
@@ -380,7 +380,7 @@
             <y>0.0</y>
             <z>-0.906</z>
         </axis>
-    </animation>  
+    </animation>
 
     <animation>
         <type>translate</type>
@@ -392,7 +392,7 @@
             <y>0.0</y>
             <z>-0.906</z>
         </axis>
-    </animation>  
+    </animation>
 
     <animation>
         <type>rotate</type>
@@ -410,7 +410,7 @@
             <z>0.0</z>
         </axis>
     </animation>
-  
+
     <animation>
         <type>rotate</type>
         <object-name>Throttle1</object-name>
@@ -510,7 +510,7 @@
         </hovered>
     </animation>
 
-<animation>
+    <animation>
         <type>knob</type>
         <object-name>Rtrim</object-name>
         <property>controls/flight/rudder-trim</property>
@@ -887,7 +887,8 @@
         <object-name>Nosegear.lamp</object-name>
         <condition>
             <and>
-                <property>systems/electrical/volts</property>
+                <property>controls/lighting/master-panel</property>
+                <property>systems/electrical/outputs/triple-fed-bus</property>
                 <equals>
                     <property>gear/gear[0]/position-norm</property>
                     <value>1</value>
@@ -901,7 +902,8 @@
         <object-name>LHgear.lamp</object-name>
         <condition>
             <and>
-                <property>systems/electrical/volts</property>
+                <property>controls/lighting/master-panel</property>
+                <property>systems/electrical/outputs/triple-fed-bus</property>
                 <equals>
                     <property>gear/gear[1]/position-norm</property>
                     <value>1</value>
@@ -915,7 +917,8 @@
         <object-name>RHgear.lamp</object-name>
         <condition>
             <and>
-                <property>systems/electrical/volts</property>
+                <property>controls/lighting/master-panel</property>
+                <property>systems/electrical/outputs/triple-fed-bus</property>
                 <equals>
                     <property>gear/gear[2]/position-norm</property>
                     <value>1</value>
@@ -1245,7 +1248,7 @@
         </hovered>
     </animation>
 
-<!-- 
+<!--
 ************************** mk-viii **********************
 -->
 
@@ -1279,7 +1282,7 @@
         <condition>
             <and>
             <property>instrumentation/mk-viii/outputs/discretes/gpws-inop</property>
-            <property>systems/electrical/volts</property>
+            <property>systems/electrical/outputs/triple-fed-bus</property>
             </and>
         </condition>
     </animation>
@@ -1397,7 +1400,7 @@
         </action>
     </animation>
 
-<!-- 
+<!--
 ************************** fd	 **********************
 -->
 
@@ -1500,7 +1503,7 @@
         <condition>
             <equals>
                 <property>instrumentation/fgc-65/internal/vertical</property>
-                <value>CLM</value>
+                <value>CLMB</value>
             </equals>
         </condition>
     </animation>
@@ -1729,6 +1732,26 @@
 
     <animation>
         <type>pick</type>
+        <object-name>CLIMB.btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                <command>nasal</command>
+                <script>FCS.btn_pressed("clmb",1,0);</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>nasal</command>
+                    <script>FCS.btn_pressed("clmb",0,0);</script>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
         <object-name>ALT.btn</object-name>
         <action>
             <button>0</button>
@@ -1742,6 +1765,26 @@
                 <binding>
                     <command>nasal</command>
                     <script>FCS.btn_pressed("alt",0,0);</script>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ALTS.btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                <command>nasal</command>
+                <script>FCS.btn_pressed("alts",1,0);</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>nasal</command>
+                    <script>FCS.btn_pressed("altsel",0,0);</script>
                 </binding>
             </mod-up>
         </action>
@@ -1782,6 +1825,26 @@
                 <binding>
                     <command>nasal</command>
                     <script>FCS.btn_pressed("ias",0,0);</script>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>DSC.btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                <command>nasal</command>
+                <script>FCS.btn_pressed("dsc",1,0);</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>nasal</command>
+                    <script>FCS.btn_pressed("dsc",0,0);</script>
                 </binding>
             </mod-up>
         </action>
@@ -1973,7 +2036,7 @@
     </animation>
 
 
-<!-- 
+<!--
 ************************** gauges **********************
 -->
 
@@ -2101,17 +2164,6 @@
             <z>0.50</z>
         </axis>
     </animation>
-
-
-
-
-
-
-
-
-
-
-
 
     <animation>
         <type>textranslate</type>
@@ -2255,11 +2307,11 @@
     <animation>
         <type>rotate</type>
         <object-name>ITT1.needle</object-name>
-        <property>instrumentation/eng-gauge/itt[0]</property>
+        <property>instrumentation/eng-gauge/itt[1]</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>200.0</ind><dep>0.0</dep></entry>
-            <entry><ind>400.0</ind><dep>30.0</dep></entry>
+            <entry><ind>550.0</ind><dep>90.0</dep></entry>
             <entry><ind>800.0</ind><dep>180.0</dep></entry>
             <entry><ind>1000.0</ind><dep>270.0</dep></entry>
         </interpolation>
@@ -2454,7 +2506,10 @@
         <object-name>Lturbine_txt</object-name>
         <object-name>Rturbine_txt</object-name>
         <condition>
-            <property>systems/electrical/volts</property>
+            <and>
+                <property>/controls/lighting/master-panel</property>
+                <property>systems/electrical/outputs/triple-fed-bus</property>
+            </and>
         </condition>
     </animation>
 
@@ -2727,7 +2782,7 @@
         <object-name>RMI.flag</object-name>
         <condition>
             <not>
-                <property>systems/electrical/volts</property>
+                <property>systems/electrical/outputs/avionics_bus</property>
             </not>
         </condition>
     </animation>
@@ -3459,6 +3514,138 @@
         </center>
     </animation>
 
+<!--********************* EFIS dimmer knobs ******************-->
+
+    <animation>
+        <type>knob</type>
+        <object-name>Pilot.EFISdimmer</object-name>
+        <property>/controls/lighting/dimmer/pilot_efis</property>
+        <factor>12</factor>
+        <center>
+            <x-m>-4.91610</x-m>
+            <y-m>-0.49031</y-m>
+            <z-m>-0.17194</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/lighting/dimmer/pilot_efis</property>
+                <factor>2</factor>
+                <min>0</min>
+                <max>25</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>Copilot.EFISdimmer</object-name>
+        <property>/controls/lighting/dimmer/copilot_efis</property>
+        <factor>12</factor>
+        <center>
+            <x-m>-4.91610</x-m>
+            <y-m>0.45941</y-m>
+            <z-m>-0.17194</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/lighting/dimmer/copilot_efis</property>
+                <factor>2</factor>
+                <min>0</min>
+                <max>25</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+<!--********************* OH panel knobs ********************-->
+
+    <animation>
+        <type>knob</type>
+        <object-name>Pilot.dimmer</object-name>
+        <property>/controls/lighting/dimmer/pilot</property>
+        <factor>12</factor>
+        <axis>
+            <x1-m>-4.408</x1-m>
+            <y1-m>-0.126</y1-m>
+            <z1-m>0.572</z1-m>
+            <x2-m>-4.411</x2-m>
+            <y2-m>-0.126</y2-m>
+            <z2-m>0.577</z2-m>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/lighting/dimmer/pilot</property>
+                <factor>2</factor>
+                <min>0</min>
+                <max>25</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>Engine.dimmer</object-name>
+        <property>/controls/lighting/dimmer/engine</property>
+        <factor>12</factor>
+        <axis>
+            <x1-m>-4.408</x1-m>
+            <y1-m>-0.0897</y1-m>
+            <z1-m>0.572</z1-m>
+            <x2-m>-4.411</x2-m>
+            <y2-m>-0.0897</y2-m>
+            <z2-m>0.577</z2-m>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/lighting/dimmer/engine</property>
+                <factor>2</factor>
+                <min>0</min>
+                <max>25</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>Avn.dimmer</object-name>
+        <property>/controls/lighting/dimmer/avionics</property>
+        <factor>12</factor>
+        <axis>
+            <x1-m>-4.408</x1-m>
+            <y1-m>-0.054</y1-m>
+            <z1-m>0.572</z1-m>
+            <x2-m>-4.411</x2-m>
+            <y2-m>-0.054</y2-m>
+            <z2-m>0.577</z2-m>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/lighting/dimmer/avionics</property>
+                <factor>2</factor>
+                <min>0</min>
+                <max>25</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
 
 <!--********************* panel switches ***********************-->
 
@@ -3473,7 +3660,7 @@
             </binding>
             <binding>
                 <command>property-assign</command>
-                <property>controls/electric/engine/generator</property>
+                <property>controls/electric/engine[0]/generator</property>
                 <property>controls/electric/battery-switch</property>
             </binding>
             <binding>
@@ -3834,13 +4021,15 @@
                 <value>0</value>
             </binding>
             <binding>
-                <command>nasal</command>
-                <script>controls.startEngine(1)</script>
+                <command>property-assign</command>
+                <property>controls/electric/left-starter</property>
+                <value>1</value>
             </binding>
             <mod-up>
                 <binding>
-                    <command>nasal</command>
-                    <script>controls.startEngine(0)</script>
+                    <command>property-assign</command>
+                    <property>controls/electric/left-starter</property>
+                    <value>0</value>
                 </binding>
             </mod-up>
         </action>
@@ -3850,7 +4039,7 @@
                 <tooltip-id>l-starter</tooltip-id>
                 <label>Left Starter: %s</label>
                 <mapping>on-off</mapping>
-                <property>controls/engines/engine[0]/starter</property>
+                <property>controls/electric/left-starter</property>
             </binding>
         </hovered>
     </animation>
@@ -3860,7 +4049,7 @@
         <object-name>Lstarter.off</object-name>
         <condition>
             <not>
-                <property>controls/engines/engine[0]/starter</property>
+                <property>controls/electric/left-starter</property>
             </not>
         </condition>
     </animation>
@@ -3869,7 +4058,7 @@
         <type>select</type>
         <object-name>Lstarter.on</object-name>
         <condition>
-            <property>controls/engines/engine[0]/starter</property>
+            <property>controls/electric/left-starter</property>
         </condition>
     </animation>
 
@@ -3889,13 +4078,15 @@
                 <value>0</value>
             </binding>
             <binding>
-                <command>nasal</command>
-                <script>controls.startEngine(1)</script>
+                <command>property-assign</command>
+                <property>controls/electric/right-starter</property>
+                <value>1</value>
             </binding>
             <mod-up>
                 <binding>
-                    <command>nasal</command>
-                    <script>controls.startEngine(0)</script>
+                    <command>property-assign</command>
+                    <property>controls/electric/right-starter</property>
+                    <value>0</value>
                 </binding>
             </mod-up>
         </action>
@@ -3905,7 +4096,7 @@
                 <tooltip-id>r-starter</tooltip-id>
                 <label>Right Starter: %s</label>
                 <mapping>on-off</mapping>
-                <property>controls/engines/engine[1]/starter</property>
+                <property>controls/electric/right-starter</property>
             </binding>
         </hovered>
     </animation>
@@ -3915,7 +4106,7 @@
         <object-name>Rstarter.off</object-name>
         <condition>
             <not>
-                <property>controls/engines/engine[1]/starter</property>
+                <property>controls/electric/right-starter</property>
             </not>
         </condition>
     </animation>
@@ -3924,7 +4115,7 @@
         <type>select</type>
         <object-name>Rstarter.on</object-name>
         <condition>
-            <property>controls/engines/engine[1]/starter</property>
+            <property>controls/electric/right-starter</property>
         </condition>
     </animation>
 
@@ -5472,7 +5663,7 @@
                 </binding>
             </hovered>
         </action>
-        
+
     </animation>
 
     <animation>
@@ -5581,7 +5772,7 @@
         </hovered>
     </animation>
 
-<animation>
+    <animation>
         <type>knob</type>
         <object-name>HDGset.knob1</object-name>
         <property>instrumentation/fgc-65/settings/hdg</property>
@@ -5640,7 +5831,7 @@
         </hovered>
     </animation>
 
-<animation>
+    <animation>
         <type>knob</type>
         <object-name>CRSset1.knob1</object-name>
         <property>instrumentation/nav[0]/radials/selected-deg</property>
@@ -5733,7 +5924,7 @@
         </hovered>
     </animation>
 
-<animation>
+    <animation>
         <type>knob</type>
         <object-name>CRSset2.knob1</object-name>
         <property>instrumentation/nav[1]/radials/selected-deg</property>
@@ -5770,7 +5961,7 @@
         </hovered>
     </animation>
 
-<!-- 
+<!--
 ************************** lighting **********************
 -->
 
@@ -5789,9 +5980,10 @@
         <object-name>Lturbine_txt</object-name>
         <object-name>Rturbine_txt</object-name>
         <emission>
-            <red>0.90</red>
-            <green>0.3</green>
-            <blue>0.0</blue>
+            <red>0.036</red>
+            <green>0.012</green>
+            <blue>0.00</blue>
+            <factor-prop>controls/lighting/dimmer/avionics</factor-prop>
         </emission>
         <diffuse>
             <red>0.0</red>
@@ -5824,9 +6016,9 @@
         <object-name>Oil.needle2</object-name>
         <object-name>Oil1.needle2</object-name>
         <emission>
-            <red>1.2</red>
-            <green>0.5</green>
-            <blue>0.2</blue>
+            <red>0.05</red>
+            <green>0.04</green>
+            <blue>0.04</blue>
             <factor-prop>systems/electrical/outputs/lights/eng-lights</factor-prop>
         </emission>
     </animation>
@@ -5915,12 +6107,38 @@
         <object-name>gpsENT.btn</object-name>
         <object-name>slipball</object-name>
         <emission>
-            <red>0.6</red>
-            <green>0.4</green>
-            <blue>0.4</blue>
+            <red>0.05</red>
+            <green>0.04</green>
+            <blue>0.04</blue>
             <factor-prop>/systems/electrical/outputs/lights/instrument-lights</factor-prop>
         </emission>
     </animation>
+
+    <animation>
+        <name>white-efis-pilot</name>
+        <type>material</type>
+        <object-name>EFIS84 EHSI-pilot</object-name>
+        <object-name>EFIS84 EADI-pilot</object-name>
+        <emission>
+            <red>0.04</red>
+            <green>0.04</green>
+            <blue>0.04</blue>
+            <factor-prop>/controls/lighting/dimmer/pilot_efis</factor-prop>
+        </emission>
+    </animation> 
+
+    <animation>
+        <name>white-efis-copilot</name>
+        <type>material</type>
+        <object-name>EFIS84 EHSI-copilot</object-name>
+        <object-name>EFIS84 EADI-copilot</object-name>
+        <emission>
+            <red>0.04</red>
+            <green>0.04</green>
+            <blue>0.04</blue>
+            <factor-prop>/controls/lighting/dimmer/copilot_efis</factor-prop>
+        </emission>
+    </animation> 
 
 
 </PropertyList>
