@@ -18,6 +18,28 @@ started July 2004 Syd Adams
             and corporate transport.
         </long-description>
 
+        <previews>
+          <preview>
+            <type>exterior</type>
+            <splash type="bool">true</splash>
+            <path>Previews/exterior1.png</path>
+          </preview>
+          <preview>
+            <type>exterior</type>
+            <splash type="bool">true</splash>
+            <path>Previews/exterior2.png</path>
+          </preview>
+          <preview>
+            <type>panel</type>
+            <splash type="bool">false</splash>
+            <path>Previews/cockpit.png</path>
+          </preview>
+        </previews>
+
+        <startup>
+          <splash-logo-image>Previews/logo.png</splash-logo-image>
+        </startup>
+
         <tags>
             <tag>beechcraft</tag>
             <tag>turboprop</tag>
