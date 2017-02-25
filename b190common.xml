@@ -38,6 +38,8 @@ started July 2004 Syd Adams
 
         <startup>
           <splash-logo-image>Previews/logo.png</splash-logo-image>
+          <!-- logo is 60% of the screen width -->
+          <splash-logo-width>0.6</splash-logo-width>
         </startup>
 
         <tags>
