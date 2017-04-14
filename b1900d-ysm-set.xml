@@ -95,19 +95,4 @@
         </cabin-door>
     </controls>
 
-    <nasal>
-        <systems>
-            <file>Aircraft/b1900d/Nasal/Electrical.nas</file>
-            <file>Aircraft/b1900d/Nasal/systems.nas</file>
-            <file>Aircraft/b1900d/Nasal/kln90b.nas</file>
-            <!--file>Aircraft/b1900d/Nasal/lightmap.nas</file-->
-        </systems>
-        <dialogs>
-            <file>Aircraft/b1900d/Nasal/dialogs.nas</file>
-        </dialogs>
-        <FCS>
-            <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
-        </FCS>
-    </nasal>
-
 </PropertyList>

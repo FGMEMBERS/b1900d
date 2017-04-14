@@ -149,21 +149,4 @@
 
     </payload>
 
-
-    <nasal>
-        <b1900d>
-            <file>Aircraft/b1900d/Nasal/systems.nas</file>
-            <file>Aircraft/b1900d/Nasal/kln90b.nas</file>
-        </b1900d>
-        <electrical>
-            <file>Aircraft/b1900d/Nasal/Electrical.nas</file>
-        </electrical>
-        <dialogs>
-            <file>Aircraft/b1900d/Nasal/dialogs.nas</file>
-        </dialogs>
-        <FCS>
-            <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
-        </FCS>
-    </nasal>
-
 </PropertyList>
