@@ -18,6 +18,30 @@ started July 2004 Syd Adams
             and corporate transport.
         </long-description>
 
+        <previews>
+          <preview>
+            <type>exterior</type>
+            <splash type="bool">true</splash>
+            <path>Previews/exterior1.png</path>
+          </preview>
+          <preview>
+            <type>exterior</type>
+            <splash type="bool">true</splash>
+            <path>Previews/exterior2.png</path>
+          </preview>
+          <preview>
+            <type>panel</type>
+            <splash type="bool">false</splash>
+            <path>Previews/cockpit.png</path>
+          </preview>
+        </previews>
+
+        <startup>
+          <splash-logo-image>Previews/logo.png</splash-logo-image>
+          <!-- logo is 60% of the screen width -->
+          <splash-logo-width>0.6</splash-logo-width>
+        </startup>
+
         <tags>
             <tag>beechcraft</tag>
             <tag>turboprop</tag>
@@ -563,5 +587,44 @@ started July 2004 Syd Adams
             </key>
         </keyboard>
     </input>
+
+  <limits>
+    <mass-and-balance>
+      <maximum-takeoff-mass-lbs type="double">17120</maximum-takeoff-mass-lbs>
+      <maximum-landing-mass-lbs type="double">16765</maximum-landing-mass-lbs>
+    </mass-and-balance>
+    <!--
+    <max-flap-extension-speed>
+      <flaps type="double">0.324</flaps>
+      <speed type="double">202</speed>
+    </max-flap-extension-speed>
+    <max-flap-extension-speed>
+      <flaps type="double">0.99</flaps>
+      <speed type="double">176</speed>
+    </max-flap-extension-speed>
+    <max-gear-extension-speed type="double">262</max-gear-extension-speed>
+    -->
+    <!-- max-negative-g type="double">-1.52</max-negative-g --> <!-- 0.0 if flaps down -->
+    <!-- max-positive-g type="double">3.8</max-positive-g --> <!-- 2.0 if flaps down -->
+    <vne type="double">248</vne> <!-- indicated airspeed in knots -->
+  </limits>
+
+  <nasal>
+    <systems>
+      <file>Aircraft/b1900d/Nasal/Electrical.nas</file>
+      <file>Aircraft/b1900d/Nasal/systems.nas</file>
+      <file>Aircraft/b1900d/Nasal/kln90b.nas</file>
+      <!--file>Aircraft/b1900d/Nasal/lightmap.nas</file-->
+    </systems>
+    <dialogs>
+      <file>Aircraft/b1900d/Nasal/dialogs.nas</file>
+    </dialogs>
+    <FCS>
+      <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
+    </FCS>
+    <limits>
+      <file>Aircraft/Generic/limits.nas</file>
+    </limits>
+  </nasal>
 
 </PropertyList>

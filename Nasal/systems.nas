@@ -114,7 +114,6 @@ var Alarm = {
 ###############
     check_caution:func{
         var pwr = getprop("systems/electrical/outputs/caution-annunciator") or 0;
-        print(pwr);
         if(pwr == 0) {
             me.MCflasher.setValue(0);
             return;
@@ -247,7 +246,6 @@ var Alarm = {
 };
 
 var S_volume = props.globals.initNode("/sim/sound/E_volume", 0.2);
-var Engstep = 0;
 var wiper = Wiper.new("controls/electric/wipers","systems/electrical/volts", 3);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
@@ -263,8 +261,8 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("consumables/fuel/tank[3]/selected", 1);
     setprop("/sim/rendering/als-secondary-lights/landing-light1-offset-deg", 8);
     setprop("/sim/rendering/als-secondary-lights/landing-light2-offset-deg", -8);
-    settimer(update_systems, 2);
-    settimer(update_alarms, 0);
+    update_systems.start();
+    update_alarms.start();
     });
 
 
@@ -455,9 +453,7 @@ setprop("controls/electric/efis/bank[1]",0);
 
 var flight_meter = func{
 var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
-var fminute = fmeter * 0.016666;
-var fhour = fminute * 0.016666;
-setprop("/instrumentation/clock/flight-meter-hour", fhour);
+setprop("/instrumentation/clock/flight-meter-hour", fmeter / 3600.0);
 }
 
 controls.gearDown = func(v) {
@@ -470,15 +466,14 @@ controls.gearDown = func(v) {
     }
 }
 
-var update_alarms = func {
+var update_alarms = maketimer (0.25, func {
     if(alert.counter == 0){
         alert.check_caution();
     }elsif(alert.counter == 1){
         alert.check_warning();
     }
     alert.counter = 1 - alert.counter;
-    settimer(update_alarms, 0.25);
-}
+});
 
 var check_gear = func {
     if(getprop("controls/gear/gear-down")){
@@ -529,8 +524,7 @@ var update_engine = func(eng){
 }
 
 
-var update_systems = func {
-
+var update_systems = maketimer (0.1, func {
     flight_meter();
     wiper.active();
     update_fuel();
@@ -538,8 +532,7 @@ var update_systems = func {
         if(getprop("engines/engine/running"))setprop("controls/cabin-door/open",0);
     }
     # manual start #
-    update_engine(Engstep);
-    Engstep=1-Engstep;
+    update_engine(0);
+    update_engine(1);
     check_gear();
-    settimer(update_systems,0);
-}
+});

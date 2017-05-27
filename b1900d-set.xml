@@ -2,6 +2,19 @@
 <PropertyList include="b190common.xml">
     <sim>
         <description>Beechcraft 1900D - JSBSim</description>
+	<tags>
+		<tag>transport</tag>
+		<tag>1990s</tag>
+		<tag>2000s</tag>
+		<tag>2010s</tag>
+		<tag>glass-cockpit</tag>
+		<tag>ifr</tag>
+		<tag>retractable-gear</tag>
+		<tag>t-tail</tag>
+		<tag>turboprop</tag>
+		<tag>twin-engine</tag>
+		<tag>variable-pitch</tag>
+	</tags>
         <flight-model>jsb</flight-model>
         <aero>b190jsb</aero>
         <fuel-fraction>0.5</fuel-fraction>
@@ -135,22 +148,5 @@
         </weight>
 
     </payload>
-
-
-    <nasal>
-        <b1900d>
-            <file>Aircraft/b1900d/Nasal/systems.nas</file>
-            <file>Aircraft/b1900d/Nasal/kln90b.nas</file>
-        </b1900d>
-        <electrical>
-            <file>Aircraft/b1900d/Nasal/Electrical.nas</file>
-        </electrical>
-        <dialogs>
-            <file>Aircraft/b1900d/Nasal/dialogs.nas</file>
-        </dialogs>
-        <FCS>
-            <file>Aircraft/b1900d/Nasal/flightdirector.nas</file>
-        </FCS>
-    </nasal>
 
 </PropertyList>
