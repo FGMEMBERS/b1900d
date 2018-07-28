@@ -67,6 +67,7 @@ started July 2004 Syd Adams
         </systems>
 
         <multiplay>
+            <fallback-model-index type="int">154</fallback-model-index>
             <generic>
                 <float  alias="/controls/cabin-door/position-norm"/>
                 <float n="1" alias="/systems/electrical/outputs/lights/beacon"/>
