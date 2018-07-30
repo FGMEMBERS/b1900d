@@ -67,7 +67,6 @@ started July 2004 Syd Adams
         </systems>
 
         <multiplay>
-            <fallback-model-index type="int">154</fallback-model-index>
             <generic>
                 <float  alias="/controls/cabin-door/position-norm"/>
                 <float n="1" alias="/systems/electrical/outputs/lights/beacon"/>
@@ -90,6 +89,7 @@ started July 2004 Syd Adams
 
         <model>
             <path>Aircraft/b1900d/Models/B1900D.xml</path>
+            <fallback-model-index type="int">154</fallback-model-index>
             <livery>
                 <file type="string">ANZ</file>
             </livery>
