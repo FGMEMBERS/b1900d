@@ -25,6 +25,37 @@
             </position>
         </crank>
 
+        <turb>
+            <name>turb1</name>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
+            <mode>looped</mode>
+            <path>Sounds/turbine_loop.wav</path>
+            <condition>
+                <greater-than>
+                    <property>engines/engine[0]/n1</property>
+                    <value>20</value>
+                </greater-than>
+            </condition>
+            <volume>
+              <property>instrumentation/fuel-pph[0]</property>
+              <factor>0.005</factor>
+              <min>0.0001</min>
+              <max>1</max>
+            </volume>
+            <pitch>
+              <property>instrumentation/eng-gauge/turbine[0]</property>
+              <factor>0.000025</factor>
+              <min>0.00001</min>
+              <max>1</max>
+            </pitch>
+            <position>
+                <x>-1.5</x>
+                <y>2.5</y>
+                <z>-0.33</z>
+            </position>
+        </turb>
+
         <prop>
             <name>prop1</name>
             <reference-dist>50.0</reference-dist>
@@ -34,28 +65,26 @@
             <condition>
                 <greater-than>
                     <property>engines/engine[0]/n1</property>
-                    <value>30</value>
+                    <value>20</value>
                 </greater-than>
             </condition>
             <volume>
-                <property>instrumentation/eng-gauge/prop</property>
-                <factor>0.000588</factor>
-                <min>0.5</min>
-                <max>1</max>
-            </volume>
-            <volume>
-                <property>sim/sound/E_volume</property>
+              <property>instrumentation/eng-gauge/torque[0]</property>
+              <factor>0.0001</factor>
+              <min>0.001</min>
+              <max>1</max>
             </volume>
             <pitch>
-                <property>engines/engine[0]/n1</property>
-                <factor>0.02</factor>
-                <offset>0.0</offset>
+              <property>instrumentation/eng-gauge/prop[0]</property>
+              <factor>0.00035</factor>
+              <min>0.0001</min>
+              <max>2</max>
             </pitch>
             <position>
                 <x>-1.5</x>
                 <y>2.5</y>
                 <z>-0.33</z>
-            </position>p
+            </position>
         </prop>
 
         <shutdown>
@@ -73,7 +102,7 @@
                 <property>sim/sound/E_volume</property>
             </volume>
             <position>
-                 <x>-1.5</x>
+                <x>-1.5</x>
                 <y>2.5</y>
                 <z>-0.33</z>
             </position>
@@ -95,10 +124,41 @@
             </volume>
             <position>
                 <x>-1.5</x>
-                <y>2.5</y>
+                <y>-2.5</y>
                 <z>-0.33</z>
             </position>
         </crank>
+
+        <turb>
+            <name>turb2</name>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
+            <mode>looped</mode>
+            <path>Sounds/turbine_loop.wav</path>
+            <condition>
+                <greater-than>
+                    <property>engines/engine[1]/n1</property>
+                    <value>20</value>
+                </greater-than>
+            </condition>
+            <volume>
+              <property>instrumentation/fuel-pph[1]</property>
+              <factor>0.005</factor>
+              <min>0.0001</min>
+              <max>1</max>
+            </volume>
+            <pitch>
+              <property>instrumentation/eng-gauge/turbine[1]</property>
+              <factor>0.000025</factor>
+              <min>0.00001</min>
+              <max>4</max>
+            </pitch>
+            <position>
+                <x>-1.5</x>
+                <y>-2.5</y>
+                <z>-0.33</z>
+            </position>
+        </turb>
 
         <prop>
             <name>prop2</name>
@@ -109,28 +169,26 @@
             <condition>
                 <greater-than>
                     <property>engines/engine[1]/n1</property>
-                    <value>30</value>
+                    <value>20</value>
                 </greater-than>
             </condition>
             <volume>
-                <property>instrumentation/eng-gauge/prop</property>
-                <factor>0.000588</factor>
-                <min>0.5</min>
-                <max>1</max>
-            </volume>
-            <volume>
-                <property>sim/sound/E_volume</property>
+              <property>instrumentation/eng-gauge/torque[1]</property>
+              <factor>0.0001</factor>
+              <min>0.001</min>
+              <max>1</max>
             </volume>
             <pitch>
-                <property>engines/engine[1]/n1</property>
-                <factor>0.02</factor>
-                <offset>0.0</offset>
+              <property>instrumentation/eng-gauge/prop[1]</property>
+              <factor>0.00035</factor>
+              <min>0.0001</min>
+              <max>2</max>
             </pitch>
             <position>
-                 <x>-1.5</x>
-                <y>2.5</y>
+                <x>-1.5</x>
+                <y>-2.5</y>
                 <z>-0.33</z>
-            </position>p
+            </position>
         </prop>
 
         <shutdown>
@@ -149,7 +207,7 @@
             </volume>
             <position>
                  <x>-1.5</x>
-                <y>2.5</y>
+                <y>-2.5</y>
                 <z>-0.33</z>
             </position>
         </shutdown>
@@ -171,7 +229,7 @@
             </condition>
             <volume>
                 <property>velocities/groundspeed-kt</property>
-                <factor>0.05</factor>
+                <factor>0.005</factor>
                 <max>0.5</max>
             </volume>
             <position>
@@ -188,6 +246,9 @@
             <property>gear/gear[0]/position-norm</property>
             <reference-dist>2.0</reference-dist>
             <max-dist>5.0</max-dist>
+            <volume>
+              <factor>4.0</factor>
+            </volume>
             <pitch>
                 <internal>dt_play</internal>
                 <offset>0.8</offset>
@@ -211,6 +272,9 @@
             </condition>
             <reference-dist>2.0</reference-dist>
             <max-dist>5.0</max-dist>
+            <volume>
+              <factor>4.0</factor>
+            </volume>
             <position>
                 <x>-2</x>
                 <y>0</y>
@@ -251,7 +315,7 @@
             </volume>
             <volume>
                 <property>velocities/airspeed-kt</property>
-                <factor>0.01</factor>
+                <factor>0.2</factor>
             </volume>
             <pitch>
                 <property>velocities/airspeed-kt</property>
@@ -274,6 +338,7 @@
             <property>surface-positions/flap-pos-norm</property>
             <volume>
                 <property>sim/sound/cabin</property>
+                <factor>2.0</factor>
             </volume>
             <position>
                 <x>-3</x>
@@ -306,14 +371,14 @@
             </position>
             <volume>
                 <property>position/altitude-ft</property>
-                <factor>-0.000015</factor>
+                <factor>-0.000005</factor>
                 <offset>1.0</offset>
                 <min>0</min>
                 <max>0.5</max>
             </volume>
             <volume>
                 <property>velocities/airspeed-kt</property>
-                <factor>0.0015</factor>
+                <factor>0.0005</factor>
                 <min>0.0</min>
                 <max>0.25</max>
             </volume>
